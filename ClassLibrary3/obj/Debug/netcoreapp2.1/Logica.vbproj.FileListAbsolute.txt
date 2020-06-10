@@ -1,0 +1,9 @@
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\bin\Debug\netcoreapp2.1\Logica.deps.json
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\bin\Debug\netcoreapp2.1\Logica.dll
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\bin\Debug\netcoreapp2.1\Logica.pdb
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\obj\Debug\netcoreapp2.1\Logica.vbprojAssemblyReference.cache
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\obj\Debug\netcoreapp2.1\Logica.vbproj.CoreCompileInputs.cache
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\obj\Debug\netcoreapp2.1\Logica.AssemblyInfoInputs.cache
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\obj\Debug\netcoreapp2.1\Logica.AssemblyInfo.vb
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\obj\Debug\netcoreapp2.1\Logica.dll
+C:\Users\Mati\source\repos\WindowsApp5\ClassLibrary3\obj\Debug\netcoreapp2.1\Logica.pdb

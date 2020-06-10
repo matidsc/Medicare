@@ -173,6 +173,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BienvenidaGestor.Designer.vb">
+      <DependentUpon>BienvenidaGestor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BienvenidaGestor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BienvenidaMedico.Designer.vb">
+      <DependentUpon>BienvenidaMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BienvenidaMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginMedico.Designer.vb">
       <DependentUpon>LoginMedico.vb</DependentUpon>
     </Compile>
@@ -209,6 +221,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BienvenidaGestor.resx">
+      <DependentUpon>BienvenidaGestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BienvenidaMedico.resx">
+      <DependentUpon>BienvenidaMedico.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginMedico.resx">
       <DependentUpon>LoginMedico.vb</DependentUpon>
     </EmbeddedResource>

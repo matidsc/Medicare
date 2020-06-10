@@ -89,35 +89,6 @@ Public Class LoginPaciente
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
         Me.Close()
     End Sub
-
-
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Dim conn As New OdbcConnection("dsn=driverODBC;uid=root;pwd=;")
-        Dim consulta1 = "SELECT count(usr) FROM med WHERE usr = " '
-        consulta1 = consulta1 & "'" & txtUsr.Text & "'"
-
-        Dim cant As Byte
-        Try
-            conn.Open()
-            Dim command As New OdbcCommand(consulta1, conn)
-            cant = command.ExecuteScalar()
-
-            If cant > 0 Then
-                MsgBox("si")
-                conn.Close()
-                BienvenidaPaciente.Visible = True
-            Else
-                MsgBox("no")
-            End If
-
-        Catch ex As Exception
-            MsgBox("Error : " & ex.Message)
-        End Try
-
-
-    End Sub
-
     Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
         drag = True
         mousex = Cursor.Position.X - Me.Left
@@ -138,31 +109,6 @@ Public Class LoginPaciente
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         txtUsr.Select()
     End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
     Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel2.MouseUp
         drag = False
     End Sub

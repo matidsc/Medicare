@@ -4,31 +4,14 @@ Public Class BienvenidaPaciente
     Dim mousex, mousey As Integer
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        redondear(Panel1)
-        redondear(Panel2)
-        redondear(Panel3)
-        redondear(Panel4)
-        redondear(Panel5)
-        redondear(Me)
+        Dim p As New Principal
+        p.roundedCorners(Panel1)
+        p.roundedCorners(Panel2)
+        p.roundedCorners(Panel3)
+        p.roundedCorners(Panel4)
+        p.roundedCorners(Panel5)
+        p.roundedCorners(Me)
 
-    End Sub
-
-    Private Sub redondear(panel As Object)
-        Dim gp As New Drawing2D.GraphicsPath()
-        Dim radio As Integer = 10
-        gp.StartFigure()
-
-        gp.AddArc(New Rectangle(0, 0, radio, radio), 180, 90)
-        gp.AddLine(radio, 0, panel.Width - radio, 0)
-        gp.AddArc(New Rectangle(panel.Width - radio, 0, radio, radio), -90, 90)
-        gp.AddLine(panel.Width, radio, panel.Width, panel.Height - radio)
-        gp.AddArc(New Rectangle(panel.Width - radio, panel.Height - radio, radio, radio), 0, 90)
-        gp.AddLine(panel.Width - radio, panel.Height, radio, panel.Height)
-        gp.AddArc(New Rectangle(0, panel.Height - radio, radio, radio), 90, 90)
-
-        gp.CloseFigure()
-
-        panel.Region = New Region(gp)
     End Sub
 
     Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel6.MouseDown

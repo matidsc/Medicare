@@ -280,6 +280,8 @@ Partial Class BienvenidaPaciente
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.Button1)
+        Me.Panel6.Controls.Add(Me.Button2)
         Me.Panel6.Controls.Add(Me.Label5)
         Me.Panel6.Location = New System.Drawing.Point(12, 3)
         Me.Panel6.Name = "Panel6"
@@ -312,7 +314,7 @@ Partial Class BienvenidaPaciente
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(698, 59)
+        Me.Button1.Location = New System.Drawing.Point(562, 9)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 55)
         Me.Button1.TabIndex = 23
@@ -321,7 +323,7 @@ Partial Class BienvenidaPaciente
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(507, 59)
+        Me.Button2.Location = New System.Drawing.Point(473, 12)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 55)
         Me.Button2.TabIndex = 24
@@ -334,8 +336,6 @@ Partial Class BienvenidaPaciente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 507)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Panel6)

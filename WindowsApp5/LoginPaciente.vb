@@ -1,6 +1,4 @@
-﻿Imports System.Data.Odbc
-
-Public Class LoginPaciente
+﻿Public Class LoginPaciente
     Dim drag As Boolean
     Dim mousex, mousey As Integer
 

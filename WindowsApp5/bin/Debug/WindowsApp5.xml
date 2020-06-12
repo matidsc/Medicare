@@ -22,17 +22,7 @@ WindowsApp5
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:WindowsApp5.My.Resources.Resources.bdfgbdfgbh">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:WindowsApp5.My.Resources.Resources.cfzxczxczxcccccccc">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:WindowsApp5.My.Resources.Resources.cfzxczxczxcccccccc1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -42,17 +32,52 @@ WindowsApp5
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:WindowsApp5.My.Resources.Resources.FIEL1">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:WindowsApp5.My.Resources.Resources.FIELD">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApp5.My.Resources.Resources.fsdfds">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.hgh">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.HYUYUI">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApp5.My.Resources.Resources.login">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.med">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.medd">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.obt1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.obt2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApp5.My.Resources.Resources.op1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

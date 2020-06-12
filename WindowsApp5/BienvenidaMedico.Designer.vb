@@ -48,12 +48,17 @@ Partial Class BienvenidaMedico
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -63,19 +68,17 @@ Partial Class BienvenidaMedico
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel1.Location = New System.Drawing.Point(64, 148)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(36, 120)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(705, 180)
+        Me.Panel1.Size = New System.Drawing.Size(485, 146)
         Me.Panel1.TabIndex = 0
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(97, Byte), Integer))
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(705, 12)
+        Me.Panel7.Size = New System.Drawing.Size(529, 10)
         Me.Panel7.TabIndex = 2
         '
         'Label2
@@ -84,10 +87,9 @@ Partial Class BienvenidaMedico
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(33, 105)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(25, 85)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(465, 24)
+        Me.Label2.Size = New System.Drawing.Size(379, 22)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Ver lista de chats que tiene con sus pacientes "
         '
@@ -96,12 +98,11 @@ Partial Class BienvenidaMedico
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(29, 33)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(22, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(364, 45)
+        Me.Label1.Size = New System.Drawing.Size(87, 40)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Peticiones de chat"
+        Me.Label1.Text = "Chat"
         '
         'Panel2
         '
@@ -110,19 +111,17 @@ Partial Class BienvenidaMedico
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel2.Location = New System.Drawing.Point(64, 356)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(36, 289)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(340, 238)
+        Me.Panel2.Size = New System.Drawing.Size(224, 193)
         Me.Panel2.TabIndex = 2
         '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(144, Byte), Integer))
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(340, 12)
+        Me.Panel9.Size = New System.Drawing.Size(255, 10)
         Me.Panel9.TabIndex = 4
         '
         'Label3
@@ -130,10 +129,9 @@ Partial Class BienvenidaMedico
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(33, 112)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(25, 91)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(237, 113)
+        Me.Label3.Size = New System.Drawing.Size(178, 92)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Vea su historial completo dentro de la aplicación"
         '
@@ -142,10 +140,9 @@ Partial Class BienvenidaMedico
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(29, 41)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(22, 33)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(230, 45)
+        Me.Label4.Size = New System.Drawing.Size(181, 40)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Mi Historial"
         '
@@ -154,10 +151,9 @@ Partial Class BienvenidaMedico
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Montserrat", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(92, 47)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(69, 38)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(436, 33)
+        Me.Label5.Size = New System.Drawing.Size(352, 29)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Bienvenido, Dr. Matias da Silva"
         '
@@ -168,19 +164,17 @@ Partial Class BienvenidaMedico
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel3.Location = New System.Drawing.Point(429, 356)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel3.Location = New System.Drawing.Point(282, 289)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(340, 238)
+        Me.Panel3.Size = New System.Drawing.Size(239, 193)
         Me.Panel3.TabIndex = 3
         '
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(340, 12)
+        Me.Panel10.Size = New System.Drawing.Size(255, 10)
         Me.Panel10.TabIndex = 5
         '
         'Label6
@@ -188,10 +182,9 @@ Partial Class BienvenidaMedico
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(33, 112)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(25, 91)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(237, 113)
+        Me.Label6.Size = New System.Drawing.Size(178, 92)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Entrar a la configuración de la aplicación"
         '
@@ -200,10 +193,9 @@ Partial Class BienvenidaMedico
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(29, 41)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(22, 33)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(157, 45)
+        Me.Label7.Size = New System.Drawing.Size(123, 40)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Ajustes"
         '
@@ -214,19 +206,17 @@ Partial Class BienvenidaMedico
         Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel4.Location = New System.Drawing.Point(791, 356)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel4.Location = New System.Drawing.Point(538, 289)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(216, 238)
+        Me.Panel4.Size = New System.Drawing.Size(162, 193)
         Me.Panel4.TabIndex = 4
         '
         'Panel11
         '
         Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(216, 12)
+        Me.Panel11.Size = New System.Drawing.Size(162, 10)
         Me.Panel11.TabIndex = 6
         '
         'Label8
@@ -234,10 +224,9 @@ Partial Class BienvenidaMedico
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(13, 112)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(18, 91)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(188, 113)
+        Me.Label8.Size = New System.Drawing.Size(125, 92)
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Ver y configurar Perfil"
         '
@@ -246,10 +235,9 @@ Partial Class BienvenidaMedico
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(4, 41)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(3, 33)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(173, 45)
+        Me.Label9.Size = New System.Drawing.Size(140, 40)
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "Mi Perfil"
         '
@@ -260,19 +248,17 @@ Partial Class BienvenidaMedico
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Controls.Add(Me.Label11)
         Me.Panel5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel5.Location = New System.Drawing.Point(791, 148)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel5.Location = New System.Drawing.Point(718, 289)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(216, 180)
+        Me.Panel5.Size = New System.Drawing.Size(162, 193)
         Me.Panel5.TabIndex = 5
         '
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(103, Byte), Integer))
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(216, 12)
+        Me.Panel8.Size = New System.Drawing.Size(162, 10)
         Me.Panel8.TabIndex = 3
         '
         'Label10
@@ -280,10 +266,9 @@ Partial Class BienvenidaMedico
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(19, 98)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(14, 80)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(183, 65)
+        Me.Label10.Size = New System.Drawing.Size(137, 53)
         Me.Label10.TabIndex = 1
         Me.Label10.Text = "Cómo usar la aplicación"
         '
@@ -292,20 +277,20 @@ Partial Class BienvenidaMedico
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(15, 33)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(11, 27)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(138, 45)
+        Me.Label11.Size = New System.Drawing.Size(110, 40)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Ayuda"
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.Button1)
+        Me.Panel6.Controls.Add(Me.Button2)
         Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Location = New System.Drawing.Point(16, 4)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel6.Location = New System.Drawing.Point(12, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(905, 98)
+        Me.Panel6.Size = New System.Drawing.Size(780, 80)
         Me.Panel6.TabIndex = 6
         '
         'Label12
@@ -313,10 +298,9 @@ Partial Class BienvenidaMedico
         Me.Label12.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(953, 11)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Location = New System.Drawing.Point(815, 9)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(32, 43)
+        Me.Label12.Size = New System.Drawing.Size(24, 35)
         Me.Label12.TabIndex = 22
         Me.Label12.Text = "_"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -326,42 +310,80 @@ Partial Class BienvenidaMedico
         Me.Label13.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(993, 11)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(845, 9)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(57, 43)
+        Me.Label13.Size = New System.Drawing.Size(43, 35)
         Me.Label13.TabIndex = 21
         Me.Label13.Text = "X"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(931, 73)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(591, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 68)
+        Me.Button1.Size = New System.Drawing.Size(70, 55)
         Me.Button1.TabIndex = 23
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(676, 73)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Location = New System.Drawing.Point(504, 12)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(93, 68)
+        Me.Button2.Size = New System.Drawing.Size(70, 55)
         Me.Button2.TabIndex = 24
         Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel12.Controls.Add(Me.Panel13)
+        Me.Panel12.Controls.Add(Me.Label14)
+        Me.Panel12.Controls.Add(Me.Label15)
+        Me.Panel12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel12.Location = New System.Drawing.Point(538, 120)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(342, 146)
+        Me.Panel12.TabIndex = 6
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.Panel13.Location = New System.Drawing.Point(0, 0)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(342, 10)
+        Me.Panel13.TabIndex = 3
+        '
+        'Label14
+        '
+        Me.Label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label14.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(14, 80)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(295, 53)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "Busque patologías registradas en la aplicación"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(11, 27)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(169, 40)
+        Me.Label15.TabIndex = 0
+        Me.Label15.Text = "Patologías"
+        '
         'BienvenidaMedico
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1067, 624)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(903, 500)
+        Me.Controls.Add(Me.Panel12)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Panel6)
@@ -371,7 +393,6 @@ Partial Class BienvenidaMedico
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "BienvenidaMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
@@ -387,6 +408,8 @@ Partial Class BienvenidaMedico
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -417,5 +440,9 @@ Partial Class BienvenidaMedico
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label8 As Label
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
 End Class
 

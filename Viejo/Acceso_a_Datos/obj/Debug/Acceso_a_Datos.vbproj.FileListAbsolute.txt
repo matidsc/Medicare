@@ -1,0 +1,9 @@
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.dll
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.xml
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.Resources.resources
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.GenerateResource.cache
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.dll
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
+C:\Users\Rodrigo\source\repos\ByteSoft Proyecto\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb

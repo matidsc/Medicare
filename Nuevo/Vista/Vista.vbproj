@@ -183,6 +183,18 @@
     <Compile Include="Gestor\BienvenidaGestor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gestor\RegistrarPatologias.Designer.vb">
+      <DependentUpon>RegistrarPatologias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\RegistrarPatologias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\RegistrarSintomas.Designer.vb">
+      <DependentUpon>RegistrarSintomas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\RegistrarSintomas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestor\RegistrarMedico.Designer.vb">
       <DependentUpon>RegistrarMedico.vb</DependentUpon>
     </Compile>
@@ -245,6 +257,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Gestor\BienvenidaGestor.resx">
       <DependentUpon>BienvenidaGestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\RegistrarPatologias.resx">
+      <DependentUpon>RegistrarPatologias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\RegistrarSintomas.resx">
+      <DependentUpon>RegistrarSintomas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\RegistrarMedico.resx">
       <DependentUpon>RegistrarMedico.vb</DependentUpon>

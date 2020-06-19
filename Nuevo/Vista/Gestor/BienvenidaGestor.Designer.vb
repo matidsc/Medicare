@@ -205,6 +205,7 @@ Partial Class BienvenidaGestor
         '
         'Panel6
         '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.Panel6.Controls.Add(Me.Label5)
         Me.Panel6.Controls.Add(Me.Button2)
         Me.Panel6.Controls.Add(Me.Button1)
@@ -221,6 +222,7 @@ Partial Class BienvenidaGestor
         Me.Button2.TabIndex = 24
         Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Visible = False
         '
         'Button1
         '
@@ -230,6 +232,7 @@ Partial Class BienvenidaGestor
         Me.Button1.TabIndex = 23
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'Label12
         '
@@ -274,9 +277,9 @@ Partial Class BienvenidaGestor
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(12, 27)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(255, 40)
+        Me.Label3.Size = New System.Drawing.Size(267, 40)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Ingresar Médico"
+        Me.Label3.Text = "Registrar Médico"
         '
         'Panel7
         '

@@ -22,7 +22,7 @@ Partial Class RegistrarMedico
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistrarSintomas))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistrarMedico))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtPrimerNombre = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -36,7 +36,6 @@ Partial Class RegistrarMedico
         Me.lblSegundoNombre = New System.Windows.Forms.Label()
         Me.lblPrimerNombre = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.MaterialFlatButton4 = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -46,9 +45,8 @@ Partial Class RegistrarMedico
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,7 +166,6 @@ Partial Class RegistrarMedico
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.MaterialFlatButton4)
         Me.Panel6.Controls.Add(Me.Label12)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Controls.Add(Me.Label4)
@@ -176,23 +173,6 @@ Partial Class RegistrarMedico
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(701, 77)
         Me.Panel6.TabIndex = 92
-        '
-        'MaterialFlatButton4
-        '
-        Me.MaterialFlatButton4.AutoSize = True
-        Me.MaterialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton4.Depth = 0
-        Me.MaterialFlatButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaterialFlatButton4.ForeColor = System.Drawing.Color.White
-        Me.MaterialFlatButton4.Location = New System.Drawing.Point(9, 9)
-        Me.MaterialFlatButton4.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton4.Name = "MaterialFlatButton4"
-        Me.MaterialFlatButton4.Primary = False
-        Me.MaterialFlatButton4.Size = New System.Drawing.Size(19, 36)
-        Me.MaterialFlatButton4.TabIndex = 8
-        Me.MaterialFlatButton4.Text = "<"
-        Me.MaterialFlatButton4.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -282,6 +262,15 @@ Partial Class RegistrarMedico
         Me.Label1.TabIndex = 89
         Me.Label1.Text = "Cédula de Identidad"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.ingmed
+        Me.PictureBox1.Location = New System.Drawing.Point(253, 484)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(210, 50)
+        Me.PictureBox1.TabIndex = 95
+        Me.PictureBox1.TabStop = False
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(96, Byte), Integer))
@@ -294,30 +283,11 @@ Partial Class RegistrarMedico
         Me.Button1.TabIndex = 93
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.ingmed
-        Me.PictureBox1.Location = New System.Drawing.Point(253, 484)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(210, 50)
-        Me.PictureBox1.TabIndex = 95
-        Me.PictureBox1.TabStop = False
-        '
-        'MetroButton1
-        '
-        Me.MetroButton1.Location = New System.Drawing.Point(492, 474)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(136, 33)
-        Me.MetroButton1.TabIndex = 96
-        Me.MetroButton1.Text = "fdsfsd"
-        Me.MetroButton1.UseSelectable = True
-        '
         'RegistrarMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 556)
-        Me.Controls.Add(Me.MetroButton1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.TextBox1)
@@ -344,7 +314,6 @@ Partial Class RegistrarMedico
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -364,7 +333,6 @@ Partial Class RegistrarMedico
     Friend WithEvents lblSegundoNombre As Label
     Friend WithEvents lblPrimerNombre As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents MaterialFlatButton4 As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label4 As Label
@@ -376,5 +344,4 @@ Partial Class RegistrarMedico
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
 End Class

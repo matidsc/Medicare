@@ -212,13 +212,13 @@ Partial Class Login
         '
         'Label6
         '
-        Me.Label6.Font = New System.Drawing.Font("Montserrat", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(611, 269)
+        Me.Label6.Location = New System.Drawing.Point(587, 61)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(148, 40)
+        Me.Label6.Size = New System.Drawing.Size(211, 33)
         Me.Label6.TabIndex = 28
-        Me.Label6.Text = "Paciente"
+        Me.Label6.Text = "Aplicación de Paciente"
         '
         'Login
         '

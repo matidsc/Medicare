@@ -42,7 +42,6 @@ Partial Class MenuGestorSintomas
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.MaterialFlatButton4 = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -249,7 +248,6 @@ Partial Class MenuGestorSintomas
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.MaterialFlatButton4)
         Me.Panel6.Controls.Add(Me.Label12)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Controls.Add(Me.Label4)
@@ -257,23 +255,6 @@ Partial Class MenuGestorSintomas
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(767, 77)
         Me.Panel6.TabIndex = 5
-        '
-        'MaterialFlatButton4
-        '
-        Me.MaterialFlatButton4.AutoSize = True
-        Me.MaterialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton4.Depth = 0
-        Me.MaterialFlatButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaterialFlatButton4.ForeColor = System.Drawing.Color.White
-        Me.MaterialFlatButton4.Location = New System.Drawing.Point(9, 9)
-        Me.MaterialFlatButton4.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton4.Name = "MaterialFlatButton4"
-        Me.MaterialFlatButton4.Primary = False
-        Me.MaterialFlatButton4.Size = New System.Drawing.Size(19, 36)
-        Me.MaterialFlatButton4.TabIndex = 8
-        Me.MaterialFlatButton4.Text = "<"
-        Me.MaterialFlatButton4.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -343,7 +324,6 @@ Partial Class MenuGestorSintomas
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -370,5 +350,4 @@ Partial Class MenuGestorSintomas
     Friend WithEvents Label7 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents MaterialFlatButton4 As MaterialSkin.Controls.MaterialFlatButton
 End Class

@@ -44,10 +44,10 @@ Partial Class BienvenidaMedico
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -293,6 +293,26 @@ Partial Class BienvenidaMedico
         Me.Panel6.Size = New System.Drawing.Size(780, 80)
         Me.Panel6.TabIndex = 6
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(591, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(70, 55)
+        Me.Button1.TabIndex = 23
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(504, 12)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(70, 55)
+        Me.Button2.TabIndex = 24
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Visible = False
+        '
         'Label12
         '
         Me.Label12.Cursor = System.Windows.Forms.Cursors.Hand
@@ -316,24 +336,6 @@ Partial Class BienvenidaMedico
         Me.Label13.TabIndex = 21
         Me.Label13.Text = "X"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(591, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(70, 55)
-        Me.Button1.TabIndex = 23
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(504, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(70, 55)
-        Me.Button2.TabIndex = 24
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel12
         '

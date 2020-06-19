@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MenuGestorpatologias
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MenuGestorpatologias
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuGestorpatologias))
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -42,7 +42,6 @@ Partial Class MenuGestorpatologias
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.MaterialFlatButton4 = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -270,7 +269,6 @@ Partial Class MenuGestorpatologias
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.MaterialFlatButton4)
         Me.Panel6.Controls.Add(Me.Label12)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Controls.Add(Me.Label4)
@@ -278,23 +276,6 @@ Partial Class MenuGestorpatologias
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(767, 77)
         Me.Panel6.TabIndex = 10
-        '
-        'MaterialFlatButton4
-        '
-        Me.MaterialFlatButton4.AutoSize = True
-        Me.MaterialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton4.Depth = 0
-        Me.MaterialFlatButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaterialFlatButton4.ForeColor = System.Drawing.Color.White
-        Me.MaterialFlatButton4.Location = New System.Drawing.Point(9, 9)
-        Me.MaterialFlatButton4.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton4.Name = "MaterialFlatButton4"
-        Me.MaterialFlatButton4.Primary = False
-        Me.MaterialFlatButton4.Size = New System.Drawing.Size(19, 36)
-        Me.MaterialFlatButton4.TabIndex = 8
-        Me.MaterialFlatButton4.Text = "<"
-        Me.MaterialFlatButton4.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -328,7 +309,6 @@ Partial Class MenuGestorpatologias
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -353,5 +333,4 @@ Partial Class MenuGestorpatologias
     Friend WithEvents Label13 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents MaterialFlatButton4 As MaterialSkin.Controls.MaterialFlatButton
 End Class

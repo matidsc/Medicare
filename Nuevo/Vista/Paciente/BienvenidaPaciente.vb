@@ -11,7 +11,27 @@ Public Class BienvenidaPaciente
         p.roundedCorners(Panel4)
         p.roundedCorners(Panel5)
         p.roundedCorners(Me)
+        Me.BackColor = Color.FromArgb(236, 236, 236)
+        Dim col As Color = Color.FromArgb(52, 73, 94)
 
+        Panel1.BackColor = Color.WhiteSmoke
+        Panel2.BackColor = Color.WhiteSmoke
+        Panel3.BackColor = Color.WhiteSmoke
+        Panel4.BackColor = Color.WhiteSmoke
+        Panel5.BackColor = Color.WhiteSmoke
+        Label1.ForeColor = col
+        Label2.ForeColor = col
+        Label3.ForeColor = col
+        Label4.ForeColor = col
+        Label5.ForeColor = col
+        Label6.ForeColor = col
+        Label7.ForeColor = col
+        Label8.ForeColor = col
+        Label9.ForeColor = col
+        Label10.ForeColor = col
+        Label11.ForeColor = col
+        Label12.ForeColor = col
+        Label13.ForeColor = col
     End Sub
 
     Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel6.MouseDown

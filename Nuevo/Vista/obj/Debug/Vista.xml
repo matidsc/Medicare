@@ -22,6 +22,11 @@ Vista
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Vista.My.Resources.Resources.apcambios">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Vista.My.Resources.Resources.cfzxczxczxcccccccc">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -47,7 +52,27 @@ Vista
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Vista.My.Resources.Resources.hvoersolcmedico">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Vista.My.Resources.Resources.HYUYUI">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.icons8_csv_64">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.icons8_form_64">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.icons8_form_64_1_">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -103,6 +128,21 @@ Vista
 </summary>
 </member>
 <member name="P:Vista.My.Resources.Resources.op1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.regpat">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.regsintoma">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.solcmedico">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

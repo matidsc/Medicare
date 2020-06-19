@@ -117,4 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="SINTOMAS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnVirusRegistrarSintomas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABGdBTUEAALGPC/xhBQAAAPhJREFUKFOV
+        0DFOAlEQxvGloUBaKgsiRxE5AAQ6EiORRGKgoaABDJ2RM0CBsZTEGD2EdlLScAaDNpKs/5l8j2x0G77k
+        lzfvzZvd7EZpieO4gzWudPQ/NM9VWt3CJyy2XqhlvaZK33whhwrScoYjbDXiQ+84RQ1pqaKMN4340CU+
+        UMRU9UbrHY6xQksjPpTBHD94xRhdTPCEb8yQCQPXGGCJZB60hjzC7rVtqI9b3COZvNYQ69u9XnhbAQvs
+        o/NkrF8IA1nYR9oHj+D5MzRE+EFZazTw7E8g1DfYqbYfM/IGoX5B3Yo2ujr3sC9pPfEDhX3P7mt7SKLo
+        F4Q7pT5pXQHtAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

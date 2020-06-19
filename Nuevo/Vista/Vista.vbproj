@@ -11,7 +11,7 @@
     <AssemblyName>Vista</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
@@ -66,8 +66,8 @@
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicData, Version=6.14.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicData.6.14.14\lib\net461\DynamicData.dll</HintPath>
+    <Reference Include="DynamicData, Version=6.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicData.6.15.1\lib\net461\DynamicData.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll</HintPath>
@@ -93,16 +93,19 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="MetroSet UI, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroSet_UI.1.0.5\lib\net45\MetroSet UI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReactiveUI, Version=11.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.11.4.1\lib\net461\ReactiveUI.dll</HintPath>
+      <HintPath>..\packages\ReactiveUI.11.4.17\lib\net461\ReactiveUI.dll</HintPath>
     </Reference>
     <Reference Include="ReactiveUI.Winforms, Version=11.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.WinForms.11.4.1\lib\net461\ReactiveUI.Winforms.dll</HintPath>
+      <HintPath>..\packages\ReactiveUI.WinForms.11.4.17\lib\net461\ReactiveUI.Winforms.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=9.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Splat.9.4.5\lib\net461\Splat.dll</HintPath>
@@ -119,6 +122,7 @@
       <HintPath>..\packages\Ix-Main.1.2.5\lib\net45\System.Interactive.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Reactive, Version=4.4.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.4.4.1\lib\net46\System.Reactive.dll</HintPath>
     </Reference>
@@ -177,10 +181,40 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajustes.Designer.vb">
+      <DependentUpon>Ajustes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ajustes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestor\BienvenidaGestor.Designer.vb">
       <DependentUpon>BienvenidaGestor.vb</DependentUpon>
     </Compile>
     <Compile Include="Gestor\BienvenidaGestor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\ComoRegistrarPatologia.Designer.vb">
+      <DependentUpon>ComoRegistrarPatologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\ComoRegistrarPatologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\ListadoGestor.Designer.vb">
+      <DependentUpon>ListadoGestor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\ListadoGestor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\ListadoPatologias.Designer.vb">
+      <DependentUpon>ListadoPatologias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\ListadoPatologias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\ListarSintomas.Designer.vb">
+      <DependentUpon>ListarSintomas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\ListarSintomas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gestor\RegistrarPatologias.Designer.vb">
@@ -224,6 +258,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Paciente\ObtenerDiagnóstico.Designer.vb">
+      <DependentUpon>ObtenerDiagnóstico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\ObtenerDiagnóstico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal.vb" />
     <Compile Include="Gestor\MenuGestorSintomas.Designer.vb">
       <DependentUpon>MenuGestorSintomas.vb</DependentUpon>
@@ -255,8 +295,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Ajustes.resx">
+      <DependentUpon>Ajustes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestor\BienvenidaGestor.resx">
       <DependentUpon>BienvenidaGestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\ComoRegistrarPatologia.resx">
+      <DependentUpon>ComoRegistrarPatologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\ListadoGestor.resx">
+      <DependentUpon>ListadoGestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\ListadoPatologias.resx">
+      <DependentUpon>ListadoPatologias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\ListarSintomas.resx">
+      <DependentUpon>ListarSintomas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\RegistrarPatologias.resx">
       <DependentUpon>RegistrarPatologias.vb</DependentUpon>
@@ -291,6 +346,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\ObtenerDiagnóstico.resx">
+      <DependentUpon>ObtenerDiagnóstico.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -307,6 +365,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\obt2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -365,6 +424,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ingmed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ingpat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regpat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-csv-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-form-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-form-64%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regsintoma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hvoersolcmedico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solcmedico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apcambios.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />

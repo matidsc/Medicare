@@ -6,10 +6,10 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Console.WriteLine(Panel1.Location.Y)
-        p.roundedCorners(Panel1)
-        p.roundedCorners(Panel2)
-        p.roundedCorners(Panel4)
-        p.roundedCorners(Me)
+        '   p.roundedCorners(Panel1)
+        '  p.roundedCorners(Panel2)
+        '  p.roundedCorners(Panel4)
+        ' p.roundedCorners(Me)
 
     End Sub
 
@@ -22,7 +22,7 @@
         'Console.WriteLine("hover")
     End Sub
 
-    Private Sub MaterialFlatButton4_Click(sender As Object, e As EventArgs) Handles MaterialFlatButton4.Click
+    Private Sub MaterialFlatButton4_Click(sender As Object, e As EventArgs)
 
     End Sub
 

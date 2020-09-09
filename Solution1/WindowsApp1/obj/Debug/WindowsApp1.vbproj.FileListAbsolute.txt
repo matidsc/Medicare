@@ -10,3 +10,15 @@ C:\Users\Mati\source\repos\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.Co
 C:\Users\Mati\source\repos\Solution1\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\Mati\source\repos\Solution1\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\Mati\source\repos\Solution1\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbprojAssemblyReference.cache
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.Form1.resources
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.cache
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CoreCompileInputs.cache
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\rpere\OneDrive\Escritorio\bienvenida\Solution1\WindowsApp1\obj\Debug\WindowsApp1.pdb

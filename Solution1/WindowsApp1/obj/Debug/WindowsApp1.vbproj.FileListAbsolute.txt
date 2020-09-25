@@ -55,3 +55,4 @@ C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Solution1\WindowsApp1\o
 C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Mat\Desktop\Prueba\Solution1\WindowsApp1\obj\Debug\WindowsApp1.frmLogin.resources

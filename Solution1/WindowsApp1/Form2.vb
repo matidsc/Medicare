@@ -70,12 +70,12 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        RoundedCorners(Panel9, 70)
+        'RoundedCorners(Panel9, 70)
         'RoundedCorners(Me, 20)
-        RoundedCorners(Panel1, 20)
-        RoundedCorners(Panel3, 20)
-        RoundedCorners(Panel5, 20)
-        RoundedCorners(Panel7, 20)
+        'RoundedCorners(Panel1, 20)
+        'RoundedCorners(Panel3, 20)
+        'RoundedCorners(Panel5, 20)
+        'RoundedCorners(Panel7, 20)
 
         enterAnimation(Panel10)
         tEnter.Enabled = True
@@ -86,6 +86,7 @@ Public Class Form2
 
     Public Sub enterAnimation(obj As Panel)
         Me.obj = obj
+        Me.obj.Location = New Point(obj.Location.X, 500)
     End Sub
 
     Public Sub tEnter_Tick() Handles tEnter.Tick
@@ -103,6 +104,10 @@ Public Class Form2
         '    Console.WriteLine(obj.Location.Y)
         'End While
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Application.Exit()
     End Sub
 
     Private Sub Panel10_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint

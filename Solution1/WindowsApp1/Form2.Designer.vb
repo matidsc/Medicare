@@ -27,28 +27,20 @@ Partial Class Form2
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.GunaAdvenceButton3 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.GunaAdvenceButton4 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -56,15 +48,27 @@ Partial Class Form2
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.tEnter = New System.Windows.Forms.Timer(Me.components)
         Me.GunaResize1 = New Guna.UI.WinForms.GunaResize(Me.components)
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.GunaAdvenceButton4 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.GunaAdvenceButton3 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.IconPictureBox3 = New FontAwesome.Sharp.IconPictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
+        Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.pnlCerrar.SuspendLayout()
-        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -74,14 +78,14 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.GunaAdvenceButton1)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(101, 24)
+        Me.Panel1.Location = New System.Drawing.Point(106, 24)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(183, 248)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.MediumSlateBlue
         Me.Panel2.Location = New System.Drawing.Point(0, 241)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(183, 7)
@@ -89,56 +93,23 @@ Partial Class Form2
         '
         'Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(0, 76)
+        Me.Label2.Location = New System.Drawing.Point(20, 79)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(183, 59)
+        Me.Label2.Size = New System.Drawing.Size(143, 59)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Registrar, modificar, eliminar y buscar patologías"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'GunaAdvenceButton1
-        '
-        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Image = Nothing
-        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(30, 179)
-        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Radius = 10
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(125, 26)
-        Me.GunaAdvenceButton1.TabIndex = 9
-        Me.GunaAdvenceButton1.Text = "Ingresar"
-        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(39, 16)
+        Me.Label1.Location = New System.Drawing.Point(43, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 25)
+        Me.Label1.Size = New System.Drawing.Size(101, 23)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Patologías"
         '
@@ -149,47 +120,14 @@ Partial Class Form2
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Location = New System.Drawing.Point(301, 40)
+        Me.Panel3.Location = New System.Drawing.Point(306, 40)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(183, 248)
         Me.Panel3.TabIndex = 5
         '
-        'GunaAdvenceButton2
-        '
-        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.CheckedImage = CType(resources.GetObject("GunaAdvenceButton2.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.Image = Nothing
-        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(34, 181)
-        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
-        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.OnHoverImage = Nothing
-        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.Radius = 10
-        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(125, 26)
-        Me.GunaAdvenceButton2.TabIndex = 10
-        Me.GunaAdvenceButton2.Text = "Ingresar"
-        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.MediumSlateBlue
         Me.Panel4.Location = New System.Drawing.Point(0, 240)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(183, 7)
@@ -197,11 +135,11 @@ Partial Class Form2
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(3, 78)
+        Me.Label3.Location = New System.Drawing.Point(20, 78)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(177, 59)
+        Me.Label3.Size = New System.Drawing.Size(143, 59)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Registrar, modificar, eliminar y buscar síntoamas"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -209,11 +147,11 @@ Partial Class Form2
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(45, 21)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 25)
+        Me.Label4.Size = New System.Drawing.Size(91, 23)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Síntomas"
         '
@@ -224,58 +162,25 @@ Partial Class Form2
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Location = New System.Drawing.Point(503, 40)
+        Me.Panel5.Location = New System.Drawing.Point(508, 40)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(183, 248)
         Me.Panel5.TabIndex = 6
         '
-        'GunaAdvenceButton3
-        '
-        Me.GunaAdvenceButton3.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton3.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton3.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.GunaAdvenceButton3.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton3.CheckedImage = CType(resources.GetObject("GunaAdvenceButton3.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton3.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton3.ForeColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton3.Image = Nothing
-        Me.GunaAdvenceButton3.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton3.Location = New System.Drawing.Point(33, 181)
-        Me.GunaAdvenceButton3.Name = "GunaAdvenceButton3"
-        Me.GunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton3.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton3.OnHoverImage = Nothing
-        Me.GunaAdvenceButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton3.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton3.Radius = 10
-        Me.GunaAdvenceButton3.Size = New System.Drawing.Size(125, 26)
-        Me.GunaAdvenceButton3.TabIndex = 11
-        Me.GunaAdvenceButton3.Text = "Ingresar"
-        Me.GunaAdvenceButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(45, 22)
+        Me.Label6.Location = New System.Drawing.Point(51, 22)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(86, 25)
+        Me.Label6.Size = New System.Drawing.Size(82, 23)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Registro"
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
+        Me.Panel6.BackColor = System.Drawing.Color.MediumSlateBlue
         Me.Panel6.Location = New System.Drawing.Point(0, 240)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(183, 7)
@@ -283,11 +188,11 @@ Partial Class Form2
         '
         'Label5
         '
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(3, 78)
+        Me.Label5.Location = New System.Drawing.Point(20, 78)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(177, 59)
+        Me.Label5.Size = New System.Drawing.Size(143, 59)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Registrar médicos y gestores en la aplicación"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -297,72 +202,38 @@ Partial Class Form2
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.Panel7.Controls.Add(Me.GunaAdvenceButton4)
         Me.Panel7.Controls.Add(Me.Label7)
-        Me.Panel7.Controls.Add(Me.Panel8)
         Me.Panel7.Controls.Add(Me.Label8)
-        Me.Panel7.Location = New System.Drawing.Point(709, 24)
+        Me.Panel7.Location = New System.Drawing.Point(714, 24)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(183, 259)
+        Me.Panel7.Size = New System.Drawing.Size(183, 248)
         Me.Panel7.TabIndex = 7
-        '
-        'GunaAdvenceButton4
-        '
-        Me.GunaAdvenceButton4.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton4.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.GunaAdvenceButton4.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton4.CheckedImage = CType(resources.GetObject("GunaAdvenceButton4.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton4.ForeColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.Image = Nothing
-        Me.GunaAdvenceButton4.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton4.Location = New System.Drawing.Point(29, 197)
-        Me.GunaAdvenceButton4.Name = "GunaAdvenceButton4"
-        Me.GunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton4.OnHoverImage = Nothing
-        Me.GunaAdvenceButton4.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton4.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.Radius = 10
-        Me.GunaAdvenceButton4.Size = New System.Drawing.Size(125, 26)
-        Me.GunaAdvenceButton4.TabIndex = 12
-        Me.GunaAdvenceButton4.Text = "Ingresar"
-        Me.GunaAdvenceButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(45, 22)
+        Me.Label7.Location = New System.Drawing.Point(46, 24)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 25)
+        Me.Label7.Size = New System.Drawing.Size(87, 23)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Usuarios"
         '
         'Panel8
         '
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.Panel8.Location = New System.Drawing.Point(0, 251)
+        Me.Panel8.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel8.Location = New System.Drawing.Point(714, 265)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(183, 7)
         Me.Panel8.TabIndex = 3
         '
         'Label8
         '
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(3, 94)
+        Me.Label8.Location = New System.Drawing.Point(20, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(171, 59)
+        Me.Label8.Size = New System.Drawing.Size(143, 59)
         Me.Label8.TabIndex = 2
         Me.Label8.Text = "Buscar, modificar o eliminar usuarios"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -370,7 +241,9 @@ Partial Class Form2
         'pnlCerrar
         '
         Me.pnlCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.pnlCerrar.Controls.Add(Me.Label10)
+        Me.pnlCerrar.Controls.Add(Me.GunaElipsePanel1)
+        Me.pnlCerrar.Controls.Add(Me.IconPictureBox3)
+        Me.pnlCerrar.Controls.Add(Me.PictureBox1)
         Me.pnlCerrar.Controls.Add(Me.IconPictureBox2)
         Me.pnlCerrar.Controls.Add(Me.IconButton1)
         Me.pnlCerrar.Controls.Add(Me.IconPictureBox1)
@@ -383,16 +256,229 @@ Partial Class Form2
         Me.pnlCerrar.Size = New System.Drawing.Size(1070, 125)
         Me.pnlCerrar.TabIndex = 8
         '
-        'Label10
+        'Button2
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(84, 27)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(114, 32)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "Medicare"
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(992, -2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(37, 38)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "_"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(1030, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(37, 36)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "X"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Roboto", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(406, 45)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(261, 29)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Buenas tardes, Rodrigo"
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.Label9)
+        Me.Panel9.Controls.Add(Me.Panel10)
+        Me.Panel9.Location = New System.Drawing.Point(0, 80)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(1070, 490)
+        Me.Panel9.TabIndex = 9
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.Panel1)
+        Me.Panel10.Controls.Add(Me.Panel3)
+        Me.Panel10.Controls.Add(Me.Panel8)
+        Me.Panel10.Controls.Add(Me.Panel7)
+        Me.Panel10.Controls.Add(Me.Panel5)
+        Me.Panel10.Location = New System.Drawing.Point(34, 125)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(1003, 306)
+        Me.Panel10.TabIndex = 8
+        '
+        'tEnter
+        '
+        Me.tEnter.Enabled = True
+        '
+        'GunaResize1
+        '
+        Me.GunaResize1.TargetForm = Me
+        '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.Image = Nothing
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(30, 179)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Radius = 12
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(125, 28)
+        Me.GunaAdvenceButton1.TabIndex = 9
+        Me.GunaAdvenceButton1.Text = "Ingresar"
+        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaAdvenceButton2
+        '
+        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.CheckedImage = Nothing
+        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.Image = Nothing
+        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(34, 183)
+        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.OnHoverImage = Nothing
+        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.Radius = 12
+        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(125, 28)
+        Me.GunaAdvenceButton2.TabIndex = 10
+        Me.GunaAdvenceButton2.Text = "Ingresar"
+        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaAdvenceButton4
+        '
+        Me.GunaAdvenceButton4.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton4.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton4.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton4.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaAdvenceButton4.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton4.CheckedImage = CType(resources.GetObject("GunaAdvenceButton4.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton4.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton4.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton4.Image = Nothing
+        Me.GunaAdvenceButton4.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton4.Location = New System.Drawing.Point(29, 181)
+        Me.GunaAdvenceButton4.Name = "GunaAdvenceButton4"
+        Me.GunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.GunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton4.OnHoverImage = Nothing
+        Me.GunaAdvenceButton4.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton4.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton4.Radius = 12
+        Me.GunaAdvenceButton4.Size = New System.Drawing.Size(125, 28)
+        Me.GunaAdvenceButton4.TabIndex = 12
+        Me.GunaAdvenceButton4.Text = "Ingresar"
+        Me.GunaAdvenceButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaAdvenceButton3
+        '
+        Me.GunaAdvenceButton3.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton3.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton3.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton3.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaAdvenceButton3.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton3.CheckedImage = CType(resources.GetObject("GunaAdvenceButton3.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton3.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton3.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton3.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton3.Image = Nothing
+        Me.GunaAdvenceButton3.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton3.Location = New System.Drawing.Point(33, 184)
+        Me.GunaAdvenceButton3.Name = "GunaAdvenceButton3"
+        Me.GunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.GunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton3.OnHoverImage = Nothing
+        Me.GunaAdvenceButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton3.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.Radius = 12
+        Me.GunaAdvenceButton3.Size = New System.Drawing.Size(125, 28)
+        Me.GunaAdvenceButton3.TabIndex = 11
+        Me.GunaAdvenceButton3.Text = "Ingresar"
+        Me.GunaAdvenceButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'IconPictureBox3
+        '
+        Me.IconPictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.IconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Users
+        Me.IconPictureBox3.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox3.Location = New System.Drawing.Point(757, 27)
+        Me.IconPictureBox3.Name = "IconPictureBox3"
+        Me.IconPictureBox3.Size = New System.Drawing.Size(37, 32)
+        Me.IconPictureBox3.TabIndex = 11
+        Me.IconPictureBox3.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(305, 74)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
         'IconPictureBox2
         '
@@ -401,7 +487,7 @@ Partial Class Form2
         Me.IconPictureBox2.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.IconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Bell
         Me.IconPictureBox2.IconColor = System.Drawing.Color.WhiteSmoke
-        Me.IconPictureBox2.Location = New System.Drawing.Point(758, 27)
+        Me.IconPictureBox2.Location = New System.Drawing.Point(707, 27)
         Me.IconPictureBox2.Name = "IconPictureBox2"
         Me.IconPictureBox2.Size = New System.Drawing.Size(32, 32)
         Me.IconPictureBox2.TabIndex = 4
@@ -441,71 +527,15 @@ Partial Class Form2
         Me.IconPictureBox1.TabIndex = 0
         Me.IconPictureBox1.TabStop = False
         '
-        'Button2
+        'GunaElipsePanel1
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(992, 1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(37, 43)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "_"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(1030, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(37, 43)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(379, 33)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(259, 32)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "Buenas tardes, Rodrigo"
-        '
-        'Panel9
-        '
-        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Panel9.Controls.Add(Me.Label9)
-        Me.Panel9.Controls.Add(Me.Panel10)
-        Me.Panel9.Location = New System.Drawing.Point(0, 80)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1070, 490)
-        Me.Panel9.TabIndex = 9
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Panel1)
-        Me.Panel10.Controls.Add(Me.Panel3)
-        Me.Panel10.Controls.Add(Me.Panel7)
-        Me.Panel10.Controls.Add(Me.Panel5)
-        Me.Panel10.Location = New System.Drawing.Point(31, 500)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(998, 306)
-        Me.Panel10.TabIndex = 8
-        '
-        'tEnter
-        '
-        Me.tEnter.Enabled = True
-        '
-        'GunaResize1
-        '
-        Me.GunaResize1.TargetForm = Me
+        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaElipsePanel1.Location = New System.Drawing.Point(729, 29)
+        Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
+        Me.GunaElipsePanel1.Radius = 5
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(10, 10)
+        Me.GunaElipsePanel1.TabIndex = 9
         '
         'Form2
         '
@@ -517,6 +547,7 @@ Partial Class Form2
         Me.Controls.Add(Me.pnlCerrar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -527,12 +558,13 @@ Partial Class Form2
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.pnlCerrar.ResumeLayout(False)
-        Me.pnlCerrar.PerformLayout()
-        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.Panel10.ResumeLayout(False)
+        CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -563,10 +595,12 @@ Partial Class Form2
     Friend WithEvents Panel9 As Panel
     Friend WithEvents tEnter As Timer
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label10 As Label
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaResize1 As Guna.UI.WinForms.GunaResize
     Friend WithEvents GunaAdvenceButton2 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaAdvenceButton3 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaAdvenceButton4 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents IconPictureBox3 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents GunaElipsePanel1 As Guna.UI.WinForms.GunaElipsePanel
 End Class

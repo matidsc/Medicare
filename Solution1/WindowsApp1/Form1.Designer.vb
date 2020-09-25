@@ -23,7 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.flowpnl = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'flowpnl
@@ -37,24 +36,12 @@ Partial Class Form1
         Me.flowpnl.Size = New System.Drawing.Size(854, 513)
         Me.flowpnl.TabIndex = 0
         '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(151, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(157, 62)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Buscar, modificar o eliminar usuarios registrados en la aplicación"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label1.Visible = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(981, 570)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.flowpnl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
@@ -65,5 +52,4 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents flowpnl As FlowLayoutPanel
-    Friend WithEvents Label1 As Label
 End Class

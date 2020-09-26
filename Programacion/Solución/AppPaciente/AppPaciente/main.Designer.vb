@@ -23,69 +23,61 @@ Partial Class main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ventana = New System.Windows.Forms.Panel()
-        Me.pnlTopBar = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.pnlTopBar.SuspendLayout()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel11.SuspendLayout()
         Me.SuspendLayout()
         '
         'ventana
         '
         Me.ventana.AutoSize = True
-        Me.ventana.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ventana.Location = New System.Drawing.Point(0, 0)
+        Me.ventana.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ventana.Location = New System.Drawing.Point(0, 35)
         Me.ventana.Name = "ventana"
-        Me.ventana.Size = New System.Drawing.Size(1206, 790)
+        Me.ventana.Size = New System.Drawing.Size(880, 570)
         Me.ventana.TabIndex = 0
         '
-        'pnlTopBar
+        'Panel11
         '
-        Me.pnlTopBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlTopBar.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlTopBar.Controls.Add(Me.Button1)
-        Me.pnlTopBar.Controls.Add(Me.Button2)
-        Me.pnlTopBar.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTopBar.Name = "pnlTopBar"
-        Me.pnlTopBar.Size = New System.Drawing.Size(1206, 24)
-        Me.pnlTopBar.TabIndex = 0
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.Panel11.Controls.Add(Me.Button3)
+        Me.Panel11.Location = New System.Drawing.Point(0, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(880, 35)
+        Me.Panel11.TabIndex = 10
         '
-        'Button1
+        'Button3
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(104, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(840, 0)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(40, 35)
+        Me.Button3.TabIndex = 0
+        Me.Button3.Text = "X"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1206, 790)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(880, 570)
         Me.Controls.Add(Me.ventana)
-        Me.Controls.Add(Me.pnlTopBar)
+        Me.Controls.Add(Me.Panel11)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.Name = "main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.pnlTopBar.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents pnlTopBar As Panel
     Public WithEvents ventana As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Public WithEvents Panel11 As Panel
 End Class

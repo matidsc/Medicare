@@ -42,10 +42,9 @@ Public Class Form1
     Private Sub CambioChat() Handles Me.Click
         Me.BackColor = Color.FromArgb(25, 34, 41)
         SetColor = True
-
         Datos_Temporales.idchat = lblidChat.Text
         Datos_Temporales.pacienteSelecionado = lblCed.Text
-        MsgBox(lblidChat.Text)
+        frmChat.Singleton.ReloadChat()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

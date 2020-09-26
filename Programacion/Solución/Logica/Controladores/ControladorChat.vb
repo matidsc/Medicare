@@ -45,6 +45,12 @@ Public Class ControladorChat
 
     End Function
 
+    Public Function RecargarChatNuevoMSJ(idMsj) As DataTable
+
+        Return ModeloChat.Singleton.RecargarChatNuevoMSJ(Datos_Temporales.idchat, idMsj)
+
+    End Function
+
     Public Function obtenerRespuesta()
 
         Return ModeloChat.Singleton.ObtenerRespuesta(Datos_Temporales.userLog)

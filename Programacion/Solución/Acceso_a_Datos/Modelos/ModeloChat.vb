@@ -98,11 +98,23 @@ Public Class ModeloChat
     ''' <summary>
     ''' Función encargada de refrescar los mensajes del chat.
     ''' </summary>
-    ''' <param name="idChat"></param>
+    ''' <param name="idChat">ID del chat en cuestión.</param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function RecargarChat(idChat As Int32) As DataTable
 
-        Dim consulta As String = "SELECT cedula, mensaje, fechaEnvio FROM mensaje WHERE idChat = " + idChat.ToString
+        Dim consulta As String = "SELECT cedula, mensaje, fechaEnvio, idMensaje FROM mensaje WHERE idChat = " + idChat.ToString
+
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+
+    ''' <summary>
+    ''' Función encargada de actualizar aquellos mensajes posteriores al último mensaje mostrado en pantalla.
+    ''' </summary>
+    ''' <param name="idChat">ID del chat en cuestión.</param>
+    ''' <param name="maxMsj">ID autoincremental del último mensaje recibido</param>
+    ''' <returns>DataTable cargado con los valores obtenidos.</returns>
+    Public Function RecargarChatNuevoMSJ(idChat As Int32, maxMsj As Int32) As DataTable
+        Dim consulta As String = "SELECT cedula, mensaje, fechaEnvio, idMensaje FROM mensaje WHERE idChat = " & idChat.ToString & " AND idMensaje > " & maxMsj.ToString & ";"
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function

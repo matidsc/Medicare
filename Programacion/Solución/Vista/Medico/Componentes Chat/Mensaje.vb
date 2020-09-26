@@ -1,9 +1,9 @@
 ﻿Public Class Mensaje
-
-    Public Sub New(esEmisor As Boolean, Mensaje As String, Fecha As Date, Perfil As Bitmap)
-
-
+    Public Property idMsj
+    Public Sub New(esEmisor As Boolean, Mensaje As String, Fecha As Date, idMsj As Int32, Perfil As Bitmap)
         InitializeComponent()
+
+        Me.idMsj = idMsj
 
         If (esEmisor) Then
 

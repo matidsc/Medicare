@@ -5,6 +5,21 @@ Public Class frmChat
     Private contChat As New ControladorChat
     Private firstUpdate As Boolean = False
     Private contPac As New ControladorPaciente
+    Public Property maxID As Int32
+    Private Shared instancia As frmChat
+
+    ''' <summary>
+    ''' Función encargada de devolver una instancia singleton de la clase.
+    ''' </summary>
+    ''' <returns>La instancia creada de la clase.</returns>
+    Public Shared Function Singleton() As frmChat
+
+        If instancia Is Nothing Then
+            instancia = New frmChat
+        End If
+
+        Return instancia
+    End Function
 
     Private Sub frmChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
@@ -32,7 +47,7 @@ Public Class frmChat
         End If
 
         Chat.AutoScroll = False
-
+        instancia = Me
         Chat.HorizontalScroll.Enabled = False
 
         FlowLayoutPanel1.HorizontalScroll.Enabled = False
@@ -47,7 +62,7 @@ Public Class frmChat
 
         InitializeComponent()
         Update()
-
+        instancia = Me
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
@@ -94,47 +109,41 @@ Public Class frmChat
 
 
     End Sub
-    Private Sub ReloadChat()
-
+    Public Sub ReloadChat()
+        maxID = 0
         Dim Mensajes As DataTable = contChat.recargarChat
+        Chat.SuspendLayout()
+        Chat.Controls.Clear()
+        GC.Collect()
 
-        If Mensajes.Rows.Count <> Chat.Controls.Count Then
+        For Each mensaje As DataRow In Mensajes.Rows
+            Dim esEmisor As Boolean = False
 
-            Chat.SuspendLayout()
-            Chat.Controls.Clear()
+            If mensaje.Item(0) = Datos_Temporales.userLog Then
+                esEmisor = True
+            End If
 
-            Dim MensajesASetear As New List(Of Mensaje)
+            Dim msj As New Mensaje(esEmisor, mensaje.Item(1), mensaje.Item(2), mensaje.Item(3), Nothing)
 
-            For Each mensaje As DataRow In Mensajes.Rows
+            If msj.idMsj > maxID Then
+                maxID = msj.idMsj
+            End If
+            msj.TopLevel = False
+            msj.Width = Chat.Width - 25
+            Chat.Controls.Add(msj)
+            msj.Show()
+        Next
 
-                Dim esEmisor As Boolean = False
-
-                If mensaje.Item(0) = Datos_Temporales.userLog Then
-                    esEmisor = True
-                End If
-
-                MensajesASetear.Add(New Mensaje(esEmisor, mensaje.Item(1), mensaje.Item(2), Nothing))
-
-            Next
-
-            For Each mensaje As Mensaje In MensajesASetear
-
-                mensaje.TopLevel = False
-                mensaje.Width = Chat.Width - 25
-                Chat.Controls.Add(mensaje)
-                mensaje.Show()
-
-            Next
-
-            Chat.ResumeLayout()
-            Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
-
-        End If
-
+        Chat.ResumeLayout()
+        Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        ReloadChat()
+        If Chat.Controls.Count = 0 Then
+            ReloadChat()
+        Else
+            ReloadSentMessage()
+        End If
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
@@ -181,13 +190,35 @@ Public Class frmChat
 
     End Function
 
+    Private Sub ReloadSentMessage()
+
+        Dim Mensajes As DataTable = contChat.RecargarChatNuevoMSJ(maxID)
+
+        For Each var As DataRow In Mensajes.Rows
+            Dim esEmisor As Boolean = False
+
+            If var.Item(0) = Datos_Temporales.userLog Then
+                esEmisor = True
+            End If
+
+            Dim msj As New Mensaje(esEmisor, var.Item(1), var.Item(2), var.Item(3), Nothing)
+            maxID = msj.idMsj
+            msj.TopLevel = False
+            msj.Width = Chat.Width - 25
+            Chat.Controls.Add(msj)
+            msj.Show()
+            Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
+            Chat.Update()
+        Next
+    End Sub
+
     Private Sub enviarMensaje()
 
         If txtMensaje.Text <> "" Then
 
             If contChat.enviarMensaje(Datos_Temporales.userLog, Datos_Temporales.idchat, txtMensaje.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) Then
                 lblEscriba.Focus()
-                ReloadChat()
+                ReloadSentMessage()
                 'Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
                 'CargarPanel(Listado)
 

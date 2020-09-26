@@ -172,10 +172,6 @@ Public Class frmBienvenidaPaciente
         Return False
     End Function
 
-    Private Sub pnlHistorial_Paint(sender As Object, e As PaintEventArgs) Handles pnlHistorial.Paint
-
-    End Sub
-
     Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlReanudar.MouseClick
         If chatComenzo Then
             Dim frm As New frmChat

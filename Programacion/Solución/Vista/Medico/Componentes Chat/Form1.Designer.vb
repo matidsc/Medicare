@@ -123,7 +123,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = " "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

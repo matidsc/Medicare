@@ -60,13 +60,7 @@ Public Class Form2
         End If
     End Sub
 
-    Private Sub Button1_MouseEnter(sender As Object, e As EventArgs) Handles Button1.MouseEnter
-        Button1.BackColor = Color.Red
-    End Sub
 
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.Transparent
-    End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -106,7 +100,7 @@ Public Class Form2
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
         Application.Exit()
     End Sub
 

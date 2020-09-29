@@ -44,6 +44,7 @@ Public Class Datos_Temporales
     ''' </summary>
     ''' <returns></returns>
     Public Shared Property horizontal As Int32
+
     Public Enum enumRol
         Paciente = 0
         Medico = 1

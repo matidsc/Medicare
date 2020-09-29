@@ -57,7 +57,7 @@ Public Class ModeloSintoma
     ''' </summary>
     ''' <returns>ArrayList con las filas encontradas en la consulta.</returns>
     Public Function TraerSintomas() As ArrayList
-        Return ModeloConsultas.Singleton.ConsultaArray("SELECT nombre FROM sintoma")
+        Return ModeloConsultas.Singleton.ConsultaArray("SELECT nombre FROM sintoma WHERE bajalogica = 0")
     End Function
 
     ''' <summary>
@@ -94,7 +94,7 @@ Public Class ModeloSintoma
     ''' </summary>
     ''' <returns>DataTable con los datos de los síntomas.</returns>
     Public Function ListarSintomas() As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion FROM sintoma")
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion FROM sintoma WHERE bajalogica = 0")
     End Function
 
     ''' <summary>
@@ -105,11 +105,7 @@ Public Class ModeloSintoma
     Public Function EliminarSintomas(ali As ArrayList) As Boolean
 
         Dim valores As String
-        Dim consulta As String = "
-                                DELETE patologia_contiene_sintoma , sintoma  
-                                FROM patologia_contiene_sintoma  
-                                INNER JOIN sintoma  
-                                    WHERE patologia_contiene_sintoma.idSintoma = sintoma.idSintoma AND sintoma.nombre IN ("
+        Dim consulta As String = "UPDATE sintoma SET bajalogica = 1 WHERE nombre IN ("
 
         For i = 0 To ali.Count - 1
             valores = valores & "'" & ali.Item(i) & "'" & ","

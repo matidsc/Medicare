@@ -2,6 +2,15 @@
 Public Class Form1
 
     Dim SetColor As Boolean = False
+    Public Shared instancia As Form1
+
+    Public Shared Function Singleton() As Form1
+        If instancia Is Nothing Then
+            instancia = New Form1
+        End If
+        Return instancia
+    End Function
+
     Public Sub New(nombre As String, mensaje As String, fecha As String, idChat As Int32, cedula As String)
 
         ' Esta llamada es exigida por el diseñador.
@@ -13,6 +22,14 @@ Public Class Form1
         lblMensaje.Font = New Drawing.Font("Segoe UI", 14, FontStyle.Regular)
         lblMensaje.ForeColor = Color.FromArgb(210, 212, 213)
         lblCed.Text = cedula
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -37,17 +54,19 @@ Public Class Form1
         If SetColor = False Then
             Me.BackColor = Color.FromArgb(25, 34, 41)
         End If
-
     End Sub
     Private Sub CambioChat() Handles Me.Click
-        Me.BackColor = Color.FromArgb(25, 34, 41)
-        SetColor = True
+
+        'If Not Datos_Temporales.color Then
+        '    Me.BackColor = Color.FromArgb(25, 34, 41)
+        '    Datos_Temporales.color = True
+        'Else
+        '    Me.BackColor = Color.FromArgb(31, 39, 49)
+        '    Datos_Temporales.color = False
+        'End If
+
         Datos_Temporales.idchat = lblidChat.Text
         Datos_Temporales.pacienteSelecionado = lblCed.Text
-        frmChat.Singleton.ReloadChat()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

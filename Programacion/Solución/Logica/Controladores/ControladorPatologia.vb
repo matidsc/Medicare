@@ -54,7 +54,7 @@ Public Class ControladorPatologia
 
     Public Function obtenerPatologia(sintomas As ArrayList) As DataTable
 
-        Return ModeloPatologia.Singleton.obtenerDiagnostico(sintomas)
+        Return ModeloPatologia.Singleton.ObtenerDiagnostico(sintomas)
 
     End Function
 

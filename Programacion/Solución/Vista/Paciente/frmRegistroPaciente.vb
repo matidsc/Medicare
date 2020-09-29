@@ -41,18 +41,35 @@ Public Class frmRegistroPaciente
                                                sexo,
                                                txtFecNac.Text)
 
-                                    If pac.registrar() Then
+                                    If pac.VerificarBaja(txtCI.Text) Then
 
-                                        MsgBox("Paciente registrado, debe esperar a ser habilitiado")
-                                        Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                txtPApe,
-                                                txtSApe, txtSNom,
-                                                txtMail, dgvTelefonos, aliTel)
-                                        txtFecNac.Clear()
-                                        cbM.Checked = True
+                                        If pac.registrar() Then
+
+                                            MsgBox("Ha sido ingresado con éxito, debe esperar a ser habilitiado")
+                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                                    txtPApe,
+                                                    txtSApe, txtSNom,
+                                                    txtMail, dgvTelefonos, aliTel)
+                                            txtFecNac.Clear()
+                                            cbM.Checked = True
+
+                                        Else
+                                            MsgBox("El paciente ya fue registrado")
+                                        End If
 
                                     Else
-                                        MsgBox("El paciente ya fue registrado")
+                                        Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                        If respuesta = vbYes Then
+                                            pac.ReingresarUsuario(txtCI.Text)
+                                            MsgBox("Ha sido reingresado")
+                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                                    txtPApe,
+                                                    txtSApe, txtSNom,
+                                                    txtMail, dgvTelefonos, aliTel)
+                                            txtFecNac.Clear()
+                                            cbM.Checked = True
+                                        End If
 
                                     End If
 

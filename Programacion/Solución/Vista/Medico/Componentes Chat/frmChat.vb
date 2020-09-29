@@ -47,7 +47,7 @@ Public Class frmChat
         End If
 
         Chat.AutoScroll = False
-        instancia = Me
+
         Chat.HorizontalScroll.Enabled = False
 
         FlowLayoutPanel1.HorizontalScroll.Enabled = False
@@ -66,12 +66,11 @@ Public Class frmChat
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
-
     End Sub
-
+    Public Function GetInstancia() As frmChat
+        Return instancia
+    End Function
     Private Sub CargarPanel(Listado As DataTable)
-
-
 
         FlowLayoutPanel1.SuspendLayout()
         FlowLayoutPanel1.Controls.Clear()
@@ -106,15 +105,13 @@ Public Class frmChat
 
         FlowLayoutPanel1.ResumeLayout()
 
-
-
     End Sub
     Public Sub ReloadChat()
+
         maxID = 0
         Dim Mensajes As DataTable = contChat.recargarChat
         Chat.SuspendLayout()
         Chat.Controls.Clear()
-        GC.Collect()
 
         For Each mensaje As DataRow In Mensajes.Rows
             Dim esEmisor As Boolean = False
@@ -149,7 +146,7 @@ Public Class frmChat
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
 
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
-            frmBienvenidaPaciente.Show()
+            Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
             Me.Dispose()
 
         Else
@@ -444,13 +441,6 @@ Public Class frmChat
 
     'End Sub
 
-    Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
-
-    End Sub
-
-    Private Sub dgvMisChats_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMisChats.CellContentClick
-
-    End Sub
     'Private Shared thread As New Threading.Thread(New Threading.ThreadStart(AddressOf cargarPanel))
     Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
         'thread.Start()

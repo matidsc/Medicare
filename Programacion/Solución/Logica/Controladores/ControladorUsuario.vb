@@ -49,9 +49,19 @@ Public Class ControladorUsuario
 
     End Function
 
-    Public Function verificarRol(usuario As String)
+    Public Function verificarRol(usuario As String) As Boolean
 
         Return ModeloUsuario.Singleton.verificarRol(usuario, Datos_Temporales.rol)
+
+    End Function
+
+    Public Function VerificarBaja(cedula As String)
+        Return ModeloUsuario.Singleton.VerificarBaja(cedula)
+    End Function
+
+    Public Function ReingresarUsuario(cedula As String) As Boolean
+
+        Return ModeloUsuario.Singleton.ReingresarUsuario(cedula)
 
     End Function
 

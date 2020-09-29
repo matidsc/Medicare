@@ -11,6 +11,7 @@ Public Class ControladorChat
         If id <> 0 Then
 
             Datos_Temporales.idchat = id
+            MsgBox(id)
             Return id
 
         End If
@@ -131,6 +132,10 @@ Public Class ControladorChat
 
     Public Function GetMensaje(idChat As Int32) As DataTable
         Return ModeloChat.Singleton.GetMensaje(idChat)
+    End Function
+
+    Public Function Notificacion() As DataTable
+        Return ModeloChat.Singleton.Notificacion(Datos_Temporales.userLog)
     End Function
 
 End Class

@@ -34,11 +34,37 @@ Public Class frmRegistrarMedico
                             txtSegundoApellido.Text,
                             txtEspec.Text)
 
-                    If med.registrar() Then
-                        MsgBox("Médico registrado con éxito")
+                    If med.VerificarBaja(txtCed.Text) Then
+
+                        If med.registrar() Then
+                            MsgBox("Médico registrado con éxito")
+                            txtCed.Clear()
+                            txtPrimerNombre.Clear()
+                            txtSegundoApellido.Clear()
+                            txtSegundoNombre.Clear()
+                            txtPrimerNombre.Clear()
+                            txtPrimerApellido.Clear()
+                            txtEspec.Clear()
+                        Else
+                            MsgBox("El médico ya fue registrado")
+                        End If
+
                     Else
-                        MsgBox("El médico ya fue registrado")
+                        Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                        If respuesta = vbYes Then
+                            med.ReingresarUsuario(txtCed.Text)
+                            txtCed.Clear()
+                            txtPrimerNombre.Clear()
+                            txtSegundoApellido.Clear()
+                            txtSegundoNombre.Clear()
+                            txtPrimerNombre.Clear()
+                            txtPrimerApellido.Clear()
+                            txtEspec.Clear()
+                        End If
+
                     End If
+
 
                 End If
             End If

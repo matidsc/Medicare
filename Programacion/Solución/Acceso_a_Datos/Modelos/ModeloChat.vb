@@ -26,15 +26,9 @@ Public Class ModeloChat
     ''' <returns>Identificador del chat creado</returns>
     Public Function CrearChat()
 
-        Dim consulta As String = "INSERT INTO chat (finalizado) VALUES (?)"
-        Dim id As String = "SELECT idChat FROM chat ORDER BY idChat DESC LIMIT 1" ''cambiar esto
-        Dim parametros As New List(Of OdbcParameter)
+        Dim consulta As String = "CALL CrearChat"
 
-        parametros.Add(New OdbcParameter("finalizado", 0))
-
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
-            Return CType(ModeloConsultas.Singleton.ConsultaCampo(id), Int32)
-        End If
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int32)
 
     End Function
 
@@ -67,8 +61,8 @@ Public Class ModeloChat
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function ListarChat(usuario As String) As DataTable
 
-        Dim consulta As String = "SELECT DISTINCT u.cedula, u.idChat FROM chat c, usuario_entra_chat u, patologia p, paciente_obtiene_diagnostico up, usuario us                      
-                                  WHERE u.cedula = up.cedulaPaciente AND p.idPatologia = up.idPatologia AND c.idChat = u.idChat AND us.cedula = u.cedula AND finalizado = 0 AND u.idChat NOT IN
+        Dim consulta As String = "SELECT DISTINCT u.cedula, u.idChat FROM salachat c, usuario_entra_chat u, patologia p, paciente_obtiene_diagnostico up, usuario us                      
+                                  WHERE u.cedula = up.cedulaPaciente AND p.idPatologia = up.idPatologia AND p.bajalogica = 0 AND c.idChat = u.idChat AND us.cedula = u.cedula AND finalizado = 0 AND u.idChat NOT IN
                                   (SELECT idChat FROM usuario_entra_chat where cedula = " + usuario + ")" + "ORDER BY prioridad ASC "
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
@@ -138,7 +132,7 @@ Public Class ModeloChat
     ''' <returns>True si la sesión fue finalizada.</returns>
     Public Function FinalizarChat(idChat As String) As Boolean
 
-        Dim consulta As String = "UPDATE chat SET finalizado = 1 WHERE idChat = " + idChat
+        Dim consulta As String = "UPDATE salachat SET finalizado = 1 WHERE idChat = " + idChat
 
         Return ModeloConsultas.Singleton.InsertarSinParametros(consulta)
     End Function
@@ -166,7 +160,7 @@ Public Class ModeloChat
     Public Function MisChats(cedula As String, finalizado As Byte)
 
         Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe 
-                                   FROM usuario u, paciente p, usuario_entra_chat uc, chat c
+                                   FROM usuario u, paciente p, usuario_entra_chat uc, salachat c
                                    WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = " & finalizado & " 
                                    AND c.idChat in 
 	                                   (
@@ -206,6 +200,17 @@ Public Class ModeloChat
         Dim consulta As String = "SELECT correo FROM usuario WHERE cedula = " + cedula
 
         Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)
+    End Function
+
+    Public Function Notificacion(cedula As String) As DataTable
+
+        Dim consulta As String = "select cedula from mensaje where idChat in 
+	                                (
+		                                select idChat from usuario_entra_chat where cedula = " & cedula & "
+	                                ) 
+                                  order by idMensaje desc"
+
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 
 End Class

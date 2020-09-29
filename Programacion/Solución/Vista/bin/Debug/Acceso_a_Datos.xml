@@ -420,7 +420,7 @@ Clase encargada de generar la conexión con la base de datos.
  <param name="ali"></param>
  <returns>True si el delete fue realizado.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloPatologia.obtenerDiagnostico(System.Collections.ArrayList)">
+<member name="M:Acceso_a_Datos.ModeloPatologia.ObtenerDiagnostico(System.Collections.ArrayList)">
  <summary>
  Función encargada de obtener un diagnóstico basado en los síntomas del paciente.
  </summary>

@@ -172,6 +172,30 @@ Public Class frmBienvenidaPaciente
         Return False
     End Function
 
+    Dim cantNotificacion As Integer = 0
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+
+        Dim tabla As DataTable = contChat.Notificacion
+
+        For Each row As DataRow In tabla.Rows
+            If row.Item(0) <> Datos_Temporales.userLog Then
+                cantNotificacion += 1
+            Else
+                Exit For
+            End If
+        Next
+
+        If cantNotificacion > 0 Then
+            notificacion.Text = cantNotificacion
+            ''Acá se pone el circulito con el número
+        Else
+            ''Acá se saca el circulito
+        End If
+
+        cantNotificacion = 0
+
+    End Sub
+
     Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlReanudar.MouseClick
         If chatComenzo Then
             Dim frm As New frmChat

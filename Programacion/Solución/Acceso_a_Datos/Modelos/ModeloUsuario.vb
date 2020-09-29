@@ -29,7 +29,7 @@ Public Class ModeloUsuario
         Conexion.Singleton.cerrarConexion()
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
 
-        If ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE cedula = " & usuario & " and contrasena = '" & pass & "'") = 1 Then
+        If ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE cedula = " & usuario & " and contrasena = '" & pass & "' AND bajalogica = 0") = 1 Then
             Return True
         End If
 
@@ -42,7 +42,7 @@ Public Class ModeloUsuario
     ''' <param name="usuario"></param>
     ''' <param name="rol"></param>
     ''' <returns>True si el rol es correcto.</returns>
-    Public Function verificarRol(usuario As String, rol As Int16)
+    Public Function verificarRol(usuario As String, rol As Int16) As Boolean
         Select Case rol
             Case 0
                 If CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM paciente WHERE cedula = " & usuario), Int16) = 1 Then
@@ -59,6 +59,28 @@ Public Class ModeloUsuario
                     Return True
                 End If
         End Select
+
+        Return False
+    End Function
+
+    Public Function VerificarBaja(cedula As String) As Boolean
+
+        Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
+
+        If ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE bajalogica = 1 AND cedula = " & cedula) = 0 Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
+    Public Function ReingresarUsuario(cedula As String) As Boolean
+
+        Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
+
+        If ModeloConsultas.Singleton.InsertarSinParametros("UPDATE usuario SET bajalogica = 0 WHERE cedula = " & cedula) Then
+            Return True
+        End If
 
         Return False
     End Function

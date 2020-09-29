@@ -56,6 +56,9 @@ Public Class Principal
         ElseIf AppGestion.main.Singleton.GetInstancia IsNot Nothing Then
             AppGestion.main.Singleton.cambiarTamaño()
         End If
+        If AppMedico.main.instancia IsNot Nothing Then
+            AppMedico.main.Singleton.cambiarTamaño()
+        End If
 
     End Sub
 

@@ -27,5 +27,12 @@ WindowsApp1
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="M:WindowsApp1.frmLogin.GunaTextBox1_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Para sacar el ruido sidoso cuando das enter
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 </members>
 </doc>

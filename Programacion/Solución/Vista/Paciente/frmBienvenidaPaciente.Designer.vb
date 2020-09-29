@@ -50,6 +50,8 @@ Partial Class frmBienvenidaPaciente
         Me.lblReanuda = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.notificacion = New System.Windows.Forms.Label()
         Me.pnlIngresarSintomas.SuspendLayout()
         Me.pnlHistorial.SuspendLayout()
         Me.pnlPerfil.SuspendLayout()
@@ -62,6 +64,7 @@ Partial Class frmBienvenidaPaciente
         'pnlIngresarSintomas
         '
         Me.pnlIngresarSintomas.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.pnlIngresarSintomas.Controls.Add(Me.notificacion)
         Me.pnlIngresarSintomas.Controls.Add(Me.pnlDecIngresarSintomas)
         Me.pnlIngresarSintomas.Controls.Add(Me.lblDescIngresarSintomas)
         Me.pnlIngresarSintomas.Controls.Add(Me.lblIngresarSintomas)
@@ -338,6 +341,20 @@ Partial Class frmBienvenidaPaciente
         Me.pnlInstancia.Size = New System.Drawing.Size(800, 507)
         Me.pnlInstancia.TabIndex = 7
         '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 1000
+        '
+        'notificacion
+        '
+        Me.notificacion.AutoSize = True
+        Me.notificacion.Location = New System.Drawing.Point(401, 27)
+        Me.notificacion.Name = "notificacion"
+        Me.notificacion.Size = New System.Drawing.Size(39, 13)
+        Me.notificacion.TabIndex = 3
+        Me.notificacion.Text = "Label1"
+        '
         'frmBienvenidaPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -394,4 +411,6 @@ Partial Class frmBienvenidaPaciente
     Friend WithEvents lblReanuda As Label
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents pnlInstancia As Panel
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents notificacion As Label
 End Class

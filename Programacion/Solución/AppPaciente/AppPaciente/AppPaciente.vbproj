@@ -49,8 +49,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Downloads\PruebasDesign-master\Solution1\WindowsApp1\bin\Debug\Guna.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Logica">
-      <HintPath>..\..\Logica\bin\Debug\Logica.dll</HintPath>
+      <HintPath>..\..\Vista\bin\Debug\Logica.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>..\..\..\..\..\..\Escritorio\Programacion\Solución\Vista\bin\Debug\MaterialSkin.dll</HintPath>

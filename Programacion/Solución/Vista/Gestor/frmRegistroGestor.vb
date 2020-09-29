@@ -33,12 +33,24 @@ Public Class frmRegistroGestor
                                                  txtSApe.Text.ToUpper,
                                                  aliTel,
                                                  txtMail.Text)
-                            If ges.registrar() Then
-                                MsgBox("Gestor registrado con éxito")
-                                Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
 
+                            If ges.VerificarBaja(txtCI.Text) Then
+
+                                If ges.registrar() Then
+                                    MsgBox("Gestor registrado con éxito")
+                                    Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
+
+                                Else
+                                    MsgBox("El gestor ya fue registrado")
+                                End If
                             Else
-                                MsgBox("El gestor ya fue registrado")
+                                Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                If respuesta = vbYes Then
+                                    ges.ReingresarUsuario(txtCI.Text)
+                                    MsgBox("Ha sido reingresado")
+                                    Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
+                                End If
                             End If
 
                         End If

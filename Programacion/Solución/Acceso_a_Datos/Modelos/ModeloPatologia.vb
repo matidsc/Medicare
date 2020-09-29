@@ -83,7 +83,7 @@ Public Class ModeloPatologia
     ''' </summary>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function ListarPatologias() As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion, recomendacion AS Recomendacion, prioridad AS Prioridad FROM patologia")
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion, recomendacion AS Recomendacion, prioridad AS Prioridad FROM patologia WHERE bajalogica = 0")
     End Function
 
     ''' <summary>
@@ -94,13 +94,7 @@ Public Class ModeloPatologia
     Public Function EliminarPatologias(ali As ArrayList) As Boolean
 
         Dim valores As String
-        Dim consulta As String = "
-                                DELETE patologia_contiene_sintoma , patologia  
-                                FROM patologia_contiene_sintoma  
-                                INNER JOIN patologia  
-                                    WHERE patologia_contiene_sintoma.idPatologia = patologia.idPatologia AND
-                                    patologia_contiene_sintoma.idPatologia = patologia.idPatologia
-                                    AND patologia.nombre IN ("
+        Dim consulta As String = "UPDATE patologia SET bajalogica = 1 WHERE nombre IN ("
 
         For i = 0 To ali.Count - 1
             valores = valores & "'" & ali.Item(i) & "'" & ","
@@ -120,14 +114,14 @@ Public Class ModeloPatologia
     ''' </summary>
     ''' <param name="sintomas"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
-    Public Function obtenerDiagnostico(sintomas As ArrayList) As DataTable
+    Public Function ObtenerDiagnostico(sintomas As ArrayList) As DataTable
 
         Dim parametros As String
         Dim consulta As String = "
                                 SELECT p.nombre
                                 FROM patologia p, sintoma s, patologia_contiene_sintoma ps
-                                WHERE p.idPatologia = ps.idPatologia and s.idSintoma = ps.idSintoma 
-                                and s.nombre IN ("
+                                WHERE p.idPatologia = ps.idPatologia AND s.idSintoma = ps.idSintoma AND p.bajalogica = 0 
+                                AND s.nombre IN ("
 
         For i As Integer = 0 To sintomas.Count - 1
             parametros = parametros & "'" & sintomas.Item(i) & "'" & ","

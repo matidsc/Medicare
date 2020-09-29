@@ -142,7 +142,7 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function GetDatosPaciente(cedula As String) As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo from usuario u, paciente p WHERE u.cedula=p.cedula AND u.cedula= " & cedula)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 ANDu.cedula= " & cedula)
     End Function
 
     ''' <summary>
@@ -150,8 +150,8 @@ Public Class ModeloPaciente
     ''' </summary>
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
-    Public Function GetPatologiasCronicas(cedula As String) As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT patologia FROM pacientePatologia WHERE cedula = " & cedula)
+    Public Function GetPatologiasCronicas(cedula As String) As DataTable ''cambiar segun mer
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT patologia FROM paciente_selecciona_patologia WHERE cedula = " & cedula)
     End Function
 
     ''' <summary>

@@ -232,8 +232,7 @@ Partial Class frmLogin
         '
         'pnlContenedor
         '
-        Me.pnlContenedor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlContenedor.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pnlContenedor.Controls.Add(Me.lblApp)
         Me.pnlContenedor.Controls.Add(Me.lblEsAfiliado)
         Me.pnlContenedor.Controls.Add(Me.picBytesoft)

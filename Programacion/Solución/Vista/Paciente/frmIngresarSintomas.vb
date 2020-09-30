@@ -6,9 +6,14 @@ Public Class frmIngresarSintomas
     Dim sourcedgv As String
     Dim dv As New DataView
 
+    Dim ScrollHelperSeleccionados As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+    Dim ScrollHelperTodos As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        Me.btnObtenerDiagnostico.AutoSize = False
+        ScrollHelperSeleccionados = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scrollSeleccionados, True)
+        ScrollHelperTodos = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodos, scrollTodos, True)
+
         'Principal.Singleton.roundedCorners(Me)
 
         Dim sintomas As New ControladorSintoma
@@ -92,8 +97,25 @@ Public Class frmIngresarSintomas
         dropItem(dgvSintomasSeleccionados, dgvTodos, e)
     End Sub
 
-    Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles btnObtenerDiagnostico.Click
+    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+        Me.pnlContenedor.Show()
+    End Sub
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs)
+        'dv.RowFilter = String.Format("Name Like '%{0}%'", txtBuscar.Text)
+        'bs.DataSource = dgvTodos.DataSource
+        'dt.DefaultView.RowFilter = String.Format(" '{0}'", txtBuscar.Text)
+        'bs.Filter = "cedula like '%" & txtBuscar.Text & "%'"
+
+        'dgvTodos.DataSource = bs
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+        Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnObtenerDiag_Click(sender As Object, e As EventArgs) Handles btnObtenerDiag.Click
         Dim misSintomas As New ArrayList
         Dim pat As New ControladorPatologia
         Dim sin As New ControladorSintoma
@@ -151,24 +173,10 @@ Public Class frmIngresarSintomas
         Else
             MsgBox("No seleccionó ningún síntoma")
         End If
-
     End Sub
 
-    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
-        Me.pnlContenedor.Show()
-    End Sub
-
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        'dv.RowFilter = String.Format("Name Like '%{0}%'", txtBuscar.Text)
-        'bs.DataSource = dgvTodos.DataSource
-        'dt.DefaultView.RowFilter = String.Format(" '{0}'", txtBuscar.Text)
-        'bs.Filter = "cedula like '%" & txtBuscar.Text & "%'"
-
-        'dgvTodos.DataSource = bs
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
-        Me.Dispose()
+    Private Sub dgvTodos_Paint(sender As Object, e As PaintEventArgs) Handles dgvTodos.Paint, dgvSintomasSeleccionados.Paint
+        ScrollHelperSeleccionados.UpdateScrollBar()
+        ScrollHelperTodos.UpdateScrollBar()
     End Sub
 End Class

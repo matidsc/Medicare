@@ -23,222 +23,60 @@ Partial Class frmBienvenidaPaciente
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.pnlIngresarSintomas = New System.Windows.Forms.Panel()
-        Me.pnlDecIngresarSintomas = New System.Windows.Forms.Panel()
-        Me.lblDescIngresarSintomas = New System.Windows.Forms.Label()
-        Me.lblIngresarSintomas = New System.Windows.Forms.Label()
-        Me.pnlHistorial = New System.Windows.Forms.Panel()
-        Me.pnlDecHistorial = New System.Windows.Forms.Panel()
-        Me.lblDescHistorial = New System.Windows.Forms.Label()
-        Me.lblHistorial = New System.Windows.Forms.Label()
-        Me.pnlPerfil = New System.Windows.Forms.Panel()
-        Me.pnlDescPerfil = New System.Windows.Forms.Panel()
-        Me.lblDescPerfil = New System.Windows.Forms.Label()
-        Me.lblPerfil = New System.Windows.Forms.Label()
-        Me.pnlAyuda = New System.Windows.Forms.Panel()
-        Me.pnlDescAyuda = New System.Windows.Forms.Panel()
-        Me.lblDescAyuda = New System.Windows.Forms.Label()
-        Me.lblAyuda = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBienvenidaPaciente))
         Me.pnlTitulo = New System.Windows.Forms.Panel()
+        Me.notificacion = New System.Windows.Forms.Label()
         Me.lblBienvenido = New System.Windows.Forms.Label()
         Me.btn1 = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.pnlReanudar = New System.Windows.Forms.Panel()
-        Me.pnlDecReanudar = New System.Windows.Forms.Panel()
-        Me.lblDescReanudar = New System.Windows.Forms.Label()
-        Me.lblReanuda = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnIngresarSintomas = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.GunaAdvenceButton3 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.notificacion = New System.Windows.Forms.Label()
-        Me.pnlIngresarSintomas.SuspendLayout()
-        Me.pnlHistorial.SuspendLayout()
-        Me.pnlPerfil.SuspendLayout()
-        Me.pnlAyuda.SuspendLayout()
         Me.pnlTitulo.SuspendLayout()
-        Me.pnlReanudar.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'pnlIngresarSintomas
-        '
-        Me.pnlIngresarSintomas.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.pnlIngresarSintomas.Controls.Add(Me.notificacion)
-        Me.pnlIngresarSintomas.Controls.Add(Me.pnlDecIngresarSintomas)
-        Me.pnlIngresarSintomas.Controls.Add(Me.lblDescIngresarSintomas)
-        Me.pnlIngresarSintomas.Controls.Add(Me.lblIngresarSintomas)
-        Me.pnlIngresarSintomas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlIngresarSintomas.Location = New System.Drawing.Point(48, 120)
-        Me.pnlIngresarSintomas.Name = "pnlIngresarSintomas"
-        Me.pnlIngresarSintomas.Size = New System.Drawing.Size(529, 146)
-        Me.pnlIngresarSintomas.TabIndex = 0
-        '
-        'pnlDecIngresarSintomas
-        '
-        Me.pnlDecIngresarSintomas.BackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(97, Byte), Integer))
-        Me.pnlDecIngresarSintomas.Location = New System.Drawing.Point(0, 0)
-        Me.pnlDecIngresarSintomas.Name = "pnlDecIngresarSintomas"
-        Me.pnlDecIngresarSintomas.Size = New System.Drawing.Size(529, 10)
-        Me.pnlDecIngresarSintomas.TabIndex = 2
-        '
-        'lblDescIngresarSintomas
-        '
-        Me.lblDescIngresarSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblDescIngresarSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescIngresarSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblDescIngresarSintomas.Location = New System.Drawing.Point(25, 85)
-        Me.lblDescIngresarSintomas.Name = "lblDescIngresarSintomas"
-        Me.lblDescIngresarSintomas.Size = New System.Drawing.Size(480, 24)
-        Me.lblDescIngresarSintomas.TabIndex = 1
-        Me.lblDescIngresarSintomas.Text = "Seleccione síntomas y obtenga un diagnóstico primario"
-        '
-        'lblIngresarSintomas
-        '
-        Me.lblIngresarSintomas.AutoSize = True
-        Me.lblIngresarSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIngresarSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblIngresarSintomas.Location = New System.Drawing.Point(22, 27)
-        Me.lblIngresarSintomas.Name = "lblIngresarSintomas"
-        Me.lblIngresarSintomas.Size = New System.Drawing.Size(277, 37)
-        Me.lblIngresarSintomas.TabIndex = 0
-        Me.lblIngresarSintomas.Text = "Ingresar Síntomas"
-        '
-        'pnlHistorial
-        '
-        Me.pnlHistorial.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.pnlHistorial.Controls.Add(Me.pnlDecHistorial)
-        Me.pnlHistorial.Controls.Add(Me.lblDescHistorial)
-        Me.pnlHistorial.Controls.Add(Me.lblHistorial)
-        Me.pnlHistorial.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlHistorial.Location = New System.Drawing.Point(48, 289)
-        Me.pnlHistorial.Name = "pnlHistorial"
-        Me.pnlHistorial.Size = New System.Drawing.Size(255, 193)
-        Me.pnlHistorial.TabIndex = 2
-        '
-        'pnlDecHistorial
-        '
-        Me.pnlDecHistorial.BackColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.pnlDecHistorial.Location = New System.Drawing.Point(0, 0)
-        Me.pnlDecHistorial.Name = "pnlDecHistorial"
-        Me.pnlDecHistorial.Size = New System.Drawing.Size(255, 10)
-        Me.pnlDecHistorial.TabIndex = 4
-        '
-        'lblDescHistorial
-        '
-        Me.lblDescHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblDescHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescHistorial.ForeColor = System.Drawing.Color.White
-        Me.lblDescHistorial.Location = New System.Drawing.Point(25, 91)
-        Me.lblDescHistorial.Name = "lblDescHistorial"
-        Me.lblDescHistorial.Size = New System.Drawing.Size(178, 92)
-        Me.lblDescHistorial.TabIndex = 1
-        Me.lblDescHistorial.Text = "Vea su historial completo dentro de la aplicación"
-        '
-        'lblHistorial
-        '
-        Me.lblHistorial.AutoSize = True
-        Me.lblHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHistorial.ForeColor = System.Drawing.Color.White
-        Me.lblHistorial.Location = New System.Drawing.Point(22, 33)
-        Me.lblHistorial.Name = "lblHistorial"
-        Me.lblHistorial.Size = New System.Drawing.Size(175, 37)
-        Me.lblHistorial.TabIndex = 0
-        Me.lblHistorial.Text = "Mi Historial"
-        '
-        'pnlPerfil
-        '
-        Me.pnlPerfil.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.pnlPerfil.Controls.Add(Me.pnlDescPerfil)
-        Me.pnlPerfil.Controls.Add(Me.lblDescPerfil)
-        Me.pnlPerfil.Controls.Add(Me.lblPerfil)
-        Me.pnlPerfil.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlPerfil.Location = New System.Drawing.Point(593, 289)
-        Me.pnlPerfil.Name = "pnlPerfil"
-        Me.pnlPerfil.Size = New System.Drawing.Size(162, 193)
-        Me.pnlPerfil.TabIndex = 4
-        '
-        'pnlDescPerfil
-        '
-        Me.pnlDescPerfil.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(119, Byte), Integer))
-        Me.pnlDescPerfil.Location = New System.Drawing.Point(0, 0)
-        Me.pnlDescPerfil.Name = "pnlDescPerfil"
-        Me.pnlDescPerfil.Size = New System.Drawing.Size(162, 10)
-        Me.pnlDescPerfil.TabIndex = 6
-        '
-        'lblDescPerfil
-        '
-        Me.lblDescPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblDescPerfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescPerfil.ForeColor = System.Drawing.Color.White
-        Me.lblDescPerfil.Location = New System.Drawing.Point(10, 91)
-        Me.lblDescPerfil.Name = "lblDescPerfil"
-        Me.lblDescPerfil.Size = New System.Drawing.Size(141, 92)
-        Me.lblDescPerfil.TabIndex = 1
-        Me.lblDescPerfil.Text = "Ver y configurar Perfil"
-        '
-        'lblPerfil
-        '
-        Me.lblPerfil.AutoSize = True
-        Me.lblPerfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPerfil.ForeColor = System.Drawing.Color.White
-        Me.lblPerfil.Location = New System.Drawing.Point(3, 33)
-        Me.lblPerfil.Name = "lblPerfil"
-        Me.lblPerfil.Size = New System.Drawing.Size(131, 37)
-        Me.lblPerfil.TabIndex = 0
-        Me.lblPerfil.Text = "Mi Perfil"
-        '
-        'pnlAyuda
-        '
-        Me.pnlAyuda.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.pnlAyuda.Controls.Add(Me.pnlDescAyuda)
-        Me.pnlAyuda.Controls.Add(Me.lblDescAyuda)
-        Me.pnlAyuda.Controls.Add(Me.lblAyuda)
-        Me.pnlAyuda.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlAyuda.Location = New System.Drawing.Point(593, 120)
-        Me.pnlAyuda.Name = "pnlAyuda"
-        Me.pnlAyuda.Size = New System.Drawing.Size(162, 146)
-        Me.pnlAyuda.TabIndex = 5
-        '
-        'pnlDescAyuda
-        '
-        Me.pnlDescAyuda.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.pnlDescAyuda.Location = New System.Drawing.Point(0, 0)
-        Me.pnlDescAyuda.Name = "pnlDescAyuda"
-        Me.pnlDescAyuda.Size = New System.Drawing.Size(162, 10)
-        Me.pnlDescAyuda.TabIndex = 3
-        '
-        'lblDescAyuda
-        '
-        Me.lblDescAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblDescAyuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescAyuda.ForeColor = System.Drawing.Color.White
-        Me.lblDescAyuda.Location = New System.Drawing.Point(14, 80)
-        Me.lblDescAyuda.Name = "lblDescAyuda"
-        Me.lblDescAyuda.Size = New System.Drawing.Size(137, 53)
-        Me.lblDescAyuda.TabIndex = 1
-        Me.lblDescAyuda.Text = "Cómo usar la aplicación"
-        '
-        'lblAyuda
-        '
-        Me.lblAyuda.AutoSize = True
-        Me.lblAyuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAyuda.ForeColor = System.Drawing.Color.White
-        Me.lblAyuda.Location = New System.Drawing.Point(11, 27)
-        Me.lblAyuda.Name = "lblAyuda"
-        Me.lblAyuda.Size = New System.Drawing.Size(108, 37)
-        Me.lblAyuda.TabIndex = 0
-        Me.lblAyuda.Text = "Ayuda"
         '
         'pnlTitulo
         '
+        Me.pnlTitulo.Controls.Add(Me.notificacion)
         Me.pnlTitulo.Controls.Add(Me.lblBienvenido)
         Me.pnlTitulo.Controls.Add(Me.btn1)
         Me.pnlTitulo.Controls.Add(Me.btn2)
         Me.pnlTitulo.Location = New System.Drawing.Point(12, 3)
         Me.pnlTitulo.Name = "pnlTitulo"
-        Me.pnlTitulo.Size = New System.Drawing.Size(679, 80)
+        Me.pnlTitulo.Size = New System.Drawing.Size(1055, 80)
         Me.pnlTitulo.TabIndex = 6
+        '
+        'notificacion
+        '
+        Me.notificacion.AutoSize = True
+        Me.notificacion.ForeColor = System.Drawing.SystemColors.Control
+        Me.notificacion.Location = New System.Drawing.Point(379, 33)
+        Me.notificacion.Name = "notificacion"
+        Me.notificacion.Size = New System.Drawing.Size(61, 13)
+        Me.notificacion.TabIndex = 10
+        Me.notificacion.Text = "notificacion"
         '
         'lblBienvenido
         '
@@ -276,69 +114,263 @@ Partial Class frmBienvenidaPaciente
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 4000
         '
-        'pnlReanudar
-        '
-        Me.pnlReanudar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.pnlReanudar.Controls.Add(Me.pnlDecReanudar)
-        Me.pnlReanudar.Controls.Add(Me.lblDescReanudar)
-        Me.pnlReanudar.Controls.Add(Me.lblReanuda)
-        Me.pnlReanudar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlReanudar.Location = New System.Drawing.Point(322, 289)
-        Me.pnlReanudar.Name = "pnlReanudar"
-        Me.pnlReanudar.Size = New System.Drawing.Size(255, 193)
-        Me.pnlReanudar.TabIndex = 5
-        '
-        'pnlDecReanudar
-        '
-        Me.pnlDecReanudar.BackColor = System.Drawing.Color.Silver
-        Me.pnlDecReanudar.Location = New System.Drawing.Point(0, 0)
-        Me.pnlDecReanudar.Name = "pnlDecReanudar"
-        Me.pnlDecReanudar.Size = New System.Drawing.Size(255, 10)
-        Me.pnlDecReanudar.TabIndex = 4
-        '
-        'lblDescReanudar
-        '
-        Me.lblDescReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblDescReanudar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescReanudar.ForeColor = System.Drawing.Color.White
-        Me.lblDescReanudar.Location = New System.Drawing.Point(23, 91)
-        Me.lblDescReanudar.Name = "lblDescReanudar"
-        Me.lblDescReanudar.Size = New System.Drawing.Size(208, 55)
-        Me.lblDescReanudar.TabIndex = 1
-        Me.lblDescReanudar.Text = "Continuar chat con médico"
-        '
-        'lblReanuda
-        '
-        Me.lblReanuda.AutoSize = True
-        Me.lblReanuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReanuda.ForeColor = System.Drawing.Color.White
-        Me.lblReanuda.Location = New System.Drawing.Point(22, 33)
-        Me.lblReanuda.Name = "lblReanuda"
-        Me.lblReanuda.Size = New System.Drawing.Size(227, 37)
-        Me.lblReanuda.TabIndex = 0
-        Me.lblReanuda.Text = "Reanudar chat"
-        '
         'pnlContenedor
         '
-        Me.pnlContenedor.BackColor = System.Drawing.Color.Black
-        Me.pnlContenedor.Controls.Add(Me.pnlReanudar)
+        Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.Panel10)
         Me.pnlContenedor.Controls.Add(Me.pnlTitulo)
-        Me.pnlContenedor.Controls.Add(Me.pnlAyuda)
-        Me.pnlContenedor.Controls.Add(Me.pnlPerfil)
-        Me.pnlContenedor.Controls.Add(Me.pnlHistorial)
-        Me.pnlContenedor.Controls.Add(Me.pnlIngresarSintomas)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(800, 507)
+        Me.pnlContenedor.Size = New System.Drawing.Size(1070, 575)
         Me.pnlContenedor.TabIndex = 7
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel10.Controls.Add(Me.Panel1)
+        Me.Panel10.Controls.Add(Me.Panel3)
+        Me.Panel10.Controls.Add(Me.Panel5)
+        Me.Panel10.Location = New System.Drawing.Point(56, 152)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(965, 336)
+        Me.Panel10.TabIndex = 9
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnIngresarSintomas)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(287, 30)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(393, 276)
+        Me.Panel1.TabIndex = 0
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 266)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(393, 10)
+        Me.Panel2.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(70, 101)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(252, 73)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Dígamos cuáles son sus síntomas y le daremos un diagnóstico primario"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnIngresarSintomas
+        '
+        Me.btnIngresarSintomas.AnimationHoverSpeed = 0.07!
+        Me.btnIngresarSintomas.AnimationSpeed = 0.03!
+        Me.btnIngresarSintomas.BackColor = System.Drawing.Color.Transparent
+        Me.btnIngresarSintomas.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnIngresarSintomas.BorderColor = System.Drawing.Color.Black
+        Me.btnIngresarSintomas.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnIngresarSintomas.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnIngresarSintomas.CheckedForeColor = System.Drawing.Color.White
+        Me.btnIngresarSintomas.CheckedImage = CType(resources.GetObject("btnIngresarSintomas.CheckedImage"), System.Drawing.Image)
+        Me.btnIngresarSintomas.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnIngresarSintomas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnIngresarSintomas.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnIngresarSintomas.FocusedColor = System.Drawing.Color.Empty
+        Me.btnIngresarSintomas.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresarSintomas.ForeColor = System.Drawing.Color.White
+        Me.btnIngresarSintomas.Image = Nothing
+        Me.btnIngresarSintomas.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnIngresarSintomas.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnIngresarSintomas.Location = New System.Drawing.Point(90, 208)
+        Me.btnIngresarSintomas.Name = "btnIngresarSintomas"
+        Me.btnIngresarSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnIngresarSintomas.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnIngresarSintomas.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnIngresarSintomas.OnHoverImage = Nothing
+        Me.btnIngresarSintomas.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnIngresarSintomas.OnPressedColor = System.Drawing.Color.Black
+        Me.btnIngresarSintomas.Radius = 12
+        Me.btnIngresarSintomas.Size = New System.Drawing.Size(200, 28)
+        Me.btnIngresarSintomas.TabIndex = 9
+        Me.btnIngresarSintomas.Text = "Ingresar"
+        Me.btnIngresarSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Roboto", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(78, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(234, 33)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Ingresar síntomas"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.GunaAdvenceButton2)
+        Me.Panel3.Controls.Add(Me.Panel4)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Location = New System.Drawing.Point(52, 30)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(183, 248)
+        Me.Panel3.TabIndex = 5
+        '
+        'GunaAdvenceButton2
+        '
+        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.CheckedImage = Nothing
+        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.Image = Nothing
+        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(34, 183)
+        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.OnHoverImage = Nothing
+        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.Radius = 12
+        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(125, 28)
+        Me.GunaAdvenceButton2.TabIndex = 10
+        Me.GunaAdvenceButton2.Text = "Ingresar"
+        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel4.Location = New System.Drawing.Point(0, 240)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(183, 7)
+        Me.Panel4.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(20, 78)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(143, 59)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Vea su historial completo dentro de la aplicación"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(41, 21)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(107, 23)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Mi historial"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.GunaAdvenceButton3)
+        Me.Panel5.Controls.Add(Me.Label6)
+        Me.Panel5.Controls.Add(Me.Panel6)
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Location = New System.Drawing.Point(740, 41)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(183, 248)
+        Me.Panel5.TabIndex = 6
+        '
+        'GunaAdvenceButton3
+        '
+        Me.GunaAdvenceButton3.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton3.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton3.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton3.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaAdvenceButton3.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton3.CheckedImage = CType(resources.GetObject("GunaAdvenceButton3.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton3.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton3.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton3.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton3.Image = Nothing
+        Me.GunaAdvenceButton3.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton3.Location = New System.Drawing.Point(33, 197)
+        Me.GunaAdvenceButton3.Name = "GunaAdvenceButton3"
+        Me.GunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.GunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton3.OnHoverImage = Nothing
+        Me.GunaAdvenceButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton3.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton3.Radius = 12
+        Me.GunaAdvenceButton3.Size = New System.Drawing.Size(125, 28)
+        Me.GunaAdvenceButton3.TabIndex = 11
+        Me.GunaAdvenceButton3.Text = "Ingresar"
+        Me.GunaAdvenceButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(24, 28)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(134, 23)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Reanudar chat"
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel6.Location = New System.Drawing.Point(0, 240)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(183, 7)
+        Me.Panel6.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(15, 81)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(143, 59)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Continuar chat con médico"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlInstancia
         '
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(800, 507)
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 575)
         Me.pnlInstancia.TabIndex = 7
         '
         'Timer2
@@ -346,71 +378,54 @@ Partial Class frmBienvenidaPaciente
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1000
         '
-        'notificacion
-        '
-        Me.notificacion.AutoSize = True
-        Me.notificacion.Location = New System.Drawing.Point(401, 27)
-        Me.notificacion.Name = "notificacion"
-        Me.notificacion.Size = New System.Drawing.Size(39, 13)
-        Me.notificacion.TabIndex = 3
-        Me.notificacion.Text = "Label1"
-        '
         'frmBienvenidaPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 507)
+        Me.ClientSize = New System.Drawing.Size(1070, 575)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmBienvenidaPaciente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
-        Me.pnlIngresarSintomas.ResumeLayout(False)
-        Me.pnlIngresarSintomas.PerformLayout()
-        Me.pnlHistorial.ResumeLayout(False)
-        Me.pnlHistorial.PerformLayout()
-        Me.pnlPerfil.ResumeLayout(False)
-        Me.pnlPerfil.PerformLayout()
-        Me.pnlAyuda.ResumeLayout(False)
-        Me.pnlAyuda.PerformLayout()
         Me.pnlTitulo.ResumeLayout(False)
         Me.pnlTitulo.PerformLayout()
-        Me.pnlReanudar.ResumeLayout(False)
-        Me.pnlReanudar.PerformLayout()
         Me.pnlContenedor.ResumeLayout(False)
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents pnlIngresarSintomas As Panel
-    Friend WithEvents lblDescIngresarSintomas As Label
-    Friend WithEvents lblIngresarSintomas As Label
-    Friend WithEvents pnlHistorial As Panel
-    Friend WithEvents lblDescHistorial As Label
-    Friend WithEvents lblHistorial As Label
-    Friend WithEvents pnlPerfil As Panel
-    Friend WithEvents lblPerfil As Label
-    Friend WithEvents pnlAyuda As Panel
-    Friend WithEvents lblDescAyuda As Label
-    Friend WithEvents lblAyuda As Label
     Friend WithEvents pnlTitulo As Panel
-    Friend WithEvents pnlDecIngresarSintomas As Panel
-    Friend WithEvents pnlDescAyuda As Panel
-    Friend WithEvents pnlDecHistorial As Panel
-    Friend WithEvents pnlDescPerfil As Panel
     Friend WithEvents btn1 As Button
     Friend WithEvents btn2 As Button
-    Friend WithEvents lblDescPerfil As Label
     Friend WithEvents lblBienvenido As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents pnlReanudar As Panel
-    Friend WithEvents pnlDecReanudar As Panel
-    Friend WithEvents lblDescReanudar As Label
-    Friend WithEvents lblReanuda As Label
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents pnlInstancia As Panel
     Friend WithEvents Timer2 As Timer
     Friend WithEvents notificacion As Label
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnIngresarSintomas As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents GunaAdvenceButton2 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents GunaAdvenceButton3 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label5 As Label
 End Class

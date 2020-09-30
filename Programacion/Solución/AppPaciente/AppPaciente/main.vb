@@ -22,9 +22,9 @@ Public Class main
     Public Sub New()
         InitializeComponent()
         instancia = Me
-        Dim frm As New WindowsApp1.frmLogin
-        frm.Label3.Visible = True
-        frm.GunaCheckBox1.Visible = False
+        Dim frm As New Vista.frmLogin 'WindowsApp1.frmLogin
+        'frm.Label3.Visible = True
+        'frm.GunaCheckBox1.Visible = False
 
         'Me.Panel11.Visible = False
         'frm.mcbRecordarUsuario.Visible = False
@@ -32,6 +32,7 @@ Public Class main
         'frm.lblApp.Text = "Paciente"
         'Me.Location = New Point(Me.Location.X, Me.Location.Y - 35)
         CargarVentana(ventana, frm)
+        frm.Anchor = AnchorStyles.None
         'Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente
         'cambiarTamaño()
     End Sub

@@ -175,7 +175,7 @@ Public Class frmLogin
                             Dim paciente As New ControladorPaciente
 
                             If paciente.verificar(txtUsuario.Text) Then
-                                Dim frm As New frmBienvenidaPaciente
+                                Dim frm As New frmIngresarSintomas 'frmBienvenidaPaciente
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
                                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)

@@ -8,11 +8,9 @@ Public Class frmBienvenidaPaciente
     Private chatComenzo As Boolean = False
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Principal.Singleton.RoundedCorners(pnlIngresarSintomas)
-        Principal.Singleton.RoundedCorners(pnlHistorial)
-        Principal.Singleton.RoundedCorners(pnlReanudar)
-        Principal.Singleton.RoundedCorners(pnlPerfil)
-        Principal.Singleton.RoundedCorners(pnlAyuda)
+
+
+
         'Principal.Singleton.roundedCorners(Me)
 
         'Me.BackColor = Color.FromArgb(236, 236, 236)
@@ -123,7 +121,7 @@ Public Class frmBienvenidaPaciente
     '    hover(Panel5)
     'End Sub
 
-    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles pnlIngresarSintomas.Click
+    Private Sub Panel1_Click(sender As Object, e As EventArgs)
         Dim frm As New frmIngresarSintomas
         Configuracion.Singleton.SetConnection()
         Me.SuspendLayout()
@@ -187,16 +185,28 @@ Public Class frmBienvenidaPaciente
 
         If cantNotificacion > 0 Then
             notificacion.Text = cantNotificacion
-            ''Acá se pone el circulito con el número
+            'Acá se pone el circulito con el número
         Else
-            ''Acá se saca el circulito
+            'Acá se saca el circulito
         End If
 
         cantNotificacion = 0
 
     End Sub
 
-    Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlReanudar.MouseClick
+    Private Sub btnIngresarSintomas_Click(sender As Object, e As EventArgs) Handles btnIngresarSintomas.Click
+        Dim frm As New frmIngresarSintomas
+        Configuracion.Singleton.SetConnection()
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs)
         If chatComenzo Then
             Dim frm As New frmChat
             Configuracion.Singleton.SetConnection()

@@ -342,10 +342,11 @@ Vista
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="M:Vista.frmListadoPatologiasySintomas.Panel3_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
-<summary>
-Movimiento de ventanas sin bordes
-</summary>
+<member name="M:Vista.frmChat.Singleton">
+ <summary>
+ Función encargada de devolver una instancia singleton de la clase.
+ </summary>
+ <returns>La instancia creada de la clase.</returns>
 </member>
 <member name="T:Vista.Principal">
  <summary>

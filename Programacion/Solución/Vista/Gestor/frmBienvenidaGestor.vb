@@ -7,16 +7,7 @@ Public Class frmBienvenidaGestor
     Private Sub BienvenidaGestor_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         'Principal.Singleton.RoundedCorners(Me)
-        Principal.Singleton.RoundedCorners(pnlAjustes)
-        Principal.Singleton.RoundedCorners(pnlMiPerfil)
-        Principal.Singleton.RoundedCorners(pnlPatologias)
-        Principal.Singleton.RoundedCorners(pnlUsuarios)
-        Principal.Singleton.RoundedCorners(pnlSintomas)
-        Principal.Singleton.RoundedCorners(pnlDecoracionSintomas)
-        Principal.Singleton.RoundedCorners(pnlRegistroDeUsuarios)
-        Principal.Singleton.RoundedCorners(pnlUsuarios)
-        Principal.Singleton.RoundedCorners(pnlAyuda)
-        Principal.Singleton.RoundedCorners(pnlDecoracionSintomas)
+
 
         'Me.BackColor = Color.FromArgb(236, 236, 236)
         'Dim col As Color = Color.FromArgb(52, 73, 94)
@@ -65,19 +56,19 @@ Public Class frmBienvenidaGestor
 
     End Sub
 
-    Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlTopBar.MouseDown
+    Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs)
         'Principal.Singleton.moverVentanaDown(Me)
     End Sub
 
-    Private Sub Panel6_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTopBar.MouseMove
+    Private Sub Panel6_MouseMove(sender As Object, e As MouseEventArgs)
         'Principal.Singleton.moverVentanaMove(Me)
     End Sub
 
-    Private Sub Panel6_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlTopBar.MouseUp
+    Private Sub Panel6_MouseUp(sender As Object, e As MouseEventArgs)
         ' Principal.Singleton.moverVentanaUp()
     End Sub
 
-    Private Sub pnlPatologias_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlPatologias.MouseDown
+    Private Sub pnlPatologias_MouseDown(sender As Object, e As MouseEventArgs)
         Dim frm As New frmModular()
         frm.op = 0
         Me.SuspendLayout()
@@ -92,7 +83,7 @@ Public Class frmBienvenidaGestor
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
     End Sub
-    Private Sub pnlSintomas_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlSintomas.MouseDown
+    Private Sub pnlSintomas_MouseDown(sender As Object, e As MouseEventArgs)
         Dim frm As New frmModular()
         frm.op = 1
         Me.SuspendLayout()
@@ -103,7 +94,7 @@ Public Class frmBienvenidaGestor
         pnlInstancia.Show()
         Me.ResumeLayout()
     End Sub
-    Private Sub pnlRegistrodeUsuarios_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlRegistroDeUsuarios.MouseDown
+    Private Sub pnlRegistrodeUsuarios_MouseDown(sender As Object, e As MouseEventArgs)
         Dim frm As New frmModular()
         frm.op = 2
         Me.SuspendLayout()
@@ -115,18 +106,12 @@ Public Class frmBienvenidaGestor
         Me.ResumeLayout()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn1.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         frmRegistroGestor.Show() 'registro gestor
     End Sub
 
-    Private Sub btnNotificacion_Click(sender As Object, e As EventArgs) Handles btnNotificacion.Click
+    Private Sub btnNotificacion_Click(sender As Object, e As EventArgs)
 
-        If pnlListadoPacientes.Visible = True Then
-            pnlListadoPacientes.Visible = False
-        Else
-            pnlListadoPacientes.Visible = True
-
-        End If
 
     End Sub
 
@@ -173,39 +158,56 @@ Public Class frmBienvenidaGestor
         Me.WindowState = WindowState.Minimized
     End Sub
 
-    Private Sub pnlUsuarios_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlUsuarios.MouseClick
-        MsgBox("En construcción...")
-    End Sub
 
-    Private Sub pnlAjustes_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlAjustes.MouseClick
-        MsgBox("En construcción...")
-    End Sub
 
-    Private Sub pnlMiPerfil_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMiPerfil.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub pnlAyuda_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlAyuda.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Label19_MouseClick(sender As Object, e As MouseEventArgs) Handles lblUsuarios.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Label18_MouseClick(sender As Object, e As MouseEventArgs) Handles lblDescripcionUsuarios.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Label7_MouseClick(sender As Object, e As MouseEventArgs) Handles lblAjustes.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Label6_MouseClick(sender As Object, e As MouseEventArgs) Handles lblDescripcionAjustes.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
+    Private Sub btn2_Click(sender As Object, e As EventArgs)
         frmManualCsv.Show()
+    End Sub
+
+    Private Sub btnPatologia_Click(sender As Object, e As EventArgs) Handles btnPatologia.Click
+        Dim frm As New frmModular()
+        frm.op = 0
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmModular)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
+        Dim frm As New frmModular()
+        frm.op = 1
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmModular)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
+        Dim frm As New frmModular()
+        frm.op = 2
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmModular)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+
+
+    Private Sub btnNoti_Click(sender As Object, e As EventArgs) Handles btnNoti.Click
+
+        If pnlListadoPacientes.Visible = True Then
+            pnlListadoPacientes.Visible = False
+        Else
+            pnlListadoPacientes.Visible = True
+
+        End If
     End Sub
 End Class

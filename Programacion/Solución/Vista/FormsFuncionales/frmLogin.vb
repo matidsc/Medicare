@@ -5,7 +5,7 @@ Public Class frmLogin
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Configuracion.Singleton.CargarConfiguracion()
-        lblIniciarSesion.Select()
+        lblLogin.Select()
         CargarUsuario()
     End Sub
     Sub New()
@@ -15,11 +15,11 @@ Public Class frmLogin
         InitializeComponent()
 
         '' Cambio de Idioma
-        lblIniciarSesion.Text = Principal.Singleton.Idioma("lblIniciarSesion") 'hacer esto con todos los componentes
+        'lblIniciarSesion.Text = Principal.Singleton.Idioma("lblIniciarSesion") 'hacer esto con todos los componentes
         mcbRecordarUsuario.Text = Principal.Singleton.Idioma("mcbRecordarUsuario")
-        lblContraseña.Text = Principal.Singleton.Idioma("lblContraseña")
-        lblUsuario.Text = Principal.Singleton.Idioma("lblUsuario")
-        lblEsAfiliado.Text = Principal.Singleton.Idioma("lblEsAfiliado")
+        ' lblContraseña.Text = Principal.Singleton.Idioma("lblContraseña")
+        ' lblUsuario.Text = Principal.Singleton.Idioma("lblUsuario")
+        ' lblEsAfiliado.Text = Principal.Singleton.Idioma("lblEsAfiliado")
         lblCrearCuentaPac.Text = Principal.Singleton.Idioma("lblCrearCuentaPac")
 
         Datos_Temporales.horizontal = Me.Width
@@ -60,37 +60,15 @@ Public Class frmLogin
         End If
     End Sub
 
-    Private Sub txtPass_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
-        If txtPassword.Text <> "" Then
-            lblContraseña.Visible = False
-        End If
-
+    Private Sub txtUsr_GotFocus(sender As Object, e As EventArgs)
+        ' lblUsuario.Visible = False
     End Sub
 
-    Private Sub txtUsr_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
-
-        If txtUsuario.Text <> "" Then
-            lblUsuario.Visible = False
-        End If
-
+    Private Sub txtPass_GotFocus(sender As Object, e As EventArgs)
+        ' lblContraseña.Visible = False
     End Sub
 
-    Private Sub txtUsr_GotFocus(sender As Object, e As EventArgs) Handles txtUsuario.GotFocus
-        lblUsuario.Visible = False
-    End Sub
 
-    Private Sub txtPass_GotFocus(sender As Object, e As EventArgs) Handles txtPassword.GotFocus
-        lblContraseña.Visible = False
-    End Sub
-
-    Private Sub txtUsr_LostFocus(sender As Object, e As EventArgs) Handles txtUsuario.LostFocus
-
-        If txtUsuario.Text = "" Then
-            lblUsuario.Visible = True
-        End If
-
-    End Sub
     Private Sub CargarIdioma()
         If Configuracion.Singleton.lenguaje = Configuracion.Idioma.es_ES Then
             Me.CambiarTabla(Path.Combine(Datos_Temporales.pathConf, "es_ES"))
@@ -100,53 +78,21 @@ Public Class frmLogin
     End Sub
     Private Sub CargarUsuario()
         If Configuracion.Singleton.usuario <> Nothing Then
-            txtUsuario.Text = Configuracion.Singleton.usuario
+            txtUsr.Text = Configuracion.Singleton.usuario
             mcbRecordarUsuario.Checked = True
         End If
     End Sub
-    Private Sub txtPass_LostFocus(sender As Object, e As EventArgs) Handles txtPassword.LostFocus
 
-        If txtPassword.Text = "" Then
-            lblContraseña.Visible = True
-        End If
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles picContraseña.Click
-        txtPassword.Select()
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles picUsuario.Click
-        txtUsuario.Select()
-    End Sub
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles picIngresar.Click
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs)
         ingresarUsuario()
     End Sub
 
-    Private Sub lblCrearCuentaPac_Click(sender As Object, e As EventArgs) Handles lblCrearCuentaPac.Click
-        Dim frm As New frmRegistroPaciente
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmRegistroPaciente)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
-    End Sub
-    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+
+    Private Sub Finalizar() Handles pnlContenedor.ControlRemoved
         Me.pnlContenedor.Show()
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles lblContraseña.Click
-        lblContraseña.Visible = False
-        txtPassword.Focus()
-    End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblUsuario.Click
-        lblUsuario.Visible = False
-        txtUsuario.Focus()
-    End Sub
 
     Private Sub ingresarUsuario()
 
@@ -154,19 +100,19 @@ Public Class frmLogin
         Dim log As New ControladorUsuario
         Dim msgbox1 As New BsMsgbox
 
-        If txtUsuario.Text <> "" And txtPassword.Text <> "" Then
-            If IsNumeric(txtUsuario.Text) Then
-                If log.verificarUsuario(txtUsuario.Text, seg.HASH256(txtPassword.Text)) And log.verificarRol(txtUsuario.Text) Then
+        If txtUsr.Text <> "" And txtPass.Text <> "" Then
+            If IsNumeric(txtUsr.Text) Then
+                If log.verificarUsuario(txtUsr.Text, seg.HASH256(txtPass.Text)) And log.verificarRol(txtUsr.Text) Then
 
                     If mcbRecordarUsuario.Checked Then
-                        Configuracion.Singleton.usuario = txtUsuario.Text
+                        Configuracion.Singleton.usuario = txtUsr.Text
                         Configuracion.Singleton.GuardarConfiguracion()
                     Else
                         Configuracion.Singleton.usuario = Nothing
                         Configuracion.Singleton.GuardarConfiguracion()
                     End If
 
-                    Datos_Temporales.userLog = txtUsuario.Text
+                    Datos_Temporales.userLog = txtUsr.Text
 
 
                     Select Case Datos_Temporales.rol
@@ -174,15 +120,15 @@ Public Class frmLogin
                         Case Datos_Temporales.enumRol.Paciente
                             Dim paciente As New ControladorPaciente
 
-                            If paciente.verificar(txtUsuario.Text) Then
+                            If paciente.verificar(txtUsr.Text) Then
                                 Dim frm As New frmIngresarSintomas 'frmBienvenidaPaciente
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
-                                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+                                Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+                                Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
                                 frm.Show()
                                 pnlContenedor.Hide()
-                                pnlInstancia.Show()
+                                pnlContenedor.Show()
                                 Me.ResumeLayout()
                             Else
                                 MsgBox(Principal.Singleton.Idioma("msgPacienteHabilitado"))
@@ -192,22 +138,22 @@ Public Class frmLogin
                             Dim frm As New frmBienvenidaGestor
                             Configuracion.Singleton.SetConnection()
                             Me.SuspendLayout()
-                            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                            Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
                             Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
                             frm.Show()
                             pnlContenedor.Hide()
-                            pnlInstancia.Show()
+                            pnlContenedor.Show()
                             Me.ResumeLayout()
 
                         Case Datos_Temporales.enumRol.Medico
                             Dim frm As New frmBienvenidaMedico
                             Configuracion.Singleton.SetConnection()
                             Me.SuspendLayout()
-                            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                            Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
                             Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)
                             frm.Show()
                             pnlContenedor.Hide()
-                            pnlInstancia.Show()
+                            pnlContenedor.Show()
                             Me.ResumeLayout()
 
                     End Select
@@ -229,7 +175,7 @@ Public Class frmLogin
 
     End Sub
 
-    Private Sub txtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown, txtUsuario.KeyDown
+    Private Sub txtPass_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             ingresarUsuario()
         End If
@@ -306,5 +252,34 @@ Public Class frmLogin
         obj.Close()
 
     End Sub
+
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+        ingresarUsuario()
+    End Sub
+
+    Private Sub txtUsr_TextChanged(sender As Object, e As EventArgs) Handles txtUsr.TextChanged
+        If txtUsr.Text <> "" Then
+            txtUsr.Visible = False
+        End If
+    End Sub
+
+    Private Sub txtPass_TextChanged(sender As Object, e As EventArgs) Handles txtPass.TextChanged
+        If txtPass.Text = "" Then
+            txtPass.ForeColor = Color.White
+        End If
+    End Sub
+
+    Private Sub lblCrearCuenta_Click(sender As Object, e As EventArgs) Handles lblCrearCuenta.Click
+        Dim frm As New frmRegistroPaciente
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+        Principal.Singleton.CambiarTamaño(frmRegistroPaciente)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlContenedor.Show()
+        Me.ResumeLayout()
+    End Sub
+
+
 
 End Class

@@ -102,7 +102,7 @@ Partial Class frmLogin
         Me.GunaTextBox1.Radius = 17
         Me.GunaTextBox1.Size = New System.Drawing.Size(181, 42)
         Me.GunaTextBox1.TabIndex = 6
-        Me.GunaTextBox1.Text = "Usuario"
+        Me.GunaTextBox1.Text = "Cédula"
         Me.GunaTextBox1.TextOffsetX = 7
         '
         'GunaSeparator1
@@ -133,7 +133,6 @@ Partial Class frmLogin
         Me.GunaTextBox2.Size = New System.Drawing.Size(181, 42)
         Me.GunaTextBox2.TabIndex = 7
         Me.GunaTextBox2.TextOffsetX = 5
-        Me.GunaTextBox2.UseSystemPasswordChar = True
         '
         'im
         '
@@ -184,7 +183,7 @@ Partial Class frmLogin
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Circular Std Bold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(378, 445)
+        Me.Label3.Location = New System.Drawing.Point(65, 109)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 20)
         Me.Label3.TabIndex = 16

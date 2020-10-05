@@ -22,69 +22,33 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.pnlIniciarSesion = New System.Windows.Forms.Panel()
         Me.ing = New System.Windows.Forms.RadioButton()
         Me.esp = New System.Windows.Forms.RadioButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.lblIniciarSesion = New System.Windows.Forms.Label()
-        Me.mcbRecordarUsuario = New MaterialSkin.Controls.MaterialCheckBox()
-        Me.lblContraseña = New System.Windows.Forms.Label()
-        Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.picIngresar = New System.Windows.Forms.PictureBox()
-        Me.picUsuario = New System.Windows.Forms.PictureBox()
-        Me.picContraseña = New System.Windows.Forms.PictureBox()
         Me.lblCrearCuentaPac = New System.Windows.Forms.Button()
-        Me.lblEsAfiliado = New System.Windows.Forms.Label()
-        Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.lblApp = New System.Windows.Forms.Label()
-        Me.picBytesoft = New System.Windows.Forms.PictureBox()
-        Me.picDiseño = New System.Windows.Forms.PictureBox()
+        Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
+        Me.lblRecordar = New System.Windows.Forms.Label()
+        Me.lblCrearCuenta = New System.Windows.Forms.Label()
+        Me.IconPictureBox3 = New FontAwesome.Sharp.IconPictureBox()
+        Me.mcbRecordarUsuario = New Guna.UI.WinForms.GunaCheckBox()
+        Me.im = New FontAwesome.Sharp.IconPictureBox()
+        Me.lblLogin = New System.Windows.Forms.Label()
+        Me.txtUsr = New Guna.UI.WinForms.GunaTextBox()
+        Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
+        Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.pnlIniciarSesion.SuspendLayout()
-        CType(Me.picIngresar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picContraseña, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlContenedor.SuspendLayout()
-        CType(Me.picBytesoft, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picDiseño, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(162, 184)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(182, 17)
-        Me.txtUsuario.TabIndex = 1
-        '
-        'pnlIniciarSesion
-        '
-        Me.pnlIniciarSesion.BackColor = System.Drawing.Color.White
-        Me.pnlIniciarSesion.Controls.Add(Me.ing)
-        Me.pnlIniciarSesion.Controls.Add(Me.esp)
-        Me.pnlIniciarSesion.Controls.Add(Me.MetroButton1)
-        Me.pnlIniciarSesion.Controls.Add(Me.lblIniciarSesion)
-        Me.pnlIniciarSesion.Controls.Add(Me.mcbRecordarUsuario)
-        Me.pnlIniciarSesion.Controls.Add(Me.lblContraseña)
-        Me.pnlIniciarSesion.Controls.Add(Me.lblUsuario)
-        Me.pnlIniciarSesion.Controls.Add(Me.txtUsuario)
-        Me.pnlIniciarSesion.Controls.Add(Me.txtPassword)
-        Me.pnlIniciarSesion.Controls.Add(Me.picIngresar)
-        Me.pnlIniciarSesion.Controls.Add(Me.picUsuario)
-        Me.pnlIniciarSesion.Controls.Add(Me.picContraseña)
-        Me.pnlIniciarSesion.Location = New System.Drawing.Point(0, 0)
-        Me.pnlIniciarSesion.Name = "pnlIniciarSesion"
-        Me.pnlIniciarSesion.Size = New System.Drawing.Size(480, 511)
-        Me.pnlIniciarSesion.TabIndex = 23
         '
         'ing
         '
         Me.ing.AutoSize = True
-        Me.ing.Location = New System.Drawing.Point(65, 255)
+        Me.ing.ForeColor = System.Drawing.SystemColors.Control
+        Me.ing.Location = New System.Drawing.Point(204, 408)
         Me.ing.Name = "ing"
         Me.ing.Size = New System.Drawing.Size(52, 17)
         Me.ing.TabIndex = 24
@@ -95,7 +59,8 @@ Partial Class frmLogin
         'esp
         '
         Me.esp.AutoSize = True
-        Me.esp.Location = New System.Drawing.Point(65, 201)
+        Me.esp.ForeColor = System.Drawing.SystemColors.Control
+        Me.esp.Location = New System.Drawing.Point(215, 316)
         Me.esp.Name = "esp"
         Me.esp.Size = New System.Drawing.Size(58, 17)
         Me.esp.TabIndex = 23
@@ -105,103 +70,12 @@ Partial Class frmLogin
         '
         'MetroButton1
         '
-        Me.MetroButton1.Location = New System.Drawing.Point(41, 305)
+        Me.MetroButton1.Location = New System.Drawing.Point(94, 305)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(75, 23)
         Me.MetroButton1.TabIndex = 22
         Me.MetroButton1.Text = "MetroButton1"
         Me.MetroButton1.UseSelectable = True
-        '
-        'lblIniciarSesion
-        '
-        Me.lblIniciarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIniciarSesion.ForeColor = System.Drawing.Color.Black
-        Me.lblIniciarSesion.Location = New System.Drawing.Point(64, 50)
-        Me.lblIniciarSesion.Name = "lblIniciarSesion"
-        Me.lblIniciarSesion.Size = New System.Drawing.Size(372, 72)
-        Me.lblIniciarSesion.TabIndex = 0
-        Me.lblIniciarSesion.Text = "Iniciar Sesión"
-        Me.lblIniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'mcbRecordarUsuario
-        '
-        Me.mcbRecordarUsuario.AutoSize = True
-        Me.mcbRecordarUsuario.Depth = 0
-        Me.mcbRecordarUsuario.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.mcbRecordarUsuario.Location = New System.Drawing.Point(185, 360)
-        Me.mcbRecordarUsuario.Margin = New System.Windows.Forms.Padding(0)
-        Me.mcbRecordarUsuario.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.mcbRecordarUsuario.MouseState = MaterialSkin.MouseState.HOVER
-        Me.mcbRecordarUsuario.Name = "mcbRecordarUsuario"
-        Me.mcbRecordarUsuario.Ripple = True
-        Me.mcbRecordarUsuario.Size = New System.Drawing.Size(136, 30)
-        Me.mcbRecordarUsuario.TabIndex = 21
-        Me.mcbRecordarUsuario.Text = "Recordar Usuario"
-        Me.mcbRecordarUsuario.UseVisualStyleBackColor = True
-        '
-        'lblContraseña
-        '
-        Me.lblContraseña.BackColor = System.Drawing.Color.White
-        Me.lblContraseña.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lblContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContraseña.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblContraseña.Location = New System.Drawing.Point(158, 290)
-        Me.lblContraseña.Name = "lblContraseña"
-        Me.lblContraseña.Size = New System.Drawing.Size(111, 21)
-        Me.lblContraseña.TabIndex = 13
-        Me.lblContraseña.Text = "Contraseña"
-        '
-        'lblUsuario
-        '
-        Me.lblUsuario.BackColor = System.Drawing.Color.White
-        Me.lblUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblUsuario.Location = New System.Drawing.Point(158, 183)
-        Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(111, 23)
-        Me.lblUsuario.TabIndex = 12
-        Me.lblUsuario.Text = "Usuario"
-        '
-        'txtPassword
-        '
-        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(162, 290)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(182, 17)
-        Me.txtPassword.TabIndex = 2
-        Me.txtPassword.UseSystemPasswordChar = True
-        '
-        'picIngresar
-        '
-        Me.picIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.picIngresar.Image = CType(resources.GetObject("picIngresar.Image"), System.Drawing.Image)
-        Me.picIngresar.Location = New System.Drawing.Point(190, 423)
-        Me.picIngresar.Name = "picIngresar"
-        Me.picIngresar.Size = New System.Drawing.Size(130, 58)
-        Me.picIngresar.TabIndex = 14
-        Me.picIngresar.TabStop = False
-        '
-        'picUsuario
-        '
-        Me.picUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.picUsuario.Image = Global.Vista.My.Resources.Resources.medd
-        Me.picUsuario.Location = New System.Drawing.Point(138, 158)
-        Me.picUsuario.Name = "picUsuario"
-        Me.picUsuario.Size = New System.Drawing.Size(234, 73)
-        Me.picUsuario.TabIndex = 1
-        Me.picUsuario.TabStop = False
-        '
-        'picContraseña
-        '
-        Me.picContraseña.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.picContraseña.Image = Global.Vista.My.Resources.Resources.medd
-        Me.picContraseña.Location = New System.Drawing.Point(138, 265)
-        Me.picContraseña.Name = "picContraseña"
-        Me.picContraseña.Size = New System.Drawing.Size(234, 73)
-        Me.picContraseña.TabIndex = 3
-        Me.picContraseña.TabStop = False
         '
         'lblCrearCuentaPac
         '
@@ -212,122 +86,243 @@ Partial Class frmLogin
         Me.lblCrearCuentaPac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblCrearCuentaPac.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
         Me.lblCrearCuentaPac.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuentaPac.Location = New System.Drawing.Point(645, 410)
+        Me.lblCrearCuentaPac.Location = New System.Drawing.Point(75, 254)
         Me.lblCrearCuentaPac.Name = "lblCrearCuentaPac"
         Me.lblCrearCuentaPac.Size = New System.Drawing.Size(148, 40)
         Me.lblCrearCuentaPac.TabIndex = 31
         Me.lblCrearCuentaPac.UseVisualStyleBackColor = False
         Me.lblCrearCuentaPac.Visible = False
         '
-        'lblEsAfiliado
-        '
-        Me.lblEsAfiliado.AutoSize = True
-        Me.lblEsAfiliado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEsAfiliado.ForeColor = System.Drawing.Color.White
-        Me.lblEsAfiliado.Location = New System.Drawing.Point(740, 418)
-        Me.lblEsAfiliado.Name = "lblEsAfiliado"
-        Me.lblEsAfiliado.Size = New System.Drawing.Size(0, 20)
-        Me.lblEsAfiliado.TabIndex = 29
-        Me.lblEsAfiliado.Visible = False
-        '
-        'pnlContenedor
-        '
-        Me.pnlContenedor.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.pnlContenedor.Controls.Add(Me.lblApp)
-        Me.pnlContenedor.Controls.Add(Me.lblEsAfiliado)
-        Me.pnlContenedor.Controls.Add(Me.picBytesoft)
-        Me.pnlContenedor.Controls.Add(Me.lblCrearCuentaPac)
-        Me.pnlContenedor.Controls.Add(Me.picDiseño)
-        Me.pnlContenedor.Controls.Add(Me.pnlIniciarSesion)
-        Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
-        Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(910, 511)
-        Me.pnlContenedor.TabIndex = 25
-        '
         'lblApp
         '
         Me.lblApp.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApp.ForeColor = System.Drawing.Color.Black
-        Me.lblApp.Location = New System.Drawing.Point(577, 312)
+        Me.lblApp.Location = New System.Drawing.Point(110, 417)
         Me.lblApp.Name = "lblApp"
         Me.lblApp.Size = New System.Drawing.Size(269, 57)
         Me.lblApp.TabIndex = 25
         Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'picBytesoft
+        'pnlContenedor
         '
-        Me.picBytesoft.Image = Global.Vista.My.Resources.Resources.logo_3
-        Me.picBytesoft.Location = New System.Drawing.Point(558, 92)
-        Me.picBytesoft.Name = "picBytesoft"
-        Me.picBytesoft.Size = New System.Drawing.Size(337, 217)
-        Me.picBytesoft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.picBytesoft.TabIndex = 27
-        Me.picBytesoft.TabStop = False
+        Me.pnlContenedor.AutoSize = True
+        Me.pnlContenedor.Controls.Add(Me.btnIngresar)
+        Me.pnlContenedor.Controls.Add(Me.lblCrearCuentaPac)
+        Me.pnlContenedor.Controls.Add(Me.esp)
+        Me.pnlContenedor.Controls.Add(Me.lblRecordar)
+        Me.pnlContenedor.Controls.Add(Me.lblCrearCuenta)
+        Me.pnlContenedor.Controls.Add(Me.ing)
+        Me.pnlContenedor.Controls.Add(Me.MetroButton1)
+        Me.pnlContenedor.Controls.Add(Me.IconPictureBox3)
+        Me.pnlContenedor.Controls.Add(Me.mcbRecordarUsuario)
+        Me.pnlContenedor.Controls.Add(Me.im)
+        Me.pnlContenedor.Controls.Add(Me.lblLogin)
+        Me.pnlContenedor.Controls.Add(Me.txtUsr)
+        Me.pnlContenedor.Controls.Add(Me.GunaSeparator1)
+        Me.pnlContenedor.Controls.Add(Me.txtPass)
+        Me.pnlContenedor.Controls.Add(Me.lblApp)
+        Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
+        Me.pnlContenedor.Name = "pnlContenedor"
+        Me.pnlContenedor.Size = New System.Drawing.Size(1199, 648)
+        Me.pnlContenedor.TabIndex = 25
         '
-        'picDiseño
+        'btnIngresar
         '
-        Me.picDiseño.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.picDiseño.Image = CType(resources.GetObject("picDiseño.Image"), System.Drawing.Image)
-        Me.picDiseño.Location = New System.Drawing.Point(399, 0)
-        Me.picDiseño.Margin = New System.Windows.Forms.Padding(0)
-        Me.picDiseño.Name = "picDiseño"
-        Me.picDiseño.Size = New System.Drawing.Size(156, 493)
-        Me.picDiseño.TabIndex = 22
-        Me.picDiseño.TabStop = False
+        Me.btnIngresar.AnimationHoverSpeed = 0.07!
+        Me.btnIngresar.AnimationSpeed = 0.03!
+        Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
+        Me.btnIngresar.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnIngresar.BorderColor = System.Drawing.Color.Black
+        Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnIngresar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnIngresar.ForeColor = System.Drawing.Color.White
+        Me.btnIngresar.Image = Nothing
+        Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnIngresar.Location = New System.Drawing.Point(450, 417)
+        Me.btnIngresar.Name = "btnIngresar"
+        Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnIngresar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnIngresar.OnHoverImage = Nothing
+        Me.btnIngresar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnIngresar.Radius = 17
+        Me.btnIngresar.Size = New System.Drawing.Size(180, 42)
+        Me.btnIngresar.TabIndex = 36
+        Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblRecordar
+        '
+        Me.lblRecordar.AutoSize = True
+        Me.lblRecordar.Font = New System.Drawing.Font("Circular Std Bold", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecordar.ForeColor = System.Drawing.Color.White
+        Me.lblRecordar.Location = New System.Drawing.Point(470, 319)
+        Me.lblRecordar.Name = "lblRecordar"
+        Me.lblRecordar.Size = New System.Drawing.Size(138, 15)
+        Me.lblRecordar.TabIndex = 35
+        Me.lblRecordar.Text = "Restablecer contraseña"
+        '
+        'lblCrearCuenta
+        '
+        Me.lblCrearCuenta.AutoSize = True
+        Me.lblCrearCuenta.Font = New System.Drawing.Font("Circular Std Bold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
+        Me.lblCrearCuenta.Location = New System.Drawing.Point(164, 131)
+        Me.lblCrearCuenta.Name = "lblCrearCuenta"
+        Me.lblCrearCuenta.Size = New System.Drawing.Size(125, 20)
+        Me.lblCrearCuenta.TabIndex = 34
+        Me.lblCrearCuenta.Text = "Solicitar cuenta"
+        '
+        'IconPictureBox3
+        '
+        Me.IconPictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.IconPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.IconPictureBox3.ForeColor = System.Drawing.Color.LightGray
+        Me.IconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Cog
+        Me.IconPictureBox3.IconColor = System.Drawing.Color.LightGray
+        Me.IconPictureBox3.Location = New System.Drawing.Point(128, 46)
+        Me.IconPictureBox3.Name = "IconPictureBox3"
+        Me.IconPictureBox3.Size = New System.Drawing.Size(32, 32)
+        Me.IconPictureBox3.TabIndex = 33
+        Me.IconPictureBox3.TabStop = False
+        '
+        'mcbRecordarUsuario
+        '
+        Me.mcbRecordarUsuario.BaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.mcbRecordarUsuario.CheckedOffColor = System.Drawing.Color.Gray
+        Me.mcbRecordarUsuario.CheckedOnColor = System.Drawing.Color.MediumSlateBlue
+        Me.mcbRecordarUsuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mcbRecordarUsuario.FillColor = System.Drawing.Color.White
+        Me.mcbRecordarUsuario.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mcbRecordarUsuario.ForeColor = System.Drawing.Color.LightGray
+        Me.mcbRecordarUsuario.Location = New System.Drawing.Point(473, 367)
+        Me.mcbRecordarUsuario.Name = "mcbRecordarUsuario"
+        Me.mcbRecordarUsuario.Radius = 1
+        Me.mcbRecordarUsuario.Size = New System.Drawing.Size(136, 20)
+        Me.mcbRecordarUsuario.TabIndex = 32
+        Me.mcbRecordarUsuario.Text = "Recordar usuario"
+        Me.mcbRecordarUsuario.Visible = False
+        '
+        'im
+        '
+        Me.im.BackColor = System.Drawing.Color.Transparent
+        Me.im.ForeColor = System.Drawing.Color.MediumSlateBlue
+        Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
+        Me.im.IconColor = System.Drawing.Color.MediumSlateBlue
+        Me.im.IconSize = 594
+        Me.im.Location = New System.Drawing.Point(652, -340)
+        Me.im.Name = "im"
+        Me.im.Rotation = 135.0R
+        Me.im.Size = New System.Drawing.Size(594, 707)
+        Me.im.TabIndex = 31
+        Me.im.TabStop = False
+        '
+        'lblLogin
+        '
+        Me.lblLogin.AutoSize = True
+        Me.lblLogin.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogin.ForeColor = System.Drawing.Color.White
+        Me.lblLogin.Location = New System.Drawing.Point(491, 81)
+        Me.lblLogin.Name = "lblLogin"
+        Me.lblLogin.Size = New System.Drawing.Size(104, 45)
+        Me.lblLogin.TabIndex = 26
+        Me.lblLogin.Text = "Login"
+        '
+        'txtUsr
+        '
+        Me.txtUsr.BackColor = System.Drawing.Color.Transparent
+        Me.txtUsr.BaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtUsr.BorderColor = System.Drawing.Color.Silver
+        Me.txtUsr.BorderSize = 1
+        Me.txtUsr.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUsr.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtUsr.FocusedBorderColor = System.Drawing.Color.White
+        Me.txtUsr.FocusedForeColor = System.Drawing.Color.White
+        Me.txtUsr.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsr.ForeColor = System.Drawing.Color.LightGray
+        Me.txtUsr.Location = New System.Drawing.Point(449, 182)
+        Me.txtUsr.Name = "txtUsr"
+        Me.txtUsr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUsr.Radius = 17
+        Me.txtUsr.Size = New System.Drawing.Size(181, 42)
+        Me.txtUsr.TabIndex = 27
+        Me.txtUsr.Text = "Cédula"
+        Me.txtUsr.TextOffsetX = 7
+        '
+        'GunaSeparator1
+        '
+        Me.GunaSeparator1.LineColor = System.Drawing.Color.Silver
+        Me.GunaSeparator1.Location = New System.Drawing.Point(484, 131)
+        Me.GunaSeparator1.Name = "GunaSeparator1"
+        Me.GunaSeparator1.Size = New System.Drawing.Size(77, 10)
+        Me.GunaSeparator1.TabIndex = 29
+        Me.GunaSeparator1.Thickness = 5
+        '
+        'txtPass
+        '
+        Me.txtPass.BackColor = System.Drawing.Color.Transparent
+        Me.txtPass.BaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPass.BorderColor = System.Drawing.Color.Silver
+        Me.txtPass.BorderSize = 1
+        Me.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPass.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtPass.FocusedBorderColor = System.Drawing.Color.White
+        Me.txtPass.FocusedForeColor = System.Drawing.Color.White
+        Me.txtPass.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.ForeColor = System.Drawing.Color.White
+        Me.txtPass.Location = New System.Drawing.Point(449, 264)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.txtPass.Radius = 17
+        Me.txtPass.Size = New System.Drawing.Size(181, 42)
+        Me.txtPass.TabIndex = 28
+        Me.txtPass.TextOffsetX = 5
         '
         'pnlInstancia
         '
-        Me.pnlInstancia.AutoSize = True
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(910, 505)
-        Me.pnlInstancia.TabIndex = 25
+        Me.pnlInstancia.Size = New System.Drawing.Size(1199, 648)
+        Me.pnlInstancia.TabIndex = 37
         '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(910, 505)
+        Me.ClientSize = New System.Drawing.Size(1199, 648)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "|"
-        Me.pnlIniciarSesion.ResumeLayout(False)
-        Me.pnlIniciarSesion.PerformLayout()
-        CType(Me.picIngresar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picContraseña, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
-        CType(Me.picBytesoft, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picDiseño, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txtUsuario As TextBox
-    Friend WithEvents pnlIniciarSesion As Panel
-    Friend WithEvents lblContraseña As Label
-    Friend WithEvents lblUsuario As Label
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents picIngresar As PictureBox
-    Friend WithEvents picUsuario As PictureBox
-    Friend WithEvents lblIniciarSesion As Label
-    Friend WithEvents picContraseña As PictureBox
-    Friend WithEvents picDiseño As PictureBox
-    Friend WithEvents picBytesoft As PictureBox
-    Friend WithEvents lblEsAfiliado As Label
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents ing As RadioButton
     Friend WithEvents esp As RadioButton
-    Public WithEvents mcbRecordarUsuario As MaterialSkin.Controls.MaterialCheckBox
     Friend WithEvents pnlContenedor As Panel
-    Friend WithEvents pnlInstancia As Panel
     Public WithEvents lblCrearCuentaPac As Button
     Public WithEvents lblApp As Label
+    Friend WithEvents lblRecordar As Label
+    Friend WithEvents lblCrearCuenta As Label
+    Friend WithEvents IconPictureBox3 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents mcbRecordarUsuario As Guna.UI.WinForms.GunaCheckBox
+    Friend WithEvents im As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents lblLogin As Label
+    Friend WithEvents txtUsr As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents GunaSeparator1 As Guna.UI.WinForms.GunaSeparator
+    Friend WithEvents txtPass As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents pnlInstancia As Panel
 End Class

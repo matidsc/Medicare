@@ -28,7 +28,6 @@ Partial Class frmIngresarSintomas
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.btnAtras = New System.Windows.Forms.Button()
         Me.lblIngreseSIntomas = New System.Windows.Forms.Label()
         Me.lblArrastreSintomas = New System.Windows.Forms.Label()
         Me.lblMisSintomas = New System.Windows.Forms.Label()
@@ -37,42 +36,28 @@ Partial Class frmIngresarSintomas
         Me.dgvTodos = New System.Windows.Forms.DataGridView()
         Me.SintomaTodos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.btnAtras = New FontAwesome.Sharp.IconButton()
+        Me.scrollSeleccionados = New Guna.UI.WinForms.GunaVScrollBar()
+        Me.scrollTodos = New Guna.UI.WinForms.GunaVScrollBar()
         Me.btnObtenerDiag = New Guna.UI.WinForms.GunaButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.scrollTodos = New Guna.UI.WinForms.GunaVScrollBar()
-        Me.scrollSeleccionados = New Guna.UI.WinForms.GunaVScrollBar()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvTodos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
-        'btnAtras
-        '
-        Me.btnAtras.BackColor = System.Drawing.Color.DarkRed
-        Me.btnAtras.BackgroundImage = Global.Vista.My.Resources.Resources.icons8_left_32px
-        Me.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnAtras.FlatAppearance.BorderSize = 0
-        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAtras.Location = New System.Drawing.Point(22, 30)
-        Me.btnAtras.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAtras.Name = "btnAtras"
-        Me.btnAtras.Padding = New System.Windows.Forms.Padding(3)
-        Me.btnAtras.Size = New System.Drawing.Size(49, 32)
-        Me.btnAtras.TabIndex = 160
-        Me.btnAtras.UseVisualStyleBackColor = False
-        '
         'lblIngreseSIntomas
         '
         Me.lblIngreseSIntomas.BackColor = System.Drawing.Color.Transparent
         Me.lblIngreseSIntomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Roboto", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIngreseSIntomas.ForeColor = System.Drawing.Color.White
-        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(115, 42)
+        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(335, 32)
         Me.lblIngreseSIntomas.Name = "lblIngreseSIntomas"
-        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(410, 45)
+        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(381, 45)
         Me.lblIngreseSIntomas.TabIndex = 25
-        Me.lblIngreseSIntomas.Text = "Cuáles son tus síntomas?"
+        Me.lblIngreseSIntomas.Text = "¿Cuáles son tus síntomas?"
         Me.lblIngreseSIntomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblArrastreSintomas
@@ -80,21 +65,21 @@ Partial Class frmIngresarSintomas
         Me.lblArrastreSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblArrastreSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArrastreSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblArrastreSintomas.Location = New System.Drawing.Point(434, 303)
+        Me.lblArrastreSintomas.Location = New System.Drawing.Point(449, 239)
         Me.lblArrastreSintomas.Name = "lblArrastreSintomas"
-        Me.lblArrastreSintomas.Size = New System.Drawing.Size(217, 217)
+        Me.lblArrastreSintomas.Size = New System.Drawing.Size(152, 152)
         Me.lblArrastreSintomas.TabIndex = 82
-        Me.lblArrastreSintomas.Text = "Arrastre Síntomas hacia la derecha "
+        Me.lblArrastreSintomas.Text = "Arrastre síntomas hacia la derecha "
         Me.lblArrastreSintomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblMisSintomas
         '
         Me.lblMisSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblMisSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMisSintomas.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMisSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblMisSintomas.Location = New System.Drawing.Point(771, 118)
+        Me.lblMisSintomas.Location = New System.Drawing.Point(770, 89)
         Me.lblMisSintomas.Name = "lblMisSintomas"
-        Me.lblMisSintomas.Size = New System.Drawing.Size(177, 69)
+        Me.lblMisSintomas.Size = New System.Drawing.Size(177, 37)
         Me.lblMisSintomas.TabIndex = 85
         Me.lblMisSintomas.Text = "Mis síntomas"
         Me.lblMisSintomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -132,7 +117,7 @@ Partial Class frmIngresarSintomas
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvSintomasSeleccionados.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvSintomasSeleccionados.Location = New System.Drawing.Point(738, 190)
+        Me.dgvSintomasSeleccionados.Location = New System.Drawing.Point(740, 139)
         Me.dgvSintomasSeleccionados.MultiSelect = False
         Me.dgvSintomasSeleccionados.Name = "dgvSintomasSeleccionados"
         Me.dgvSintomasSeleccionados.ReadOnly = True
@@ -182,7 +167,7 @@ Partial Class frmIngresarSintomas
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvTodos.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvTodos.Location = New System.Drawing.Point(122, 190)
+        Me.dgvTodos.Location = New System.Drawing.Point(73, 139)
         Me.dgvTodos.MultiSelect = False
         Me.dgvTodos.Name = "dgvTodos"
         Me.dgvTodos.ReadOnly = True
@@ -201,31 +186,73 @@ Partial Class frmIngresarSintomas
         '
         'pnlContenedor
         '
+        Me.pnlContenedor.Controls.Add(Me.GunaElipsePanel2)
+        Me.pnlContenedor.Controls.Add(Me.btnAtras)
         Me.pnlContenedor.Controls.Add(Me.scrollSeleccionados)
         Me.pnlContenedor.Controls.Add(Me.scrollTodos)
-        Me.pnlContenedor.Controls.Add(Me.GunaElipsePanel1)
         Me.pnlContenedor.Controls.Add(Me.btnObtenerDiag)
-        Me.pnlContenedor.Controls.Add(Me.btnAtras)
         Me.pnlContenedor.Controls.Add(Me.lblIngreseSIntomas)
         Me.pnlContenedor.Controls.Add(Me.lblMisSintomas)
         Me.pnlContenedor.Controls.Add(Me.dgvTodos)
         Me.pnlContenedor.Controls.Add(Me.lblArrastreSintomas)
         Me.pnlContenedor.Controls.Add(Me.dgvSintomasSeleccionados)
-        Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(1050, 700)
+        Me.pnlContenedor.Size = New System.Drawing.Size(1050, 628)
         Me.pnlContenedor.TabIndex = 160
         '
-        'GunaElipsePanel1
+        'GunaElipsePanel2
         '
-        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.MediumSlateBlue
-        Me.GunaElipsePanel1.Location = New System.Drawing.Point(325, 101)
-        Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Radius = 2
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(200, 12)
-        Me.GunaElipsePanel1.TabIndex = 162
+        Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaElipsePanel2.Location = New System.Drawing.Point(327, 87)
+        Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
+        Me.GunaElipsePanel2.Radius = 2
+        Me.GunaElipsePanel2.Size = New System.Drawing.Size(397, 2)
+        Me.GunaElipsePanel2.TabIndex = 163
+        '
+        'btnAtras
+        '
+        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAtras.FlatAppearance.BorderSize = 0
+        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.btnAtras.IconColor = System.Drawing.Color.White
+        Me.btnAtras.IconSize = 32
+        Me.btnAtras.Location = New System.Drawing.Point(39, 32)
+        Me.btnAtras.Name = "btnAtras"
+        Me.btnAtras.Padding = New System.Windows.Forms.Padding(0, 0, 8, 0)
+        Me.btnAtras.Rotation = 0R
+        Me.btnAtras.Size = New System.Drawing.Size(33, 30)
+        Me.btnAtras.TabIndex = 165
+        Me.btnAtras.UseVisualStyleBackColor = True
+        '
+        'scrollSeleccionados
+        '
+        Me.scrollSeleccionados.LargeChange = 10
+        Me.scrollSeleccionados.Location = New System.Drawing.Point(969, 140)
+        Me.scrollSeleccionados.Maximum = 100
+        Me.scrollSeleccionados.Name = "scrollSeleccionados"
+        Me.scrollSeleccionados.ScrollIdleColor = System.Drawing.Color.Silver
+        Me.scrollSeleccionados.Size = New System.Drawing.Size(10, 429)
+        Me.scrollSeleccionados.TabIndex = 164
+        Me.scrollSeleccionados.ThumbColor = System.Drawing.Color.DimGray
+        Me.scrollSeleccionados.ThumbHoverColor = System.Drawing.Color.Gray
+        Me.scrollSeleccionados.ThumbPressedColor = System.Drawing.Color.DarkGray
+        '
+        'scrollTodos
+        '
+        Me.scrollTodos.LargeChange = 10
+        Me.scrollTodos.Location = New System.Drawing.Point(312, 139)
+        Me.scrollTodos.Maximum = 100
+        Me.scrollTodos.Name = "scrollTodos"
+        Me.scrollTodos.ScrollIdleColor = System.Drawing.Color.Silver
+        Me.scrollTodos.Size = New System.Drawing.Size(10, 429)
+        Me.scrollTodos.TabIndex = 163
+        Me.scrollTodos.ThumbColor = System.Drawing.Color.DimGray
+        Me.scrollTodos.ThumbHoverColor = System.Drawing.Color.Gray
+        Me.scrollTodos.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
         'btnObtenerDiag
         '
@@ -236,11 +263,11 @@ Partial Class frmIngresarSintomas
         Me.btnObtenerDiag.BorderColor = System.Drawing.Color.Black
         Me.btnObtenerDiag.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnObtenerDiag.FocusedColor = System.Drawing.Color.Empty
-        Me.btnObtenerDiag.Font = New System.Drawing.Font("Roboto", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnObtenerDiag.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnObtenerDiag.ForeColor = System.Drawing.Color.White
         Me.btnObtenerDiag.Image = Nothing
         Me.btnObtenerDiag.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnObtenerDiag.Location = New System.Drawing.Point(420, 612)
+        Me.btnObtenerDiag.Location = New System.Drawing.Point(410, 523)
         Me.btnObtenerDiag.Name = "btnObtenerDiag"
         Me.btnObtenerDiag.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnObtenerDiag.OnHoverBorderColor = System.Drawing.Color.Black
@@ -255,37 +282,10 @@ Partial Class frmIngresarSintomas
         '
         'pnlInstancia
         '
-        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(1050, 700)
+        Me.pnlInstancia.Size = New System.Drawing.Size(1050, 628)
         Me.pnlInstancia.TabIndex = 160
-        '
-        'scrollTodos
-        '
-        Me.scrollTodos.LargeChange = 10
-        Me.scrollTodos.Location = New System.Drawing.Point(361, 190)
-        Me.scrollTodos.Maximum = 100
-        Me.scrollTodos.Name = "scrollTodos"
-        Me.scrollTodos.ScrollIdleColor = System.Drawing.Color.Silver
-        Me.scrollTodos.Size = New System.Drawing.Size(10, 429)
-        Me.scrollTodos.TabIndex = 163
-        Me.scrollTodos.ThumbColor = System.Drawing.Color.DimGray
-        Me.scrollTodos.ThumbHoverColor = System.Drawing.Color.Gray
-        Me.scrollTodos.ThumbPressedColor = System.Drawing.Color.DarkGray
-        '
-        'scrollSeleccionados
-        '
-        Me.scrollSeleccionados.LargeChange = 10
-        Me.scrollSeleccionados.Location = New System.Drawing.Point(967, 191)
-        Me.scrollSeleccionados.Maximum = 100
-        Me.scrollSeleccionados.Name = "scrollSeleccionados"
-        Me.scrollSeleccionados.ScrollIdleColor = System.Drawing.Color.Silver
-        Me.scrollSeleccionados.Size = New System.Drawing.Size(10, 429)
-        Me.scrollSeleccionados.TabIndex = 164
-        Me.scrollSeleccionados.ThumbColor = System.Drawing.Color.DimGray
-        Me.scrollSeleccionados.ThumbHoverColor = System.Drawing.Color.Gray
-        Me.scrollSeleccionados.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
         'frmIngresarSintomas
         '
@@ -293,7 +293,7 @@ Partial Class frmIngresarSintomas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1050, 700)
+        Me.ClientSize = New System.Drawing.Size(1050, 635)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -313,11 +313,11 @@ Partial Class frmIngresarSintomas
     Friend WithEvents MISintoma As DataGridViewTextBoxColumn
     Friend WithEvents dgvTodos As DataGridView
     Friend WithEvents SintomaTodos As DataGridViewTextBoxColumn
-    Friend WithEvents btnAtras As Button
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents pnlInstancia As Panel
     Friend WithEvents btnObtenerDiag As Guna.UI.WinForms.GunaButton
-    Friend WithEvents GunaElipsePanel1 As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents scrollSeleccionados As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents scrollTodos As Guna.UI.WinForms.GunaVScrollBar
+    Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
+    Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
 End Class

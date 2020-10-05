@@ -110,10 +110,7 @@ Public Class frmIngresarSintomas
         'dgvTodos.DataSource = bs
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
-        Me.Dispose()
-    End Sub
+
 
     Private Sub btnObtenerDiag_Click(sender As Object, e As EventArgs) Handles btnObtenerDiag.Click
         Dim misSintomas As New ArrayList
@@ -179,4 +176,11 @@ Public Class frmIngresarSintomas
         ScrollHelperSeleccionados.UpdateScrollBar()
         ScrollHelperTodos.UpdateScrollBar()
     End Sub
+
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+        Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+        Me.Dispose()
+    End Sub
+
+
 End Class

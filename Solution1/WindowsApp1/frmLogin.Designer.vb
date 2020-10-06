@@ -96,7 +96,7 @@ Partial Class frmLogin
         Me.GunaTextBox1.FocusedForeColor = System.Drawing.Color.White
         Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaTextBox1.ForeColor = System.Drawing.Color.LightGray
-        Me.GunaTextBox1.Location = New System.Drawing.Point(350, 160)
+        Me.GunaTextBox1.Location = New System.Drawing.Point(346, 144)
         Me.GunaTextBox1.Name = "GunaTextBox1"
         Me.GunaTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.GunaTextBox1.Radius = 17
@@ -126,7 +126,7 @@ Partial Class frmLogin
         Me.GunaTextBox2.FocusedForeColor = System.Drawing.Color.White
         Me.GunaTextBox2.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaTextBox2.ForeColor = System.Drawing.Color.White
-        Me.GunaTextBox2.Location = New System.Drawing.Point(350, 242)
+        Me.GunaTextBox2.Location = New System.Drawing.Point(346, 226)
         Me.GunaTextBox2.Name = "GunaTextBox2"
         Me.GunaTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.GunaTextBox2.Radius = 17

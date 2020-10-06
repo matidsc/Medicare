@@ -22,98 +22,42 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.ing = New System.Windows.Forms.RadioButton()
-        Me.esp = New System.Windows.Forms.RadioButton()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.lblCrearCuentaPac = New System.Windows.Forms.Button()
-        Me.lblApp = New System.Windows.Forms.Label()
+        Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
         Me.lblRecordar = New System.Windows.Forms.Label()
         Me.lblCrearCuenta = New System.Windows.Forms.Label()
-        Me.IconPictureBox3 = New FontAwesome.Sharp.IconPictureBox()
+        Me.btnAjustes = New FontAwesome.Sharp.IconPictureBox()
         Me.mcbRecordarUsuario = New Guna.UI.WinForms.GunaCheckBox()
         Me.im = New FontAwesome.Sharp.IconPictureBox()
         Me.lblLogin = New System.Windows.Forms.Label()
         Me.txtUsr = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
-        Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.lblApp = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnlContenedor.SuspendLayout()
-        CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ing
+        'pnlInstancia
         '
-        Me.ing.AutoSize = True
-        Me.ing.ForeColor = System.Drawing.SystemColors.Control
-        Me.ing.Location = New System.Drawing.Point(204, 408)
-        Me.ing.Name = "ing"
-        Me.ing.Size = New System.Drawing.Size(52, 17)
-        Me.ing.TabIndex = 24
-        Me.ing.TabStop = True
-        Me.ing.Text = "ingles"
-        Me.ing.UseVisualStyleBackColor = True
-        '
-        'esp
-        '
-        Me.esp.AutoSize = True
-        Me.esp.ForeColor = System.Drawing.SystemColors.Control
-        Me.esp.Location = New System.Drawing.Point(215, 316)
-        Me.esp.Name = "esp"
-        Me.esp.Size = New System.Drawing.Size(58, 17)
-        Me.esp.TabIndex = 23
-        Me.esp.TabStop = True
-        Me.esp.Text = "espalol"
-        Me.esp.UseVisualStyleBackColor = True
-        '
-        'MetroButton1
-        '
-        Me.MetroButton1.Location = New System.Drawing.Point(94, 305)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(75, 23)
-        Me.MetroButton1.TabIndex = 22
-        Me.MetroButton1.Text = "MetroButton1"
-        Me.MetroButton1.UseSelectable = True
-        '
-        'lblCrearCuentaPac
-        '
-        Me.lblCrearCuentaPac.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lblCrearCuentaPac.BackColor = System.Drawing.Color.DimGray
-        Me.lblCrearCuentaPac.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.lblCrearCuentaPac.FlatAppearance.BorderSize = 0
-        Me.lblCrearCuentaPac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblCrearCuentaPac.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
-        Me.lblCrearCuentaPac.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuentaPac.Location = New System.Drawing.Point(75, 254)
-        Me.lblCrearCuentaPac.Name = "lblCrearCuentaPac"
-        Me.lblCrearCuentaPac.Size = New System.Drawing.Size(148, 40)
-        Me.lblCrearCuentaPac.TabIndex = 31
-        Me.lblCrearCuentaPac.UseVisualStyleBackColor = False
-        Me.lblCrearCuentaPac.Visible = False
-        '
-        'lblApp
-        '
-        Me.lblApp.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblApp.ForeColor = System.Drawing.Color.Black
-        Me.lblApp.Location = New System.Drawing.Point(110, 417)
-        Me.lblApp.Name = "lblApp"
-        Me.lblApp.Size = New System.Drawing.Size(269, 57)
-        Me.lblApp.TabIndex = 25
-        Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
+        Me.pnlInstancia.Name = "pnlInstancia"
+        Me.pnlInstancia.Size = New System.Drawing.Size(777, 617)
+        Me.pnlInstancia.TabIndex = 37
         '
         'pnlContenedor
         '
-        Me.pnlContenedor.AutoSize = True
+        Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.Button1)
+        Me.pnlContenedor.Controls.Add(Me.UcAjustes1)
         Me.pnlContenedor.Controls.Add(Me.btnIngresar)
-        Me.pnlContenedor.Controls.Add(Me.lblCrearCuentaPac)
-        Me.pnlContenedor.Controls.Add(Me.esp)
         Me.pnlContenedor.Controls.Add(Me.lblRecordar)
         Me.pnlContenedor.Controls.Add(Me.lblCrearCuenta)
-        Me.pnlContenedor.Controls.Add(Me.ing)
-        Me.pnlContenedor.Controls.Add(Me.MetroButton1)
-        Me.pnlContenedor.Controls.Add(Me.IconPictureBox3)
+        Me.pnlContenedor.Controls.Add(Me.btnAjustes)
         Me.pnlContenedor.Controls.Add(Me.mcbRecordarUsuario)
         Me.pnlContenedor.Controls.Add(Me.im)
         Me.pnlContenedor.Controls.Add(Me.lblLogin)
@@ -121,11 +65,19 @@ Partial Class frmLogin
         Me.pnlContenedor.Controls.Add(Me.GunaSeparator1)
         Me.pnlContenedor.Controls.Add(Me.txtPass)
         Me.pnlContenedor.Controls.Add(Me.lblApp)
-        Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(1199, 648)
-        Me.pnlContenedor.TabIndex = 25
+        Me.pnlContenedor.Size = New System.Drawing.Size(876, 499)
+        Me.pnlContenedor.TabIndex = 0
+        '
+        'UcAjustes1
+        '
+        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.UcAjustes1.Location = New System.Drawing.Point(133, 59)
+        Me.UcAjustes1.Name = "UcAjustes1"
+        Me.UcAjustes1.Size = New System.Drawing.Size(522, 410)
+        Me.UcAjustes1.TabIndex = 52
+        Me.UcAjustes1.Visible = False
         '
         'btnIngresar
         '
@@ -140,7 +92,7 @@ Partial Class frmLogin
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Image = Nothing
         Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnIngresar.Location = New System.Drawing.Point(450, 417)
+        Me.btnIngresar.Location = New System.Drawing.Point(351, 388)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
@@ -149,7 +101,7 @@ Partial Class frmLogin
         Me.btnIngresar.OnPressedColor = System.Drawing.Color.Black
         Me.btnIngresar.Radius = 17
         Me.btnIngresar.Size = New System.Drawing.Size(180, 42)
-        Me.btnIngresar.TabIndex = 36
+        Me.btnIngresar.TabIndex = 51
         Me.btnIngresar.Text = "Ingresar"
         Me.btnIngresar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -158,10 +110,10 @@ Partial Class frmLogin
         Me.lblRecordar.AutoSize = True
         Me.lblRecordar.Font = New System.Drawing.Font("Circular Std Bold", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRecordar.ForeColor = System.Drawing.Color.White
-        Me.lblRecordar.Location = New System.Drawing.Point(470, 319)
+        Me.lblRecordar.Location = New System.Drawing.Point(371, 297)
         Me.lblRecordar.Name = "lblRecordar"
         Me.lblRecordar.Size = New System.Drawing.Size(138, 15)
-        Me.lblRecordar.TabIndex = 35
+        Me.lblRecordar.TabIndex = 50
         Me.lblRecordar.Text = "Restablecer contraseña"
         '
         'lblCrearCuenta
@@ -169,24 +121,24 @@ Partial Class frmLogin
         Me.lblCrearCuenta.AutoSize = True
         Me.lblCrearCuenta.Font = New System.Drawing.Font("Circular Std Bold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuenta.Location = New System.Drawing.Point(164, 131)
+        Me.lblCrearCuenta.Location = New System.Drawing.Point(68, 128)
         Me.lblCrearCuenta.Name = "lblCrearCuenta"
         Me.lblCrearCuenta.Size = New System.Drawing.Size(125, 20)
-        Me.lblCrearCuenta.TabIndex = 34
+        Me.lblCrearCuenta.TabIndex = 49
         Me.lblCrearCuenta.Text = "Solicitar cuenta"
         '
-        'IconPictureBox3
+        'btnAjustes
         '
-        Me.IconPictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.IconPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.IconPictureBox3.ForeColor = System.Drawing.Color.LightGray
-        Me.IconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Cog
-        Me.IconPictureBox3.IconColor = System.Drawing.Color.LightGray
-        Me.IconPictureBox3.Location = New System.Drawing.Point(128, 46)
-        Me.IconPictureBox3.Name = "IconPictureBox3"
-        Me.IconPictureBox3.Size = New System.Drawing.Size(32, 32)
-        Me.IconPictureBox3.TabIndex = 33
-        Me.IconPictureBox3.TabStop = False
+        Me.btnAjustes.BackColor = System.Drawing.Color.Transparent
+        Me.btnAjustes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAjustes.ForeColor = System.Drawing.Color.LightGray
+        Me.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.Cog
+        Me.btnAjustes.IconColor = System.Drawing.Color.LightGray
+        Me.btnAjustes.Location = New System.Drawing.Point(29, 24)
+        Me.btnAjustes.Name = "btnAjustes"
+        Me.btnAjustes.Size = New System.Drawing.Size(32, 32)
+        Me.btnAjustes.TabIndex = 48
+        Me.btnAjustes.TabStop = False
         '
         'mcbRecordarUsuario
         '
@@ -197,11 +149,11 @@ Partial Class frmLogin
         Me.mcbRecordarUsuario.FillColor = System.Drawing.Color.White
         Me.mcbRecordarUsuario.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mcbRecordarUsuario.ForeColor = System.Drawing.Color.LightGray
-        Me.mcbRecordarUsuario.Location = New System.Drawing.Point(473, 367)
+        Me.mcbRecordarUsuario.Location = New System.Drawing.Point(374, 345)
         Me.mcbRecordarUsuario.Name = "mcbRecordarUsuario"
         Me.mcbRecordarUsuario.Radius = 1
         Me.mcbRecordarUsuario.Size = New System.Drawing.Size(136, 20)
-        Me.mcbRecordarUsuario.TabIndex = 32
+        Me.mcbRecordarUsuario.TabIndex = 47
         Me.mcbRecordarUsuario.Text = "Recordar usuario"
         Me.mcbRecordarUsuario.Visible = False
         '
@@ -212,11 +164,11 @@ Partial Class frmLogin
         Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
         Me.im.IconColor = System.Drawing.Color.MediumSlateBlue
         Me.im.IconSize = 594
-        Me.im.Location = New System.Drawing.Point(652, -340)
+        Me.im.Location = New System.Drawing.Point(553, -362)
         Me.im.Name = "im"
         Me.im.Rotation = 135.0R
         Me.im.Size = New System.Drawing.Size(594, 707)
-        Me.im.TabIndex = 31
+        Me.im.TabIndex = 46
         Me.im.TabStop = False
         '
         'lblLogin
@@ -224,10 +176,10 @@ Partial Class frmLogin
         Me.lblLogin.AutoSize = True
         Me.lblLogin.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogin.ForeColor = System.Drawing.Color.White
-        Me.lblLogin.Location = New System.Drawing.Point(491, 81)
+        Me.lblLogin.Location = New System.Drawing.Point(392, 59)
         Me.lblLogin.Name = "lblLogin"
         Me.lblLogin.Size = New System.Drawing.Size(104, 45)
-        Me.lblLogin.TabIndex = 26
+        Me.lblLogin.TabIndex = 41
         Me.lblLogin.Text = "Login"
         '
         'txtUsr
@@ -242,22 +194,22 @@ Partial Class frmLogin
         Me.txtUsr.FocusedForeColor = System.Drawing.Color.White
         Me.txtUsr.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsr.ForeColor = System.Drawing.Color.LightGray
-        Me.txtUsr.Location = New System.Drawing.Point(449, 182)
+        Me.txtUsr.Location = New System.Drawing.Point(346, 144)
         Me.txtUsr.Name = "txtUsr"
         Me.txtUsr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsr.Radius = 17
         Me.txtUsr.Size = New System.Drawing.Size(181, 42)
-        Me.txtUsr.TabIndex = 27
+        Me.txtUsr.TabIndex = 42
         Me.txtUsr.Text = "Cédula"
         Me.txtUsr.TextOffsetX = 7
         '
         'GunaSeparator1
         '
         Me.GunaSeparator1.LineColor = System.Drawing.Color.Silver
-        Me.GunaSeparator1.Location = New System.Drawing.Point(484, 131)
+        Me.GunaSeparator1.Location = New System.Drawing.Point(385, 109)
         Me.GunaSeparator1.Name = "GunaSeparator1"
         Me.GunaSeparator1.Size = New System.Drawing.Size(77, 10)
-        Me.GunaSeparator1.TabIndex = 29
+        Me.GunaSeparator1.TabIndex = 44
         Me.GunaSeparator1.Thickness = 5
         '
         'txtPass
@@ -272,28 +224,40 @@ Partial Class frmLogin
         Me.txtPass.FocusedForeColor = System.Drawing.Color.White
         Me.txtPass.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.White
-        Me.txtPass.Location = New System.Drawing.Point(449, 264)
+        Me.txtPass.Location = New System.Drawing.Point(346, 226)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtPass.Radius = 17
         Me.txtPass.Size = New System.Drawing.Size(181, 42)
-        Me.txtPass.TabIndex = 28
+        Me.txtPass.TabIndex = 43
         Me.txtPass.TextOffsetX = 5
         '
-        'pnlInstancia
+        'lblApp
         '
-        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
-        Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(1199, 648)
-        Me.pnlInstancia.TabIndex = 37
+        Me.lblApp.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApp.ForeColor = System.Drawing.Color.Black
+        Me.lblApp.Location = New System.Drawing.Point(83, 531)
+        Me.lblApp.Name = "lblApp"
+        Me.lblApp.Size = New System.Drawing.Size(352, 57)
+        Me.lblApp.TabIndex = 40
+        Me.lblApp.Text = "APLICACION"
+        Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(703, 401)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 53
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1199, 648)
+        Me.ClientSize = New System.Drawing.Size(880, 500)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -302,27 +266,24 @@ Partial Class frmLogin
         Me.Text = "|"
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
-        CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents ing As RadioButton
-    Friend WithEvents esp As RadioButton
+    Friend WithEvents pnlInstancia As Panel
     Friend WithEvents pnlContenedor As Panel
-    Public WithEvents lblCrearCuentaPac As Button
-    Public WithEvents lblApp As Label
+    Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblRecordar As Label
     Friend WithEvents lblCrearCuenta As Label
-    Friend WithEvents IconPictureBox3 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents btnAjustes As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents mcbRecordarUsuario As Guna.UI.WinForms.GunaCheckBox
     Friend WithEvents im As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lblLogin As Label
     Friend WithEvents txtUsr As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaSeparator1 As Guna.UI.WinForms.GunaSeparator
     Friend WithEvents txtPass As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
-    Friend WithEvents pnlInstancia As Panel
+    Public WithEvents lblApp As Label
+    Friend WithEvents UcAjustes1 As UCAjustes
+    Friend WithEvents Button1 As Button
 End Class

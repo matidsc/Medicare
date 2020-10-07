@@ -62,15 +62,11 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\WindowsApp1.exe
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Guna.UI.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\WindowsApp1.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\WindowsApp1.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\WindowsApp1.exe.config
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.vbprojAssemblyReference.cache
@@ -120,3 +116,17 @@ C:\Users\Mat\Desktop\Prueba\Programacion\Solución\AppPaciente\AppPaciente\bin\D
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.pdb
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.xml
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe.config
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.exe
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroSet UI.dll
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroFramework.dll
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.xml
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.exe.config
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.xml
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe.config
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.xml
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe.config

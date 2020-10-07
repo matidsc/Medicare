@@ -2,38 +2,9 @@
 Imports Logica
 Public Class frmBienvenidaPaciente
 
-    Dim drag As Boolean
-    Dim mousex, mousey As Integer
     Dim contChat As New ControladorChat
     Private chatComenzo As Boolean = False
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
-        'Principal.Singleton.roundedCorners(Me)
-
-        'Me.BackColor = Color.FromArgb(236, 236, 236)
-        'Dim col As Color = Color.FromArgb(52, 73, 94)
-
-        'Panel1.BackColor = Color.WhiteSmoke
-        'Panel2.BackColor = Color.WhiteSmoke
-        'Panel3.BackColor = Color.WhiteSmoke
-        'Panel4.BackColor = Color.WhiteSmoke
-        'Panel5.BackColor = Color.WhiteSmoke
-        'Label1.ForeColor = col
-        'Label2.ForeColor = col
-        'Label3.ForeColor = col
-        'Label4.ForeColor = col
-        'Label5.ForeColor = col
-        'Label6.ForeColor = col
-        'Label7.ForeColor = col
-        'Label8.ForeColor = col
-        'Label9.ForeColor = col
-        'Label10.ForeColor = col
-        'Label11.ForeColor = col
-        'Label12.ForeColor = col
-        'Label13.ForeColor = col
 
     End Sub
 
@@ -121,17 +92,17 @@ Public Class frmBienvenidaPaciente
     '    hover(Panel5)
     'End Sub
 
-    Private Sub Panel1_Click(sender As Object, e As EventArgs)
-        Dim frm As New frmIngresarSintomas
-        Configuracion.Singleton.SetConnection()
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
-    End Sub
+    'Private Sub Panel1_Click(sender As Object, e As EventArgs)
+    '    Dim frm As New frmIngresarSintomas
+    '    Configuracion.Singleton.SetConnection()
+    '    Me.SuspendLayout()
+    '    Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+    '    Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+    '    frm.Show()
+    '    pnlContenedor.Hide()
+    '    pnlInstancia.Show()
+    '    Me.ResumeLayout()
+    'End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
@@ -196,7 +167,6 @@ Public Class frmBienvenidaPaciente
 
     Private Sub btnIngresarSintomas_Click(sender As Object, e As EventArgs) Handles btnIngresarSintomas.Click
         Dim frm As New frmIngresarSintomas
-        Configuracion.Singleton.SetConnection()
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
         Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
@@ -206,10 +176,17 @@ Public Class frmBienvenidaPaciente
         Me.ResumeLayout()
     End Sub
 
+    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
+
+    End Sub
+
+    Private Sub pnlCerrar_Paint(sender As Object, e As PaintEventArgs) Handles pnlCerrar.Paint
+
+    End Sub
+
     Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs)
         If chatComenzo Then
             Dim frm As New frmChat
-            Configuracion.Singleton.SetConnection()
             Me.SuspendLayout()
             Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
             Principal.Singleton.CambiarTamaño(frmChat)

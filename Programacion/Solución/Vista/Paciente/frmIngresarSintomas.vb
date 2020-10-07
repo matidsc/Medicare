@@ -182,5 +182,7 @@ Public Class frmIngresarSintomas
         Me.Dispose()
     End Sub
 
+    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
 
+    End Sub
 End Class

@@ -106,7 +106,15 @@ Clase encargada de generar la conexión con la base de datos.
  <summary>
  Función encargada de refrescar los mensajes del chat.
  </summary>
- <param name="idChat"></param>
+ <param name="idChat">ID del chat en cuestión.</param>
+ <returns>DataTable cargado con los valores obtenidos.</returns>
+</member>
+<member name="M:Acceso_a_Datos.ModeloChat.RecargarChatNuevoMSJ(System.Int32,System.Int32)">
+ <summary>
+ Función encargada de actualizar aquellos mensajes posteriores al último mensaje mostrado en pantalla.
+ </summary>
+ <param name="idChat">ID del chat en cuestión.</param>
+ <param name="maxMsj">ID autoincremental del último mensaje recibido</param>
  <returns>DataTable cargado con los valores obtenidos.</returns>
 </member>
 <member name="M:Acceso_a_Datos.ModeloChat.ObtenerRespuesta(System.String)">
@@ -412,7 +420,7 @@ Clase encargada de generar la conexión con la base de datos.
  <param name="ali"></param>
  <returns>True si el delete fue realizado.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloPatologia.obtenerDiagnostico(System.Collections.ArrayList)">
+<member name="M:Acceso_a_Datos.ModeloPatologia.ObtenerDiagnostico(System.Collections.ArrayList)">
  <summary>
  Función encargada de obtener un diagnóstico basado en los síntomas del paciente.
  </summary>

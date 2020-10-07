@@ -194,7 +194,7 @@ Public Class frmLogin
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
                                 Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
-                                Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+                                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
                                 frm.Show()
                                 pnlContenedor.Hide()
                                 pnlContenedor.Show()
@@ -278,5 +278,13 @@ Public Class frmLogin
 
     Private Sub btnIngresar_Click_1(sender As Object, e As EventArgs) Handles btnIngresar.Click
         ingresarUsuario()
+    End Sub
+
+    Private Sub UcAjustes1_Load(sender As Object, e As EventArgs) Handles UcAjustes1.Load
+
+    End Sub
+
+    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
+
     End Sub
 End Class

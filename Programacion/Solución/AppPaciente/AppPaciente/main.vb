@@ -32,9 +32,9 @@ Public Class main
         'frm.lblApp.Text = "Paciente"
         'Me.Location = New Point(Me.Location.X, Me.Location.Y - 35)
         CargarVentana(ventana, frm)
-        frm.Anchor = AnchorStyles.None
+        'frm.Anchor = AnchorStyles.None
         'Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente
-        'cambiarTamaño()
+        cambiarTamaño()
     End Sub
 
     Public Sub CargarVentana(ventana As Panel, formInterno As Form)
@@ -87,6 +87,11 @@ Public Class main
     Private Sub pnlCerrar_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlCerrar.MouseUp
         moverVentanaUp()
     End Sub
+
+    Private Sub pnlCerrar_Paint(sender As Object, e As PaintEventArgs) Handles pnlCerrar.Paint
+
+    End Sub
+
     Public Sub moverVentanaMove(form As Form)
 
         If Me.drag Then

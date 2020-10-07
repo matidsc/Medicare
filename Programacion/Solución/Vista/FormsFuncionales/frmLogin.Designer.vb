@@ -24,6 +24,7 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.UcAjustes1 = New Vista.UCAjustes()
         Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
         Me.lblRecordar = New System.Windows.Forms.Label()
@@ -36,7 +37,7 @@ Partial Class frmLogin
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,14 +45,16 @@ Partial Class frmLogin
         '
         'pnlInstancia
         '
+        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(777, 617)
+        Me.pnlInstancia.Size = New System.Drawing.Size(880, 500)
         Me.pnlInstancia.TabIndex = 37
         '
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.Button2)
         Me.pnlContenedor.Controls.Add(Me.Button1)
         Me.pnlContenedor.Controls.Add(Me.UcAjustes1)
         Me.pnlContenedor.Controls.Add(Me.btnIngresar)
@@ -65,17 +68,27 @@ Partial Class frmLogin
         Me.pnlContenedor.Controls.Add(Me.GunaSeparator1)
         Me.pnlContenedor.Controls.Add(Me.txtPass)
         Me.pnlContenedor.Controls.Add(Me.lblApp)
+        Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(876, 499)
+        Me.pnlContenedor.Size = New System.Drawing.Size(880, 500)
         Me.pnlContenedor.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(703, 401)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 53
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'UcAjustes1
         '
         Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.UcAjustes1.Location = New System.Drawing.Point(133, 59)
+        Me.UcAjustes1.Location = New System.Drawing.Point(177, 59)
         Me.UcAjustes1.Name = "UcAjustes1"
-        Me.UcAjustes1.Size = New System.Drawing.Size(522, 410)
+        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
         Me.UcAjustes1.TabIndex = 52
         Me.UcAjustes1.Visible = False
         '
@@ -108,22 +121,22 @@ Partial Class frmLogin
         'lblRecordar
         '
         Me.lblRecordar.AutoSize = True
-        Me.lblRecordar.Font = New System.Drawing.Font("Circular Std Bold", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecordar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRecordar.ForeColor = System.Drawing.Color.White
         Me.lblRecordar.Location = New System.Drawing.Point(371, 297)
         Me.lblRecordar.Name = "lblRecordar"
-        Me.lblRecordar.Size = New System.Drawing.Size(138, 15)
+        Me.lblRecordar.Size = New System.Drawing.Size(159, 15)
         Me.lblRecordar.TabIndex = 50
         Me.lblRecordar.Text = "Restablecer contraseña"
         '
         'lblCrearCuenta
         '
         Me.lblCrearCuenta.AutoSize = True
-        Me.lblCrearCuenta.Font = New System.Drawing.Font("Circular Std Bold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCrearCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
         Me.lblCrearCuenta.Location = New System.Drawing.Point(68, 128)
         Me.lblCrearCuenta.Name = "lblCrearCuenta"
-        Me.lblCrearCuenta.Size = New System.Drawing.Size(125, 20)
+        Me.lblCrearCuenta.Size = New System.Drawing.Size(134, 20)
         Me.lblCrearCuenta.TabIndex = 49
         Me.lblCrearCuenta.Text = "Solicitar cuenta"
         '
@@ -147,12 +160,12 @@ Partial Class frmLogin
         Me.mcbRecordarUsuario.CheckedOnColor = System.Drawing.Color.MediumSlateBlue
         Me.mcbRecordarUsuario.Cursor = System.Windows.Forms.Cursors.Hand
         Me.mcbRecordarUsuario.FillColor = System.Drawing.Color.White
-        Me.mcbRecordarUsuario.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mcbRecordarUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mcbRecordarUsuario.ForeColor = System.Drawing.Color.LightGray
         Me.mcbRecordarUsuario.Location = New System.Drawing.Point(374, 345)
         Me.mcbRecordarUsuario.Name = "mcbRecordarUsuario"
         Me.mcbRecordarUsuario.Radius = 1
-        Me.mcbRecordarUsuario.Size = New System.Drawing.Size(136, 20)
+        Me.mcbRecordarUsuario.Size = New System.Drawing.Size(137, 20)
         Me.mcbRecordarUsuario.TabIndex = 47
         Me.mcbRecordarUsuario.Text = "Recordar usuario"
         Me.mcbRecordarUsuario.Visible = False
@@ -222,7 +235,7 @@ Partial Class frmLogin
         Me.txtPass.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.txtPass.FocusedBorderColor = System.Drawing.Color.White
         Me.txtPass.FocusedForeColor = System.Drawing.Color.White
-        Me.txtPass.Font = New System.Drawing.Font("Circular Std Bold", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.White
         Me.txtPass.Location = New System.Drawing.Point(346, 226)
         Me.txtPass.Name = "txtPass"
@@ -243,14 +256,16 @@ Partial Class frmLogin
         Me.lblApp.Text = "APLICACION"
         Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
+        'Button2
         '
-        Me.Button1.Location = New System.Drawing.Point(703, 401)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 53
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button2.BackColor = System.Drawing.Color.Brown
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(729, 443)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 54
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'frmLogin
         '
@@ -286,4 +301,5 @@ Partial Class frmLogin
     Public WithEvents lblApp As Label
     Friend WithEvents UcAjustes1 As UCAjustes
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

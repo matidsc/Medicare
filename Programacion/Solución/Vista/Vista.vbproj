@@ -70,7 +70,7 @@
     </Reference>
     <Reference Include="AppPaciente, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.exe</HintPath>
+      <HintPath>..\AppPaciente\AppPaciente\bin\Debug\AppPaciente.exe</HintPath>
     </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
@@ -208,6 +208,12 @@
     </Compile>
     <Compile Include="Gestor\frmModificarPatologia.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\UCHabilitar.Designer.vb">
+      <DependentUpon>UCHabilitar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\UCHabilitar.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Medico\Componentes Chat\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmModificarPatologia.resx">
       <DependentUpon>frmModificarPatologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\UCHabilitar.resx">
+      <DependentUpon>UCHabilitar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

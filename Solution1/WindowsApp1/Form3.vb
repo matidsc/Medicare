@@ -5,12 +5,6 @@
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim sc As New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, GunaVScrollBar1, True)
 
-        dgvTodos.Rows.Add()
-        dgvTodos.Rows.Add()
-        dgvTodos.Rows.Add()
-        dgvTodos.Rows.Add()
-        dgvTodos.Rows.Add()
-        dgvTodos.Rows.Add()
 
 
         For i = 0 To 25

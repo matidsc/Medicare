@@ -107,9 +107,17 @@ Public Class ModeloGestor
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function ListarPacientes() As DataTable
 
-        Dim consulta = "SELECT paciente.cedula FROM paciente, usuario WHERE paciente.verificacion = 0 and usuario.bajaLogica = 0 and paciente.cedula = usuario.cedula"
+        Dim consulta = "SELECT p.cedula, u.pNom, u.pApe, u.sApe FROM paciente p, usuario u WHERE p.verificacion = 0 and u.bajaLogica = 0 and p.cedula = u.cedula"
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+
+    Public Function NotificacionListado() As Int16
+
+        Dim consulta As String = "SELECT count(*) FROM paciente p, usuario u WHERE verificacion = 0 AND p.cedula = u.cedula AND u.bajalogica = 0"
+
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
+
     End Function
 
     ''' <summary>

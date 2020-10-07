@@ -11,7 +11,7 @@
     <AssemblyName>AppPaciente</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -72,10 +72,6 @@
     <Reference Include="Vista, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Vista\bin\Debug\Vista.exe</HintPath>
-    </Reference>
-    <Reference Include="WindowsApp1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Solution1\WindowsApp1\bin\Debug\WindowsApp1.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

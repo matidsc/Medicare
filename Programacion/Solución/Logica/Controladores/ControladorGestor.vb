@@ -41,6 +41,12 @@ Public Class ControladorGestor
 
     End Function
 
+    Public Function NotificacionListado() As Int16
+
+        Return ModeloGestor.Singleton.NotificacionListado
+
+    End Function
+
     Public Function eliminar(cedula As String) As Boolean
 
         Return ModeloGestor.Singleton.Eliminar(cedula)

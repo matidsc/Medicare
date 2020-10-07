@@ -230,22 +230,38 @@
 
         roundedCorners(Me)
 
-        For i = 0 To titulos.Length - 1
 
-            addPanel()
+        For i = 0 To 10
 
-            For Each ctrl As Control In flowpnl.Controls
+            Dim uc As New UCPacientes
 
-                If ctrl.Name = nomPanelActual Then
-                    ctrl.Controls.Add(setImagen(imagenes(i)))
-                    ctrl.Controls.Add(setTitulo(titulos(i)))
-                    ctrl.Controls.Add(setSubtitulo(subtitulos(i)))
+            flowpnl.Controls.Add(uc)
 
-                End If
 
-            Next
+            'For Each ctrl As Control In Panel1.Controls
+            '    If ctrl.Name = "Label2" Then
+            '        ctrl.Text = i.ToString
+            '    End If
+            'Next
 
         Next
+
+        'For i = 0 To titulos.Length - 1
+
+        '    addPanel()
+
+        '    For Each ctrl As Control In flowpnl.Controls
+
+        '        If ctrl.Name = nomPanelActual Then
+        '            ctrl.Controls.Add(setImagen(imagenes(i)))
+        '            ctrl.Controls.Add(setTitulo(titulos(i)))
+        '            ctrl.Controls.Add(setSubtitulo(subtitulos(i)))
+
+        '        End If
+
+        '    Next
+
+        'Next
 
     End Sub
 End Class

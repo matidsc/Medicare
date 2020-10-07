@@ -34,20 +34,21 @@ Partial Class main
         Me.ventana.AutoSize = True
         Me.ventana.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ventana.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ventana.Location = New System.Drawing.Point(0, 35)
+        Me.ventana.Location = New System.Drawing.Point(0, 38)
         Me.ventana.Name = "ventana"
-        Me.ventana.Size = New System.Drawing.Size(880, 535)
+        Me.ventana.Size = New System.Drawing.Size(1398, 873)
         Me.ventana.TabIndex = 0
         '
         'pnlCerrar
         '
+        Me.pnlCerrar.AutoSize = True
         Me.pnlCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.pnlCerrar.Controls.Add(Me.Button1)
         Me.pnlCerrar.Controls.Add(Me.Button3)
         Me.pnlCerrar.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlCerrar.Location = New System.Drawing.Point(0, 0)
         Me.pnlCerrar.Name = "pnlCerrar"
-        Me.pnlCerrar.Size = New System.Drawing.Size(880, 35)
+        Me.pnlCerrar.Size = New System.Drawing.Size(1398, 38)
         Me.pnlCerrar.TabIndex = 10
         '
         'Button1
@@ -57,7 +58,7 @@ Partial Class main
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(800, 0)
+        Me.Button1.Location = New System.Drawing.Point(1318, 0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(40, 35)
         Me.Button1.TabIndex = 1
@@ -71,7 +72,7 @@ Partial Class main
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(840, 0)
+        Me.Button3.Location = New System.Drawing.Point(1358, 0)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(40, 35)
         Me.Button3.TabIndex = 0
@@ -83,7 +84,8 @@ Partial Class main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(880, 570)
+        Me.ClientSize = New System.Drawing.Size(1398, 911)
+        Me.ControlBox = False
         Me.Controls.Add(Me.ventana)
         Me.Controls.Add(Me.pnlCerrar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

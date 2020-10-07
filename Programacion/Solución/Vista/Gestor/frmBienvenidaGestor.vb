@@ -3,46 +3,15 @@
 Public Class frmBienvenidaGestor
 
     Dim gestor As New ControladorGestor
+    Public Shared instancia As frmBienvenidaGestor
+    Public Shared Function Singleton() As frmBienvenidaGestor
+        If instancia Is Nothing Then
+            instancia = New frmBienvenidaGestor
 
-    Private Sub BienvenidaGestor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        End If
+        Return instancia
+    End Function
 
-        'Principal.Singleton.RoundedCorners(Me)
-
-
-        'Me.BackColor = Color.FromArgb(236, 236, 236)
-        'Dim col As Color = Color.FromArgb(52, 73, 94)
-
-        'Panel1.BackColor = Color.WhiteSmoke
-
-        'Panel3.BackColor = Color.WhiteSmoke
-        'Panel4.BackColor = Color.WhiteSmoke
-        'Panel5.BackColor = Color.WhiteSmoke
-        'Panel6.BackColor = Color.FromArgb(236, 236, 236)
-        'Panel12.BackColor = Color.WhiteSmoke
-        'Panel15.BackColor = Color.WhiteSmoke
-        'Panel16.BackColor = Color.WhiteSmoke
-
-        'Label1.ForeColor = col
-        'Label2.ForeColor = col
-        'Label3.ForeColor = col
-
-        'Label5.ForeColor = col
-        'Label6.ForeColor = col
-        'Label7.ForeColor = col
-        'Label8.ForeColor = col
-        'Label9.ForeColor = col
-        'Label10.ForeColor = col
-        'Label11.ForeColor = col
-        'Label12.ForeColor = col
-        'Label13.ForeColor = col
-        'Label14.ForeColor = col
-
-        'Label16.ForeColor = col
-        'Label17.ForeColor = col
-        'Label18.ForeColor = col
-        'Label19.ForeColor = col
-
-    End Sub
 
     Public Sub New()
 
@@ -52,20 +21,19 @@ Public Class frmBienvenidaGestor
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
+        NotificacionPacientes()
+        instancia = Me
+        pnlFlow.AutoScroll = False
+        pnlFlow.HorizontalScroll.Enabled = False
+        pnlFlow.HorizontalScroll.Visible = False
+        pnlFlow.AutoScroll = True
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(pnlFlow, scroll, True)
+        ' pnlFlow.HorizontalScroll.Enabled = False
+
+        ' pnlFlow.Width += scroll.Width
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
-    End Sub
-
-    Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs)
-        'Principal.Singleton.moverVentanaDown(Me)
-    End Sub
-
-    Private Sub Panel6_MouseMove(sender As Object, e As MouseEventArgs)
-        'Principal.Singleton.moverVentanaMove(Me)
-    End Sub
-
-    Private Sub Panel6_MouseUp(sender As Object, e As MouseEventArgs)
-        ' Principal.Singleton.moverVentanaUp()
     End Sub
 
     Private Sub pnlPatologias_MouseDown(sender As Object, e As MouseEventArgs)
@@ -115,44 +83,23 @@ Public Class frmBienvenidaGestor
 
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles tempListaPacientes.Tick
-        dgvListadoPacientes.DataSource = gestor.listarPacientes
-    End Sub
+    Public Sub cargarHabilitados()
 
-    Private Sub dgvListadoPacientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListadoPacientes.CellDoubleClick
+        Dim dt As DataTable = gestor.listarPacientes
 
-    End Sub
+        If pnlFlow.Controls.Count <> dt.Rows.Count Then
+            pnlFlow.Controls.Clear()
+            For Each rows As DataRow In dt.Rows
 
-    Private Sub dgvListadoPacientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) _
-                                           Handles dgvListadoPacientes.CellContentClick
-        If e.RowIndex >= 0 Then
 
-            If dgvListadoPacientes.Columns(e.ColumnIndex).Index = 0 Then
-                Dim respuesta As Integer = MsgBox("¿Desea habilitar a este paciente?", vbQuestion + vbYesNo + vbDefaultButton2)
+                pnlFlow.Controls.Add(New UCHabilitar(rows.Item(1) + " " + rows.Item(2) + " " + rows.Item(3), rows.Item(0)))
 
-                If respuesta = vbYes Then
+            Next
 
-                    gestor.habilitar(dgvListadoPacientes.Rows(e.RowIndex).Cells(2).Value)
-
-                End If
-
-            Else
-                Dim respuesta As Integer = MsgBox("¿Desea dar de baja a este paciente?", vbQuestion + vbYesNo + vbDefaultButton2)
-
-                If respuesta = vbYes Then
-
-                    gestor.eliminar(dgvListadoPacientes.Rows(e.RowIndex).Cells(2).Value)
-
-                End If
-
-            End If
         End If
-
     End Sub
 
-    Private Sub btnRefrescarListadoPac_Click(sender As Object, e As EventArgs) Handles btnRefrescarListadoPac.Click
-        dgvListadoPacientes.DataSource = gestor.listarPacientes
-    End Sub
+
 
     Private Sub Label12_Click(sender As Object, e As EventArgs)
         Me.WindowState = WindowState.Minimized
@@ -200,14 +147,84 @@ Public Class frmBienvenidaGestor
         Me.ResumeLayout()
     End Sub
 
+    Private Sub btnPacientes_Click(sender As Object, e As EventArgs) Handles btnPacientes.Click, lblNotificacion.Click
 
-    Private Sub btnNoti_Click(sender As Object, e As EventArgs) Handles btnNoti.Click
-
-        If pnlListadoPacientes.Visible = True Then
-            pnlListadoPacientes.Visible = False
+        If pnlFlow.Visible = False Then
+            cargarHabilitados()
+            If pnlFlow.Controls.Count = 0 Then
+                lblNA.Visible = True
+            End If
+            setTamaños()
+            pnlFlow.Visible = True
         Else
-            pnlListadoPacientes.Visible = True
+            pnlFlow.Visible = False
+            scroll.Visible = False
+            lblNA.Visible = False
+        End If
+
+    End Sub
+    Public Sub setTamaños()
+        If pnlFlow.Controls.Count < 4 Then
+            scroll.Enabled = False
+            scroll.Visible = False
+            pnlFlow.Width = 315
+        Else
+            pnlFlow.Width = 335
+        End If
+    End Sub
+
+
+    Private Sub tempListaPacientes_Tick(sender As Object, e As EventArgs) Handles tempListaPacientes.Tick
+
+        NotificacionPacientes()
+
+
+    End Sub
+
+    Private Sub NotificacionPacientes()
+        Dim notificacion As Int16 = gestor.NotificacionListado
+
+        If notificacion <> 0 Then
+
+            If notificacion <> lblNotificacion.Text Then
+
+                pnlNotificacion.Visible = True
+                lblNotificacion.Visible = True
+
+                If notificacion > 99 Then
+                    lblNotificacion.Text = "99+"
+                Else
+                    lblNotificacion.Text = notificacion
+                End If
+
+                If notificacion < 10 Then
+                    lblNotificacion.Location = New Point(2, 1)
+                Else
+                    lblNotificacion.Location = New Point(-1, 1)
+                End If
+
+            End If
+        Else
+            pnlNotificacion.Visible = False
+            lblNotificacion.Visible = False
+
 
         End If
+    End Sub
+
+    Public Sub AjustarPnl() Handles pnlFlow.ControlRemoved
+
+        setTamaños()
+        NotificacionPacientes()
+
+        If pnlFlow.Controls.Count = 0 Then
+            lblNA.Visible = True
+
+        End If
+
+
+    End Sub
+    Public Sub hola() Handles pnlFlow.ControlAdded
+        lblNA.Visible = False
     End Sub
 End Class

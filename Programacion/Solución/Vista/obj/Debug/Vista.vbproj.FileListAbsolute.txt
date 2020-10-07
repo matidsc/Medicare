@@ -1711,17 +1711,12 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\DynamicData.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Logica.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialDesign.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialDesignColors.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialSkin.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MetroFramework.Design.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MetroFramework.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MetroSet UI.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Microsoft.Xaml.Behaviors.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\ReactiveUI.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\ReactiveUI.Winforms.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Splat.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\System.Interactive.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\System.Reactive.Core.dll
@@ -1742,13 +1737,8 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Appccelerate.StateMachine.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Appccelerate.StateMachine.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\DynamicData.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialDesignColors.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\ReactiveUI.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\ReactiveUI.Winforms.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Splat.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\System.Interactive.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\System.Reactive.xml
@@ -1876,3 +1866,5 @@ C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\bin\Debug\Acceso_a_Dato
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\bin\Debug\Acceso_a_Datos.xml
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.vbproj.CopyComplete
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCAjustes.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCAjustes.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources

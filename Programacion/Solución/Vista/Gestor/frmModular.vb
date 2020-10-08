@@ -129,7 +129,7 @@ Public Class frmModular
 
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
         Me.Dispose()
     End Sub

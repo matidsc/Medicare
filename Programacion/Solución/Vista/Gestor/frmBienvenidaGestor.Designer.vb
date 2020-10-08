@@ -26,8 +26,8 @@ Partial Class frmBienvenidaGestor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBienvenidaGestor))
         Me.tempListaPacientes = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblNA = New System.Windows.Forms.Label()
+        Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -91,20 +91,8 @@ Partial Class frmBienvenidaGestor
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(1070, 569)
+        Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 25
-        '
-        'pnlFlow
-        '
-        Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.pnlFlow.Location = New System.Drawing.Point(597, 80)
-        Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
-        Me.pnlFlow.Name = "pnlFlow"
-        Me.pnlFlow.Size = New System.Drawing.Size(335, 466)
-        Me.pnlFlow.TabIndex = 26
-        Me.pnlFlow.Visible = False
-        Me.pnlFlow.WrapContents = False
         '
         'lblNA
         '
@@ -119,12 +107,24 @@ Partial Class frmBienvenidaGestor
         Me.lblNA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblNA.Visible = False
         '
+        'pnlFlow
+        '
+        Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.pnlFlow.Location = New System.Drawing.Point(597, 80)
+        Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
+        Me.pnlFlow.Name = "pnlFlow"
+        Me.pnlFlow.Size = New System.Drawing.Size(335, 466)
+        Me.pnlFlow.TabIndex = 26
+        Me.pnlFlow.Visible = False
+        Me.pnlFlow.WrapContents = False
+        '
         'scroll
         '
         Me.scroll.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.scroll.Enabled = False
         Me.scroll.LargeChange = 10
-        Me.scroll.Location = New System.Drawing.Point(-88, 79)
+        Me.scroll.Location = New System.Drawing.Point(-88, 120)
         Me.scroll.Margin = New System.Windows.Forms.Padding(0)
         Me.scroll.Maximum = 100
         Me.scroll.Name = "scroll"
@@ -142,7 +142,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel9.Controls.Add(Me.Panel10)
         Me.Panel9.Location = New System.Drawing.Point(0, 80)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1070, 490)
+        Me.Panel9.Size = New System.Drawing.Size(1070, 570)
         Me.Panel9.TabIndex = 26
         '
         'Label9
@@ -150,7 +150,7 @@ Partial Class frmBienvenidaGestor
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(406, 45)
+        Me.Label9.Location = New System.Drawing.Point(405, 68)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(266, 29)
         Me.Label9.TabIndex = 5
@@ -163,7 +163,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel10.Controls.Add(Me.Panel8)
         Me.Panel10.Controls.Add(Me.Panel7)
         Me.Panel10.Controls.Add(Me.Panel5)
-        Me.Panel10.Location = New System.Drawing.Point(34, 125)
+        Me.Panel10.Location = New System.Drawing.Point(35, 168)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1003, 306)
         Me.Panel10.TabIndex = 8
@@ -595,7 +595,7 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 569)
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
         '
         'frmBienvenidaGestor
@@ -603,7 +603,7 @@ Partial Class frmBienvenidaGestor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1070, 569)
+        Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

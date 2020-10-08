@@ -257,12 +257,6 @@
     <Compile Include="Paciente\frmHistorialPatologia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestor\frmUsuariosRegistrados.Designer.vb">
-      <DependentUpon>frmUsuariosRegistrados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Gestor\frmUsuariosRegistrados.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Gestor\frmListadoPatologiasySintomas.Designer.vb">
       <DependentUpon>frmListadoPatologiasySintomas.vb</DependentUpon>
     </Compile>
@@ -410,9 +404,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmHistorialPatologia.resx">
       <DependentUpon>frmHistorialPatologia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\frmUsuariosRegistrados.resx">
-      <DependentUpon>frmUsuariosRegistrados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmListadoPatologiasySintomas.resx">
       <DependentUpon>frmListadoPatologiasySintomas.vb</DependentUpon>

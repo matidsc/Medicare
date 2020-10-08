@@ -36,9 +36,7 @@ Partial Class frmModificarPatologia
         Me.mrbtnMediaN = New MaterialSkin.Controls.MaterialRadioButton()
         Me.txtDescripcionVieja = New System.Windows.Forms.TextBox()
         Me.txtDescripcionNueva = New System.Windows.Forms.TextBox()
-        Me.mdTxtDescripcionNueva = New MaterialSkin.Controls.MaterialDivider()
         Me.pnlNueva = New System.Windows.Forms.Panel()
-        Me.mxTtxtDescripcionVieja = New MaterialSkin.Controls.MaterialDivider()
         Me.grpDescripcion = New System.Windows.Forms.GroupBox()
         Me.grpRecomendaciones = New System.Windows.Forms.GroupBox()
         Me.txtRecomendacionVieja = New System.Windows.Forms.TextBox()
@@ -47,23 +45,19 @@ Partial Class frmModificarPatologia
         Me.mdTxtRecomendacionVieja = New MaterialSkin.Controls.MaterialDivider()
         Me.lblActual = New System.Windows.Forms.Label()
         Me.lblVerYModifcar = New System.Windows.Forms.Label()
-        Me.lblCantSelecc = New System.Windows.Forms.Label()
-        Me.lblModiciarPatologia = New System.Windows.Forms.Label()
         Me.grpPrioridad = New System.Windows.Forms.GroupBox()
-        Me.pnlModificarPatologia = New System.Windows.Forms.Panel()
         Me.grpNombre.SuspendLayout()
         Me.pnlNueva.SuspendLayout()
         Me.grpDescripcion.SuspendLayout()
         Me.grpRecomendaciones.SuspendLayout()
         Me.grpPrioridad.SuspendLayout()
-        Me.pnlModificarPatologia.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblNueva
         '
         Me.lblNueva.AutoSize = True
         Me.lblNueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNueva.Location = New System.Drawing.Point(572, 90)
+        Me.lblNueva.Location = New System.Drawing.Point(590, 47)
         Me.lblNueva.Name = "lblNueva"
         Me.lblNueva.Size = New System.Drawing.Size(82, 29)
         Me.lblNueva.TabIndex = 151
@@ -107,7 +101,7 @@ Partial Class frmModificarPatologia
         Me.grpNombre.Controls.Add(Me.mdTxtNombreNueva)
         Me.grpNombre.Controls.Add(Me.mdTxtNombreVieja)
         Me.grpNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpNombre.Location = New System.Drawing.Point(70, 138)
+        Me.grpNombre.Location = New System.Drawing.Point(88, 95)
         Me.grpNombre.Name = "grpNombre"
         Me.grpNombre.Size = New System.Drawing.Size(755, 75)
         Me.grpNombre.TabIndex = 150
@@ -136,7 +130,7 @@ Partial Class frmModificarPatologia
         Me.mrbtnBajaV.MouseState = MaterialSkin.MouseState.HOVER
         Me.mrbtnBajaV.Name = "mrbtnBajaV"
         Me.mrbtnBajaV.Ripple = True
-        Me.mrbtnBajaV.Size = New System.Drawing.Size(53, 30)
+        Me.mrbtnBajaV.Size = New System.Drawing.Size(56, 30)
         Me.mrbtnBajaV.TabIndex = 141
         Me.mrbtnBajaV.TabStop = True
         Me.mrbtnBajaV.Text = "Baja"
@@ -153,7 +147,7 @@ Partial Class frmModificarPatologia
         Me.mrbtnMediaV.MouseState = MaterialSkin.MouseState.HOVER
         Me.mrbtnMediaV.Name = "mrbtnMediaV"
         Me.mrbtnMediaV.Ripple = True
-        Me.mrbtnMediaV.Size = New System.Drawing.Size(64, 30)
+        Me.mrbtnMediaV.Size = New System.Drawing.Size(67, 30)
         Me.mrbtnMediaV.TabIndex = 140
         Me.mrbtnMediaV.TabStop = True
         Me.mrbtnMediaV.Text = "Media"
@@ -170,7 +164,7 @@ Partial Class frmModificarPatologia
         Me.mrbtnAltaV.MouseState = MaterialSkin.MouseState.HOVER
         Me.mrbtnAltaV.Name = "mrbtnAltaV"
         Me.mrbtnAltaV.Ripple = True
-        Me.mrbtnAltaV.Size = New System.Drawing.Size(51, 30)
+        Me.mrbtnAltaV.Size = New System.Drawing.Size(54, 30)
         Me.mrbtnAltaV.TabIndex = 139
         Me.mrbtnAltaV.TabStop = True
         Me.mrbtnAltaV.Text = "Alta"
@@ -232,33 +226,24 @@ Partial Class frmModificarPatologia
         Me.txtDescripcionVieja.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDescripcionVieja.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcionVieja.ForeColor = System.Drawing.Color.Black
-        Me.txtDescripcionVieja.Location = New System.Drawing.Point(17, 62)
+        Me.txtDescripcionVieja.Location = New System.Drawing.Point(17, 68)
         Me.txtDescripcionVieja.Multiline = True
         Me.txtDescripcionVieja.Name = "txtDescripcionVieja"
-        Me.txtDescripcionVieja.Size = New System.Drawing.Size(263, 84)
+        Me.txtDescripcionVieja.Size = New System.Drawing.Size(263, 48)
         Me.txtDescripcionVieja.TabIndex = 132
+        Me.txtDescripcionVieja.Text = "fghjghjjgh"
         '
         'txtDescripcionNueva
         '
         Me.txtDescripcionNueva.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDescripcionNueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcionNueva.ForeColor = System.Drawing.Color.Black
-        Me.txtDescripcionNueva.Location = New System.Drawing.Point(443, 62)
+        Me.txtDescripcionNueva.Location = New System.Drawing.Point(443, 68)
         Me.txtDescripcionNueva.Multiline = True
         Me.txtDescripcionNueva.Name = "txtDescripcionNueva"
-        Me.txtDescripcionNueva.Size = New System.Drawing.Size(263, 84)
+        Me.txtDescripcionNueva.Size = New System.Drawing.Size(263, 48)
         Me.txtDescripcionNueva.TabIndex = 130
-        '
-        'mdTxtDescripcionNueva
-        '
-        Me.mdTxtDescripcionNueva.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.mdTxtDescripcionNueva.Depth = 0
-        Me.mdTxtDescripcionNueva.Location = New System.Drawing.Point(434, 152)
-        Me.mdTxtDescripcionNueva.MouseState = MaterialSkin.MouseState.HOVER
-        Me.mdTxtDescripcionNueva.Name = "mdTxtDescripcionNueva"
-        Me.mdTxtDescripcionNueva.Size = New System.Drawing.Size(263, 1)
-        Me.mdTxtDescripcionNueva.TabIndex = 131
-        Me.mdTxtDescripcionNueva.Text = "MaterialDivider7"
+        Me.txtDescripcionNueva.Text = "fghjghjjgh"
         '
         'pnlNueva
         '
@@ -270,25 +255,12 @@ Partial Class frmModificarPatologia
         Me.pnlNueva.Size = New System.Drawing.Size(113, 100)
         Me.pnlNueva.TabIndex = 142
         '
-        'mxTtxtDescripcionVieja
-        '
-        Me.mxTtxtDescripcionVieja.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.mxTtxtDescripcionVieja.Depth = 0
-        Me.mxTtxtDescripcionVieja.Location = New System.Drawing.Point(17, 152)
-        Me.mxTtxtDescripcionVieja.MouseState = MaterialSkin.MouseState.HOVER
-        Me.mxTtxtDescripcionVieja.Name = "mxTtxtDescripcionVieja"
-        Me.mxTtxtDescripcionVieja.Size = New System.Drawing.Size(263, 1)
-        Me.mxTtxtDescripcionVieja.TabIndex = 133
-        Me.mxTtxtDescripcionVieja.Text = "MaterialDivider8"
-        '
         'grpDescripcion
         '
         Me.grpDescripcion.Controls.Add(Me.txtDescripcionVieja)
         Me.grpDescripcion.Controls.Add(Me.txtDescripcionNueva)
-        Me.grpDescripcion.Controls.Add(Me.mdTxtDescripcionNueva)
-        Me.grpDescripcion.Controls.Add(Me.mxTtxtDescripcionVieja)
         Me.grpDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpDescripcion.Location = New System.Drawing.Point(70, 359)
+        Me.grpDescripcion.Location = New System.Drawing.Point(88, 316)
         Me.grpDescripcion.Name = "grpDescripcion"
         Me.grpDescripcion.Size = New System.Drawing.Size(755, 166)
         Me.grpDescripcion.TabIndex = 148
@@ -302,9 +274,9 @@ Partial Class frmModificarPatologia
         Me.grpRecomendaciones.Controls.Add(Me.mdTxtRecomendacionNueva)
         Me.grpRecomendaciones.Controls.Add(Me.mdTxtRecomendacionVieja)
         Me.grpRecomendaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpRecomendaciones.Location = New System.Drawing.Point(70, 531)
+        Me.grpRecomendaciones.Location = New System.Drawing.Point(88, 488)
         Me.grpRecomendaciones.Name = "grpRecomendaciones"
-        Me.grpRecomendaciones.Size = New System.Drawing.Size(755, 166)
+        Me.grpRecomendaciones.Size = New System.Drawing.Size(755, 115)
         Me.grpRecomendaciones.TabIndex = 147
         Me.grpRecomendaciones.TabStop = False
         Me.grpRecomendaciones.Text = "Recomendaciones"
@@ -314,10 +286,10 @@ Partial Class frmModificarPatologia
         Me.txtRecomendacionVieja.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtRecomendacionVieja.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRecomendacionVieja.ForeColor = System.Drawing.Color.Black
-        Me.txtRecomendacionVieja.Location = New System.Drawing.Point(23, 59)
+        Me.txtRecomendacionVieja.Location = New System.Drawing.Point(11, 33)
         Me.txtRecomendacionVieja.Multiline = True
         Me.txtRecomendacionVieja.Name = "txtRecomendacionVieja"
-        Me.txtRecomendacionVieja.Size = New System.Drawing.Size(263, 84)
+        Me.txtRecomendacionVieja.Size = New System.Drawing.Size(263, 33)
         Me.txtRecomendacionVieja.TabIndex = 132
         '
         'txtRecomendacionNueva
@@ -325,20 +297,20 @@ Partial Class frmModificarPatologia
         Me.txtRecomendacionNueva.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtRecomendacionNueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRecomendacionNueva.ForeColor = System.Drawing.Color.Black
-        Me.txtRecomendacionNueva.Location = New System.Drawing.Point(440, 59)
+        Me.txtRecomendacionNueva.Location = New System.Drawing.Point(434, 42)
         Me.txtRecomendacionNueva.Multiline = True
         Me.txtRecomendacionNueva.Name = "txtRecomendacionNueva"
-        Me.txtRecomendacionNueva.Size = New System.Drawing.Size(263, 84)
+        Me.txtRecomendacionNueva.Size = New System.Drawing.Size(263, 33)
         Me.txtRecomendacionNueva.TabIndex = 130
         '
         'mdTxtRecomendacionNueva
         '
         Me.mdTxtRecomendacionNueva.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.mdTxtRecomendacionNueva.Depth = 0
-        Me.mdTxtRecomendacionNueva.Location = New System.Drawing.Point(440, 149)
+        Me.mdTxtRecomendacionNueva.Location = New System.Drawing.Point(440, 90)
         Me.mdTxtRecomendacionNueva.MouseState = MaterialSkin.MouseState.HOVER
         Me.mdTxtRecomendacionNueva.Name = "mdTxtRecomendacionNueva"
-        Me.mdTxtRecomendacionNueva.Size = New System.Drawing.Size(263, 1)
+        Me.mdTxtRecomendacionNueva.Size = New System.Drawing.Size(263, 10)
         Me.mdTxtRecomendacionNueva.TabIndex = 131
         Me.mdTxtRecomendacionNueva.Text = "MaterialDivider3"
         '
@@ -346,10 +318,10 @@ Partial Class frmModificarPatologia
         '
         Me.mdTxtRecomendacionVieja.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.mdTxtRecomendacionVieja.Depth = 0
-        Me.mdTxtRecomendacionVieja.Location = New System.Drawing.Point(23, 149)
+        Me.mdTxtRecomendacionVieja.Location = New System.Drawing.Point(23, 90)
         Me.mdTxtRecomendacionVieja.MouseState = MaterialSkin.MouseState.HOVER
         Me.mdTxtRecomendacionVieja.Name = "mdTxtRecomendacionVieja"
-        Me.mdTxtRecomendacionVieja.Size = New System.Drawing.Size(263, 1)
+        Me.mdTxtRecomendacionVieja.Size = New System.Drawing.Size(263, 10)
         Me.mdTxtRecomendacionVieja.TabIndex = 133
         Me.mdTxtRecomendacionVieja.Text = "MaterialDivider4"
         '
@@ -357,7 +329,7 @@ Partial Class frmModificarPatologia
         '
         Me.lblActual.AutoSize = True
         Me.lblActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblActual.Location = New System.Drawing.Point(238, 90)
+        Me.lblActual.Location = New System.Drawing.Point(256, 47)
         Me.lblActual.Name = "lblActual"
         Me.lblActual.Size = New System.Drawing.Size(108, 29)
         Me.lblActual.TabIndex = 146
@@ -367,36 +339,11 @@ Partial Class frmModificarPatologia
         '
         Me.lblVerYModifcar.AutoSize = True
         Me.lblVerYModifcar.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVerYModifcar.Location = New System.Drawing.Point(70, 720)
+        Me.lblVerYModifcar.Location = New System.Drawing.Point(737, 47)
         Me.lblVerYModifcar.Name = "lblVerYModifcar"
         Me.lblVerYModifcar.Size = New System.Drawing.Size(274, 29)
         Me.lblVerYModifcar.TabIndex = 145
         Me.lblVerYModifcar.Text = "Ver y modificar síntomas"
-        '
-        'lblCantSelecc
-        '
-        Me.lblCantSelecc.AutoSize = True
-        Me.lblCantSelecc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblCantSelecc.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantSelecc.ForeColor = System.Drawing.Color.White
-        Me.lblCantSelecc.Location = New System.Drawing.Point(49, 17)
-        Me.lblCantSelecc.MaximumSize = New System.Drawing.Size(200, 0)
-        Me.lblCantSelecc.Name = "lblCantSelecc"
-        Me.lblCantSelecc.Size = New System.Drawing.Size(0, 37)
-        Me.lblCantSelecc.TabIndex = 25
-        Me.lblCantSelecc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblModiciarPatologia
-        '
-        Me.lblModiciarPatologia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblModiciarPatologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblModiciarPatologia.ForeColor = System.Drawing.Color.White
-        Me.lblModiciarPatologia.Location = New System.Drawing.Point(281, 11)
-        Me.lblModiciarPatologia.Name = "lblModiciarPatologia"
-        Me.lblModiciarPatologia.Size = New System.Drawing.Size(362, 45)
-        Me.lblModiciarPatologia.TabIndex = 4
-        Me.lblModiciarPatologia.Text = "MODIFICAR PATOLOGIA"
-        Me.lblModiciarPatologia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'grpPrioridad
         '
@@ -405,38 +352,26 @@ Partial Class frmModificarPatologia
         Me.grpPrioridad.Controls.Add(Me.mrbtnMediaV)
         Me.grpPrioridad.Controls.Add(Me.mrbtnAltaV)
         Me.grpPrioridad.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpPrioridad.Location = New System.Drawing.Point(70, 219)
+        Me.grpPrioridad.Location = New System.Drawing.Point(88, 176)
         Me.grpPrioridad.Name = "grpPrioridad"
         Me.grpPrioridad.Size = New System.Drawing.Size(755, 139)
         Me.grpPrioridad.TabIndex = 149
         Me.grpPrioridad.TabStop = False
         Me.grpPrioridad.Text = "Prioridad"
         '
-        'pnlModificarPatologia
-        '
-        Me.pnlModificarPatologia.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.pnlModificarPatologia.Controls.Add(Me.lblCantSelecc)
-        Me.pnlModificarPatologia.Controls.Add(Me.lblModiciarPatologia)
-        Me.pnlModificarPatologia.Location = New System.Drawing.Point(0, -2)
-        Me.pnlModificarPatologia.Margin = New System.Windows.Forms.Padding(0)
-        Me.pnlModificarPatologia.Name = "pnlModificarPatologia"
-        Me.pnlModificarPatologia.Size = New System.Drawing.Size(907, 69)
-        Me.pnlModificarPatologia.TabIndex = 144
-        '
         'frmModificarPatologia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(907, 758)
+        Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.lblNueva)
         Me.Controls.Add(Me.grpNombre)
         Me.Controls.Add(Me.grpDescripcion)
         Me.Controls.Add(Me.grpRecomendaciones)
-        Me.Controls.Add(Me.lblActual)
         Me.Controls.Add(Me.lblVerYModifcar)
+        Me.Controls.Add(Me.lblActual)
         Me.Controls.Add(Me.grpPrioridad)
-        Me.Controls.Add(Me.pnlModificarPatologia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmModificarPatologia"
         Me.Text = "frmModificarPatologia"
@@ -450,8 +385,6 @@ Partial Class frmModificarPatologia
         Me.grpRecomendaciones.PerformLayout()
         Me.grpPrioridad.ResumeLayout(False)
         Me.grpPrioridad.PerformLayout()
-        Me.pnlModificarPatologia.ResumeLayout(False)
-        Me.pnlModificarPatologia.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -471,9 +404,7 @@ Partial Class frmModificarPatologia
     Friend WithEvents mrbtnMediaN As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents txtDescripcionVieja As TextBox
     Friend WithEvents txtDescripcionNueva As TextBox
-    Friend WithEvents mdTxtDescripcionNueva As MaterialSkin.Controls.MaterialDivider
     Friend WithEvents pnlNueva As Panel
-    Friend WithEvents mxTtxtDescripcionVieja As MaterialSkin.Controls.MaterialDivider
     Friend WithEvents grpDescripcion As GroupBox
     Friend WithEvents grpRecomendaciones As GroupBox
     Friend WithEvents txtRecomendacionVieja As TextBox
@@ -482,8 +413,5 @@ Partial Class frmModificarPatologia
     Friend WithEvents mdTxtRecomendacionVieja As MaterialSkin.Controls.MaterialDivider
     Friend WithEvents lblActual As Label
     Friend WithEvents lblVerYModifcar As Label
-    Friend WithEvents lblCantSelecc As Label
-    Friend WithEvents lblModiciarPatologia As Label
     Friend WithEvents grpPrioridad As GroupBox
-    Friend WithEvents pnlModificarPatologia As Panel
 End Class

@@ -36,51 +36,8 @@ Public Class frmBienvenidaGestor
 
     End Sub
 
-    Private Sub pnlPatologias_MouseDown(sender As Object, e As MouseEventArgs)
-        Dim frm As New frmModular()
-        frm.op = 0
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmModular)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
-    End Sub
-
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
-    End Sub
-    Private Sub pnlSintomas_MouseDown(sender As Object, e As MouseEventArgs)
-        Dim frm As New frmModular()
-        frm.op = 1
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmModular)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
-    End Sub
-    Private Sub pnlRegistrodeUsuarios_MouseDown(sender As Object, e As MouseEventArgs)
-        Dim frm As New frmModular()
-        frm.op = 2
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmModular)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        frmRegistroGestor.Show() 'registro gestor
-    End Sub
-
-    Private Sub btnNotificacion_Click(sender As Object, e As EventArgs)
-
-
     End Sub
 
     Public Sub cargarHabilitados()
@@ -91,7 +48,6 @@ Public Class frmBienvenidaGestor
             pnlFlow.Controls.Clear()
             For Each rows As DataRow In dt.Rows
 
-
                 pnlFlow.Controls.Add(New UCHabilitar(rows.Item(1) + " " + rows.Item(2) + " " + rows.Item(3), rows.Item(0)))
 
             Next
@@ -99,13 +55,9 @@ Public Class frmBienvenidaGestor
         End If
     End Sub
 
-
-
     Private Sub Label12_Click(sender As Object, e As EventArgs)
         Me.WindowState = WindowState.Minimized
     End Sub
-
-
 
     Private Sub btn2_Click(sender As Object, e As EventArgs)
         frmManualCsv.Show()

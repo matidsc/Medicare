@@ -1781,7 +1781,6 @@ C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.Mensaje
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCFicha.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCSintomas.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.Historial_de_patologías.resources
-C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.frmUsuariosRegistrados.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.frmListadoPatologiasySintomas.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistroGestor.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarPatologia.resources
@@ -1868,3 +1867,5 @@ C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.vbproj.
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCAjustes.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCAjustes.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources
+C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\bin\Debug\AppPaciente.exe
+C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources

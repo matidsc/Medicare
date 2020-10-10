@@ -22,6 +22,11 @@ WindowsApp1
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:WindowsApp1.My.Resources.Resources.buscar">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApp1.My.Resources.Resources.doctor">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

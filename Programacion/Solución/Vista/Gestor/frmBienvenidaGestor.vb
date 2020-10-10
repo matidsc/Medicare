@@ -159,7 +159,7 @@ Public Class frmBienvenidaGestor
         Else
             pnlNotificacion.Visible = False
             lblNotificacion.Visible = False
-
+            lblNotificacion.Text = "0"
 
         End If
     End Sub
@@ -178,5 +178,13 @@ Public Class frmBienvenidaGestor
     End Sub
     Public Sub hola() Handles pnlFlow.ControlAdded
         lblNA.Visible = False
+    End Sub
+
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+
+    End Sub
+
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+
     End Sub
 End Class

@@ -105,8 +105,7 @@ Public Class frmModular
                 Me.ResumeLayout()
             Case 1
 
-                Dim frm As New frmListadoPatologiasySintomas
-                frm.op = "síntomas"
+                Dim frm As New frmListadoPatologiasySintomas(1)
                 Me.SuspendLayout()
                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
                 Principal.Singleton.CambiarTamaño(frmListadoPatologiasySintomas)
@@ -116,8 +115,8 @@ Public Class frmModular
                 Me.ResumeLayout()
 
             Case 0
-                Dim frm As New frmListadoPatologiasySintomas
-                frm.op = "patologías"
+                Dim frm As New frmListadoPatologiasySintomas(0)
+                'frm.op = "patologías"
                 Me.SuspendLayout()
                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
                 Principal.Singleton.CambiarTamaño(frmListadoPatologiasySintomas)

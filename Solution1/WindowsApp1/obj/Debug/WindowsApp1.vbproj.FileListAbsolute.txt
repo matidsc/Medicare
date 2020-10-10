@@ -77,3 +77,6 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Solution1\Windows
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Solution1\WindowsApp1\bin\Debug\WinFormAnimation.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CopyComplete
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.UCPacientes.resources
+C:\Users\Mat\Desktop\Prueba\Solution1\WindowsApp1\obj\Debug\WindowsApp1.frmListado.resources
+C:\Users\Mat\Desktop\Prueba\Solution1\WindowsApp1\obj\Debug\WindowsApp1.SplashScreen1.resources
+C:\Users\Mat\Desktop\Prueba\Solution1\WindowsApp1\obj\Debug\WindowsApp1.UCPacientes.resources

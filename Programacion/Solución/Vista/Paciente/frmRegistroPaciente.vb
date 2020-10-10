@@ -44,17 +44,17 @@ Public Class frmRegistroPaciente
                                     If pac.VerificarBaja(txtCI.Text) Then
 
                                         If pac.registrar() Then
-
                                             MsgBox("Ha sido ingresado con éxito, debe esperar a ser habilitiado")
-                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                    txtPApe,
-                                                    txtSApe, txtSNom,
-                                                    txtMail, dgvTelefonos, aliTel)
-                                            txtFecNac.Clear()
+                                            'Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                            'txtPApe,
+                                            '        txtSApe, txtSNom,
+                                            '        txtMail, dgvTelefonos, aliTel)
+                                            'txtFecNac.Clear()
                                             cbM.Checked = True
-
+                                            aliTel.Clear()
                                         Else
                                             MsgBox("El paciente ya fue registrado")
+                                            aliTel.Clear()
                                         End If
 
                                     Else

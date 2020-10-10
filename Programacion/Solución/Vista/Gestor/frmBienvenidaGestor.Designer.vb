@@ -35,7 +35,6 @@ Partial Class frmBienvenidaGestor
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnPatologia = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnSintomas = New Guna.UI.WinForms.GunaAdvenceButton()
@@ -44,24 +43,25 @@ Partial Class frmBienvenidaGestor
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.GunaAdvenceButton4 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnRegistro = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
         Me.pnlNotificacion = New Guna.UI.WinForms.GunaElipsePanel()
         Me.lblNotificacion = New System.Windows.Forms.Label()
-        Me.btnRefrescarListadoPac = New System.Windows.Forms.Button()
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.btnPatologia = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.btnUsuarios = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.btnRegistro = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.btnRefrescarListadoPac = New System.Windows.Forms.Button()
         Me.btnPacientes = New FontAwesome.Sharp.IconPictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
-        Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.pnlContenedor.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -199,40 +199,6 @@ Partial Class frmBienvenidaGestor
         Me.Label2.Text = "Registrar, modificar, eliminar y buscar patologías"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnPatologia
-        '
-        Me.btnPatologia.AnimationHoverSpeed = 0.07!
-        Me.btnPatologia.AnimationSpeed = 0.03!
-        Me.btnPatologia.BackColor = System.Drawing.Color.Transparent
-        Me.btnPatologia.BaseColor = System.Drawing.Color.MediumSlateBlue
-        Me.btnPatologia.BorderColor = System.Drawing.Color.Black
-        Me.btnPatologia.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btnPatologia.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btnPatologia.CheckedForeColor = System.Drawing.Color.White
-        Me.btnPatologia.CheckedImage = CType(resources.GetObject("btnPatologia.CheckedImage"), System.Drawing.Image)
-        Me.btnPatologia.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btnPatologia.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPatologia.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnPatologia.FocusedColor = System.Drawing.Color.Empty
-        Me.btnPatologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPatologia.ForeColor = System.Drawing.Color.White
-        Me.btnPatologia.Image = Nothing
-        Me.btnPatologia.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnPatologia.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnPatologia.Location = New System.Drawing.Point(30, 179)
-        Me.btnPatologia.Name = "btnPatologia"
-        Me.btnPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.btnPatologia.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnPatologia.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnPatologia.OnHoverImage = Nothing
-        Me.btnPatologia.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnPatologia.OnPressedColor = System.Drawing.Color.Black
-        Me.btnPatologia.Radius = 12
-        Me.btnPatologia.Size = New System.Drawing.Size(125, 28)
-        Me.btnPatologia.TabIndex = 9
-        Me.btnPatologia.Text = "Ingresar"
-        Me.btnPatologia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -331,47 +297,13 @@ Partial Class frmBienvenidaGestor
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.Panel7.Controls.Add(Me.GunaAdvenceButton4)
+        Me.Panel7.Controls.Add(Me.btnUsuarios)
         Me.Panel7.Controls.Add(Me.Label7)
         Me.Panel7.Controls.Add(Me.Label8)
         Me.Panel7.Location = New System.Drawing.Point(714, 24)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(183, 248)
         Me.Panel7.TabIndex = 7
-        '
-        'GunaAdvenceButton4
-        '
-        Me.GunaAdvenceButton4.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton4.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton4.BaseColor = System.Drawing.Color.MediumSlateBlue
-        Me.GunaAdvenceButton4.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton4.CheckedImage = CType(resources.GetObject("GunaAdvenceButton4.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.GunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaAdvenceButton4.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton4.Image = Nothing
-        Me.GunaAdvenceButton4.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton4.Location = New System.Drawing.Point(29, 181)
-        Me.GunaAdvenceButton4.Name = "GunaAdvenceButton4"
-        Me.GunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.GunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton4.OnHoverImage = Nothing
-        Me.GunaAdvenceButton4.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton4.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.Radius = 12
-        Me.GunaAdvenceButton4.Size = New System.Drawing.Size(125, 28)
-        Me.GunaAdvenceButton4.TabIndex = 12
-        Me.GunaAdvenceButton4.Text = "Ingresar"
-        Me.GunaAdvenceButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -406,40 +338,6 @@ Partial Class frmBienvenidaGestor
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(183, 248)
         Me.Panel5.TabIndex = 6
-        '
-        'btnRegistro
-        '
-        Me.btnRegistro.AnimationHoverSpeed = 0.07!
-        Me.btnRegistro.AnimationSpeed = 0.03!
-        Me.btnRegistro.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistro.BaseColor = System.Drawing.Color.MediumSlateBlue
-        Me.btnRegistro.BorderColor = System.Drawing.Color.Black
-        Me.btnRegistro.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btnRegistro.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btnRegistro.CheckedForeColor = System.Drawing.Color.White
-        Me.btnRegistro.CheckedImage = CType(resources.GetObject("btnRegistro.CheckedImage"), System.Drawing.Image)
-        Me.btnRegistro.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRegistro.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnRegistro.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistro.ForeColor = System.Drawing.Color.White
-        Me.btnRegistro.Image = Nothing
-        Me.btnRegistro.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRegistro.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnRegistro.Location = New System.Drawing.Point(33, 184)
-        Me.btnRegistro.Name = "btnRegistro"
-        Me.btnRegistro.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.btnRegistro.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnRegistro.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnRegistro.OnHoverImage = Nothing
-        Me.btnRegistro.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnRegistro.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRegistro.Radius = 12
-        Me.btnRegistro.Size = New System.Drawing.Size(125, 28)
-        Me.btnRegistro.TabIndex = 11
-        Me.btnRegistro.Text = "Ingresar"
-        Me.btnRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
@@ -512,17 +410,6 @@ Partial Class frmBienvenidaGestor
         Me.lblNotificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblNotificacion.Visible = False
         '
-        'btnRefrescarListadoPac
-        '
-        Me.btnRefrescarListadoPac.FlatAppearance.BorderSize = 0
-        Me.btnRefrescarListadoPac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefrescarListadoPac.Image = Global.Vista.My.Resources.Resources.icons8_refresh_20px
-        Me.btnRefrescarListadoPac.Location = New System.Drawing.Point(973, 29)
-        Me.btnRefrescarListadoPac.Name = "btnRefrescarListadoPac"
-        Me.btnRefrescarListadoPac.Size = New System.Drawing.Size(28, 30)
-        Me.btnRefrescarListadoPac.TabIndex = 25
-        Me.btnRefrescarListadoPac.UseVisualStyleBackColor = True
-        '
         'GunaElipsePanel1
         '
         Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
@@ -533,6 +420,127 @@ Partial Class frmBienvenidaGestor
         Me.GunaElipsePanel1.Radius = 5
         Me.GunaElipsePanel1.Size = New System.Drawing.Size(15, 15)
         Me.GunaElipsePanel1.TabIndex = 9
+        '
+        'pnlInstancia
+        '
+        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
+        Me.pnlInstancia.Name = "pnlInstancia"
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
+        Me.pnlInstancia.TabIndex = 6
+        '
+        'btnPatologia
+        '
+        Me.btnPatologia.AnimationHoverSpeed = 0.07!
+        Me.btnPatologia.AnimationSpeed = 0.03!
+        Me.btnPatologia.BackColor = System.Drawing.Color.Transparent
+        Me.btnPatologia.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnPatologia.BorderColor = System.Drawing.Color.Black
+        Me.btnPatologia.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnPatologia.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnPatologia.CheckedForeColor = System.Drawing.Color.White
+        Me.btnPatologia.CheckedImage = CType(resources.GetObject("btnPatologia.CheckedImage"), System.Drawing.Image)
+        Me.btnPatologia.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnPatologia.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPatologia.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnPatologia.FocusedColor = System.Drawing.Color.Empty
+        Me.btnPatologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPatologia.ForeColor = System.Drawing.Color.White
+        Me.btnPatologia.Image = Nothing
+        Me.btnPatologia.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnPatologia.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnPatologia.Location = New System.Drawing.Point(30, 179)
+        Me.btnPatologia.Name = "btnPatologia"
+        Me.btnPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnPatologia.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnPatologia.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnPatologia.OnHoverImage = Nothing
+        Me.btnPatologia.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnPatologia.OnPressedColor = System.Drawing.Color.Black
+        Me.btnPatologia.Radius = 12
+        Me.btnPatologia.Size = New System.Drawing.Size(125, 28)
+        Me.btnPatologia.TabIndex = 9
+        Me.btnPatologia.Text = "Ingresar"
+        Me.btnPatologia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnUsuarios
+        '
+        Me.btnUsuarios.AnimationHoverSpeed = 0.07!
+        Me.btnUsuarios.AnimationSpeed = 0.03!
+        Me.btnUsuarios.BackColor = System.Drawing.Color.Transparent
+        Me.btnUsuarios.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnUsuarios.BorderColor = System.Drawing.Color.Black
+        Me.btnUsuarios.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnUsuarios.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnUsuarios.CheckedForeColor = System.Drawing.Color.White
+        Me.btnUsuarios.CheckedImage = CType(resources.GetObject("btnUsuarios.CheckedImage"), System.Drawing.Image)
+        Me.btnUsuarios.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUsuarios.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnUsuarios.FocusedColor = System.Drawing.Color.Empty
+        Me.btnUsuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuarios.ForeColor = System.Drawing.Color.White
+        Me.btnUsuarios.Image = Nothing
+        Me.btnUsuarios.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnUsuarios.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnUsuarios.Location = New System.Drawing.Point(29, 181)
+        Me.btnUsuarios.Name = "btnUsuarios"
+        Me.btnUsuarios.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnUsuarios.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnUsuarios.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnUsuarios.OnHoverImage = Nothing
+        Me.btnUsuarios.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnUsuarios.OnPressedColor = System.Drawing.Color.Black
+        Me.btnUsuarios.Radius = 12
+        Me.btnUsuarios.Size = New System.Drawing.Size(125, 28)
+        Me.btnUsuarios.TabIndex = 12
+        Me.btnUsuarios.Text = "Ingresar"
+        Me.btnUsuarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnRegistro
+        '
+        Me.btnRegistro.AnimationHoverSpeed = 0.07!
+        Me.btnRegistro.AnimationSpeed = 0.03!
+        Me.btnRegistro.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegistro.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnRegistro.BorderColor = System.Drawing.Color.Black
+        Me.btnRegistro.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnRegistro.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnRegistro.CheckedForeColor = System.Drawing.Color.White
+        Me.btnRegistro.CheckedImage = CType(resources.GetObject("btnRegistro.CheckedImage"), System.Drawing.Image)
+        Me.btnRegistro.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistro.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRegistro.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistro.ForeColor = System.Drawing.Color.White
+        Me.btnRegistro.Image = Nothing
+        Me.btnRegistro.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRegistro.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnRegistro.Location = New System.Drawing.Point(33, 184)
+        Me.btnRegistro.Name = "btnRegistro"
+        Me.btnRegistro.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnRegistro.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRegistro.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRegistro.OnHoverImage = Nothing
+        Me.btnRegistro.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnRegistro.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRegistro.Radius = 12
+        Me.btnRegistro.Size = New System.Drawing.Size(125, 28)
+        Me.btnRegistro.TabIndex = 11
+        Me.btnRegistro.Text = "Ingresar"
+        Me.btnRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnRefrescarListadoPac
+        '
+        Me.btnRefrescarListadoPac.FlatAppearance.BorderSize = 0
+        Me.btnRefrescarListadoPac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRefrescarListadoPac.Image = Global.Vista.My.Resources.Resources.icons8_refresh_20px
+        Me.btnRefrescarListadoPac.Location = New System.Drawing.Point(973, 29)
+        Me.btnRefrescarListadoPac.Name = "btnRefrescarListadoPac"
+        Me.btnRefrescarListadoPac.Size = New System.Drawing.Size(28, 30)
+        Me.btnRefrescarListadoPac.TabIndex = 25
+        Me.btnRefrescarListadoPac.UseVisualStyleBackColor = True
         '
         'btnPacientes
         '
@@ -590,14 +598,6 @@ Partial Class frmBienvenidaGestor
         Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.IconButton1.UseVisualStyleBackColor = True
         '
-        'pnlInstancia
-        '
-        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
-        Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
-        Me.pnlInstancia.TabIndex = 6
-        '
         'frmBienvenidaGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -650,7 +650,7 @@ Partial Class frmBienvenidaGestor
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents GunaAdvenceButton4 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents btnUsuarios As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel5 As Panel

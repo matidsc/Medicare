@@ -89,7 +89,7 @@ Public Class ModeloPaciente
         Dim consulta As String = "INSERT INTO paciente (cedula, verificacion, fecNac, sexo) VALUES (?,?,?,?)"
 
         parametros.Add(New OdbcParameter("cedula", cedula))
-        parametros.Add(New OdbcParameter("verificacion", "false"))
+        parametros.Add(New OdbcParameter("verificacion", "0"))
         parametros.Add(New OdbcParameter("fecNac", FechaNacimiento))
         parametros.Add(New OdbcParameter("sexo", sexo))
 
@@ -106,26 +106,28 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <param name="Telefonos"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function RegistrarTelefono(cedula As String, Telefonos As ArrayList)
+    Public Function RegistrarTelefono(cedula As String, Telefonos As ArrayList) As Boolean
 
-        Dim consulta = "INSERT INTO usuario_tel (cedula, telefono) VALUES (?,?)"
+        Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int16 = 0
 
-        For i As Int16 = 0 To Telefonos.Count - 1
+        For Each var As Int16 In Telefonos
             parametros.Clear()
             parametros.Add(New OdbcParameter("cedula", cedula))
-            parametros.Add(New OdbcParameter("telefono", Telefonos.Item(i)))
+            parametros.Add(New OdbcParameter("telefono", var))
 
             ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
-            contador = +1
+            contador += 1
         Next
 
         If contador = Telefonos.Count Then
+
             Return True
+        Else
+            Return False
         End If
 
-        Return False
     End Function
 
     ''' <summary>

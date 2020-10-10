@@ -1,5 +1,5 @@
 ﻿Imports Logica
-Imports MaterialSkin
+
 Imports System.IO
 
 ''' <summary>
@@ -131,6 +131,10 @@ Public Class Principal
     ''' <param name="sNom"></param>
     ''' <param name="sApe"></param>
     ''' <returns>True si los string son correctos.</returns>
+
+
+
+
     Public Function VerificarString(check As Verificacion, pNom As String, pApe As String, sNom As String, sApe As String) As Boolean
 
         If check.Verificar_String(pNom) Then
@@ -201,9 +205,15 @@ Public Class Principal
     ''' <returns>True si los teléfonos son correctos.</returns>
     Public Function VerificarTelefonos(dgv As DataGridView, telefonos As ArrayList) As Boolean
 
-        For i = 0 To dgv.Rows.Count - 2
-            If dgv.Rows(i).Cells(0).Value <> "" Then
-                telefonos.Add(dgv.Rows(i).Cells(0).Value)
+        'For i = 0 To dgv.Rows.Count - 2
+        ' If dgv.Rows(i).Cells(0).Value <> "" Then
+        '        telefonos.Add(CType(dgv.Rows(i).Cells(0).Value, Integer))
+        '    End If
+        'Next
+
+        For Each var As DataGridViewRow In dgv.Rows
+            If var.Cells(0).Value <> "" Then
+                telefonos.Add(CType(var.Cells(0).Value, Integer))
             End If
         Next
 
@@ -238,12 +248,7 @@ Public Class Principal
 
 
 #Region "Funciones y subrutinas"
-    Public Sub metroStyle(form As MaterialSkin.Controls.MaterialForm)
-        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
-        SkinManager.AddFormToManage(form)
-        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
-        SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey900, Primary.BlueGrey900, Primary.BlueGrey500, Accent.DeepOrange100, TextShade.WHITE)
-    End Sub
+
     Public Sub moverVentanaDown(form As Form)
         Me.drag = True
         Me.mousex = Cursor.Position.X - form.Left

@@ -34,8 +34,7 @@ Public Class ControladorPaciente
     Public Function registrar() As Boolean
 
         Try
-            Dim resultado As Boolean = ModeloPaciente.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono, _email, _sexo, _fecNac)
-            Return resultado
+            Return ModeloPaciente.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono, _email, _sexo, _fecNac)
         Catch ex As Exception
             Return False
         End Try

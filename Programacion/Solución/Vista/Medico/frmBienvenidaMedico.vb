@@ -143,4 +143,7 @@ Public Class frmBienvenidaMedico
         Me.pnlContenedor.Show()
     End Sub
 
+    Private Sub temporizador_Tick(sender As Object, e As EventArgs) Handles temporizador.Tick
+
+    End Sub
 End Class

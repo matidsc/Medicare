@@ -27,9 +27,6 @@ Partial Class frmRegistroGestor
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlDecCI = New System.Windows.Forms.Panel()
         Me.txtCI = New System.Windows.Forms.TextBox()
-        Me.pnlTitulo = New System.Windows.Forms.Panel()
-        Me.btnAtras = New System.Windows.Forms.Button()
-        Me.lblCrearCuentaDe = New System.Windows.Forms.Label()
         Me.lblCI = New System.Windows.Forms.Label()
         Me.pnlDecPNom = New System.Windows.Forms.Panel()
         Me.txtPNom = New System.Windows.Forms.TextBox()
@@ -61,7 +58,7 @@ Partial Class frmRegistroGestor
         Me.Telefonos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtRepCon = New System.Windows.Forms.TextBox()
         Me.txtCon = New System.Windows.Forms.TextBox()
-        Me.pnlTitulo.SuspendLayout()
+        Me.GunaLineTextBox1 = New Guna.UI.WinForms.GunaLineTextBox()
         Me.pnlTelefonos.SuspendLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,41 +80,6 @@ Partial Class frmRegistroGestor
         Me.txtCI.Name = "txtCI"
         Me.txtCI.Size = New System.Drawing.Size(172, 22)
         Me.txtCI.TabIndex = 109
-        '
-        'pnlTitulo
-        '
-        Me.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.pnlTitulo.Controls.Add(Me.btnAtras)
-        Me.pnlTitulo.Controls.Add(Me.lblCrearCuentaDe)
-        Me.pnlTitulo.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTitulo.Name = "pnlTitulo"
-        Me.pnlTitulo.Size = New System.Drawing.Size(1019, 77)
-        Me.pnlTitulo.TabIndex = 111
-        '
-        'btnAtras
-        '
-        Me.btnAtras.BackgroundImage = Global.Vista.My.Resources.Resources.icoFlechaAtras
-        Me.btnAtras.FlatAppearance.BorderSize = 0
-        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAtras.Image = Global.Vista.My.Resources.Resources.icoFlechaAtrasWhite
-        Me.btnAtras.Location = New System.Drawing.Point(24, 27)
-        Me.btnAtras.Name = "btnAtras"
-        Me.btnAtras.Size = New System.Drawing.Size(34, 33)
-        Me.btnAtras.TabIndex = 30
-        Me.btnAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnAtras.UseVisualStyleBackColor = True
-        '
-        'lblCrearCuentaDe
-        '
-        Me.lblCrearCuentaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblCrearCuentaDe.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCrearCuentaDe.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuentaDe.Location = New System.Drawing.Point(299, 9)
-        Me.lblCrearCuentaDe.Name = "lblCrearCuentaDe"
-        Me.lblCrearCuentaDe.Size = New System.Drawing.Size(424, 57)
-        Me.lblCrearCuentaDe.TabIndex = 4
-        Me.lblCrearCuentaDe.Text = "CREAR CUENTA DE GESTOR"
-        Me.lblCrearCuentaDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblCI
         '
@@ -459,6 +421,20 @@ Partial Class frmRegistroGestor
         Me.txtCon.Size = New System.Drawing.Size(176, 22)
         Me.txtCon.TabIndex = 110
         '
+        'GunaLineTextBox1
+        '
+        Me.GunaLineTextBox1.BackColor = System.Drawing.Color.White
+        Me.GunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.GunaLineTextBox1.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaLineTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro
+        Me.GunaLineTextBox1.Location = New System.Drawing.Point(157, 56)
+        Me.GunaLineTextBox1.Name = "GunaLineTextBox1"
+        Me.GunaLineTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.GunaLineTextBox1.Size = New System.Drawing.Size(246, 32)
+        Me.GunaLineTextBox1.TabIndex = 165
+        Me.GunaLineTextBox1.Text = "GunaLineTextBox1"
+        '
         'frmRegistroGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -466,7 +442,7 @@ Partial Class frmRegistroGestor
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1012, 669)
-        Me.Controls.Add(Me.pnlTitulo)
+        Me.Controls.Add(Me.GunaLineTextBox1)
         Me.Controls.Add(Me.lblCI)
         Me.Controls.Add(Me.txtCI)
         Me.Controls.Add(Me.pnlDecCI)
@@ -500,7 +476,6 @@ Partial Class frmRegistroGestor
         Me.Name = "frmRegistroGestor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RegistrarGestor"
-        Me.pnlTitulo.ResumeLayout(False)
         Me.pnlTelefonos.ResumeLayout(False)
         Me.pnlTelefonos.PerformLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -510,8 +485,6 @@ Partial Class frmRegistroGestor
     End Sub
     Friend WithEvents pnlDecCI As Panel
     Friend WithEvents txtCI As TextBox
-    Friend WithEvents pnlTitulo As Panel
-    Friend WithEvents lblCrearCuentaDe As Label
     Friend WithEvents lblCI As Label
     Friend WithEvents pnlDecPNom As Panel
     Friend WithEvents txtPNom As TextBox
@@ -543,5 +516,5 @@ Partial Class frmRegistroGestor
     Friend WithEvents Telefonos As DataGridViewTextBoxColumn
     Friend WithEvents txtRepCon As TextBox
     Friend WithEvents txtCon As TextBox
-    Friend WithEvents btnAtras As Button
+    Friend WithEvents GunaLineTextBox1 As Guna.UI.WinForms.GunaLineTextBox
 End Class

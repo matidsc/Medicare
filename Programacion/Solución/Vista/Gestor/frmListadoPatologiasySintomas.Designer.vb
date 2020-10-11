@@ -45,7 +45,7 @@ Partial Class frmListadoPatologiasySintomas
         '
         'pnlContenedor
         '
-        Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(19, Byte), Integer))
+        Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.pnlContenedor.Controls.Add(Me.MetroButton1)
         Me.pnlContenedor.Controls.Add(Me.scroll)
         Me.pnlContenedor.Controls.Add(Me.dgvListado)
@@ -89,11 +89,12 @@ Partial Class frmListadoPatologiasySintomas
         Me.dgvListado.AllowUserToAddRows = False
         Me.dgvListado.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgvListado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -109,12 +110,12 @@ Partial Class frmListadoPatologiasySintomas
         Me.dgvListado.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(20)
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvListado.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvListado.Location = New System.Drawing.Point(51, 191)
         Me.dgvListado.MultiSelect = False
@@ -128,8 +129,8 @@ Partial Class frmListadoPatologiasySintomas
         '
         'GunaElipsePanel1
         '
-        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.GunaElipsePanel1.Controls.Add(Me.GunaTextBox2)
         Me.GunaElipsePanel1.Controls.Add(Me.PictureBox1)
         Me.GunaElipsePanel1.Location = New System.Drawing.Point(169, 65)
@@ -140,8 +141,8 @@ Partial Class frmListadoPatologiasySintomas
         '
         'GunaTextBox2
         '
-        Me.GunaTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.GunaTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.GunaTextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.GunaTextBox2.BorderSize = 1
         Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -185,7 +186,7 @@ Partial Class frmListadoPatologiasySintomas
         Me.GunaButton4.AnimationHoverSpeed = 0.07!
         Me.GunaButton4.AnimationSpeed = 0.03!
         Me.GunaButton4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.GunaButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.GunaButton4.BorderColor = System.Drawing.Color.Black
         Me.GunaButton4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaButton4.DialogResult = System.Windows.Forms.DialogResult.None
@@ -239,7 +240,7 @@ Partial Class frmListadoPatologiasySintomas
         Me.btnModificarElemento.AnimationHoverSpeed = 0.07!
         Me.btnModificarElemento.AnimationSpeed = 0.03!
         Me.btnModificarElemento.BackColor = System.Drawing.Color.Transparent
-        Me.btnModificarElemento.BaseColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.btnModificarElemento.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.btnModificarElemento.BorderColor = System.Drawing.Color.Black
         Me.btnModificarElemento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificarElemento.DialogResult = System.Windows.Forms.DialogResult.None
@@ -266,7 +267,7 @@ Partial Class frmListadoPatologiasySintomas
         Me.btnSeleccionMultiple.AnimationHoverSpeed = 0.07!
         Me.btnSeleccionMultiple.AnimationSpeed = 0.03!
         Me.btnSeleccionMultiple.BackColor = System.Drawing.Color.Transparent
-        Me.btnSeleccionMultiple.BaseColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.btnSeleccionMultiple.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.btnSeleccionMultiple.BorderColor = System.Drawing.Color.Black
         Me.btnSeleccionMultiple.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSeleccionMultiple.DialogResult = System.Windows.Forms.DialogResult.None

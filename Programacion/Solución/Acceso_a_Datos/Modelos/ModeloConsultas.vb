@@ -31,6 +31,7 @@ Public Class ModeloConsultas
 
         Dim table As New DataTable
         Dim adapter As New OdbcDataAdapter(Comando, Conexion.Singleton.Connection)
+
         adapter.Fill(table)
 
         Conexion.Singleton.cerrarConexion()

@@ -84,7 +84,7 @@ Partial Class frmLogin
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Image = Nothing
         Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnIngresar.Location = New System.Drawing.Point(350, 389)
+        Me.btnIngresar.Location = New System.Drawing.Point(351, 381)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
@@ -111,6 +111,7 @@ Partial Class frmLogin
         'lblCrearCuenta
         '
         Me.lblCrearCuenta.AutoSize = True
+        Me.lblCrearCuenta.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCrearCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
         Me.lblCrearCuenta.Location = New System.Drawing.Point(373, 441)

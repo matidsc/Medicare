@@ -109,7 +109,7 @@ Public Class frmRegistroGestor
 
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) 
         If Not (txtCI.Text = Nothing And txtPNom.Text = Nothing And txtPApe.Text = Nothing And
             txtPNom.Text = Nothing And txtSApe.Text = Nothing And txtSNom.Text = Nothing And
             txtCon.Text = Nothing And txtRepCon.Text = Nothing And txtMail.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then

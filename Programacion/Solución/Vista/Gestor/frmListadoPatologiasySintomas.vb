@@ -11,10 +11,14 @@ Public Class frmListadoPatologiasySintomas
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvListado, scroll, True)
+        Datos_Temporales.horizontal = Me.Width
+        Datos_Temporales.vertical = Me.Height
     End Sub
     Public Sub New(op As Byte)
 
+        Me.op = op
         ''AGREAGAR IF   
         ' For Each ctrl As Control In pnlContenedor.Controls
 
@@ -22,26 +26,18 @@ Public Class frmListadoPatologiasySintomas
 
         ' Next
 
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Me.op = op
-        Datos_Temporales.horizontal = Me.Width
-        Datos_Temporales.vertical = Me.Height
 
-        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
-        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvListado, scroll, True)
+        Select Case op
+            Case 0
+                Dim p As New ControladorPatologia
+                dgvListado.DataSource = p.listarPatologias
+            Case 1
+                Dim s As New ControladorSintoma
+                dgvListado.DataSource = s.listarSintomas
+            Case 2
 
-        If op = 1 Then
-            Dim s As New ControladorSintoma
-            dgvListado.DataSource = s.listarSintomas
-
-        ElseIf op = 0 Then
-
-            Dim p As New ControladorPatologia
-            dgvListado.DataSource = p.listarPatologias
-
-        End If
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        End Select
 
     End Sub
     Public Sub New(path As String, lista As List(Of String))
@@ -59,13 +55,6 @@ Public Class frmListadoPatologiasySintomas
         Me.MetroButton1.Visible = True
         dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
-    End Sub
-    Private Sub frmPatologiasRegistradas_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-        'lblTitulo.Text = "LISTADO DE " & op.ToUpper
-
-
 
     End Sub
 

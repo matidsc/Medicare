@@ -61,7 +61,7 @@ Public Class ModeloChat
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function ListarChat(usuario As String) As DataTable
 
-        Dim consulta As String = "SELECT DISTINCT u.cedula, u.idChat FROM salachat c, usuario_entra_chat u, patologia p, paciente_obtiene_diagnostico up, usuario us                      
+        Dim consulta As String = "SELECT DISTINCT u.cedula, u.idChat FROM chat c, usuario_entra_chat u, patologia p, paciente_obtiene_diagnostico up, usuario us                      
                                   WHERE u.cedula = up.cedulaPaciente AND p.idPatologia = up.idPatologia AND p.bajalogica = 0 AND c.idChat = u.idChat AND us.cedula = u.cedula AND finalizado = 0 AND u.idChat NOT IN
                                   (SELECT idChat FROM usuario_entra_chat where cedula = " + usuario + ")" + "ORDER BY prioridad ASC "
 

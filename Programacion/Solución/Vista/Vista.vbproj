@@ -191,6 +191,12 @@
     <Compile Include="Extras\frmAjustes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Extras\frmEntrada.Designer.vb">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extras\frmEntrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestor\frmBienvenidaGestor.Designer.vb">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
     </Compile>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Extras\frmAjustes.resx">
       <DependentUpon>frmAjustes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extras\frmEntrada.resx">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmBienvenidaGestor.resx">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>

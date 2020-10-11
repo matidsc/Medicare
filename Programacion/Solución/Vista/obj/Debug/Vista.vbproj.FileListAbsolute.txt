@@ -1867,3 +1867,4 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\bin\Debug\AppPaciente.exe
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmEntrada.resources

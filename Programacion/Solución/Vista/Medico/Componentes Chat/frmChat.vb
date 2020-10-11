@@ -67,9 +67,7 @@ Public Class frmChat
         Datos_Temporales.vertical = Me.Height
 
     End Sub
-    Public Function GetInstancia() As frmChat
-        Return instancia
-    End Function
+
     Private Sub CargarPanel(Listado As DataTable)
 
         FlowLayoutPanel1.SuspendLayout()
@@ -78,34 +76,31 @@ Public Class frmChat
         Dim UltimoMensaje As New DataTable
         Dim mensaje As String = ""
         Dim fecha As String = ""
-        Dim setear As New List(Of Form1)
+
 
         For Each panel As DataRow In Listado.Rows
 
             UltimoMensaje.Clear()
             UltimoMensaje = contChat.GetMensaje(panel.Item(1))
 
-
             For Each columnaMensaje As DataRow In UltimoMensaje.Rows
                 mensaje = columnaMensaje.Item(0)
             Next
 
-            setear.Add(New Form1(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.ItemArray(0)))
+            Dim form As New Form1(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.ItemArray(0))
+
+            form.TopLevel = False
+            form.Width = Chat.Width - 25
+            FlowLayoutPanel1.Controls.Add(form)
+            form.Show()
             mensaje = ""
-        Next
-
-        For Each chat As Form1 In setear
-
-            chat.TopLevel = False
-            chat.Width = chat.Width - 25
-            FlowLayoutPanel1.Controls.Add(chat)
-            chat.Show()
-
         Next
 
         FlowLayoutPanel1.ResumeLayout()
 
     End Sub
+
+
     Public Sub ReloadChat()
 
         maxID = 0
@@ -141,6 +136,7 @@ Public Class frmChat
         Else
             ReloadSentMessage()
         End If
+
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click

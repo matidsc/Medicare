@@ -2,7 +2,7 @@
 Public Class Form1
 
     Dim SetColor As Boolean = False
-    Public Shared instancia As Form1
+    Private Shared instancia As Form1
 
     Public Shared Function Singleton() As Form1
         If instancia Is Nothing Then
@@ -57,16 +57,10 @@ Public Class Form1
     End Sub
     Private Sub CambioChat() Handles Me.Click
 
-        'If Not Datos_Temporales.color Then
-        '    Me.BackColor = Color.FromArgb(25, 34, 41)
-        '    Datos_Temporales.color = True
-        'Else
-        '    Me.BackColor = Color.FromArgb(31, 39, 49)
-        '    Datos_Temporales.color = False
-        'End If
-
         Datos_Temporales.idchat = lblidChat.Text
+
         Datos_Temporales.pacienteSelecionado = lblCed.Text
+
     End Sub
 
 End Class

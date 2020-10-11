@@ -46,12 +46,14 @@ Public Class frmBienvenidaGestor
 
         If pnlFlow.Controls.Count <> dt.Rows.Count Then
             pnlFlow.Controls.Clear()
+            pnlFlow.SuspendLayout()
+
             For Each rows As DataRow In dt.Rows
 
                 pnlFlow.Controls.Add(New UCHabilitar(rows.Item(1) + " " + rows.Item(2) + " " + rows.Item(3), rows.Item(0)))
 
             Next
-
+            pnlFlow.ResumeLayout()
         End If
     End Sub
 

@@ -66,7 +66,7 @@ Public Class Principal
     ''' <returns>Texto traducido al idioma seleccionado.</returns>
     Public Function Idioma(name As String) As String
 
-        Dim valor As String = "NULL"
+        Dim valor As String = ""
 
         If File.Exists(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) Then
             Dim archivo As New Resources.ResXResourceSet(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) ' cambiar ruta

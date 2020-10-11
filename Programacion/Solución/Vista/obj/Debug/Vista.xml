@@ -449,5 +449,32 @@ Vista
  <param name="j"></param>
  <param name="k"></param>
 </member>
+<member name="T:Vista.UCAjustes">
+ <summary>
+ User Control encargado de los ajustes del sistema
+ </summary>
+</member>
+<member name="M:Vista.UCAjustes.Singleton">
+ <summary>
+ Función encargada de devolver una instancia singleton de la clase.
+ </summary>
+ <returns>La instancia creada de la clase.</returns>
+</member>
+<member name="M:Vista.UCAjustes.VerificarArchivo">
+ <summary>
+ Subrutina encargada de verificar si la tabla de recursos existe.
+ </summary>
+</member>
+<member name="M:Vista.UCAjustes.CargarIdioma">
+ <summary>
+ Subrutina encargada de cargar la tabla de recursos en función al idioma seleccionado.
+ </summary>
+</member>
+<member name="M:Vista.UCAjustes.CambiarTabla(System.String)">
+ <summary>
+ Subrutina encargada de cargar la tabla de recursos.
+ </summary>
+ <param name="archivo"></param>
+</member>
 </members>
 </doc>

@@ -168,3 +168,4 @@ C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acce
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.dll
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache

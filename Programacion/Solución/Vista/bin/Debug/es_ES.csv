@@ -1,16 +1,15 @@
-Form Login
+Form Login;
 msgPreguntaIdioma;Debe reiniciar para guardar los cambios
-lblIniciarSesion;Iniciar Sesión
 mcbRecordarUsuario;Recordar Usuario
 lblContraseña;Contraseña
 lblUsuario;Usuario
 picIngresar;?????????????
-lblCrearCuentaPac;Crear Cuenta
-lblEsAfiliado;¿Es afiliado?
+lblCrearCuenta;Solicitar Cuenta
+lblRestablecer;Restablecer contraseña
 msgPacienteHabilitado;Usted no ha sido habilitado para ingresar al sistema
 msgErrorLogin;Error al ingresar al sistema
 msgLoginIncorrecto;Usuario o contraseña incorrectos
 msgCedulaInvalida;Debe ingresar una cédula válida
 msgCamposIncompletos;No completó los campos
-
-Form Registro Paciente
+lblLogin;Inciar Sesión
+btnIngresar;Ingresar

@@ -64,7 +64,6 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Guna.UI.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.pdb
@@ -126,3 +125,4 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe.config
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MaterialSkin.dll

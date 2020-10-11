@@ -11,16 +11,17 @@ Public Class frmLogin
     Sub New()
         ObtenerRuta()
         Configuracion.Singleton.CargarConfiguracion()
-        VerificarArchivo()
+        UCAjustes.Singleton.VerificarArchivo()
         InitializeComponent()
 
-        '' Cambio de Idioma
-        'lblIniciarSesion.Text = Principal.Singleton.Idioma("lblIniciarSesion") 'hacer esto con todos los componentes
-        mcbRecordarUsuario.Text = Principal.Singleton.Idioma("mcbRecordarUsuario")
-        ' lblContraseña.Text = Principal.Singleton.Idioma("lblContraseña")
-        ' lblUsuario.Text = Principal.Singleton.Idioma("lblUsuario")
-        ' lblEsAfiliado.Text = Principal.Singleton.Idioma("lblEsAfiliado")
-        'lblCrearCuentaPac.Text = Principal.Singleton.Idioma("lblCrearCuentaPac")
+        For Each var As Control In pnlContenedor.Controls
+
+            If Principal.Singleton.Idioma(var.Name) <> "" Then
+                var.Text = Principal.Singleton.Idioma(var.Name)
+                var.Left = (Me.ClientSize.Width - var.Width) / 2
+            End If
+
+        Next
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
@@ -58,82 +59,9 @@ Public Class frmLogin
             Datos_Temporales.pathConf = Path.Combine(sec, "Vista\bin\Debug\")
         End If
     End Sub
-    Public Sub VerificarArchivo()
-
-        If File.Exists(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) = False Then
-            Configuracion.Singleton.lenguaje = Configuracion.Idioma.es_ES
-            Configuracion.Singleton.GuardarConfiguracion()
-            CambiarTabla(Path.Combine(Datos_Temporales.pathConf, "es_ES"))
-        End If
-    End Sub
-    Public Function PreguntaIdioma() As Boolean
-        Dim respuesta As Integer
-
-        respuesta = MsgBox(Principal.Singleton.Idioma("msgPreguntaIdioma"), vbQuestion + vbYesNo + vbDefaultButton2, "")
-
-        If respuesta = vbYes Then
-            Return True
-        Else
-            Return False
-        End If
-
-    End Function
-    Public Sub CambiarTabla(archivo As String)
-
-        Dim componentes As DataTable = Configuracion.Singleton.RecorrerTablaIdioma(archivo)
-        Dim obj As New Resources.ResXResourceWriter(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) ' cambiar ruta
 
 
-        For i As Integer = 0 To componentes.Rows.Count - 1
 
-            obj.AddResource(componentes.Rows.Item(i).Item(0).ToString, componentes.Rows.Item(i).Item(1).ToString)
-
-        Next
-
-        obj.Close()
-
-    End Sub
-    Private Sub btnAplicarCambios_Click(sender As Object, e As EventArgs) Handles Button1.Click 'btnAplicarCambios.Click BOTON QUE ESTA EN EL USER CONTROL
-
-
-        Dim respuesta As Integer
-        Dim objeto As New BsMsgbox
-        respuesta = objeto.YesNo()
-        MsgBox(respuesta)
-
-        Dim bool As Boolean = False
-        Dim index As Byte = 0
-
-        If index = 1 Then
-            If Configuracion.Singleton.lenguaje <> Configuracion.Idioma.en_US Then
-                If PreguntaIdioma() Then
-                    bool = True
-                    Configuracion.Singleton.lenguaje = Configuracion.Idioma.en_US
-                    Configuracion.Singleton.GuardarConfiguracion()
-                End If
-            End If
-        ElseIf index = 0 Then
-            If Configuracion.Singleton.lenguaje <> Configuracion.Idioma.es_ES Then
-                If PreguntaIdioma() Then
-                    bool = True
-                    Configuracion.Singleton.lenguaje = Configuracion.Idioma.es_ES
-                    Configuracion.Singleton.GuardarConfiguracion()
-                End If
-            End If
-        End If
-
-        If (index = 1 Or index = 0) And bool = True Then
-            CargarIdioma()
-            Application.Restart()
-        End If
-    End Sub
-    Private Sub CargarIdioma()
-        If Configuracion.Singleton.lenguaje = Configuracion.Idioma.es_ES Then
-            Me.CambiarTabla(Path.Combine(Datos_Temporales.pathConf, "es_ES"))
-        ElseIf Configuracion.Singleton.lenguaje = Configuracion.Idioma.en_US Then
-            Me.CambiarTabla(Path.Combine(Datos_Temporales.pathConf, "en_US"))
-        End If
-    End Sub
     Private Sub txtUsr_LostFocus(sender As Object, e As EventArgs) Handles txtUsr.LostFocus
         If txtUsr.Text Is Nothing Then
             txtUsr.Text = "Usuario"
@@ -266,14 +194,18 @@ Public Class frmLogin
     End Sub
 
     Private Sub btnAjustes_Click(sender As Object, e As EventArgs) Handles btnAjustes.Click
+
         If UcAjustes1.Visible = False Then
             UcAjustes1.Visible = True
+            UcAjustes1.cbIdiomas.SelectedIndex = Configuracion.Singleton.lenguaje
             lblCrearCuenta.Visible = False
         Else
-            lblCrearCuenta.Visible = True
+            If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
+                lblCrearCuenta.Visible = True
+            End If
+
             UcAjustes1.Visible = False
         End If
-
     End Sub
 
     Private Sub btnIngresar_Click_1(sender As Object, e As EventArgs) Handles btnIngresar.Click
@@ -285,6 +217,18 @@ Public Class frmLogin
     End Sub
 
     Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtUsr_TextChanged(sender As Object, e As EventArgs) Handles txtUsr.TextChanged
 
     End Sub
 End Class

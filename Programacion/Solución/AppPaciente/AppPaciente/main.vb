@@ -22,18 +22,12 @@ Public Class main
     Public Sub New()
         InitializeComponent()
         instancia = Me
-        Dim frm As New Vista.frmLogin 'WindowsApp1.frmLogin
-        'frm.Label3.Visible = True
-        'frm.GunaCheckBox1.Visible = False
-
-        'Me.Panel11.Visible = False
-        'frm.mcbRecordarUsuario.Visible = False
-        'frm.lblCrearCuentaPac.Visible = True
-        'frm.lblApp.Text = "Paciente"
+        Dim frm As New Vista.frmLogin
+        frm.mcbRecordarUsuario.Visible = False
+        frm.lblCrearCuenta.Visible = True
         'Me.Location = New Point(Me.Location.X, Me.Location.Y - 35)
         CargarVentana(ventana, frm)
-        'frm.Anchor = AnchorStyles.None
-        'Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente
+        Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente
         cambiarTamaño()
     End Sub
 
@@ -99,4 +93,5 @@ Public Class main
             form.Left = Cursor.Position.X - mousex
         End If
     End Sub
+
 End Class

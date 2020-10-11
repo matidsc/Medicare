@@ -77,11 +77,8 @@ Public Class EntradaSalida
             Dim linea As String = reader.ReadLine
 
             If linea.Contains(";") Then
-                MsgBox("si")
                 datos = Split(linea, ";")
                 tabla.Rows.Add(datos)
-            Else
-                MsgBox("no")
             End If
 
         End While

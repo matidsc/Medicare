@@ -125,9 +125,9 @@ Public Class frmRegistrarPatologia
 
                             MsgBox("Patología registrada con éxito")
                             Dim s As New ControladorSintoma
-                            txtNomPat.Clear()
-                            txtDescPat.Clear()
-                            txtRecPat.Clear()
+                            txtNomPat.Text = Nothing
+                            txtDescPat.Text = Nothing
+                            txtRecPat.Text = Nothing
                             dgvTodosLosSintomas.Rows.Clear()
                             dgvSintomasSeleccionados.Rows.Clear()
                             traerSintomas()
@@ -149,23 +149,23 @@ Public Class frmRegistrarPatologia
 
     End Sub
 
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles lblCerrar.Click
+    Private Sub Label13_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub pnlTituloPatologia_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseDown
+    Private Sub pnlTituloPatologia_MouseDown(sender As Object, e As MouseEventArgs)
         Principal.Singleton.moverVentanaDown(Me)
     End Sub
 
-    Private Sub pnlTituloPatologia_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseMove
+    Private Sub pnlTituloPatologia_MouseMove(sender As Object, e As MouseEventArgs)
         Principal.Singleton.moverVentanaMove(Me)
     End Sub
 
-    Private Sub pnlTituloPatologia_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseUp
+    Private Sub pnlTituloPatologia_MouseUp(sender As Object, e As MouseEventArgs)
         Principal.Singleton.moverVentanaUp()
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
             If res = vbYes Then
@@ -179,7 +179,12 @@ Public Class frmRegistrarPatologia
 
     End Sub
 
-    Private Sub pnlTituloPatologia_Paint(sender As Object, e As PaintEventArgs) Handles pnlTituloPatologia.Paint
+    Private Sub pnlTituloPatologia_Paint(sender As Object, e As PaintEventArgs)
 
+    End Sub
+
+    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
+        pnlPatologia.BringToFront()
+        transicion.Hide(pnlPatologia)
     End Sub
 End Class

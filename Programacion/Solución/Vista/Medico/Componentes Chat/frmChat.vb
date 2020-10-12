@@ -87,7 +87,7 @@ Public Class frmChat
                 mensaje = columnaMensaje.Item(0)
             Next
 
-            Dim form As New Form1(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.ItemArray(0))
+            Dim form As New Form1(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.Item(0))
 
             form.TopLevel = False
             form.Width = Chat.Width - 25
@@ -109,6 +109,7 @@ Public Class frmChat
         Chat.Controls.Clear()
 
         For Each mensaje As DataRow In Mensajes.Rows
+
             Dim esEmisor As Boolean = False
 
             If mensaje.Item(0) = Datos_Temporales.userLog Then
@@ -123,7 +124,9 @@ Public Class frmChat
             msj.TopLevel = False
             msj.Width = Chat.Width - 25
             Chat.Controls.Add(msj)
+
             msj.Show()
+            msj.Visible = True
         Next
 
         Chat.ResumeLayout()
@@ -327,7 +330,11 @@ Public Class frmChat
         controladorChat.recargarChat()
 
     End Sub
-
+    Public Sub recargar()
+        ' ReloadChat()
+        Chat.Controls.Clear()
+        Timer1.Start()
+    End Sub
     Private Sub dgvFinalizados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFinalizados.CellClick
 
         Dim controladorChat As New ControladorChat

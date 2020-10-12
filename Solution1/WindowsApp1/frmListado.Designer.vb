@@ -37,6 +37,7 @@ Partial Class frmListado
         Me.MISintoma = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GunaElipsePanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,12 +275,24 @@ Partial Class frmListado
         Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
         Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(390, 46)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(159, 23)
+        Me.Button1.TabIndex = 180
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'frmListado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.scroll)
         Me.Controls.Add(Me.dgvSintomasSeleccionados)
         Me.Controls.Add(Me.GunaElipsePanel1)
@@ -312,4 +325,5 @@ Partial Class frmListado
     Friend WithEvents MISintoma As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
+    Friend WithEvents Button1 As Button
 End Class

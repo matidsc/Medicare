@@ -25,343 +25,294 @@ Partial Class frmRegistroGestor
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.pnlDecCI = New System.Windows.Forms.Panel()
-        Me.txtCI = New System.Windows.Forms.TextBox()
         Me.lblCI = New System.Windows.Forms.Label()
-        Me.pnlDecPNom = New System.Windows.Forms.Panel()
-        Me.txtPNom = New System.Windows.Forms.TextBox()
-        Me.pnlDecSApe = New System.Windows.Forms.Panel()
-        Me.pnlDecPApe = New System.Windows.Forms.Panel()
-        Me.pnlDecSNom = New System.Windows.Forms.Panel()
-        Me.txtSApe = New System.Windows.Forms.TextBox()
-        Me.lblSApe = New System.Windows.Forms.Label()
-        Me.txtPApe = New System.Windows.Forms.TextBox()
-        Me.lblPApe = New System.Windows.Forms.Label()
-        Me.txtSNom = New System.Windows.Forms.TextBox()
-        Me.lblSNom = New System.Windows.Forms.Label()
-        Me.lblPNom = New System.Windows.Forms.Label()
-        Me.pnlDecMail = New System.Windows.Forms.Panel()
-        Me.txtMail = New System.Windows.Forms.TextBox()
         Me.lblMail = New System.Windows.Forms.Label()
-        Me.lblTelefonos = New System.Windows.Forms.Label()
-        Me.pnlDecCon = New System.Windows.Forms.Panel()
+        Me.txtCI = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.txtCon = New Guna.UI.WinForms.GunaLineTextBox()
         Me.lblCon = New System.Windows.Forms.Label()
-        Me.pnlDecRepCon = New System.Windows.Forms.Panel()
-        Me.lblRepCon = New System.Windows.Forms.Label()
-        Me.btnRegistrarGestor = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pnlDecTelefonos = New System.Windows.Forms.Panel()
-        Me.lblTxtAgregarTelefonos = New System.Windows.Forms.Label()
-        Me.pnlTelefonos = New System.Windows.Forms.Panel()
-        Me.btnAceptar = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btnEliminar = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.dgvTelefonos = New System.Windows.Forms.DataGridView()
+        Me.txtRepCon = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblPApe = New System.Windows.Forms.Label()
+        Me.txtPApe = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.lblSNom = New System.Windows.Forms.Label()
+        Me.txtSNom = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.txtPNom = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.lblPNom = New System.Windows.Forms.Label()
+        Me.lblSApe = New System.Windows.Forms.Label()
+        Me.txtSApe = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.txtMail = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.txtTelefonos = New System.Windows.Forms.Label()
+        Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.Telefonos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtRepCon = New System.Windows.Forms.TextBox()
-        Me.txtCon = New System.Windows.Forms.TextBox()
-        Me.GunaLineTextBox1 = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.pnlTelefonos.SuspendLayout()
+        Me.dgvTelefonos = New System.Windows.Forms.DataGridView()
+        Me.btnAceptar = New Guna.UI.WinForms.GunaButton()
+        Me.btnEliminar = New Guna.UI.WinForms.GunaButton()
+        Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'pnlDecCI
-        '
-        Me.pnlDecCI.BackColor = System.Drawing.Color.Black
-        Me.pnlDecCI.Location = New System.Drawing.Point(148, 173)
-        Me.pnlDecCI.Name = "pnlDecCI"
-        Me.pnlDecCI.Size = New System.Drawing.Size(176, 2)
-        Me.pnlDecCI.TabIndex = 110
-        '
-        'txtCI
-        '
-        Me.txtCI.BackColor = System.Drawing.Color.White
-        Me.txtCI.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCI.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCI.Location = New System.Drawing.Point(148, 143)
-        Me.txtCI.Name = "txtCI"
-        Me.txtCI.Size = New System.Drawing.Size(172, 22)
-        Me.txtCI.TabIndex = 109
         '
         'lblCI
         '
         Me.lblCI.AutoSize = True
-        Me.lblCI.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCI.Location = New System.Drawing.Point(125, 109)
+        Me.lblCI.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCI.ForeColor = System.Drawing.Color.Silver
+        Me.lblCI.Location = New System.Drawing.Point(32, 126)
         Me.lblCI.Name = "lblCI"
-        Me.lblCI.Size = New System.Drawing.Size(204, 25)
+        Me.lblCI.Size = New System.Drawing.Size(144, 20)
         Me.lblCI.TabIndex = 108
         Me.lblCI.Text = "Cédula de Identidad"
-        '
-        'pnlDecPNom
-        '
-        Me.pnlDecPNom.BackColor = System.Drawing.Color.Black
-        Me.pnlDecPNom.Location = New System.Drawing.Point(12, 332)
-        Me.pnlDecPNom.Name = "pnlDecPNom"
-        Me.pnlDecPNom.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecPNom.TabIndex = 107
-        '
-        'txtPNom
-        '
-        Me.txtPNom.BackColor = System.Drawing.Color.White
-        Me.txtPNom.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPNom.Location = New System.Drawing.Point(12, 304)
-        Me.txtPNom.Name = "txtPNom"
-        Me.txtPNom.Size = New System.Drawing.Size(214, 22)
-        Me.txtPNom.TabIndex = 112
-        '
-        'pnlDecSApe
-        '
-        Me.pnlDecSApe.BackColor = System.Drawing.Color.Black
-        Me.pnlDecSApe.Location = New System.Drawing.Point(771, 329)
-        Me.pnlDecSApe.Name = "pnlDecSApe"
-        Me.pnlDecSApe.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecSApe.TabIndex = 105
-        '
-        'pnlDecPApe
-        '
-        Me.pnlDecPApe.BackColor = System.Drawing.Color.Black
-        Me.pnlDecPApe.Location = New System.Drawing.Point(505, 332)
-        Me.pnlDecPApe.Name = "pnlDecPApe"
-        Me.pnlDecPApe.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecPApe.TabIndex = 104
-        '
-        'pnlDecSNom
-        '
-        Me.pnlDecSNom.BackColor = System.Drawing.Color.Black
-        Me.pnlDecSNom.Location = New System.Drawing.Point(256, 332)
-        Me.pnlDecSNom.Name = "pnlDecSNom"
-        Me.pnlDecSNom.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecSNom.TabIndex = 103
-        '
-        'txtSApe
-        '
-        Me.txtSApe.BackColor = System.Drawing.Color.White
-        Me.txtSApe.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSApe.Location = New System.Drawing.Point(771, 299)
-        Me.txtSApe.Name = "txtSApe"
-        Me.txtSApe.Size = New System.Drawing.Size(214, 22)
-        Me.txtSApe.TabIndex = 115
-        '
-        'lblSApe
-        '
-        Me.lblSApe.AutoSize = True
-        Me.lblSApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSApe.Location = New System.Drawing.Point(785, 259)
-        Me.lblSApe.Name = "lblSApe"
-        Me.lblSApe.Size = New System.Drawing.Size(181, 25)
-        Me.lblSApe.TabIndex = 102
-        Me.lblSApe.Text = "Segundo Apellido"
-        '
-        'txtPApe
-        '
-        Me.txtPApe.BackColor = System.Drawing.Color.White
-        Me.txtPApe.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPApe.Location = New System.Drawing.Point(509, 302)
-        Me.txtPApe.Name = "txtPApe"
-        Me.txtPApe.Size = New System.Drawing.Size(214, 22)
-        Me.txtPApe.TabIndex = 114
-        '
-        'lblPApe
-        '
-        Me.lblPApe.AutoSize = True
-        Me.lblPApe.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPApe.Location = New System.Drawing.Point(546, 266)
-        Me.lblPApe.Name = "lblPApe"
-        Me.lblPApe.Size = New System.Drawing.Size(157, 25)
-        Me.lblPApe.TabIndex = 101
-        Me.lblPApe.Text = "Primer Apellido"
-        '
-        'txtSNom
-        '
-        Me.txtSNom.BackColor = System.Drawing.Color.White
-        Me.txtSNom.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSNom.Location = New System.Drawing.Point(256, 302)
-        Me.txtSNom.Name = "txtSNom"
-        Me.txtSNom.Size = New System.Drawing.Size(218, 22)
-        Me.txtSNom.TabIndex = 113
-        '
-        'lblSNom
-        '
-        Me.lblSNom.AutoSize = True
-        Me.lblSNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSNom.Location = New System.Drawing.Point(279, 261)
-        Me.lblSNom.Name = "lblSNom"
-        Me.lblSNom.Size = New System.Drawing.Size(179, 25)
-        Me.lblSNom.TabIndex = 99
-        Me.lblSNom.Text = "Segundo Nombre"
-        '
-        'lblPNom
-        '
-        Me.lblPNom.AutoSize = True
-        Me.lblPNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPNom.Location = New System.Drawing.Point(40, 262)
-        Me.lblPNom.Name = "lblPNom"
-        Me.lblPNom.Size = New System.Drawing.Size(155, 25)
-        Me.lblPNom.TabIndex = 96
-        Me.lblPNom.Text = "Primer Nombre"
-        '
-        'pnlDecMail
-        '
-        Me.pnlDecMail.BackColor = System.Drawing.Color.Black
-        Me.pnlDecMail.Location = New System.Drawing.Point(577, 449)
-        Me.pnlDecMail.Name = "pnlDecMail"
-        Me.pnlDecMail.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecMail.TabIndex = 121
-        '
-        'txtMail
-        '
-        Me.txtMail.BackColor = System.Drawing.Color.White
-        Me.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMail.Location = New System.Drawing.Point(574, 419)
-        Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(223, 22)
-        Me.txtMail.TabIndex = 116
         '
         'lblMail
         '
         Me.lblMail.AutoSize = True
-        Me.lblMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMail.Location = New System.Drawing.Point(651, 378)
+        Me.lblMail.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMail.ForeColor = System.Drawing.Color.Silver
+        Me.lblMail.Location = New System.Drawing.Point(728, 126)
         Me.lblMail.Name = "lblMail"
-        Me.lblMail.Size = New System.Drawing.Size(70, 25)
+        Me.lblMail.Size = New System.Drawing.Size(132, 20)
         Me.lblMail.TabIndex = 120
-        Me.lblMail.Text = "e-mail"
+        Me.lblMail.Text = "Correo electrónico"
         '
-        'lblTelefonos
+        'txtCI
         '
-        Me.lblTelefonos.AutoSize = True
-        Me.lblTelefonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelefonos.Location = New System.Drawing.Point(323, 373)
-        Me.lblTelefonos.Name = "lblTelefonos"
-        Me.lblTelefonos.Size = New System.Drawing.Size(107, 25)
-        Me.lblTelefonos.TabIndex = 118
-        Me.lblTelefonos.Text = "Teléfonos"
+        Me.txtCI.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtCI.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCI.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCI.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCI.ForeColor = System.Drawing.Color.White
+        Me.txtCI.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtCI.LineSize = 1
+        Me.txtCI.Location = New System.Drawing.Point(36, 154)
+        Me.txtCI.Name = "txtCI"
+        Me.txtCI.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCI.Size = New System.Drawing.Size(246, 32)
+        Me.txtCI.TabIndex = 165
         '
-        'pnlDecCon
+        'txtCon
         '
-        Me.pnlDecCon.BackColor = System.Drawing.Color.Black
-        Me.pnlDecCon.Location = New System.Drawing.Point(418, 173)
-        Me.pnlDecCon.Name = "pnlDecCon"
-        Me.pnlDecCon.Size = New System.Drawing.Size(176, 2)
-        Me.pnlDecCon.TabIndex = 113
+        Me.txtCon.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtCon.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCon.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCon.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCon.ForeColor = System.Drawing.Color.White
+        Me.txtCon.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtCon.LineSize = 1
+        Me.txtCon.Location = New System.Drawing.Point(36, 265)
+        Me.txtCon.Name = "txtCon"
+        Me.txtCon.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCon.Size = New System.Drawing.Size(246, 32)
+        Me.txtCon.TabIndex = 166
         '
         'lblCon
         '
         Me.lblCon.AutoSize = True
-        Me.lblCon.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCon.Location = New System.Drawing.Point(438, 109)
+        Me.lblCon.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCon.ForeColor = System.Drawing.Color.Silver
+        Me.lblCon.Location = New System.Drawing.Point(32, 236)
         Me.lblCon.Name = "lblCon"
-        Me.lblCon.Size = New System.Drawing.Size(123, 25)
-        Me.lblCon.TabIndex = 111
+        Me.lblCon.Size = New System.Drawing.Size(83, 20)
+        Me.lblCon.TabIndex = 167
         Me.lblCon.Text = "Contraseña"
         '
-        'pnlDecRepCon
+        'txtRepCon
         '
-        Me.pnlDecRepCon.BackColor = System.Drawing.Color.Black
-        Me.pnlDecRepCon.Location = New System.Drawing.Point(665, 173)
-        Me.pnlDecRepCon.Name = "pnlDecRepCon"
-        Me.pnlDecRepCon.Size = New System.Drawing.Size(176, 2)
-        Me.pnlDecRepCon.TabIndex = 116
+        Me.txtRepCon.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtRepCon.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRepCon.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRepCon.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRepCon.ForeColor = System.Drawing.Color.White
+        Me.txtRepCon.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtRepCon.LineSize = 1
+        Me.txtRepCon.Location = New System.Drawing.Point(36, 404)
+        Me.txtRepCon.Name = "txtRepCon"
+        Me.txtRepCon.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRepCon.Size = New System.Drawing.Size(246, 32)
+        Me.txtRepCon.TabIndex = 168
         '
-        'lblRepCon
+        'Label1
         '
-        Me.lblRepCon.AutoSize = True
-        Me.lblRepCon.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRepCon.Location = New System.Drawing.Point(652, 109)
-        Me.lblRepCon.Name = "lblRepCon"
-        Me.lblRepCon.Size = New System.Drawing.Size(198, 25)
-        Me.lblRepCon.TabIndex = 114
-        Me.lblRepCon.Text = "Repetir Contraseña"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Silver
+        Me.Label1.Location = New System.Drawing.Point(32, 370)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(133, 20)
+        Me.Label1.TabIndex = 169
+        Me.Label1.Text = "Repetir contraseña"
         '
-        'btnRegistrarGestor
+        'lblPApe
         '
-        Me.btnRegistrarGestor.AutoSize = True
-        Me.btnRegistrarGestor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnRegistrarGestor.Depth = 0
-        Me.btnRegistrarGestor.Icon = Nothing
-        Me.btnRegistrarGestor.Location = New System.Drawing.Point(443, 606)
-        Me.btnRegistrarGestor.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btnRegistrarGestor.Name = "btnRegistrarGestor"
-        Me.btnRegistrarGestor.Primary = True
-        Me.btnRegistrarGestor.Size = New System.Drawing.Size(149, 36)
-        Me.btnRegistrarGestor.TabIndex = 126
-        Me.btnRegistrarGestor.Text = "registrar gestor"
-        Me.btnRegistrarGestor.UseVisualStyleBackColor = True
+        Me.lblPApe.AutoSize = True
+        Me.lblPApe.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPApe.ForeColor = System.Drawing.Color.Silver
+        Me.lblPApe.Location = New System.Drawing.Point(408, 312)
+        Me.lblPApe.Name = "lblPApe"
+        Me.lblPApe.Size = New System.Drawing.Size(111, 20)
+        Me.lblPApe.TabIndex = 175
+        Me.lblPApe.Text = "Primer apellido"
         '
-        'pnlDecTelefonos
+        'txtPApe
         '
-        Me.pnlDecTelefonos.BackColor = System.Drawing.Color.Black
-        Me.pnlDecTelefonos.Location = New System.Drawing.Point(256, 454)
-        Me.pnlDecTelefonos.Name = "pnlDecTelefonos"
-        Me.pnlDecTelefonos.Size = New System.Drawing.Size(230, 2)
-        Me.pnlDecTelefonos.TabIndex = 131
+        Me.txtPApe.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPApe.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPApe.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPApe.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPApe.ForeColor = System.Drawing.Color.White
+        Me.txtPApe.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtPApe.LineSize = 1
+        Me.txtPApe.Location = New System.Drawing.Point(412, 352)
+        Me.txtPApe.Name = "txtPApe"
+        Me.txtPApe.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPApe.Size = New System.Drawing.Size(246, 32)
+        Me.txtPApe.TabIndex = 174
         '
-        'lblTxtAgregarTelefonos
+        'lblSNom
         '
-        Me.lblTxtAgregarTelefonos.AutoSize = True
-        Me.lblTxtAgregarTelefonos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTxtAgregarTelefonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTxtAgregarTelefonos.Location = New System.Drawing.Point(288, 419)
-        Me.lblTxtAgregarTelefonos.Name = "lblTxtAgregarTelefonos"
-        Me.lblTxtAgregarTelefonos.Size = New System.Drawing.Size(182, 25)
-        Me.lblTxtAgregarTelefonos.TabIndex = 164
-        Me.lblTxtAgregarTelefonos.Text = "Agregar teléfonos"
+        Me.lblSNom.AutoSize = True
+        Me.lblSNom.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSNom.ForeColor = System.Drawing.Color.Silver
+        Me.lblSNom.Location = New System.Drawing.Point(408, 192)
+        Me.lblSNom.Name = "lblSNom"
+        Me.lblSNom.Size = New System.Drawing.Size(124, 20)
+        Me.lblSNom.TabIndex = 173
+        Me.lblSNom.Text = "Segundo nombre"
         '
-        'pnlTelefonos
+        'txtSNom
         '
-        Me.pnlTelefonos.BackColor = System.Drawing.SystemColors.Window
-        Me.pnlTelefonos.Controls.Add(Me.btnAceptar)
-        Me.pnlTelefonos.Controls.Add(Me.btnEliminar)
-        Me.pnlTelefonos.Controls.Add(Me.dgvTelefonos)
-        Me.pnlTelefonos.Location = New System.Drawing.Point(223, 462)
-        Me.pnlTelefonos.Name = "pnlTelefonos"
-        Me.pnlTelefonos.Size = New System.Drawing.Size(300, 128)
-        Me.pnlTelefonos.TabIndex = 163
-        Me.pnlTelefonos.Visible = False
+        Me.txtSNom.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtSNom.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSNom.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSNom.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSNom.ForeColor = System.Drawing.Color.White
+        Me.txtSNom.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtSNom.LineSize = 1
+        Me.txtSNom.Location = New System.Drawing.Point(412, 227)
+        Me.txtSNom.Name = "txtSNom"
+        Me.txtSNom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSNom.Size = New System.Drawing.Size(246, 32)
+        Me.txtSNom.TabIndex = 172
         '
-        'btnAceptar
+        'txtPNom
         '
-        Me.btnAceptar.AutoSize = True
-        Me.btnAceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnAceptar.Depth = 0
-        Me.btnAceptar.Icon = Nothing
-        Me.btnAceptar.Location = New System.Drawing.Point(212, 62)
-        Me.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Primary = True
-        Me.btnAceptar.Size = New System.Drawing.Size(82, 36)
-        Me.btnAceptar.TabIndex = 162
-        Me.btnAceptar.Text = "aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = True
+        Me.txtPNom.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPNom.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPNom.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPNom.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPNom.ForeColor = System.Drawing.Color.White
+        Me.txtPNom.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtPNom.LineSize = 1
+        Me.txtPNom.Location = New System.Drawing.Point(412, 126)
+        Me.txtPNom.Name = "txtPNom"
+        Me.txtPNom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPNom.Size = New System.Drawing.Size(246, 32)
+        Me.txtPNom.TabIndex = 171
         '
-        'btnEliminar
+        'lblPNom
         '
-        Me.btnEliminar.AutoSize = True
-        Me.btnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnEliminar.Depth = 0
-        Me.btnEliminar.Enabled = False
-        Me.btnEliminar.Icon = Nothing
-        Me.btnEliminar.Location = New System.Drawing.Point(212, 20)
-        Me.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Primary = True
-        Me.btnEliminar.Size = New System.Drawing.Size(83, 36)
-        Me.btnEliminar.TabIndex = 161
-        Me.btnEliminar.Text = "eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.lblPNom.AutoSize = True
+        Me.lblPNom.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPNom.ForeColor = System.Drawing.Color.Silver
+        Me.lblPNom.Location = New System.Drawing.Point(408, 98)
+        Me.lblPNom.Name = "lblPNom"
+        Me.lblPNom.Size = New System.Drawing.Size(108, 20)
+        Me.lblPNom.TabIndex = 170
+        Me.lblPNom.Text = "Primer nombre"
+        '
+        'lblSApe
+        '
+        Me.lblSApe.AutoSize = True
+        Me.lblSApe.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSApe.ForeColor = System.Drawing.Color.Silver
+        Me.lblSApe.Location = New System.Drawing.Point(408, 411)
+        Me.lblSApe.Name = "lblSApe"
+        Me.lblSApe.Size = New System.Drawing.Size(127, 20)
+        Me.lblSApe.TabIndex = 177
+        Me.lblSApe.Text = "Segundo apellido"
+        '
+        'txtSApe
+        '
+        Me.txtSApe.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtSApe.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSApe.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSApe.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSApe.ForeColor = System.Drawing.Color.White
+        Me.txtSApe.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtSApe.LineSize = 1
+        Me.txtSApe.Location = New System.Drawing.Point(412, 450)
+        Me.txtSApe.Name = "txtSApe"
+        Me.txtSApe.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSApe.Size = New System.Drawing.Size(246, 32)
+        Me.txtSApe.TabIndex = 176
+        '
+        'txtMail
+        '
+        Me.txtMail.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtMail.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtMail.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMail.ForeColor = System.Drawing.Color.White
+        Me.txtMail.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtMail.LineSize = 1
+        Me.txtMail.Location = New System.Drawing.Point(732, 154)
+        Me.txtMail.Name = "txtMail"
+        Me.txtMail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtMail.Size = New System.Drawing.Size(246, 32)
+        Me.txtMail.TabIndex = 178
+        '
+        'txtTelefonos
+        '
+        Me.txtTelefonos.AutoSize = True
+        Me.txtTelefonos.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefonos.ForeColor = System.Drawing.Color.Silver
+        Me.txtTelefonos.Location = New System.Drawing.Point(799, 236)
+        Me.txtTelefonos.Name = "txtTelefonos"
+        Me.txtTelefonos.Size = New System.Drawing.Size(73, 20)
+        Me.txtTelefonos.TabIndex = 179
+        Me.txtTelefonos.Text = "Teléfonos"
+        '
+        'btnRegistrar
+        '
+        Me.btnRegistrar.AnimationHoverSpeed = 0.07!
+        Me.btnRegistrar.AnimationSpeed = 0.03!
+        Me.btnRegistrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegistrar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrar.BorderColor = System.Drawing.Color.Black
+        Me.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRegistrar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrar.Image = Nothing
+        Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRegistrar.Location = New System.Drawing.Point(436, 568)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRegistrar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRegistrar.OnHoverImage = Nothing
+        Me.btnRegistrar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRegistrar.Radius = 20
+        Me.btnRegistrar.Size = New System.Drawing.Size(199, 42)
+        Me.btnRegistrar.TabIndex = 180
+        Me.btnRegistrar.Text = "Registrarme"
+        Me.btnRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Telefonos
+        '
+        Me.Telefonos.HeaderText = "Telefonos"
+        Me.Telefonos.MinimumWidth = 6
+        Me.Telefonos.Name = "Telefonos"
         '
         'dgvTelefonos
         '
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Silver
         Me.dgvTelefonos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTelefonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvTelefonos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgvTelefonos.BackgroundColor = System.Drawing.Color.White
+        Me.dgvTelefonos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dgvTelefonos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTelefonos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -376,15 +327,15 @@ Partial Class frmRegistroGestor
         Me.dgvTelefonos.ColumnHeadersVisible = False
         Me.dgvTelefonos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Telefonos})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Silver
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Silver
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvTelefonos.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvTelefonos.Location = New System.Drawing.Point(12, 3)
+        Me.dgvTelefonos.Location = New System.Drawing.Point(732, 279)
         Me.dgvTelefonos.MultiSelect = False
         Me.dgvTelefonos.Name = "dgvTelefonos"
         Me.dgvTelefonos.RowHeadersVisible = False
@@ -393,128 +344,131 @@ Partial Class frmRegistroGestor
         Me.dgvTelefonos.Size = New System.Drawing.Size(194, 111)
         Me.dgvTelefonos.TabIndex = 159
         '
-        'Telefonos
+        'btnAceptar
         '
-        Me.Telefonos.HeaderText = "Telefonos"
-        Me.Telefonos.MinimumWidth = 6
-        Me.Telefonos.Name = "Telefonos"
+        Me.btnAceptar.AnimationHoverSpeed = 0.07!
+        Me.btnAceptar.AnimationSpeed = 0.03!
+        Me.btnAceptar.BackColor = System.Drawing.Color.Transparent
+        Me.btnAceptar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnAceptar.BorderColor = System.Drawing.Color.Black
+        Me.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnAceptar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptar.ForeColor = System.Drawing.Color.White
+        Me.btnAceptar.Image = Nothing
+        Me.btnAceptar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnAceptar.Location = New System.Drawing.Point(944, 348)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnAceptar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnAceptar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnAceptar.OnHoverImage = Nothing
+        Me.btnAceptar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnAceptar.Radius = 20
+        Me.btnAceptar.Size = New System.Drawing.Size(90, 42)
+        Me.btnAceptar.TabIndex = 181
+        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtRepCon
+        'btnEliminar
         '
-        Me.txtRepCon.BackColor = System.Drawing.Color.White
-        Me.txtRepCon.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtRepCon.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRepCon.Location = New System.Drawing.Point(656, 143)
-        Me.txtRepCon.Name = "txtRepCon"
-        Me.txtRepCon.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtRepCon.Size = New System.Drawing.Size(181, 22)
-        Me.txtRepCon.TabIndex = 111
+        Me.btnEliminar.AnimationHoverSpeed = 0.07!
+        Me.btnEliminar.AnimationSpeed = 0.03!
+        Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEliminar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnEliminar.BorderColor = System.Drawing.Color.Black
+        Me.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnEliminar.Enabled = False
+        Me.btnEliminar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Image = Nothing
+        Me.btnEliminar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnEliminar.Location = New System.Drawing.Point(944, 279)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnEliminar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnEliminar.OnHoverImage = Nothing
+        Me.btnEliminar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnEliminar.Radius = 20
+        Me.btnEliminar.Size = New System.Drawing.Size(90, 42)
+        Me.btnEliminar.TabIndex = 182
+        Me.btnEliminar.Text = "Borrar"
+        Me.btnEliminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtCon
+        'scroll
         '
-        Me.txtCon.BackColor = System.Drawing.Color.White
-        Me.txtCon.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCon.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCon.Location = New System.Drawing.Point(418, 143)
-        Me.txtCon.Name = "txtCon"
-        Me.txtCon.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtCon.Size = New System.Drawing.Size(176, 22)
-        Me.txtCon.TabIndex = 110
-        '
-        'GunaLineTextBox1
-        '
-        Me.GunaLineTextBox1.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox1.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaLineTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox1.Location = New System.Drawing.Point(157, 56)
-        Me.GunaLineTextBox1.Name = "GunaLineTextBox1"
-        Me.GunaLineTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox1.Size = New System.Drawing.Size(246, 32)
-        Me.GunaLineTextBox1.TabIndex = 165
-        Me.GunaLineTextBox1.Text = "GunaLineTextBox1"
+        Me.scroll.LargeChange = 10
+        Me.scroll.Location = New System.Drawing.Point(1024, 489)
+        Me.scroll.Maximum = 100
+        Me.scroll.Name = "scroll"
+        Me.scroll.ScrollIdleColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.scroll.Size = New System.Drawing.Size(10, 107)
+        Me.scroll.TabIndex = 188
+        Me.scroll.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
+        Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
         'frmRegistroGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1012, 669)
-        Me.Controls.Add(Me.GunaLineTextBox1)
-        Me.Controls.Add(Me.lblCI)
-        Me.Controls.Add(Me.txtCI)
-        Me.Controls.Add(Me.pnlDecCI)
-        Me.Controls.Add(Me.lblCon)
-        Me.Controls.Add(Me.txtCon)
-        Me.Controls.Add(Me.pnlDecCon)
-        Me.Controls.Add(Me.lblRepCon)
-        Me.Controls.Add(Me.txtRepCon)
-        Me.Controls.Add(Me.pnlDecRepCon)
-        Me.Controls.Add(Me.lblPNom)
-        Me.Controls.Add(Me.txtPNom)
-        Me.Controls.Add(Me.pnlDecPNom)
-        Me.Controls.Add(Me.lblSNom)
-        Me.Controls.Add(Me.txtSNom)
-        Me.Controls.Add(Me.pnlDecSNom)
-        Me.Controls.Add(Me.lblPApe)
-        Me.Controls.Add(Me.txtPApe)
-        Me.Controls.Add(Me.pnlDecPApe)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.Controls.Add(Me.scroll)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnRegistrar)
+        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.txtTelefonos)
+        Me.Controls.Add(Me.dgvTelefonos)
+        Me.Controls.Add(Me.txtMail)
         Me.Controls.Add(Me.lblSApe)
         Me.Controls.Add(Me.txtSApe)
-        Me.Controls.Add(Me.pnlDecSApe)
-        Me.Controls.Add(Me.lblTelefonos)
-        Me.Controls.Add(Me.lblTxtAgregarTelefonos)
-        Me.Controls.Add(Me.pnlDecTelefonos)
-        Me.Controls.Add(Me.pnlTelefonos)
+        Me.Controls.Add(Me.lblPApe)
+        Me.Controls.Add(Me.txtPApe)
+        Me.Controls.Add(Me.lblSNom)
+        Me.Controls.Add(Me.txtSNom)
+        Me.Controls.Add(Me.txtPNom)
+        Me.Controls.Add(Me.lblPNom)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtRepCon)
+        Me.Controls.Add(Me.lblCon)
+        Me.Controls.Add(Me.txtCon)
+        Me.Controls.Add(Me.txtCI)
+        Me.Controls.Add(Me.lblCI)
         Me.Controls.Add(Me.lblMail)
-        Me.Controls.Add(Me.txtMail)
-        Me.Controls.Add(Me.pnlDecMail)
-        Me.Controls.Add(Me.btnRegistrarGestor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmRegistroGestor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RegistrarGestor"
-        Me.pnlTelefonos.ResumeLayout(False)
-        Me.pnlTelefonos.PerformLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents pnlDecCI As Panel
-    Friend WithEvents txtCI As TextBox
     Friend WithEvents lblCI As Label
-    Friend WithEvents pnlDecPNom As Panel
-    Friend WithEvents txtPNom As TextBox
-    Friend WithEvents pnlDecSApe As Panel
-    Friend WithEvents pnlDecPApe As Panel
-    Friend WithEvents pnlDecSNom As Panel
-    Friend WithEvents txtSApe As TextBox
-    Friend WithEvents lblSApe As Label
-    Friend WithEvents txtPApe As TextBox
-    Friend WithEvents lblPApe As Label
-    Friend WithEvents txtSNom As TextBox
-    Friend WithEvents lblSNom As Label
-    Friend WithEvents lblPNom As Label
-    Friend WithEvents pnlDecMail As Panel
-    Friend WithEvents txtMail As TextBox
     Friend WithEvents lblMail As Label
-    Friend WithEvents lblTelefonos As Label
-    Friend WithEvents pnlDecCon As Panel
+    Friend WithEvents txtCI As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txtCon As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents lblCon As Label
-    Friend WithEvents pnlDecRepCon As Panel
-    Friend WithEvents lblRepCon As Label
-    Friend WithEvents btnRegistrarGestor As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents pnlDecTelefonos As Panel
-    Friend WithEvents lblTxtAgregarTelefonos As Label
-    Friend WithEvents pnlTelefonos As Panel
-    Friend WithEvents btnAceptar As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents btnEliminar As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents dgvTelefonos As DataGridView
+    Friend WithEvents txtRepCon As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblPApe As Label
+    Friend WithEvents txtPApe As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents lblSNom As Label
+    Friend WithEvents txtSNom As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txtPNom As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents lblPNom As Label
+    Friend WithEvents lblSApe As Label
+    Friend WithEvents txtSApe As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txtMail As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txtTelefonos As Label
+    Friend WithEvents btnRegistrar As Guna.UI.WinForms.GunaButton
     Friend WithEvents Telefonos As DataGridViewTextBoxColumn
-    Friend WithEvents txtRepCon As TextBox
-    Friend WithEvents txtCon As TextBox
-    Friend WithEvents GunaLineTextBox1 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents dgvTelefonos As DataGridView
+    Friend WithEvents btnAceptar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnEliminar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
 End Class

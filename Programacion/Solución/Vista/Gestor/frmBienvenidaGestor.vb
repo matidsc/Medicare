@@ -1,4 +1,5 @@
 ﻿Imports Logica
+Imports Google.Cloud.Translation.V2
 
 Public Class frmBienvenidaGestor
 
@@ -17,6 +18,12 @@ Public Class frmBienvenidaGestor
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
+
+        '   Dim t As TranslationClient = TranslationClient.Create
+
+
+        '  Dim result As TranslationResult = t.TranslateText(Label10.Text, LanguageCodes.English, LanguageCodes.Spanish)
+        '  Label10.Text = result.TranslatedText
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height

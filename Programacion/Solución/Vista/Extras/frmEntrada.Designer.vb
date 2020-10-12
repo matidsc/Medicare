@@ -44,6 +44,7 @@ Partial Class frmEntrada
         Me.GunaButton1.BackColor = System.Drawing.Color.Transparent
         Me.GunaButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.GunaButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaButton1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.GunaButton1.FocusedColor = System.Drawing.Color.Empty
         Me.GunaButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

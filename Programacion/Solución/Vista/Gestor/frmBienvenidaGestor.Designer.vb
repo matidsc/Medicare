@@ -62,6 +62,7 @@ Partial Class frmBienvenidaGestor
         Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.pnlContenedor.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -306,7 +307,7 @@ Partial Class frmBienvenidaGestor
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(143, 59)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Registrar, modificar, eliminar y buscar síntoamas"
+        Me.Label3.Text = "Registrar, modificar, eliminar y buscar síntomas"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
@@ -474,6 +475,7 @@ Partial Class frmBienvenidaGestor
         'pnlCerrar
         '
         Me.pnlCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.pnlCerrar.Controls.Add(Me.Label10)
         Me.pnlCerrar.Controls.Add(Me.pnlNotificacion)
         Me.pnlCerrar.Controls.Add(Me.btnRefrescarListadoPac)
         Me.pnlCerrar.Controls.Add(Me.GunaElipsePanel1)
@@ -598,6 +600,17 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(443, 29)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(39, 18)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Hola"
+        '
         'frmBienvenidaGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -623,6 +636,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.pnlCerrar.ResumeLayout(False)
+        Me.pnlCerrar.PerformLayout()
         Me.pnlNotificacion.ResumeLayout(False)
         Me.pnlNotificacion.PerformLayout()
         CType(Me.btnPacientes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -669,5 +683,6 @@ Partial Class frmBienvenidaGestor
     Friend WithEvents pnlNotificacion As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents lblNotificacion As Label
     Friend WithEvents lblNA As Label
+    Friend WithEvents Label10 As Label
 End Class
 

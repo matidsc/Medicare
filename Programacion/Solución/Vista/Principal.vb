@@ -1,5 +1,5 @@
 ﻿Imports Logica
-
+Imports Guna.UI.WinForms
 Imports System.IO
 
 ''' <summary>
@@ -233,18 +233,30 @@ Public Class Principal
     ''' <param name="h"></param>
     ''' <param name="j"></param>
     ''' <param name="k"></param>
-    Public Sub limpiar(a As TextBox, b As TextBox, c As TextBox, d As TextBox, e As TextBox, f As TextBox, g As TextBox, h As TextBox, j As DataGridView, k As ArrayList)
-        a.Clear()
-        b.Clear()
-        c.Clear()
-        d.Clear()
-        e.Clear()
-        f.Clear()
-        g.Clear()
-        h.Clear()
+    Public Overloads Sub limpiar(a As Object, b As Object, c As Object, d As Object, e As Object, f As Object, g As Object, h As Object, j As DataGridView, k As ArrayList)
+        a.Text = Nothing
+        b.Text = Nothing
+        c.Text = Nothing
+        d.Text = Nothing
+        e.Text = Nothing
+        f.Text = Nothing
+        g.Text = Nothing
+        h.Text = Nothing
         j.Rows.Clear()
         k.Clear()
     End Sub
+    'Public Overloads Sub limpiar(a As GunaLineTextBox, b As GunaLineTextBox, c As GunaLineTextBox, d As GunaLineTextBox, e As GunaLineTextBox, f As GunaLineTextBox, g As GunaLineTextBox, h As GunaLineTextBox, j As DataGridView, k As ArrayList)
+    '    a.Clear()
+    '    b.Clear()
+    '    c.Clear()
+    '    d.Clear()
+    '    e.Clear()
+    '    f.Clear()
+    '    g.Clear()
+    '    h.Clear()
+    '    j.Rows.Clear()
+    '    k.Clear()
+    'End Sub
 
 
 #Region "Funciones y subrutinas"

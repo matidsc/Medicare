@@ -51,16 +51,19 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_MouseEnter(sender As Object, e As EventArgs) Handles MyBase.MouseEnter
+
         If SetColor = False Then
             Me.BackColor = Color.FromArgb(25, 34, 41)
         End If
+
     End Sub
+
     Private Sub CambioChat() Handles Me.Click
 
         Datos_Temporales.idchat = lblidChat.Text
 
         Datos_Temporales.pacienteSelecionado = lblCed.Text
-
+        frmChat.Singleton.recargar()
     End Sub
 
 End Class

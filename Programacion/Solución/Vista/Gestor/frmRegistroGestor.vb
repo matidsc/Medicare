@@ -14,10 +14,51 @@ Public Class frmRegistroGestor
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
+    End Sub
+
+
+    Private Sub MaterialRaisedButton2_Click(sender As Object, e As EventArgs)
+
+
+        ''add animacion
 
     End Sub
 
-    Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles btnRegistrarGestor.Click
+    Private Sub dgvTelefonos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTelefonos.CellClick
+
+    End Sub
+
+    Private Sub dgvTelefonos_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvTelefonos.CellValidating
+
+        'If dgvTelefonos.Rows(e.RowIndex).IsNewRow Then
+        '    If e.ColumnIndex = 0 Then
+        '        If ver.verificar_int(e.FormattedValue.ToString) Then
+        '        Else
+        '            dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
+        '        End If
+        '    End If
+        'End If
+
+    End Sub
+
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
+        If Not (txtCI.Text = Nothing And txtPNom.Text = Nothing And txtPApe.Text = Nothing And
+            txtPNom.Text = Nothing And txtSApe.Text = Nothing And txtSNom.Text = Nothing And
+            txtCon.Text = Nothing And txtRepCon.Text = Nothing And txtMail.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then
+            Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
+            If res = vbYes Then
+                Principal.Singleton.CambiarTamaño(frmModular)
+                Me.Dispose()
+            End If
+        Else
+            Principal.Singleton.CambiarTamaño(frmModular)
+            Me.Dispose()
+        End If
+    End Sub
+
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
 
         If Principal.Singleton.VerificarCedula(check, txtCI.Text) Then
             If Principal.Singleton.VerificarContraseña(seg, txtCon.Text, txtRepCon.Text) Then
@@ -65,20 +106,7 @@ Public Class frmRegistroGestor
 
     End Sub
 
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles lblTxtAgregarTelefonos.Click
-
-        If pnlTelefonos.Visible = False Then
-            pnlTelefonos.Visible = True
-        End If
-
-    End Sub
-
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
-    End Sub
-
-    Private Sub MaterialRaisedButton2_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
         If check.Verificar_Int(dgvTelefonos.Rows(dgvTelefonos.Rows.Count - 2).Cells(0).Value.ToString) = False Then
 
@@ -87,41 +115,21 @@ Public Class frmRegistroGestor
 
         End If
 
-        pnlTelefonos.Hide()
-        ''add animacion
 
     End Sub
 
-    Private Sub dgvTelefonos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTelefonos.CellClick
-        btnEliminar.Enabled = True
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
     End Sub
 
-    Private Sub dgvTelefonos_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvTelefonos.CellValidating
-
-        'If dgvTelefonos.Rows(e.RowIndex).IsNewRow Then
-        '    If e.ColumnIndex = 0 Then
-        '        If ver.verificar_int(e.FormattedValue.ToString) Then
-        '        Else
-        '            dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
-        '        End If
-        '    End If
-        'End If
-
-    End Sub
-
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) 
-        If Not (txtCI.Text = Nothing And txtPNom.Text = Nothing And txtPApe.Text = Nothing And
-            txtPNom.Text = Nothing And txtSApe.Text = Nothing And txtSNom.Text = Nothing And
-            txtCon.Text = Nothing And txtRepCon.Text = Nothing And txtMail.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then
-            Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
-            If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmModular)
-                Me.Dispose()
-            End If
+    Private Sub dgvTelefonos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvTelefonos.RowsAdded
+        If dgvTelefonos.Rows.Count > 1 Then
+            btnEliminar.Enabled = True
         Else
-            Principal.Singleton.CambiarTamaño(frmModular)
-            Me.Dispose()
+            btnEliminar.Enabled = False
+
         End If
     End Sub
+
 
 End Class

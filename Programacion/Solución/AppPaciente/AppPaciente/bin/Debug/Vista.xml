@@ -434,7 +434,7 @@ Vista
  <param name="telefonos"></param>
  <returns>True si los teléfonos son correctos.</returns>
 </member>
-<member name="M:Vista.Principal.limpiar(System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.TextBox,System.Windows.Forms.DataGridView,System.Collections.ArrayList)">
+<member name="M:Vista.Principal.limpiar(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Windows.Forms.DataGridView,System.Collections.ArrayList)">
  <summary>
  Subrutina encargada de limpiar los componentes de la pantalla.
  </summary>

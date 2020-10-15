@@ -162,3 +162,4 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Guna.UI.dll

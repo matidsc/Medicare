@@ -26,7 +26,6 @@ Partial Class frmLogin
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.lblContraseña = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
         Me.lblRestablecer = New System.Windows.Forms.Label()
         Me.lblCrearCuenta = New System.Windows.Forms.Label()
@@ -36,6 +35,8 @@ Partial Class frmLogin
         Me.lblLogin = New System.Windows.Forms.Label()
         Me.txtUsr = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
+        Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
+        Me.lblApp = New System.Windows.Forms.Label()
         Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,7 +57,6 @@ Partial Class frmLogin
         Me.pnlContenedor.Controls.Add(Me.UcAjustes1)
         Me.pnlContenedor.Controls.Add(Me.lblContraseña)
         Me.pnlContenedor.Controls.Add(Me.lblUsuario)
-        Me.pnlContenedor.Controls.Add(Me.txtPass)
         Me.pnlContenedor.Controls.Add(Me.btnIngresar)
         Me.pnlContenedor.Controls.Add(Me.lblRestablecer)
         Me.pnlContenedor.Controls.Add(Me.lblCrearCuenta)
@@ -66,8 +66,9 @@ Partial Class frmLogin
         Me.pnlContenedor.Controls.Add(Me.lblLogin)
         Me.pnlContenedor.Controls.Add(Me.txtUsr)
         Me.pnlContenedor.Controls.Add(Me.GunaSeparator1)
+        Me.pnlContenedor.Controls.Add(Me.txtPass)
+        Me.pnlContenedor.Controls.Add(Me.lblApp)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlContenedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(880, 500)
@@ -76,47 +77,24 @@ Partial Class frmLogin
         'lblContraseña
         '
         Me.lblContraseña.AutoSize = True
-        Me.lblContraseña.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.lblContraseña.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblContraseña.Location = New System.Drawing.Point(363, 223)
+        Me.lblContraseña.ForeColor = System.Drawing.Color.LightGray
+        Me.lblContraseña.Location = New System.Drawing.Point(359, 236)
         Me.lblContraseña.Name = "lblContraseña"
         Me.lblContraseña.Size = New System.Drawing.Size(89, 21)
-        Me.lblContraseña.TabIndex = 54
+        Me.lblContraseña.TabIndex = 53
         Me.lblContraseña.Text = "Contraseña"
         '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.lblUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblUsuario.Location = New System.Drawing.Point(363, 154)
+        Me.lblUsuario.ForeColor = System.Drawing.Color.LightGray
+        Me.lblUsuario.Location = New System.Drawing.Point(359, 154)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(58, 21)
-        Me.lblUsuario.TabIndex = 53
-        Me.lblUsuario.Text = "Cédula"
-        '
-        'txtPass
-        '
-        Me.txtPass.BackColor = System.Drawing.Color.Transparent
-        Me.txtPass.BaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.txtPass.BorderColor = System.Drawing.Color.Silver
-        Me.txtPass.BorderSize = 1
-        Me.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtPass.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtPass.FocusedBorderColor = System.Drawing.Color.White
-        Me.txtPass.FocusedForeColor = System.Drawing.Color.White
-        Me.txtPass.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPass.ForeColor = System.Drawing.Color.LightGray
-        Me.txtPass.Location = New System.Drawing.Point(350, 213)
-        Me.txtPass.Name = "txtPass"
-        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.txtPass.Radius = 17
-        Me.txtPass.Size = New System.Drawing.Size(181, 42)
-        Me.txtPass.TabIndex = 52
-        Me.txtPass.TextOffsetX = 7
-        Me.txtPass.UseSystemPasswordChar = True
+        Me.lblUsuario.Size = New System.Drawing.Size(64, 21)
+        Me.lblUsuario.TabIndex = 52
+        Me.lblUsuario.Text = "Usuario"
         '
         'btnIngresar
         '
@@ -125,7 +103,6 @@ Partial Class frmLogin
         Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
         Me.btnIngresar.BaseColor = System.Drawing.Color.MediumSlateBlue
         Me.btnIngresar.BorderColor = System.Drawing.Color.Black
-        Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnIngresar.FocusedColor = System.Drawing.Color.Empty
         Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -150,7 +127,7 @@ Partial Class frmLogin
         Me.lblRestablecer.AutoSize = True
         Me.lblRestablecer.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRestablecer.ForeColor = System.Drawing.Color.White
-        Me.lblRestablecer.Location = New System.Drawing.Point(366, 269)
+        Me.lblRestablecer.Location = New System.Drawing.Point(366, 278)
         Me.lblRestablecer.Name = "lblRestablecer"
         Me.lblRestablecer.Size = New System.Drawing.Size(149, 17)
         Me.lblRestablecer.TabIndex = 50
@@ -160,26 +137,25 @@ Partial Class frmLogin
         '
         Me.lblCrearCuenta.AutoSize = True
         Me.lblCrearCuenta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblCrearCuenta.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCrearCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuenta.Location = New System.Drawing.Point(376, 438)
+        Me.lblCrearCuenta.Location = New System.Drawing.Point(373, 441)
         Me.lblCrearCuenta.Name = "lblCrearCuenta"
-        Me.lblCrearCuenta.Size = New System.Drawing.Size(129, 21)
+        Me.lblCrearCuenta.Size = New System.Drawing.Size(134, 20)
         Me.lblCrearCuenta.TabIndex = 49
         Me.lblCrearCuenta.Text = "Solicitar cuenta"
         Me.lblCrearCuenta.Visible = False
         '
         'btnAjustes
         '
-        Me.btnAjustes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnAjustes.BackColor = System.Drawing.Color.Transparent
         Me.btnAjustes.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAjustes.ForeColor = System.Drawing.Color.LightGray
         Me.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.Cog
         Me.btnAjustes.IconColor = System.Drawing.Color.LightGray
-        Me.btnAjustes.Location = New System.Drawing.Point(23, 447)
+        Me.btnAjustes.Location = New System.Drawing.Point(22, 448)
         Me.btnAjustes.Name = "btnAjustes"
-        Me.btnAjustes.Size = New System.Drawing.Size(37, 32)
+        Me.btnAjustes.Size = New System.Drawing.Size(32, 32)
         Me.btnAjustes.TabIndex = 48
         Me.btnAjustes.TabStop = False
         '
@@ -206,7 +182,7 @@ Partial Class frmLogin
         Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
         Me.im.IconColor = System.Drawing.Color.MediumSlateBlue
         Me.im.IconSize = 521
-        Me.im.Location = New System.Drawing.Point(537, -388)
+        Me.im.Location = New System.Drawing.Point(533, -385)
         Me.im.Name = "im"
         Me.im.Rotation = 135.0R
         Me.im.Size = New System.Drawing.Size(521, 707)
@@ -218,7 +194,7 @@ Partial Class frmLogin
         Me.lblLogin.AutoSize = True
         Me.lblLogin.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogin.ForeColor = System.Drawing.Color.White
-        Me.lblLogin.Location = New System.Drawing.Point(392, 59)
+        Me.lblLogin.Location = New System.Drawing.Point(388, 59)
         Me.lblLogin.Name = "lblLogin"
         Me.lblLogin.Size = New System.Drawing.Size(104, 45)
         Me.lblLogin.TabIndex = 41
@@ -253,6 +229,37 @@ Partial Class frmLogin
         Me.GunaSeparator1.TabIndex = 44
         Me.GunaSeparator1.Thickness = 5
         '
+        'txtPass
+        '
+        Me.txtPass.BackColor = System.Drawing.Color.Transparent
+        Me.txtPass.BaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPass.BorderColor = System.Drawing.Color.Silver
+        Me.txtPass.BorderSize = 1
+        Me.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPass.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtPass.FocusedBorderColor = System.Drawing.Color.White
+        Me.txtPass.FocusedForeColor = System.Drawing.Color.White
+        Me.txtPass.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.ForeColor = System.Drawing.Color.White
+        Me.txtPass.Location = New System.Drawing.Point(350, 226)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.txtPass.Radius = 17
+        Me.txtPass.Size = New System.Drawing.Size(181, 42)
+        Me.txtPass.TabIndex = 43
+        Me.txtPass.TextOffsetX = 5
+        '
+        'lblApp
+        '
+        Me.lblApp.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApp.ForeColor = System.Drawing.Color.Black
+        Me.lblApp.Location = New System.Drawing.Point(83, 531)
+        Me.lblApp.Name = "lblApp"
+        Me.lblApp.Size = New System.Drawing.Size(352, 57)
+        Me.lblApp.TabIndex = 40
+        Me.lblApp.Text = "APLICACION"
+        Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'UcAjustes1
         '
         Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
@@ -286,14 +293,15 @@ Partial Class frmLogin
     Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblRestablecer As Label
     Friend WithEvents btnAjustes As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents im As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lblLogin As Label
     Friend WithEvents txtUsr As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaSeparator1 As Guna.UI.WinForms.GunaSeparator
+    Friend WithEvents txtPass As Guna.UI.WinForms.GunaTextBox
+    Public WithEvents lblApp As Label
     Friend WithEvents UcAjustes1 As UCAjustes
     Public WithEvents mcbRecordarUsuario As Guna.UI.WinForms.GunaCheckBox
     Public WithEvents lblCrearCuenta As Label
-    Friend WithEvents txtPass As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents lblContraseña As Label
     Friend WithEvents lblUsuario As Label
-    Public WithEvents im As FontAwesome.Sharp.IconPictureBox
 End Class

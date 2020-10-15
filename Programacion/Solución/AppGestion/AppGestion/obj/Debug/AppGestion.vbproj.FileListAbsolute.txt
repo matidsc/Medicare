@@ -99,3 +99,4 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppGestion\AppGestion\obj\Debug\AppGestion.exe
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppGestion\AppGestion\obj\Debug\AppGestion.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppGestion\AppGestion\obj\Debug\AppGestion.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppGestion\AppGestion\bin\Debug\Guna.UI.dll

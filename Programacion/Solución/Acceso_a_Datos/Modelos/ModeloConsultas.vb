@@ -94,6 +94,7 @@ Public Class ModeloConsultas
         Next
 
         If insert.ExecuteNonQuery() >= 1 Then
+            Conexion.Singleton.cerrarConexion()
             Return True
         End If
 
@@ -114,6 +115,7 @@ Public Class ModeloConsultas
         Dim insert As New OdbcCommand(Comando, Conexion.Singleton.Connection)
 
         If insert.ExecuteNonQuery() >= 1 Then
+            Conexion.Singleton.cerrarConexion()
             Return True
         End If
 

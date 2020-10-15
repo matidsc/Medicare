@@ -53,7 +53,7 @@ Partial Class frmIngresarSintomas
         Me.lblIngreseSIntomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIngreseSIntomas.ForeColor = System.Drawing.Color.White
-        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(335, 32)
+        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(345, 32)
         Me.lblIngreseSIntomas.Name = "lblIngreseSIntomas"
         Me.lblIngreseSIntomas.Size = New System.Drawing.Size(381, 45)
         Me.lblIngreseSIntomas.TabIndex = 25
@@ -65,7 +65,7 @@ Partial Class frmIngresarSintomas
         Me.lblArrastreSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblArrastreSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArrastreSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblArrastreSintomas.Location = New System.Drawing.Point(449, 239)
+        Me.lblArrastreSintomas.Location = New System.Drawing.Point(459, 238)
         Me.lblArrastreSintomas.Name = "lblArrastreSintomas"
         Me.lblArrastreSintomas.Size = New System.Drawing.Size(152, 152)
         Me.lblArrastreSintomas.TabIndex = 82
@@ -206,7 +206,7 @@ Partial Class frmIngresarSintomas
         '
         Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.MediumSlateBlue
-        Me.GunaElipsePanel2.Location = New System.Drawing.Point(327, 87)
+        Me.GunaElipsePanel2.Location = New System.Drawing.Point(337, 87)
         Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
         Me.GunaElipsePanel2.Radius = 2
         Me.GunaElipsePanel2.Size = New System.Drawing.Size(397, 2)
@@ -268,7 +268,7 @@ Partial Class frmIngresarSintomas
         Me.btnObtenerDiag.ForeColor = System.Drawing.Color.White
         Me.btnObtenerDiag.Image = Nothing
         Me.btnObtenerDiag.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnObtenerDiag.Location = New System.Drawing.Point(410, 523)
+        Me.btnObtenerDiag.Location = New System.Drawing.Point(420, 523)
         Me.btnObtenerDiag.Name = "btnObtenerDiag"
         Me.btnObtenerDiag.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnObtenerDiag.OnHoverBorderColor = System.Drawing.Color.Black

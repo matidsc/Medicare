@@ -229,6 +229,20 @@ C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Programacion\Solución\
 C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.dll
 C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.xml
 C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Logica.dll
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Logica.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Logica.xml
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.dll
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.xml
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbprojAssemblyReference.cache
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.Resources.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.GenerateResource.cache
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.CoreCompileInputs.cache
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.CopyComplete
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.dll
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.xml
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.pdb
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Logica\bin\Debug\Logica.dll
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Logica\bin\Debug\Logica.pdb
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Logica\bin\Debug\Logica.xml
@@ -257,17 +271,17 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Logica\obj\Debug\Logica.vbpr
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Logica\obj\Debug\Logica.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Logica\obj\Debug\Logica.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Logica\obj\Debug\Logica.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Logica.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Logica.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Logica.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbprojAssemblyReference.cache
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.Resources.resources
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.GenerateResource.cache
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.CoreCompileInputs.cache
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.CopyComplete
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.dll
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Logica\obj\Debug\Logica.pdb
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\bin\Debug\Logica.dll
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\bin\Debug\Logica.pdb
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\bin\Debug\Logica.xml
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.dll
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\bin\Debug\Acceso_a_Datos.xml
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.vbprojAssemblyReference.cache
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.Resources.resources
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.GenerateResource.cache
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.CoreCompileInputs.cache
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.vbproj.CopyComplete
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.dll
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.xml
+C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Logica\obj\Debug\Logica.pdb

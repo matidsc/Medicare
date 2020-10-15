@@ -62,7 +62,7 @@
     </Reference>
     <Reference Include="AppGestion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AppGestion\AppGestion\bin\Debug\AppGestion.exe</HintPath>
+      <HintPath>..\..\..\..\..\Programacion\Solución\AppGestion\AppGestion\bin\Debug\AppGestion.exe</HintPath>
     </Reference>
     <Reference Include="AppMedico, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -167,10 +167,6 @@
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIDC">
       <HintPath>..\..\..\..\Desktop\material socioloig\UI_DesignControls\UIDC.dll</HintPath>
-    </Reference>
-    <Reference Include="Vista, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AppMedico\AppMedico\bin\Debug\Vista.exe</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
@@ -368,6 +364,7 @@
     <Compile Include="Extras\frmVerPerfil.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Temas.vb" />
     <Compile Include="UCAjustes.Designer.vb">
       <DependentUpon>UCAjustes.vb</DependentUpon>
     </Compile>

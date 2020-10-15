@@ -2,7 +2,7 @@
 Public Class frmObtenerDiagnostico
 
     Dim pat As New ControladorPatologia
-    dim solicitud as boolean = True
+    Dim solicitud As Boolean = True
 
 
 
@@ -46,21 +46,21 @@ Public Class frmObtenerDiagnostico
 
         Dim chat As New ControladorChat
 
-    if solicitud then
-        If chat.crearChat() <> 0 Then
-            If chat.entrarChat(Datos_Temporales.userLog, Datos_Temporales.idchat) Then
-                
-                MsgBox("Se ha enviado una solicitud de chat")
-                frmBienvenidaPaciente.Timer1.Enabled = True
+        If solicitud Then
+            If chat.crearChat() <> 0 Then
+                If chat.entrarChat(Datos_Temporales.userLog, Datos_Temporales.idchat) Then
+
+                    MsgBox("Se ha enviado una solicitud de chat")
+                    frmBienvenidaPaciente.Timer1.Enabled = True
                     solicitud = False
 
                 Else
                     MsgBox("Error al enviar solicitud de chat")
+                End If
             End If
+        Else
+            MsgBox("Ya hay una solicitud en curso")
         End If
-    else
-    msgbox("Ya hay una solicitud en curso")
-    end if
 
     End Sub
 

@@ -78,11 +78,11 @@ Public Class frmRegistrarMedico
         If Not (txtCed.Text = Nothing And txtEspec.Text = Nothing And txtPrimerApellido.Text = Nothing And txtPrimerNombre.Text = Nothing And txtSegundoApellido.Text = Nothing And txtSegundoNombre.Text = Nothing) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
             If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmModular)
+                Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
         Else
-            Principal.Singleton.CambiarTamaño(frmModular)
+            Principal.Singleton.CambiarTamaño(frmOpciones)
             Me.Dispose()
         End If
     End Sub

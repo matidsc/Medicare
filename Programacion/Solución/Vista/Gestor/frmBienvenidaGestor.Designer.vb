@@ -53,6 +53,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.pnlNotificacion = New Guna.UI.WinForms.GunaElipsePanel()
         Me.lblNotificacion = New System.Windows.Forms.Label()
         Me.btnRefrescarListadoPac = New System.Windows.Forms.Button()
@@ -62,7 +63,6 @@ Partial Class frmBienvenidaGestor
         Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.pnlContenedor.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -489,6 +489,17 @@ Partial Class frmBienvenidaGestor
         Me.pnlCerrar.Size = New System.Drawing.Size(1070, 80)
         Me.pnlCerrar.TabIndex = 25
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(443, 29)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(39, 18)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Hola"
+        '
         'pnlNotificacion
         '
         Me.pnlNotificacion.BackColor = System.Drawing.Color.Transparent
@@ -599,17 +610,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(443, 29)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(39, 18)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Hola"
         '
         'frmBienvenidaGestor
         '

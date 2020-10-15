@@ -1944,14 +1944,12 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.Mensaj
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCFicha.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCSintomas.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.Historial_de_patologías.resources
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmListadoPatologiasySintomas.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistroGestor.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarPatologia.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarSintoma.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarMedico.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaMedico.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmIngresarSintomas.resources
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmModular.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmLogin.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaPaciente.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.Resources.resources
@@ -1966,31 +1964,8 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.vbproj
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Api.Gax.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Api.Gax.Rest.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Auth.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Core.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.PlatformServices.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Translate.v2.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Cloud.Translation.V2.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Api.Gax.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Api.Gax.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Api.Gax.Rest.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Api.Gax.Rest.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Auth.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Auth.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Core.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Core.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Translate.v2.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Apis.Translate.v2.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Cloud.Translation.V2.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Google.Cloud.Translation.V2.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Newtonsoft.Json.xml
 C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Vista\bin\Debug\Vista.exe.config
@@ -2122,3 +2097,5 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Newtonsoft.Json.dll
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmListado.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmOpciones.resources

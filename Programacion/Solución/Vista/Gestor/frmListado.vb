@@ -1,7 +1,7 @@
 ﻿Imports Logica
 ''https://github.com/IgnaceMaes/MaterialSkin
 
-Public Class frmListadoPatologiasySintomas
+Public Class frmListado
 
 
     Dim op As Byte
@@ -54,7 +54,6 @@ Public Class frmListadoPatologiasySintomas
         Me.MetroButton1.Text = "Guardar"
         Me.MetroButton1.Visible = True
         dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
 

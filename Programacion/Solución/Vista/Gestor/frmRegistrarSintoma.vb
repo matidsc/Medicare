@@ -35,11 +35,11 @@ Public Class frmRegistrarSintoma
         If Not (txtNomSintoma.Text = Nothing And txtDescripcion.Text = Nothing) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
             If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmModular)
+                Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
         Else
-            Principal.Singleton.CambiarTamaño(frmModular)
+            Principal.Singleton.CambiarTamaño(frmOpciones)
             Me.Dispose()
         End If
 

@@ -49,11 +49,11 @@ Public Class frmRegistroGestor
             txtCon.Text = Nothing And txtRepCon.Text = Nothing And txtMail.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
             If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmModular)
+                Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
         Else
-            Principal.Singleton.CambiarTamaño(frmModular)
+            Principal.Singleton.CambiarTamaño(frmOpciones)
             Me.Dispose()
         End If
     End Sub

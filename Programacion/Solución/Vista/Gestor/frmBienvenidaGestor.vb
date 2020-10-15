@@ -73,11 +73,11 @@ Public Class frmBienvenidaGestor
     End Sub
 
     Private Sub btnPatologia_Click(sender As Object, e As EventArgs) Handles btnPatologia.Click
-        Dim frm As New frmModular()
+        Dim frm As New frmOpciones()
         frm.op = 0
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmModular)
+        Principal.Singleton.CambiarTamaño(frmOpciones)
         frm.Show()
         pnlContenedor.Hide()
         pnlInstancia.Show()
@@ -85,11 +85,11 @@ Public Class frmBienvenidaGestor
     End Sub
 
     Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
-        Dim frm As New frmModular()
+        Dim frm As New frmOpciones()
         frm.op = 1
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmModular)
+        Principal.Singleton.CambiarTamaño(frmOpciones)
         frm.Show()
         pnlContenedor.Hide()
         pnlInstancia.Show()
@@ -97,11 +97,11 @@ Public Class frmBienvenidaGestor
     End Sub
 
     Private Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
-        Dim frm As New frmModular()
+        Dim frm As New frmOpciones()
         frm.op = 2
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmModular)
+        Principal.Singleton.CambiarTamaño(frmOpciones)
         frm.Show()
         pnlContenedor.Hide()
         pnlInstancia.Show()

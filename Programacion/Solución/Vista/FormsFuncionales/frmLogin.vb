@@ -169,7 +169,7 @@ Public Class frmLogin
 
     End Sub
 
-    Private Sub txtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsr.KeyDown
+    Private Sub txtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsr.KeyDown, txtPass.KeyDown
         If e.KeyCode = Keys.Enter Then
             ingresarUsuario()
         End If

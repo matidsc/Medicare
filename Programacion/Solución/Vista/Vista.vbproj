@@ -185,6 +185,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colores.vb" />
     <Compile Include="Extras\BsMsgbox.Designer.vb">
       <DependentUpon>BsMsgbox.vb</DependentUpon>
     </Compile>
@@ -263,10 +264,10 @@
     <Compile Include="Paciente\frmHistorialPatologia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestor\frmListadoPatologiasySintomas.Designer.vb">
-      <DependentUpon>frmListadoPatologiasySintomas.vb</DependentUpon>
+    <Compile Include="Gestor\frmListado.Designer.vb">
+      <DependentUpon>frmListado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestor\frmListadoPatologiasySintomas.vb">
+    <Compile Include="Gestor\frmListado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gestor\frmRegistroGestor.Designer.vb">
@@ -305,10 +306,10 @@
     <Compile Include="Paciente\frmIngresarSintomas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestor\frmModular.Designer.vb">
-      <DependentUpon>frmModular.vb</DependentUpon>
+    <Compile Include="Gestor\frmOpciones.Designer.vb">
+      <DependentUpon>frmOpciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestor\frmModular.vb">
+    <Compile Include="Gestor\frmOpciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -364,7 +365,6 @@
     <Compile Include="Extras\frmVerPerfil.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Temas.vb" />
     <Compile Include="UCAjustes.Designer.vb">
       <DependentUpon>UCAjustes.vb</DependentUpon>
     </Compile>
@@ -412,8 +412,8 @@
     <EmbeddedResource Include="Paciente\frmHistorialPatologia.resx">
       <DependentUpon>frmHistorialPatologia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\frmListadoPatologiasySintomas.resx">
-      <DependentUpon>frmListadoPatologiasySintomas.vb</DependentUpon>
+    <EmbeddedResource Include="Gestor\frmListado.resx">
+      <DependentUpon>frmListado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmRegistroGestor.resx">
       <DependentUpon>frmRegistroGestor.vb</DependentUpon>
@@ -433,8 +433,8 @@
     <EmbeddedResource Include="Paciente\frmIngresarSintomas.resx">
       <DependentUpon>frmIngresarSintomas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\frmModular.resx">
-      <DependentUpon>frmModular.vb</DependentUpon>
+    <EmbeddedResource Include="Gestor\frmOpciones.resx">
+      <DependentUpon>frmOpciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsFuncionales\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

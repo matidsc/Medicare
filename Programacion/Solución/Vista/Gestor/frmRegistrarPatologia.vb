@@ -231,11 +231,11 @@ Public Class frmRegistrarPatologia
         If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
             If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmModular)
+                Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
         Else
-            Principal.Singleton.CambiarTamaño(frmModular)
+            Principal.Singleton.CambiarTamaño(frmOpciones)
             Me.Dispose()
         End If
 
@@ -281,12 +281,20 @@ Public Class frmRegistrarPatologia
         If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
             Dim res = MsgBox("Hay información sin guardar, ¿Seguro desea salir?", vbYesNo)
             If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmModular)
+                Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
         Else
-            Principal.Singleton.CambiarTamaño(frmModular)
+            Principal.Singleton.CambiarTamaño(frmOpciones)
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub txtDescPat_GotFocus(sender As Object, e As EventArgs) Handles txtDescPat.GotFocus
+        sepDesc.LineColor = Colores.violeta_DARK
+    End Sub
+
+    Private Sub txtRecPat_GotFocus(sender As Object, e As EventArgs) Handles txtRecPat.GotFocus
+        sepRec.LineColor = Colores.violeta_DARK
     End Sub
 End Class

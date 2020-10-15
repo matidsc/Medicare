@@ -23,7 +23,7 @@ Public Class frmManualCsv
         End Select
 
         If opf.ShowDialog = DialogResult.OK Then
-            Dim a As New frmListadoPatologiasySintomas(opf.FileName, listaColumnas)
+            Dim a As New frmListado(opf.FileName, listaColumnas)
             a.Show()
         End If
 

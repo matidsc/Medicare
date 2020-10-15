@@ -24,8 +24,9 @@ Partial Class main
     Private Sub InitializeComponent()
         Me.ventana = New System.Windows.Forms.Panel()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnMinimizar = New FontAwesome.Sharp.IconButton()
+        Me.btnSalir = New FontAwesome.Sharp.IconButton()
+        Me.lblApp = New System.Windows.Forms.Label()
         Me.pnlCerrar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -34,50 +35,70 @@ Partial Class main
         Me.ventana.AutoSize = True
         Me.ventana.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ventana.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ventana.Location = New System.Drawing.Point(0, 38)
+        Me.ventana.Location = New System.Drawing.Point(0, 40)
         Me.ventana.Name = "ventana"
-        Me.ventana.Size = New System.Drawing.Size(871, 496)
+        Me.ventana.Size = New System.Drawing.Size(871, 494)
         Me.ventana.TabIndex = 0
         '
         'pnlCerrar
         '
         Me.pnlCerrar.AutoSize = True
         Me.pnlCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.pnlCerrar.Controls.Add(Me.Button1)
-        Me.pnlCerrar.Controls.Add(Me.Button3)
+        Me.pnlCerrar.Controls.Add(Me.btnMinimizar)
+        Me.pnlCerrar.Controls.Add(Me.btnSalir)
+        Me.pnlCerrar.Controls.Add(Me.lblApp)
         Me.pnlCerrar.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlCerrar.Location = New System.Drawing.Point(0, 0)
         Me.pnlCerrar.Name = "pnlCerrar"
-        Me.pnlCerrar.Size = New System.Drawing.Size(871, 38)
+        Me.pnlCerrar.Size = New System.Drawing.Size(871, 40)
         Me.pnlCerrar.TabIndex = 10
         '
-        'Button1
+        'btnMinimizar
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(791, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(40, 35)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "--"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMinimizar.FlatAppearance.BorderSize = 0
+        Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMinimizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
+        Me.btnMinimizar.IconColor = System.Drawing.Color.White
+        Me.btnMinimizar.IconSize = 19
+        Me.btnMinimizar.Location = New System.Drawing.Point(791, 0)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.Padding = New System.Windows.Forms.Padding(0, 2, 4, 10)
+        Me.btnMinimizar.Rotation = 0R
+        Me.btnMinimizar.Size = New System.Drawing.Size(40, 37)
+        Me.btnMinimizar.TabIndex = 4
+        Me.btnMinimizar.Text = " "
+        Me.btnMinimizar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnSalir
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(831, 0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(40, 35)
-        Me.Button3.TabIndex = 0
-        Me.Button3.Text = "X"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnSalir.IconChar = FontAwesome.Sharp.IconChar.Times
+        Me.btnSalir.IconColor = System.Drawing.Color.White
+        Me.btnSalir.IconSize = 20
+        Me.btnSalir.Location = New System.Drawing.Point(831, 0)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Padding = New System.Windows.Forms.Padding(0, 4, 5, 0)
+        Me.btnSalir.Rotation = 0R
+        Me.btnSalir.Size = New System.Drawing.Size(40, 37)
+        Me.btnSalir.TabIndex = 3
+        Me.btnSalir.Text = " "
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'lblApp
+        '
+        Me.lblApp.AutoSize = True
+        Me.lblApp.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApp.ForeColor = System.Drawing.Color.White
+        Me.lblApp.Location = New System.Drawing.Point(12, 11)
+        Me.lblApp.Name = "lblApp"
+        Me.lblApp.Size = New System.Drawing.Size(64, 18)
+        Me.lblApp.TabIndex = 2
+        Me.lblApp.Text = "Consultas"
         '
         'main
         '
@@ -93,12 +114,15 @@ Partial Class main
         Me.Name = "main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.pnlCerrar.ResumeLayout(False)
+        Me.pnlCerrar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Public WithEvents ventana As Panel
-    Friend WithEvents Button3 As Button
     Public WithEvents pnlCerrar As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents lblApp As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents btnSalir As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMinimizar As FontAwesome.Sharp.IconButton
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports Logica
 Public Class frmRegistroPaciente
 
-    Dim aliTel As New ArrayList
+
     Dim check As New Verificacion
     Dim seg As New Encriptar
     Dim pass As String
@@ -14,7 +14,7 @@ Public Class frmRegistroPaciente
     End Sub
 
     Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles mrbtnSolicitarCuenta.Click
-
+        Dim aliTel As New ArrayList
         If txtCI.Text <> "" And txtPass.Text <> "" And txtRepPass.Text <> "" And txtPNom.Text <> "" And txtPApe.Text <> "" And txtSNom.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" And txtFecNac.Text <> "" Then
             If Principal.Singleton.VerificarCedula(check, txtCI.Text) Then
                 If Principal.Singleton.VerificarContraseña(seg, txtPass.Text, txtRepPass.Text) Then

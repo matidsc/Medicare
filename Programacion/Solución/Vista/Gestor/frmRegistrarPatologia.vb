@@ -3,14 +3,8 @@
 Public Class frmRegistrarPatologia
 
     Dim sourcedgv As String
-
-    Private Sub RegistrarPatologias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        'Principal.Singleton.RoundedCorners(Me)
-        traerSintomas()
-
-    End Sub
-
+    Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+    Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -20,6 +14,15 @@ Public Class frmRegistrarPatologia
         Datos_Temporales.vertical = Me.Height
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
+
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scroll, True)
+
+        ScrollHelper2 = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodosLosSintomas, scroll2, True)
+        traerSintomas()
+
+
+        ScrollHelper.UpdateScrollBar()
+        ScrollHelper2.UpdateScrollBar()
     End Sub
 
 
@@ -92,11 +95,10 @@ Public Class frmRegistrarPatologia
         For i = 0 To arraySintomas.Count - 1
             dgvTodosLosSintomas.Rows.Add(arraySintomas(i))
         Next
-
     End Sub
 
 
-    Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles mrbtnRegistrarPat.Click
+    Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
 
         Dim prioridad As Byte
         Dim ali As New ArrayList
@@ -106,7 +108,8 @@ Public Class frmRegistrarPatologia
             If txtNomPat.Text <> Nothing Then
                 If txtDescPat.Text.Length > 10 Then
                     If txtRecPat.Text.Length > 10 Then
-                        If mrbPAlta.Checked = False And mrbPBaja.Checked = False And mrbPMedia.Checked = False Then
+                        If mrbPAlta.Checked = True Or mrbPBaja.Checked = True Or mrbPMedia.Checked = True Then
+
                             If mrbPAlta.Checked Then
                                 prioridad = 1
                             ElseIf mrbPMedia.Checked Then
@@ -119,23 +122,82 @@ Public Class frmRegistrarPatologia
                                 ali.Add(dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
                             Next
 
-                            Dim p As New ControladorPatologia(txtNomPat.Text, txtDescPat.Text, txtRecPat.Text, prioridad, ali)
+                            Dim p As New ControladorPatologia(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali)
 
-                            p.registrar()
+                            If p.VerificarBaja(txtNomPat.Text.ToUpper) Then
 
-                            MsgBox("Patología registrada con éxito")
-                            Dim s As New ControladorSintoma
-                            txtNomPat.Text = Nothing
-                            txtDescPat.Text = Nothing
-                            txtRecPat.Text = Nothing
-                            dgvTodosLosSintomas.Rows.Clear()
-                            dgvSintomasSeleccionados.Rows.Clear()
-                            traerSintomas()
+                                If p.registrar() Then
+                                    MsgBox("Patología registrada con éxito")
+                                    txtNomPat.Text = Nothing
+                                    txtDescPat.Text = Nothing
+                                    txtRecPat.Text = Nothing
+                                    dgvTodosLosSintomas.Rows.Clear()
+                                    dgvSintomasSeleccionados.Rows.Clear()
+                                    mrbPAlta.Checked = False
+                                    mrbPBaja.Checked = False
+                                    mrbPMedia.Checked = False
+                                    traerSintomas()
+                                    ali.Clear()
+                                Else
+                                    MsgBox("La patología ya fue ingresada")
+                                End If
+
+                            Else
+                                Dim respuesta As Integer = MsgBox("La patología se encuentra dada de baja. ¿Desea reingresarla al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                If respuesta = vbYes Then
+
+                                    Dim respuesta2 As Integer = MsgBox("¿Desea actualizar la patología con los datos ingresados?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                    If respuesta2 = vbYes Then
+                                        If p.ReingresarConDatos(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali) Then
+
+                                            MsgBox("Patología reingresada con éxito")
+                                            txtNomPat.Text = Nothing
+                                            txtDescPat.Text = Nothing
+                                            txtRecPat.Text = Nothing
+                                            dgvTodosLosSintomas.Rows.Clear()
+                                            dgvSintomasSeleccionados.Rows.Clear()
+                                            mrbPAlta.Checked = False
+                                            mrbPBaja.Checked = False
+                                            mrbPMedia.Checked = False
+                                            traerSintomas()
+                                            ali.Clear()
+                                        Else
+                                            MsgBox("Error al reingresar la patología")
+                                            ali.Clear()
+                                        End If
+
+                                    Else
+
+                                        If p.ReingresarPatologia(txtNomPat.Text.ToUpper) Then
+                                            MsgBox("Patología reingresada con éxito")
+                                            txtNomPat.Text = Nothing
+                                            txtDescPat.Text = Nothing
+                                            txtRecPat.Text = Nothing
+                                            dgvTodosLosSintomas.Rows.Clear()
+                                            dgvSintomasSeleccionados.Rows.Clear()
+                                            mrbPAlta.Checked = False
+                                            mrbPBaja.Checked = False
+                                            mrbPMedia.Checked = False
+                                            traerSintomas()
+                                            ali.Clear()
+                                        Else
+                                            MsgBox("Error al reingresar la patología")
+                                            ali.Clear()
+                                        End If
+
+                                    End If
+
+                                End If
+
+                            End If
+
                         Else
                             MsgBox("Debe ingresar una prioridad")
                         End If
                     Else
-                            MsgBox("Debe ingresar una recomendación completa")
+                        MsgBox("Debe ingresar una recomendación completa")
                     End If
                 Else
                     MsgBox("Debe ingresar una descripción completa")
@@ -144,7 +206,7 @@ Public Class frmRegistrarPatologia
                 MsgBox("Debe ingresar un nombre")
             End If
         Else
-                MsgBox("Debe seleccionar síntomas para la patología")
+            MsgBox("Debe seleccionar síntomas para la patología")
         End If
 
     End Sub
@@ -186,5 +248,45 @@ Public Class frmRegistrarPatologia
     Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
         pnlPatologia.BringToFront()
         transicion.Hide(pnlPatologia)
+        transicion.Show(pnlSintomas)
+    End Sub
+
+    Private Sub txtDescPat_TextChanged(sender As Object, e As EventArgs) Handles txtDescPat.TextChanged
+        lblCantDesc.Text = txtDescPat.Text.Length & "/300"
+    End Sub
+
+    Private Sub txtRecPat_TextChanged(sender As Object, e As EventArgs) Handles txtRecPat.TextChanged
+        lblCantRec.Text = txtRecPat.Text.Length & "/300"
+    End Sub
+
+    Private Sub dgvTodosLosSintomas_Resize(sender As Object, e As EventArgs) Handles dgvTodosLosSintomas.Resize
+        If ScrollHelper2 IsNot Nothing Then
+            ScrollHelper2.UpdateScrollBar()
+        End If
+
+    End Sub
+    Private Sub dgvSintomasSeleccionados_Resize(sender As Object, e As EventArgs) Handles dgvSintomasSeleccionados.Resize
+        If ScrollHelper IsNot Nothing Then
+            ScrollHelper.UpdateScrollBar()
+        End If
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        pnlSintomas.BringToFront()
+        transicion.Hide(pnlSintomas)
+        transicion.Show(pnlPatologia)
+    End Sub
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
+            Dim res = MsgBox("Hay información sin guardar, ¿Seguro desea salir?", vbYesNo)
+            If res = vbYes Then
+                Principal.Singleton.CambiarTamaño(frmModular)
+                Me.Dispose()
+            End If
+        Else
+            Principal.Singleton.CambiarTamaño(frmModular)
+            Me.Dispose()
+        End If
     End Sub
 End Class

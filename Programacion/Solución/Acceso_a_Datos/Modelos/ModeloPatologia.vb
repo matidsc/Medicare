@@ -62,13 +62,13 @@ Public Class ModeloPatologia
                                   VALUES ((SELECT idSintoma FROM sintoma WHERE nombre = ?), 
                                   (SELECT idPatologia FROM patologia WHERE nombre = ?))"
 
-        For i As Int16 = 0 To nomSintomas.Count - 1
+        For Each var In nomSintomas
             parametros.Clear()
-            parametros.Add(New OdbcParameter("nombre", nomSintomas.Item(i)))
+            parametros.Add(New OdbcParameter("nombre", var))
             parametros.Add(New OdbcParameter("nombre", nombre))
 
             ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
-            contador = +1
+            contador += 1
         Next
 
         If contador = nomSintomas.Count Then
@@ -172,5 +172,58 @@ Public Class ModeloPatologia
         End Try
 
     End Function
+
+    Public Function VerificarBaja(nombre As String) As Boolean
+
+        Dim consulta As String = "SELECT count(*) FROM patologia WHERE bajalogica = 1 AND nombre = '" & nombre & "'"
+
+        If ModeloConsultas.Singleton.ConsultaCampo(consulta) = 0 Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
+    Public Function ReingresarPatologia(nombre As String) As Boolean
+
+        Dim consulta As String = "UPDATE patologia SET bajalogica = 0 WHERE nombre = '" & nombre & "'"
+
+        If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+
+            Return True
+        End If
+
+        Return False
+    End Function
+
+    Public Function UpdateBajaLogica(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, sintomas As ArrayList) As Boolean
+
+        Dim consulta As String = "UPDATE patologia SET bajalogica = 0, descripcion = '" & descripcion & "', " & "recomendacion = '" & recomendacion & "', " & "prioridad = '" & prioridad & "' " & "WHERE nombre = '" & nombre & "'"
+
+        Dim consultaBorrado As String = "DELETE patologia_contiene_sintoma 
+                                         FROM patologia_contiene_sintoma 
+                                         INNER JOIN patologia ON patologia.idPatologia = patologia_contiene_sintoma.idPatologia 
+                                         WHERE nombre = '" & nombre & "'"
+
+        If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+            If ModeloConsultas.Singleton.ConsultaDelete(consultaBorrado) Then
+                If RegistrarAsociacion(nombre, sintomas) Then
+                    Return True
+                End If
+            End If
+        End If
+
+        Return False
+    End Function
+
+    'Public Function VerificarExistencia(nombre As String) As Boolean
+
+    '    If ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM patologia WHERE nombre = '" & nombre & "'") = 0 Then
+    '        Return True
+    '    End If
+
+    '    Return False
+
+    'End Function
 
 End Class

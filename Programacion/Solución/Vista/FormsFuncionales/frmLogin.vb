@@ -7,25 +7,34 @@ Public Class frmLogin
         Configuracion.Singleton.CargarConfiguracion()
         lblLogin.Select()
         CargarUsuario()
+        If txtUsr.Text <> "" Then
+            lblUsuario.Visible = False
+        End If
     End Sub
     Sub New()
         ObtenerRuta()
         Configuracion.Singleton.CargarConfiguracion()
         UCAjustes.Singleton.VerificarArchivo()
         InitializeComponent()
+        Datos_Temporales.horizontal = Me.Width
+        Datos_Temporales.vertical = Me.Height
+        Principal.Singleton.CambiarTamaño(Me)
+
 
         For Each var As Control In pnlContenedor.Controls
 
             If Principal.Singleton.Idioma(var.Name) <> "" Then
                 var.Text = Principal.Singleton.Idioma(var.Name)
-                var.Left = (Me.ClientSize.Width - var.Width) / 2
+
+                If var.Name <> "lblContraseña" And var.Name <> "lblUsuario" Then
+                    var.Left = (Me.ClientSize.Width - var.Width) / 2
+                End If
+
             End If
 
         Next
 
-        Datos_Temporales.horizontal = Me.Width
-        Datos_Temporales.vertical = Me.Height
-        Principal.Singleton.CambiarTamaño(Me)
+
     End Sub
     Public Sub ObtenerRuta()
         Dim array As New ArrayList
@@ -61,25 +70,13 @@ Public Class frmLogin
     End Sub
 
 
-
-    Private Sub txtUsr_LostFocus(sender As Object, e As EventArgs) Handles txtUsr.LostFocus
-        If txtUsr.Text Is Nothing Then
-            txtUsr.Text = "Usuario"
-        End If
-
-    End Sub
-
-    Private Sub txtPass_LostFocus(sender As Object, e As EventArgs) Handles txtPass.LostFocus
-        If txtPass.Text Is Nothing Then
-            txtPass.Text = "Contraseña"
-        End If
-
-    End Sub
-
     Private Sub CargarUsuario()
         If Configuracion.Singleton.usuario <> Nothing Then
-            txtUsr.Text = Configuracion.Singleton.usuario
-            mcbRecordarUsuario.Checked = True
+            If Datos_Temporales.rol <> Datos_Temporales.enumRol.Paciente Then
+                txtUsr.Text = Configuracion.Singleton.usuario
+                mcbRecordarUsuario.Checked = True
+            End If
+
         End If
     End Sub
 
@@ -172,7 +169,7 @@ Public Class frmLogin
 
     End Sub
 
-    Private Sub txtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPass.KeyDown, txtUsr.KeyDown
+    Private Sub txtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsr.KeyDown
         If e.KeyCode = Keys.Enter Then
             ingresarUsuario()
         End If
@@ -212,23 +209,45 @@ Public Class frmLogin
         ingresarUsuario()
     End Sub
 
-    Private Sub UcAjustes1_Load(sender As Object, e As EventArgs) Handles UcAjustes1.Load
+    Dim bool As Boolean = False
+    Private Sub txtPass_GotFocus(sender As Object, e As EventArgs) Handles txtPass.GotFocus
+
+        If txtPass.Text = "" Then
+            lblContraseña.Visible = False
+
+        End If
+
+    End Sub
+    Private Sub txtPass_LostFocus(sender As Object, e As EventArgs) Handles txtPass.LostFocus
+
+        If txtPass.Text = "" Then
+            lblContraseña.Visible = True
+
+        End If
+
+    End Sub
+    Private Sub txtUsr_GotFocus(sender As Object, e As EventArgs) Handles txtUsr.GotFocus
+
+        If txtUsr.Text = "" Then
+            lblUsuario.Visible = False
+
+        End If
+
+    End Sub
+    Private Sub txtUsr_LostFocus(sender As Object, e As EventArgs) Handles txtUsr.LostFocus
+
+        If txtUsr.Text = "" Then
+            lblUsuario.Visible = True
+
+        End If
 
     End Sub
 
-    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
-
+    Private Sub lblUsuario_Click(sender As Object, e As EventArgs) Handles lblUsuario.Click
+        txtUsr.Focus()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtUsr_TextChanged(sender As Object, e As EventArgs) Handles txtUsr.TextChanged
-
+    Private Sub lblContraseña_Click(sender As Object, e As EventArgs) Handles lblContraseña.Click
+        txtPass.Focus()
     End Sub
 End Class

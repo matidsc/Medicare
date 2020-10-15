@@ -122,4 +122,21 @@ Public Class ModeloConsultas
         Return False
     End Function
 
+    Public Function ConsultaDelete(consulta As String) As Boolean
+
+        Conexion.Singleton.abrirConexion()
+
+        Dim insert As New OdbcCommand(consulta, Conexion.Singleton.Connection)
+
+        If insert.ExecuteNonQuery() >= 0 Then
+            Conexion.Singleton.cerrarConexion()
+            Return True
+        End If
+
+        Conexion.Singleton.cerrarConexion()
+
+        Return False
+
+    End Function
+
 End Class

@@ -26,8 +26,12 @@ Public Class ControladorPatologia
     End Sub
 
     Public Function registrar() As Boolean
+        Try
+            Return ModeloPatologia.Singleton.Registrar(_nombre, _descripcion, _recomendacion, _prioridad, _sintomas)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloPatologia.Singleton.Registrar(_nombre, _descripcion, _recomendacion, _prioridad, _sintomas)
 
     End Function
 
@@ -63,5 +67,22 @@ Public Class ControladorPatologia
         Return ModeloPatologia.Singleton.GuardarDiagnostico(usuario, nombreDiagnostico)
 
     End Function
+
+    Public Function VerificarBaja(nombre As String) As Boolean
+        Return ModeloPatologia.Singleton.VerificarBaja(nombre)
+    End Function
+
+    Public Function ReingresarPatologia(nombre As String) As Boolean
+        Return ModeloPatologia.Singleton.ReingresarPatologia(nombre)
+    End Function
+
+    Public Function ReingresarConDatos(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, sintomas As ArrayList) As Boolean
+
+        Return ModeloPatologia.Singleton.UpdateBajaLogica(nombre, descripcion, recomendacion, prioridad, sintomas)
+    End Function
+
+    'Public Function VerificarExistencia(nombre As String) As Boolean
+    '    Return ModeloPatologia.Singleton.VerificarExistencia(nombre)
+    'End Function
 
 End Class

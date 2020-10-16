@@ -29,7 +29,8 @@ Public Class ModeloPatologia
     ''' <param name="prioridad"></param>
     ''' <param name="nomSintomas"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function Registrar(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, nomSintomas As ArrayList) As Boolean
+
+    Public Overloads Function Registrar(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, nomSintomas As ArrayList) As Boolean
 
         Dim consulta As String = "INSERT INTO patologia (nombre, descripcion, recomendacion, prioridad) VALUES (?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
@@ -46,6 +47,33 @@ Public Class ModeloPatologia
         End If
 
         Return False
+    End Function
+    Public Overloads Function Registrar(tabla As DataTable)
+
+        Dim consulta As String = "INSERT INTO patologia(nombre, descripcion,recomendacion,prioridad) VALUES(?,?,?,?)"
+        Dim parametros As New List(Of OdbcParameter)
+        Dim contador As Int32 = 0
+
+        For Each fila As DataRow In tabla.Rows
+
+            parametros.Add(New OdbcParameter("nombre", fila.Item(0).ToString.ToUpper))
+            parametros.Add(New OdbcParameter("descripcion", fila.Item(1).ToString.ToUpper))
+            parametros.Add(New OdbcParameter("recomendacion", fila.Item(2).ToString.ToUpper))
+            parametros.Add(New OdbcParameter("priodidad", fila.Item(3)))
+
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+                contador += 1
+            End If
+            parametros.Clear()
+
+        Next
+
+        If contador = tabla.Rows.Count Then
+            Return True
+        End If
+
+        Return False
+
     End Function
 
     ''' <summary>

@@ -84,7 +84,7 @@ Public Class frmLogin
         ingresarUsuario()
     End Sub
 
-    Private Sub Finalizar() Handles pnlContenedor.ControlRemoved
+    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
     End Sub
 

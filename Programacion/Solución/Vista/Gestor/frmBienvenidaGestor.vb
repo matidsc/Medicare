@@ -68,10 +68,6 @@ Public Class frmBienvenidaGestor
         Me.WindowState = WindowState.Minimized
     End Sub
 
-    Private Sub btn2_Click(sender As Object, e As EventArgs)
-        frmManualCsv.Show()
-    End Sub
-
     Private Sub btnPatologia_Click(sender As Object, e As EventArgs) Handles btnPatologia.Click
         Dim frm As New frmOpciones()
         frm.op = 0
@@ -195,5 +191,24 @@ Public Class frmBienvenidaGestor
 
     Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
 
+    End Sub
+
+    Private Sub Enter(sender As Object, e As EventArgs) Handles Panel7.MouseEnter, Panel5.MouseEnter, Panel3.MouseEnter, Panel1.MouseEnter, Label8.MouseEnter, Label7.MouseEnter, Label6.MouseEnter, Label5.MouseEnter, Label4.MouseEnter, Label3.MouseEnter, Label2.MouseEnter, Label1.MouseEnter, btnUsuarios.MouseEnter, btnSintomas.MouseEnter, btnRegistro.MouseEnter, btnPatologia.MouseEnter
+
+        If TypeOf sender IsNot Panel Then
+            sender.parent.backcolor = Color.FromArgb(25, 32, 37)
+        Else
+            sender.backcolor = Color.FromArgb(25, 32, 37)
+        End If
+
+    End Sub
+
+    Private Sub Leave(sender As Object, e As EventArgs) Handles Panel7.MouseLeave, Panel5.MouseLeave, Panel3.MouseLeave, Panel1.MouseLeave, Label8.MouseLeave, Label7.MouseLeave, Label6.MouseLeave, Label5.MouseLeave, Label4.MouseLeave, Label3.MouseLeave, Label2.MouseLeave, Label1.MouseLeave, btnUsuarios.MouseLeave, btnSintomas.MouseLeave, btnRegistro.MouseLeave, btnPatologia.MouseLeave
+
+        If TypeOf sender IsNot Panel Then
+            sender.parent.backcolor = Colores.primario_DARK
+        Else
+            sender.backcolor = Colores.primario_DARK
+        End If
     End Sub
 End Class

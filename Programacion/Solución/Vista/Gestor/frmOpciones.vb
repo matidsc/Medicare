@@ -1,94 +1,136 @@
 ﻿Imports Logica
 Public Class frmOpciones
     Public op As Byte
-    Private Sub frmPatologiasySintomas_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub frmOpciones_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Select Case op
+
             Case 0
                 lblTitulo.Text = "MENU PATOLOGÍAS"
                 lblTitulo3.Text = "Listado de patologías"
                 lblSubtitulo1.Text = "Registre patologías manualmente o desde un archivo CSV"
                 lblSubtitulo3.Text = "Acceda a todas las patologías registradas y a opciones de eliminar y modificar"
+
             Case 1
                 lblTitulo.Text = "MENU SÍNTOMAS"
                 lblTitulo3.Text = "Listado de síntomas"
                 lblSubtitulo1.Text = "Registre síntomas manualmente o desde un archivo CSV"
                 lblSubtitulo3.Text = "Acceda a todos los síntomas registrados y a opciones de eliminar y modificar"
+
             Case 2
                 lblTitulo.Text = "MENU USUARIOS"
                 lblTitulo1.Text = "Registrar médico"
                 lblTitulo3.Text = "Registrar gestor"
-                lblSubtitulo1.Text = "Registre médicos manualmente o desde un archivo CSV"
-                lblSubtitulo3.Text = "Registre gestores manualmente o desde un archivo CSV"
-        End Select
+                lblSubtitulo1.Text = "Registre médicos manualmente"
+                lblSubtitulo3.Text = "Registre gestores manualmente"
 
+        End Select
 
     End Sub
 
     Public Sub New()
 
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
     End Sub
 
-    Private Sub pnlOpcion1_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlOpcion1.MouseDown
-
-        If op = 0 Then
-            Dim frm As New frmRegistrarPatologia
-            Me.SuspendLayout()
-            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-            Principal.Singleton.CambiarTamaño(frmRegistrarPatologia)
-            frm.Show()
-            pnlContenedor.Hide()
-            pnlInstancia.Show()
-            Me.ResumeLayout()
-        ElseIf op = 1 Then
-            Dim frm As New frmRegistrarSintoma
-            Me.SuspendLayout()
-            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-            Principal.Singleton.CambiarTamaño(frmRegistrarSintoma)
-            frm.Show()
-            pnlContenedor.Hide()
-            pnlInstancia.Show()
-            Me.ResumeLayout()
-        Else
-            Dim frm As New frmRegistrarMedico
-            Me.SuspendLayout()
-            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-            Principal.Singleton.CambiarTamaño(frmRegistrarMedico)
-            frm.Show()
-            pnlContenedor.Hide()
-            pnlInstancia.Show()
-            Me.ResumeLayout()
-        End If
-
-    End Sub
-
-    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
-        Me.pnlContenedor.Show()
-    End Sub
-
-
-    Private Sub pnlOpcion2_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlOpcion3.MouseDown
+    Private Sub Opcion1(sender As Object, e As MouseEventArgs) Handles pnlOpcion1.MouseDown, lblTitulo1.MouseDown, lblSubtitulo1.MouseDown
 
         Select Case op
-            Case 2
-                Dim frm As New frmRegistroGestor
+
+            Case 0
+                Dim frm As New frmRegistrarPatologia
                 Me.SuspendLayout()
                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                Principal.Singleton.CambiarTamaño(frmRegistroGestor)
+                Principal.Singleton.CambiarTamaño(frmRegistrarPatologia)
                 frm.Show()
                 pnlContenedor.Hide()
                 pnlInstancia.Show()
                 Me.ResumeLayout()
-            Case 1
 
+            Case 1
+                Dim frm As New frmRegistrarSintoma
+                Me.SuspendLayout()
+                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                Principal.Singleton.CambiarTamaño(frmRegistrarSintoma)
+                frm.Show()
+                pnlContenedor.Hide()
+                pnlInstancia.Show()
+                Me.ResumeLayout()
+
+            Case 2
+                Dim frm As New frmRegistrarMedico
+                Me.SuspendLayout()
+                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                Principal.Singleton.CambiarTamaño(frmRegistrarMedico)
+                frm.Show()
+                pnlContenedor.Hide()
+                pnlInstancia.Show()
+                Me.ResumeLayout()
+
+        End Select
+
+    End Sub
+
+    Private Sub Opcion2(sender As Object, e As MouseEventArgs) Handles pnlOpcion2.MouseDown, lblTitulo2.MouseDown, lblSubtitulo2.MouseDown
+
+        Dim opf As New OpenFileDialog
+        Dim listaColumnas As New List(Of String)
+        opf.Title = "Seleccione un archivo"
+        opf.InitialDirectory = "C:\\"
+        opf.Filter = "Archivo|*.csv"
+
+        Select Case op
+
+            Case 0
+                listaColumnas.Add("Nombre")
+                listaColumnas.Add("Descrpcion")
+                listaColumnas.Add("Recomendación")
+                listaColumnas.Add("Prioridad")
+            Case 1
+                listaColumnas.Add("Nombre")
+                listaColumnas.Add("Descripción")
+
+        End Select
+
+        If opf.ShowDialog = DialogResult.OK Then
+
+            If Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count <> 0 Then
+
+                Dim frm As New frmListado(opf.FileName, listaColumnas, op)
+                Me.SuspendLayout()
+                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                Principal.Singleton.CambiarTamaño(frm)
+                frm.Show()
+                pnlContenedor.Hide()
+                pnlInstancia.Show()
+                Me.ResumeLayout()
+            Else
+                MsgBox("El arhivo seleccionado no es correcto")
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub Opcion3(sender As Object, e As MouseEventArgs) Handles pnlOpcion3.MouseDown, lblSubtitulo3.MouseDown, lblTitulo3.MouseDown
+
+        Select Case op
+
+            Case 0
+                Dim frm As New frmListado(0)
+                Me.SuspendLayout()
+                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                Principal.Singleton.CambiarTamaño(frmListado)
+                frm.Show()
+                pnlContenedor.Hide()
+                pnlInstancia.Show()
+                Me.ResumeLayout()
+
+            Case 1
                 Dim frm As New frmListado(1)
                 Me.SuspendLayout()
                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -98,16 +140,16 @@ Public Class frmOpciones
                 pnlInstancia.Show()
                 Me.ResumeLayout()
 
-            Case 0
-                Dim frm As New frmListado(0)
-                'frm.op = "patologías"
+            Case 2
+                Dim frm As New frmRegistroGestor
                 Me.SuspendLayout()
                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                Principal.Singleton.CambiarTamaño(frmListado)
+                Principal.Singleton.CambiarTamaño(frmRegistroGestor)
                 frm.Show()
                 pnlContenedor.Hide()
                 pnlInstancia.Show()
                 Me.ResumeLayout()
+
         End Select
 
     End Sub
@@ -137,4 +179,11 @@ Public Class frmOpciones
 
     End Sub
 
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
+        Me.Dispose()
+    End Sub
+    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+        Me.pnlContenedor.Show()
+    End Sub
 End Class

@@ -25,16 +25,21 @@ Public Class ControladorPatologia
 
     End Sub
 
-    Public Function registrar() As Boolean
+    Public Overloads Function registrar() As Boolean
         Try
             Return ModeloPatologia.Singleton.Registrar(_nombre, _descripcion, _recomendacion, _prioridad, _sintomas)
         Catch ex As Exception
             Return False
         End Try
 
-
     End Function
-
+    Public Overloads Function Registrar(tabla As DataTable) As Boolean
+        Try
+            Return ModeloPatologia.Singleton.Registrar(tabla)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     Public Function listarPatologias() As DataTable
 
         Return ModeloPatologia.Singleton.ListarPatologias

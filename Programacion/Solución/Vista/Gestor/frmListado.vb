@@ -1,18 +1,25 @@
 ﻿Imports Logica
-''https://github.com/IgnaceMaes/MaterialSkin
 
 Public Class frmListado
 
-
+    Public dt As New DataTable
+    Dim esCSV As Boolean = False
     Dim op As Byte
+
+    Private Shared instancia As frmListado
+    Public Shared Function Singleton() As frmListado
+        If instancia Is Nothing Then
+            instancia = New frmListado
+        End If
+        Return instancia
+    End Function
     Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
-        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvListado, scroll, True)
+
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
     End Sub
@@ -27,6 +34,8 @@ Public Class frmListado
         ' Next
 
         InitializeComponent()
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvListado, scroll, True)
 
         Select Case op
             Case 0
@@ -40,21 +49,26 @@ Public Class frmListado
         End Select
 
     End Sub
-    Public Sub New(path As String, lista As List(Of String))
-
-        ''AGREAGAR IF   
-        For Each ctrl As Control In pnlContenedor.Controls
-
-            ctrl.Text = Principal.Singleton.Idioma(ctrl.Name)
-
-        Next
+    Public Sub New(path As String, lista As List(Of String), op As Byte)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Me.MetroButton1.Text = "Guardar"
-        Me.MetroButton1.Visible = True
-        dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
+        'For Each ctrl As Control In pnlContenedor.Controls
 
+        '    If Principal.Singleton.Idioma(ctrl.Name) <> Nothing Then
+        '        ctrl.Text = Principal.Singleton.Idioma(ctrl.Name)
+        '    End If
+
+        'Next
+        dt.Columns.Add("nombre")
+        dt.Columns.Add("sintoma")
+
+        Me.esCSV = True
+        Me.op = op
+        dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
+        btnRegistrar.Visible = True
+
+        instancia = Me
     End Sub
 
     Private Sub btnSeleccionMultiple_Click(sender As Object, e As EventArgs) Handles btnSeleccionMultiple.Click
@@ -79,13 +93,43 @@ Public Class frmListado
 
     Private Sub dgvListadoPatologias_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
 
-        If dgvListado.MultiSelect = False Then
+        If esCSV Then
+
+            If op = 0 Then
+
+                Dim ali As ArrayList = ControladorSintoma.Singleton.traerSintomas
+
+                If UcAsociar1.dgvTodosLosSintomas.Rows.Count <> ali.Count Then
+
+                    For Each item In ali
+                        UcAsociar1.dgvTodosLosSintomas.Rows.Add(item)
+                    Next
+
+                End If
+
+            End If
+
+
+            UcAsociar1.Visible = True
+            UcAsociar1.BringToFront()
+            UcAsociar1.lblPatologia.Text = dgvListado.Rows(dgvListado.CurrentCell.RowIndex).Cells(0).Value
+
+            For Each row As DataRow In dt.Rows
+
+                If row.Item(0) = UcAsociar1.lblPatologia.Text Then
+                    UcAsociar1.dgvSintomasSeleccionados.Rows.Add(row.Item(1))
+                End If
+
+            Next
+            MsgBox(UcAsociar1.dgvSintomasSeleccionados.Rows.Count)
 
         End If
 
-    End Sub
 
-    Private Sub MaterialSingleLineTextField2_Click(sender As Object, e As EventArgs)
+
+        If dgvListado.MultiSelect = False Then
+
+        End If
 
     End Sub
 
@@ -181,7 +225,16 @@ Public Class frmListado
         dgvListado.DataSource = bs
 
     End Sub
-
+    Private Sub txtBuscar_GotFocus(sender As Object, e As EventArgs) Handles GunaTextBox2.GotFocus
+        If GunaTextBox2.Text = Nothing Then
+            lblBuscar.Visible = False
+        End If
+    End Sub
+    Private Sub txtBuscar_LostFocus(sender As Object, e As EventArgs) Handles GunaTextBox2.LostFocus
+        If GunaTextBox2.Text = Nothing Then
+            lblBuscar.Visible = True
+        End If
+    End Sub
 
     Private Sub btnEliminarElementos_Click_(sender As Object, e As EventArgs) Handles btnEliminarElementos.Click
 
@@ -239,10 +292,37 @@ Public Class frmListado
         MsgBox("En construcción...")
     End Sub
 
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
 
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
         Dim tabla As DataTable = dgvListado.DataSource
-        Dim a As New ControladorSintoma
-        a.registrar(1, tabla)
+
+        Select Case op
+
+            Case 0
+                Dim pat As New ControladorPatologia
+                If pat.Registrar(tabla) Then
+                    MsgBox("Se registraron las patologías exitosamente")
+                    Principal.Singleton.CambiarTamaño(frmOpciones)
+                    Me.Dispose()
+                Else
+                    MsgBox("Error al registrar las patologías")
+                End If
+            Case 1
+                Dim sin As New ControladorSintoma
+                If sin.Registrar(tabla) Then
+                    MsgBox("Se registraron los síntomas exitosamente")
+                    Principal.Singleton.CambiarTamaño(frmOpciones)
+                    Me.Dispose()
+                Else
+                    MsgBox("Error al registrar los síntomas")
+                End If
+        End Select
+
     End Sub
+
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+        Principal.Singleton.CambiarTamaño(frmOpciones)
+        Me.Dispose()
+    End Sub
+
 End Class

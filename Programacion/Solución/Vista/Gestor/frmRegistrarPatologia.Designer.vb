@@ -91,8 +91,7 @@ Partial Class frmRegistrarPatologia
         Animation2.TimeCoeff = 0!
         Animation2.TransparencyCoeff = 1.0!
         Me.transicion.DefaultAnimation = Animation2
-        Me.transicion.Interval = 3
-        Me.transicion.MaxAnimationTime = 700
+        Me.transicion.Interval = 7
         '
         'pnlContenedor
         '
@@ -407,7 +406,7 @@ Partial Class frmRegistrarPatologia
         Me.sepRec.LineColor = System.Drawing.Color.Gainsboro
         Me.sepRec.Location = New System.Drawing.Point(204, 537)
         Me.sepRec.Name = "sepRec"
-        Me.sepRec.Size = New System.Drawing.Size(667, 10)
+        Me.sepRec.Size = New System.Drawing.Size(655, 11)
         Me.sepRec.TabIndex = 188
         '
         'pnlSintomas

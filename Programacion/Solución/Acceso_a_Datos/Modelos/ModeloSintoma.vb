@@ -26,30 +26,44 @@ Public Class ModeloSintoma
     ''' <param name="nombre"></param>
     ''' <param name="descripcion"></param>
     ''' <returns>True si se registraron los síntomas.</returns>
-    Public Function Registrar(nombre As String, descripcion As String, csv As Byte, tabla As DataTable) As Boolean
-
-        Dim consulta As String = "INSERT INTO sintoma(nombre, descripcion) VALUES(?,?)"
+    ''' 
+    Public Overloads Function Registrar(tabla As DataTable) As Boolean
+        Dim consulta As String = "INSERT INTO sintoma (nombre, descripcion) VALUES(?,?)"
         Dim parametros As New List(Of OdbcParameter)
+        Dim contador As Int32 = 0
 
-        Select Case csv
-            Case 0
-                parametros.Add(New OdbcParameter("nombre", nombre))
-                parametros.Add(New OdbcParameter("descripcion", descripcion))
-                If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
-                    Return True
-                End If
-            Case 1
-                For Each fila As DataRow In tabla.Rows
-                    parametros.Add(New OdbcParameter("nombre", fila.Item(0)))
-                    parametros.Add(New OdbcParameter("descripcion", fila.Item(1)))
-                    ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
-                    parametros.Clear()
-                Next
-                Return True
-        End Select
+        For Each fila As DataRow In tabla.Rows
 
+            parametros.Add(New OdbcParameter("nombre", fila.Item(0).ToString.ToUpper))
+            parametros.Add(New OdbcParameter("descripcion", fila.Item(1).ToString.ToUpper))
+
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+                contador += 1
+            End If
+            parametros.Clear()
+
+        Next
+
+        If contador = tabla.Rows.Count Then
+            Return True
+        End If
 
         Return False
+    End Function
+    Public Overloads Function Registrar(nombre As String, descripcion As String) As Boolean
+
+        Dim consulta As String = "INSERT INTO sintoma (nombre, descripcion) VALUES(?,?)"
+        Dim parametros As New List(Of OdbcParameter)
+
+        parametros.Add(New OdbcParameter("nombre", nombre))
+        parametros.Add(New OdbcParameter("descripcion", descripcion))
+
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+            Return True
+        End If
+
+        Return False
+
     End Function
 
     ''' <summary>

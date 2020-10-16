@@ -8,6 +8,14 @@ Public Class ControladorSintoma
     Property _nombre As String
     Property _descripcion As String
 
+    Private Shared instancia As ControladorSintoma
+    Public Shared Function Singleton() As ControladorSintoma
+        If instancia Is Nothing Then
+            instancia = New ControladorSintoma
+        End If
+        Return instancia
+    End Function
+
     Public Sub New()
 
     End Sub
@@ -19,10 +27,17 @@ Public Class ControladorSintoma
 
     End Sub
 
-    Public Function registrar(csv As Byte, tabla As DataTable) As Boolean
+    Public Overloads Function Registrar(tabla As DataTable) As Boolean
 
-        Return ModeloSintoma.Singleton.Registrar(_nombre, _descripcion, csv, tabla)
+        Try
+            Return ModeloSintoma.Singleton.Registrar(tabla)
+        Catch ex As Exception
+            Return False
+        End Try
 
+    End Function
+    Public Overloads Function Registrar() As Boolean
+        Return ModeloSintoma.Singleton.Registrar(_nombre, _descripcion)
     End Function
 
     Public Function traerSintomas() As ArrayList

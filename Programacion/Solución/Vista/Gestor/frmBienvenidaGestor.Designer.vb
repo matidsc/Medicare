@@ -26,11 +26,11 @@ Partial Class frmBienvenidaGestor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBienvenidaGestor))
         Me.tempListaPacientes = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.lblNA = New System.Windows.Forms.Label()
-        Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.lblNA = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -84,8 +84,6 @@ Partial Class frmBienvenidaGestor
         '
         'pnlContenedor
         '
-        Me.pnlContenedor.Controls.Add(Me.lblNA)
-        Me.pnlContenedor.Controls.Add(Me.pnlFlow)
         Me.pnlContenedor.Controls.Add(Me.scroll)
         Me.pnlContenedor.Controls.Add(Me.Panel9)
         Me.pnlContenedor.Controls.Add(Me.pnlCerrar)
@@ -94,31 +92,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 25
-        '
-        'lblNA
-        '
-        Me.lblNA.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.lblNA.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNA.ForeColor = System.Drawing.Color.White
-        Me.lblNA.Location = New System.Drawing.Point(601, 103)
-        Me.lblNA.Name = "lblNA"
-        Me.lblNA.Size = New System.Drawing.Size(300, 420)
-        Me.lblNA.TabIndex = 0
-        Me.lblNA.Text = "No hay solicitudes"
-        Me.lblNA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lblNA.Visible = False
-        '
-        'pnlFlow
-        '
-        Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.pnlFlow.Location = New System.Drawing.Point(597, 80)
-        Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
-        Me.pnlFlow.Name = "pnlFlow"
-        Me.pnlFlow.Size = New System.Drawing.Size(335, 466)
-        Me.pnlFlow.TabIndex = 26
-        Me.pnlFlow.Visible = False
-        Me.pnlFlow.WrapContents = False
         '
         'scroll
         '
@@ -139,12 +112,27 @@ Partial Class frmBienvenidaGestor
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.lblNA)
         Me.Panel9.Controls.Add(Me.Label9)
+        Me.Panel9.Controls.Add(Me.pnlFlow)
         Me.Panel9.Controls.Add(Me.Panel10)
         Me.Panel9.Location = New System.Drawing.Point(0, 80)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1070, 570)
         Me.Panel9.TabIndex = 26
+        '
+        'lblNA
+        '
+        Me.lblNA.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.lblNA.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNA.ForeColor = System.Drawing.Color.White
+        Me.lblNA.Location = New System.Drawing.Point(1045, 127)
+        Me.lblNA.Name = "lblNA"
+        Me.lblNA.Size = New System.Drawing.Size(300, 420)
+        Me.lblNA.TabIndex = 0
+        Me.lblNA.Text = "No hay solicitudes"
+        Me.lblNA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblNA.Visible = False
         '
         'Label9
         '
@@ -156,6 +144,18 @@ Partial Class frmBienvenidaGestor
         Me.Label9.Size = New System.Drawing.Size(266, 29)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "Buenas tardes, Rodrigo"
+        '
+        'pnlFlow
+        '
+        Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.pnlFlow.Location = New System.Drawing.Point(1041, 104)
+        Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
+        Me.pnlFlow.Name = "pnlFlow"
+        Me.pnlFlow.Size = New System.Drawing.Size(335, 466)
+        Me.pnlFlow.TabIndex = 26
+        Me.pnlFlow.Visible = False
+        Me.pnlFlow.WrapContents = False
         '
         'Panel10
         '
@@ -176,14 +176,14 @@ Partial Class frmBienvenidaGestor
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnPatologia)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(106, 24)
+        Me.Panel1.Location = New System.Drawing.Point(82, 24)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(183, 248)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel2.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Panel2.Location = New System.Drawing.Point(0, 241)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(183, 7)
@@ -191,7 +191,7 @@ Partial Class frmBienvenidaGestor
         '
         'Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(20, 79)
         Me.Label2.Name = "Label2"
@@ -205,7 +205,7 @@ Partial Class frmBienvenidaGestor
         Me.btnPatologia.AnimationHoverSpeed = 0.07!
         Me.btnPatologia.AnimationSpeed = 0.03!
         Me.btnPatologia.BackColor = System.Drawing.Color.Transparent
-        Me.btnPatologia.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnPatologia.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnPatologia.BorderColor = System.Drawing.Color.Black
         Me.btnPatologia.CheckedBaseColor = System.Drawing.Color.Gray
         Me.btnPatologia.CheckedBorderColor = System.Drawing.Color.Black
@@ -215,12 +215,12 @@ Partial Class frmBienvenidaGestor
         Me.btnPatologia.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPatologia.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnPatologia.FocusedColor = System.Drawing.Color.Empty
-        Me.btnPatologia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPatologia.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPatologia.ForeColor = System.Drawing.Color.White
         Me.btnPatologia.Image = Nothing
         Me.btnPatologia.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnPatologia.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnPatologia.Location = New System.Drawing.Point(30, 179)
+        Me.btnPatologia.Location = New System.Drawing.Point(29, 179)
         Me.btnPatologia.Name = "btnPatologia"
         Me.btnPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.btnPatologia.OnHoverBorderColor = System.Drawing.Color.Black
@@ -229,21 +229,21 @@ Partial Class frmBienvenidaGestor
         Me.btnPatologia.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnPatologia.OnPressedColor = System.Drawing.Color.Black
         Me.btnPatologia.Radius = 12
-        Me.btnPatologia.Size = New System.Drawing.Size(125, 28)
+        Me.btnPatologia.Size = New System.Drawing.Size(125, 30)
         Me.btnPatologia.TabIndex = 9
         Me.btnPatologia.Text = "Ingresar"
         Me.btnPatologia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(43, 22)
+        Me.Label1.Location = New System.Drawing.Point(3, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(106, 24)
+        Me.Label1.Size = New System.Drawing.Size(183, 40)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Patologías"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel3
         '
@@ -262,7 +262,7 @@ Partial Class frmBienvenidaGestor
         Me.btnSintomas.AnimationHoverSpeed = 0.07!
         Me.btnSintomas.AnimationSpeed = 0.03!
         Me.btnSintomas.BackColor = System.Drawing.Color.Transparent
-        Me.btnSintomas.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnSintomas.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnSintomas.BorderColor = System.Drawing.Color.Black
         Me.btnSintomas.CheckedBaseColor = System.Drawing.Color.Gray
         Me.btnSintomas.CheckedBorderColor = System.Drawing.Color.Black
@@ -272,12 +272,12 @@ Partial Class frmBienvenidaGestor
         Me.btnSintomas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSintomas.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnSintomas.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSintomas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSintomas.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSintomas.ForeColor = System.Drawing.Color.White
         Me.btnSintomas.Image = Nothing
         Me.btnSintomas.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnSintomas.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnSintomas.Location = New System.Drawing.Point(34, 183)
+        Me.btnSintomas.Location = New System.Drawing.Point(30, 183)
         Me.btnSintomas.Name = "btnSintomas"
         Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.btnSintomas.OnHoverBorderColor = System.Drawing.Color.Black
@@ -286,14 +286,14 @@ Partial Class frmBienvenidaGestor
         Me.btnSintomas.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnSintomas.OnPressedColor = System.Drawing.Color.Black
         Me.btnSintomas.Radius = 12
-        Me.btnSintomas.Size = New System.Drawing.Size(125, 28)
+        Me.btnSintomas.Size = New System.Drawing.Size(125, 30)
         Me.btnSintomas.TabIndex = 10
         Me.btnSintomas.Text = "Ingresar"
         Me.btnSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel4.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Panel4.Location = New System.Drawing.Point(0, 240)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(183, 7)
@@ -301,9 +301,9 @@ Partial Class frmBienvenidaGestor
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(20, 78)
+        Me.Label3.Location = New System.Drawing.Point(21, 78)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(143, 59)
         Me.Label3.TabIndex = 2
@@ -312,19 +312,19 @@ Partial Class frmBienvenidaGestor
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(45, 21)
+        Me.Label4.Location = New System.Drawing.Point(0, 25)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 24)
+        Me.Label4.Size = New System.Drawing.Size(183, 40)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Síntomas"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel8
         '
-        Me.Panel8.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.Panel8.Location = New System.Drawing.Point(714, 265)
+        Me.Panel8.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.Panel8.Location = New System.Drawing.Point(749, 265)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(183, 7)
         Me.Panel8.TabIndex = 3
@@ -335,7 +335,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel7.Controls.Add(Me.btnUsuarios)
         Me.Panel7.Controls.Add(Me.Label7)
         Me.Panel7.Controls.Add(Me.Label8)
-        Me.Panel7.Location = New System.Drawing.Point(714, 24)
+        Me.Panel7.Location = New System.Drawing.Point(749, 24)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(183, 248)
         Me.Panel7.TabIndex = 7
@@ -345,7 +345,7 @@ Partial Class frmBienvenidaGestor
         Me.btnUsuarios.AnimationHoverSpeed = 0.07!
         Me.btnUsuarios.AnimationSpeed = 0.03!
         Me.btnUsuarios.BackColor = System.Drawing.Color.Transparent
-        Me.btnUsuarios.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnUsuarios.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnUsuarios.BorderColor = System.Drawing.Color.Black
         Me.btnUsuarios.CheckedBaseColor = System.Drawing.Color.Gray
         Me.btnUsuarios.CheckedBorderColor = System.Drawing.Color.Black
@@ -355,7 +355,7 @@ Partial Class frmBienvenidaGestor
         Me.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUsuarios.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnUsuarios.FocusedColor = System.Drawing.Color.Empty
-        Me.btnUsuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuarios.ForeColor = System.Drawing.Color.White
         Me.btnUsuarios.Image = Nothing
         Me.btnUsuarios.ImageSize = New System.Drawing.Size(20, 20)
@@ -369,25 +369,25 @@ Partial Class frmBienvenidaGestor
         Me.btnUsuarios.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnUsuarios.OnPressedColor = System.Drawing.Color.Black
         Me.btnUsuarios.Radius = 12
-        Me.btnUsuarios.Size = New System.Drawing.Size(125, 28)
+        Me.btnUsuarios.Size = New System.Drawing.Size(125, 30)
         Me.btnUsuarios.TabIndex = 12
         Me.btnUsuarios.Text = "Ingresar"
         Me.btnUsuarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(46, 24)
+        Me.Label7.Location = New System.Drawing.Point(3, 16)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(91, 24)
+        Me.Label7.Size = New System.Drawing.Size(183, 40)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Usuarios"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label8
         '
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(20, 79)
         Me.Label8.Name = "Label8"
@@ -403,7 +403,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Location = New System.Drawing.Point(508, 40)
+        Me.Panel5.Location = New System.Drawing.Point(532, 40)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(183, 248)
         Me.Panel5.TabIndex = 6
@@ -413,7 +413,7 @@ Partial Class frmBienvenidaGestor
         Me.btnRegistro.AnimationHoverSpeed = 0.07!
         Me.btnRegistro.AnimationSpeed = 0.03!
         Me.btnRegistro.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistro.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnRegistro.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnRegistro.BorderColor = System.Drawing.Color.Black
         Me.btnRegistro.CheckedBaseColor = System.Drawing.Color.Gray
         Me.btnRegistro.CheckedBorderColor = System.Drawing.Color.Black
@@ -423,12 +423,12 @@ Partial Class frmBienvenidaGestor
         Me.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRegistro.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnRegistro.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistro.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistro.ForeColor = System.Drawing.Color.White
         Me.btnRegistro.Image = Nothing
         Me.btnRegistro.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnRegistro.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnRegistro.Location = New System.Drawing.Point(33, 184)
+        Me.btnRegistro.Location = New System.Drawing.Point(32, 184)
         Me.btnRegistro.Name = "btnRegistro"
         Me.btnRegistro.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.btnRegistro.OnHoverBorderColor = System.Drawing.Color.Black
@@ -437,25 +437,25 @@ Partial Class frmBienvenidaGestor
         Me.btnRegistro.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnRegistro.OnPressedColor = System.Drawing.Color.Black
         Me.btnRegistro.Radius = 12
-        Me.btnRegistro.Size = New System.Drawing.Size(125, 28)
+        Me.btnRegistro.Size = New System.Drawing.Size(125, 30)
         Me.btnRegistro.TabIndex = 11
         Me.btnRegistro.Text = "Ingresar"
         Me.btnRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(51, 22)
+        Me.Label6.Location = New System.Drawing.Point(0, 25)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(87, 24)
+        Me.Label6.Size = New System.Drawing.Size(183, 40)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Registro"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Panel6.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Panel6.Location = New System.Drawing.Point(0, 240)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(183, 7)
@@ -463,9 +463,9 @@ Partial Class frmBienvenidaGestor
         '
         'Label5
         '
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(20, 78)
+        Me.Label5.Location = New System.Drawing.Point(23, 78)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(143, 59)
         Me.Label5.TabIndex = 2
@@ -494,11 +494,12 @@ Partial Class frmBienvenidaGestor
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(443, 29)
+        Me.Label10.Location = New System.Drawing.Point(485, 41)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(39, 18)
         Me.Label10.TabIndex = 26
         Me.Label10.Text = "Hola"
+        Me.Label10.Visible = False
         '
         'pnlNotificacion
         '
@@ -628,13 +629,9 @@ Partial Class frmBienvenidaGestor
         Me.Panel9.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
         Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.pnlCerrar.ResumeLayout(False)
         Me.pnlCerrar.PerformLayout()
         Me.pnlNotificacion.ResumeLayout(False)

@@ -453,13 +453,14 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloSintoma.Registrar(System.String,System.String,System.Byte,System.Data.DataTable)">
+<member name="M:Acceso_a_Datos.ModeloSintoma.Registrar(System.Data.DataTable)">
  <summary>
  Función encargada de registrar los síntomas.
  </summary>
  <param name="nombre"></param>
  <param name="descripcion"></param>
  <returns>True si se registraron los síntomas.</returns>
+ 
 </member>
 <member name="M:Acceso_a_Datos.ModeloSintoma.TraerSintomas">
  <summary>

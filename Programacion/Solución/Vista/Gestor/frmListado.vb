@@ -97,35 +97,46 @@ Public Class frmListado
 
             If op = 0 Then
 
-                Dim ali As ArrayList = ControladorSintoma.Singleton.traerSintomas
+                UcAsociar1.lblPatologia.Text = dgvListado.Rows(dgvListado.CurrentCell.RowIndex).Cells(0).Value
+                Dim array As New ArrayList
+                Dim bool As Boolean = False
 
-                If UcAsociar1.dgvTodosLosSintomas.Rows.Count <> ali.Count Then
 
-                    For Each item In ali
-                        UcAsociar1.dgvTodosLosSintomas.Rows.Add(item)
+                For Each row As DataRow In dt.Rows
+
+                    If row.Item(0) = UcAsociar1.lblPatologia.Text Then
+
+                        UcAsociar1.dgvSintomasSeleccionados.Rows.Add(row.Item(1))
+                        array.Add(row.Item(1))
+                        bool = True
+
+                    End If
+
+                Next
+
+                If bool Then
+
+                    For Each sintoma In ControladorSintoma.Singleton.traerSintomas(array)
+                        UcAsociar1.dgvTodosLosSintomas.Rows.Add(sintoma)
                     Next
 
+                Else
+                    For Each sintoma In ControladorSintoma.Singleton.traerSintomas
+                        UcAsociar1.dgvTodosLosSintomas.Rows.Add(sintoma)
+                    Next
+
+
                 End If
+
+                UcAsociar1.Visible = True
+                UcAsociar1.BringToFront()
+
+
+                'MsgBox(UcAsociar1.dgvSintomasSeleccionados.Rows.Count)
 
             End If
 
-
-            UcAsociar1.Visible = True
-            UcAsociar1.BringToFront()
-            UcAsociar1.lblPatologia.Text = dgvListado.Rows(dgvListado.CurrentCell.RowIndex).Cells(0).Value
-
-            For Each row As DataRow In dt.Rows
-
-                If row.Item(0) = UcAsociar1.lblPatologia.Text Then
-                    UcAsociar1.dgvSintomasSeleccionados.Rows.Add(row.Item(1))
-                End If
-
-            Next
-            MsgBox(UcAsociar1.dgvSintomasSeleccionados.Rows.Count)
-
         End If
-
-
 
         If dgvListado.MultiSelect = False Then
 
@@ -324,5 +335,6 @@ Public Class frmListado
         Principal.Singleton.CambiarTamaño(frmOpciones)
         Me.Dispose()
     End Sub
+
 
 End Class

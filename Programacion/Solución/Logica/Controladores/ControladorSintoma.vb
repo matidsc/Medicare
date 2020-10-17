@@ -39,13 +39,15 @@ Public Class ControladorSintoma
     Public Overloads Function Registrar() As Boolean
         Return ModeloSintoma.Singleton.Registrar(_nombre, _descripcion)
     End Function
+    Public Overloads Function traerSintomas(sintomas As ArrayList) As ArrayList
+        Return ModeloSintoma.Singleton.TraerSintomas(sintomas)
+    End Function
 
-    Public Function traerSintomas() As ArrayList
+    Public Overloads Function traerSintomas() As ArrayList
 
         Return ModeloSintoma.Singleton.TraerSintomas
 
     End Function
-
     Public Function guardarSintomas(usuario As String, nombreSintoma As ArrayList) As Boolean
 
         Return ModeloSintoma.Singleton.GuardarSintomas(usuario, nombreSintoma)

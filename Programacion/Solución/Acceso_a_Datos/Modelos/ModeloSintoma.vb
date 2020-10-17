@@ -70,8 +70,26 @@ Public Class ModeloSintoma
     ''' Función encargada de obtener el nombre de los síntomas.
     ''' </summary>
     ''' <returns>ArrayList con las filas encontradas en la consulta.</returns>
-    Public Function TraerSintomas() As ArrayList
+    Public Overloads Function TraerSintomas() As ArrayList
         Return ModeloConsultas.Singleton.ConsultaArray("SELECT nombre FROM sintoma WHERE bajalogica = 0")
+    End Function
+
+    Public Overloads Function TraerSintomas(sintomas As ArrayList) As ArrayList
+
+        Dim parametros As String
+        Dim consulta As String = "
+                                SELECT s.nombre
+                                FROM sintoma s
+                                WHERE bajaLogica = 0 AND s.nombre NOT IN ("
+
+        For Each sintoma In sintomas
+            parametros = parametros & "'" & sintoma & "'" & ","
+        Next
+
+        consulta = consulta & parametros.TrimEnd(",") & ")"
+
+        Return ModeloConsultas.Singleton.ConsultaArray(consulta)
+
     End Function
 
     ''' <summary>

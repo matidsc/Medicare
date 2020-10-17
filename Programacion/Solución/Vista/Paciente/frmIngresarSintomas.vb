@@ -13,26 +13,17 @@ Public Class frmIngresarSintomas
 
         ScrollHelperSeleccionados = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scrollSeleccionados, True)
         ScrollHelperTodos = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodos, scrollTodos, True)
-
-        'Principal.Singleton.roundedCorners(Me)
-
-        Dim sintomas As New ControladorSintoma
-
-        For i As Integer = 0 To sintomas.traerSintomas.Count - 1
-
-            dgvTodos.Rows.Add(sintomas.traerSintomas.Item(i))
-
+        For Each sintoma In ControladorSintoma.Singleton.traerSintomas
+            dgvTodos.Rows.Add(sintoma)
         Next
 
     End Sub
 
     Public Sub New()
 
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)

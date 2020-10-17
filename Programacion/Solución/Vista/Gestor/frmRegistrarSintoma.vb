@@ -15,12 +15,12 @@ Public Class frmRegistrarSintoma
     Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles mrbtnRegistrarSintoma.Click
 
         If txtDescripcion.Text.Length > 10 Then
-            Dim sintoma As New ControladorSintoma(txtNomSintoma.Text, txtDescripcion.Text)
+            Dim sintoma As New ControladorSintoma(txtNom.Text, txtDescripcion.Text)
 
             If sintoma.Registrar() Then
                 MsgBox("Síntoma registrado con éxito")
-                txtDescripcion.Clear()
-                txtNomSintoma.Clear()
+                txtDescripcion.Text = Nothing
+                txtNom.Text = Nothing
             Else
                 MsgBox("Error al registrar el síntoma")
             End If
@@ -31,8 +31,8 @@ Public Class frmRegistrarSintoma
 
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        If Not (txtNomSintoma.Text = Nothing And txtDescripcion.Text = Nothing) Then
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
+        If Not (txtNom.Text = Nothing And txtDescripcion.Text = Nothing) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
             If res = vbYes Then
                 Principal.Singleton.CambiarTamaño(frmOpciones)

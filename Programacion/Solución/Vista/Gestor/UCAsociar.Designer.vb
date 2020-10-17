@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UCAsociar
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class UCAsociar
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -32,15 +32,17 @@ Partial Class UCAsociar
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.dgvTodosLosSintomas = New System.Windows.Forms.DataGridView()
-        Me.dgvColSintomas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvSintomasSeleccionados = New System.Windows.Forms.DataGridView()
-        Me.dgvColSintomasSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTodosLosSintomas = New System.Windows.Forms.Label()
         Me.lblSintomasSeleccionados = New System.Windows.Forms.Label()
         Me.btnGuardar = New Guna.UI.WinForms.GunaButton()
         Me.lblPatologia = New System.Windows.Forms.Label()
+        Me.sintoma = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sintomaSelec = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.dgvTodosLosSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -65,7 +67,7 @@ Partial Class UCAsociar
         'scroll2
         '
         Me.scroll2.LargeChange = 10
-        Me.scroll2.Location = New System.Drawing.Point(615, 246)
+        Me.scroll2.Location = New System.Drawing.Point(575, 215)
         Me.scroll2.Maximum = 100
         Me.scroll2.Name = "scroll2"
         Me.scroll2.ScrollIdleColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
@@ -78,7 +80,7 @@ Partial Class UCAsociar
         'scroll
         '
         Me.scroll.LargeChange = 10
-        Me.scroll.Location = New System.Drawing.Point(540, 246)
+        Me.scroll.Location = New System.Drawing.Point(500, 215)
         Me.scroll.Maximum = 100
         Me.scroll.Name = "scroll"
         Me.scroll.ScrollIdleColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
@@ -112,7 +114,7 @@ Partial Class UCAsociar
         Me.dgvTodosLosSintomas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvTodosLosSintomas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTodosLosSintomas.ColumnHeadersVisible = False
-        Me.dgvTodosLosSintomas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvColSintomas})
+        Me.dgvTodosLosSintomas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.sintoma})
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -133,20 +135,13 @@ Partial Class UCAsociar
         Me.dgvTodosLosSintomas.Size = New System.Drawing.Size(250, 430)
         Me.dgvTodosLosSintomas.TabIndex = 115
         '
-        'dgvColSintomas
-        '
-        Me.dgvColSintomas.HeaderText = "Column1"
-        Me.dgvColSintomas.MinimumWidth = 6
-        Me.dgvColSintomas.Name = "dgvColSintomas"
-        Me.dgvColSintomas.ReadOnly = True
-        '
         'dgvSintomasSeleccionados
         '
         Me.dgvSintomasSeleccionados.AllowDrop = True
         Me.dgvSintomasSeleccionados.AllowUserToAddRows = False
         Me.dgvSintomasSeleccionados.AllowUserToDeleteRows = False
         DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
         Me.dgvSintomasSeleccionados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvSintomasSeleccionados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -164,7 +159,7 @@ Partial Class UCAsociar
         Me.dgvSintomasSeleccionados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvSintomasSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSintomasSeleccionados.ColumnHeadersVisible = False
-        Me.dgvSintomasSeleccionados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvColSintomasSel})
+        Me.dgvSintomasSeleccionados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.sintomaSelec})
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -184,13 +179,6 @@ Partial Class UCAsociar
         Me.dgvSintomasSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSintomasSeleccionados.Size = New System.Drawing.Size(250, 430)
         Me.dgvSintomasSeleccionados.TabIndex = 114
-        '
-        'dgvColSintomasSel
-        '
-        Me.dgvColSintomasSel.HeaderText = "Column1"
-        Me.dgvColSintomasSel.MinimumWidth = 6
-        Me.dgvColSintomasSel.Name = "dgvColSintomasSel"
-        Me.dgvColSintomasSel.ReadOnly = True
         '
         'lblTodosLosSintomas
         '
@@ -253,11 +241,32 @@ Partial Class UCAsociar
         Me.lblPatologia.TabIndex = 192
         Me.lblPatologia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'sintoma
+        '
+        Me.sintoma.HeaderText = "sintoma"
+        Me.sintoma.Name = "sintoma"
+        Me.sintoma.ReadOnly = True
+        '
+        'sintomaSelec
+        '
+        Me.sintomaSelec.HeaderText = "sintomaSelec"
+        Me.sintomaSelec.Name = "sintomaSelec"
+        Me.sintomaSelec.ReadOnly = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(437, 41)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 138)
+        Me.DataGridView1.TabIndex = 193
+        '
         'UCAsociar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblPatologia)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnVolver)
@@ -271,6 +280,7 @@ Partial Class UCAsociar
         Me.Size = New System.Drawing.Size(1070, 650)
         CType(Me.dgvTodosLosSintomas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -278,11 +288,12 @@ Partial Class UCAsociar
     Friend WithEvents scroll2 As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents dgvTodosLosSintomas As DataGridView
-    Friend WithEvents dgvColSintomas As DataGridViewTextBoxColumn
     Friend WithEvents dgvSintomasSeleccionados As DataGridView
-    Friend WithEvents dgvColSintomasSel As DataGridViewTextBoxColumn
     Friend WithEvents lblTodosLosSintomas As Label
     Friend WithEvents lblSintomasSeleccionados As Label
     Friend WithEvents btnGuardar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblPatologia As Label
+    Friend WithEvents sintoma As DataGridViewTextBoxColumn
+    Friend WithEvents sintomaSelec As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

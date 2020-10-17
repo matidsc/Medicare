@@ -4,9 +4,21 @@
 
     Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+
+    Private Shared instancia As UCAsociar
+
+    Public Shared Function Singleton() As UCAsociar
+        If instancia Is Nothing Then
+            instancia = New UCAsociar
+        End If
+        Return instancia
+    End Function
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+
+        dgvTodosLosSintomas.Rows.Clear()
         dgvSintomasSeleccionados.Rows.Clear()
         Me.Visible = False
+
     End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
 
@@ -36,6 +48,7 @@
 
             destino.Rows(rowDestino).Cells(0).Value = origen.Rows(SourceRow).Cells(0).Value
             destino.Sort(destino.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+            origen.Sort(origen.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
             origen.Rows.RemoveAt(SourceRow)
 
         Else
@@ -75,26 +88,33 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
         Dim bool As Boolean = False
+        'For Each row As DataRow In frmListado.Singleton.dt.Rows
 
 
+        For i = frmListado.Singleton.dt.Rows.Count - 1 To 0 Step -1
 
-        For i As Integer = 0 To dgvSintomasSeleccionados.Rows.Count - 1
-            For Each row As DataRow In frmListado.Singleton.dt.Rows
-                If row.Item(0) = lblPatologia.Text And row.Item(1) = dgvSintomasSeleccionados.Rows(i).Cells(0).Value Then
-                    bool = True
-                End If
-            Next
 
-            If bool = False Then
-                frmListado.Singleton.dt.Rows.Add(lblPatologia.Text, dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
-                MsgBox(frmListado.Singleton.dt.Rows.Count)
+            If frmListado.Singleton.dt.Rows(i).Item(0) = lblPatologia.Text Then
+                frmListado.Singleton.dt.Rows.RemoveAt(i)
             End If
 
-
-
-
         Next
+
+        If dgvSintomasSeleccionados.Rows.Count <> 0 Then
+            For i As Integer = 0 To dgvSintomasSeleccionados.Rows.Count - 1
+
+                ' For Each row As DataRow In frmListado.Singleton.dt.Rows
+                frmListado.Singleton.dt.Rows.Add(lblPatologia.Text, dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
+                '  Next
+
+            Next
+
+        Else
+            MsgBox("No seleccionó síntomas ")
+        End If
+
 
     End Sub
 

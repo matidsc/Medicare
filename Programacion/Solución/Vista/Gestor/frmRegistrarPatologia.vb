@@ -89,14 +89,9 @@ Public Class frmRegistrarPatologia
 
     Private Sub traerSintomas()
 
-        Dim s As New ControladorSintoma
-        Dim arraySintomas = s.traerSintomas
+        dgvTodosLosSintomas.DataSource = ControladorSintoma.Singleton.traerSintomas
 
-        For i = 0 To arraySintomas.Count - 1
-            dgvTodosLosSintomas.Rows.Add(arraySintomas(i))
-        Next
     End Sub
-
 
     Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
 

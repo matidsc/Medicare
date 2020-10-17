@@ -126,7 +126,7 @@ Partial Class frmBienvenidaGestor
         Me.lblNA.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.lblNA.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNA.ForeColor = System.Drawing.Color.White
-        Me.lblNA.Location = New System.Drawing.Point(1045, 127)
+        Me.lblNA.Location = New System.Drawing.Point(636, 23)
         Me.lblNA.Name = "lblNA"
         Me.lblNA.Size = New System.Drawing.Size(300, 420)
         Me.lblNA.TabIndex = 0
@@ -149,7 +149,7 @@ Partial Class frmBienvenidaGestor
         '
         Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.pnlFlow.Location = New System.Drawing.Point(1041, 104)
+        Me.pnlFlow.Location = New System.Drawing.Point(632, 0)
         Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
         Me.pnlFlow.Name = "pnlFlow"
         Me.pnlFlow.Size = New System.Drawing.Size(335, 466)

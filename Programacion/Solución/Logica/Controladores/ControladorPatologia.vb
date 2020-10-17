@@ -33,9 +33,9 @@ Public Class ControladorPatologia
         End Try
 
     End Function
-    Public Overloads Function Registrar(tabla As DataTable) As Boolean
+    Public Overloads Function Registrar(tabla As DataTable, tablaSintoma As DataTable) As Boolean
         Try
-            Return ModeloPatologia.Singleton.Registrar(tabla)
+            Return ModeloPatologia.Singleton.Registrar(tabla, tablaSintoma)
         Catch ex As Exception
             Return False
         End Try

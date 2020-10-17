@@ -89,12 +89,7 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        Dim bool As Boolean = False
-        'For Each row As DataRow In frmListado.Singleton.dt.Rows
-
-
         For i = frmListado.Singleton.dt.Rows.Count - 1 To 0 Step -1
-
 
             If frmListado.Singleton.dt.Rows(i).Item(0) = lblPatologia.Text Then
                 frmListado.Singleton.dt.Rows.RemoveAt(i)
@@ -103,19 +98,16 @@
         Next
 
         If dgvSintomasSeleccionados.Rows.Count <> 0 Then
+
             For i As Integer = 0 To dgvSintomasSeleccionados.Rows.Count - 1
-
-                ' For Each row As DataRow In frmListado.Singleton.dt.Rows
                 frmListado.Singleton.dt.Rows.Add(lblPatologia.Text, dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
-                '  Next
-
             Next
 
         Else
-            MsgBox("No seleccionó síntomas ")
+            MsgBox("Debe seleccionar síntomas")
         End If
 
-
+        DataGridView1.DataSource = frmListado.Singleton.dt
     End Sub
 
 End Class

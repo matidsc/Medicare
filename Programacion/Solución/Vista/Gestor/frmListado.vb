@@ -62,7 +62,8 @@ Public Class frmListado
         'Next
         dt.Columns.Add("nombre")
         dt.Columns.Add("sintoma")
-
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvListado, scroll, True)
         Me.esCSV = True
         Me.op = op
         dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
@@ -130,7 +131,8 @@ Public Class frmListado
 
                 UcAsociar1.Visible = True
                 UcAsociar1.BringToFront()
-
+                UcAsociar1.dgvSintomasSeleccionados.Sort(UcAsociar1.dgvSintomasSeleccionados.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+                UcAsociar1.dgvTodosLosSintomas.Sort(UcAsociar1.dgvTodosLosSintomas.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
                 'MsgBox(UcAsociar1.dgvSintomasSeleccionados.Rows.Count)
 
@@ -310,14 +312,17 @@ Public Class frmListado
         Select Case op
 
             Case 0
+
                 Dim pat As New ControladorPatologia
-                If pat.Registrar(tabla) Then
+
+                If pat.Registrar(tabla, dt) Then
                     MsgBox("Se registraron las patologías exitosamente")
                     Principal.Singleton.CambiarTamaño(frmOpciones)
                     Me.Dispose()
                 Else
                     MsgBox("Error al registrar las patologías")
                 End If
+
             Case 1
                 Dim sin As New ControladorSintoma
                 If sin.Registrar(tabla) Then

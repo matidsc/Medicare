@@ -100,20 +100,49 @@ Public Class frmOpciones
 
             If Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count <> 0 Then
 
-                Dim frm As New frmListado(opf.FileName, listaColumnas, op)
-                Me.SuspendLayout()
-                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                Principal.Singleton.CambiarTamaño(frm)
-                frm.Show()
-                pnlContenedor.Hide()
-                pnlInstancia.Show()
-                Me.ResumeLayout()
+                Dim verificacion As Boolean = False
+                Dim contador As Int32 = 0
+
+                If op = 0 Then
+
+                    For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
+                        If IsNumeric(row.Item(1).ToString) = False And IsNumeric(row.Item(2).ToString) = False And IsNumeric(row.Item(3).ToString) And (Integer.Parse(row.Item(3)) = 1 Or Integer.Parse(row.Item(3)) = 2 Or Integer.Parse(row.Item(3)) = 3) Then
+                            contador += 1
+                        End If
+                    Next
+
+                Else
+
+                    For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
+                        If IsNumeric(row.Item(0)) = False And IsNumeric(row.Item(1)) = False Then
+                            contador += 1
+                        End If
+                    Next
+
+                End If
+
+                If contador = Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count Then
+                    verificacion = True
+                End If
+
+                If verificacion Then
+                    Dim frm As New frmListado(opf.FileName, listaColumnas, op)
+                    Me.SuspendLayout()
+                    Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                    Principal.Singleton.CambiarTamaño(frm)
+                    frm.Show()
+                    pnlContenedor.Hide()
+                    pnlInstancia.Show()
+                    Me.ResumeLayout()
+                Else
+                    MsgBox("El archivo seleccionado no posee el formato correcto")
+                End If
+
             Else
                 MsgBox("El arhivo seleccionado no es correcto")
             End If
 
         End If
-
     End Sub
 
     Private Sub Opcion3(sender As Object, e As MouseEventArgs) Handles pnlOpcion3.MouseDown, lblSubtitulo3.MouseDown, lblTitulo3.MouseDown

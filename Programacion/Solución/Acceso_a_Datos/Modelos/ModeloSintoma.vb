@@ -80,7 +80,7 @@ Public Class ModeloSintoma
         Dim consulta As String = "
                                 SELECT s.nombre
                                 FROM sintoma s
-                                WHERE bajaLogica = 0 AND s.nombre NOT IN ("
+                                WHERE s.bajaLogica = 0 AND s.nombre NOT IN ("
 
         For Each sintoma In sintomas
             parametros = parametros & "'" & sintoma & "'" & ","

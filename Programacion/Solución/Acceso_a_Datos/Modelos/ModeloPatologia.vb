@@ -48,13 +48,13 @@ Public Class ModeloPatologia
 
         Return False
     End Function
-    Public Overloads Function Registrar(tabla As DataTable)
+    Public Overloads Function Registrar(tablaPatologia As DataTable, tablaSintoma As DataTable)
 
         Dim consulta As String = "INSERT INTO patologia(nombre, descripcion,recomendacion,prioridad) VALUES(?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int32 = 0
 
-        For Each fila As DataRow In tabla.Rows
+        For Each fila As DataRow In tablaPatologia.Rows
 
             parametros.Add(New OdbcParameter("nombre", fila.Item(0).ToString.ToUpper))
             parametros.Add(New OdbcParameter("descripcion", fila.Item(1).ToString.ToUpper))
@@ -68,12 +68,41 @@ Public Class ModeloPatologia
 
         Next
 
+        If contador = tablaPatologia.Rows.Count Then
+            If RegistrarAsociacion(tablaSintoma) Then
+                Return True
+            End If
+        End If
+
+        Return False
+
+    End Function
+
+    Public Overloads Function RegistrarAsociacion(tabla As DataTable) As Boolean
+
+        Dim contador As Int32 = 0
+        Dim parametros As New List(Of OdbcParameter)
+        Dim consulta As String = "INSERT INTO patologia_contiene_sintoma (idSintoma, idPatologia) 
+                                  VALUES((SELECT idSintoma FROM sintoma WHERE nombre = ?), 
+                                  (SELECT idPatologia FROM patologia WHERE nombre = ?))"
+
+        For Each row As DataRow In tabla.Rows
+
+            parametros.Clear()
+            parametros.Add(New OdbcParameter("nombre", row.Item(1)))
+            parametros.Add(New OdbcParameter("nombre", row.Item(0)))
+
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+                contador += 1
+            End If
+
+        Next
+
         If contador = tabla.Rows.Count Then
             Return True
         End If
 
         Return False
-
     End Function
 
     ''' <summary>
@@ -82,7 +111,7 @@ Public Class ModeloPatologia
     ''' <param name="nombre"></param>
     ''' <param name="nomSintomas"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function RegistrarAsociacion(nombre As String, nomSintomas As ArrayList) As Boolean
+    Public Overloads Function RegistrarAsociacion(nombre As String, nomSintomas As ArrayList) As Boolean
 
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int16 = 0
@@ -95,8 +124,10 @@ Public Class ModeloPatologia
             parametros.Add(New OdbcParameter("nombre", var))
             parametros.Add(New OdbcParameter("nombre", nombre))
 
-            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
-            contador += 1
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+                contador += 1
+            End If
+
         Next
 
         If contador = nomSintomas.Count Then

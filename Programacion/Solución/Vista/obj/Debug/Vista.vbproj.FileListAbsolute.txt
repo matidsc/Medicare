@@ -1673,7 +1673,6 @@ C:\Users\rpere\OneDrive\Escritorio\Diseño\PruebasDesign\Programacion\Solución\
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.vbprojAssemblyReference.cache
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.BsMsgbox.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaGestor.resources
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmManualCsv.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmModificarPatologia.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.Form1.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmChat.resources
@@ -1682,14 +1681,12 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCFicha.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCSintomas.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.Historial_de_patologías.resources
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmListadoPatologiasySintomas.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistroGestor.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarPatologia.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarSintoma.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistrarMedico.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaMedico.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmIngresarSintomas.resources
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmModular.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmLogin.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaPaciente.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.Resources.resources
@@ -2099,3 +2096,6 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmListado.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmOpciones.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCAsociar.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCAsociar.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmListado.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmOpciones.resources

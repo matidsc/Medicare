@@ -106,7 +106,7 @@ Public Class frmOpciones
                 If op = 0 Then
 
                     For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
-                        If IsNumeric(row.Item(1).ToString) = False And IsNumeric(row.Item(2).ToString) = False And IsNumeric(row.Item(3).ToString) And (Integer.Parse(row.Item(3)) = 1 Or Integer.Parse(row.Item(3)) = 2 Or Integer.Parse(row.Item(3)) = 3) Then
+                        If IsNumeric(row.Item(1).ToString) = False And IsNumeric(row.Item(2).ToString) = False And IsNumeric(row.Item(3).ToString) And (row.Item(3).ToString = "1" Or row.Item(3).ToString = "2" Or row.Item(3).ToString = "3") Then
                             contador += 1
                         End If
                     Next

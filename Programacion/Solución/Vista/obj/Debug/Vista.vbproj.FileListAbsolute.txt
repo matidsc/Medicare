@@ -1902,9 +1902,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate.Fundamentals.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate.StateMachine.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate.StateMachine.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppGestion.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppGestion.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppGestion.exe.config
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.exe.config

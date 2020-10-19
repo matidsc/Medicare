@@ -39,7 +39,7 @@ Public Class ControladorMedico
     Public Function registrar() As Boolean
 
         Try
-            Dim resultado As Boolean = ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion)
+            Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion)
         Catch ex As Exception
             Return False
         End Try

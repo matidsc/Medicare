@@ -90,7 +90,6 @@ Partial Class frmOpciones
         Me.lblSubtitulo1.Name = "lblSubtitulo1"
         Me.lblSubtitulo1.Size = New System.Drawing.Size(615, 55)
         Me.lblSubtitulo1.TabIndex = 5
-        Me.lblSubtitulo1.Text = "Registre patologías manualmente "
         Me.lblSubtitulo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlDecorativo1
@@ -109,7 +108,7 @@ Partial Class frmOpciones
         Me.lblTitulo1.Name = "lblTitulo1"
         Me.lblTitulo1.Size = New System.Drawing.Size(615, 45)
         Me.lblTitulo1.TabIndex = 0
-        Me.lblTitulo1.Text = "Registrar"
+        Me.lblTitulo1.Text = "Opcion 1"
         Me.lblTitulo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlOpcion2
@@ -134,7 +133,6 @@ Partial Class frmOpciones
         Me.lblSubtitulo2.Name = "lblSubtitulo2"
         Me.lblSubtitulo2.Size = New System.Drawing.Size(615, 55)
         Me.lblSubtitulo2.TabIndex = 5
-        Me.lblSubtitulo2.Text = "Registre patologías mediante un archivo CSV"
         Me.lblSubtitulo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlDecorativo2
@@ -153,7 +151,7 @@ Partial Class frmOpciones
         Me.lblTitulo2.Name = "lblTitulo2"
         Me.lblTitulo2.Size = New System.Drawing.Size(615, 45)
         Me.lblTitulo2.TabIndex = 0
-        Me.lblTitulo2.Text = "Registrar por CSV"
+        Me.lblTitulo2.Text = "Opcion 2"
         Me.lblTitulo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlOpcion3
@@ -177,7 +175,6 @@ Partial Class frmOpciones
         Me.lblSubtitulo3.Name = "lblSubtitulo3"
         Me.lblSubtitulo3.Size = New System.Drawing.Size(615, 55)
         Me.lblSubtitulo3.TabIndex = 7
-        Me.lblSubtitulo3.Text = "Acceda a todas las patologías registradas y a opciones de eliminar y modificar"
         Me.lblSubtitulo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlDecorativo3
@@ -196,7 +193,7 @@ Partial Class frmOpciones
         Me.lblTitulo3.Name = "lblTitulo3"
         Me.lblTitulo3.Size = New System.Drawing.Size(615, 45)
         Me.lblTitulo3.TabIndex = 0
-        Me.lblTitulo3.Text = "Listado"
+        Me.lblTitulo3.Text = "Opcion 3"
         Me.lblTitulo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IconButton1

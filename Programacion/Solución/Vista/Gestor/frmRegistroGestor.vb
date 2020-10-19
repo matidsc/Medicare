@@ -18,18 +18,6 @@ Public Class frmRegistroGestor
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
     End Sub
 
-
-    Private Sub MaterialRaisedButton2_Click(sender As Object, e As EventArgs)
-
-
-        ''add animacion
-
-    End Sub
-
-    Private Sub dgvTelefonos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTelefonos.CellClick
-
-    End Sub
-
     Private Sub dgvTelefonos_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvTelefonos.CellValidating
 
         'If dgvTelefonos.Rows(e.RowIndex).IsNewRow Then
@@ -44,18 +32,22 @@ Public Class frmRegistroGestor
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs)
+
         If Not (txtCI.Text = Nothing And txtPNom.Text = Nothing And txtPApe.Text = Nothing And
             txtPNom.Text = Nothing And txtSApe.Text = Nothing And txtSNom.Text = Nothing And
             txtCon.Text = Nothing And txtRepCon.Text = Nothing And txtMail.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then
             Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
+
             If res = vbYes Then
                 Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
+
         Else
             Principal.Singleton.CambiarTamaño(frmOpciones)
             Me.Dispose()
         End If
+
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -112,6 +104,7 @@ Public Class frmRegistroGestor
 
             MsgBox("Ingresó un teléfono incorrecto")
             dgvTelefonos.Rows.RemoveAt(dgvTelefonos.Rows.Count - 2)
+        Else
 
         End If
 
@@ -119,7 +112,7 @@ Public Class frmRegistroGestor
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
+        dgvTelefonos.Rows.RemoveAt(dgvTelefonos.CurrentRow.Index)
     End Sub
 
     Private Sub dgvTelefonos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvTelefonos.RowsAdded

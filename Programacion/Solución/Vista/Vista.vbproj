@@ -210,6 +210,12 @@
     <Compile Include="Gestor\frmModificarPatologia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gestor\frmModificarSintoma.Designer.vb">
+      <DependentUpon>frmModificarSintoma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\frmModificarSintoma.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestor\UCAsociar.Designer.vb">
       <DependentUpon>UCAsociar.vb</DependentUpon>
     </Compile>
@@ -220,6 +226,12 @@
       <DependentUpon>UCHabilitar.vb</DependentUpon>
     </Compile>
     <Compile Include="Gestor\UCHabilitar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gestor\UCModificar.Designer.vb">
+      <DependentUpon>UCModificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\UCModificar.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Medico\Componentes Chat\Form1.Designer.vb">
@@ -385,11 +397,17 @@
     <EmbeddedResource Include="Gestor\frmModificarPatologia.resx">
       <DependentUpon>frmModificarPatologia.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\frmModificarSintoma.resx">
+      <DependentUpon>frmModificarSintoma.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestor\UCAsociar.resx">
       <DependentUpon>UCAsociar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\UCHabilitar.resx">
       <DependentUpon>UCHabilitar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\UCModificar.resx">
+      <DependentUpon>UCModificar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

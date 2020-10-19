@@ -2096,3 +2096,5 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCAsoc
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCAsociar.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmListado.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmOpciones.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmModificarSintoma.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCModificar.resources

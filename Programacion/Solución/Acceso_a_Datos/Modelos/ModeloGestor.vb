@@ -44,8 +44,11 @@ Public Class ModeloGestor
         parametros.Add(New OdbcParameter("sApe", cedula))
 
         If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+            MsgBox("usuario")
             If RegistrarGestor(cedula) Then
+                MsgBox("gestor")
                 If RegistrarTelefono(cedula, Telefonos) Then
+                    MsgBox("telefonos")
                     Return True
                 End If
             End If
@@ -81,7 +84,7 @@ Public Class ModeloGestor
     ''' <returns>True si el insert fue realizado.</returns>
     Public Function RegistrarTelefono(cedula As String, Telefonos As ArrayList)
 
-        Dim consulta = "INSERT INTO usuario_tel (cedula, telefono) VALUES (?,?)"
+        Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int16 = 0
 
@@ -91,14 +94,16 @@ Public Class ModeloGestor
             parametros.Add(New OdbcParameter("telefono", Telefonos.Item(i)))
 
             ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
-            contador = +1
+            contador += 1
         Next
 
         If contador = Telefonos.Count Then
             Return True
+            Telefonos.Clear()
         End If
 
         Return False
+        Telefonos.Clear()
     End Function
 
     ''' <summary>

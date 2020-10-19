@@ -22,235 +22,245 @@ Partial Class frmRegistrarMedico
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.pnlDecPrimerNombre = New System.Windows.Forms.Panel()
-        Me.txtPrimerNombre = New System.Windows.Forms.TextBox()
-        Me.pnlDecoSegundoApellido = New System.Windows.Forms.Panel()
-        Me.pnlDecoPrimerApellido = New System.Windows.Forms.Panel()
-        Me.pnlDecoSegundoNombre = New System.Windows.Forms.Panel()
-        Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
-        Me.lblSegundoApellido = New System.Windows.Forms.Label()
-        Me.txtPrimerApellido = New System.Windows.Forms.TextBox()
-        Me.lblPrimerApellido = New System.Windows.Forms.Label()
-        Me.txtSegundoNombre = New System.Windows.Forms.TextBox()
-        Me.lblSegundoNombre = New System.Windows.Forms.Label()
-        Me.lblPrimerNombre = New System.Windows.Forms.Label()
-        Me.pnlDecoCed = New System.Windows.Forms.Panel()
-        Me.txtCed = New System.Windows.Forms.TextBox()
-        Me.lblCed = New System.Windows.Forms.Label()
-        Me.btnRegistrarMedico = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pnlDecoEspec = New System.Windows.Forms.Panel()
+        Me.lblNomPat = New System.Windows.Forms.Label()
+        Me.txtCed = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.txtEspec = New Guna.UI.WinForms.GunaLineTextBox()
         Me.lblEspec = New System.Windows.Forms.Label()
-        Me.txtEspec = New System.Windows.Forms.TextBox()
+        Me.txtPrimerNombre = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.lblPNom = New System.Windows.Forms.Label()
+        Me.txtSegundoNombre = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.lblSNom = New System.Windows.Forms.Label()
+        Me.txtPrimerApellido = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.txtSegundoApellido = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.lblPApe = New System.Windows.Forms.Label()
+        Me.lblSApe = New System.Windows.Forms.Label()
+        Me.btnRegistrarMedico = New Guna.UI.WinForms.GunaButton()
+        Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.SuspendLayout()
         '
-        'pnlDecPrimerNombre
+        'lblNomPat
         '
-        Me.pnlDecPrimerNombre.BackColor = System.Drawing.Color.Black
-        Me.pnlDecPrimerNombre.Location = New System.Drawing.Point(119, 293)
-        Me.pnlDecPrimerNombre.Name = "pnlDecPrimerNombre"
-        Me.pnlDecPrimerNombre.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecPrimerNombre.TabIndex = 88
-        '
-        'txtPrimerNombre
-        '
-        Me.txtPrimerNombre.BackColor = System.Drawing.Color.White
-        Me.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPrimerNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrimerNombre.Location = New System.Drawing.Point(119, 263)
-        Me.txtPrimerNombre.Name = "txtPrimerNombre"
-        Me.txtPrimerNombre.Size = New System.Drawing.Size(218, 22)
-        Me.txtPrimerNombre.TabIndex = 87
-        '
-        'pnlDecoSegundoApellido
-        '
-        Me.pnlDecoSegundoApellido.BackColor = System.Drawing.Color.Black
-        Me.pnlDecoSegundoApellido.Location = New System.Drawing.Point(367, 442)
-        Me.pnlDecoSegundoApellido.Name = "pnlDecoSegundoApellido"
-        Me.pnlDecoSegundoApellido.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecoSegundoApellido.TabIndex = 86
-        '
-        'pnlDecoPrimerApellido
-        '
-        Me.pnlDecoPrimerApellido.BackColor = System.Drawing.Color.Black
-        Me.pnlDecoPrimerApellido.Location = New System.Drawing.Point(119, 442)
-        Me.pnlDecoPrimerApellido.Name = "pnlDecoPrimerApellido"
-        Me.pnlDecoPrimerApellido.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecoPrimerApellido.TabIndex = 85
-        '
-        'pnlDecoSegundoNombre
-        '
-        Me.pnlDecoSegundoNombre.BackColor = System.Drawing.Color.Black
-        Me.pnlDecoSegundoNombre.Location = New System.Drawing.Point(367, 290)
-        Me.pnlDecoSegundoNombre.Name = "pnlDecoSegundoNombre"
-        Me.pnlDecoSegundoNombre.Size = New System.Drawing.Size(218, 2)
-        Me.pnlDecoSegundoNombre.TabIndex = 84
-        '
-        'txtSegundoApellido
-        '
-        Me.txtSegundoApellido.BackColor = System.Drawing.Color.White
-        Me.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSegundoApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSegundoApellido.Location = New System.Drawing.Point(367, 412)
-        Me.txtSegundoApellido.Name = "txtSegundoApellido"
-        Me.txtSegundoApellido.Size = New System.Drawing.Size(218, 22)
-        Me.txtSegundoApellido.TabIndex = 81
-        '
-        'lblSegundoApellido
-        '
-        Me.lblSegundoApellido.AutoSize = True
-        Me.lblSegundoApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSegundoApellido.Location = New System.Drawing.Point(390, 372)
-        Me.lblSegundoApellido.Name = "lblSegundoApellido"
-        Me.lblSegundoApellido.Size = New System.Drawing.Size(181, 25)
-        Me.lblSegundoApellido.TabIndex = 83
-        Me.lblSegundoApellido.Text = "Segundo Apellido"
-        '
-        'txtPrimerApellido
-        '
-        Me.txtPrimerApellido.BackColor = System.Drawing.Color.White
-        Me.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPrimerApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrimerApellido.Location = New System.Drawing.Point(119, 412)
-        Me.txtPrimerApellido.Name = "txtPrimerApellido"
-        Me.txtPrimerApellido.Size = New System.Drawing.Size(218, 22)
-        Me.txtPrimerApellido.TabIndex = 79
-        '
-        'lblPrimerApellido
-        '
-        Me.lblPrimerApellido.AutoSize = True
-        Me.lblPrimerApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrimerApellido.Location = New System.Drawing.Point(156, 376)
-        Me.lblPrimerApellido.Name = "lblPrimerApellido"
-        Me.lblPrimerApellido.Size = New System.Drawing.Size(157, 25)
-        Me.lblPrimerApellido.TabIndex = 82
-        Me.lblPrimerApellido.Text = "Primer Apellido"
-        '
-        'txtSegundoNombre
-        '
-        Me.txtSegundoNombre.BackColor = System.Drawing.Color.White
-        Me.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSegundoNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSegundoNombre.Location = New System.Drawing.Point(367, 260)
-        Me.txtSegundoNombre.Name = "txtSegundoNombre"
-        Me.txtSegundoNombre.Size = New System.Drawing.Size(218, 22)
-        Me.txtSegundoNombre.TabIndex = 78
-        '
-        'lblSegundoNombre
-        '
-        Me.lblSegundoNombre.AutoSize = True
-        Me.lblSegundoNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSegundoNombre.Location = New System.Drawing.Point(390, 219)
-        Me.lblSegundoNombre.Name = "lblSegundoNombre"
-        Me.lblSegundoNombre.Size = New System.Drawing.Size(179, 25)
-        Me.lblSegundoNombre.TabIndex = 80
-        Me.lblSegundoNombre.Text = "Segundo Nombre"
-        '
-        'lblPrimerNombre
-        '
-        Me.lblPrimerNombre.AutoSize = True
-        Me.lblPrimerNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrimerNombre.Location = New System.Drawing.Point(156, 223)
-        Me.lblPrimerNombre.Name = "lblPrimerNombre"
-        Me.lblPrimerNombre.Size = New System.Drawing.Size(155, 25)
-        Me.lblPrimerNombre.TabIndex = 77
-        Me.lblPrimerNombre.Text = "Primer Nombre"
-        '
-        'pnlDecoCed
-        '
-        Me.pnlDecoCed.BackColor = System.Drawing.Color.Black
-        Me.pnlDecoCed.Location = New System.Drawing.Point(153, 175)
-        Me.pnlDecoCed.Name = "pnlDecoCed"
-        Me.pnlDecoCed.Size = New System.Drawing.Size(176, 2)
-        Me.pnlDecoCed.TabIndex = 91
+        Me.lblNomPat.AutoSize = True
+        Me.lblNomPat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNomPat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblNomPat.Location = New System.Drawing.Point(35, 123)
+        Me.lblNomPat.Name = "lblNomPat"
+        Me.lblNomPat.Size = New System.Drawing.Size(182, 25)
+        Me.lblNomPat.TabIndex = 183
+        Me.lblNomPat.Text = "Cédula de identidad"
         '
         'txtCed
         '
-        Me.txtCed.BackColor = System.Drawing.Color.White
-        Me.txtCed.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCed.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCed.Location = New System.Drawing.Point(153, 145)
+        Me.txtCed.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtCed.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCed.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtCed.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtCed.LineSize = 1
+        Me.txtCed.Location = New System.Drawing.Point(40, 170)
         Me.txtCed.Name = "txtCed"
-        Me.txtCed.Size = New System.Drawing.Size(176, 22)
-        Me.txtCed.TabIndex = 90
+        Me.txtCed.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCed.Size = New System.Drawing.Size(262, 36)
+        Me.txtCed.TabIndex = 1
         '
-        'lblCed
+        'txtEspec
         '
-        Me.lblCed.AutoSize = True
-        Me.lblCed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCed.Location = New System.Drawing.Point(139, 111)
-        Me.lblCed.Name = "lblCed"
-        Me.lblCed.Size = New System.Drawing.Size(204, 25)
-        Me.lblCed.TabIndex = 89
-        Me.lblCed.Text = "Cédula de Identidad"
-        '
-        'btnRegistrarMedico
-        '
-        Me.btnRegistrarMedico.AutoSize = True
-        Me.btnRegistrarMedico.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnRegistrarMedico.Depth = 0
-        Me.btnRegistrarMedico.Icon = Nothing
-        Me.btnRegistrarMedico.Location = New System.Drawing.Point(280, 494)
-        Me.btnRegistrarMedico.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btnRegistrarMedico.Name = "btnRegistrarMedico"
-        Me.btnRegistrarMedico.Primary = True
-        Me.btnRegistrarMedico.Size = New System.Drawing.Size(141, 36)
-        Me.btnRegistrarMedico.TabIndex = 126
-        Me.btnRegistrarMedico.Text = "Ingresar médico"
-        Me.btnRegistrarMedico.UseVisualStyleBackColor = True
-        '
-        'pnlDecoEspec
-        '
-        Me.pnlDecoEspec.BackColor = System.Drawing.Color.Black
-        Me.pnlDecoEspec.Location = New System.Drawing.Point(400, 175)
-        Me.pnlDecoEspec.Name = "pnlDecoEspec"
-        Me.pnlDecoEspec.Size = New System.Drawing.Size(176, 2)
-        Me.pnlDecoEspec.TabIndex = 128
+        Me.txtEspec.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtEspec.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEspec.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEspec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEspec.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtEspec.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtEspec.LineSize = 1
+        Me.txtEspec.Location = New System.Drawing.Point(33, 383)
+        Me.txtEspec.Name = "txtEspec"
+        Me.txtEspec.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEspec.Size = New System.Drawing.Size(262, 36)
+        Me.txtEspec.TabIndex = 2
         '
         'lblEspec
         '
         Me.lblEspec.AutoSize = True
-        Me.lblEspec.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEspec.Location = New System.Drawing.Point(410, 111)
+        Me.lblEspec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEspec.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblEspec.Location = New System.Drawing.Point(28, 336)
         Me.lblEspec.Name = "lblEspec"
-        Me.lblEspec.Size = New System.Drawing.Size(162, 25)
-        Me.lblEspec.TabIndex = 127
+        Me.lblEspec.Size = New System.Drawing.Size(140, 25)
+        Me.lblEspec.TabIndex = 185
         Me.lblEspec.Text = "Especialización"
         '
-        'txtEspec
+        'txtPrimerNombre
         '
-        Me.txtEspec.BackColor = System.Drawing.Color.White
-        Me.txtEspec.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtEspec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEspec.Location = New System.Drawing.Point(400, 146)
-        Me.txtEspec.Name = "txtEspec"
-        Me.txtEspec.Size = New System.Drawing.Size(176, 22)
-        Me.txtEspec.TabIndex = 129
+        Me.txtPrimerNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPrimerNombre.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPrimerNombre.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPrimerNombre.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrimerNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtPrimerNombre.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtPrimerNombre.LineSize = 1
+        Me.txtPrimerNombre.Location = New System.Drawing.Point(404, 179)
+        Me.txtPrimerNombre.Name = "txtPrimerNombre"
+        Me.txtPrimerNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPrimerNombre.Size = New System.Drawing.Size(262, 36)
+        Me.txtPrimerNombre.TabIndex = 3
+        '
+        'lblPNom
+        '
+        Me.lblPNom.AutoSize = True
+        Me.lblPNom.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblPNom.Location = New System.Drawing.Point(399, 123)
+        Me.lblPNom.Name = "lblPNom"
+        Me.lblPNom.Size = New System.Drawing.Size(139, 25)
+        Me.lblPNom.TabIndex = 187
+        Me.lblPNom.Text = "Primer nombre"
+        '
+        'txtSegundoNombre
+        '
+        Me.txtSegundoNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtSegundoNombre.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSegundoNombre.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSegundoNombre.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSegundoNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtSegundoNombre.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtSegundoNombre.LineSize = 1
+        Me.txtSegundoNombre.Location = New System.Drawing.Point(404, 387)
+        Me.txtSegundoNombre.Name = "txtSegundoNombre"
+        Me.txtSegundoNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSegundoNombre.Size = New System.Drawing.Size(262, 36)
+        Me.txtSegundoNombre.TabIndex = 4
+        '
+        'lblSNom
+        '
+        Me.lblSNom.AutoSize = True
+        Me.lblSNom.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblSNom.Location = New System.Drawing.Point(400, 336)
+        Me.lblSNom.Name = "lblSNom"
+        Me.lblSNom.Size = New System.Drawing.Size(158, 25)
+        Me.lblSNom.TabIndex = 189
+        Me.lblSNom.Text = "Segundo nombre"
+        '
+        'txtPrimerApellido
+        '
+        Me.txtPrimerApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPrimerApellido.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPrimerApellido.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPrimerApellido.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrimerApellido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtPrimerApellido.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtPrimerApellido.LineSize = 1
+        Me.txtPrimerApellido.Location = New System.Drawing.Point(746, 179)
+        Me.txtPrimerApellido.Name = "txtPrimerApellido"
+        Me.txtPrimerApellido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPrimerApellido.Size = New System.Drawing.Size(262, 36)
+        Me.txtPrimerApellido.TabIndex = 5
+        '
+        'txtSegundoApellido
+        '
+        Me.txtSegundoApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtSegundoApellido.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSegundoApellido.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSegundoApellido.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSegundoApellido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtSegundoApellido.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtSegundoApellido.LineSize = 1
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(764, 390)
+        Me.txtSegundoApellido.Name = "txtSegundoApellido"
+        Me.txtSegundoApellido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(262, 36)
+        Me.txtSegundoApellido.TabIndex = 6
+        '
+        'lblPApe
+        '
+        Me.lblPApe.AutoSize = True
+        Me.lblPApe.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPApe.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblPApe.Location = New System.Drawing.Point(741, 123)
+        Me.lblPApe.Name = "lblPApe"
+        Me.lblPApe.Size = New System.Drawing.Size(141, 25)
+        Me.lblPApe.TabIndex = 192
+        Me.lblPApe.Text = "Primer apellido"
+        '
+        'lblSApe
+        '
+        Me.lblSApe.AutoSize = True
+        Me.lblSApe.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSApe.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblSApe.Location = New System.Drawing.Point(760, 336)
+        Me.lblSApe.Name = "lblSApe"
+        Me.lblSApe.Size = New System.Drawing.Size(160, 25)
+        Me.lblSApe.TabIndex = 193
+        Me.lblSApe.Text = "Segundo apellido"
+        '
+        'btnRegistrarMedico
+        '
+        Me.btnRegistrarMedico.AnimationHoverSpeed = 0.07!
+        Me.btnRegistrarMedico.AnimationSpeed = 0.03!
+        Me.btnRegistrarMedico.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegistrarMedico.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrarMedico.BorderColor = System.Drawing.Color.Black
+        Me.btnRegistrarMedico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistrarMedico.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRegistrarMedico.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRegistrarMedico.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarMedico.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarMedico.Image = Nothing
+        Me.btnRegistrarMedico.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRegistrarMedico.Location = New System.Drawing.Point(436, 572)
+        Me.btnRegistrarMedico.Name = "btnRegistrarMedico"
+        Me.btnRegistrarMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrarMedico.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRegistrarMedico.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRegistrarMedico.OnHoverImage = Nothing
+        Me.btnRegistrarMedico.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRegistrarMedico.Radius = 20
+        Me.btnRegistrarMedico.Size = New System.Drawing.Size(199, 42)
+        Me.btnRegistrarMedico.TabIndex = 7
+        Me.btnRegistrarMedico.Text = "Registrar"
+        Me.btnRegistrarMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnAtras
+        '
+        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAtras.FlatAppearance.BorderSize = 0
+        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.btnAtras.IconColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconSize = 20
+        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAtras.Location = New System.Drawing.Point(22, 22)
+        Me.btnAtras.Name = "btnAtras"
+        Me.btnAtras.Rotation = 0R
+        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
+        Me.btnAtras.TabIndex = 195
+        Me.btnAtras.Text = "Atrás"
+        Me.btnAtras.UseVisualStyleBackColor = True
         '
         'frmRegistrarMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1070, 650)
-        Me.Controls.Add(Me.lblCed)
-        Me.Controls.Add(Me.txtCed)
-        Me.Controls.Add(Me.pnlDecoCed)
+        Me.Controls.Add(Me.btnAtras)
+        Me.Controls.Add(Me.btnRegistrarMedico)
+        Me.Controls.Add(Me.lblSApe)
+        Me.Controls.Add(Me.lblPApe)
+        Me.Controls.Add(Me.txtSegundoApellido)
+        Me.Controls.Add(Me.txtPrimerApellido)
+        Me.Controls.Add(Me.lblSNom)
+        Me.Controls.Add(Me.txtSegundoNombre)
+        Me.Controls.Add(Me.lblPNom)
+        Me.Controls.Add(Me.txtPrimerNombre)
         Me.Controls.Add(Me.lblEspec)
         Me.Controls.Add(Me.txtEspec)
-        Me.Controls.Add(Me.pnlDecoEspec)
-        Me.Controls.Add(Me.lblPrimerNombre)
-        Me.Controls.Add(Me.txtPrimerNombre)
-        Me.Controls.Add(Me.pnlDecPrimerNombre)
-        Me.Controls.Add(Me.lblSegundoNombre)
-        Me.Controls.Add(Me.txtSegundoNombre)
-        Me.Controls.Add(Me.pnlDecoSegundoNombre)
-        Me.Controls.Add(Me.lblPrimerApellido)
-        Me.Controls.Add(Me.txtPrimerApellido)
-        Me.Controls.Add(Me.pnlDecoPrimerApellido)
-        Me.Controls.Add(Me.lblSegundoApellido)
-        Me.Controls.Add(Me.txtSegundoApellido)
-        Me.Controls.Add(Me.pnlDecoSegundoApellido)
-        Me.Controls.Add(Me.btnRegistrarMedico)
+        Me.Controls.Add(Me.lblNomPat)
+        Me.Controls.Add(Me.txtCed)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmRegistrarMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -259,24 +269,18 @@ Partial Class frmRegistrarMedico
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents pnlDecPrimerNombre As Panel
-    Friend WithEvents txtPrimerNombre As TextBox
-    Friend WithEvents pnlDecoSegundoApellido As Panel
-    Friend WithEvents pnlDecoPrimerApellido As Panel
-    Friend WithEvents pnlDecoSegundoNombre As Panel
-    Friend WithEvents txtSegundoApellido As TextBox
-    Friend WithEvents lblSegundoApellido As Label
-    Friend WithEvents txtPrimerApellido As TextBox
-    Friend WithEvents lblPrimerApellido As Label
-    Friend WithEvents txtSegundoNombre As TextBox
-    Friend WithEvents lblSegundoNombre As Label
-    Friend WithEvents lblPrimerNombre As Label
-    Friend WithEvents pnlDecoCed As Panel
-    Friend WithEvents txtCed As TextBox
-    Friend WithEvents lblCed As Label
-    Friend WithEvents btnRegistrarMedico As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents pnlDecoEspec As Panel
+    Friend WithEvents lblNomPat As Label
+    Friend WithEvents txtCed As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txtEspec As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents lblEspec As Label
-    Friend WithEvents txtEspec As TextBox
+    Friend WithEvents txtPrimerNombre As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents lblPNom As Label
+    Friend WithEvents txtSegundoNombre As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents lblSNom As Label
+    Friend WithEvents txtPrimerApellido As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txtSegundoApellido As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents lblPApe As Label
+    Friend WithEvents lblSApe As Label
+    Friend WithEvents btnRegistrarMedico As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
 End Class

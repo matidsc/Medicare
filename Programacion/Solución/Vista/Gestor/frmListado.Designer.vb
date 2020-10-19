@@ -27,9 +27,7 @@ Partial Class frmListado
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
-        Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
@@ -39,9 +37,11 @@ Partial Class frmListado
         Me.btnModificarElemento = New Guna.UI.WinForms.GunaButton()
         Me.btnSeleccionMultiple = New Guna.UI.WinForms.GunaButton()
         Me.UcAsociar1 = New Vista.UCAsociar()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.pnlContenedor.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlContenedor
@@ -78,16 +78,6 @@ Partial Class frmListado
         Me.lblBuscar.TabIndex = 191
         Me.lblBuscar.Text = "Buscar"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.buscar
-        Me.PictureBox1.Location = New System.Drawing.Point(217, 33)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
-        Me.PictureBox1.TabIndex = 176
-        Me.PictureBox1.TabStop = False
-        '
         'GunaTextBox2
         '
         Me.GunaTextBox2.BackColor = System.Drawing.Color.Transparent
@@ -107,26 +97,6 @@ Partial Class frmListado
         Me.GunaTextBox2.Size = New System.Drawing.Size(659, 38)
         Me.GunaTextBox2.TabIndex = 173
         Me.GunaTextBox2.TextOffsetX = 50
-        '
-        'btnAtras
-        '
-        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAtras.FlatAppearance.BorderSize = 0
-        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
-        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
-        Me.btnAtras.IconColor = System.Drawing.Color.Silver
-        Me.btnAtras.IconSize = 20
-        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAtras.Location = New System.Drawing.Point(22, 22)
-        Me.btnAtras.Name = "btnAtras"
-        Me.btnAtras.Rotation = 0R
-        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
-        Me.btnAtras.TabIndex = 190
-        Me.btnAtras.Text = "Atrás"
-        Me.btnAtras.UseVisualStyleBackColor = True
         '
         'btnRegistrar
         '
@@ -343,6 +313,36 @@ Partial Class frmListado
         Me.UcAsociar1.TabIndex = 192
         Me.UcAsociar1.Visible = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.buscar
+        Me.PictureBox1.Location = New System.Drawing.Point(217, 33)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox1.TabIndex = 176
+        Me.PictureBox1.TabStop = False
+        '
+        'btnAtras
+        '
+        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAtras.FlatAppearance.BorderSize = 0
+        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.btnAtras.IconColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconSize = 20
+        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAtras.Location = New System.Drawing.Point(22, 22)
+        Me.btnAtras.Name = "btnAtras"
+        Me.btnAtras.Rotation = 0R
+        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
+        Me.btnAtras.TabIndex = 190
+        Me.btnAtras.Text = "Atrás"
+        Me.btnAtras.UseVisualStyleBackColor = True
+        '
         'frmListado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,8 +357,8 @@ Partial Class frmListado
         Me.Text = "ListadoPatologias"
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

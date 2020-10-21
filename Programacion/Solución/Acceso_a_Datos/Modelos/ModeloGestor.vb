@@ -110,19 +110,39 @@ Public Class ModeloGestor
     ''' Función encargada de listar a los pacientes que se deban habilitar.
     ''' </summary>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
-    Public Function ListarPacientes() As DataTable
+    Public Function ListadoHabilitarPacientes() As DataTable
 
         Dim consulta = "SELECT p.cedula, u.pNom, u.pApe, u.sApe FROM paciente p, usuario u WHERE p.verificacion = 0 and u.bajaLogica = 0 and p.cedula = u.cedula"
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 
-    Public Function NotificacionListado() As Int16
+    Public Function ListadoHabilitarGestores() As DataTable
+
+        Dim consulta = "SELECT g.cedula, u.pNom, u.pApe, u.sApe FROM gestor g, usuario u WHERE g.verificacion = 0 and u.bajaLogica = 0 and g.cedula = u.cedula"
+
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+
+    Public Function NotificacionListadoPaciente() As Int16
 
         Dim consulta As String = "SELECT count(*) FROM paciente p, usuario u WHERE verificacion = 0 AND p.cedula = u.cedula AND u.bajalogica = 0"
 
         Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
 
+    End Function
+
+    Public Function NotificacionListadoGestor() As Int16
+
+        Dim consulta As String = "SELECT count(*) FROM gestor g, usuario u WHERE verificacion = 0 AND g.cedula = u.cedula AND u.bajalogica = 0"
+
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
+
+    End Function
+
+    Public Function getInformacionGestor(cedula As String) As DataTable
+
+        Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,fotoPerfil FROM usuario where cedula= " & cedula
     End Function
 
     ''' <summary>
@@ -141,8 +161,20 @@ Public Class ModeloGestor
         Return False
     End Function
 
+    Public Function HabilitarGestor(cedula As String) As Boolean
+
+        Dim consulta As String = "UPDATE gestor SET verificacion = 1 WHERE cedula=" + cedula
+
+        If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
+
     ''' <summary>
-    ''' Función encargada de dar de baja a un paciente.
+    ''' Función encargada de dar de baja a un usuario.
     ''' </summary>
     ''' <param name="cedula"></param>
     ''' <returns>True si el update fue realizado.</returns>
@@ -151,6 +183,17 @@ Public Class ModeloGestor
         Dim consulta As String = "UPDATE usuario SET bajaLogica = 1 WHERE cedula = " + cedula
 
         If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
+    Public Function VerificarEstado(cedula As String) As Boolean
+
+        Dim consulta As String = "SELECT verificacion FROM gestor WHERE cedula = " + cedula
+
+        If ModeloConsultas.Singleton.ConsultaCampo(consulta) = 1 Then
             Return True
         End If
 

@@ -36,6 +36,8 @@ Partial Class frmRegistrarMedico
         Me.lblSApe = New System.Windows.Forms.Label()
         Me.btnRegistrarMedico = New Guna.UI.WinForms.GunaButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtMail = New Guna.UI.WinForms.GunaLineTextBox()
         Me.SuspendLayout()
         '
         'lblNomPat
@@ -241,12 +243,40 @@ Partial Class frmRegistrarMedico
         Me.btnAtras.Text = "Atrás"
         Me.btnAtras.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(28, 502)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(169, 25)
+        Me.Label1.TabIndex = 197
+        Me.Label1.Text = "Correo electrónico"
+        '
+        'txtMail
+        '
+        Me.txtMail.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtMail.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtMail.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtMail.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtMail.LineSize = 1
+        Me.txtMail.Location = New System.Drawing.Point(32, 553)
+        Me.txtMail.Name = "txtMail"
+        Me.txtMail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtMail.Size = New System.Drawing.Size(262, 36)
+        Me.txtMail.TabIndex = 7
+        '
         'frmRegistrarMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtMail)
         Me.Controls.Add(Me.btnAtras)
         Me.Controls.Add(Me.btnRegistrarMedico)
         Me.Controls.Add(Me.lblSApe)
@@ -283,4 +313,6 @@ Partial Class frmRegistrarMedico
     Friend WithEvents lblSApe As Label
     Friend WithEvents btnRegistrarMedico As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtMail As Guna.UI.WinForms.GunaLineTextBox
 End Class

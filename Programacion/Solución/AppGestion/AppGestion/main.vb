@@ -16,6 +16,7 @@ Public Class main
     Public Function GetInstancia() As main
         Return instancia
     End Function
+
     Public Sub New()
         InitializeComponent()
         instancia = Me

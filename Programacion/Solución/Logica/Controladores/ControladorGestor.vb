@@ -23,27 +23,40 @@ Public Class ControladorGestor
         Me._email = email
 
     End Sub
-
+    Public Function getInformacionGestor(cedula As String) As DataTable
+        Return ModeloGestor.Singleton.getInformacionGestor(cedula)
+    End Function
     Public Function registrar() As Boolean
 
-        Try
-            Return ModeloGestor.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono)
-        Catch ex As Exception
-            Return False
-        End Try
+        ' Try
+        Return ModeloGestor.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono)
+        'Catch ex As Exception
+        '     Return False
+        ' End Try
 
-        Return False
+        ' Return False
     End Function
 
-    Public Function listarPacientes() As DataTable
+    Public Function ListadoHabilitarPac() As DataTable
 
-        Return ModeloGestor.Singleton.ListarPacientes
+        Return ModeloGestor.Singleton.ListadoHabilitarPacientes
+
+    End Function
+    Public Function ListadoHabilitarGest() As DataTable
+
+        Return ModeloGestor.Singleton.ListadoHabilitarGestores
 
     End Function
 
-    Public Function NotificacionListado() As Int16
+    Public Function NotificacionListadoPaciente() As Int16
 
-        Return ModeloGestor.Singleton.NotificacionListado
+        Return ModeloGestor.Singleton.NotificacionListadoPaciente
+
+    End Function
+
+    Public Function NotificacionListadoGestor() As Int16
+
+        Return ModeloGestor.Singleton.NotificacionListadoGestor
 
     End Function
 
@@ -53,9 +66,22 @@ Public Class ControladorGestor
 
     End Function
 
-    Public Function habilitar(cedula As String) As Boolean
+    Public Function HabilitarPacientes(cedula As String) As Boolean
 
         Return ModeloGestor.Singleton.HabilitarPaciente(cedula)
+
+    End Function
+
+    Public Function HabilitarGestores(cedula As String) As Boolean
+
+        Return ModeloGestor.Singleton.HabilitarGestor(cedula)
+
+    End Function
+
+
+    Public Function verificar(ci As String) As Boolean
+
+        Return ModeloGestor.Singleton.VerificarEstado(ci)
 
     End Function
 

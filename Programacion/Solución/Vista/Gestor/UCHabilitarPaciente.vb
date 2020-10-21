@@ -1,5 +1,5 @@
 ﻿Imports Logica
-Public Class UCHabilitar
+Public Class UCHabilitarPaciente
 
     Private gestor As New ControladorGestor
 
@@ -24,12 +24,12 @@ Public Class UCHabilitar
     Private Sub hover(sender As Object, e As EventArgs) Handles lblCedula.MouseEnter, lblNombre.MouseEnter, Me.MouseEnter
 
         Me.BackColor = Color.FromArgb(21, 30, 43)
-
+        Me.btnMasInfo.Visible = True
     End Sub
     Private Sub leave(sender As Object, e As EventArgs) Handles lblCedula.MouseLeave, lblNombre.MouseLeave, Me.MouseLeave
 
         Me.BackColor = Color.FromArgb(18, 25, 36)
-
+        Me.btnMasInfo.Visible = False
     End Sub
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
@@ -37,11 +37,11 @@ Public Class UCHabilitar
 
         If respuesta = vbYes Then
 
-            If gestor.habilitar(Label1.Text) Then
+            If gestor.HabilitarPacientes(Label1.Text) Then
 
                 frmBienvenidaGestor.Singleton.setTamaños()
-                gestor.habilitar(lblCedula.Text)
                 Me.Dispose()
+
             End If
 
         End If
@@ -57,11 +57,12 @@ Public Class UCHabilitar
             If gestor.eliminar(Label1.Text) Then
 
                 frmBienvenidaGestor.Singleton.setTamaños()
-                gestor.eliminar(lblCedula.Text)
                 Me.Dispose()
+
             End If
 
-
         End If
+
     End Sub
+
 End Class

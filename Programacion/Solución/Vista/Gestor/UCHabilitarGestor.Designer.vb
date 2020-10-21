@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UCHabilitar
+Partial Class UCHabilitarGestor
     Inherits System.Windows.Forms.UserControl
 
-    'UserControl reemplaza a Dispose para limpiar la lista de componentes.
+    'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -14,12 +14,12 @@ Partial Class UCHabilitar
         End Try
     End Sub
 
-    'Requerido por el Diseñador de Windows Forms
+    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lblNombre = New System.Windows.Forms.Label()
@@ -27,6 +27,8 @@ Partial Class UCHabilitar
         Me.btnAceptar = New Guna.UI.WinForms.GunaButton()
         Me.lblCedula = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnMasInfo = New FontAwesome.Sharp.IconPictureBox()
+        CType(Me.btnMasInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblNombre
@@ -37,7 +39,7 @@ Partial Class UCHabilitar
         Me.lblNombre.Location = New System.Drawing.Point(107, 48)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(118, 15)
-        Me.lblNombre.TabIndex = 11
+        Me.lblNombre.TabIndex = 18
         Me.lblNombre.Text = "Juan Perez Rodriguez"
         '
         'btnRechazar
@@ -62,7 +64,7 @@ Partial Class UCHabilitar
         Me.btnRechazar.OnHoverImage = Nothing
         Me.btnRechazar.OnPressedColor = System.Drawing.Color.Black
         Me.btnRechazar.Size = New System.Drawing.Size(88, 22)
-        Me.btnRechazar.TabIndex = 10
+        Me.btnRechazar.TabIndex = 17
         Me.btnRechazar.Text = "Rechazar"
         Me.btnRechazar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -88,7 +90,7 @@ Partial Class UCHabilitar
         Me.btnAceptar.OnHoverImage = Nothing
         Me.btnAceptar.OnPressedColor = System.Drawing.Color.Black
         Me.btnAceptar.Size = New System.Drawing.Size(88, 22)
-        Me.btnAceptar.TabIndex = 9
+        Me.btnAceptar.TabIndex = 16
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -100,36 +102,53 @@ Partial Class UCHabilitar
         Me.lblCedula.Location = New System.Drawing.Point(124, 21)
         Me.lblCedula.Name = "lblCedula"
         Me.lblCedula.Size = New System.Drawing.Size(85, 20)
-        Me.lblCedula.TabIndex = 8
+        Me.lblCedula.TabIndex = 15
         Me.lblCedula.Text = "5.298.615-5"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(318, 26)
+        Me.Label1.Location = New System.Drawing.Point(322, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 12
+        Me.Label1.TabIndex = 20
         Me.Label1.Text = "Label1"
         '
-        'UCHabilitar
+        'btnMasInfo
+        '
+        Me.btnMasInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnMasInfo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMasInfo.IconChar = FontAwesome.Sharp.IconChar.CaretRight
+        Me.btnMasInfo.IconColor = System.Drawing.Color.White
+        Me.btnMasInfo.Location = New System.Drawing.Point(283, 86)
+        Me.btnMasInfo.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnMasInfo.Name = "btnMasInfo"
+        Me.btnMasInfo.Rotation = 45.0R
+        Me.btnMasInfo.Size = New System.Drawing.Size(32, 32)
+        Me.btnMasInfo.TabIndex = 19
+        Me.btnMasInfo.TabStop = False
+        '
+        'UCHabilitarGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnMasInfo)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.btnRechazar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblCedula)
         Me.Margin = New System.Windows.Forms.Padding(0)
-        Me.Name = "UCHabilitar"
+        Me.Name = "UCHabilitarGestor"
         Me.Size = New System.Drawing.Size(315, 118)
+        CType(Me.btnMasInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents btnMasInfo As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lblNombre As Label
     Friend WithEvents btnRechazar As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAceptar As Guna.UI.WinForms.GunaButton

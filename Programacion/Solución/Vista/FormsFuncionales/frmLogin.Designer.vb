@@ -38,6 +38,7 @@ Partial Class frmLogin
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
+        Me.pnlInstancia.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,6 +46,7 @@ Partial Class frmLogin
         '
         'pnlInstancia
         '
+        Me.pnlInstancia.Controls.Add(Me.UcAjustes1)
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
@@ -54,7 +56,6 @@ Partial Class frmLogin
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.pnlContenedor.Controls.Add(Me.UcAjustes1)
         Me.pnlContenedor.Controls.Add(Me.lblContraseña)
         Me.pnlContenedor.Controls.Add(Me.lblUsuario)
         Me.pnlContenedor.Controls.Add(Me.btnIngresar)
@@ -77,7 +78,7 @@ Partial Class frmLogin
         'UcAjustes1
         '
         Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.UcAjustes1.Location = New System.Drawing.Point(195, 45)
+        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
         Me.UcAjustes1.Name = "UcAjustes1"
         Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
         Me.UcAjustes1.TabIndex = 52
@@ -114,6 +115,7 @@ Partial Class frmLogin
         Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
         Me.btnIngresar.BaseColor = System.Drawing.Color.MediumSlateBlue
         Me.btnIngresar.BorderColor = System.Drawing.Color.Black
+        Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnIngresar.FocusedColor = System.Drawing.Color.Empty
         Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -218,7 +220,7 @@ Partial Class frmLogin
         Me.txtUsr.BorderColor = System.Drawing.Color.Silver
         Me.txtUsr.BorderSize = 1
         Me.txtUsr.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtUsr.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtUsr.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.txtUsr.FocusedBorderColor = System.Drawing.Color.White
         Me.txtUsr.FocusedForeColor = System.Drawing.Color.White
         Me.txtUsr.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -247,7 +249,7 @@ Partial Class frmLogin
         Me.txtPass.BorderColor = System.Drawing.Color.Silver
         Me.txtPass.BorderSize = 1
         Me.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtPass.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtPass.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.txtPass.FocusedBorderColor = System.Drawing.Color.White
         Me.txtPass.FocusedForeColor = System.Drawing.Color.White
         Me.txtPass.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -283,6 +285,7 @@ Partial Class frmLogin
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "|"
+        Me.pnlInstancia.ResumeLayout(False)
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).EndInit()

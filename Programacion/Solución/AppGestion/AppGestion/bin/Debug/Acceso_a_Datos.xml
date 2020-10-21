@@ -247,7 +247,7 @@ Clase encargada de generar la conexión con la base de datos.
  <param name="Telefonos"></param>
  <returns>True si el insert fue realizado.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloGestor.ListarPacientes">
+<member name="M:Acceso_a_Datos.ModeloGestor.ListadoHabilitarPacientes">
  <summary>
  Función encargada de listar a los pacientes que se deban habilitar.
  </summary>
@@ -262,7 +262,7 @@ Clase encargada de generar la conexión con la base de datos.
 </member>
 <member name="M:Acceso_a_Datos.ModeloGestor.Eliminar(System.String)">
  <summary>
- Función encargada de dar de baja a un paciente.
+ Función encargada de dar de baja a un usuario.
  </summary>
  <param name="cedula"></param>
  <returns>True si el update fue realizado.</returns>
@@ -278,7 +278,7 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloMedico.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<member name="M:Acceso_a_Datos.ModeloMedico.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
  <summary>
  Función encargada de registar a los médicos en la tabla usuarios.
  </summary>

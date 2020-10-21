@@ -9,9 +9,9 @@ Public Class ControladorMedico
     Property _especializacion As String
 
     Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String,
-                  especializacion As String)
+                  especializacion As String, email As String)
 
-        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe)
+        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe, email)
 
         Me._ci = ci
         Me._contraseña = contraseña
@@ -20,6 +20,7 @@ Public Class ControladorMedico
         Me._primer_apellido = PApe
         Me._segundo_apellido = SApe
         Me._especializacion = especializacion
+        Me._email = email
 
     End Sub
     Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String)
@@ -38,13 +39,13 @@ Public Class ControladorMedico
 
     Public Function registrar() As Boolean
 
-        Try
-            Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion)
-        Catch ex As Exception
-            Return False
-        End Try
+        '  Try
+        Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion, _email)
+        '  Catch ex As Exception
+        '   Return False
+        ' End Try
 
-        Return False
+        'Return False
     End Function
 
 End Class

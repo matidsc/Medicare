@@ -1929,7 +1929,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.BsMsgb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmEntrada.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaGestor.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmModificarPatologia.resources
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.Form1.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmChat.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmListadoChat.resources
@@ -2098,3 +2097,6 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmOpciones.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.frmModificarSintoma.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCModificar.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarPaciente.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarGestor.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCDatosGestor.resources

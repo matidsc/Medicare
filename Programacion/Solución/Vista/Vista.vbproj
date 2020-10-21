@@ -222,10 +222,22 @@
     <Compile Include="Gestor\UCAsociar.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Gestor\UCHabilitar.Designer.vb">
-      <DependentUpon>UCHabilitar.vb</DependentUpon>
+    <Compile Include="Gestor\UCDatosGestor.Designer.vb">
+      <DependentUpon>UCDatosGestor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestor\UCHabilitar.vb">
+    <Compile Include="Gestor\UCDatosGestor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gestor\UCHabilitarGestor.Designer.vb">
+      <DependentUpon>UCHabilitarGestor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\UCHabilitarGestor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestor\UCHabilitarPaciente.Designer.vb">
+      <DependentUpon>UCHabilitarPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\UCHabilitarPaciente.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Gestor\UCModificar.Designer.vb">
@@ -403,8 +415,14 @@
     <EmbeddedResource Include="Gestor\UCAsociar.resx">
       <DependentUpon>UCAsociar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\UCHabilitar.resx">
-      <DependentUpon>UCHabilitar.vb</DependentUpon>
+    <EmbeddedResource Include="Gestor\UCDatosGestor.resx">
+      <DependentUpon>UCDatosGestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\UCHabilitarGestor.resx">
+      <DependentUpon>UCHabilitarGestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestor\UCHabilitarPaciente.resx">
+      <DependentUpon>UCHabilitarPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\UCModificar.resx">
       <DependentUpon>UCModificar.vb</DependentUpon>

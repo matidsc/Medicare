@@ -16,35 +16,40 @@ Public Class frmRegistrarMedico
         If Principal.Singleton.VerificarCedula(check, txtCed.Text) Then
             If Principal.Singleton.VerificarString(check, txtPrimerNombre.Text, txtPrimerApellido.Text, txtSegundoNombre.Text, txtSegundoApellido.Text) Then
                 If check.Verificar_String(txtEspec.Text) Then
+                    If check.VerificarEmail(txtMail.Text) Then
 
-                    Dim med As New ControladorMedico(
+                        Dim med As New ControladorMedico(
                             txtCed.Text,
                             txtCed.Text,
                             txtPrimerNombre.Text.ToUpper,
                             txtSegundoNombre.Text.ToUpper,
                             txtPrimerApellido.Text.ToUpper,
                             txtSegundoApellido.Text.ToUpper,
-                            txtEspec.Text.ToUpper)
+                            txtEspec.Text.ToUpper,
+                            txtMail.Text())
 
-                    If med.VerificarBaja(txtCed.Text) Then
+                        If med.VerificarBaja(txtCed.Text) Then
 
-                        If med.registrar() Then
-                            MsgBox("Médico registrado con éxito")
-                            limpiar()
+                            If med.registrar() Then
+                                MsgBox("Médico registrado con éxito")
+                                limpiar()
+                            Else
+                                MsgBox("El médico ya fue registrado")
+                            End If
+
                         Else
-                            MsgBox("El médico ya fue registrado")
+                            Dim respuesta As Integer = MsgBox("El médico se ecuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                            If respuesta = vbYes Then
+                                med.ReingresarUsuario(txtCed.Text)
+                                limpiar()
+                            End If
+
                         End If
 
                     Else
-                        Dim respuesta As Integer = MsgBox("El médico se ecuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
-
-                        If respuesta = vbYes Then
-                            med.ReingresarUsuario(txtCed.Text)
-                            limpiar()
-                        End If
-
+                        MsgBox("El correo ingresado no es correcto")
                     End If
-
 
                 End If
             End If
@@ -61,6 +66,7 @@ Public Class frmRegistrarMedico
         txtPrimerNombre.Text = Nothing
         txtPrimerApellido.Text = Nothing
         txtEspec.Text = Nothing
+        txtMail.Text = Nothing
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click

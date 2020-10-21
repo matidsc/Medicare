@@ -26,11 +26,11 @@ Partial Class frmBienvenidaGestor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBienvenidaGestor))
         Me.tempListaPacientes = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.lblNA = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -53,7 +53,9 @@ Partial Class frmBienvenidaGestor
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GunaElipsePanel2 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btnGestores = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlNotificacion = New Guna.UI.WinForms.GunaElipsePanel()
         Me.lblNotificacion = New System.Windows.Forms.Label()
         Me.btnRefrescarListadoPac = New System.Windows.Forms.Button()
@@ -71,6 +73,8 @@ Partial Class frmBienvenidaGestor
         Me.Panel7.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.pnlCerrar.SuspendLayout()
+        Me.GunaElipsePanel2.SuspendLayout()
+        CType(Me.btnGestores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlNotificacion.SuspendLayout()
         CType(Me.btnPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,7 +88,6 @@ Partial Class frmBienvenidaGestor
         '
         'pnlContenedor
         '
-        Me.pnlContenedor.Controls.Add(Me.scroll)
         Me.pnlContenedor.Controls.Add(Me.Panel9)
         Me.pnlContenedor.Controls.Add(Me.pnlCerrar)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
@@ -93,40 +96,41 @@ Partial Class frmBienvenidaGestor
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 25
         '
-        'scroll
-        '
-        Me.scroll.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.scroll.Enabled = False
-        Me.scroll.LargeChange = 10
-        Me.scroll.Location = New System.Drawing.Point(-88, 120)
-        Me.scroll.Margin = New System.Windows.Forms.Padding(0)
-        Me.scroll.Maximum = 100
-        Me.scroll.Name = "scroll"
-        Me.scroll.ScrollIdleColor = System.Drawing.Color.Silver
-        Me.scroll.Size = New System.Drawing.Size(10, 467)
-        Me.scroll.TabIndex = 0
-        Me.scroll.ThumbColor = System.Drawing.Color.DimGray
-        Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
-        Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
-        '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.scroll)
         Me.Panel9.Controls.Add(Me.lblNA)
-        Me.Panel9.Controls.Add(Me.Label9)
         Me.Panel9.Controls.Add(Me.pnlFlow)
+        Me.Panel9.Controls.Add(Me.Label9)
         Me.Panel9.Controls.Add(Me.Panel10)
         Me.Panel9.Location = New System.Drawing.Point(0, 80)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1070, 570)
         Me.Panel9.TabIndex = 26
         '
+        'scroll
+        '
+        Me.scroll.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.scroll.Enabled = False
+        Me.scroll.LargeChange = 10
+        Me.scroll.Location = New System.Drawing.Point(928, 19)
+        Me.scroll.Margin = New System.Windows.Forms.Padding(0)
+        Me.scroll.Maximum = 100
+        Me.scroll.Name = "scroll"
+        Me.scroll.ScrollIdleColor = System.Drawing.Color.Silver
+        Me.scroll.Size = New System.Drawing.Size(10, 106)
+        Me.scroll.TabIndex = 0
+        Me.scroll.ThumbColor = System.Drawing.Color.DimGray
+        Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
+        Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
+        '
         'lblNA
         '
         Me.lblNA.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.lblNA.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNA.ForeColor = System.Drawing.Color.White
-        Me.lblNA.Location = New System.Drawing.Point(636, 23)
+        Me.lblNA.Location = New System.Drawing.Point(573, 2)
         Me.lblNA.Name = "lblNA"
         Me.lblNA.Size = New System.Drawing.Size(300, 420)
         Me.lblNA.TabIndex = 0
@@ -134,28 +138,28 @@ Partial Class frmBienvenidaGestor
         Me.lblNA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblNA.Visible = False
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(405, 68)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(266, 29)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "Buenas tardes, Rodrigo"
-        '
         'pnlFlow
         '
         Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.pnlFlow.Location = New System.Drawing.Point(632, 0)
+        Me.pnlFlow.Location = New System.Drawing.Point(570, 0)
         Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
         Me.pnlFlow.Name = "pnlFlow"
         Me.pnlFlow.Size = New System.Drawing.Size(335, 466)
         Me.pnlFlow.TabIndex = 26
         Me.pnlFlow.Visible = False
         Me.pnlFlow.WrapContents = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(402, 83)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(266, 29)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Buenas tardes, Rodrigo"
         '
         'Panel10
         '
@@ -475,7 +479,8 @@ Partial Class frmBienvenidaGestor
         'pnlCerrar
         '
         Me.pnlCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.pnlCerrar.Controls.Add(Me.Label10)
+        Me.pnlCerrar.Controls.Add(Me.GunaElipsePanel2)
+        Me.pnlCerrar.Controls.Add(Me.btnGestores)
         Me.pnlCerrar.Controls.Add(Me.pnlNotificacion)
         Me.pnlCerrar.Controls.Add(Me.btnRefrescarListadoPac)
         Me.pnlCerrar.Controls.Add(Me.GunaElipsePanel1)
@@ -489,24 +494,49 @@ Partial Class frmBienvenidaGestor
         Me.pnlCerrar.Size = New System.Drawing.Size(1070, 80)
         Me.pnlCerrar.TabIndex = 25
         '
-        'Label10
+        'GunaElipsePanel2
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(485, 41)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(39, 18)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Hola"
-        Me.Label10.Visible = False
+        Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaElipsePanel2.Controls.Add(Me.Label11)
+        Me.GunaElipsePanel2.Location = New System.Drawing.Point(745, 27)
+        Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
+        Me.GunaElipsePanel2.Size = New System.Drawing.Size(16, 16)
+        Me.GunaElipsePanel2.TabIndex = 11
+        Me.GunaElipsePanel2.Visible = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(-1, 1)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(13, 13)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "0"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label11.Visible = False
+        '
+        'btnGestores
+        '
+        Me.btnGestores.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnGestores.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGestores.IconChar = FontAwesome.Sharp.IconChar.UserShield
+        Me.btnGestores.IconColor = System.Drawing.Color.White
+        Me.btnGestores.Location = New System.Drawing.Point(718, 27)
+        Me.btnGestores.Name = "btnGestores"
+        Me.btnGestores.Size = New System.Drawing.Size(37, 32)
+        Me.btnGestores.TabIndex = 26
+        Me.btnGestores.TabStop = False
         '
         'pnlNotificacion
         '
         Me.pnlNotificacion.BackColor = System.Drawing.Color.Transparent
         Me.pnlNotificacion.BaseColor = System.Drawing.Color.MediumSlateBlue
         Me.pnlNotificacion.Controls.Add(Me.lblNotificacion)
-        Me.pnlNotificacion.Location = New System.Drawing.Point(784, 27)
+        Me.pnlNotificacion.Location = New System.Drawing.Point(797, 27)
         Me.pnlNotificacion.Name = "pnlNotificacion"
         Me.pnlNotificacion.Size = New System.Drawing.Size(16, 16)
         Me.pnlNotificacion.TabIndex = 10
@@ -518,7 +548,7 @@ Partial Class frmBienvenidaGestor
         Me.lblNotificacion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblNotificacion.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNotificacion.ForeColor = System.Drawing.Color.White
-        Me.lblNotificacion.Location = New System.Drawing.Point(-1, 1)
+        Me.lblNotificacion.Location = New System.Drawing.Point(0, 1)
         Me.lblNotificacion.Name = "lblNotificacion"
         Me.lblNotificacion.Size = New System.Drawing.Size(13, 13)
         Me.lblNotificacion.TabIndex = 0
@@ -554,7 +584,7 @@ Partial Class frmBienvenidaGestor
         Me.btnPacientes.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPacientes.IconChar = FontAwesome.Sharp.IconChar.Users
         Me.btnPacientes.IconColor = System.Drawing.Color.White
-        Me.btnPacientes.Location = New System.Drawing.Point(762, 27)
+        Me.btnPacientes.Location = New System.Drawing.Point(770, 27)
         Me.btnPacientes.Name = "btnPacientes"
         Me.btnPacientes.Size = New System.Drawing.Size(37, 32)
         Me.btnPacientes.TabIndex = 11
@@ -633,7 +663,9 @@ Partial Class frmBienvenidaGestor
         Me.Panel7.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.pnlCerrar.ResumeLayout(False)
-        Me.pnlCerrar.PerformLayout()
+        Me.GunaElipsePanel2.ResumeLayout(False)
+        Me.GunaElipsePanel2.PerformLayout()
+        CType(Me.btnGestores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlNotificacion.ResumeLayout(False)
         Me.pnlNotificacion.PerformLayout()
         CType(Me.btnPacientes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -680,6 +712,8 @@ Partial Class frmBienvenidaGestor
     Friend WithEvents pnlNotificacion As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents lblNotificacion As Label
     Friend WithEvents lblNA As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents btnGestores As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents Label11 As Label
 End Class
 

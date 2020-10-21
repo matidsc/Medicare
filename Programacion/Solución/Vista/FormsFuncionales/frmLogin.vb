@@ -129,15 +129,23 @@ Public Class frmLogin
                             End If
 
                         Case Datos_Temporales.enumRol.Gestor
-                            Dim frm As New frmBienvenidaGestor
-                            Configuracion.Singleton.SetConnection()
-                            Me.SuspendLayout()
-                            Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
-                            Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
-                            frm.Show()
-                            pnlContenedor.Hide()
-                            pnlContenedor.Show()
-                            Me.ResumeLayout()
+
+                            Dim gestor As New ControladorGestor
+
+                            If gestor.verificar(txtUsr.Text) Then
+
+                                Dim frm As New frmBienvenidaGestor
+                                Configuracion.Singleton.SetConnection()
+                                Me.SuspendLayout()
+                                Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+                                Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
+                                frm.Show()
+                                pnlContenedor.Hide()
+                                pnlContenedor.Show()
+                                Me.ResumeLayout()
+                            Else
+                                MsgBox("Usted no se encuentra habilitado para ingresar al sistema")
+                            End If
 
                         Case Datos_Temporales.enumRol.Medico
                             Dim frm As New frmBienvenidaMedico

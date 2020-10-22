@@ -33,21 +33,6 @@ Public Class frmRegistroGestor
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs)
 
-        If Not (txtCI.Text = Nothing And txtPNom.Text = Nothing And txtPApe.Text = Nothing And
-            txtPNom.Text = Nothing And txtSApe.Text = Nothing And txtSNom.Text = Nothing And
-            txtCon.Text = Nothing And txtRepCon.Text = Nothing And txtMail.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then
-            Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
-
-            If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmOpciones)
-                Me.Dispose()
-            End If
-
-        Else
-            Principal.Singleton.CambiarTamaño(frmOpciones)
-            Me.Dispose()
-        End If
-
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -72,7 +57,6 @@ Public Class frmRegistroGestor
                                 If ges.registrar() Then
                                     MsgBox("Gestor registrado con éxito")
                                     Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
-
                                 Else
                                     MsgBox("El gestor ya fue registrado")
                                 End If
@@ -124,5 +108,8 @@ Public Class frmRegistroGestor
         End If
     End Sub
 
-
+    Private Sub btnAtras_Click_1(sender As Object, e As EventArgs) Handles btnAtras.Click
+        Principal.Singleton.CambiarTamaño(frmLogin)
+        Me.Dispose()
+    End Sub
 End Class

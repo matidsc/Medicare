@@ -66,7 +66,12 @@ Public Class Configuracion
     End Function
 
     Public Function LeerCSV(path As String, lista As List(Of String)) As DataTable
-        Return EntradaSalida.Singleton.LeerCSV(path, lista)
+        Try
+            Return EntradaSalida.Singleton.LeerCSV(path, lista)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
 
     Public Enum Idioma

@@ -51,15 +51,8 @@ Public Class frmListado
     End Sub
     Public Sub New(path As String, lista As List(Of String), op As Byte)
 
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        'For Each ctrl As Control In pnlContenedor.Controls
 
-        '    If Principal.Singleton.Idioma(ctrl.Name) <> Nothing Then
-        '        ctrl.Text = Principal.Singleton.Idioma(ctrl.Name)
-        '    End If
-
-        'Next
         dt.Columns.Add("nombre")
         dt.Columns.Add("sintoma")
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
@@ -332,12 +325,23 @@ Public Class frmListado
                 Else
                     MsgBox("Error al registrar los síntomas")
                 End If
+
+            Case 2
+                Dim med As New ControladorMedico
+                If med.registrar(tabla) Then
+                    MsgBox("Se registraron los médicos exitosamente")
+                    Principal.Singleton.CambiarTamaño(frmOpciones)
+                    Me.Dispose()
+                Else
+                    MsgBox("Error al registrar a los médicos")
+                End If
+
         End Select
 
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmOpciones)
+        Principal.Singleton.CambiarTamaño(frmLogin)
         Me.Dispose()
     End Sub
 

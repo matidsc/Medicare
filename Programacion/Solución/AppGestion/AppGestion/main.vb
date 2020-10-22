@@ -20,9 +20,10 @@ Public Class main
     Public Sub New()
         InitializeComponent()
         instancia = Me
-        Dim frm As New frmLogin
-        CargarVentana(ventana, frm)
         Datos_Temporales.rol = Datos_Temporales.enumRol.Gestor
+        Dim frm As New frmLogin
+        frm.lblCrearCuenta.Visible = True
+        CargarVentana(ventana, frm)
         cambiarTamaño()
     End Sub
     Public Sub CargarVentana(ventana As Panel, formInterno As Form)

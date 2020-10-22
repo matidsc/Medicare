@@ -270,4 +270,8 @@ Public Class frmBienvenidaGestor
     Private Sub UcDatosGestor1_Load(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+
+    End Sub
 End Class

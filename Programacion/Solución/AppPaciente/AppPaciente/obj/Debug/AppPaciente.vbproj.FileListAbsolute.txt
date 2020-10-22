@@ -122,9 +122,6 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe.config
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe.config
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MaterialSkin.dll
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MaterialSkin.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.exe.config

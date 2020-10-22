@@ -6,6 +6,16 @@ Imports System.Security.Cryptography
 ''' </summary>
 Public Class Encriptar
 
+    Private Shared instancia As Encriptar
+
+    Public Shared Function Singleton() As Encriptar
+        If instancia Is Nothing Then
+            instancia = New Encriptar
+        End If
+
+        Return instancia
+    End Function
+
     ''' <summary>
     ''' Función encargada de hashear una contraseña utilizando SHA256.
     ''' </summary>

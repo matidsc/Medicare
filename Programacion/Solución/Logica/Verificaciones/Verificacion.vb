@@ -6,6 +6,16 @@ Imports System.Text.RegularExpressions
 ''' </summary>
 Public Class Verificacion
 
+    Private Shared instancia As Verificacion
+
+    Public Shared Function Singleton() As Verificacion
+        If instancia Is Nothing Then
+            instancia = New Verificacion
+        End If
+
+        Return instancia
+    End Function
+
     ''' <summary>
     ''' Función encargada de verificar si la cédula ingresada contiene caracteres.
     ''' </summary>

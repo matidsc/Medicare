@@ -94,54 +94,81 @@ Public Class frmOpciones
                 listaColumnas.Add("Nombre")
                 listaColumnas.Add("Descripción")
 
+            Case 2
+                listaColumnas.Add("Cédula")
+                listaColumnas.Add("Contraseña")
+                listaColumnas.Add("Primer Nombre")
+                listaColumnas.Add("Segundo Nombre")
+                listaColumnas.Add("Primer Apellido")
+                listaColumnas.Add("Segundo Apellido")
+                listaColumnas.Add("E-mail")
+                listaColumnas.Add("Especialización")
+
         End Select
 
         If opf.ShowDialog = DialogResult.OK Then
 
-            If Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count <> 0 Then
+            If Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas) IsNot Nothing Then
+                If Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count <> 0 Then
 
-                Dim verificacion As Boolean = False
-                Dim contador As Int32 = 0
+                    Dim bool As Boolean = False
+                    Dim contador As Int32 = 0
 
-                If op = 0 Then
+                    If op = 0 Then
 
-                    For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
-                        If IsNumeric(row.Item(1).ToString) = False And IsNumeric(row.Item(2).ToString) = False And IsNumeric(row.Item(3).ToString) And (row.Item(3).ToString = "1" Or row.Item(3).ToString = "2" Or row.Item(3).ToString = "3") Then
-                            contador += 1
-                        End If
-                    Next
+                        For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
+                            If IsNumeric(row.Item(1).ToString) = False And IsNumeric(row.Item(2).ToString) = False And IsNumeric(row.Item(3).ToString) And (row.Item(3).ToString = "1" Or row.Item(3).ToString = "2" Or row.Item(3).ToString = "3") Then
+                                contador += 1
+                            End If
+                        Next
+
+                    ElseIf op = 1 Then
+
+                        For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
+                            If IsNumeric(row.Item(0)) = False And IsNumeric(row.Item(1)) = False Then
+                                contador += 1
+                            End If
+                        Next
+
+                    Else
+
+                        For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
+                            If Principal.Singleton.VerificarCedula(Verificacion.Singleton, row.Item(0)) Then
+                                If Principal.Singleton.VerificarString(Verificacion.Singleton, row.Item(2), row.Item(4), row.Item(3), row.Item(5)) Then
+                                    If Verificacion.Singleton.Verificar_String(row.Item(7)) Then
+                                        If Verificacion.Singleton.VerificarEmail(row.Item(6)) Then
+                                            contador += 1
+                                        End If
+                                    End If
+                                End If
+                            End If
+                        Next
+
+                    End If
+
+                    If contador = Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count Then
+                        bool = True
+                    End If
+
+                    If bool Then
+                        Dim frm As New frmListado(opf.FileName, listaColumnas, op)
+                        Me.SuspendLayout()
+                        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                        Principal.Singleton.CambiarTamaño(frm)
+                        frm.Show()
+                        pnlContenedor.Hide()
+                        pnlInstancia.Show()
+                        Me.ResumeLayout()
+                    Else
+                        MsgBox("El archivo seleccionado no posee el formato correcto")
+                    End If
 
                 Else
-
-                    For Each row As DataRow In Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows
-                        If IsNumeric(row.Item(0)) = False And IsNumeric(row.Item(1)) = False Then
-                            contador += 1
-                        End If
-                    Next
-
+                    MsgBox("El arhivo seleccionado no es correcto")
                 End If
-
-                If contador = Configuracion.Singleton.LeerCSV(opf.FileName, listaColumnas).Rows.Count Then
-                    verificacion = True
-                End If
-
-                If verificacion Then
-                    Dim frm As New frmListado(opf.FileName, listaColumnas, op)
-                    Me.SuspendLayout()
-                    Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                    Principal.Singleton.CambiarTamaño(frm)
-                    frm.Show()
-                    pnlContenedor.Hide()
-                    pnlInstancia.Show()
-                    Me.ResumeLayout()
-                Else
-                    MsgBox("El archivo seleccionado no posee el formato correcto")
-                End If
-
             Else
-                MsgBox("El arhivo seleccionado no es correcto")
+                MsgBox("El archivo se encuentra en uso por otro proceso")
             End If
-
         End If
     End Sub
 
@@ -169,15 +196,15 @@ Public Class frmOpciones
                 pnlInstancia.Show()
                 Me.ResumeLayout()
 
-            Case 2
-                Dim frm As New frmRegistroGestor
-                Me.SuspendLayout()
-                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                Principal.Singleton.CambiarTamaño(frmRegistroGestor)
-                frm.Show()
-                pnlContenedor.Hide()
-                pnlInstancia.Show()
-                Me.ResumeLayout()
+                'Case 2
+                '    Dim frm As New frmRegistroGestor
+                '    Me.SuspendLayout()
+                '    Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                '    Principal.Singleton.CambiarTamaño(frmRegistroGestor)
+                '    frm.Show()
+                '    pnlContenedor.Hide()
+                '    pnlInstancia.Show()
+                '    Me.ResumeLayout()
 
         End Select
 
@@ -214,5 +241,13 @@ Public Class frmOpciones
     End Sub
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
+    End Sub
+
+    Private Sub lblTitulo2_Click(sender As Object, e As EventArgs) Handles lblTitulo2.Click
+
+    End Sub
+
+    Private Sub lblSubtitulo2_Click(sender As Object, e As EventArgs) Handles lblSubtitulo2.Click
+
     End Sub
 End Class

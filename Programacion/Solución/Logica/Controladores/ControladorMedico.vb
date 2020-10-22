@@ -8,6 +8,10 @@ Public Class ControladorMedico
 
     Property _especializacion As String
 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String,
                   especializacion As String, email As String)
 
@@ -37,15 +41,23 @@ Public Class ControladorMedico
 
     End Sub
 
-    Public Function registrar() As Boolean
+    Public Overloads Function registrar() As Boolean
 
-        '  Try
-        Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion, _email)
-        '  Catch ex As Exception
-        '   Return False
-        ' End Try
+        Try
+            Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion, _email)
+        Catch ex As Exception
+            Return False
+        End Try
 
         'Return False
+    End Function
+
+    Public Overloads Function registrar(tabla As DataTable) As Boolean
+        'Try
+        Return ModeloMedico.Singleton.Registrar(tabla)
+        'Catch ex As Exception
+        'Return False
+        'End Try
     End Function
 
 End Class

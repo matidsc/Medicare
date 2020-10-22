@@ -1756,9 +1756,6 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppMedico.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppMedico.exe.config
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppPaciente.exe
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppGestion.pdb
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppGestion.xml
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppGestion.exe.config
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppPaciente.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppPaciente.xml
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\bin\Debug\AppPaciente.exe.config
@@ -1860,7 +1857,6 @@ C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\bin\Debug\Acceso_a_Dato
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.vbproj.CopyComplete
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCAjustes.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCAjustes.resources
-C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\bin\Debug\AppPaciente.exe
 C:\Users\Mat\Desktop\Prueba\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitar.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmEntrada.resources
@@ -2100,3 +2096,8 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCModi
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarPaciente.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarGestor.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.UCDatosGestor.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmModificarSintoma.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCDatosGestor.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarGestor.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarPaciente.resources
+C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCModificar.resources

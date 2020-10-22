@@ -188,14 +188,27 @@ Public Class frmLogin
     End Sub
 
     Private Sub lblCrearCuenta_Click(sender As Object, e As EventArgs) Handles lblCrearCuenta.Click
-        Dim frm As New frmRegistroPaciente
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
-        Principal.Singleton.CambiarTamaño(frmRegistroPaciente)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlContenedor.Show()
-        Me.ResumeLayout()
+
+        If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
+            Dim frm As New frmRegistroPaciente
+            Me.SuspendLayout()
+            Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+            Principal.Singleton.CambiarTamaño(frmRegistroPaciente)
+            frm.Show()
+            pnlContenedor.Hide()
+            pnlContenedor.Show()
+            Me.ResumeLayout()
+        Else
+            Dim frm As New frmRegistroGestor
+            Me.SuspendLayout()
+            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+            Principal.Singleton.CambiarTamaño(frmRegistroGestor)
+            frm.Show()
+            pnlContenedor.Hide()
+            pnlInstancia.Show()
+            Me.ResumeLayout()
+        End If
+
     End Sub
 
     Private Sub btnAjustes_Click(sender As Object, e As EventArgs) Handles btnAjustes.Click

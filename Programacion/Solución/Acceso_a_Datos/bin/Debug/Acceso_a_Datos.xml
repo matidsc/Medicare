@@ -219,7 +219,7 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloGestor.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.ArrayList)">
+<member name="M:Acceso_a_Datos.ModeloGestor.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.ArrayList,System.String)">
  <summary>
  Función encargada de registar a los administradores del sistema en la tabla usuarios.
  </summary>

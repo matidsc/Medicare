@@ -20,7 +20,7 @@ Public Class frmRegistrarMedico
 
                         Dim med As New ControladorMedico(
                             txtCed.Text,
-                            txtCed.Text,
+                            Encriptar.Singleton.HASH256(txtCed.Text),
                             txtPrimerNombre.Text.ToUpper,
                             txtSegundoNombre.Text.ToUpper,
                             txtPrimerApellido.Text.ToUpper,

@@ -45,8 +45,8 @@ Public Class frmChat
             updateChats()
             Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
             CargarPanel(Listado)
-            Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
-            ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
+            Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+            ScrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
         End If
 
         Chat.AutoScroll = False

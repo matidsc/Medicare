@@ -82,4 +82,13 @@ Public Class frmRegistrarMedico
         End If
     End Sub
 
+    Private Sub btnImg_Click(sender As Object, e As EventArgs) Handles btnImg.Click
+        Dim dial As New OpenFileDialog
+
+        dial.Filter = "Image Files (*.jpg;*.jpeg;*bmp;*.png;)|*.jpg;*.jpeg;*bmp;*.png;"
+
+        If dial.ShowDialog = DialogResult.OK Then
+            GunaPictureBox1.Image = New Bitmap(dial.FileName)
+        End If
+    End Sub
 End Class

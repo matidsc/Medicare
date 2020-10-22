@@ -203,7 +203,7 @@ Public Class Principal
     ''' <param name="dgv"></param>
     ''' <param name="telefonos"></param>
     ''' <returns>True si los teléfonos son correctos.</returns>
-    Public Function VerificarTelefonos(dgv As DataGridView, telefonos As ArrayList) As Boolean
+    Public Function VerificarTelefonos(dgv As DataGridView, telefonos As ArrayList)
 
         'For i = 0 To dgv.Rows.Count - 2
         ' If dgv.Rows(i).Cells(0).Value <> "" Then
@@ -213,7 +213,12 @@ Public Class Principal
 
         For Each var As DataGridViewRow In dgv.Rows
             If var.Cells(0).Value <> "" Then
-                telefonos.Add(CType(var.Cells(0).Value, Integer))
+                If Verificacion.Singleton.Verificar_Int(var.Cells(0).Value.ToString) = True Then
+                    telefonos.Add(CType(var.Cells(0).Value, Integer))
+                Else
+                    Return False
+                End If
+
             End If
         Next
 

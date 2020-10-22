@@ -70,10 +70,14 @@ Partial Class frmRegistroPaciente
         Me.txtFecNac = New System.Windows.Forms.MaskedTextBox()
         Me.lblFormatoFecNac = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnImg = New Guna.UI.WinForms.GunaButton()
+        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAgregarTelefonos1.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
+        CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblSexo
@@ -564,6 +568,9 @@ Partial Class frmRegistroPaciente
         '
         'pnlContenedor
         '
+        Me.pnlContenedor.Controls.Add(Me.Label2)
+        Me.pnlContenedor.Controls.Add(Me.btnImg)
+        Me.pnlContenedor.Controls.Add(Me.GunaPictureBox1)
         Me.pnlContenedor.Controls.Add(Me.lblCI)
         Me.pnlContenedor.Controls.Add(Me.lblPass)
         Me.pnlContenedor.Controls.Add(Me.pnlPNom)
@@ -608,6 +615,57 @@ Partial Class frmRegistroPaciente
         Me.pnlContenedor.Size = New System.Drawing.Size(1011, 632)
         Me.pnlContenedor.TabIndex = 164
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Silver
+        Me.Label2.Location = New System.Drawing.Point(628, 425)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 20)
+        Me.Label2.TabIndex = 200
+        Me.Label2.Text = "Mi foto"
+        '
+        'btnImg
+        '
+        Me.btnImg.Animated = True
+        Me.btnImg.AnimationHoverSpeed = 0.07!
+        Me.btnImg.AnimationSpeed = 0.03!
+        Me.btnImg.BackColor = System.Drawing.Color.Transparent
+        Me.btnImg.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnImg.BorderColor = System.Drawing.Color.Black
+        Me.btnImg.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImg.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnImg.FocusedColor = System.Drawing.Color.Empty
+        Me.btnImg.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImg.ForeColor = System.Drawing.Color.White
+        Me.btnImg.Image = Nothing
+        Me.btnImg.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnImg.Location = New System.Drawing.Point(632, 581)
+        Me.btnImg.Name = "btnImg"
+        Me.btnImg.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnImg.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnImg.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnImg.OnHoverImage = Nothing
+        Me.btnImg.OnPressedColor = System.Drawing.Color.Black
+        Me.btnImg.Radius = 10
+        Me.btnImg.Size = New System.Drawing.Size(58, 32)
+        Me.btnImg.TabIndex = 199
+        Me.btnImg.Text = "+"
+        Me.btnImg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaPictureBox1
+        '
+        Me.GunaPictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaPictureBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.GunaPictureBox1.Location = New System.Drawing.Point(600, 455)
+        Me.GunaPictureBox1.Name = "GunaPictureBox1"
+        Me.GunaPictureBox1.Radius = 30
+        Me.GunaPictureBox1.Size = New System.Drawing.Size(120, 120)
+        Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.GunaPictureBox1.TabIndex = 198
+        Me.GunaPictureBox1.TabStop = False
+        '
         'frmRegistroPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -625,6 +683,7 @@ Partial Class frmRegistroPaciente
         Me.pnlAgregarTelefonos1.PerformLayout()
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
+        CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -674,4 +733,7 @@ Partial Class frmRegistroPaciente
     Friend WithEvents btnAtras As Button
     Friend WithEvents lblSolicitarCuenta As Label
     Friend WithEvents pnlContenedor As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnImg As Guna.UI.WinForms.GunaButton
+    Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
 End Class

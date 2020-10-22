@@ -38,6 +38,10 @@ Partial Class frmRegistrarMedico
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtMail = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnImg = New Guna.UI.WinForms.GunaButton()
+        Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
+        CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblNomPat
@@ -269,12 +273,66 @@ Partial Class frmRegistrarMedico
         Me.txtMail.Size = New System.Drawing.Size(262, 36)
         Me.txtMail.TabIndex = 7
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Silver
+        Me.Label2.Location = New System.Drawing.Point(742, 450)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 20)
+        Me.Label2.TabIndex = 203
+        Me.Label2.Text = "Mi foto"
+        '
+        'btnImg
+        '
+        Me.btnImg.Animated = True
+        Me.btnImg.AnimationHoverSpeed = 0.07!
+        Me.btnImg.AnimationSpeed = 0.03!
+        Me.btnImg.BackColor = System.Drawing.Color.Transparent
+        Me.btnImg.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnImg.BorderColor = System.Drawing.Color.Black
+        Me.btnImg.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImg.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnImg.FocusedColor = System.Drawing.Color.Empty
+        Me.btnImg.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImg.ForeColor = System.Drawing.Color.White
+        Me.btnImg.Image = Nothing
+        Me.btnImg.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnImg.Location = New System.Drawing.Point(746, 606)
+        Me.btnImg.Name = "btnImg"
+        Me.btnImg.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnImg.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnImg.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnImg.OnHoverImage = Nothing
+        Me.btnImg.OnPressedColor = System.Drawing.Color.Black
+        Me.btnImg.Radius = 10
+        Me.btnImg.Size = New System.Drawing.Size(58, 32)
+        Me.btnImg.TabIndex = 202
+        Me.btnImg.Text = "+"
+        Me.btnImg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaPictureBox1
+        '
+        Me.GunaPictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaPictureBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.GunaPictureBox1.Location = New System.Drawing.Point(714, 480)
+        Me.GunaPictureBox1.Name = "GunaPictureBox1"
+        Me.GunaPictureBox1.Radius = 30
+        Me.GunaPictureBox1.Size = New System.Drawing.Size(120, 120)
+        Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.GunaPictureBox1.TabIndex = 201
+        Me.GunaPictureBox1.TabStop = False
+        '
         'frmRegistrarMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.btnImg)
+        Me.Controls.Add(Me.GunaPictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtMail)
         Me.Controls.Add(Me.btnAtras)
@@ -295,6 +353,7 @@ Partial Class frmRegistrarMedico
         Me.Name = "frmRegistrarMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,4 +374,7 @@ Partial Class frmRegistrarMedico
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
     Friend WithEvents Label1 As Label
     Friend WithEvents txtMail As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnImg As Guna.UI.WinForms.GunaButton
+    Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
 End Class

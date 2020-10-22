@@ -196,15 +196,15 @@ Public Class frmOpciones
                 pnlInstancia.Show()
                 Me.ResumeLayout()
 
-                'Case 2
-                '    Dim frm As New frmRegistroGestor
-                '    Me.SuspendLayout()
-                '    Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                '    Principal.Singleton.CambiarTamaño(frmRegistroGestor)
-                '    frm.Show()
-                '    pnlContenedor.Hide()
-                '    pnlInstancia.Show()
-                '    Me.ResumeLayout()
+            Case 2
+                Dim frm As New frmRegistroGestor
+                Me.SuspendLayout()
+                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                Principal.Singleton.CambiarTamaño(frmRegistroGestor)
+                frm.Show()
+                pnlContenedor.Hide()
+                pnlInstancia.Show()
+                Me.ResumeLayout()
 
         End Select
 
@@ -248,6 +248,10 @@ Public Class frmOpciones
     End Sub
 
     Private Sub lblSubtitulo2_Click(sender As Object, e As EventArgs) Handles lblSubtitulo2.Click
+
+    End Sub
+
+    Private Sub lblTitulo3_Click(sender As Object, e As EventArgs) Handles lblTitulo3.Click
 
     End Sub
 End Class

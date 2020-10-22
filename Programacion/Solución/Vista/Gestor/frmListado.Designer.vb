@@ -236,7 +236,7 @@ Partial Class frmListado
         Me.GunaButton4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaButton4.DialogResult = System.Windows.Forms.DialogResult.None
         Me.GunaButton4.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaButton4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaButton4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GunaButton4.Image = Nothing
         Me.GunaButton4.ImageSize = New System.Drawing.Size(20, 20)
@@ -290,7 +290,7 @@ Partial Class frmListado
         Me.btnModificarElemento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificarElemento.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnModificarElemento.FocusedColor = System.Drawing.Color.Empty
-        Me.btnModificarElemento.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificarElemento.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificarElemento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnModificarElemento.Image = Nothing
         Me.btnModificarElemento.ImageSize = New System.Drawing.Size(20, 20)
@@ -317,7 +317,7 @@ Partial Class frmListado
         Me.btnSeleccionMultiple.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSeleccionMultiple.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnSeleccionMultiple.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSeleccionMultiple.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeleccionMultiple.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSeleccionMultiple.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnSeleccionMultiple.Image = Nothing
         Me.btnSeleccionMultiple.ImageSize = New System.Drawing.Size(20, 20)

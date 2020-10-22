@@ -140,7 +140,8 @@ Public Class ModeloGestor
 
     Public Function getInformacionGestor(cedula As String) As DataTable
 
-        Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,fotoPerfil FROM usuario where cedula= " & cedula
+        Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,correo,fotoPerfil FROM usuario where cedula= " & cedula
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 
     ''' <summary>

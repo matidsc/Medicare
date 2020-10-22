@@ -22,21 +22,22 @@ Public Class frmChat
     End Function
 
     Private Sub frmChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(Chat, scroll2, True)
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
             Me.CenterToScreen()
             Me.Width = pnlWrapChat.Width
             'pnlWrapChat.Location = New Point((Me.Width - pnlWrapChat.Width) \ 2, (Me.Height - pnlWrapChat.Height) \ 2)
             pnlWrapChat.Location = New Point(0, 0)
             btnFinalizar.Visible = False
-            pbFinalizar.Visible = False
+
             pnlYo.Visible = False
             dgvFinalizados.Visible = False
             dgvMisChats.Visible = False
-            pnlAcciones.Location = New Point((pnlWrapChat.Width - pnlAcciones.Width) \ 2, pnlAcciones.Location.Y)
+            ' b.Location = New Point((pnlWrapChat.Width - pnlAcciones.Width) \ 2, pnlAcciones.Location.Y)
             lblGeneral.Visible = False
             lblFinalizados.Visible = False
             btnFicha.Visible = False
-            pbFicha.Visible = False
             'Me.BackColor = Color.WhiteSmoke
             'pnlWrapChat.BackColor = Color.White
             'Chat.BackColor = Color.White
@@ -44,6 +45,8 @@ Public Class frmChat
             updateChats()
             Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
             CargarPanel(Listado)
+            Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+            ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
         End If
 
         Chat.AutoScroll = False
@@ -142,19 +145,7 @@ Public Class frmChat
 
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
 
-        If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
-            Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
-            Me.Dispose()
-
-        Else
-            Datos_Temporales.idchat = Nothing
-            Principal.Singleton.CambiarTamaño(frmListadoChat)
-            Me.Dispose()
-        End If
-
-    End Sub
 
     Private Function finalizar() As Boolean
 
@@ -210,9 +201,9 @@ Public Class frmChat
 
     Private Sub enviarMensaje()
 
-        If txtMensaje.Text <> "" Then
+        If txtMsg.Text <> "" Then
 
-            If contChat.enviarMensaje(Datos_Temporales.userLog, Datos_Temporales.idchat, txtMensaje.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) Then
+            If contChat.enviarMensaje(Datos_Temporales.userLog, Datos_Temporales.idchat, txtMsg.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) Then
                 lblEscriba.Focus()
                 ReloadSentMessage()
                 'Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
@@ -237,7 +228,7 @@ Public Class frmChat
                     End If
 
                 Next
-                txtMensaje.Text = Nothing
+                txtMsg.Text = Nothing
 
             Else
                 MsgBox("Error al enviar el mensaje")
@@ -246,18 +237,18 @@ Public Class frmChat
         End If
     End Sub
 
-    Private Sub txtMensaje_GotFocus(sender As Object, e As EventArgs)
+    Private Sub txtMensaje_GotFocus(sender As Object, e As EventArgs) Handles txtMsg.GotFocus
 
-        If txtMensaje.Text = Nothing Then
+        If txtMsg.Text = Nothing Then
             lblEscriba.Visible = True
         Else
             lblEscriba.Visible = False
         End If
 
     End Sub
-    Private Sub txtMensaje_LostFocus(sender As Object, e As EventArgs)
+    Private Sub txtMensaje_LostFocus(sender As Object, e As EventArgs) Handles txtMsg.LostFocus
 
-        If txtMensaje.Text = Nothing Then
+        If txtMsg.Text = Nothing Then
             lblEscriba.Visible = True
         End If
 
@@ -273,7 +264,7 @@ Public Class frmChat
 
     End Sub
 
-    Private Sub pbCancelar_Click(sender As Object, e As EventArgs) Handles pbFinalizar.Click
+    Private Sub pbCancelar_Click(sender As Object, e As EventArgs)
         finalizar()
     End Sub
 
@@ -287,28 +278,7 @@ Public Class frmChat
 
     End Sub
 
-    Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
 
-
-
-        If finalizar() Then
-
-            Dim correoPaciente = contChat.getCorreo(Datos_Temporales.pacienteSelecionado)
-            Dim mensajeEnviar = contChat.setFormato
-
-            If correoPaciente <> Nothing And mensajeEnviar <> Nothing Then
-
-                If contChat.enviarCorreo(correoPaciente, mensajeEnviar) Then
-                    MsgBox("Se ha enviado el historial al paciente")
-                    updateChats()
-                Else
-                    MsgBox("Error al enviar el correo")
-                End If
-
-            End If
-        End If
-
-    End Sub
 
 
 
@@ -321,9 +291,9 @@ Public Class frmChat
         Datos_Temporales.idchat = dgvMisChats.Rows(fila).Cells(columnName:="idChat").Value.ToString
         Datos_Temporales.pacienteSelecionado = dgvMisChats.CurrentCell.Value.ToString
 
-        txtMensaje.Enabled = True
+        txtMsg.Enabled = True
         btnFinalizar.Enabled = True
-        pbFinalizar.Visible = True
+
         lblEscriba.Text = "Escriba un mensaje"
 
         setNombreUsuario(dgvMisChats.CurrentCell.Value)
@@ -343,9 +313,9 @@ Public Class frmChat
 
         Datos_Temporales.idchat = dgvFinalizados.Rows(fila).Cells(columnName:="idChat").Value.ToString
 
-        txtMensaje.Enabled = False
+        txtMsg.Enabled = False
         btnFinalizar.Enabled = False
-        pbFinalizar.Visible = False
+
         lblEscriba.Text = "Chat finalizado, no es posible enviar un mensaje"
 
         setNombreUsuario(dgvFinalizados.CurrentCell.Value)
@@ -372,19 +342,9 @@ Public Class frmChat
     End Sub
 
 
-    Private Sub MaterialSingleLineTextField1_TextChanged(sender As Object, e As EventArgs) Handles txtMensaje.TextChanged
-        If Not (txtMensaje.Text = Nothing) Then
-            lblEscriba.Visible = False
-        Else
-            lblEscriba.Visible = True
-        End If
-    End Sub
 
-    Private Sub pbEnviar_Click(sender As Object, e As EventArgs) Handles pbEnviar.Click
-        enviarMensaje()
-    End Sub
 
-    Private Sub txtMensaje_KeyPress(sender As Object, e As KeyEventArgs) Handles txtMensaje.KeyDown
+    Private Sub txtMensaje_KeyPress(sender As Object, e As KeyEventArgs) Handles txtMsg.KeyDown
         If e.KeyCode = Keys.Enter Then
             enviarMensaje()
         End If
@@ -392,7 +352,7 @@ Public Class frmChat
     End Sub
 
     Private Sub lblEscriba_Click(sender As Object, e As EventArgs) Handles lblEscriba.Click
-        txtMensaje.Focus()
+        txtMsg.Focus()
     End Sub
 
     Private Sub pnlWrapChat_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlWrapChat.MouseDown
@@ -407,11 +367,7 @@ Public Class frmChat
         Principal.Singleton.moverVentanaUp()
     End Sub
 
-    Private Sub btnVerSintomas_Click(sender As Object, e As EventArgs) Handles btnVerSintomas.Click
 
-        'UcDiagnostico1.Visible = True
-
-    End Sub
 
     'Private Sub btnFicha_Click(sender As Object, e As EventArgs) Handles btnFicha.Click
 
@@ -448,5 +404,48 @@ Public Class frmChat
     Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
         'thread.Start()
     End Sub
+    Private Sub btnEnd_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
 
+        If finalizar() Then
+
+            Dim correoPaciente = contChat.getCorreo(Datos_Temporales.pacienteSelecionado)
+            Dim mensajeEnviar = contChat.setFormato
+
+            If correoPaciente <> Nothing And mensajeEnviar <> Nothing Then
+
+                If contChat.enviarCorreo(correoPaciente, mensajeEnviar) Then
+                    MsgBox("Se ha enviado el historial al paciente")
+                    updateChats()
+                Else
+                    MsgBox("Error al enviar el correo")
+                End If
+
+            End If
+        End If
+    End Sub
+
+    Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
+        enviarMensaje()
+    End Sub
+
+    Private Sub txtMsg_TextChanged(sender As Object, e As EventArgs) Handles txtMsg.TextChanged
+        If Not (txtMsg.Text = Nothing) Then
+            lblEscriba.Visible = False
+        Else
+            lblEscriba.Visible = True
+        End If
+    End Sub
+
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+
+        If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
+            Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+            Me.Dispose()
+
+        Else
+            Datos_Temporales.idchat = Nothing
+            Principal.Singleton.CambiarTamaño(frmListadoChat)
+            Me.Dispose()
+        End If
+    End Sub
 End Class

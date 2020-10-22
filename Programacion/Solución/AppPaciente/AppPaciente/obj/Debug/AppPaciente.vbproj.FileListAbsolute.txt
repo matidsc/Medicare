@@ -147,9 +147,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe.config
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.xml
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe.config
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.vbprojAssemblyReference.cache
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.main.resources
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.Resources.resources

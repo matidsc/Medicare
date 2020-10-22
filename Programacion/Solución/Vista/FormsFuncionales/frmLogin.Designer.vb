@@ -23,8 +23,8 @@ Partial Class frmLogin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.UcAjustes1 = New Vista.UCAjustes()
+        Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.lblContraseña = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
@@ -38,6 +38,7 @@ Partial Class frmLogin
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnlInstancia.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,9 +54,19 @@ Partial Class frmLogin
         Me.pnlInstancia.Size = New System.Drawing.Size(880, 500)
         Me.pnlInstancia.TabIndex = 37
         '
+        'UcAjustes1
+        '
+        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
+        Me.UcAjustes1.Name = "UcAjustes1"
+        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
+        Me.UcAjustes1.TabIndex = 52
+        Me.UcAjustes1.Visible = False
+        '
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.Button1)
         Me.pnlContenedor.Controls.Add(Me.lblContraseña)
         Me.pnlContenedor.Controls.Add(Me.lblUsuario)
         Me.pnlContenedor.Controls.Add(Me.btnIngresar)
@@ -74,15 +85,6 @@ Partial Class frmLogin
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(880, 500)
         Me.pnlContenedor.TabIndex = 0
-        '
-        'UcAjustes1
-        '
-        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
-        Me.UcAjustes1.Name = "UcAjustes1"
-        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
-        Me.UcAjustes1.TabIndex = 52
-        Me.UcAjustes1.Visible = False
         '
         'lblContraseña
         '
@@ -113,7 +115,7 @@ Partial Class frmLogin
         Me.btnIngresar.AnimationHoverSpeed = 0.07!
         Me.btnIngresar.AnimationSpeed = 0.03!
         Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnIngresar.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnIngresar.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnIngresar.BorderColor = System.Drawing.Color.Black
         Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
@@ -124,7 +126,7 @@ Partial Class frmLogin
         Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnIngresar.Location = New System.Drawing.Point(350, 381)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnIngresar.OnHoverForeColor = System.Drawing.Color.White
         Me.btnIngresar.OnHoverImage = Nothing
@@ -191,9 +193,9 @@ Partial Class frmLogin
         'im
         '
         Me.im.BackColor = System.Drawing.Color.Transparent
-        Me.im.ForeColor = System.Drawing.Color.MediumSlateBlue
+        Me.im.ForeColor = System.Drawing.Color.DarkSlateBlue
         Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
-        Me.im.IconColor = System.Drawing.Color.MediumSlateBlue
+        Me.im.IconColor = System.Drawing.Color.DarkSlateBlue
         Me.im.IconSize = 521
         Me.im.Location = New System.Drawing.Point(533, -385)
         Me.im.Name = "im"
@@ -273,6 +275,17 @@ Partial Class frmLogin
         Me.lblApp.Text = "APLICACION"
         Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(221, 278)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 33)
+        Me.Button1.TabIndex = 54
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -309,4 +322,5 @@ Partial Class frmLogin
     Public WithEvents lblCrearCuenta As Label
     Friend WithEvents lblContraseña As Label
     Friend WithEvents lblUsuario As Label
+    Friend WithEvents Button1 As Button
 End Class

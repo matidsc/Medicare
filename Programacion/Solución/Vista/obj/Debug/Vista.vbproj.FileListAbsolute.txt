@@ -1899,7 +1899,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate.StateMachine.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\Appccelerate.StateMachine.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.pdb
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.exe.config
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppPaciente.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppPaciente.xml
@@ -2101,3 +2100,4 @@ C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solu
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarGestor.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarPaciente.resources
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCModificar.resources
+C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\bin\Debug\AppMedico.xml

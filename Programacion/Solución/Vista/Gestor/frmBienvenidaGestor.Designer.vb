@@ -65,6 +65,7 @@ Partial Class frmBienvenidaGestor
         Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.UcDatosGestor1 = New Vista.UCDatosGestor()
         Me.pnlContenedor.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -102,6 +103,7 @@ Partial Class frmBienvenidaGestor
         Me.Panel9.Controls.Add(Me.scroll)
         Me.Panel9.Controls.Add(Me.lblNA)
         Me.Panel9.Controls.Add(Me.pnlFlow)
+        Me.Panel9.Controls.Add(Me.UcDatosGestor1)
         Me.Panel9.Controls.Add(Me.Label9)
         Me.Panel9.Controls.Add(Me.Panel10)
         Me.Panel9.Location = New System.Drawing.Point(0, 80)
@@ -206,6 +208,7 @@ Partial Class frmBienvenidaGestor
         '
         'btnPatologia
         '
+        Me.btnPatologia.Animated = True
         Me.btnPatologia.AnimationHoverSpeed = 0.07!
         Me.btnPatologia.AnimationSpeed = 0.03!
         Me.btnPatologia.BackColor = System.Drawing.Color.Transparent
@@ -219,21 +222,21 @@ Partial Class frmBienvenidaGestor
         Me.btnPatologia.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPatologia.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnPatologia.FocusedColor = System.Drawing.Color.Empty
-        Me.btnPatologia.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPatologia.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPatologia.ForeColor = System.Drawing.Color.White
         Me.btnPatologia.Image = Nothing
         Me.btnPatologia.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnPatologia.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnPatologia.Location = New System.Drawing.Point(29, 179)
         Me.btnPatologia.Name = "btnPatologia"
-        Me.btnPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnPatologia.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnPatologia.OnHoverForeColor = System.Drawing.Color.White
         Me.btnPatologia.OnHoverImage = Nothing
         Me.btnPatologia.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnPatologia.OnPressedColor = System.Drawing.Color.Black
-        Me.btnPatologia.Radius = 12
-        Me.btnPatologia.Size = New System.Drawing.Size(125, 30)
+        Me.btnPatologia.Radius = 15
+        Me.btnPatologia.Size = New System.Drawing.Size(125, 32)
         Me.btnPatologia.TabIndex = 9
         Me.btnPatologia.Text = "Ingresar"
         Me.btnPatologia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -263,6 +266,7 @@ Partial Class frmBienvenidaGestor
         '
         'btnSintomas
         '
+        Me.btnSintomas.Animated = True
         Me.btnSintomas.AnimationHoverSpeed = 0.07!
         Me.btnSintomas.AnimationSpeed = 0.03!
         Me.btnSintomas.BackColor = System.Drawing.Color.Transparent
@@ -276,14 +280,14 @@ Partial Class frmBienvenidaGestor
         Me.btnSintomas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSintomas.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnSintomas.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSintomas.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSintomas.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSintomas.ForeColor = System.Drawing.Color.White
         Me.btnSintomas.Image = Nothing
         Me.btnSintomas.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnSintomas.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnSintomas.Location = New System.Drawing.Point(30, 183)
         Me.btnSintomas.Name = "btnSintomas"
-        Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnSintomas.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnSintomas.OnHoverForeColor = System.Drawing.Color.White
         Me.btnSintomas.OnHoverImage = Nothing
@@ -346,6 +350,7 @@ Partial Class frmBienvenidaGestor
         '
         'btnUsuarios
         '
+        Me.btnUsuarios.Animated = True
         Me.btnUsuarios.AnimationHoverSpeed = 0.07!
         Me.btnUsuarios.AnimationSpeed = 0.03!
         Me.btnUsuarios.BackColor = System.Drawing.Color.Transparent
@@ -359,14 +364,14 @@ Partial Class frmBienvenidaGestor
         Me.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUsuarios.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnUsuarios.FocusedColor = System.Drawing.Color.Empty
-        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuarios.ForeColor = System.Drawing.Color.White
         Me.btnUsuarios.Image = Nothing
         Me.btnUsuarios.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnUsuarios.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnUsuarios.Location = New System.Drawing.Point(29, 181)
         Me.btnUsuarios.Name = "btnUsuarios"
-        Me.btnUsuarios.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnUsuarios.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnUsuarios.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnUsuarios.OnHoverForeColor = System.Drawing.Color.White
         Me.btnUsuarios.OnHoverImage = Nothing
@@ -414,6 +419,7 @@ Partial Class frmBienvenidaGestor
         '
         'btnRegistro
         '
+        Me.btnRegistro.Animated = True
         Me.btnRegistro.AnimationHoverSpeed = 0.07!
         Me.btnRegistro.AnimationSpeed = 0.03!
         Me.btnRegistro.BackColor = System.Drawing.Color.Transparent
@@ -427,14 +433,14 @@ Partial Class frmBienvenidaGestor
         Me.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRegistro.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnRegistro.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistro.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistro.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistro.ForeColor = System.Drawing.Color.White
         Me.btnRegistro.Image = Nothing
         Me.btnRegistro.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnRegistro.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnRegistro.Location = New System.Drawing.Point(32, 184)
         Me.btnRegistro.Name = "btnRegistro"
-        Me.btnRegistro.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnRegistro.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnRegistro.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnRegistro.OnHoverForeColor = System.Drawing.Color.White
         Me.btnRegistro.OnHoverImage = Nothing
@@ -642,6 +648,14 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
         '
+        'UcDatosGestor1
+        '
+        Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
+        Me.UcDatosGestor1.Name = "UcDatosGestor1"
+        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 30)
+        Me.UcDatosGestor1.TabIndex = 27
+        '
         'frmBienvenidaGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -715,5 +729,6 @@ Partial Class frmBienvenidaGestor
     Friend WithEvents btnGestores As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents Label11 As Label
+    Public WithEvents UcDatosGestor1 As UCDatosGestor
 End Class
 

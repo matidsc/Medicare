@@ -32,6 +32,7 @@ Partial Class Mensaje
         '
         Me.horaEnviado.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.horaEnviado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.horaEnviado.ForeColor = System.Drawing.Color.White
         Me.horaEnviado.Location = New System.Drawing.Point(0, 41)
         Me.horaEnviado.Name = "horaEnviado"
         Me.horaEnviado.Size = New System.Drawing.Size(764, 13)
@@ -44,6 +45,7 @@ Partial Class Mensaje
         '
         Me.horaRecibido.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.horaRecibido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.horaRecibido.ForeColor = System.Drawing.Color.White
         Me.horaRecibido.Location = New System.Drawing.Point(0, 41)
         Me.horaRecibido.Name = "horaRecibido"
         Me.horaRecibido.Size = New System.Drawing.Size(39, 13)
@@ -55,11 +57,11 @@ Partial Class Mensaje
         'lbl_Enviado
         '
         Me.lbl_Enviado.AutoSize = True
-        Me.lbl_Enviado.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.lbl_Enviado.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.lbl_Enviado.Dock = System.Windows.Forms.DockStyle.Right
         Me.lbl_Enviado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbl_Enviado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Enviado.ForeColor = System.Drawing.Color.Black
+        Me.lbl_Enviado.ForeColor = System.Drawing.Color.White
         Me.lbl_Enviado.Location = New System.Drawing.Point(626, 0)
         Me.lbl_Enviado.MaximumSize = New System.Drawing.Size(400, 0)
         Me.lbl_Enviado.Name = "lbl_Enviado"
@@ -88,7 +90,7 @@ Partial Class Mensaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(764, 54)
         Me.Controls.Add(Me.lbl_Recibido)
         Me.Controls.Add(Me.lbl_Enviado)

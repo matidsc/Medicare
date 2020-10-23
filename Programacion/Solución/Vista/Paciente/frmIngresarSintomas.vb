@@ -18,6 +18,7 @@ Public Class frmIngresarSintomas
 
         ScrollHelperSeleccionados = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scrollSeleccionados, True)
         ScrollHelperTodos = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodos, scrollTodos, True)
+
         For Each sintoma In ControladorSintoma.Singleton.traerSintomas
             dgvTodos.Rows.Add(sintoma)
         Next

@@ -135,6 +135,7 @@ Public Class ModeloChat
 
         Dim consulta As String = "update salachat set finalizado = 1 where idchat = (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")"
 
+        ModeloConsultas.Singleton.InsertarSinParametros("START TRANSACTION")
         If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
             ModeloConsultas.Singleton.InsertarSinParametros("COMMIT")
             Return True

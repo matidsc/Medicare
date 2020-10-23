@@ -528,7 +528,7 @@ Partial Class frmRegistroGestor
         Me.Controls.Add(Me.txtCI)
         Me.Controls.Add(Me.lblCI)
         Me.Controls.Add(Me.lblMail)
-        Me.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmRegistroGestor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

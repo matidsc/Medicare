@@ -19,7 +19,19 @@ Public Class ModeloSintoma
 
         Return instancia
     End Function
+    Public Function Modificar(nombreViejo As String, nombre As String, descripcion As String) As Boolean
+        Dim consulta As String = "UPDATE sintoma set nombre= '" & nombre & "', descripcion= '" & descripcion & "'WHERE nombre= '" & nombreViejo & "'"
+        If ModeloConsultas.Singleton.ConsultaDelete(consulta) Then
+            Return True
+        End If
 
+        Return False
+    End Function
+
+    Public Function traerInfoSintoma(nombre As String) As String
+        Dim consulta As String = "SELECT descripcion FROM sintoma WHERE nombre = '" & nombre & "'"
+        Return ModeloConsultas.Singleton.ConsultaCampo(consulta)
+    End Function
     ''' <summary>
     ''' Función encargada de registrar los síntomas.
     ''' </summary>
@@ -71,7 +83,7 @@ Public Class ModeloSintoma
     ''' </summary>
     ''' <returns>ArrayList con las filas encontradas en la consulta.</returns>
     Public Overloads Function TraerSintomas() As ArrayList
-        Return ModeloConsultas.Singleton.ConsultaArray("SELECT nombre FROM sintoma WHERE bajalogica = 0")
+        Return ModeloConsultas.Singleton.ConsultaArray("SELECT nombre FROM sintoma WHERE bajaLogica = 0")
     End Function
 
     Public Overloads Function TraerSintomas(sintomas As ArrayList) As ArrayList

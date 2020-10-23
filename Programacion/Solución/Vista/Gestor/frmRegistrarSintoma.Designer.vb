@@ -27,13 +27,15 @@ Partial Class frmRegistrarSintoma
         Me.Panel9__ = New System.Windows.Forms.Panel()
         Me.TextBox1__ = New System.Windows.Forms.TextBox()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.lblCantText = New System.Windows.Forms.Label()
         Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.lblNomPat = New System.Windows.Forms.Label()
         Me.txtNom = New Guna.UI.WinForms.GunaLineTextBox()
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtDescripcion = New Guna.UI.WinForms.GunaTextBox()
         Me.sepDesc = New Guna.UI.WinForms.GunaSeparator()
-        Me.lblCantText = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,6 +70,8 @@ Partial Class frmRegistrarSintoma
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.btnAtras)
+        Me.pnlContenedor.Controls.Add(Me.Label1)
         Me.pnlContenedor.Controls.Add(Me.lblCantText)
         Me.pnlContenedor.Controls.Add(Me.btnRegistrar)
         Me.pnlContenedor.Controls.Add(Me.lblNomPat)
@@ -81,30 +85,41 @@ Partial Class frmRegistrarSintoma
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 128
         '
+        'lblCantText
+        '
+        Me.lblCantText.AutoSize = True
+        Me.lblCantText.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantText.ForeColor = System.Drawing.Color.Silver
+        Me.lblCantText.Location = New System.Drawing.Point(845, 277)
+        Me.lblCantText.Name = "lblCantText"
+        Me.lblCantText.Size = New System.Drawing.Size(41, 17)
+        Me.lblCantText.TabIndex = 198
+        Me.lblCantText.Text = "0/300"
+        '
         'btnRegistrar
         '
         Me.btnRegistrar.AnimationHoverSpeed = 0.07!
         Me.btnRegistrar.AnimationSpeed = 0.03!
         Me.btnRegistrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistrar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrar.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnRegistrar.BorderColor = System.Drawing.Color.Black
         Me.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnRegistrar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrar.ForeColor = System.Drawing.Color.White
         Me.btnRegistrar.Image = Nothing
         Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnRegistrar.Location = New System.Drawing.Point(431, 572)
         Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnRegistrar.OnHoverForeColor = System.Drawing.Color.White
         Me.btnRegistrar.OnHoverImage = Nothing
         Me.btnRegistrar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRegistrar.Radius = 20
+        Me.btnRegistrar.Radius = 10
         Me.btnRegistrar.Size = New System.Drawing.Size(199, 42)
         Me.btnRegistrar.TabIndex = 190
-        Me.btnRegistrar.Text = "Registrarme"
+        Me.btnRegistrar.Text = "Registrar síntoma"
         Me.btnRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblNomPat
@@ -171,16 +186,35 @@ Partial Class frmRegistrarSintoma
         Me.sepDesc.Size = New System.Drawing.Size(654, 10)
         Me.sepDesc.TabIndex = 189
         '
-        'lblCantText
+        'Label1
         '
-        Me.lblCantText.AutoSize = True
-        Me.lblCantText.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantText.ForeColor = System.Drawing.Color.Silver
-        Me.lblCantText.Location = New System.Drawing.Point(845, 277)
-        Me.lblCantText.Name = "lblCantText"
-        Me.lblCantText.Size = New System.Drawing.Size(41, 17)
-        Me.lblCantText.TabIndex = 198
-        Me.lblCantText.Text = "0/300"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(79, 538)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 199
+        Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
+        '
+        'btnAtras
+        '
+        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAtras.FlatAppearance.BorderSize = 0
+        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.btnAtras.IconColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconSize = 20
+        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAtras.Location = New System.Drawing.Point(22, 22)
+        Me.btnAtras.Name = "btnAtras"
+        Me.btnAtras.Rotation = 0R
+        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
+        Me.btnAtras.TabIndex = 200
+        Me.btnAtras.Text = "Atrás"
+        Me.btnAtras.UseVisualStyleBackColor = True
         '
         'frmRegistrarSintoma
         '
@@ -210,4 +244,6 @@ Partial Class frmRegistrarSintoma
     Friend WithEvents lblDescripcion As Label
     Friend WithEvents btnRegistrar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblCantText As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
 End Class

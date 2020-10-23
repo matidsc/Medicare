@@ -33,6 +33,22 @@ Public Class ControladorPatologia
         End Try
 
     End Function
+
+    Public Function TraerSintomasPatologia(nombre As String) As ArrayList
+        Return ModeloPatologia.Singleton.traerSintomasPatologia(nombre)
+    End Function
+    Public Function TraerPatologia(nombre As String) As DataTable
+        Return ModeloPatologia.Singleton.traerPatologia(nombre)
+    End Function
+
+    Public Function Modificar(nombreViejo As String) As Boolean
+        Try
+            Return ModeloPatologia.Singleton.Modificar(nombreViejo, _nombre, _descripcion, _recomendacion, _prioridad, _sintomas)
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
     Public Overloads Function Registrar(tabla As DataTable, tablaSintoma As DataTable) As Boolean
         Try
             Return ModeloPatologia.Singleton.Registrar(tabla, tablaSintoma)
@@ -41,9 +57,32 @@ Public Class ControladorPatologia
         End Try
     End Function
     Public Function listarPatologias() As DataTable
+        Dim dt As DataTable = ModeloPatologia.Singleton.ListarPatologias
 
-        Return ModeloPatologia.Singleton.ListarPatologias
+        dt.Columns.Add("Prioridad2", GetType(String))
 
+        For Each row As DataRow In dt.Rows
+
+
+            row.Item(4) = row.Item(3)
+
+        Next
+        dt.Columns.Remove(dt.Columns(3))
+        dt.Columns(3).ColumnName = "Prioridad"
+        'dt.Columns(3).DataType = GetType(String)
+
+        For Each row As DataRow In dt.Rows
+
+            If row.Item(3) = 1 Then
+                row.Item(3) = "Alta"
+            ElseIf row.Item(3) = 2 Then
+                row.Item(3) = "Media"
+            ElseIf row.Item(3) = 3 Then
+                row.Item(3) = "Baja"
+            End If
+
+        Next
+        Return dt
     End Function
 
     Public Function eliminarPatologias(aliPatologias As ArrayList)

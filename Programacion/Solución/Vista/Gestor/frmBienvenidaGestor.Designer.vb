@@ -294,7 +294,7 @@ Partial Class frmBienvenidaGestor
         Me.btnSintomas.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnSintomas.OnPressedColor = System.Drawing.Color.Black
         Me.btnSintomas.Radius = 12
-        Me.btnSintomas.Size = New System.Drawing.Size(125, 30)
+        Me.btnSintomas.Size = New System.Drawing.Size(125, 32)
         Me.btnSintomas.TabIndex = 10
         Me.btnSintomas.Text = "Ingresar"
         Me.btnSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -378,7 +378,7 @@ Partial Class frmBienvenidaGestor
         Me.btnUsuarios.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnUsuarios.OnPressedColor = System.Drawing.Color.Black
         Me.btnUsuarios.Radius = 12
-        Me.btnUsuarios.Size = New System.Drawing.Size(125, 30)
+        Me.btnUsuarios.Size = New System.Drawing.Size(125, 32)
         Me.btnUsuarios.TabIndex = 12
         Me.btnUsuarios.Text = "Ingresar"
         Me.btnUsuarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -447,7 +447,7 @@ Partial Class frmBienvenidaGestor
         Me.btnRegistro.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnRegistro.OnPressedColor = System.Drawing.Color.Black
         Me.btnRegistro.Radius = 12
-        Me.btnRegistro.Size = New System.Drawing.Size(125, 30)
+        Me.btnRegistro.Size = New System.Drawing.Size(125, 32)
         Me.btnRegistro.TabIndex = 11
         Me.btnRegistro.Text = "Ingresar"
         Me.btnRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -503,7 +503,7 @@ Partial Class frmBienvenidaGestor
         'GunaElipsePanel2
         '
         Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.GunaElipsePanel2.Controls.Add(Me.Label11)
         Me.GunaElipsePanel2.Location = New System.Drawing.Point(745, 27)
         Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
@@ -540,7 +540,7 @@ Partial Class frmBienvenidaGestor
         'pnlNotificacion
         '
         Me.pnlNotificacion.BackColor = System.Drawing.Color.Transparent
-        Me.pnlNotificacion.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.pnlNotificacion.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.pnlNotificacion.Controls.Add(Me.lblNotificacion)
         Me.pnlNotificacion.Location = New System.Drawing.Point(797, 27)
         Me.pnlNotificacion.Name = "pnlNotificacion"
@@ -576,7 +576,7 @@ Partial Class frmBienvenidaGestor
         'GunaElipsePanel1
         '
         Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.GunaElipsePanel1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaElipsePanel1.Location = New System.Drawing.Point(839, 27)
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
@@ -653,7 +653,7 @@ Partial Class frmBienvenidaGestor
         Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
         Me.UcDatosGestor1.Name = "UcDatosGestor1"
-        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 30)
+        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 83)
         Me.UcDatosGestor1.TabIndex = 27
         '
         'frmBienvenidaGestor

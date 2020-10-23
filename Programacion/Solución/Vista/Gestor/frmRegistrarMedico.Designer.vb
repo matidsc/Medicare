@@ -205,26 +205,26 @@ Partial Class frmRegistrarMedico
         Me.btnRegistrarMedico.AnimationHoverSpeed = 0.07!
         Me.btnRegistrarMedico.AnimationSpeed = 0.03!
         Me.btnRegistrarMedico.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistrarMedico.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrarMedico.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.btnRegistrarMedico.BorderColor = System.Drawing.Color.Black
         Me.btnRegistrarMedico.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRegistrarMedico.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnRegistrarMedico.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistrarMedico.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarMedico.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarMedico.ForeColor = System.Drawing.Color.White
         Me.btnRegistrarMedico.Image = Nothing
         Me.btnRegistrarMedico.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnRegistrarMedico.Location = New System.Drawing.Point(436, 572)
         Me.btnRegistrarMedico.Name = "btnRegistrarMedico"
-        Me.btnRegistrarMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegistrarMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnRegistrarMedico.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnRegistrarMedico.OnHoverForeColor = System.Drawing.Color.White
         Me.btnRegistrarMedico.OnHoverImage = Nothing
         Me.btnRegistrarMedico.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRegistrarMedico.Radius = 20
+        Me.btnRegistrarMedico.Radius = 10
         Me.btnRegistrarMedico.Size = New System.Drawing.Size(199, 42)
         Me.btnRegistrarMedico.TabIndex = 7
-        Me.btnRegistrarMedico.Text = "Registrar"
+        Me.btnRegistrarMedico.Text = "Registrar médico"
         Me.btnRegistrarMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnAtras

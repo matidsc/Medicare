@@ -38,6 +38,7 @@ Partial Class frmListado
         Me.btnEliminarElementos = New Guna.UI.WinForms.GunaButton()
         Me.btnModificarElemento = New Guna.UI.WinForms.GunaButton()
         Me.btnSeleccionMultiple = New Guna.UI.WinForms.GunaButton()
+        Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.UcAsociar1 = New Vista.UCAsociar()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -334,6 +335,14 @@ Partial Class frmListado
         Me.btnSeleccionMultiple.Text = "ACTIVAR SELECCIÓN MÚLTIPLE"
         Me.btnSeleccionMultiple.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'pnlInstancia
+        '
+        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
+        Me.pnlInstancia.Name = "pnlInstancia"
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
+        Me.pnlInstancia.TabIndex = 192
+        '
         'UcAsociar1
         '
         Me.UcAsociar1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
@@ -351,6 +360,7 @@ Partial Class frmListado
         Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.UcAsociar1)
+        Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmListado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -376,4 +386,5 @@ Partial Class frmListado
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
     Friend WithEvents lblBuscar As Label
     Friend WithEvents UcAsociar1 As UCAsociar
+    Friend WithEvents pnlInstancia As Panel
 End Class

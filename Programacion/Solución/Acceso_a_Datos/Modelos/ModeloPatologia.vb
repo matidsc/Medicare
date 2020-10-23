@@ -19,7 +19,67 @@ Public Class ModeloPatologia
 
         Return instancia
     End Function
+    ''' <summary>
+    ''' Funcion encargada de devolver el nombre, descripcion, recomendacion y prioridad de una patologia
+    ''' </summary>
+    ''' <param name="nombre">Nombre de la patologia</param>
+    ''' <returns></returns>
+    Public Function traerPatologia(nombre As String) As DataTable
 
+        Dim consulta As String = "SELECT nombre, descripcion,recomendacion, prioridad FROM patologia WHERE nombre = '" & nombre & "'"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+
+    End Function
+    Public Function traerSintomasPatologia(nombre As String) As ArrayList
+
+        Dim consulta As String = "select s.nombre from sintoma s, patologia p, patologia_contiene_sintoma ps where p.idPatologia=ps.idPatologia and s.idSintoma=ps.idSintoma and p.nombre='" & nombre & "'"
+        Return ModeloConsultas.Singleton.ConsultaArray(consulta)
+    End Function
+    Public Function ModificarAsociacion(sintomas As ArrayList, nombre As String)
+
+        Dim contador As Int32 = 0
+        Dim parametros As New List(Of OdbcParameter)
+        Dim consulta As String = "DELETE FROM patologia_contiene_sintoma where idPatologia= (SELECT idPatologia FROM patologia WHERE nombre= '" & nombre & "')"
+        Dim consulta2 As String = "INSERT INTO patologia_contiene_sintoma (idSintoma, idPatologia) 
+                                  VALUES ((SELECT idSintoma FROM sintoma WHERE nombre = ?), 
+                                  (SELECT idPatologia FROM patologia WHERE nombre = ?))"
+
+        If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+
+            For Each sintoma In sintomas
+
+                parametros.Clear()
+                parametros.Add(New OdbcParameter("nombre", sintoma))
+                parametros.Add(New OdbcParameter("nombre", nombre))
+
+
+                If ModeloConsultas.Singleton.InsertParametros(consulta2, parametros) Then
+                    contador += 1
+                End If
+
+            Next
+
+        End If
+
+        If contador = sintomas.Count Then
+            Return True
+        End If
+
+        Return False
+    End Function
+    Public Function Modificar(nombreViejo As String, nombreNuevo As String, descripcion As String, recomendacion As String, prioridad As Byte, sintomas As ArrayList)
+
+        Dim consulta As String = "UPDATE patologia SET nombre = '" & nombreNuevo & "', descripcion = '" & descripcion & "', recomendacion = '" & recomendacion & "', prioridad = " & prioridad & " where nombre = '" & nombreViejo & "'"
+
+        If ModeloConsultas.Singleton.ConsultaDelete(consulta) Then
+            If ModificarAsociacion(sintomas, nombreNuevo) Then
+                Return True
+            End If
+        End If
+        Return False
+
+
+    End Function
     ''' <summary>
     ''' Función encargada de registrar las patologías.
     ''' </summary>

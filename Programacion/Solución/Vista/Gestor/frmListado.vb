@@ -34,6 +34,8 @@ Public Class frmListado
         ' Next
 
         InitializeComponent()
+        Datos_Temporales.horizontal = Me.Width
+        Datos_Temporales.vertical = Me.Height
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvListado, scroll, True)
 
@@ -61,7 +63,8 @@ Public Class frmListado
         Me.op = op
         dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
         btnRegistrar.Visible = True
-
+        Datos_Temporales.horizontal = Me.Width
+        Datos_Temporales.vertical = Me.Height
         instancia = Me
     End Sub
 
@@ -80,18 +83,31 @@ Public Class frmListado
 
     End Sub
 
+    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+        Me.pnlContenedor.Show()
+
+        Select Case op
+            Case 0
+                Dim p As New ControladorPatologia
+                dgvListado.DataSource = p.listarPatologias
+            Case 1
+                Dim s As New ControladorSintoma
+                dgvListado.DataSource = s.listarSintomas
+
+        End Select
+    End Sub
+
     Private Sub dgvListadoPatologias_MouseClick(sender As Object, e As MouseEventArgs)
         'btnEliminarElementos.Visible = True
         'btnModificarElemento.Visible = True
     End Sub
-
-    Private Sub dgvListadoPatologias_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
+    Private Sub modificarCSV(nombre As String)
 
         If esCSV Then
 
             If op = 0 Then
 
-                UcAsociar1.lblPatologia.Text = dgvListado.Rows(dgvListado.CurrentCell.RowIndex).Cells(0).Value
+                UcAsociar1.lblPatologia.Text = nombre
                 Dim array As New ArrayList
                 Dim bool As Boolean = False
 
@@ -132,12 +148,8 @@ Public Class frmListado
             End If
 
         End If
-
-        If dgvListado.MultiSelect = False Then
-
-        End If
-
     End Sub
+
 
     Private Sub dgvListadoPatologias_SelectionChanged(sender As Object, e As EventArgs) Handles dgvListado.SelectionChanged
 
@@ -294,8 +306,39 @@ Public Class frmListado
 
     End Sub
 
+    Private Sub ModificarPatologia(nombre As String)
+        Dim frm As New frmRegistrarPatologia(1)
+        frm.llenarCampos(nombre)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmRegistrarPatologia)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+    Private Sub ModificarSintoma(nombre As String)
+        Dim frm As New frmRegistrarSintoma(1)
+        frm.llenarCampos(nombre)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmRegistrarSintoma)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
     Private Sub btnModificarElemento_Click_1(sender As Object, e As EventArgs) Handles btnModificarElemento.Click
-        MsgBox("En construcción...")
+
+        If op = 0 And esCSV = False Then
+            ModificarPatologia(dgvListado.Rows(dgvListado.CurrentRow.Index).Cells(0).Value)
+        ElseIf op = 1 And esCSV = False Then
+            ModificarSintoma(dgvListado.Rows(dgvListado.CurrentRow.Index).Cells(0).Value)
+        ElseIf esCSV = True Then
+            modificarCSV(dgvListado.Rows(dgvListado.CurrentRow.Index).Cells(0).Value)
+
+        End If
+
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -341,9 +384,11 @@ Public Class frmListado
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmLogin)
+        Principal.Singleton.CambiarTamaño(frmOpciones)
         Me.Dispose()
     End Sub
 
+    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
 
+    End Sub
 End Class

@@ -124,6 +124,32 @@ Public Class ModeloConsultas
         Return False
     End Function
 
+    Public Function Transacciones(opcion As Byte) As Boolean
+
+        Conexion.Singleton.abrirConexion()
+
+        Select Case opcion
+            Case 0
+                Dim command As New OdbcCommand("START TRANSACTION", Conexion.Singleton.Connection)
+                command.ExecuteNonQuery()
+                Conexion.Singleton.cerrarConexion()
+                Return True
+            Case 1
+                Dim command As New OdbcCommand("COMMIT", Conexion.Singleton.Connection)
+                command.ExecuteNonQuery()
+                Conexion.Singleton.cerrarConexion()
+                Return True
+            Case 2
+                Dim command As New OdbcCommand("ROLLBACK", Conexion.Singleton.Connection)
+                command.ExecuteNonQuery()
+                Conexion.Singleton.cerrarConexion()
+                Return True
+        End Select
+
+        Conexion.Singleton.cerrarConexion()
+        Return False
+    End Function
+
     Public Function ConsultaDelete(consulta As String) As Boolean
 
         Conexion.Singleton.abrirConexion()

@@ -44,11 +44,27 @@ Public Class ModeloGestor
         parametros.Add(New OdbcParameter("sApe", SegundoApellido))
         parametros.Add(New OdbcParameter("correo", mail))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
-            If RegistrarGestor(cedula) Then
-                If RegistrarTelefono(cedula, Telefonos) Then
-                    Return True
+        If ModeloConsultas.Singleton.Transacciones(0) Then
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+                If RegistrarGestor(cedula) Then
+                    If RegistrarTelefono(cedula, Telefonos) Then
+                        MsgBox("asdasdasdsad")
+                        If ModeloConsultas.Singleton.Transacciones(2) Then
+                            MsgBox("hola")
+                            Return True
+                        End If
+
+                    Else
+                        ModeloConsultas.Singleton.Transacciones(2)
+                        Return False
+                    End If
+                Else
+                    ModeloConsultas.Singleton.Transacciones(2)
+                    Return False
                 End If
+            Else
+                ModeloConsultas.Singleton.Transacciones(2)
+                Return False
             End If
         End If
 

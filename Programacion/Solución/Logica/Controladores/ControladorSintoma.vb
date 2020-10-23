@@ -36,6 +36,17 @@ Public Class ControladorSintoma
         End Try
 
     End Function
+    Public Function Modificar(nombreViejo As String) As Boolean
+        Try
+            Return ModeloSintoma.Singleton.Modificar(nombreViejo, _nombre, _descripcion)
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+    Public Function traerInfoSintomas(nombre As String) As String
+        Return ModeloSintoma.Singleton.traerInfoSintoma(nombre)
+    End Function
     Public Overloads Function Registrar() As Boolean
         Return ModeloSintoma.Singleton.Registrar(_nombre, _descripcion)
     End Function

@@ -5,8 +5,23 @@ Public Class frmRegistrarPatologia
     Dim sourcedgv As String
     Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+    Dim op As Byte
+    Dim pat As New ControladorPatologia
     Public Sub New()
 
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scroll, True)
+
+        ScrollHelper2 = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodosLosSintomas, scroll2, True)
+
+        ScrollHelper.UpdateScrollBar()
+        ScrollHelper2.UpdateScrollBar()
+        traerSintomas()
+    End Sub
+    Public Sub New(op As Byte) '0 es default
+        Me.op = op
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
@@ -18,14 +33,39 @@ Public Class frmRegistrarPatologia
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scroll, True)
 
         ScrollHelper2 = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodosLosSintomas, scroll2, True)
-        traerSintomas()
-
 
         ScrollHelper.UpdateScrollBar()
         ScrollHelper2.UpdateScrollBar()
+
+        Select Case op
+            Case 0
+
+            Case 1
+                btnReg.Text = "Modificar patologia"
+
+        End Select
+
     End Sub
 
+    Public Sub llenarCampos(nombre As String)
 
+        Dim row As DataRow = pat.TraerPatologia(nombre).Rows(0)
+        Label1.Text = row.Item(0).ToString
+        txtNomPat.Text = row.Item(0).ToString
+        txtDescPat.Text = row.Item(1).ToString
+        txtRecPat.Text = row.Item(2).ToString
+        If row.Item(3) = 1 Then
+            mrbPAlta.Checked = True
+        ElseIf row.Item(3) = 2 Then
+            mrbPMedia.Checked = True
+        ElseIf row.Item(3) = 3 Then
+            mrbPBaja.Checked = True
+        End If
+        For Each sintoma In pat.TraerSintomasPatologia(row.Item(0))
+            dgvSintomasSeleccionados.Rows.Add(sintoma)
+        Next
+        traerSintomas()
+    End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
 
         sourcedgv = origen.Name ' obtiene el nombre del datagridview de origen
@@ -88,66 +128,63 @@ Public Class frmRegistrarPatologia
     End Sub
 
     Private Sub traerSintomas()
+        If op = 0 Then
+            Dim array As ArrayList = ControladorSintoma.Singleton.traerSintomas()
 
-        dgvTodosLosSintomas.DataSource = ControladorSintoma.Singleton.traerSintomas
+            For Each sintoma In array
+                dgvTodosLosSintomas.Rows.Add(sintoma)
+            Next
+
+        ElseIf op = 1 Then
+            Dim ali As New ArrayList
+
+            For Each row As DataGridViewRow In dgvSintomasSeleccionados.Rows
+                ali.Add(row.Cells(0).Value.ToString)
+            Next
+
+            Dim array As ArrayList = ControladorSintoma.Singleton.traerSintomas(ali)
+
+            For Each sintoma In array
+                dgvTodosLosSintomas.Rows.Add(sintoma)
+            Next
+
+            dgvTodosLosSintomas.Sort(dgvTodosLosSintomas.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        End If
 
     End Sub
 
     Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
 
-        Dim prioridad As Byte
-        Dim ali As New ArrayList
-        Dim check As New Verificacion
+        Select Case op
+            Case 0
+                Dim prioridad As Byte
+                Dim ali As New ArrayList
+                Dim check As New Verificacion
 
-        If dgvSintomasSeleccionados.Rows.Count() <> 0 Then
-            If txtNomPat.Text <> Nothing Then
-                If txtDescPat.Text.Length > 10 Then
-                    If txtRecPat.Text.Length > 10 Then
-                        If mrbPAlta.Checked = True Or mrbPBaja.Checked = True Or mrbPMedia.Checked = True Then
+                If dgvSintomasSeleccionados.Rows.Count() <> 0 Then
+                    If txtNomPat.Text <> Nothing Then
+                        If txtDescPat.Text.Length > 10 Then
+                            If txtRecPat.Text.Length > 10 Then
+                                If mrbPAlta.Checked = True Or mrbPBaja.Checked = True Or mrbPMedia.Checked = True Then
 
-                            If mrbPAlta.Checked Then
-                                prioridad = 1
-                            ElseIf mrbPMedia.Checked Then
-                                prioridad = 2
-                            ElseIf mrbPBaja.Checked Then
-                                prioridad = 3
-                            End If
+                                    If mrbPAlta.Checked Then
+                                        prioridad = 1
+                                    ElseIf mrbPMedia.Checked Then
+                                        prioridad = 2
+                                    ElseIf mrbPBaja.Checked Then
+                                        prioridad = 3
+                                    End If
 
-                            For i = 0 To dgvSintomasSeleccionados.Rows.Count() - 1
-                                ali.Add(dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
-                            Next
+                                    For i = 0 To dgvSintomasSeleccionados.Rows.Count() - 1
+                                        ali.Add(dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
+                                    Next
 
-                            Dim p As New ControladorPatologia(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali)
+                                    Dim p As New ControladorPatologia(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali)
 
-                            If p.VerificarBaja(txtNomPat.Text.ToUpper) Then
+                                    If p.VerificarBaja(txtNomPat.Text.ToUpper) Then
 
-                                If p.registrar() Then
-                                    MsgBox("Patología registrada con éxito")
-                                    txtNomPat.Text = Nothing
-                                    txtDescPat.Text = Nothing
-                                    txtRecPat.Text = Nothing
-                                    dgvTodosLosSintomas.Rows.Clear()
-                                    dgvSintomasSeleccionados.Rows.Clear()
-                                    mrbPAlta.Checked = False
-                                    mrbPBaja.Checked = False
-                                    mrbPMedia.Checked = False
-                                    traerSintomas()
-                                    ali.Clear()
-                                Else
-                                    MsgBox("La patología ya fue ingresada")
-                                End If
-
-                            Else
-                                Dim respuesta As Integer = MsgBox("La patología se encuentra dada de baja. ¿Desea reingresarla al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
-
-                                If respuesta = vbYes Then
-
-                                    Dim respuesta2 As Integer = MsgBox("¿Desea actualizar la patología con los datos ingresados?", vbQuestion + vbYesNo + vbDefaultButton2)
-
-                                    If respuesta2 = vbYes Then
-                                        If p.ReingresarConDatos(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali) Then
-
-                                            MsgBox("Patología reingresada con éxito")
+                                        If p.registrar() Then
+                                            MsgBox("Patología registrada con éxito")
                                             txtNomPat.Text = Nothing
                                             txtDescPat.Text = Nothing
                                             txtRecPat.Text = Nothing
@@ -159,50 +196,130 @@ Public Class frmRegistrarPatologia
                                             traerSintomas()
                                             ali.Clear()
                                         Else
-                                            MsgBox("Error al reingresar la patología")
-                                            ali.Clear()
+                                            MsgBox("La patología ya fue ingresada")
                                         End If
 
                                     Else
+                                        Dim respuesta As Integer = MsgBox("La patología se encuentra dada de baja. ¿Desea reingresarla al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
 
-                                        If p.ReingresarPatologia(txtNomPat.Text.ToUpper) Then
-                                            MsgBox("Patología reingresada con éxito")
-                                            txtNomPat.Text = Nothing
-                                            txtDescPat.Text = Nothing
-                                            txtRecPat.Text = Nothing
-                                            dgvTodosLosSintomas.Rows.Clear()
-                                            dgvSintomasSeleccionados.Rows.Clear()
-                                            mrbPAlta.Checked = False
-                                            mrbPBaja.Checked = False
-                                            mrbPMedia.Checked = False
-                                            traerSintomas()
-                                            ali.Clear()
-                                        Else
-                                            MsgBox("Error al reingresar la patología")
-                                            ali.Clear()
+                                        If respuesta = vbYes Then
+
+                                            Dim respuesta2 As Integer = MsgBox("¿Desea actualizar la patología con los datos ingresados?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                            If respuesta2 = vbYes Then
+                                                If p.ReingresarConDatos(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali) Then
+
+                                                    MsgBox("Patología reingresada con éxito")
+                                                    txtNomPat.Text = Nothing
+                                                    txtDescPat.Text = Nothing
+                                                    txtRecPat.Text = Nothing
+                                                    dgvTodosLosSintomas.Rows.Clear()
+                                                    dgvSintomasSeleccionados.Rows.Clear()
+                                                    mrbPAlta.Checked = False
+                                                    mrbPBaja.Checked = False
+                                                    mrbPMedia.Checked = False
+                                                    traerSintomas()
+                                                    ali.Clear()
+                                                Else
+                                                    MsgBox("Error al reingresar la patología")
+                                                    ali.Clear()
+                                                End If
+
+                                            Else
+
+                                                If p.ReingresarPatologia(txtNomPat.Text.ToUpper) Then
+                                                    MsgBox("Patología reingresada con éxito")
+                                                    txtNomPat.Text = Nothing
+                                                    txtDescPat.Text = Nothing
+                                                    txtRecPat.Text = Nothing
+                                                    dgvTodosLosSintomas.Rows.Clear()
+                                                    dgvSintomasSeleccionados.Rows.Clear()
+                                                    mrbPAlta.Checked = False
+                                                    mrbPBaja.Checked = False
+                                                    mrbPMedia.Checked = False
+                                                    traerSintomas()
+                                                    ali.Clear()
+                                                Else
+                                                    MsgBox("Error al reingresar la patología")
+                                                    ali.Clear()
+                                                End If
+
+                                            End If
+
                                         End If
 
                                     End If
 
+                                Else
+                                    MsgBox("Debe ingresar una prioridad")
                                 End If
-
+                            Else
+                                MsgBox("Debe ingresar una recomendación completa")
                             End If
-
                         Else
-                            MsgBox("Debe ingresar una prioridad")
+                            MsgBox("Debe ingresar una descripción completa")
                         End If
                     Else
-                        MsgBox("Debe ingresar una recomendación completa")
+                        MsgBox("Debe ingresar un nombre")
                     End If
                 Else
-                    MsgBox("Debe ingresar una descripción completa")
+                    MsgBox("Debe seleccionar síntomas para la patología")
                 End If
-            Else
-                MsgBox("Debe ingresar un nombre")
-            End If
-        Else
-            MsgBox("Debe seleccionar síntomas para la patología")
-        End If
+
+
+
+            Case 1
+                Dim prioridad As Byte
+                Dim ali As New ArrayList
+                Dim check As New Verificacion
+
+                If dgvSintomasSeleccionados.Rows.Count() <> 0 Then
+                    If txtNomPat.Text <> Nothing Then
+                        If txtDescPat.Text.Length > 10 Then
+                            If txtRecPat.Text.Length > 10 Then
+                                If mrbPAlta.Checked = True Or mrbPBaja.Checked = True Or mrbPMedia.Checked = True Then
+
+                                    If mrbPAlta.Checked Then
+                                        prioridad = 1
+                                    ElseIf mrbPMedia.Checked Then
+                                        prioridad = 2
+                                    ElseIf mrbPBaja.Checked Then
+                                        prioridad = 3
+                                    End If
+
+                                    For i = 0 To dgvSintomasSeleccionados.Rows.Count() - 1
+                                        ali.Add(dgvSintomasSeleccionados.Rows(i).Cells(0).Value)
+                                    Next
+
+                                    Dim p As New ControladorPatologia(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali)
+
+                                    If p.Modificar(Label1.Text) Then
+                                        MsgBox("Patología modificada con éxito")
+                                        Label1.Text = txtNomPat.Text
+                                        ali.Clear()
+                                    Else
+                                        MsgBox("Error al modificar la patología")
+                                    End If
+                                Else
+                                    MsgBox("Debe ingresar una prioridad")
+                                End If
+                            Else
+                                MsgBox("Debe ingresar una recomendación completa")
+                            End If
+                        Else
+                            MsgBox("Debe ingresar una descripción completa")
+                        End If
+                    Else
+                        MsgBox("Debe ingresar un nombre")
+                    End If
+                Else
+                    MsgBox("Debe seleccionar síntomas para la patología")
+                End If
+
+
+        End Select
+
+
 
     End Sub
 
@@ -241,6 +358,7 @@ Public Class frmRegistrarPatologia
     End Sub
 
     Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
+
         pnlPatologia.BringToFront()
         transicion.Hide(pnlPatologia)
         transicion.Show(pnlSintomas)
@@ -273,16 +391,25 @@ Public Class frmRegistrarPatologia
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
-        If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
-            Dim res = MsgBox("Hay información sin guardar, ¿Seguro desea salir?", vbYesNo)
-            If res = vbYes Then
+        If op = 0 Then
+            If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
+                Dim res = MsgBox("Hay información sin guardar, ¿Seguro desea salir?", vbYesNo)
+                If res = vbYes Then
+                    Principal.Singleton.CambiarTamaño(frmOpciones)
+                    Me.Dispose()
+                End If
+            Else
                 Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
             End If
-        Else
-            Principal.Singleton.CambiarTamaño(frmOpciones)
+
+        ElseIf op = 1 Then
+
+            Principal.Singleton.CambiarTamaño(frmListado)
             Me.Dispose()
+
         End If
+
     End Sub
 
     Private Sub txtDescPat_GotFocus(sender As Object, e As EventArgs) Handles txtDescPat.GotFocus
@@ -292,4 +419,5 @@ Public Class frmRegistrarPatologia
     Private Sub txtRecPat_GotFocus(sender As Object, e As EventArgs) Handles txtRecPat.GotFocus
         sepRec.LineColor = Colores.violeta_DARK
     End Sub
+
 End Class

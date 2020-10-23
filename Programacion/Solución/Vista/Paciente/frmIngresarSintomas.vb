@@ -8,6 +8,11 @@ Public Class frmIngresarSintomas
 
     Dim ScrollHelperSeleccionados As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Dim ScrollHelperTodos As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+    Private Shared instancia As frmIngresarSintomas
+
+    Public Shared Function ObtenerInstancia() As frmIngresarSintomas
+        Return instancia
+    End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -22,8 +27,10 @@ Public Class frmIngresarSintomas
     Public Sub New()
 
         InitializeComponent()
+        instancia = Me
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+        Datos_Temporales.instancia = instancia
 
     End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
@@ -90,6 +97,7 @@ Public Class frmIngresarSintomas
 
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
+        Datos_Temporales.instancia = instancia '
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs)

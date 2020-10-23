@@ -104,4 +104,8 @@ Public Class frmListadoChat
     Private Sub pnlTituloPatologia_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseUp
         Principal.Singleton.moverVentanaUp()
     End Sub
+
+    Private Sub dgvListadoChat_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListadoChat.CellContentClick
+
+    End Sub
 End Class

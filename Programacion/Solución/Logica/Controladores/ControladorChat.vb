@@ -52,9 +52,26 @@ Public Class ControladorChat
 
     End Function
 
-    Public Function obtenerRespuesta()
+    Public Function obtenerRespuesta() As Int16
+
 
         Return ModeloChat.Singleton.ObtenerRespuesta(Datos_Temporales.userLog)
+
+    End Function
+
+    Public Function VerificarMensaje() As Int16
+
+        Return ModeloChat.Singleton.VerificarMensaje(Datos_Temporales.userLog)
+
+    End Function
+
+    Public Function DenegarChat() As Boolean
+
+        Try
+            Return ModeloChat.Singleton.DenegarChat(Datos_Temporales.userLog)
+        Catch ex As Exception
+            Return False
+        End Try
 
     End Function
 

@@ -213,21 +213,21 @@ Public Class frmChat
                 Dim nuevoMensaje As New DataTable
                 Dim mensaje As String
 
-                For Each var As Form1 In FlowLayoutPanel1.Controls
+                'For Each var As Form1 In FlowLayoutPanel1.Controls
 
-                    nuevoMensaje.Clear()
-                    nuevoMensaje = contChat.GetMensaje(var.lblidChat.Text)
+                '    nuevoMensaje.Clear()
+                '    nuevoMensaje = contChat.GetMensaje(var.lblidChat.Text)
 
-                    If var.lblidChat.Text = nuevoMensaje.Rows.Item(0).Item(3) Then
+                '    If var.lblidChat.Text = nuevoMensaje.Rows.Item(0).Item(3) Then
 
-                        For Each columnaMensaje As DataRow In nuevoMensaje.Rows
-                            mensaje = columnaMensaje.Item(0)
-                        Next
+                '        For Each columnaMensaje As DataRow In nuevoMensaje.Rows
+                '            mensaje = columnaMensaje.Item(0)
+                '        Next
 
-                        var.lblMensaje.Text = mensaje
-                    End If
+                '        var.lblMensaje.Text = mensaje
+                '    End If
 
-                Next
+                'Next
                 txtMsg.Text = Nothing
 
             Else
@@ -447,5 +447,9 @@ Public Class frmChat
             Principal.Singleton.CambiarTamaño(frmListadoChat)
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
+
     End Sub
 End Class

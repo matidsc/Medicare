@@ -45,6 +45,8 @@ Public Class Datos_Temporales
     ''' <returns></returns>
     Public Shared Property horizontal As Int32
 
+    Public Shared instancia As Object
+
     Public Enum enumRol
         Paciente = 0
         Medico = 1

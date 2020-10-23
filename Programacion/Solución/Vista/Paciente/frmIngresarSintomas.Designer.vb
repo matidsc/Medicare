@@ -316,10 +316,10 @@ Partial Class frmIngresarSintomas
     Friend WithEvents dgvTodos As DataGridView
     Friend WithEvents SintomaTodos As DataGridViewTextBoxColumn
     Friend WithEvents pnlContenedor As Panel
-    Friend WithEvents pnlInstancia As Panel
     Friend WithEvents btnObtenerDiag As Guna.UI.WinForms.GunaButton
     Friend WithEvents scrollSeleccionados As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents scrollTodos As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
     Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
+    Public WithEvents pnlInstancia As Panel
 End Class

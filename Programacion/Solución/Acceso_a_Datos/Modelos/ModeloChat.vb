@@ -120,9 +120,29 @@ Public Class ModeloChat
     ''' <returns>Cantidad de mensajes existentes en una sala de chat.</returns>
     Public Function ObtenerRespuesta(usuario As String) As Int16
         'Dim consulta As String = "SELECT count(*) FROM mensaje WHERE idChat =  " + idChat.ToString
-        Dim consulta As String = "SELECT count(*) FROM mensaje where idChat IN (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " + usuario + ")"
+        Dim consulta As String = "SELECT count(*) FROM mensaje inner join salachat on salachat.idChat = mensaje.idChat where mensaje.idChat IN (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")" & " and finalizado = 0"
 
-        Return ModeloConsultas.Singleton.ConsultaCampo(consulta)
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
+    End Function
+
+    Public Function VerificarMensaje(usuario As String) As Int16
+        Dim consulta As String = "select count(*) from mensaje where cedula = " & usuario & " and idChat IN (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")"
+
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
+    End Function
+
+    Public Function DenegarChat(usuario As String) As Boolean
+
+        Dim consulta As String = "update salachat set finalizado = 1 where idchat = (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")"
+
+        If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+            ModeloConsultas.Singleton.InsertarSinParametros("COMMIT")
+            Return True
+        Else
+            ModeloConsultas.Singleton.InsertarSinParametros("ROLLBACK")
+            Return False
+        End If
+
     End Function
 
     ''' <summary>

@@ -51,7 +51,7 @@ Public Class frmObtenerDiagnostico
                 If chat.entrarChat(Datos_Temporales.userLog, Datos_Temporales.idchat) Then
 
                     MsgBox("Se ha enviado una solicitud de chat")
-                    frmBienvenidaPaciente.Timer1.Enabled = True
+                    'frmBienvenidaPaciente.Timer1.Enabled = True
                     solicitud = False
 
                 Else

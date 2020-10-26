@@ -30,6 +30,7 @@ Partial Class frmBienvenidaGestor
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.lblNA = New System.Windows.Forms.Label()
         Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
+        Me.UcDatosGestor1 = New Vista.UCDatosGestor()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -65,7 +66,6 @@ Partial Class frmBienvenidaGestor
         Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.UcDatosGestor1 = New Vista.UCDatosGestor()
         Me.pnlContenedor.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -132,7 +132,7 @@ Partial Class frmBienvenidaGestor
         Me.lblNA.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.lblNA.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNA.ForeColor = System.Drawing.Color.White
-        Me.lblNA.Location = New System.Drawing.Point(573, 2)
+        Me.lblNA.Location = New System.Drawing.Point(214, 21)
         Me.lblNA.Name = "lblNA"
         Me.lblNA.Size = New System.Drawing.Size(300, 420)
         Me.lblNA.TabIndex = 0
@@ -144,13 +144,21 @@ Partial Class frmBienvenidaGestor
         '
         Me.pnlFlow.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.pnlFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.pnlFlow.Location = New System.Drawing.Point(570, 0)
+        Me.pnlFlow.Location = New System.Drawing.Point(211, 19)
         Me.pnlFlow.Margin = New System.Windows.Forms.Padding(0)
         Me.pnlFlow.Name = "pnlFlow"
         Me.pnlFlow.Size = New System.Drawing.Size(335, 466)
         Me.pnlFlow.TabIndex = 26
         Me.pnlFlow.Visible = False
         Me.pnlFlow.WrapContents = False
+        '
+        'UcDatosGestor1
+        '
+        Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
+        Me.UcDatosGestor1.Name = "UcDatosGestor1"
+        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 83)
+        Me.UcDatosGestor1.TabIndex = 27
         '
         'Label9
         '
@@ -159,7 +167,7 @@ Partial Class frmBienvenidaGestor
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(402, 83)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(266, 29)
+        Me.Label9.Size = New System.Drawing.Size(329, 36)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "Buenas tardes, Rodrigo"
         '
@@ -519,7 +527,7 @@ Partial Class frmBienvenidaGestor
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(-1, 1)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(13, 13)
+        Me.Label11.Size = New System.Drawing.Size(17, 19)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "0"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -556,7 +564,7 @@ Partial Class frmBienvenidaGestor
         Me.lblNotificacion.ForeColor = System.Drawing.Color.White
         Me.lblNotificacion.Location = New System.Drawing.Point(0, 1)
         Me.lblNotificacion.Name = "lblNotificacion"
-        Me.lblNotificacion.Size = New System.Drawing.Size(13, 13)
+        Me.lblNotificacion.Size = New System.Drawing.Size(17, 19)
         Me.lblNotificacion.TabIndex = 0
         Me.lblNotificacion.Text = "0"
         Me.lblNotificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -647,14 +655,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
-        '
-        'UcDatosGestor1
-        '
-        Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
-        Me.UcDatosGestor1.Name = "UcDatosGestor1"
-        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 83)
-        Me.UcDatosGestor1.TabIndex = 27
         '
         'frmBienvenidaGestor
         '

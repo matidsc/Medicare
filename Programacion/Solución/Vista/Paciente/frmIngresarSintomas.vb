@@ -133,15 +133,16 @@ Public Class frmIngresarSintomas
 
                 If sin.guardarSintomas(Datos_Temporales.userLog, misSintomas) Then
 
-                    frmObtenerDiagnostico.dgvPosiblesDiagnosticos.DataSource = pat.obtenerPatologia(misSintomas)
+                    'frmObtenerDiagnostico.dgvPosiblesDiagnosticos.DataSource = pat.obtenerPatologia(misSintomas)
+                    Dim dt = pat.obtenerPatologia(misSintomas)
 
                     Dim nombreDiagnostico As New ArrayList
 
-                    For i As Integer = 0 To frmObtenerDiagnostico.dgvPosiblesDiagnosticos.RowCount - 1
+                    ' For i As Integer = 0 To frmObtenerDiagnostico.dgvPosiblesDiagnosticos.RowCount - 1
 
-                        nombreDiagnostico.Add(frmObtenerDiagnostico.dgvPosiblesDiagnosticos.Rows(i).Cells(0).Value.ToString)
+                    ' nombreDiagnostico.Add(frmObtenerDiagnostico.dgvPosiblesDiagnosticos.Rows(i).Cells(0).Value.ToString)
 
-                    Next
+                    ' Next
 
                     If pat.guardarDiagnostico(Datos_Temporales.userLog, nombreDiagnostico) Then
                         Dim frm As New frmObtenerDiagnostico

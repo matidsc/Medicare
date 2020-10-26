@@ -26,21 +26,27 @@ Partial Class frmListado
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.GunaButton3 = New Guna.UI.WinForms.GunaButton()
+        Me.GunaButton2 = New Guna.UI.WinForms.GunaButton()
+        Me.GunaButton4 = New Guna.UI.WinForms.GunaButton()
+        Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
         Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.lblCantSelecc = New System.Windows.Forms.Label()
-        Me.GunaButton4 = New Guna.UI.WinForms.GunaButton()
         Me.btnEliminarElementos = New Guna.UI.WinForms.GunaButton()
         Me.btnModificarElemento = New Guna.UI.WinForms.GunaButton()
         Me.btnSeleccionMultiple = New Guna.UI.WinForms.GunaButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.UcAsociar1 = New Vista.UCAsociar()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlContenedor.SuspendLayout()
+        Me.GunaElipsePanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,15 +54,18 @@ Partial Class frmListado
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.GunaButton4)
+        Me.pnlContenedor.Controls.Add(Me.GunaButton3)
+        Me.pnlContenedor.Controls.Add(Me.GunaElipsePanel1)
+        Me.pnlContenedor.Controls.Add(Me.GunaButton2)
         Me.pnlContenedor.Controls.Add(Me.lblBuscar)
-        Me.pnlContenedor.Controls.Add(Me.PictureBox1)
         Me.pnlContenedor.Controls.Add(Me.GunaTextBox2)
+        Me.pnlContenedor.Controls.Add(Me.PictureBox1)
         Me.pnlContenedor.Controls.Add(Me.btnAtras)
         Me.pnlContenedor.Controls.Add(Me.btnRegistrar)
         Me.pnlContenedor.Controls.Add(Me.scroll)
         Me.pnlContenedor.Controls.Add(Me.dgvListado)
         Me.pnlContenedor.Controls.Add(Me.lblCantSelecc)
-        Me.pnlContenedor.Controls.Add(Me.GunaButton4)
         Me.pnlContenedor.Controls.Add(Me.btnEliminarElementos)
         Me.pnlContenedor.Controls.Add(Me.btnModificarElemento)
         Me.pnlContenedor.Controls.Add(Me.btnSeleccionMultiple)
@@ -64,30 +73,140 @@ Partial Class frmListado
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
+        Me.pnlContenedor.Size = New System.Drawing.Size(1338, 813)
         Me.pnlContenedor.TabIndex = 156
+        '
+        'GunaElipsePanel1
+        '
+        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.GunaElipsePanel1.Controls.Add(Me.Label1)
+        Me.GunaElipsePanel1.Controls.Add(Me.GunaButton1)
+        Me.GunaElipsePanel1.Location = New System.Drawing.Point(40, 141)
+        Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(364, 133)
+        Me.GunaElipsePanel1.TabIndex = 0
+        '
+        'GunaButton3
+        '
+        Me.GunaButton3.AnimationHoverSpeed = 0.07!
+        Me.GunaButton3.AnimationSpeed = 0.03!
+        Me.GunaButton3.BackColor = System.Drawing.Color.Transparent
+        Me.GunaButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaButton3.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton3.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaButton3.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GunaButton3.Image = Nothing
+        Me.GunaButton3.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton3.Location = New System.Drawing.Point(40, 388)
+        Me.GunaButton3.Name = "GunaButton3"
+        Me.GunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.GunaButton3.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaButton3.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton3.OnHoverImage = Nothing
+        Me.GunaButton3.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton3.Radius = 10
+        Me.GunaButton3.Size = New System.Drawing.Size(91, 41)
+        Me.GunaButton3.TabIndex = 186
+        Me.GunaButton3.Text = "GESTORES"
+        Me.GunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaButton2
+        '
+        Me.GunaButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaButton2.AnimationSpeed = 0.03!
+        Me.GunaButton2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton2.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GunaButton2.Image = Nothing
+        Me.GunaButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton2.Location = New System.Drawing.Point(40, 345)
+        Me.GunaButton2.Name = "GunaButton2"
+        Me.GunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.GunaButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton2.OnHoverImage = Nothing
+        Me.GunaButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton2.Radius = 10
+        Me.GunaButton2.Size = New System.Drawing.Size(91, 41)
+        Me.GunaButton2.TabIndex = 185
+        Me.GunaButton2.Text = "PACIENTES"
+        Me.GunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaButton4
+        '
+        Me.GunaButton4.AnimationHoverSpeed = 0.07!
+        Me.GunaButton4.AnimationSpeed = 0.03!
+        Me.GunaButton4.BackColor = System.Drawing.Color.Transparent
+        Me.GunaButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaButton4.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton4.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaButton4.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GunaButton4.Image = Nothing
+        Me.GunaButton4.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton4.Location = New System.Drawing.Point(40, 91)
+        Me.GunaButton4.Name = "GunaButton4"
+        Me.GunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.GunaButton4.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaButton4.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton4.OnHoverImage = Nothing
+        Me.GunaButton4.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton4.Radius = 10
+        Me.GunaButton4.Size = New System.Drawing.Size(91, 41)
+        Me.GunaButton4.TabIndex = 183
+        Me.GunaButton4.Text = "FILTRAR"
+        Me.GunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaButton1
+        '
+        Me.GunaButton1.AnimationHoverSpeed = 0.07!
+        Me.GunaButton1.AnimationSpeed = 0.03!
+        Me.GunaButton1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton1.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GunaButton1.Image = Nothing
+        Me.GunaButton1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton1.Location = New System.Drawing.Point(8, 56)
+        Me.GunaButton1.Name = "GunaButton1"
+        Me.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton1.OnHoverImage = Nothing
+        Me.GunaButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton1.Radius = 10
+        Me.GunaButton1.Size = New System.Drawing.Size(91, 41)
+        Me.GunaButton1.TabIndex = 184
+        Me.GunaButton1.Text = "MÉDICOS"
+        Me.GunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblBuscar
         '
         Me.lblBuscar.AutoSize = True
         Me.lblBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.lblBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.lblBuscar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBuscar.ForeColor = System.Drawing.Color.Silver
-        Me.lblBuscar.Location = New System.Drawing.Point(259, 32)
+        Me.lblBuscar.Location = New System.Drawing.Point(259, 31)
         Me.lblBuscar.Name = "lblBuscar"
         Me.lblBuscar.Size = New System.Drawing.Size(46, 17)
         Me.lblBuscar.TabIndex = 191
         Me.lblBuscar.Text = "Buscar"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.buscar
-        Me.PictureBox1.Location = New System.Drawing.Point(218, 27)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
-        Me.PictureBox1.TabIndex = 176
-        Me.PictureBox1.TabStop = False
         '
         'GunaTextBox2
         '
@@ -108,6 +227,16 @@ Partial Class frmListado
         Me.GunaTextBox2.Size = New System.Drawing.Size(659, 38)
         Me.GunaTextBox2.TabIndex = 173
         Me.GunaTextBox2.TextOffsetX = 50
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.buscar
+        Me.PictureBox1.Location = New System.Drawing.Point(218, 27)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox1.TabIndex = 176
+        Me.PictureBox1.TabStop = False
         '
         'btnAtras
         '
@@ -139,11 +268,11 @@ Partial Class frmListado
         Me.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnRegistrar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnRegistrar.Image = Nothing
         Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRegistrar.Location = New System.Drawing.Point(380, 602)
+        Me.btnRegistrar.Location = New System.Drawing.Point(436, 666)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
@@ -151,9 +280,9 @@ Partial Class frmListado
         Me.btnRegistrar.OnHoverImage = Nothing
         Me.btnRegistrar.OnPressedColor = System.Drawing.Color.Black
         Me.btnRegistrar.Radius = 8
-        Me.btnRegistrar.Size = New System.Drawing.Size(311, 36)
+        Me.btnRegistrar.Size = New System.Drawing.Size(311, 44)
         Me.btnRegistrar.TabIndex = 189
-        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.Text = "REGISTRAR"
         Me.btnRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.btnRegistrar.Visible = False
         '
@@ -205,14 +334,14 @@ Partial Class frmListado
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvListado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvListado.Location = New System.Drawing.Point(22, 157)
+        Me.dgvListado.Location = New System.Drawing.Point(137, 187)
         Me.dgvListado.MultiSelect = False
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.RowHeadersVisible = False
         Me.dgvListado.RowHeadersWidth = 51
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListado.Size = New System.Drawing.Size(1025, 430)
+        Me.dgvListado.Size = New System.Drawing.Size(1025, 416)
         Me.dgvListado.TabIndex = 186
         '
         'lblCantSelecc
@@ -226,33 +355,6 @@ Partial Class frmListado
         Me.lblCantSelecc.TabIndex = 184
         Me.lblCantSelecc.Text = "0"
         Me.lblCantSelecc.Visible = False
-        '
-        'GunaButton4
-        '
-        Me.GunaButton4.AnimationHoverSpeed = 0.07!
-        Me.GunaButton4.AnimationSpeed = 0.03!
-        Me.GunaButton4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.GunaButton4.BorderColor = System.Drawing.Color.Black
-        Me.GunaButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.GunaButton4.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaButton4.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaButton4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GunaButton4.Image = Nothing
-        Me.GunaButton4.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaButton4.Location = New System.Drawing.Point(56, 91)
-        Me.GunaButton4.Name = "GunaButton4"
-        Me.GunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.GunaButton4.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaButton4.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaButton4.OnHoverImage = Nothing
-        Me.GunaButton4.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaButton4.Radius = 10
-        Me.GunaButton4.Size = New System.Drawing.Size(73, 41)
-        Me.GunaButton4.TabIndex = 183
-        Me.GunaButton4.Text = "FILTRAR"
-        Me.GunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnEliminarElementos
         '
@@ -340,7 +442,7 @@ Partial Class frmListado
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
+        Me.pnlInstancia.Size = New System.Drawing.Size(1338, 813)
         Me.pnlInstancia.TabIndex = 192
         '
         'UcAsociar1
@@ -352,12 +454,25 @@ Partial Class frmListado
         Me.UcAsociar1.TabIndex = 192
         Me.UcAsociar1.Visible = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.Label1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Silver
+        Me.Label1.Location = New System.Drawing.Point(30, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 17)
+        Me.Label1.TabIndex = 192
+        Me.Label1.Text = "Buscar"
+        '
         'frmListado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.ClientSize = New System.Drawing.Size(1338, 813)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.UcAsociar1)
         Me.Controls.Add(Me.pnlInstancia)
@@ -367,6 +482,8 @@ Partial Class frmListado
         Me.Text = "ListadoPatologias"
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
+        Me.GunaElipsePanel1.ResumeLayout(False)
+        Me.GunaElipsePanel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -387,4 +504,9 @@ Partial Class frmListado
     Friend WithEvents lblBuscar As Label
     Friend WithEvents UcAsociar1 As UCAsociar
     Friend WithEvents pnlInstancia As Panel
+    Friend WithEvents GunaElipsePanel1 As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents GunaButton3 As Guna.UI.WinForms.GunaButton
+    Friend WithEvents GunaButton2 As Guna.UI.WinForms.GunaButton
+    Friend WithEvents GunaButton1 As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Label1 As Label
 End Class

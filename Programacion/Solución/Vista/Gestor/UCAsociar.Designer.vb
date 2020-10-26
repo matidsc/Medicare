@@ -138,6 +138,7 @@ Partial Class UCAsociar
         'sintoma
         '
         Me.sintoma.HeaderText = "sintoma"
+        Me.sintoma.MinimumWidth = 6
         Me.sintoma.Name = "sintoma"
         Me.sintoma.ReadOnly = True
         '
@@ -189,6 +190,7 @@ Partial Class UCAsociar
         'sintomaSelec
         '
         Me.sintomaSelec.HeaderText = "sintomaSelec"
+        Me.sintomaSelec.MinimumWidth = 6
         Me.sintomaSelec.Name = "sintomaSelec"
         Me.sintomaSelec.ReadOnly = True
         '
@@ -256,8 +258,9 @@ Partial Class UCAsociar
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(437, 41)
+        Me.DataGridView1.Location = New System.Drawing.Point(519, 54)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.Size = New System.Drawing.Size(240, 138)
         Me.DataGridView1.TabIndex = 193
         '

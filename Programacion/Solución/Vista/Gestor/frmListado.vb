@@ -47,7 +47,8 @@ Public Class frmListado
                 Dim s As New ControladorSintoma
                 dgvListado.DataSource = s.listarSintomas
             Case 2
-
+                Dim u As New ControladorUsuario
+                dgvListado.DataSource = u.ListarUsuarios()
         End Select
 
     End Sub
@@ -73,11 +74,11 @@ Public Class frmListado
         If dgvListado.MultiSelect = True Then
 
             dgvListado.MultiSelect = False
-            btnSeleccionMultiple.Text = "activar selección múltiple"
+            btnSeleccionMultiple.Text = "ACTIVAR DESACTIVAR SELECCIÓN MÚLTIPLE"
 
         Else
             dgvListado.MultiSelect = True
-            btnSeleccionMultiple.Text = "desactivar selección múltiple"
+            btnSeleccionMultiple.Text = "DESACTIVAR SELECCIÓN MÚLTIPLE"
 
         End If
 
@@ -155,16 +156,17 @@ Public Class frmListado
 
         If dgvListado.MultiSelect = True And dgvListado.SelectedRows.Count > 1 Then
 
+            lblCantSelecc.Visible = True
             btnEliminarElementos.Enabled = True
             lblCantSelecc.Text = dgvListado.SelectedRows.Count.ToString
-            btnEliminarElementos.Text = "eliminar " & dgvListado.SelectedRows.Count.ToString & " " '& op & ""
+            btnEliminarElementos.Text = "ELIMINAR " & dgvListado.SelectedRows.Count.ToString & "ELEMENTOS" '& op & ""
             btnModificarElemento.Enabled = False
 
         ElseIf dgvListado.SelectedRows.Count = 1 Then
 
             btnEliminarElementos.Enabled = True
             btnModificarElemento.Enabled = True
-            btnEliminarElementos.Text = "eliminar elemento seleccionado"
+            btnEliminarElementos.Text = "ELIMINAR ELEMENTO SELECCIONADO"
 
             If dgvListado.MultiSelect = True Then
 
@@ -389,6 +391,16 @@ Public Class frmListado
     End Sub
 
     Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
+
+    End Sub
+
+    Private Sub GunaButton4_Click(sender As Object, e As EventArgs) Handles GunaButton4.Click
+        If GunaElipsePanel1.Height > 41 Then
+
+        End If
+    End Sub
+
+    Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
 
     End Sub
 End Class

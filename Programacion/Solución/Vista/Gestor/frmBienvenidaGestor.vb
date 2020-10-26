@@ -278,11 +278,14 @@ Public Class frmBienvenidaGestor
         End If
     End Sub
 
-    Private Sub UcDatosGestor1_Load(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
-
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        Dim frm As New frmListado(2)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmListado)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
     End Sub
 End Class

@@ -85,6 +85,11 @@ Public Class ModeloUsuario
         Return False
     End Function
 
+    Public Function listarUsuarios() As DataTable
+        Dim consulta = "SELECT nombre,pNom,sNom,pApe,sApe FROM usuario where bajaLogica=0"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+
     ''' <summary>
     ''' Subrutina encargada de setear una conexión en función del usuario logeado.
     ''' </summary>

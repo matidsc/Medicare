@@ -76,6 +76,9 @@ Public Class ControladorUsuario
         Return ModeloUsuario.Singleton.ReingresarUsuario(cedula)
 
     End Function
+    Public Function ListarUsuarios() As DataTable
+        Return ModeloUsuario.Singleton.listarUsuarios
+    End Function
 
 End Class
 

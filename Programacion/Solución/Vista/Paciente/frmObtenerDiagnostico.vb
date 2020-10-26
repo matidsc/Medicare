@@ -21,22 +21,28 @@ Public Class frmObtenerDiagnostico
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        TableLayoutPanel1.SuspendLayout()
+
+        For i = 0 To 10
+            TableLayoutPanel1.Controls.Add(New UCDiagnnostico)
+        Next
+        TableLayoutPanel1.ResumeLayout()
 
     End Sub
 
-    Private Sub dgvPosiblesDiagnosticos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPosiblesDiagnosticos.CellDoubleClick
+    Private Sub dgvPosiblesDiagnosticos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
 
-        If pat.informacionPatologia(dgvPosiblesDiagnosticos.CurrentCell.Value.ToString) Is Nothing Then
-            MsgBox("Error al obtener la descripción")
-        Else
-            ucRespuesta.lblNom.Text = dgvPosiblesDiagnosticos.CurrentCell.Value.ToString
-            ucRespuesta.lblDesc.Text = pat.informacionPatologia(dgvPosiblesDiagnosticos.CurrentCell.Value.ToString)
-            ucRespuesta.Visible = True
-        End If
+        'If pat.informacionPatologia(dgvPosiblesDiagnosticos.CurrentCell.Value.ToString) Is Nothing Then
+        '    MsgBox("Error al obtener la descripción")
+        'Else
+        '    ucRespuesta.lblNom.Text = dgvPosiblesDiagnosticos.CurrentCell.Value.ToString
+        '    ucRespuesta.lblDesc.Text = pat.informacionPatologia(dgvPosiblesDiagnosticos.CurrentCell.Value.ToString)
+        '    ucRespuesta.Visible = True
+        'End If
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
         Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
         solicitud = True
         Me.Dispose()
@@ -73,7 +79,15 @@ Public Class frmObtenerDiagnostico
         Me.WindowState = WindowState.Minimized
     End Sub
 
-    Private Sub dgvPosiblesDiagnosticos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPosiblesDiagnosticos.CellContentClick
+    Private Sub dgvPosiblesDiagnosticos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) 
+
+    End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
 
     End Sub
 End Class

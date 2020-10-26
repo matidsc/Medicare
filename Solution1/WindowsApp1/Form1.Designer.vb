@@ -18,7 +18,7 @@ Partial Class Form1
     Private components As System.ComponentModel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
+    'It can be modified using the Windows Form Designer.  margin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
@@ -31,10 +31,10 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.flowpnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.flowpnl.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flowpnl.Location = New System.Drawing.Point(71, 45)
+        Me.flowpnl.Margin = New System.Windows.Forms.Padding(100)
         Me.flowpnl.Name = "flowpnl"
-        Me.flowpnl.Size = New System.Drawing.Size(345, 513)
+        Me.flowpnl.Size = New System.Drawing.Size(883, 513)
         Me.flowpnl.TabIndex = 0
         '
         'Form1

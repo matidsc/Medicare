@@ -33,7 +33,7 @@
             .Margin = New Padding(10)
             .Cursor = Cursors.Hand
             .Tag = cantPaneles
-
+            .Margin = New System.Windows.Forms.Padding(100)
         End With
 
         roundedCorners(pnl)
@@ -262,6 +262,10 @@
         '    Next
 
         'Next
+
+    End Sub
+
+    Private Sub flowpnl_Paint(sender As Object, e As PaintEventArgs) Handles flowpnl.Paint
 
     End Sub
 End Class

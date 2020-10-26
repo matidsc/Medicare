@@ -92,7 +92,7 @@ Partial Class frmBienvenidaMedico
         Me.lblDesChat.ForeColor = System.Drawing.Color.White
         Me.lblDesChat.Location = New System.Drawing.Point(25, 85)
         Me.lblDesChat.Name = "lblDesChat"
-        Me.lblDesChat.Size = New System.Drawing.Size(398, 24)
+        Me.lblDesChat.Size = New System.Drawing.Size(505, 29)
         Me.lblDesChat.TabIndex = 1
         Me.lblDesChat.Text = "Ver lista de chats que tiene con sus pacientes "
         '
@@ -103,7 +103,7 @@ Partial Class frmBienvenidaMedico
         Me.lblChat.ForeColor = System.Drawing.Color.White
         Me.lblChat.Location = New System.Drawing.Point(22, 27)
         Me.lblChat.Name = "lblChat"
-        Me.lblChat.Size = New System.Drawing.Size(85, 37)
+        Me.lblChat.Size = New System.Drawing.Size(104, 46)
         Me.lblChat.TabIndex = 0
         Me.lblChat.Text = "Chat"
         '
@@ -116,7 +116,7 @@ Partial Class frmBienvenidaMedico
         Me.pnlMiHistorial.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pnlMiHistorial.Location = New System.Drawing.Point(36, 289)
         Me.pnlMiHistorial.Name = "pnlMiHistorial"
-        Me.pnlMiHistorial.Size = New System.Drawing.Size(224, 193)
+        Me.pnlMiHistorial.Size = New System.Drawing.Size(240, 193)
         Me.pnlMiHistorial.TabIndex = 2
         '
         'pnlDecMiHistorial
@@ -145,7 +145,7 @@ Partial Class frmBienvenidaMedico
         Me.lblMiHistorial.ForeColor = System.Drawing.Color.White
         Me.lblMiHistorial.Location = New System.Drawing.Point(22, 33)
         Me.lblMiHistorial.Name = "lblMiHistorial"
-        Me.lblMiHistorial.Size = New System.Drawing.Size(175, 37)
+        Me.lblMiHistorial.Size = New System.Drawing.Size(218, 46)
         Me.lblMiHistorial.TabIndex = 0
         Me.lblMiHistorial.Text = "Mi Historial"
         '
@@ -168,7 +168,7 @@ Partial Class frmBienvenidaMedico
         Me.lblAjustes.ForeColor = System.Drawing.Color.White
         Me.lblAjustes.Location = New System.Drawing.Point(22, 33)
         Me.lblAjustes.Name = "lblAjustes"
-        Me.lblAjustes.Size = New System.Drawing.Size(122, 37)
+        Me.lblAjustes.Size = New System.Drawing.Size(152, 46)
         Me.lblAjustes.TabIndex = 0
         Me.lblAjustes.Text = "Ajustes"
         '
@@ -229,7 +229,7 @@ Partial Class frmBienvenidaMedico
         Me.lblMiPerfil.ForeColor = System.Drawing.Color.White
         Me.lblMiPerfil.Location = New System.Drawing.Point(3, 33)
         Me.lblMiPerfil.Name = "lblMiPerfil"
-        Me.lblMiPerfil.Size = New System.Drawing.Size(131, 37)
+        Me.lblMiPerfil.Size = New System.Drawing.Size(164, 46)
         Me.lblMiPerfil.TabIndex = 0
         Me.lblMiPerfil.Text = "Mi Perfil"
         '
@@ -271,7 +271,7 @@ Partial Class frmBienvenidaMedico
         Me.lblAyuda.ForeColor = System.Drawing.Color.White
         Me.lblAyuda.Location = New System.Drawing.Point(11, 27)
         Me.lblAyuda.Name = "lblAyuda"
-        Me.lblAyuda.Size = New System.Drawing.Size(108, 37)
+        Me.lblAyuda.Size = New System.Drawing.Size(133, 46)
         Me.lblAyuda.TabIndex = 0
         Me.lblAyuda.Text = "Ayuda"
         '
@@ -292,7 +292,7 @@ Partial Class frmBienvenidaMedico
         Me.lblTitulo.ForeColor = System.Drawing.Color.White
         Me.lblTitulo.Location = New System.Drawing.Point(59, 38)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
+        Me.lblTitulo.Size = New System.Drawing.Size(277, 36)
         Me.lblTitulo.TabIndex = 25
         Me.lblTitulo.Text = "Bienvenido, Médico"
         '
@@ -354,7 +354,7 @@ Partial Class frmBienvenidaMedico
         Me.lblPatologias.ForeColor = System.Drawing.Color.White
         Me.lblPatologias.Location = New System.Drawing.Point(11, 27)
         Me.lblPatologias.Name = "lblPatologias"
-        Me.lblPatologias.Size = New System.Drawing.Size(167, 37)
+        Me.lblPatologias.Size = New System.Drawing.Size(208, 46)
         Me.lblPatologias.TabIndex = 0
         Me.lblPatologias.Text = "Patologías"
         '

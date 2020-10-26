@@ -189,3 +189,13 @@ C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Acceso_a_Da
 C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
 C:\Users\rpere\Downloads\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.Resources.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.GenerateResource.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.CoreCompileInputs.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache

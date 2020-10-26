@@ -157,3 +157,35 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.xml
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.pdb
 C:\Users\rpere\OneDrive\Escritorio\Proyecto Prog\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Guna.UI.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.exe.config
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppPaciente.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroFramework.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MaterialSkin.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroSet UI.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.exe.config
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe.config
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.vbprojAssemblyReference.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.main.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.Resources.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.vbproj.GenerateResource.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.vbproj.CoreCompileInputs.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.vbproj.CopyComplete
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\obj\Debug\AppPaciente.pdb

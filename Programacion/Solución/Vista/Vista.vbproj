@@ -204,18 +204,6 @@
     <Compile Include="Gestor\frmBienvenidaGestor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestor\frmModificarPatologia.Designer.vb">
-      <DependentUpon>frmModificarPatologia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Gestor\frmModificarPatologia.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestor\frmModificarSintoma.Designer.vb">
-      <DependentUpon>frmModificarSintoma.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Gestor\frmModificarSintoma.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Gestor\UCAsociar.Designer.vb">
       <DependentUpon>UCAsociar.vb</DependentUpon>
     </Compile>
@@ -232,18 +220,12 @@
       <DependentUpon>UCHabilitarGestor.vb</DependentUpon>
     </Compile>
     <Compile Include="Gestor\UCHabilitarGestor.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Gestor\UCHabilitarPaciente.Designer.vb">
       <DependentUpon>UCHabilitarPaciente.vb</DependentUpon>
     </Compile>
     <Compile Include="Gestor\UCHabilitarPaciente.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Gestor\UCModificar.Designer.vb">
-      <DependentUpon>UCModificar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Gestor\UCModificar.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Medico\Componentes Chat\Form1.Designer.vb">
@@ -353,6 +335,12 @@
     <Compile Include="Paciente\frmRegistroPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Paciente\UCDiagnnostico.Designer.vb">
+      <DependentUpon>UCDiagnnostico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\UCDiagnnostico.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Paciente\UserControl1.Designer.vb">
       <DependentUpon>UserControl1.vb</DependentUpon>
     </Compile>
@@ -406,12 +394,6 @@
     <EmbeddedResource Include="Gestor\frmBienvenidaGestor.resx">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\frmModificarPatologia.resx">
-      <DependentUpon>frmModificarPatologia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\frmModificarSintoma.resx">
-      <DependentUpon>frmModificarSintoma.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Gestor\UCAsociar.resx">
       <DependentUpon>UCAsociar.vb</DependentUpon>
     </EmbeddedResource>
@@ -423,9 +405,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\UCHabilitarPaciente.resx">
       <DependentUpon>UCHabilitarPaciente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestor\UCModificar.resx">
-      <DependentUpon>UCModificar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -492,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmRegistroPaciente.resx">
       <DependentUpon>frmRegistroPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\UCDiagnnostico.resx">
+      <DependentUpon>UCDiagnnostico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\UserControl1.resx">
       <DependentUpon>UserControl1.vb</DependentUpon>

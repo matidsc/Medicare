@@ -102,3 +102,24 @@ C:\Users\Mat\Desktop\Pruebas\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.
 C:\Users\Mat\Desktop\Pruebas\Solution1\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\Mat\Desktop\Pruebas\Solution1\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\Mat\Desktop\Pruebas\Solution1\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\bin\Debug\WinFormAnimation.dll
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbprojAssemblyReference.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.Form1.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.Form2.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.Form3.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.frmListado.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.frmLogin.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.SplashScreen1.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.UCPacientes.resources
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CoreCompileInputs.cache
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CopyComplete
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Agustín Pérez\Desktop\PruebasDesign\Solution1\WindowsApp1\obj\Debug\WindowsApp1.pdb

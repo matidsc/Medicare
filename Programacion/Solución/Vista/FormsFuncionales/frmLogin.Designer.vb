@@ -25,6 +25,7 @@ Partial Class frmLogin
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblContraseña = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
@@ -38,7 +39,6 @@ Partial Class frmLogin
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnlInstancia.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +85,17 @@ Partial Class frmLogin
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(880, 500)
         Me.pnlContenedor.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(221, 278)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 33)
+        Me.Button1.TabIndex = 54
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lblContraseña
         '
@@ -274,17 +285,6 @@ Partial Class frmLogin
         Me.lblApp.TabIndex = 40
         Me.lblApp.Text = "APLICACION"
         Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(221, 278)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 33)
-        Me.Button1.TabIndex = 54
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'frmLogin
         '

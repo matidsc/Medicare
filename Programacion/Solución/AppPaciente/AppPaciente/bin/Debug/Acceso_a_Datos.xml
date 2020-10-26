@@ -441,7 +441,7 @@ Clase encargada de generar la conexión con la base de datos.
  <param name="nombre"></param>
  <returns>Descripción de la patología seleccionada</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloPatologia.GuardarDiagnostico(System.String,System.Collections.ArrayList)">
+<member name="M:Acceso_a_Datos.ModeloPatologia.GuardarDiagnostico(System.String,System.Data.DataTable)">
  <summary>
  Función encargada de registrar las patologías asociadas a los síntomas del paciente.
  </summary>

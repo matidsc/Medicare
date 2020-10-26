@@ -106,9 +106,14 @@ Public Class ControladorPatologia
 
     End Function
 
-    Public Function guardarDiagnostico(usuario As String, nombreDiagnostico As ArrayList) As Boolean
+    Public Function guardarDiagnostico(usuario As String, nombreDiagnostico As DataTable) As Boolean
 
-        Return ModeloPatologia.Singleton.GuardarDiagnostico(usuario, nombreDiagnostico)
+        Try
+            Return ModeloPatologia.Singleton.GuardarDiagnostico(usuario, nombreDiagnostico)
+        Catch ex As Exception
+            Return False
+        End Try
+
 
     End Function
 

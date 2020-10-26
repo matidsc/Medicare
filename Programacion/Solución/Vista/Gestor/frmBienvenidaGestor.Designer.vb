@@ -167,7 +167,7 @@ Partial Class frmBienvenidaGestor
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(402, 83)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(329, 36)
+        Me.Label9.Size = New System.Drawing.Size(266, 29)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "Buenas tardes, Rodrigo"
         '
@@ -527,7 +527,7 @@ Partial Class frmBienvenidaGestor
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(-1, 1)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(17, 19)
+        Me.Label11.Size = New System.Drawing.Size(13, 13)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "0"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -564,7 +564,7 @@ Partial Class frmBienvenidaGestor
         Me.lblNotificacion.ForeColor = System.Drawing.Color.White
         Me.lblNotificacion.Location = New System.Drawing.Point(0, 1)
         Me.lblNotificacion.Name = "lblNotificacion"
-        Me.lblNotificacion.Size = New System.Drawing.Size(17, 19)
+        Me.lblNotificacion.Size = New System.Drawing.Size(13, 13)
         Me.lblNotificacion.TabIndex = 0
         Me.lblNotificacion.Text = "0"
         Me.lblNotificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

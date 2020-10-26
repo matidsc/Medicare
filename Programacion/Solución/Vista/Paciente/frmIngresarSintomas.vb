@@ -23,6 +23,8 @@ Public Class frmIngresarSintomas
             dgvTodos.Rows.Add(sintoma)
         Next
 
+        dgvTodos.Sort(dgvTodos.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+
     End Sub
 
     Public Sub New()
@@ -31,7 +33,6 @@ Public Class frmIngresarSintomas
         instancia = Me
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
-        Datos_Temporales.instancia = instancia
 
     End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
@@ -98,7 +99,6 @@ Public Class frmIngresarSintomas
 
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
-        Datos_Temporales.instancia = instancia '
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs)
@@ -113,6 +113,7 @@ Public Class frmIngresarSintomas
 
 
     Private Sub btnObtenerDiag_Click(sender As Object, e As EventArgs) Handles btnObtenerDiag.Click
+
         Dim misSintomas As New ArrayList
         Dim pat As New ControladorPatologia
         Dim sin As New ControladorSintoma
@@ -129,40 +130,24 @@ Public Class frmIngresarSintomas
 
         If misSintomas.Count > 0 Then
 
-            If pat.obtenerPatologia(misSintomas).Rows.Count > 0 Then
+            Dim dt = pat.obtenerPatologia(misSintomas)
 
-                If sin.guardarSintomas(Datos_Temporales.userLog, misSintomas) Then
-
-                    'frmObtenerDiagnostico.dgvPosiblesDiagnosticos.DataSource = pat.obtenerPatologia(misSintomas)
-                    Dim dt = pat.obtenerPatologia(misSintomas)
-
-                    Dim nombreDiagnostico As New ArrayList
-
-                    ' For i As Integer = 0 To frmObtenerDiagnostico.dgvPosiblesDiagnosticos.RowCount - 1
-
-                    ' nombreDiagnostico.Add(frmObtenerDiagnostico.dgvPosiblesDiagnosticos.Rows(i).Cells(0).Value.ToString)
-
-                    ' Next
-
-                    If pat.guardarDiagnostico(Datos_Temporales.userLog, nombreDiagnostico) Then
-                        Dim frm As New frmObtenerDiagnostico
-                        Me.SuspendLayout()
-                        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                        Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
-                        frm.Show()
-                        pnlContenedor.Hide()
-                        pnlInstancia.Show()
-                        Me.ResumeLayout()
-                    Else
-                        MsgBox("Error al ingresar el diagnóstico")
-
-                    End If
+            If dt.Rows.Count > 0 Then
 
 
-                Else
-                    MsgBox("Error al registrar los síntomas")
-                End If
 
+
+                Dim frm As New frmObtenerDiagnostico(dt, misSintomas)
+                    Me.SuspendLayout()
+                    Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+                    Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+                    frm.Show()
+                    pnlContenedor.Hide()
+                    pnlInstancia.Show()
+                Me.ResumeLayout()
+
+                dt.Clear()
+                misSintomas.Clear()
             Else
                 MsgBox("No se encontraron patologías que contenga los síntomas seleccionados")
 
@@ -181,9 +166,5 @@ Public Class frmIngresarSintomas
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
         Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
         Me.Dispose()
-    End Sub
-
-    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
-
     End Sub
 End Class

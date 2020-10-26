@@ -25,12 +25,15 @@ Partial Class UCDiagnnostico
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCDiagnnostico))
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
-        Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.lblNom = New System.Windows.Forms.Label()
-        Me.btnRegistro = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.lblRecomendacion = New System.Windows.Forms.Label()
         Me.lblPNom = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.txtRecomendacion = New System.Windows.Forms.TextBox()
+        Me.pnlPatologia = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.pnlWrap = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.btnSintomas = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.pnlWrap.SuspendLayout()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -38,80 +41,23 @@ Partial Class UCDiagnnostico
         Me.GunaElipse1.Radius = 20
         Me.GunaElipse1.TargetControl = Me
         '
-        'lblDescripcion
-        '
-        Me.lblDescripcion.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblDescripcion.Location = New System.Drawing.Point(30, 27)
-        Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(195, 79)
-        Me.lblDescripcion.TabIndex = 189
-        Me.lblDescripcion.Text = "Nombre"
-        Me.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'lblNom
         '
         Me.lblNom.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblNom.Location = New System.Drawing.Point(20, 118)
+        Me.lblNom.Location = New System.Drawing.Point(20, 28)
         Me.lblNom.Name = "lblNom"
         Me.lblNom.Size = New System.Drawing.Size(225, 79)
         Me.lblNom.TabIndex = 190
-        Me.lblNom.Text = "Descripción"
+        Me.lblNom.Text = "nom"
         Me.lblNom.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'btnRegistro
-        '
-        Me.btnRegistro.Animated = True
-        Me.btnRegistro.AnimationHoverSpeed = 0.07!
-        Me.btnRegistro.AnimationSpeed = 0.03!
-        Me.btnRegistro.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistro.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.btnRegistro.BorderColor = System.Drawing.Color.Black
-        Me.btnRegistro.CheckedBaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnRegistro.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btnRegistro.CheckedForeColor = System.Drawing.Color.White
-        Me.btnRegistro.CheckedImage = CType(resources.GetObject("btnRegistro.CheckedImage"), System.Drawing.Image)
-        Me.btnRegistro.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRegistro.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnRegistro.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistro.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistro.ForeColor = System.Drawing.Color.White
-        Me.btnRegistro.Image = Nothing
-        Me.btnRegistro.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRegistro.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnRegistro.Location = New System.Drawing.Point(50, 411)
-        Me.btnRegistro.Name = "btnRegistro"
-        Me.btnRegistro.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.btnRegistro.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnRegistro.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnRegistro.OnHoverImage = Nothing
-        Me.btnRegistro.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnRegistro.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRegistro.Radius = 5
-        Me.btnRegistro.Size = New System.Drawing.Size(165, 50)
-        Me.btnRegistro.TabIndex = 191
-        Me.btnRegistro.Text = "VER SÍNTOMAS"
-        Me.btnRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lblRecomendacion
-        '
-        Me.lblRecomendacion.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecomendacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblRecomendacion.Location = New System.Drawing.Point(30, 279)
-        Me.lblRecomendacion.Name = "lblRecomendacion"
-        Me.lblRecomendacion.Size = New System.Drawing.Size(204, 79)
-        Me.lblRecomendacion.TabIndex = 192
-        Me.lblRecomendacion.Text = "Prioridad"
-        Me.lblRecomendacion.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblPNom
         '
         Me.lblPNom.AutoSize = True
         Me.lblPNom.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPNom.ForeColor = System.Drawing.Color.Silver
-        Me.lblPNom.Location = New System.Drawing.Point(21, 75)
+        Me.lblPNom.ForeColor = System.Drawing.Color.White
+        Me.lblPNom.Location = New System.Drawing.Point(21, 99)
         Me.lblPNom.Name = "lblPNom"
         Me.lblPNom.Size = New System.Drawing.Size(87, 20)
         Me.lblPNom.TabIndex = 194
@@ -121,37 +67,121 @@ Partial Class UCDiagnnostico
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(31, 235)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(21, 235)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 20)
+        Me.Label1.Size = New System.Drawing.Size(116, 20)
         Me.Label1.TabIndex = 195
-        Me.Label1.Text = "Descripción"
+        Me.Label1.Text = "Recomendación"
+        '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDescripcion.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcion.ForeColor = System.Drawing.Color.Silver
+        Me.txtDescripcion.Location = New System.Drawing.Point(25, 133)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(210, 88)
+        Me.txtDescripcion.TabIndex = 196
+        '
+        'txtRecomendacion
+        '
+        Me.txtRecomendacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.txtRecomendacion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtRecomendacion.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRecomendacion.ForeColor = System.Drawing.Color.Silver
+        Me.txtRecomendacion.Location = New System.Drawing.Point(25, 298)
+        Me.txtRecomendacion.Multiline = True
+        Me.txtRecomendacion.Name = "txtRecomendacion"
+        Me.txtRecomendacion.Size = New System.Drawing.Size(210, 88)
+        Me.txtRecomendacion.TabIndex = 197
+        '
+        'pnlPatologia
+        '
+        Me.pnlPatologia.BackColor = System.Drawing.Color.Transparent
+        Me.pnlPatologia.BaseColor = System.Drawing.Color.Lime
+        Me.pnlPatologia.Location = New System.Drawing.Point(0, 0)
+        Me.pnlPatologia.Name = "pnlPatologia"
+        Me.pnlPatologia.Size = New System.Drawing.Size(582, 486)
+        Me.pnlPatologia.TabIndex = 199
+        Me.pnlPatologia.Visible = False
+        '
+        'pnlWrap
+        '
+        Me.pnlWrap.BackColor = System.Drawing.Color.Transparent
+        Me.pnlWrap.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.pnlWrap.Controls.Add(Me.txtRecomendacion)
+        Me.pnlWrap.Controls.Add(Me.txtDescripcion)
+        Me.pnlWrap.Controls.Add(Me.Label1)
+        Me.pnlWrap.Controls.Add(Me.lblPNom)
+        Me.pnlWrap.Controls.Add(Me.btnSintomas)
+        Me.pnlWrap.Controls.Add(Me.lblNom)
+        Me.pnlWrap.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlWrap.Location = New System.Drawing.Point(0, 0)
+        Me.pnlWrap.Name = "pnlWrap"
+        Me.pnlWrap.Size = New System.Drawing.Size(262, 486)
+        Me.pnlWrap.TabIndex = 200
+        '
+        'btnSintomas
+        '
+        Me.btnSintomas.Animated = True
+        Me.btnSintomas.AnimationHoverSpeed = 0.07!
+        Me.btnSintomas.AnimationSpeed = 0.03!
+        Me.btnSintomas.BackColor = System.Drawing.Color.Transparent
+        Me.btnSintomas.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnSintomas.BorderColor = System.Drawing.Color.Black
+        Me.btnSintomas.CheckedBaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnSintomas.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnSintomas.CheckedForeColor = System.Drawing.Color.White
+        Me.btnSintomas.CheckedImage = CType(resources.GetObject("btnSintomas.CheckedImage"), System.Drawing.Image)
+        Me.btnSintomas.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnSintomas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSintomas.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnSintomas.FocusedColor = System.Drawing.Color.Empty
+        Me.btnSintomas.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSintomas.ForeColor = System.Drawing.Color.White
+        Me.btnSintomas.Image = Nothing
+        Me.btnSintomas.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnSintomas.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnSintomas.Location = New System.Drawing.Point(49, 411)
+        Me.btnSintomas.Name = "btnSintomas"
+        Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnSintomas.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnSintomas.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnSintomas.OnHoverImage = Nothing
+        Me.btnSintomas.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnSintomas.OnPressedColor = System.Drawing.Color.Black
+        Me.btnSintomas.Radius = 5
+        Me.btnSintomas.Size = New System.Drawing.Size(165, 50)
+        Me.btnSintomas.TabIndex = 191
+        Me.btnSintomas.Text = "VER SÍNTOMAS"
+        Me.btnSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'UCDiagnnostico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lblPNom)
-        Me.Controls.Add(Me.lblRecomendacion)
-        Me.Controls.Add(Me.btnRegistro)
-        Me.Controls.Add(Me.lblNom)
-        Me.Controls.Add(Me.lblDescripcion)
+        Me.Controls.Add(Me.pnlWrap)
+        Me.Controls.Add(Me.pnlPatologia)
         Me.Margin = New System.Windows.Forms.Padding(10, 5, 10, 5)
         Me.Name = "UCDiagnnostico"
         Me.Size = New System.Drawing.Size(262, 486)
+        Me.pnlWrap.ResumeLayout(False)
+        Me.pnlWrap.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
-    Friend WithEvents lblDescripcion As Label
     Friend WithEvents lblNom As Label
-    Friend WithEvents btnRegistro As Guna.UI.WinForms.GunaAdvenceButton
-    Friend WithEvents lblRecomendacion As Label
+    Friend WithEvents btnSintomas As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents Label1 As Label
     Friend WithEvents lblPNom As Label
+    Friend WithEvents txtRecomendacion As TextBox
+    Friend WithEvents txtDescripcion As TextBox
+    Friend WithEvents pnlPatologia As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents pnlWrap As Guna.UI.WinForms.GunaElipsePanel
 End Class

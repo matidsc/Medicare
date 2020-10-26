@@ -237,7 +237,7 @@ Public Class ModeloPatologia
 
         Dim parametros As String
         Dim consulta As String = "
-                                SELECT p.nombre
+                                SELECT p.nombre,p.descripcion,p.recomendacion
                                 FROM patologia p, sintoma s, patologia_contiene_sintoma ps
                                 WHERE p.idPatologia = ps.idPatologia AND s.idSintoma = ps.idSintoma AND p.bajalogica = 0 
                                 AND s.nombre IN ("
@@ -270,16 +270,16 @@ Public Class ModeloPatologia
     ''' <param name="usuario"></param>
     ''' <param name="diagnosticos"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function GuardarDiagnostico(usuario As String, diagnosticos As ArrayList) As Boolean
+    Public Function GuardarDiagnostico(usuario As String, diagnosticos As DataTable) As Boolean
 
         Dim consulta As String
 
         Try
-            For Each nom In diagnosticos
+            For Each nom As DataRow In diagnosticos.Rows
                 consulta = "
                     INSERT INTO paciente_obtiene_diagnostico (cedulaPaciente, idPatologia, fecha) 
-                    SELECT " & usuario & ", p.idPatologia, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm") & "' 
-                    FROM patologia p WHERE p.nombre = '" & nom & "'"
+                    SELECT " & usuario & ", p.idPatologia, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "' 
+                    FROM patologia p WHERE p.nombre = '" & nom.Item(0) & "'"
 
                 ModeloConsultas.Singleton.InsertarSinParametros(consulta)
             Next

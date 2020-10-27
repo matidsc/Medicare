@@ -31,7 +31,7 @@ Public Class Principal
     ''' </summary>
     ''' <param name="ventana"></param>
     ''' <param name="formInterno"></param>
-    Public Sub CargarVentana(ventana As Panel, formInterno As Form)
+    Public Sub CargarVentana(ventana As Panel, formInterno As form)
         ventana.Controls.Clear()
         formInterno.TopLevel = False
         formInterno.Dock = DockStyle.Fill
@@ -196,7 +196,17 @@ Public Class Principal
 
         Return False
     End Function
+    Public Function verificarFecha(fecha As MaskedTextBox)
+        Dim plano As String
+        plano = fecha.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals
 
+        If plano <> Nothing Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
     ''' <summary>
     ''' Función encargada de verificar si los teléfonos ingresados son correctos.
     ''' </summary>
@@ -223,6 +233,40 @@ Public Class Principal
         Next
 
         Return True
+    End Function
+
+public Function Base64(path As String)
+
+        Dim convert64 As String = ""
+
+        If path <> Nothing Then
+
+            Dim stream As New IO.MemoryStream
+            Dim bitmap As New Bitmap(path)
+            Dim imgFormat As Imaging.ImageFormat = Imaging.ImageFormat.Jpeg
+
+            bitmap.Save(stream, imgFormat)
+            convert64 = Convert.ToBase64String(stream.ToArray)
+
+            Return convert64
+        Else
+            Return convert64
+        End If
+
+    End Function
+
+    Public Function Base64ToImage(base64 As String) As Image
+        Dim img As Image
+        Dim MS As MemoryStream = New MemoryStream
+        Dim b64 As String = base64.Replace(" ", "+")
+        Dim b() As Byte
+
+        b = Convert.FromBase64String(b64)
+        MS = New MemoryStream(b)
+
+        img = Image.FromStream(MS)
+
+        Return img
     End Function
 
     ''' <summary>

@@ -1,4 +1,6 @@
-﻿Public Class UCDiagnnostico
+﻿Imports Logica
+Public Class UCDiagnnostico
+    Private pat As New controladorpatologia
     Public Sub New(nombre As String, descripcion As String, recomendacion As String)
 
         InitializeComponent()
@@ -7,21 +9,47 @@
         txtDescripcion.Text = descripcion
         txtRecomendacion.Text = recomendacion
 
-        AddHandler btnSintomas.Click, AddressOf evento
+
     End Sub
     Private Sub lblNom_Click(sender As Object, e As EventArgs) Handles lblNom.Click
 
     End Sub
 
-    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
+
+    Private Sub btnSintomas_Click(sender As Object, e As EventArgs)
+
+
+
+
+        'Dim frm As New UCPatologia
+        'Me.SuspendLayout()
+        'Principal.Singleton.CargarVentana(frmObtenerDiagnostico.pnlInstancia, frm)
+        'Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+        'frm.Show()
+        'frmObtenerDiagnostico.pnlContenedor.Hide()
+        'frmObtenerDiagnostico.pnlInstancia.Show()
+        'Me.ResumeLayout()
+
+        'uc.Show()
+
         'frmObtenerDiagnostico.UcPatologia1.Top = Me.Top
         'frmObtenerDiagnostico.UcPatologia1.Left = Me.Left + Me.Width
 
     End Sub
-    Public Sub evento(sender As Object, e As EventArgs)
 
-        frmObtenerDiagnostico.Panel1.BackColor = Color.Red
-        frmObtenerDiagnostico.UcPatologia1.BringToFront()
-        MsgBox("hola")
+    Private Sub btnSintomas_Click_1(sender As Object, e As EventArgs) Handles btnSintomas.Click
+        Dim dt = pat.informacionPatologia(lblNom.Text)
+
+        Dim uc = New UCPatologia(lblNom.Text,)
+        Me.ParentForm.Controls.Add(uc)
+        uc.BringToFront()
+        uc.Show()
+        uc.Top = (Me.Height / 2) - (uc.Height / 2)
+        uc.Left = (Me.Width / 2) - (uc.Width / 2)
+        'Dim uc As New UCPatologia
+        'Me.Hide()
+        'Dim ParentForm As frmObtenerDiagnostico = (Me.FindForm)
+        'ParentForm.Controls.Add(uc)
+        'MsgBox(ParentForm.ToString)
     End Sub
 End Class

@@ -17,9 +17,10 @@ Public Class ControladorUsuario
     Property _segundo_apellido As String
     Property _telefono As ArrayList
     Property _email As String
+    Property _imagen As String
 
 
-    Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String, telefono As ArrayList, email As String)
+    Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String, telefono As ArrayList, email As String, imagen As String)
 
         Me._ci = ci
         Me._contraseña = contraseña
@@ -29,10 +30,11 @@ Public Class ControladorUsuario
         Me._segundo_apellido = SApe
         Me._telefono = telefono
         Me._email = email
+        Me._imagen = imagen
 
     End Sub
 
-    Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String, email As String)
+    Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String, email As String, imagen As String)
 
         Me._ci = ci
         Me._contraseña = contraseña
@@ -41,19 +43,19 @@ Public Class ControladorUsuario
         Me._primer_apellido = PApe
         Me._segundo_apellido = SApe
         Me._email = email
-
+        Me._imagen = imagen
     End Sub
 
-    Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String)
+    'Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String) CONSTRUCTOR SIN EMAIL PARA MEDICO??
 
-        Me._ci = ci
-        Me._contraseña = contraseña
-        Me._primer_nombre = pNom
-        Me._segundo_nombre = Snom
-        Me._primer_apellido = PApe
-        Me._segundo_apellido = SApe
+    '    Me._ci = ci
+    '    Me._contraseña = contraseña
+    '    Me._primer_nombre = pNom
+    '    Me._segundo_nombre = Snom
+    '    Me._primer_apellido = PApe
+    '    Me._segundo_apellido = SApe
 
-    End Sub
+    'End Sub
 
     Public Function verificarUsuario(usuario As String, pass As String) As Boolean
 

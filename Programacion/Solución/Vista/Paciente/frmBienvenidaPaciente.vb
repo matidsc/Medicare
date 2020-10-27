@@ -86,16 +86,6 @@ Public Class frmBienvenidaPaciente
 
     End Sub
 
-    Private Sub btnIngresarSintomas_Click(sender As Object, e As EventArgs) Handles btnIngresarSintomas.Click
-        Dim frm As New frmIngresarSintomas
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
-    End Sub
 
     Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
 
@@ -105,7 +95,7 @@ Public Class frmBienvenidaPaciente
 
     End Sub
 
-    Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs)
+    Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs) Handles btnReanudar.Click
         If chatComenzo Then
             Dim frm As New frmChat
             Me.SuspendLayout()
@@ -159,4 +149,19 @@ Public Class frmBienvenidaPaciente
 
     End Sub
 
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+        Dim frm As New frmIngresarSintomas
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Dim frm As New frmVerPerfil
+        frm.Show()
+    End Sub
 End Class

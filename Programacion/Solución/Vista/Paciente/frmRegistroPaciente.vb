@@ -6,23 +6,27 @@ Public Class frmRegistroPaciente
     Dim seg As New Encriptar
     Dim pass As String
     Dim sexo As String
+    Dim path As String
 
     Public Sub New()
         InitializeComponent()
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
     End Sub
 
-    Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles mrbtnSolicitarCuenta.Click
+    Private Sub btnSoli_Click(sender As Object, e As EventArgs) Handles btnSoli.Click
 
-        If txtCI.Text <> "" And txtPass.Text <> "" And txtRepPass.Text <> "" And txtPNom.Text <> "" And txtPApe.Text <> "" And txtSNom.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" And txtFecNac.Text <> "" Then
+        If txtCI.Text <> "" And txtPass.Text <> "" And txtRepPass.Text <> "" And txtPNom.Text <> "" And txtPApe.Text <> "" And txtSNom.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then
             If Principal.Singleton.VerificarCedula(check, txtCI.Text) Then
                 If Principal.Singleton.VerificarContraseña(seg, txtPass.Text, txtRepPass.Text) Then
                     pass = seg.HASH256(txtPass.Text)
                     If Principal.Singleton.VerificarString(check, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
                         If Principal.Singleton.VerificarEmail(check, txtMail.Text) Then
                             If Principal.Singleton.VerificarTelefonos(dgvTelefonos, aliTel) Then
-                                If txtFecNac.Text <> "" Then
+
+                                If txtFecNac.MaskCompleted Then
 
                                     If cbM.Checked Then
                                         sexo = "M"
@@ -30,54 +34,65 @@ Public Class frmRegistroPaciente
                                         sexo = "F"
                                     End If
 
+
                                     Dim pac As New ControladorPaciente(txtCI.Text,
-                                               pass,
-                                               txtPNom.Text.ToUpper,
-                                               txtSNom.Text.ToUpper,
-                                               txtPApe.Text.ToUpper,
-                                               txtSApe.Text.ToUpper,
-                                               aliTel,
-                                               txtMail.Text,
-                                               sexo,
-                                               txtFecNac.Text)
+                                                       pass,
+                                                       txtPNom.Text.ToUpper,
+                                                       txtSNom.Text.ToUpper,
+                                                       txtPApe.Text.ToUpper,
+                                                       txtSApe.Text.ToUpper,
+                                                       aliTel,
+                                                       txtMail.Text,
+                                                       sexo,
+                                                       txtFecNac.Text, Principal.Singleton.Base64(path)
+                                                       )
 
                                     If pac.VerificarBaja(txtCI.Text) Then
 
                                         If pac.registrar() Then
-                                            MsgBox("Ha sido ingresado con éxito, debe esperar a ser habilitiado")
-                                            'Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                            'txtPApe,
-                                            '        txtSApe, txtSNom,
-                                            '        txtMail, dgvTelefonos, aliTel)
-                                            'txtFecNac.Clear()
-                                            cbM.Checked = True
+                                            MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                            txtPApe,
+                                                    txtSApe, txtSNom,
+                                                   txtMail, dgvTelefonos, aliTel)
+                                            txtFecNac.Clear()
+                                            cbM.Checked = False
+                                            cbF.Checked = False
                                             aliTel.Clear()
+                                            path = Nothing
+                                            GunaPictureBox1.Image = Nothing
                                         Else
                                             MsgBox("El paciente ya fue registrado")
                                             aliTel.Clear()
                                         End If
 
                                     Else
-                                        Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+                                        Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
 
                                         If respuesta = vbYes Then
                                             pac.ReingresarUsuario(txtCI.Text)
-                                            MsgBox("Ha sido reingresado")
+                                            MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
                                             Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                    txtPApe,
-                                                    txtSApe, txtSNom,
-                                                    txtMail, dgvTelefonos, aliTel)
+                                                        txtPApe,
+                                                        txtSApe, txtSNom,
+                                                        txtMail, dgvTelefonos, aliTel)
                                             txtFecNac.Clear()
-                                            cbM.Checked = True
+                                            cbM.Checked = False
+                                            cbF.Checked = False
+                                            GunaPictureBox1.Image = Nothing
+                                            path = Nothing
                                         End If
 
                                     End If
 
                                 Else
+
                                     MsgBox("Debe ingresar su fecha de nacimiento")
                                 End If
-
+                            Else
+                                MsgBox("Ha ingresado un teléfono incorrecto")
                             End If
+
                         End If
                     End If
                 End If
@@ -90,68 +105,66 @@ Public Class frmRegistroPaciente
 
     End Sub
 
-    Private Sub MaterialRaisedButton2_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
-        If check.Verificar_Int(dgvTelefonos.Rows(dgvTelefonos.Rows.Count - 2).Cells(0).Value.ToString) = False Then
+    'Private Sub dgvTelefonos_CellClick(sender As Object, e As DataGridViewCellEventArgs)
 
-            MsgBox("Ingresó un teléfono incorrecto")
-            dgvTelefonos.Rows.RemoveAt(dgvTelefonos.Rows.Count - 2)
+    '    btnEliminar.Enabled = True
+    '    ' no permite elimianr si no hay ninguna cell seleccionada
+    'End Sub
 
-        End If
 
-        pnlAgregarTelefonos1.Hide()
-        ''add animacion
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
 
     End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles lblAgregarTelefonos.Click
-
-        If pnlAgregarTelefonos1.Visible = False Then
-
-            pnlAgregarTelefonos1.Visible = True
-
-        End If
-
-    End Sub
-
-    Private Sub MaterialRaisedButton3_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
-    End Sub
-
-    Private Sub dgvTelefonos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTelefonos.CellClick
-
-        btnEliminar.Enabled = True
-        ' no permite elimianr si no hay ninguna cell seleccionada
-    End Sub
-
-    Private Sub txtFecNac_Click(sender As Object, e As EventArgs) Handles txtFecNac.Click
+    Private Sub txtFecNac_GotFocus(sender As Object, e As EventArgs) Handles txtFecNac.GotFocus
+        sepFecNac.LineColor = Color.FromArgb(100, 88, 255)
         txtFecNac.Select(0, 0)
     End Sub
-
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-
-        If Not (txtCI.Text = Nothing And txtPNom.Text = Nothing And txtPApe.Text = Nothing And
-            txtPNom.Text = Nothing And txtSApe.Text = Nothing And txtSNom.Text = Nothing And
-            txtPass.Text = Nothing And txtRepPass.Text = Nothing And dgvTelefonos.Rows.Count > 0) Then 'agregar txtFecnac
-            Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
-            If res = vbYes Then
-                Principal.Singleton.CambiarTamaño(frmLogin)
-                Me.Dispose()
-            End If
-        Else
-            Principal.Singleton.CambiarTamaño(frmLogin)
-            Me.Dispose()
-        End If
-
+    Private Sub txtFecNac_Lost(sender As Object, e As EventArgs) Handles txtFecNac.LostFocus
+        sepFecNac.LineColor = Color.Silver
     End Sub
 
     Private Sub btnImg_Click(sender As Object, e As EventArgs) Handles btnImg.Click
+
         Dim dial As New OpenFileDialog
 
+        dial.Title = "Seleccione una fotografía"
         dial.Filter = "Image Files (*.jpg;*.jpeg;*bmp;*.png;)|*.jpg;*.jpeg;*bmp;*.png;"
 
+
         If dial.ShowDialog = DialogResult.OK Then
-            GunaPictureBox1.Image = New Bitmap(dial.FileName)
+            path = dial.FileName
+            GunaPictureBox1.Image = Image.FromFile(path)
         End If
+    End Sub
+
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        dgvTelefonos.Rows.Add()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+        If dgvTelefonos.Rows.Count > 0 Then
+            dgvTelefonos.Rows.RemoveAt(dgvTelefonos.CurrentRow.Index)
+        End If
+
+    End Sub
+    Private Sub dgvTelefonos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvTelefonos.RowsAdded
+
+        btnEliminar.Enabled = True
+
+    End Sub
+
+    Private Sub dgvTelefonos_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles dgvTelefonos.RowsRemoved
+
+        If dgvTelefonos.Rows.Count = 0 Then
+            btnEliminar.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub btnAtras_Click_1(sender As Object, e As EventArgs) Handles btnAtras.Click
+        Principal.Singleton.CambiarTamaño(frmLogin)
+        Me.Dispose()
     End Sub
 End Class

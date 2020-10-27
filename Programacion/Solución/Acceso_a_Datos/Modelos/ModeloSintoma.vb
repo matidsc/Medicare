@@ -85,6 +85,9 @@ Public Class ModeloSintoma
     Public Overloads Function TraerSintomas() As ArrayList
         Return ModeloConsultas.Singleton.ConsultaArray("SELECT nombre FROM sintoma WHERE bajaLogica = 0")
     End Function
+    Public Function TraerSintomasDePatologia(nombre As String) As ArrayList
+        Return ModeloConsultas.Singleton.ConsultaArray("SELECT s.nombre FROM sintoma s, patologia ")
+    End Function
 
     Public Overloads Function TraerSintomas(sintomas As ArrayList) As ArrayList
 

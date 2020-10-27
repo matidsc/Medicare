@@ -133,7 +133,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroSet UI.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MaterialSkin.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroFramework.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe

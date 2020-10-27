@@ -31,9 +31,9 @@ Public Class ModeloGestor
     ''' <param name="SegundoApellido"></param>
     ''' <param name="Telefonos"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Telefonos As ArrayList, mail As String) As Boolean
+    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Telefonos As ArrayList, mail As String, imagen As String) As Boolean
 
-        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo) VALUES (?,?,?,?,?,?,?)"
+        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe,correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
 
         parametros.Add(New OdbcParameter("cedula", cedula))
@@ -43,14 +43,15 @@ Public Class ModeloGestor
         parametros.Add(New OdbcParameter("pApe", PrimerApellido))
         parametros.Add(New OdbcParameter("sApe", SegundoApellido))
         parametros.Add(New OdbcParameter("correo", mail))
+        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
 
         If ModeloConsultas.Singleton.Transacciones(0) Then
             If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
                 If RegistrarGestor(cedula) Then
                     If RegistrarTelefono(cedula, Telefonos) Then
-                        MsgBox("asdasdasdsad")
+
                         If ModeloConsultas.Singleton.Transacciones(2) Then
-                            MsgBox("hola")
+
                             Return True
                         End If
 

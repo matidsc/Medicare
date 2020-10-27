@@ -198,6 +198,12 @@
     <Compile Include="Extras\frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMiPerfil.Designer.vb">
+      <DependentUpon>frmMiPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMiPerfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestor\frmBienvenidaGestor.Designer.vb">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
     </Compile>

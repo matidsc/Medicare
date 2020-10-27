@@ -38,10 +38,9 @@ Partial Class frmVerPerfil
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(31, 305)
-        Me.lblNombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNombre.Location = New System.Drawing.Point(23, 248)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(383, 29)
+        Me.lblNombre.Size = New System.Drawing.Size(334, 24)
         Me.lblNombre.TabIndex = 1
         Me.lblNombre.Text = "Nombre:  xxxxxxxxxxxxxxxxxxxxxxxx"
         '
@@ -49,10 +48,9 @@ Partial Class frmVerPerfil
         '
         Me.lblMail.AutoSize = True
         Me.lblMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMail.Location = New System.Drawing.Point(31, 396)
-        Me.lblMail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblMail.Location = New System.Drawing.Point(23, 322)
         Me.lblMail.Name = "lblMail"
-        Me.lblMail.Size = New System.Drawing.Size(301, 29)
+        Me.lblMail.Size = New System.Drawing.Size(261, 24)
         Me.lblMail.TabIndex = 2
         Me.lblMail.Text = "e-mail: xxxxxxxxxxxxxxxxxxx"
         '
@@ -60,20 +58,18 @@ Partial Class frmVerPerfil
         '
         Me.lblTelefonos.AutoSize = True
         Me.lblTelefonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelefonos.Location = New System.Drawing.Point(31, 487)
-        Me.lblTelefonos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTelefonos.Location = New System.Drawing.Point(23, 396)
         Me.lblTelefonos.Name = "lblTelefonos"
-        Me.lblTelefonos.Size = New System.Drawing.Size(255, 29)
+        Me.lblTelefonos.Size = New System.Drawing.Size(214, 24)
         Me.lblTelefonos.TabIndex = 3
         Me.lblTelefonos.Text = "Teléfonos: xxxxxxxxxxx"
         '
         'lblPatologiasCronicas
         '
         Me.lblPatologiasCronicas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPatologiasCronicas.Location = New System.Drawing.Point(31, 578)
-        Me.lblPatologiasCronicas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPatologiasCronicas.Location = New System.Drawing.Point(23, 470)
         Me.lblPatologiasCronicas.Name = "lblPatologiasCronicas"
-        Me.lblPatologiasCronicas.Size = New System.Drawing.Size(521, 71)
+        Me.lblPatologiasCronicas.Size = New System.Drawing.Size(391, 58)
         Me.lblPatologiasCronicas.TabIndex = 4
         Me.lblPatologiasCronicas.Text = "Patologías crónicas: xxxxxxxxx,xxxxxxxxxxxx,xxxxxxxx"
         '
@@ -83,9 +79,8 @@ Partial Class frmVerPerfil
         Me.lblMinimizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMinimizar.ForeColor = System.Drawing.Color.Black
         Me.lblMinimizar.Location = New System.Drawing.Point(0, 0)
-        Me.lblMinimizar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMinimizar.Name = "lblMinimizar"
-        Me.lblMinimizar.Size = New System.Drawing.Size(32, 43)
+        Me.lblMinimizar.Size = New System.Drawing.Size(24, 35)
         Me.lblMinimizar.TabIndex = 24
         Me.lblMinimizar.Text = "_"
         Me.lblMinimizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -96,9 +91,8 @@ Partial Class frmVerPerfil
         Me.lblCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCerrar.ForeColor = System.Drawing.Color.Black
         Me.lblCerrar.Location = New System.Drawing.Point(0, 0)
-        Me.lblCerrar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCerrar.Name = "lblCerrar"
-        Me.lblCerrar.Size = New System.Drawing.Size(57, 43)
+        Me.lblCerrar.Size = New System.Drawing.Size(43, 35)
         Me.lblCerrar.TabIndex = 23
         Me.lblCerrar.Text = "X"
         Me.lblCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -106,30 +100,28 @@ Partial Class frmVerPerfil
         'picEditar
         '
         Me.picEditar.Image = Global.Vista.My.Resources.Resources.icons8_edit_32px_1
-        Me.picEditar.Location = New System.Drawing.Point(507, 48)
-        Me.picEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picEditar.Location = New System.Drawing.Point(380, 39)
         Me.picEditar.Name = "picEditar"
-        Me.picEditar.Size = New System.Drawing.Size(45, 44)
+        Me.picEditar.Size = New System.Drawing.Size(34, 36)
         Me.picEditar.TabIndex = 5
         Me.picEditar.TabStop = False
         '
         'picImagenPerfil
         '
         Me.picImagenPerfil.Image = Global.Vista.My.Resources.Resources.icons8_user_80px_1
-        Me.picImagenPerfil.Location = New System.Drawing.Point(217, 105)
-        Me.picImagenPerfil.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picImagenPerfil.Location = New System.Drawing.Point(163, 85)
         Me.picImagenPerfil.Name = "picImagenPerfil"
-        Me.picImagenPerfil.Size = New System.Drawing.Size(135, 117)
+        Me.picImagenPerfil.Size = New System.Drawing.Size(101, 95)
         Me.picImagenPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picImagenPerfil.TabIndex = 0
         Me.picImagenPerfil.TabStop = False
         '
         'frmVerPerfil
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(568, 767)
+        Me.ClientSize = New System.Drawing.Size(426, 623)
         Me.Controls.Add(Me.lblCerrar)
         Me.Controls.Add(Me.lblMinimizar)
         Me.Controls.Add(Me.picEditar)
@@ -139,7 +131,6 @@ Partial Class frmVerPerfil
         Me.Controls.Add(Me.lblTelefonos)
         Me.Controls.Add(Me.lblPatologiasCronicas)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmVerPerfil"
         Me.Text = "VerPerfil"
         CType(Me.picEditar, System.ComponentModel.ISupportInitialize).EndInit()

@@ -31,9 +31,9 @@ Public Class ModeloMedico
     ''' <param name="SegundoApellido"></param>
     ''' <param name="Especializacion"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Overloads Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Especializacion As String, correo As String) As Boolean
+    Public Overloads Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Especializacion As String, correo As String, imagen As String) As Boolean
 
-        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe,correo) VALUES (?,?,?,?,?,?,?)"
+        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe,correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
 
         parametros.Add(New OdbcParameter("cedula", cedula))
@@ -43,6 +43,7 @@ Public Class ModeloMedico
         parametros.Add(New OdbcParameter("pApe", PrimerApellido))
         parametros.Add(New OdbcParameter("sApe", SegundoApellido))
         parametros.Add(New OdbcParameter("correo", correo))
+        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
 
         If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
             If RegistrarMedico(cedula, Especializacion) Then

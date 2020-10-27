@@ -50,11 +50,11 @@ Public Class ModeloPaciente
     ''' <param name="sexo"></param>
     ''' <param name="FechaNacimiento"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Telefonos As ArrayList, Mail As String, sexo As String, FechaNacimiento As String) As Boolean
+    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Telefonos As ArrayList, Mail As String, sexo As String, FechaNacimiento As String, imagen As String) As Boolean
 
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
 
-        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo) VALUES (?,?,?,?,?,?,?)"
+        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
 
         parametros.Add(New OdbcParameter("cedula", cedula))
@@ -62,8 +62,9 @@ Public Class ModeloPaciente
         parametros.Add(New OdbcParameter("pNom", PrimerNombre))
         parametros.Add(New OdbcParameter("sNom", SegundoNombre))
         parametros.Add(New OdbcParameter("pApe", PrimerApellido))
-        parametros.Add(New OdbcParameter("sApe", cedula))
+        parametros.Add(New OdbcParameter("sApe", SegundoApellido))
         parametros.Add(New OdbcParameter("correo", Mail))
+        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
 
         If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
             If RegistrarPaciente(cedula, sexo, FechaNacimiento) Then
@@ -144,7 +145,7 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function GetDatosPaciente(cedula As String) As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 ANDu.cedula= " & cedula)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo, CONVERT(fotoPerfil USING utf8) from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 AND u.cedula= " & cedula)
     End Function
 
     ''' <summary>

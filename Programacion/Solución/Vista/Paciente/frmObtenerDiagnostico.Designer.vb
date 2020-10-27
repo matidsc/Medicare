@@ -23,23 +23,20 @@ Partial Class frmObtenerDiagnostico
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.lblIngreseSIntomas = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
+        Me.lblIngreseSIntomas = New System.Windows.Forms.Label()
         Me.btnAnt = New FontAwesome.Sharp.IconButton()
         Me.btnSig = New FontAwesome.Sharp.IconButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.UcPatologia1 = New Vista.UCPatologia()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.ucRespuesta = New Vista.UserControl1()
+        Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.pnlContenedor.Controls.Add(Me.Panel1)
-        Me.pnlContenedor.Controls.Add(Me.UcPatologia1)
         Me.pnlContenedor.Controls.Add(Me.GunaButton1)
         Me.pnlContenedor.Controls.Add(Me.lblIngreseSIntomas)
         Me.pnlContenedor.Controls.Add(Me.btnAnt)
@@ -51,32 +48,6 @@ Partial Class frmObtenerDiagnostico
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 150
-        '
-        'lblIngreseSIntomas
-        '
-        Me.lblIngreseSIntomas.BackColor = System.Drawing.Color.Transparent
-        Me.lblIngreseSIntomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIngreseSIntomas.ForeColor = System.Drawing.Color.White
-        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(378, 22)
-        Me.lblIngreseSIntomas.Name = "lblIngreseSIntomas"
-        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(315, 45)
-        Me.lblIngreseSIntomas.TabIndex = 195
-        Me.lblIngreseSIntomas.Text = "Posibles Diagnósticos"
-        Me.lblIngreseSIntomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(130, 110)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(810, 491)
-        Me.TableLayoutPanel1.TabIndex = 151
         '
         'GunaButton1
         '
@@ -98,11 +69,24 @@ Partial Class frmObtenerDiagnostico
         Me.GunaButton1.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaButton1.OnHoverImage = Nothing
         Me.GunaButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaButton1.Radius = 15
-        Me.GunaButton1.Size = New System.Drawing.Size(192, 45)
+        Me.GunaButton1.Radius = 14
+        Me.GunaButton1.Size = New System.Drawing.Size(192, 42)
         Me.GunaButton1.TabIndex = 197
         Me.GunaButton1.Text = "Solicitar chat"
         Me.GunaButton1.TextOffsetX = 16
+        '
+        'lblIngreseSIntomas
+        '
+        Me.lblIngreseSIntomas.BackColor = System.Drawing.Color.Transparent
+        Me.lblIngreseSIntomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIngreseSIntomas.ForeColor = System.Drawing.Color.White
+        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(378, 22)
+        Me.lblIngreseSIntomas.Name = "lblIngreseSIntomas"
+        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(315, 45)
+        Me.lblIngreseSIntomas.TabIndex = 195
+        Me.lblIngreseSIntomas.Text = "Posibles Diagnósticos"
+        Me.lblIngreseSIntomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnAnt
         '
@@ -167,20 +151,18 @@ Partial Class frmObtenerDiagnostico
         Me.btnAtras.Text = "Atrás"
         Me.btnAtras.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'TableLayoutPanel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel1.Location = New System.Drawing.Point(200, -28)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 100)
-        Me.Panel1.TabIndex = 199
-        '
-        'UcPatologia1
-        '
-        Me.UcPatologia1.Location = New System.Drawing.Point(314, 4)
-        Me.UcPatologia1.Name = "UcPatologia1"
-        Me.UcPatologia1.Size = New System.Drawing.Size(582, 486)
-        Me.UcPatologia1.TabIndex = 198
+        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(130, 110)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(810, 491)
+        Me.TableLayoutPanel1.TabIndex = 151
         '
         'ucRespuesta
         '
@@ -193,6 +175,14 @@ Partial Class frmObtenerDiagnostico
         Me.ucRespuesta.TabIndex = 148
         Me.ucRespuesta.Visible = False
         '
+        'pnlInstancia
+        '
+        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
+        Me.pnlInstancia.Name = "pnlInstancia"
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
+        Me.pnlInstancia.TabIndex = 198
+        '
         'frmObtenerDiagnostico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -201,6 +191,7 @@ Partial Class frmObtenerDiagnostico
         Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.ucRespuesta)
+        Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmObtenerDiagnostico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -217,6 +208,5 @@ Partial Class frmObtenerDiagnostico
     Friend WithEvents btnAnt As FontAwesome.Sharp.IconButton
     Friend WithEvents lblIngreseSIntomas As Label
     Friend WithEvents GunaButton1 As Guna.UI.WinForms.GunaButton
-    Friend WithEvents UcPatologia1 As UCPatologia
-    Public WithEvents Panel1 As Panel
+    Friend WithEvents pnlInstancia As Panel
 End Class

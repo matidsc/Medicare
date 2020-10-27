@@ -78,7 +78,7 @@ Public Class ModeloUsuario
 
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
 
-        If ModeloConsultas.Singleton.InsertarSinParametros("UPDATE usuario SET bajalogica = 0 WHERE cedula = " & cedula) Then
+        If ModeloConsultas.Singleton.InsertarSinParametros("UPDATE usuario u, paciente p SET u.bajalogica = 0 , p.verificacion=0 WHERE u.cedula=p.cedula AND u.cedula = " & cedula) Then
             Return True
         End If
 

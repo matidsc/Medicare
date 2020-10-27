@@ -23,7 +23,6 @@ Partial Class UCDiagnnostico
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCDiagnnostico))
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.lblNom = New System.Windows.Forms.Label()
         Me.lblPNom = New System.Windows.Forms.Label()
@@ -32,7 +31,7 @@ Partial Class UCDiagnnostico
         Me.txtRecomendacion = New System.Windows.Forms.TextBox()
         Me.pnlPatologia = New Guna.UI.WinForms.GunaElipsePanel()
         Me.pnlWrap = New Guna.UI.WinForms.GunaElipsePanel()
-        Me.btnSintomas = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.btnSintomas = New Guna.UI.WinForms.GunaButton()
         Me.pnlWrap.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -112,11 +111,11 @@ Partial Class UCDiagnnostico
         '
         Me.pnlWrap.BackColor = System.Drawing.Color.Transparent
         Me.pnlWrap.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.pnlWrap.Controls.Add(Me.btnSintomas)
         Me.pnlWrap.Controls.Add(Me.txtRecomendacion)
         Me.pnlWrap.Controls.Add(Me.txtDescripcion)
         Me.pnlWrap.Controls.Add(Me.Label1)
         Me.pnlWrap.Controls.Add(Me.lblPNom)
-        Me.pnlWrap.Controls.Add(Me.btnSintomas)
         Me.pnlWrap.Controls.Add(Me.lblNom)
         Me.pnlWrap.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlWrap.Location = New System.Drawing.Point(0, 0)
@@ -129,14 +128,8 @@ Partial Class UCDiagnnostico
         Me.btnSintomas.Animated = True
         Me.btnSintomas.AnimationHoverSpeed = 0.07!
         Me.btnSintomas.AnimationSpeed = 0.03!
-        Me.btnSintomas.BackColor = System.Drawing.Color.Transparent
-        Me.btnSintomas.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnSintomas.BaseColor = System.Drawing.Color.Transparent
         Me.btnSintomas.BorderColor = System.Drawing.Color.Black
-        Me.btnSintomas.CheckedBaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.btnSintomas.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btnSintomas.CheckedForeColor = System.Drawing.Color.White
-        Me.btnSintomas.CheckedImage = CType(resources.GetObject("btnSintomas.CheckedImage"), System.Drawing.Image)
-        Me.btnSintomas.CheckedLineColor = System.Drawing.Color.DimGray
         Me.btnSintomas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSintomas.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnSintomas.FocusedColor = System.Drawing.Color.Empty
@@ -144,18 +137,15 @@ Partial Class UCDiagnnostico
         Me.btnSintomas.ForeColor = System.Drawing.Color.White
         Me.btnSintomas.Image = Nothing
         Me.btnSintomas.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSintomas.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnSintomas.Location = New System.Drawing.Point(49, 411)
+        Me.btnSintomas.Location = New System.Drawing.Point(56, 413)
         Me.btnSintomas.Name = "btnSintomas"
         Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.btnSintomas.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btnSintomas.OnHoverForeColor = System.Drawing.Color.White
         Me.btnSintomas.OnHoverImage = Nothing
-        Me.btnSintomas.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.btnSintomas.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSintomas.Radius = 5
-        Me.btnSintomas.Size = New System.Drawing.Size(165, 50)
-        Me.btnSintomas.TabIndex = 191
+        Me.btnSintomas.Size = New System.Drawing.Size(160, 42)
+        Me.btnSintomas.TabIndex = 198
         Me.btnSintomas.Text = "VER SÍNTOMAS"
         Me.btnSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -177,11 +167,11 @@ Partial Class UCDiagnnostico
 
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents lblNom As Label
-    Friend WithEvents btnSintomas As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents Label1 As Label
     Friend WithEvents lblPNom As Label
     Friend WithEvents txtRecomendacion As TextBox
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents pnlPatologia As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents pnlWrap As Guna.UI.WinForms.GunaElipsePanel
+    Friend WithEvents btnSintomas As Guna.UI.WinForms.GunaButton
 End Class

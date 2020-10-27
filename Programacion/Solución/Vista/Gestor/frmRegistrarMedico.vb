@@ -2,6 +2,7 @@
 Public Class frmRegistrarMedico
 
     Dim check As New Verificacion
+    Dim path As String
 
     Public Sub New()
 
@@ -26,7 +27,7 @@ Public Class frmRegistrarMedico
                             txtPrimerApellido.Text.ToUpper,
                             txtSegundoApellido.Text.ToUpper,
                             txtEspec.Text.ToUpper,
-                            txtMail.Text())
+                            txtMail.Text(), Principal.Singleton.Base64(path))
 
                         If med.VerificarBaja(txtCed.Text) Then
 
@@ -85,10 +86,14 @@ Public Class frmRegistrarMedico
     Private Sub btnImg_Click(sender As Object, e As EventArgs) Handles btnImg.Click
         Dim dial As New OpenFileDialog
 
+        dial.Title = "Seleccione una fotografía"
         dial.Filter = "Image Files (*.jpg;*.jpeg;*bmp;*.png;)|*.jpg;*.jpeg;*bmp;*.png;"
 
+
         If dial.ShowDialog = DialogResult.OK Then
-            GunaPictureBox1.Image = New Bitmap(dial.FileName)
+            path = dial.FileName
+            GunaPictureBox1.Image = Image.FromFile(path)
         End If
+
     End Sub
 End Class

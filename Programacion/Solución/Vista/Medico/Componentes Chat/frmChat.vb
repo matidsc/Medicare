@@ -237,7 +237,7 @@ Public Class frmChat
         End If
     End Sub
 
-    Private Sub txtMensaje_GotFocus(sender As Object, e As EventArgs) Handles txtMsg.GotFocus
+    Private Sub txtMensaje_GotFocus(sender As Object, e As EventArgs)
 
         If txtMsg.Text = Nothing Then
             lblEscriba.Visible = True
@@ -246,7 +246,7 @@ Public Class frmChat
         End If
 
     End Sub
-    Private Sub txtMensaje_LostFocus(sender As Object, e As EventArgs) Handles txtMsg.LostFocus
+    Private Sub txtMensaje_LostFocus(sender As Object, e As EventArgs)
 
         If txtMsg.Text = Nothing Then
             lblEscriba.Visible = True
@@ -344,7 +344,7 @@ Public Class frmChat
 
 
 
-    Private Sub txtMensaje_KeyPress(sender As Object, e As KeyEventArgs) Handles txtMsg.KeyDown
+    Private Sub txtMensaje_KeyPress(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             enviarMensaje()
         End If
@@ -450,6 +450,10 @@ Public Class frmChat
     End Sub
 
     Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
+
+    End Sub
+
+    Private Sub txtMsg_TextChanged_1(sender As Object, e As EventArgs) Handles txtMsg.TextChanged
 
     End Sub
 End Class

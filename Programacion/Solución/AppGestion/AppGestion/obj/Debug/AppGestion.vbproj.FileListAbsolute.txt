@@ -108,7 +108,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\De
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\Logica.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\Vista.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\Acceso_a_Datos.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\MaterialSkin.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\MetroSet UI.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\MetroFramework.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppGestion\AppGestion\bin\Debug\AppPaciente.exe

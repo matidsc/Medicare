@@ -9,9 +9,9 @@ Public Class ControladorGestor
 
     End Sub
     Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String, telefono As ArrayList,
-                  email As String)
+                  email As String, imagen As String)
 
-        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe, telefono, email)
+        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe, telefono, email, imagen)
 
         Me._ci = ci
         Me._contraseña = contraseña
@@ -21,6 +21,7 @@ Public Class ControladorGestor
         Me._segundo_apellido = SApe
         Me._telefono = telefono
         Me._email = email
+        Me._imagen = imagen
 
     End Sub
     Public Function getInformacionGestor(cedula As String) As DataTable
@@ -29,7 +30,7 @@ Public Class ControladorGestor
     Public Function registrar() As Boolean
 
         'Try
-        Return ModeloGestor.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono, _email)
+        Return ModeloGestor.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono, _email, _imagen)
         'Catch ex As Exception
         'Return False
         'End Try

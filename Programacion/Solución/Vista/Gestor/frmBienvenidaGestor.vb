@@ -1,5 +1,4 @@
 ﻿Imports Logica
-Imports Google.Cloud.Translation.V2
 
 Public Class frmBienvenidaGestor
     Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
@@ -287,5 +286,9 @@ Public Class frmBienvenidaGestor
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
+    End Sub
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+
     End Sub
 End Class

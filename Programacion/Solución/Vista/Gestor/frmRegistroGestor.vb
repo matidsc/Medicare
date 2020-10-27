@@ -5,6 +5,7 @@ Public Class frmRegistroGestor
     Dim aliTel As New ArrayList
     Dim check As New Verificacion
     Dim seg As New Encriptar
+    Dim path As String
 
     Public Sub New()
 
@@ -53,7 +54,7 @@ Public Class frmRegistroGestor
                                                  txtPApe.Text.ToUpper,
                                                  txtSApe.Text.ToUpper,
                                                  aliTel,
-                                                 txtMail.Text)
+                                                 txtMail.Text, Principal.Singleton.Base64(path))
 
                             If ges.VerificarBaja(txtCI.Text) Then
 
@@ -143,10 +144,13 @@ Public Class frmRegistroGestor
     Private Sub btnImg_Click(sender As Object, e As EventArgs) Handles btnImg.Click
         Dim dial As New OpenFileDialog
 
+        dial.Title = "Seleccione una fotografía"
         dial.Filter = "Image Files (*.jpg;*.jpeg;*bmp;*.png;)|*.jpg;*.jpeg;*bmp;*.png;"
 
+
         If dial.ShowDialog = DialogResult.OK Then
-            GunaPictureBox1.Image = New Bitmap(dial.FileName)
+            path = dial.FileName
+            GunaPictureBox1.Image = Image.FromFile(path)
         End If
 
     End Sub

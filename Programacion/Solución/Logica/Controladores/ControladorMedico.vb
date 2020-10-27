@@ -13,9 +13,9 @@ Public Class ControladorMedico
     End Sub
 
     Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String,
-                  especializacion As String, email As String)
+                  especializacion As String, email As String, imagen As String)
 
-        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe, email)
+        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe, email, imagen)
 
         Me._ci = ci
         Me._contraseña = contraseña
@@ -25,26 +25,26 @@ Public Class ControladorMedico
         Me._segundo_apellido = SApe
         Me._especializacion = especializacion
         Me._email = email
-
+        Me._imagen = imagen
     End Sub
-    Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String)
+    'Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String)
 
-        MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe)
+    '    MyBase.New(ci, contraseña, pNom, Snom, PApe, SApe)
 
-        Me._ci = ci
-        Me._contraseña = contraseña
-        Me._primer_nombre = pNom
-        Me._segundo_nombre = Snom
-        Me._primer_apellido = PApe
-        Me._segundo_apellido = SApe
+    '    Me._ci = ci
+    '    Me._contraseña = contraseña
+    '    Me._primer_nombre = pNom
+    '    Me._segundo_nombre = Snom
+    '    Me._primer_apellido = PApe
+    '    Me._segundo_apellido = SApe
 
 
-    End Sub
+    'End Sub
 
     Public Overloads Function registrar() As Boolean
 
         Try
-            Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion, _email)
+            Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion, _email, _imagen)
         Catch ex As Exception
             Return False
         End Try

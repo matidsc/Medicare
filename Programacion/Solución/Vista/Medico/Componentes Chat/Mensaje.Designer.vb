@@ -57,7 +57,7 @@ Partial Class Mensaje
         'lbl_Enviado
         '
         Me.lbl_Enviado.AutoSize = True
-        Me.lbl_Enviado.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.lbl_Enviado.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.lbl_Enviado.Dock = System.Windows.Forms.DockStyle.Right
         Me.lbl_Enviado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbl_Enviado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -90,7 +90,7 @@ Partial Class Mensaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(764, 54)
         Me.Controls.Add(Me.lbl_Recibido)
         Me.Controls.Add(Me.lbl_Enviado)

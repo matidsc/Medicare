@@ -15,6 +15,8 @@ Public Class frmObtenerDiagnostico
         InitializeComponent()
 
     End Sub
+
+
     Public Sub New(patologias As DataTable, sintomas As ArrayList)
 
         ' Esta llamada es exigida por el diseñador.
@@ -39,12 +41,10 @@ Public Class frmObtenerDiagnostico
 
                 '  TableLayoutPanel1.ResumeLayout()
 
-
-
-
                 For Each patologia In patologias.Rows
                     lista.Add(New UCDiagnnostico(patologia.item(0), patologia.item(1), patologia.item(2)))
                 Next
+
                 If lista.Count > 3 Then
                     btnSig.Visible = True
                 Else
@@ -74,11 +74,6 @@ Public Class frmObtenerDiagnostico
                 If lista.Count < 4 Then
                     btnSig.Visible = False
                 End If
-
-
-
-
-
 
             Else
                 MsgBox("Error al registrar las patologías")

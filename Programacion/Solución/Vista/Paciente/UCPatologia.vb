@@ -1,9 +1,9 @@
 ﻿Public Class UCPatologia
-    Public Sub New(nombre As String, sintomas As ArrayList)
+    Public Sub New(nombre As String)
 
 
         InitializeComponent()
-
+        lblNomPat.Text = nombre
 
     End Sub
 

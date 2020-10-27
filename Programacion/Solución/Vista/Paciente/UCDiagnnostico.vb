@@ -40,16 +40,17 @@ Public Class UCDiagnnostico
     Private Sub btnSintomas_Click_1(sender As Object, e As EventArgs) Handles btnSintomas.Click
         Dim dt = pat.informacionPatologia(lblNom.Text)
 
-        Dim uc = New UCPatologia(lblNom.Text,)
+        Dim uc = New UCPatologia(lblNom.Text)
         Me.ParentForm.Controls.Add(uc)
         uc.BringToFront()
         uc.Show()
-        uc.Top = (Me.Height / 2) - (uc.Height / 2)
-        uc.Left = (Me.Width / 2) - (uc.Width / 2)
+        uc.Top = (frmObtenerDiagnostico.Height / 2) - (uc.Height / 2)
+        uc.Left = (frmObtenerDiagnostico.Width / 2) - (uc.Width / 2)
         'Dim uc As New UCPatologia
         'Me.Hide()
         'Dim ParentForm As frmObtenerDiagnostico = (Me.FindForm)
         'ParentForm.Controls.Add(uc)
         'MsgBox(ParentForm.ToString)
     End Sub
+
 End Class

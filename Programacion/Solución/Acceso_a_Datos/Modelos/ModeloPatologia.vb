@@ -237,7 +237,7 @@ Public Class ModeloPatologia
 
         Dim parametros As String
         Dim consulta As String = "
-                                SELECT p.nombre,p.descripcion,p.recomendacion
+                                SELECT p.nombre,p.descripcion,p.recomendacion,p.prioridad
                                 FROM patologia p, sintoma s, patologia_contiene_sintoma ps
                                 WHERE p.idPatologia = ps.idPatologia AND s.idSintoma = ps.idSintoma AND p.bajalogica = 0 
                                 AND s.nombre IN ("

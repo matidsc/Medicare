@@ -1,20 +1,21 @@
 ﻿Imports Logica
 Public Class UCDiagnnostico
-    Private pat As New controladorpatologia
-    Public Sub New(nombre As String, descripcion As String, recomendacion As String)
+    Private pat As New ControladorPatologia
+    Private sin As New ControladorSintoma
+    Public Sub New(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte)
 
         InitializeComponent()
 
         lblNom.Text = nombre
         txtDescripcion.Text = descripcion
         txtRecomendacion.Text = recomendacion
-
+        If prioridad = 1 Then
+            pbAdvertencia.Visible = True
+        Else
+            pbAdvertencia.Visible = False
+        End If
 
     End Sub
-    Private Sub lblNom_Click(sender As Object, e As EventArgs) Handles lblNom.Click
-
-    End Sub
-
 
     Private Sub btnSintomas_Click(sender As Object, e As EventArgs)
 
@@ -40,7 +41,7 @@ Public Class UCDiagnnostico
     Private Sub btnSintomas_Click_1(sender As Object, e As EventArgs) Handles btnSintomas.Click
         Dim dt = pat.informacionPatologia(lblNom.Text)
 
-        Dim uc = New UCPatologia(lblNom.Text)
+        Dim uc = New UCPatologia(lblNom.Text, sin.TraerSintomasDePatologia(lblNom.Text))
         Me.ParentForm.Controls.Add(uc)
         uc.BringToFront()
         uc.Show()
@@ -53,4 +54,14 @@ Public Class UCDiagnnostico
         'MsgBox(ParentForm.ToString)
     End Sub
 
+    Private Sub MetroToolTip1_Popup(sender As Object, e As PopupEventArgs)
+
+    End Sub
+
+    Private Sub IconPictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles pbAdvertencia.MouseHover
+        MetroToolTip1.Show("Advertencia: recomendamos que solicite un chat", pbAdvertencia)
+    End Sub
+    Private Sub IconPictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles pbAdvertencia.MouseLeave
+        MetroToolTip1.Hide(pbAdvertencia)
+    End Sub
 End Class

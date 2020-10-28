@@ -42,7 +42,8 @@ Public Class frmObtenerDiagnostico
                 '  TableLayoutPanel1.ResumeLayout()
 
                 For Each patologia In patologias.Rows
-                    lista.Add(New UCDiagnnostico(patologia.item(0), patologia.item(1), patologia.item(2)))
+                    lista.Add(New UCDiagnnostico(patologia.item(0), patologia.item(1), patologia.item(2), patologia.item(3)))
+
                 Next
 
                 If lista.Count > 3 Then

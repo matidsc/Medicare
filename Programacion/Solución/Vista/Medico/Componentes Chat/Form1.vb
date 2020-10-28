@@ -61,9 +61,13 @@ Public Class Form1
     Private Sub CambioChat() Handles Me.Click
 
         Datos_Temporales.idchat = lblidChat.Text
-
         Datos_Temporales.pacienteSelecionado = lblCed.Text
-        frmChat.Singleton.recargar()
+
+        Dim instancia As frmChat = Me.ParentForm
+        instancia.ReloadChat()
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

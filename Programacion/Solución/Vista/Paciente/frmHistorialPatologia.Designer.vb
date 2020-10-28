@@ -76,8 +76,7 @@ Partial Class Historial_de_patologías
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvEmp.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvEmp.EnableHeadersVisualStyles = False
-        Me.dgvEmp.Location = New System.Drawing.Point(0, 130)
-        Me.dgvEmp.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvEmp.Location = New System.Drawing.Point(0, 106)
         Me.dgvEmp.MultiSelect = False
         Me.dgvEmp.Name = "dgvEmp"
         Me.dgvEmp.ReadOnly = True
@@ -92,7 +91,7 @@ Partial Class Historial_de_patologías
         Me.dgvEmp.RowHeadersVisible = False
         Me.dgvEmp.RowHeadersWidth = 51
         Me.dgvEmp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.dgvEmp.Size = New System.Drawing.Size(1345, 681)
+        Me.dgvEmp.Size = New System.Drawing.Size(1009, 553)
         Me.dgvEmp.TabIndex = 58
         '
         'DiagnosticoPrimario
@@ -146,7 +145,7 @@ Partial Class Historial_de_patologías
         Me.pnlHistorialDeAutoconsulta.Location = New System.Drawing.Point(0, 0)
         Me.pnlHistorialDeAutoconsulta.Margin = New System.Windows.Forms.Padding(0)
         Me.pnlHistorialDeAutoconsulta.Name = "pnlHistorialDeAutoconsulta"
-        Me.pnlHistorialDeAutoconsulta.Size = New System.Drawing.Size(1345, 130)
+        Me.pnlHistorialDeAutoconsulta.Size = New System.Drawing.Size(1009, 106)
         Me.pnlHistorialDeAutoconsulta.TabIndex = 117
         '
         'lbl1
@@ -154,10 +153,9 @@ Partial Class Historial_de_patologías
         Me.lbl1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl1.ForeColor = System.Drawing.Color.White
-        Me.lbl1.Location = New System.Drawing.Point(1472, -7)
-        Me.lbl1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl1.Location = New System.Drawing.Point(1104, -6)
         Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(32, 43)
+        Me.lbl1.Size = New System.Drawing.Size(24, 35)
         Me.lbl1.TabIndex = 26
         Me.lbl1.Text = "_"
         Me.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -167,10 +165,9 @@ Partial Class Historial_de_patologías
         Me.lbl2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl2.ForeColor = System.Drawing.Color.White
-        Me.lbl2.Location = New System.Drawing.Point(1512, 0)
-        Me.lbl2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl2.Location = New System.Drawing.Point(1134, 0)
         Me.lbl2.Name = "lbl2"
-        Me.lbl2.Size = New System.Drawing.Size(57, 43)
+        Me.lbl2.Size = New System.Drawing.Size(43, 35)
         Me.lbl2.TabIndex = 25
         Me.lbl2.Text = "X"
         Me.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -180,10 +177,9 @@ Partial Class Historial_de_patologías
         Me.lbl3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl3.ForeColor = System.Drawing.Color.White
-        Me.lbl3.Location = New System.Drawing.Point(1663, -7)
-        Me.lbl3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl3.Location = New System.Drawing.Point(1247, -6)
         Me.lbl3.Name = "lbl3"
-        Me.lbl3.Size = New System.Drawing.Size(32, 43)
+        Me.lbl3.Size = New System.Drawing.Size(24, 35)
         Me.lbl3.TabIndex = 24
         Me.lbl3.Text = "_"
         Me.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -193,10 +189,9 @@ Partial Class Historial_de_patologías
         Me.lbl4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl4.ForeColor = System.Drawing.Color.White
-        Me.lbl4.Location = New System.Drawing.Point(1703, 0)
-        Me.lbl4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl4.Location = New System.Drawing.Point(1277, 0)
         Me.lbl4.Name = "lbl4"
-        Me.lbl4.Size = New System.Drawing.Size(57, 43)
+        Me.lbl4.Size = New System.Drawing.Size(43, 35)
         Me.lbl4.TabIndex = 23
         Me.lbl4.Text = "X"
         Me.lbl4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -206,23 +201,21 @@ Partial Class Historial_de_patologías
         Me.lblHistorialDeAutoconsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblHistorialDeAutoconsulta.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHistorialDeAutoconsulta.ForeColor = System.Drawing.Color.White
-        Me.lblHistorialDeAutoconsulta.Location = New System.Drawing.Point(412, 26)
-        Me.lblHistorialDeAutoconsulta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblHistorialDeAutoconsulta.Location = New System.Drawing.Point(309, 21)
         Me.lblHistorialDeAutoconsulta.Name = "lblHistorialDeAutoconsulta"
-        Me.lblHistorialDeAutoconsulta.Size = New System.Drawing.Size(520, 70)
+        Me.lblHistorialDeAutoconsulta.Size = New System.Drawing.Size(390, 57)
         Me.lblHistorialDeAutoconsulta.TabIndex = 4
         Me.lblHistorialDeAutoconsulta.Text = "Historial de autoconsulta"
         Me.lblHistorialDeAutoconsulta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Historial_de_patologías
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1344, 820)
+        Me.ClientSize = New System.Drawing.Size(1008, 666)
         Me.Controls.Add(Me.pnlHistorialDeAutoconsulta)
         Me.Controls.Add(Me.dgvEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Historial_de_patologías"
         Me.Text = "Historial_de_patologías"
         CType(Me.dgvEmp, System.ComponentModel.ISupportInitialize).EndInit()

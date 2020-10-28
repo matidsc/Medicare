@@ -167,4 +167,5 @@ Public Class frmIngresarSintomas
         Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
         Me.Dispose()
     End Sub
+
 End Class

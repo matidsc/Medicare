@@ -53,7 +53,9 @@ Public Class ControladorSintoma
     Public Overloads Function traerSintomas(sintomas As ArrayList) As ArrayList
         Return ModeloSintoma.Singleton.TraerSintomas(sintomas)
     End Function
-
+    Public Function TraerSintomasDePatologia(nombre As String) As ArrayList
+        Return ModeloSintoma.Singleton.TraerSintomasDePatologia(nombre)
+    End Function
     Public Overloads Function traerSintomas() As ArrayList
 
         Return ModeloSintoma.Singleton.TraerSintomas

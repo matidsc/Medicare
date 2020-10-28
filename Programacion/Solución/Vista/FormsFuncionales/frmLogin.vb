@@ -118,11 +118,11 @@ Public Class frmLogin
                                 Dim frm As New frmBienvenidaPaciente 'frmBienvenidaPaciente
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
-                                Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+                                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
                                 Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
                                 frm.Show()
                                 pnlContenedor.Hide()
-                                pnlContenedor.Show()
+                                pnlInstancia.Show()
                                 Me.ResumeLayout()
                             Else
                                 MsgBox(Principal.Singleton.Idioma("msgPacienteHabilitado"))
@@ -137,11 +137,11 @@ Public Class frmLogin
                                 Dim frm As New frmBienvenidaGestor
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
-                                Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+                                Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
                                 Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
                                 frm.Show()
                                 pnlContenedor.Hide()
-                                pnlContenedor.Show()
+                                pnlInstancia.Show()
                                 Me.ResumeLayout()
                             Else
                                 MsgBox("Usted no se encuentra habilitado para ingresar al sistema")
@@ -151,11 +151,11 @@ Public Class frmLogin
                             Dim frm As New frmBienvenidaMedico
                             Configuracion.Singleton.SetConnection()
                             Me.SuspendLayout()
-                            Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
+                            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
                             Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)
                             frm.Show()
                             pnlContenedor.Hide()
-                            pnlContenedor.Show()
+                            pnlInstancia.Show()
                             Me.ResumeLayout()
 
                     End Select

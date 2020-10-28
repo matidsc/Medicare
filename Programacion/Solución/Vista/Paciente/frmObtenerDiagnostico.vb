@@ -255,20 +255,23 @@ Public Class frmObtenerDiagnostico
         Dim chat As New ControladorChat
 
         If solicitud Then
-            If chat.crearChat() <> 0 Then
-                If chat.entrarChat(Datos_Temporales.userLog, Datos_Temporales.idchat) Then
+            Dim respuesta As Byte = MsgBox("¿Desea iniciar un chat?", vbYesNo)
+            If respuesta = vbYes Then
+                If chat.crearChat() <> 0 Then
+                    If chat.entrarChat(Datos_Temporales.userLog, Datos_Temporales.idchat) Then
 
-                    MsgBox("Se ha enviado una solicitud de chat")
-                    'frmBienvenidaPaciente.Timer1.Enabled = True
-                    solicitud = False
+                        MsgBox("Se ha enviado una solicitud de chat")
+                        solicitud = False
 
-                Else
-                    MsgBox("Error al enviar solicitud de chat")
+                    Else
+                        MsgBox("Error al enviar solicitud de chat")
+                    End If
                 End If
             End If
         Else
             MsgBox("Ya hay una solicitud en curso")
         End If
+
     End Sub
 
     Private Sub lblIngreseSIntomas_Click(sender As Object, e As EventArgs) Handles lblIngreseSIntomas.Click

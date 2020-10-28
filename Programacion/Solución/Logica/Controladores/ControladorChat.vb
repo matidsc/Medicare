@@ -11,7 +11,6 @@ Public Class ControladorChat
         If id <> 0 Then
 
             Datos_Temporales.idchat = id
-            MsgBox(id)
             Return id
 
         End If

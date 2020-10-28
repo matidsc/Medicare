@@ -9,6 +9,7 @@ Public Class UCDiagnnostico
         lblNom.Text = nombre
         txtDescripcion.Text = descripcion
         txtRecomendacion.Text = recomendacion
+
         If prioridad = 1 Then
             pbAdvertencia.Visible = True
         Else
@@ -39,7 +40,6 @@ Public Class UCDiagnnostico
     End Sub
 
     Private Sub btnSintomas_Click_1(sender As Object, e As EventArgs) Handles btnSintomas.Click
-        Dim dt = pat.informacionPatologia(lblNom.Text)
 
         Dim uc = New UCPatologia(lblNom.Text, sin.TraerSintomasDePatologia(lblNom.Text))
         Me.ParentForm.Controls.Add(uc)
@@ -47,11 +47,6 @@ Public Class UCDiagnnostico
         uc.Show()
         uc.Top = (frmObtenerDiagnostico.Height / 2) - (uc.Height / 2)
         uc.Left = (frmObtenerDiagnostico.Width / 2) - (uc.Width / 2)
-        'Dim uc As New UCPatologia
-        'Me.Hide()
-        'Dim ParentForm As frmObtenerDiagnostico = (Me.FindForm)
-        'ParentForm.Controls.Add(uc)
-        'MsgBox(ParentForm.ToString)
     End Sub
 
     Private Sub MetroToolTip1_Popup(sender As Object, e As PopupEventArgs)
@@ -59,7 +54,7 @@ Public Class UCDiagnnostico
     End Sub
 
     Private Sub IconPictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles pbAdvertencia.MouseHover
-        MetroToolTip1.Show("Advertencia: recomendamos que solicite un chat", pbAdvertencia)
+        MetroToolTip1.Show("Advertencia: Recomendamos que solicite un chat debido a la gravedad de la enfermedad.", pbAdvertencia)
     End Sub
     Private Sub IconPictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles pbAdvertencia.MouseLeave
         MetroToolTip1.Hide(pbAdvertencia)

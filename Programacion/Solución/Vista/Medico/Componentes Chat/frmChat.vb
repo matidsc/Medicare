@@ -7,6 +7,7 @@ Public Class frmChat
     Private contPac As New ControladorPaciente
     Public Property maxID As Int32
     Private Shared instancia As frmChat
+    Public instanciaChat As ucchat = New ucchat()
 
     ''' <summary>
     ''' Función encargada de devolver una instancia singleton de la clase.
@@ -24,29 +25,48 @@ Public Class frmChat
     Private Sub frmChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(Chat, scroll2, True)
-        If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
-            Me.CenterToScreen()
-            Me.Width = pnlWrapChat.Width
-            'pnlWrapChat.Location = New Point((Me.Width - pnlWrapChat.Width) \ 2, (Me.Height - pnlWrapChat.Height) \ 2)
-            pnlWrapChat.Location = New Point(0, 0)
-            btnFinalizar.Visible = False
 
-            pnlYo.Visible = False
-            dgvFinalizados.Visible = False
-            dgvMisChats.Visible = False
-            ' b.Location = New Point((pnlWrapChat.Width - pnlAcciones.Width) \ 2, pnlAcciones.Location.Y)
-            lblGeneral.Visible = False
-            lblFinalizados.Visible = False
+        If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
+
+            Dim i As Integer = 120
+
+            Me.CenterToScreen()
+            Me.SuspendLayout()
+
+            pnlWrapChat.Width += i
+            pnlWrapChat.Location = New Point((Me.Width - pnlWrapChat.Width) \ 2, (Me.Height - pnlWrapChat.Height) \ 2)
+
+            Panel1.Width += i
+            txtMsg.Width += i
+            txtMsg.Location = New Point(txtMsg.Location.X + i, txtMsg.Location.Y)
+            'txtMsg.Width += i
+            'lblEscriba.Location = New Point(lblEscriba.Location.X - i, lblEscriba.Location.Y)
+
+            Chat.Location = New Point(Chat.Location.X - i, Chat.Location.Y)
+            Chat.Width += i
+            Chat.Height += 50
+            Chat.Location = New Point(Chat.Location.X, Chat.Location.Y - 50)
+
+            Me.ResumeLayout()
+
+            btnFinalizar.Visible = False
             btnFicha.Visible = False
+            btnSintomasDiag.Visible = False
+
+            FlowLayoutPanel1.Visible = False
+            scroll.Visible = False
+            ' b.Location = New Point((pnlWrapChat.Width - pnlAcciones.Width) \ 2, pnlAcciones.Location.Y)          
+
+
             'Me.BackColor = Color.WhiteSmoke
             'pnlWrapChat.BackColor = Color.White
             'Chat.BackColor = Color.White
         Else
-            updateChats()
+            ' updateChats() dgv viejo
             Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
             CargarPanel(Listado)
-            Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
-            ScrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
+            'Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+            'ScrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
         End If
 
         Chat.AutoScroll = False
@@ -68,6 +88,11 @@ Public Class frmChat
         instancia = Me
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+        If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
+            Datos_Temporales.idchat = ControladorChat.Singleton.ObtenerChatPaciente
+        End If
+
+
 
     End Sub
 
@@ -90,9 +115,9 @@ Public Class frmChat
                 mensaje = columnaMensaje.Item(0)
             Next
 
-            Dim form As New Form1(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.Item(0))
+            Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.Item(0))
 
-            form.TopLevel = False
+            'form.TopLevel = False
             form.Width = Chat.Width - 25
             FlowLayoutPanel1.Controls.Add(form)
             form.Show()
@@ -158,7 +183,7 @@ Public Class frmChat
                 If contChat.finalizarChat() Then
 
                     MsgBox("Sesión finalizada")
-                    updateChats()
+                    'updateChats() dgv viejo
                     Chat.Controls.Clear()
                     Datos_Temporales.idchat = Nothing
                     Timer1.Enabled = False
@@ -254,15 +279,15 @@ Public Class frmChat
 
     End Sub
 
-    Private Sub updateChats()
+    'Private Sub updateChats()
 
-        dgvMisChats.DataSource = contChat.listarMisChats(Datos_Temporales.userLog, 0)
-        dgvMisChats.Columns("idChat").Visible = False
+    '    dgvMisChats.DataSource = contChat.listarMisChats(Datos_Temporales.userLog, 0)
+    '    dgvMisChats.Columns("idChat").Visible = False
 
-        dgvFinalizados.DataSource = contChat.listarMisChats(Datos_Temporales.userLog, 1)
-        dgvFinalizados.Columns("idChat").Visible = False
+    '    dgvFinalizados.DataSource = contChat.listarMisChats(Datos_Temporales.userLog, 1)
+    '    dgvFinalizados.Columns("idChat").Visible = False
 
-    End Sub
+    'End Sub
 
     Private Sub pbCancelar_Click(sender As Object, e As EventArgs)
         finalizar()
@@ -282,46 +307,46 @@ Public Class frmChat
 
 
 
-    Private Sub dgvMisChats_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMisChats.CellClick
+    'Private Sub dgvMisChats_CellClick(sender As Object, e As DataGridViewCellEventArgs)
 
-        Dim fila As Integer = dgvMisChats.CurrentCell.RowIndex
-        Dim controladorChat As New ControladorChat
-        Chat.Controls.Clear()
+    '    Dim fila As Integer = dgvMisChats.CurrentCell.RowIndex
+    '    Dim controladorChat As New ControladorChat
+    '    Chat.Controls.Clear()
 
-        Datos_Temporales.idchat = dgvMisChats.Rows(fila).Cells(columnName:="idChat").Value.ToString
-        Datos_Temporales.pacienteSelecionado = dgvMisChats.CurrentCell.Value.ToString
+    '    Datos_Temporales.idchat = dgvMisChats.Rows(fila).Cells(columnName:="idChat").Value.ToString
+    '    Datos_Temporales.pacienteSelecionado = dgvMisChats.CurrentCell.Value.ToString
 
-        txtMsg.Enabled = True
-        btnFinalizar.Enabled = True
+    '    txtMsg.Enabled = True
+    '    btnFinalizar.Enabled = True
 
-        lblEscriba.Text = "Escriba un mensaje"
+    '    lblEscriba.Text = "Escriba un mensaje"
 
-        setNombreUsuario(dgvMisChats.CurrentCell.Value)
-        controladorChat.recargarChat()
+    '    setNombreUsuario(dgvMisChats.CurrentCell.Value)
+    '    controladorChat.recargarChat()
 
-    End Sub
+    'End Sub
     Public Sub recargar()
         ' ReloadChat()
         Chat.Controls.Clear()
         Timer1.Start()
     End Sub
-    Private Sub dgvFinalizados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFinalizados.CellClick
+    'Private Sub dgvFinalizados_CellClick(sender As Object, e As DataGridViewCellEventArgs)
 
-        Dim controladorChat As New ControladorChat
-        Dim fila As Integer = dgvFinalizados.CurrentCell.RowIndex
-        Chat.Controls.Clear()
+    '    Dim controladorChat As New ControladorChat
+    '    Dim fila As Integer = dgvFinalizados.CurrentCell.RowIndex
+    '    Chat.Controls.Clear()
 
-        Datos_Temporales.idchat = dgvFinalizados.Rows(fila).Cells(columnName:="idChat").Value.ToString
+    '    Datos_Temporales.idchat = dgvFinalizados.Rows(fila).Cells(columnName:="idChat").Value.ToString
 
-        txtMsg.Enabled = False
-        btnFinalizar.Enabled = False
+    '    txtMsg.Enabled = False
+    '    btnFinalizar.Enabled = False
 
-        lblEscriba.Text = "Chat finalizado, no es posible enviar un mensaje"
+    '    lblEscriba.Text = "Chat finalizado, no es posible enviar un mensaje"
 
-        setNombreUsuario(dgvFinalizados.CurrentCell.Value)
-        controladorChat.recargarChat()
+    '    setNombreUsuario(dgvFinalizados.CurrentCell.Value)
+    '    controladorChat.recargarChat()
 
-    End Sub
+    'End Sub
 
     Public Sub setNombreUsuario(cedula As String)
 
@@ -415,17 +440,13 @@ Public Class frmChat
 
                 If contChat.enviarCorreo(correoPaciente, mensajeEnviar) Then
                     MsgBox("Se ha enviado el historial al paciente")
-                    updateChats()
+                    'updateChats()
                 Else
                     MsgBox("Error al enviar el correo")
                 End If
 
             End If
         End If
-    End Sub
-
-    Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
-        enviarMensaje()
     End Sub
 
     Private Sub txtMsg_TextChanged(sender As Object, e As EventArgs) Handles txtMsg.TextChanged
@@ -449,11 +470,17 @@ Public Class frmChat
         End If
     End Sub
 
-    Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
-
+    Private Sub txtMsg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtMsg.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            enviarMensaje()
+        End If
     End Sub
 
-    Private Sub txtMsg_TextChanged_1(sender As Object, e As EventArgs) Handles txtMsg.TextChanged
+    Private Sub pbEnviar_Click(sender As Object, e As EventArgs) Handles pbEnviar.Click
+        enviarMensaje()
+    End Sub
+
+    Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
 
     End Sub
 End Class

@@ -1,4 +1,5 @@
-﻿Public Class Mensaje
+﻿
+Public Class Mensaje
     Public Property idMsj
     Public Sub New(esEmisor As Boolean, Mensaje As String, Fecha As Date, idMsj As Int32, Perfil As Bitmap)
         InitializeComponent()

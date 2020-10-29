@@ -42,7 +42,6 @@ C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debu
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\Logica.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\Vista.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\Acceso_a_Datos.dll
-C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\MetroSet UI.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\MetroFramework.dll
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\AppPaciente.exe
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\AppMedico\AppMedico\bin\Debug\AppGestion.exe

@@ -29,7 +29,6 @@ Partial Class frmObtenerDiagnostico
         Me.btnSig = New FontAwesome.Sharp.IconButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ucRespuesta = New Vista.UserControl1()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
@@ -164,16 +163,7 @@ Partial Class frmObtenerDiagnostico
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(810, 491)
         Me.TableLayoutPanel1.TabIndex = 151
         '
-        'ucRespuesta
-        '
-        Me.ucRespuesta.BackColor = System.Drawing.Color.White
-        Me.ucRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ucRespuesta.Location = New System.Drawing.Point(200, 77)
-        Me.ucRespuesta.Margin = New System.Windows.Forms.Padding(4)
-        Me.ucRespuesta.Name = "ucRespuesta"
-        Me.ucRespuesta.Size = New System.Drawing.Size(607, 541)
-        Me.ucRespuesta.TabIndex = 148
-        Me.ucRespuesta.Visible = False
+
         '
         'pnlInstancia
         '
@@ -190,7 +180,6 @@ Partial Class frmObtenerDiagnostico
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.pnlContenedor)
-        Me.Controls.Add(Me.ucRespuesta)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmObtenerDiagnostico"
@@ -200,7 +189,7 @@ Partial Class frmObtenerDiagnostico
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents ucRespuesta As UserControl1
+
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton

@@ -4,6 +4,16 @@ Imports System.Net
 
 Public Class ControladorChat
 
+    Private Shared instancia As ControladorChat
+
+    Public Shared Function Singleton() As ControladorChat
+        If instancia Is Nothing Then
+            instancia = New ControladorChat
+        End If
+        Return instancia
+    End Function
+
+
     Public Function crearChat()
 
         Dim id As Int16 = ModeloChat.Singleton.CrearChat
@@ -152,6 +162,26 @@ Public Class ControladorChat
 
     Public Function Notificacion() As DataTable
         Return ModeloChat.Singleton.Notificacion(Datos_Temporales.userLog)
+    End Function
+    Public Function verificarEstadoChat() As Boolean
+
+        Try
+            If ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog) = 1 Then
+                Return True
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+
+        Return False
+    End Function
+
+    Public Function ObtenerChatPaciente() As Integer
+        Try
+            Return ModeloChat.Singleton.ObtenerChatPaciente(Datos_Temporales.userLog)
+        Catch ex As Exception
+            Return Nothing
+        End Try
     End Function
 
 End Class

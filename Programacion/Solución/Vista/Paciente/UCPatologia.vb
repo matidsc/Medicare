@@ -27,7 +27,7 @@ Public Class UCPatologia
     Private Sub setTextos(sintoma As String, indice As Integer)
         Label1.Text = dtDescripcion.Rows.Item(indice).Item(1).ToString
         lblNomSin.Text = "¿Qué es "
-        lblNomSin.Text = lblNomSin.Text & sintoma.Substring(0, 1).ToUpper + sintoma.Substring(1).ToLower & "?"
+        lblNomSin.Text = lblNomSin.Text & sintoma.ToLower & "?"
     End Sub
 
     Private Sub dgvSintomas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSintomas.CellClick

@@ -3,8 +3,8 @@ Public Class frmObtenerDiagnostico
 
     Dim sin As New ControladorSintoma
     Dim pat As New ControladorPatologia
-    Dim solicitud As Boolean = True
     Dim contador As Integer = 0
+    Dim solicitud As Boolean = True
     Dim lista As New List(Of UCDiagnnostico)
     Private Sub frmObtenerDiagnostico_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         ControlPaint.DrawBorder(e.Graphics, Me.ClientRectangle, Color.Black, ButtonBorderStyle.Solid)
@@ -103,16 +103,7 @@ Public Class frmObtenerDiagnostico
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
-        solicitud = True
-        Me.Dispose()
-    End Sub
 
-    Private Sub btnSolicitarChat_Click(sender As Object, e As EventArgs)
-
-
-    End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -133,8 +124,15 @@ Public Class frmObtenerDiagnostico
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
-        Me.Dispose()
+        If ControladorChat.Singleton.verificarEstadoChat Then
+            Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+            Me.Dispose()
+        Else
+            Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+            Dim frm As frmIngresarSintomas = Me.ParentForm
+            frm.Dispose()
+        End If
+
     End Sub
 
     Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
@@ -262,15 +260,15 @@ Public Class frmObtenerDiagnostico
 
                         MsgBox("Se ha enviado una solicitud de chat")
                         solicitud = False
-
                     Else
                         MsgBox("Error al enviar solicitud de chat")
                     End If
                 End If
             End If
         Else
-            MsgBox("Ya hay una solicitud en curso")
+            MsgBox("Usted ya ha iniciado un chat")
         End If
+
 
     End Sub
 

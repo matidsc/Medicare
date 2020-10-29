@@ -47,6 +47,7 @@ Public Class Datos_Temporales
 
     Public Shared instancia As Object
 
+
     Public Enum enumRol
         Paciente = 0
         Medico = 1

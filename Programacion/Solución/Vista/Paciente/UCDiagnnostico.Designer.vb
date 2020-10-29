@@ -125,11 +125,11 @@ Partial Class UCDiagnnostico
         'pbAdvertencia
         '
         Me.pbAdvertencia.BackColor = System.Drawing.Color.Transparent
-        Me.pbAdvertencia.Cursor = System.Windows.Forms.Cursors.Help
+        Me.pbAdvertencia.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbAdvertencia.ForeColor = System.Drawing.Color.IndianRed
         Me.pbAdvertencia.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle
         Me.pbAdvertencia.IconColor = System.Drawing.Color.IndianRed
-        Me.pbAdvertencia.Location = New System.Drawing.Point(202, 11)
+        Me.pbAdvertencia.Location = New System.Drawing.Point(115, 6)
         Me.pbAdvertencia.Name = "pbAdvertencia"
         Me.pbAdvertencia.Size = New System.Drawing.Size(32, 32)
         Me.pbAdvertencia.TabIndex = 199

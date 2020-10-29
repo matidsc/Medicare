@@ -23,7 +23,6 @@ Partial Class frmLogin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblContraseña = New System.Windows.Forms.Label()
@@ -39,6 +38,8 @@ Partial Class frmLogin
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlInstancia.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,15 +54,6 @@ Partial Class frmLogin
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(880, 500)
         Me.pnlInstancia.TabIndex = 37
-        '
-        'UcAjustes1
-        '
-        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
-        Me.UcAjustes1.Name = "UcAjustes1"
-        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
-        Me.UcAjustes1.TabIndex = 52
-        Me.UcAjustes1.Visible = False
         '
         'pnlContenedor
         '
@@ -80,6 +72,7 @@ Partial Class frmLogin
         Me.pnlContenedor.Controls.Add(Me.GunaSeparator1)
         Me.pnlContenedor.Controls.Add(Me.txtPass)
         Me.pnlContenedor.Controls.Add(Me.lblApp)
+        Me.pnlContenedor.Controls.Add(Me.Panel1)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
@@ -286,6 +279,23 @@ Partial Class frmLogin
         Me.lblApp.Text = "APLICACION"
         Me.lblApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(880, 500)
+        Me.Panel1.TabIndex = 55
+        '
+        'UcAjustes1
+        '
+        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
+        Me.UcAjustes1.Name = "UcAjustes1"
+        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
+        Me.UcAjustes1.TabIndex = 52
+        Me.UcAjustes1.Visible = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -323,4 +333,5 @@ Partial Class frmLogin
     Friend WithEvents lblContraseña As Label
     Friend WithEvents lblUsuario As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
 End Class

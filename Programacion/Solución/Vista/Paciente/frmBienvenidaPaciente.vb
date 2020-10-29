@@ -96,7 +96,9 @@ Public Class frmBienvenidaPaciente
     End Sub
 
     Private Sub pnlReanudar_MouseClick(sender As Object, e As MouseEventArgs) Handles btnReanudar.Click
-        If chatComenzo Then
+
+        If Not ControladorChat.Singleton.verificarEstadoChat Then
+
             Dim frm As New frmChat
             Me.SuspendLayout()
             Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -105,9 +107,11 @@ Public Class frmBienvenidaPaciente
             pnlContenedor.Hide()
             pnlInstancia.Show()
             Me.ResumeLayout()
+
         Else
             MsgBox("Usted aún no ha iniciado ningún chat")
         End If
+
     End Sub
 
     Private Sub btnSi_Click(sender As Object, e As EventArgs) Handles btnSi.Click
@@ -115,10 +119,10 @@ Public Class frmBienvenidaPaciente
         chatComenzo = True
         Dim frm As New frmChat
         Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmChat)
         lblNA.Visible = True
         pnlNoti.Visible = False
-        Principal.Singleton.CargarVentana(Me.pnlContenedor, frm)
-        Principal.Singleton.CambiarTamaño(frmChat)
         frm.Show()
         pnlContenedor.Hide()
         pnlInstancia.Show()
@@ -150,14 +154,20 @@ Public Class frmBienvenidaPaciente
     End Sub
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        Dim frm As New frmIngresarSintomas
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
+
+        If contChat.verificarEstadoChat() Then
+            Dim frm As New frmIngresarSintomas
+            Me.SuspendLayout()
+            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+            Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+            frm.Show()
+            pnlContenedor.Hide()
+            pnlInstancia.Show()
+            Me.ResumeLayout()
+        Else
+            MsgBox("Usted ya ha realizado una consulta")
+        End If
+
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click

@@ -233,5 +233,14 @@ Public Class ModeloChat
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
+    Public Function verificarEstadoChat(cedula As String) As Int16
+        Dim consulta = "select finalizado from salachat c, usuario_entra_chat uc where uc.idchat = c.idchat and uc.cedula = " & cedula & " and c.idChat in (select max(c.idchat) from salachat c, usuario_entra_chat uc where uc.idchat = c.idchat and uc.cedula = " & cedula & ")"
+        Return ModeloConsultas.Singleton.ConsultaCampo(consulta)
 
+    End Function
+
+    Public Function ObtenerChatPaciente(cedula As String) As Integer
+        Dim consulta As String = "SELECT MAX(c.idChat) FROM salachat c, usuario_entra_chat uc WHERE c.idChat = uc.idChat AND finalizado = 0 AND cedula = " & cedula
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Integer)
+    End Function
 End Class

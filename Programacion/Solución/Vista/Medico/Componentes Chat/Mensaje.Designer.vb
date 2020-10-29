@@ -30,12 +30,12 @@ Partial Class Mensaje
         '
         'horaEnviado
         '
-        Me.horaEnviado.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.horaEnviado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.horaEnviado.AutoSize = True
+        Me.horaEnviado.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.horaEnviado.ForeColor = System.Drawing.Color.White
-        Me.horaEnviado.Location = New System.Drawing.Point(0, 41)
+        Me.horaEnviado.Location = New System.Drawing.Point(556, 13)
         Me.horaEnviado.Name = "horaEnviado"
-        Me.horaEnviado.Size = New System.Drawing.Size(764, 13)
+        Me.horaEnviado.Size = New System.Drawing.Size(44, 20)
         Me.horaEnviado.TabIndex = 3
         Me.horaEnviado.Text = "00:00"
         Me.horaEnviado.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -43,12 +43,13 @@ Partial Class Mensaje
         '
         'horaRecibido
         '
-        Me.horaRecibido.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.horaRecibido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.horaRecibido.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.horaRecibido.AutoSize = True
+        Me.horaRecibido.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.horaRecibido.ForeColor = System.Drawing.Color.White
-        Me.horaRecibido.Location = New System.Drawing.Point(0, 41)
+        Me.horaRecibido.Location = New System.Drawing.Point(164, 13)
         Me.horaRecibido.Name = "horaRecibido"
-        Me.horaRecibido.Size = New System.Drawing.Size(39, 13)
+        Me.horaRecibido.Size = New System.Drawing.Size(44, 20)
         Me.horaRecibido.TabIndex = 4
         Me.horaRecibido.Text = "00:00"
         Me.horaRecibido.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -57,32 +58,32 @@ Partial Class Mensaje
         'lbl_Enviado
         '
         Me.lbl_Enviado.AutoSize = True
-        Me.lbl_Enviado.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.lbl_Enviado.BackColor = System.Drawing.Color.FromArgb(CType(CType(114, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.lbl_Enviado.Dock = System.Windows.Forms.DockStyle.Right
         Me.lbl_Enviado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbl_Enviado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Enviado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Enviado.ForeColor = System.Drawing.Color.White
-        Me.lbl_Enviado.Location = New System.Drawing.Point(626, 0)
+        Me.lbl_Enviado.Location = New System.Drawing.Point(619, 4)
         Me.lbl_Enviado.MaximumSize = New System.Drawing.Size(400, 0)
         Me.lbl_Enviado.Name = "lbl_Enviado"
         Me.lbl_Enviado.Padding = New System.Windows.Forms.Padding(10)
-        Me.lbl_Enviado.Size = New System.Drawing.Size(138, 40)
+        Me.lbl_Enviado.Size = New System.Drawing.Size(125, 41)
         Me.lbl_Enviado.TabIndex = 7
         Me.lbl_Enviado.Text = "SAMPLE TEXT"
         '
         'lbl_Recibido
         '
         Me.lbl_Recibido.AutoSize = True
-        Me.lbl_Recibido.BackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.lbl_Recibido.BackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.lbl_Recibido.Dock = System.Windows.Forms.DockStyle.Left
         Me.lbl_Recibido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbl_Recibido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Recibido.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Recibido.ForeColor = System.Drawing.Color.White
-        Me.lbl_Recibido.Location = New System.Drawing.Point(0, 0)
+        Me.lbl_Recibido.Location = New System.Drawing.Point(20, 4)
         Me.lbl_Recibido.MaximumSize = New System.Drawing.Size(400, 0)
         Me.lbl_Recibido.Name = "lbl_Recibido"
         Me.lbl_Recibido.Padding = New System.Windows.Forms.Padding(10)
-        Me.lbl_Recibido.Size = New System.Drawing.Size(138, 40)
+        Me.lbl_Recibido.Size = New System.Drawing.Size(125, 41)
         Me.lbl_Recibido.TabIndex = 8
         Me.lbl_Recibido.Text = "SAMPLE TEXT"
         '
@@ -90,8 +91,8 @@ Partial Class Mensaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(764, 54)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(764, 47)
         Me.Controls.Add(Me.lbl_Recibido)
         Me.Controls.Add(Me.lbl_Enviado)
         Me.Controls.Add(Me.horaRecibido)
@@ -100,6 +101,7 @@ Partial Class Mensaje
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Mensaje"
+        Me.Padding = New System.Windows.Forms.Padding(20, 4, 20, 4)
         Me.Text = "SAMPLE TEXT"
         Me.ResumeLayout(False)
         Me.PerformLayout()

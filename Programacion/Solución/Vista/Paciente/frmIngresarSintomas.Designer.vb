@@ -36,14 +36,14 @@ Partial Class frmIngresarSintomas
         Me.dgvTodos = New System.Windows.Forms.DataGridView()
         Me.SintomaTodos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
         Me.scrollSeleccionados = New Guna.UI.WinForms.GunaVScrollBar()
         Me.scrollTodos = New Guna.UI.WinForms.GunaVScrollBar()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.btnObtenerDiag = New Guna.UI.WinForms.GunaButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvTodos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlContenedor.SuspendLayout()
@@ -162,6 +162,7 @@ Partial Class frmIngresarSintomas
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvTodos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTodos.ColumnHeadersVisible = False
         Me.dgvTodos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SintomaTodos})
         Me.dgvTodos.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -209,6 +210,49 @@ Partial Class frmIngresarSintomas
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 160
+        '
+        'lblBuscar
+        '
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.lblBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.lblBuscar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBuscar.ForeColor = System.Drawing.Color.Silver
+        Me.lblBuscar.Location = New System.Drawing.Point(124, 101)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(46, 17)
+        Me.lblBuscar.TabIndex = 200
+        Me.lblBuscar.Text = "Buscar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.buscar
+        Me.PictureBox1.Location = New System.Drawing.Point(83, 97)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox1.TabIndex = 199
+        Me.PictureBox1.TabStop = False
+        '
+        'GunaTextBox2
+        '
+        Me.GunaTextBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaTextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.GunaTextBox2.BorderSize = 1
+        Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.GunaTextBox2.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.DarkSlateBlue
+        Me.GunaTextBox2.FocusedForeColor = System.Drawing.Color.White
+        Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaTextBox2.ForeColor = System.Drawing.Color.Silver
+        Me.GunaTextBox2.Location = New System.Drawing.Point(67, 91)
+        Me.GunaTextBox2.Name = "GunaTextBox2"
+        Me.GunaTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.GunaTextBox2.Radius = 17
+        Me.GunaTextBox2.Size = New System.Drawing.Size(255, 38)
+        Me.GunaTextBox2.TabIndex = 198
+        Me.GunaTextBox2.TextOffsetX = 50
         '
         'scrollSeleccionados
         '
@@ -290,49 +334,6 @@ Partial Class frmIngresarSintomas
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 160
-        '
-        'lblBuscar
-        '
-        Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.lblBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lblBuscar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBuscar.ForeColor = System.Drawing.Color.Silver
-        Me.lblBuscar.Location = New System.Drawing.Point(124, 101)
-        Me.lblBuscar.Name = "lblBuscar"
-        Me.lblBuscar.Size = New System.Drawing.Size(46, 17)
-        Me.lblBuscar.TabIndex = 200
-        Me.lblBuscar.Text = "Buscar"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.buscar
-        Me.PictureBox1.Location = New System.Drawing.Point(83, 97)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
-        Me.PictureBox1.TabIndex = 199
-        Me.PictureBox1.TabStop = False
-        '
-        'GunaTextBox2
-        '
-        Me.GunaTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.GunaTextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.GunaTextBox2.BorderSize = 1
-        Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaTextBox2.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.DarkSlateBlue
-        Me.GunaTextBox2.FocusedForeColor = System.Drawing.Color.White
-        Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaTextBox2.ForeColor = System.Drawing.Color.Silver
-        Me.GunaTextBox2.Location = New System.Drawing.Point(67, 91)
-        Me.GunaTextBox2.Name = "GunaTextBox2"
-        Me.GunaTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaTextBox2.Radius = 17
-        Me.GunaTextBox2.Size = New System.Drawing.Size(255, 38)
-        Me.GunaTextBox2.TabIndex = 198
-        Me.GunaTextBox2.TextOffsetX = 50
         '
         'frmIngresarSintomas
         '

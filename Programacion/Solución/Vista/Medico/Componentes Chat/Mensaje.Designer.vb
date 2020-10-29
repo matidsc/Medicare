@@ -43,11 +43,10 @@ Partial Class Mensaje
         '
         'horaRecibido
         '
-        Me.horaRecibido.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.horaRecibido.AutoSize = True
         Me.horaRecibido.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.horaRecibido.ForeColor = System.Drawing.Color.White
-        Me.horaRecibido.Location = New System.Drawing.Point(164, 13)
+        Me.horaRecibido.Location = New System.Drawing.Point(163, 13)
         Me.horaRecibido.Name = "horaRecibido"
         Me.horaRecibido.Size = New System.Drawing.Size(44, 20)
         Me.horaRecibido.TabIndex = 4

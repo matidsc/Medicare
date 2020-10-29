@@ -3,15 +3,31 @@ Public Class ucchat
 
 
 
-    Public Sub New(nombre As String, mensaje As String, fecha As String, idChat As Int32, cedula As String)
+    Public Sub New(nombre As String, mensaje As String, fecha As Date, idChat As Int32, cedula As String, foto As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
         lblNombre.Text = nombre
         lblMensaje.Text = mensaje
-        lblFecha.Text = "21:37"
-        lblidChat.Text = idChat
+        lblFecha.Text = fecha
 
+
+        If fecha.Hour < 10 Then
+            lblFecha.Text = "0" & fecha.Hour().ToString() & ":"
+        Else
+            lblFecha.Text = fecha.Hour().ToString() & ":"
+        End If
+
+        If fecha.Minute < 10 Then
+            lblFecha.Text = lblFecha.Text & "0" & fecha.Minute.ToString
+        Else
+            lblFecha.Text = lblFecha.Text & fecha.Minute.ToString
+        End If
+
+        lblidChat.Text = idChat
+        If foto <> Nothing Then
+            GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
+        End If
         lblCed.Text = cedula
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
@@ -68,27 +84,19 @@ Public Class ucchat
         Dim instancia As frmChat = Me.ParentForm
         instancia.ReloadChat()
         instancia.lblUsuario.Text = Me.lblNombre.Text
-        If instancia.instanciaChat IsNot Nothing Then
-            Me.BackColor = Color.FromArgb(25, 34, 41)
-            instancia.instanciaChat = Me
-        Else
-            Me.BackColor = Color.FromArgb(25, 34, 41)
-            instancia.instanciaChat = Me
+        instancia.lblUsuario.Visible = True
+        instancia.pbPerfil.Visible = True
+        instancia.btnFinalizar.Visible = True
+        instancia.btnSintomasDiag.Visible = True
+
+        If GunaCirclePictureBox1.Image IsNot Nothing Then
+            instancia.pbPerfil.Image = GunaCirclePictureBox1.Image
         End If
 
-
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub GunaCirclePictureBox1_Click(sender As Object, e As EventArgs) Handles GunaCirclePictureBox1.Click
-
-    End Sub
-
-    Private Sub lblMensaje_Click(sender As Object, e As EventArgs) Handles lblMensaje.Click
-
+        If instancia.instanciaChat IsNot Nothing Then
+            Me.BackColor = Color.FromArgb(25, 34, 41)
+            instancia.instanciaChat.BackColor = Color.FromArgb(31, 39, 49)
+            instancia.instanciaChat = Me
+        End If
     End Sub
 End Class

@@ -180,7 +180,7 @@ Public Class ModeloChat
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function MisChats(cedula As String, finalizado As Byte)
 
-        Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe 
+        Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe, CONVERT(fotoPerfil USING utf8)
                                    FROM usuario u, paciente p, usuario_entra_chat uc, salachat c
                                    WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = " & finalizado & " 
                                    AND c.idChat in 

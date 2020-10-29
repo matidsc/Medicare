@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ucchat
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ucchat
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblCed = New System.Windows.Forms.Label()
         Me.lblidChat = New System.Windows.Forms.Label()
@@ -28,7 +28,6 @@ Partial Class ucchat
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.lblMensaje = New System.Windows.Forms.Label()
         Me.GunaCirclePictureBox1 = New Guna.UI.WinForms.GunaCirclePictureBox()
-        Me.GunaMediumRadioButton1 = New Guna.UI.WinForms.GunaMediumRadioButton()
         CType(Me.GunaCirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,7 +60,7 @@ Partial Class ucchat
         Me.lblFecha.Enabled = False
         Me.lblFecha.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.lblFecha.Location = New System.Drawing.Point(245, 12)
+        Me.lblFecha.Location = New System.Drawing.Point(246, 10)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(46, 18)
         Me.lblFecha.TabIndex = 10
@@ -84,7 +83,7 @@ Partial Class ucchat
         Me.lblMensaje.Enabled = False
         Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(213, Byte), Integer))
-        Me.lblMensaje.Location = New System.Drawing.Point(77, 41)
+        Me.lblMensaje.Location = New System.Drawing.Point(77, 44)
         Me.lblMensaje.Name = "lblMensaje"
         Me.lblMensaje.Size = New System.Drawing.Size(172, 42)
         Me.lblMensaje.TabIndex = 7
@@ -101,23 +100,11 @@ Partial Class ucchat
         Me.GunaCirclePictureBox1.TabStop = False
         Me.GunaCirclePictureBox1.UseTransfarantBackground = False
         '
-        'GunaMediumRadioButton1
-        '
-        Me.GunaMediumRadioButton1.BaseColor = System.Drawing.Color.White
-        Me.GunaMediumRadioButton1.CheckedOffColor = System.Drawing.Color.Gray
-        Me.GunaMediumRadioButton1.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaMediumRadioButton1.FillColor = System.Drawing.Color.White
-        Me.GunaMediumRadioButton1.Location = New System.Drawing.Point(272, 62)
-        Me.GunaMediumRadioButton1.Name = "GunaMediumRadioButton1"
-        Me.GunaMediumRadioButton1.Size = New System.Drawing.Size(20, 20)
-        Me.GunaMediumRadioButton1.TabIndex = 15
-        '
         'ucchat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Controls.Add(Me.GunaMediumRadioButton1)
         Me.Controls.Add(Me.GunaCirclePictureBox1)
         Me.Controls.Add(Me.lblCed)
         Me.Controls.Add(Me.lblidChat)
@@ -137,5 +124,4 @@ Partial Class ucchat
     Friend WithEvents lblNombre As Label
     Friend WithEvents lblMensaje As Label
     Friend WithEvents GunaCirclePictureBox1 As Guna.UI.WinForms.GunaCirclePictureBox
-    Friend WithEvents GunaMediumRadioButton1 As Guna.UI.WinForms.GunaMediumRadioButton
 End Class

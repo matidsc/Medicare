@@ -63,8 +63,8 @@ Public Class frmChat
             'Chat.BackColor = Color.White
         Else
             ' updateChats() dgv viejo
-            Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
-            CargarPanel(Listado)
+
+            CargarPanel(contChat.listarMisChats(Datos_Temporales.userLog, 0))
             'Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
             'ScrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
         End If
@@ -103,7 +103,7 @@ Public Class frmChat
 
         Dim UltimoMensaje As New DataTable
         Dim mensaje As String = ""
-        Dim fecha As String = ""
+        Dim fecha As Date
 
 
         For Each panel As DataRow In Listado.Rows
@@ -113,15 +113,16 @@ Public Class frmChat
 
             For Each columnaMensaje As DataRow In UltimoMensaje.Rows
                 mensaje = columnaMensaje.Item(0)
+                fecha = columnaMensaje.Item(1)
             Next
 
-            Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, "", panel.Item(1), panel.Item(0))
+            Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, fecha, panel.Item(1), panel.Item(0), panel.Item(4))
 
-            'form.TopLevel = False
             form.Width = Chat.Width - 25
             FlowLayoutPanel1.Controls.Add(form)
             form.Show()
             mensaje = ""
+            fecha = Nothing
         Next
 
         FlowLayoutPanel1.ResumeLayout()
@@ -226,39 +227,40 @@ Public Class frmChat
 
     Private Sub enviarMensaje()
 
+
         If txtMsg.Text <> "" Then
+            If Datos_Temporales.idchat IsNot Nothing Then
+                If contChat.enviarMensaje(Datos_Temporales.userLog, Datos_Temporales.idchat, txtMsg.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) Then
+                    lblEscriba.Focus()
+                    ReloadSentMessage()
+                    'Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
+                    'CargarPanel(Listado)
 
-            If contChat.enviarMensaje(Datos_Temporales.userLog, Datos_Temporales.idchat, txtMsg.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) Then
-                lblEscriba.Focus()
-                ReloadSentMessage()
-                'Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
-                'CargarPanel(Listado)
 
+                    Dim nuevoMensaje As New DataTable
+                    Dim mensaje As String
 
-                Dim nuevoMensaje As New DataTable
-                Dim mensaje As String
+                    'For Each var As Form1 In FlowLayoutPanel1.Controls
 
-                'For Each var As Form1 In FlowLayoutPanel1.Controls
+                    '    nuevoMensaje.Clear()
+                    '    nuevoMensaje = contChat.GetMensaje(var.lblidChat.Text)
 
-                '    nuevoMensaje.Clear()
-                '    nuevoMensaje = contChat.GetMensaje(var.lblidChat.Text)
+                    '    If var.lblidChat.Text = nuevoMensaje.Rows.Item(0).Item(3) Then
 
-                '    If var.lblidChat.Text = nuevoMensaje.Rows.Item(0).Item(3) Then
+                    '        For Each columnaMensaje As DataRow In nuevoMensaje.Rows
+                    '            mensaje = columnaMensaje.Item(0)
+                    '        Next
 
-                '        For Each columnaMensaje As DataRow In nuevoMensaje.Rows
-                '            mensaje = columnaMensaje.Item(0)
-                '        Next
+                    '        var.lblMensaje.Text = mensaje
+                    '    End If
 
-                '        var.lblMensaje.Text = mensaje
-                '    End If
+                    'Next
+                    txtMsg.Text = Nothing
 
-                'Next
-                txtMsg.Text = Nothing
-
-            Else
-                MsgBox("Error al enviar el mensaje")
+                Else
+                    MsgBox("Error al enviar el mensaje")
+                End If
             End If
-
         End If
     End Sub
 
@@ -368,7 +370,15 @@ Public Class frmChat
 
 
 
+    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMsg.KeyPress
 
+        If Asc(e.KeyChar) = Keys.Enter Then
+
+            e.Handled = True
+
+        End If
+
+    End Sub
     Private Sub txtMensaje_KeyPress(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             enviarMensaje()
@@ -481,6 +491,10 @@ Public Class frmChat
     End Sub
 
     Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
+
+    End Sub
+
+    Private Sub Chat_Paint(sender As Object, e As PaintEventArgs) Handles Chat.Paint
 
     End Sub
 End Class

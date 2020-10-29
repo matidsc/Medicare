@@ -97,6 +97,7 @@ Partial Class frmChat
         Me.lblUsuario.TabIndex = 11
         Me.lblUsuario.Text = "fdfdsfds"
         Me.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblUsuario.Visible = False
         '
         'lblEscriba
         '
@@ -211,6 +212,7 @@ Partial Class frmChat
         Me.btnFinalizar.TabIndex = 183
         Me.btnFinalizar.Text = "FINALIZAR"
         Me.btnFinalizar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnFinalizar.Visible = False
         '
         'btnFicha
         '
@@ -268,6 +270,7 @@ Partial Class frmChat
         Me.btnSintomasDiag.TabIndex = 181
         Me.btnSintomasDiag.Text = "VER SÍNTOMAS Y DIAGNÓSTICO"
         Me.btnSintomasDiag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnSintomasDiag.Visible = False
         '
         'pbPerfil
         '
@@ -279,6 +282,7 @@ Partial Class frmChat
         Me.pbPerfil.TabIndex = 157
         Me.pbPerfil.TabStop = False
         Me.pbPerfil.UseTransfarantBackground = False
+        Me.pbPerfil.Visible = False
         '
         'btnAtras
         '

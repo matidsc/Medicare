@@ -13,51 +13,54 @@ Public Class frmRegistrarMedico
     End Sub
 
     Private Sub btnRegistrarMedico_Click(sender As Object, e As EventArgs) Handles btnRegistrarMedico.Click
+        If txtCed.Text <> "" And txtPrimerNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" And txtEspec.Text <> "" And txtMail.Text <> "" Then
 
-        If Principal.Singleton.VerificarCedula(check, txtCed.Text) Then
-            If Principal.Singleton.VerificarString(check, txtPrimerNombre.Text, txtPrimerApellido.Text, txtSegundoNombre.Text, txtSegundoApellido.Text) Then
-                If check.Verificar_String(txtEspec.Text) Then
-                    If check.VerificarEmail(txtMail.Text) Then
+            If Principal.Singleton.VerificarCedula(check, txtCed.Text) Then
+                If Principal.Singleton.VerificarString(check, txtPrimerNombre.Text, txtPrimerApellido.Text, txtSegundoNombre.Text, txtSegundoApellido.Text) Then
+                    If check.Verificar_String(txtEspec.Text) Then
+                        If check.VerificarEmail(txtMail.Text) Then
 
-                        Dim med As New ControladorMedico(
-                            txtCed.Text,
-                            Encriptar.Singleton.HASH256(txtCed.Text),
-                            txtPrimerNombre.Text.ToUpper,
-                            txtSegundoNombre.Text.ToUpper,
-                            txtPrimerApellido.Text.ToUpper,
-                            txtSegundoApellido.Text.ToUpper,
-                            txtEspec.Text.ToUpper,
-                            txtMail.Text(), Principal.Singleton.Base64(path))
+                            Dim med As New ControladorMedico(
+                                txtCed.Text,
+                                Encriptar.Singleton.HASH256(txtCed.Text),
+                                txtPrimerNombre.Text.ToUpper,
+                                txtSegundoNombre.Text.ToUpper,
+                                txtPrimerApellido.Text.ToUpper,
+                                txtSegundoApellido.Text.ToUpper,
+                                txtEspec.Text.ToUpper,
+                                txtMail.Text(), Principal.Singleton.Base64(path))
 
-                        If med.VerificarBaja(txtCed.Text) Then
+                            If med.VerificarBaja(txtCed.Text) Then
 
-                            If med.registrar() Then
-                                MsgBox("Médico registrado con éxito")
-                                limpiar()
+                                If med.registrar() Then
+                                    MsgBox("Médico registrado con éxito")
+                                    limpiar()
+                                Else
+                                    MsgBox("El médico ya fue registrado")
+                                End If
+
                             Else
-                                MsgBox("El médico ya fue registrado")
+                                Dim respuesta As Integer = MsgBox("El médico se ecuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                If respuesta = vbYes Then
+                                    med.ReingresarUsuario(txtCed.Text)
+                                    limpiar()
+                                End If
+
                             End If
 
                         Else
-                            Dim respuesta As Integer = MsgBox("El médico se ecuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
-
-                            If respuesta = vbYes Then
-                                med.ReingresarUsuario(txtCed.Text)
-                                limpiar()
-                            End If
-
+                            MsgBox("El correo ingresado no es correcto")
                         End If
 
-                    Else
-                        MsgBox("El correo ingresado no es correcto")
                     End If
-
                 End If
+            Else
+                MsgBox("La cédula ingresada no es correcta")
             End If
         Else
-            MsgBox("La cédula ingresada no es correcta")
+            MsgBox("Debe rellenar los campos")
         End If
-
     End Sub
     Private Sub limpiar()
         txtCed.Text = Nothing

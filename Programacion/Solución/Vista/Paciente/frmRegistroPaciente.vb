@@ -32,12 +32,8 @@ Public Class frmRegistroPaciente
                                         sexo = "M"
                                     ElseIf cbF.Checked Then
                                         sexo = "F"
-                                    Else
-                                        MsgBox("Debe ingresar un sexo")
-                                    End If
 
-
-                                    Dim pac As New ControladorPaciente(txtCI.Text,
+                                        Dim pac As New ControladorPaciente(txtCI.Text,
                                                        pass,
                                                        txtPNom.Text.ToUpper,
                                                        txtSNom.Text.ToUpper,
@@ -49,43 +45,47 @@ Public Class frmRegistroPaciente
                                                        txtFecNac.Text, Principal.Singleton.Base64(path)
                                                        )
 
-                                    If pac.VerificarBaja(txtCI.Text) Then
+                                        If pac.VerificarBaja(txtCI.Text) Then
 
-                                        If pac.registrar() Then
-                                            MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
-                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                            txtPApe,
-                                                    txtSApe, txtSNom,
-                                                   txtMail, dgvTelefonos, aliTel)
-                                            txtFecNac.Clear()
-                                            cbM.Checked = False
-                                            cbF.Checked = False
-                                            aliTel.Clear()
-                                            path = Nothing
-                                            GunaPictureBox1.Image = Nothing
-                                        Else
-                                            MsgBox("El paciente ya fue registrado")
-                                            aliTel.Clear()
-                                        End If
-
-                                    Else
-                                        Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
-
-                                        If respuesta = vbYes Then
-                                            pac.ReingresarUsuario(txtCI.Text)
-                                            MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
-                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                        txtPApe,
+                                            If pac.registrar() Then
+                                                MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                                Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                                txtPApe,
                                                         txtSApe, txtSNom,
-                                                        txtMail, dgvTelefonos, aliTel)
-                                            txtFecNac.Clear()
-                                            cbM.Checked = False
-                                            cbF.Checked = False
-                                            GunaPictureBox1.Image = Nothing
-                                            path = Nothing
-                                        End If
+                                                       txtMail, dgvTelefonos, aliTel)
+                                                txtFecNac.Clear()
+                                                cbM.Checked = False
+                                                cbF.Checked = False
+                                                aliTel.Clear()
+                                                path = Nothing
+                                                GunaPictureBox1.Image = Nothing
+                                            Else
+                                                MsgBox("El paciente ya fue registrado")
+                                                aliTel.Clear()
+                                            End If
 
+                                        Else
+                                            Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
+
+                                            If respuesta = vbYes Then
+                                                pac.ReingresarUsuario(txtCI.Text)
+                                                MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                                Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                                            txtPApe,
+                                                            txtSApe, txtSNom,
+                                                            txtMail, dgvTelefonos, aliTel)
+                                                txtFecNac.Clear()
+                                                cbM.Checked = False
+                                                cbF.Checked = False
+                                                GunaPictureBox1.Image = Nothing
+                                                path = Nothing
+                                            End If
+
+                                        End If
+                                    Else
+                                        MsgBox("Debe ingresar un sexo")
                                     End If
+                                End If
 
                                 Else
 

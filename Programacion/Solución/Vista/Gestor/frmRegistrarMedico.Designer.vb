@@ -79,7 +79,7 @@ Partial Class frmRegistrarMedico
         Me.txtEspec.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.txtEspec.LineColor = System.Drawing.Color.Gainsboro
         Me.txtEspec.LineSize = 1
-        Me.txtEspec.Location = New System.Drawing.Point(33, 383)
+        Me.txtEspec.Location = New System.Drawing.Point(40, 285)
         Me.txtEspec.Name = "txtEspec"
         Me.txtEspec.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEspec.Size = New System.Drawing.Size(262, 36)
@@ -90,7 +90,7 @@ Partial Class frmRegistrarMedico
         Me.lblEspec.AutoSize = True
         Me.lblEspec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEspec.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblEspec.Location = New System.Drawing.Point(28, 336)
+        Me.lblEspec.Location = New System.Drawing.Point(35, 238)
         Me.lblEspec.Name = "lblEspec"
         Me.lblEspec.Size = New System.Drawing.Size(140, 25)
         Me.lblEspec.TabIndex = 185
@@ -131,7 +131,7 @@ Partial Class frmRegistrarMedico
         Me.txtSegundoNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.txtSegundoNombre.LineColor = System.Drawing.Color.Gainsboro
         Me.txtSegundoNombre.LineSize = 1
-        Me.txtSegundoNombre.Location = New System.Drawing.Point(404, 387)
+        Me.txtSegundoNombre.Location = New System.Drawing.Point(403, 402)
         Me.txtSegundoNombre.Name = "txtSegundoNombre"
         Me.txtSegundoNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSegundoNombre.Size = New System.Drawing.Size(262, 36)
@@ -142,7 +142,7 @@ Partial Class frmRegistrarMedico
         Me.lblSNom.AutoSize = True
         Me.lblSNom.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblSNom.Location = New System.Drawing.Point(400, 336)
+        Me.lblSNom.Location = New System.Drawing.Point(399, 351)
         Me.lblSNom.Name = "lblSNom"
         Me.lblSNom.Size = New System.Drawing.Size(158, 25)
         Me.lblSNom.TabIndex = 189
@@ -252,7 +252,7 @@ Partial Class frmRegistrarMedico
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(28, 502)
+        Me.Label1.Location = New System.Drawing.Point(35, 351)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(169, 25)
         Me.Label1.TabIndex = 197
@@ -267,7 +267,7 @@ Partial Class frmRegistrarMedico
         Me.txtMail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.txtMail.LineColor = System.Drawing.Color.Gainsboro
         Me.txtMail.LineSize = 1
-        Me.txtMail.Location = New System.Drawing.Point(32, 553)
+        Me.txtMail.Location = New System.Drawing.Point(39, 402)
         Me.txtMail.Name = "txtMail"
         Me.txtMail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMail.Size = New System.Drawing.Size(262, 36)

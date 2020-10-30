@@ -35,14 +35,18 @@ Public Class frmRegistrarSintoma
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If op = 0 Then
             If txtDescripcion.Text.Length > 10 Then
-                Dim sintoma As New ControladorSintoma(txtNom.Text, txtDescripcion.Text)
+                If txtNom.Text <> Nothing Then
+                    Dim sintoma As New ControladorSintoma(txtNom.Text, txtDescripcion.Text)
 
-                If sintoma.Registrar() Then
-                    MsgBox("Síntoma registrado con éxito")
-                    txtDescripcion.Text = Nothing
-                    txtNom.Text = Nothing
+                    If sintoma.Registrar() Then
+                        MsgBox("Síntoma registrado con éxito")
+                        txtDescripcion.Text = Nothing
+                        txtNom.Text = Nothing
+                    Else
+                        MsgBox("Error al registrar el síntoma")
+                    End If
                 Else
-                    MsgBox("Error al registrar el síntoma")
+                    MsgBox("Debe Ingresar un nombre")
                 End If
 
             Else
@@ -52,18 +56,23 @@ Public Class frmRegistrarSintoma
         ElseIf op = 1 Then
 
             If txtDescripcion.Text.Length > 10 Then
-                Dim sintoma As New ControladorSintoma(txtNom.Text, txtDescripcion.Text)
+                If txtNom.Text <> Nothing Then
+                    Dim sintoma As New ControladorSintoma(txtNom.Text, txtDescripcion.Text)
 
-                If sintoma.Modificar(Label1.Text) Then
-                    MsgBox("Síntoma modificado con éxito")
-                    Label1.Text = txtNom.Text
+                    If sintoma.Modificar(Label1.Text) Then
+                        MsgBox("Síntoma modificado con éxito")
+                        Label1.Text = txtNom.Text
+                    Else
+                        MsgBox("Error al modificar el síntoma")
+                    End If
                 Else
-                    MsgBox("Error al modificar el síntoma")
+                    MsgBox("Debe Ingresar un nombre")
                 End If
 
             Else
                 MsgBox("Debe completar la descripción")
             End If
+
         End If
 
 

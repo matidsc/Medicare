@@ -68,7 +68,7 @@ Public Class frmListadoChat
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnVerMisChat.Click
-        Dim frm As New frmChat
+        Dim frm As New frmChat()
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
         Principal.Singleton.CambiarTamaño(frmChat)

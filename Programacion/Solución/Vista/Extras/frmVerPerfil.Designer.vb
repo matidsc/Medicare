@@ -28,36 +28,38 @@ Partial Class frmVerPerfil
         Me.lblPatologiasCronicas = New System.Windows.Forms.Label()
         Me.lblMinimizar = New System.Windows.Forms.Label()
         Me.lblCerrar = New System.Windows.Forms.Label()
-        Me.picEditar = New System.Windows.Forms.PictureBox()
         Me.picImagenPerfil = New System.Windows.Forms.PictureBox()
-        CType(Me.picEditar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
+        Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
         CType(Me.picImagenPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblNombre
         '
-        Me.lblNombre.AutoSize = True
-        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(23, 248)
+        Me.lblNombre.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.Silver
+        Me.lblNombre.Location = New System.Drawing.Point(23, 223)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(334, 24)
+        Me.lblNombre.Size = New System.Drawing.Size(92, 34)
         Me.lblNombre.TabIndex = 1
         Me.lblNombre.Text = "Nombre:  xxxxxxxxxxxxxxxxxxxxxxxx"
         '
         'lblMail
         '
-        Me.lblMail.AutoSize = True
-        Me.lblMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMail.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMail.ForeColor = System.Drawing.Color.Silver
         Me.lblMail.Location = New System.Drawing.Point(23, 322)
         Me.lblMail.Name = "lblMail"
-        Me.lblMail.Size = New System.Drawing.Size(261, 24)
+        Me.lblMail.Size = New System.Drawing.Size(261, 34)
         Me.lblMail.TabIndex = 2
         Me.lblMail.Text = "e-mail: xxxxxxxxxxxxxxxxxxx"
         '
         'lblTelefonos
         '
-        Me.lblTelefonos.AutoSize = True
-        Me.lblTelefonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefonos.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefonos.ForeColor = System.Drawing.Color.Silver
         Me.lblTelefonos.Location = New System.Drawing.Point(23, 396)
         Me.lblTelefonos.Name = "lblTelefonos"
         Me.lblTelefonos.Size = New System.Drawing.Size(214, 24)
@@ -66,7 +68,8 @@ Partial Class frmVerPerfil
         '
         'lblPatologiasCronicas
         '
-        Me.lblPatologiasCronicas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPatologiasCronicas.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPatologiasCronicas.ForeColor = System.Drawing.Color.Silver
         Me.lblPatologiasCronicas.Location = New System.Drawing.Point(23, 470)
         Me.lblPatologiasCronicas.Name = "lblPatologiasCronicas"
         Me.lblPatologiasCronicas.Size = New System.Drawing.Size(391, 58)
@@ -97,15 +100,6 @@ Partial Class frmVerPerfil
         Me.lblCerrar.Text = "X"
         Me.lblCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'picEditar
-        '
-        Me.picEditar.Image = Global.Vista.My.Resources.Resources.icons8_edit_32px_1
-        Me.picEditar.Location = New System.Drawing.Point(380, 39)
-        Me.picEditar.Name = "picEditar"
-        Me.picEditar.Size = New System.Drawing.Size(34, 36)
-        Me.picEditar.TabIndex = 5
-        Me.picEditar.TabStop = False
-        '
         'picImagenPerfil
         '
         Me.picImagenPerfil.Image = Global.Vista.My.Resources.Resources.icons8_user_80px_1
@@ -116,15 +110,42 @@ Partial Class frmVerPerfil
         Me.picImagenPerfil.TabIndex = 0
         Me.picImagenPerfil.TabStop = False
         '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.IconPictureBox1.ForeColor = System.Drawing.Color.Silver
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserEdit
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.Silver
+        Me.IconPictureBox1.IconSize = 46
+        Me.IconPictureBox1.Location = New System.Drawing.Point(352, 33)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(53, 46)
+        Me.IconPictureBox1.TabIndex = 25
+        Me.IconPictureBox1.TabStop = False
+        '
+        'IconPictureBox2
+        '
+        Me.IconPictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.IconPictureBox2.ForeColor = System.Drawing.Color.Silver
+        Me.IconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Edit
+        Me.IconPictureBox2.IconColor = System.Drawing.Color.Silver
+        Me.IconPictureBox2.IconSize = 30
+        Me.IconPictureBox2.Location = New System.Drawing.Point(363, 245)
+        Me.IconPictureBox2.Name = "IconPictureBox2"
+        Me.IconPictureBox2.Size = New System.Drawing.Size(35, 30)
+        Me.IconPictureBox2.TabIndex = 26
+        Me.IconPictureBox2.TabStop = False
+        '
         'frmVerPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(426, 623)
+        Me.Controls.Add(Me.IconPictureBox2)
+        Me.Controls.Add(Me.IconPictureBox1)
         Me.Controls.Add(Me.lblCerrar)
         Me.Controls.Add(Me.lblMinimizar)
-        Me.Controls.Add(Me.picEditar)
         Me.Controls.Add(Me.picImagenPerfil)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblMail)
@@ -133,10 +154,10 @@ Partial Class frmVerPerfil
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmVerPerfil"
         Me.Text = "VerPerfil"
-        CType(Me.picEditar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picImagenPerfil, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -145,7 +166,8 @@ Partial Class frmVerPerfil
     Friend WithEvents lblMail As Label
     Friend WithEvents lblTelefonos As Label
     Friend WithEvents lblPatologiasCronicas As Label
-    Friend WithEvents picEditar As PictureBox
     Friend WithEvents lblMinimizar As Label
     Friend WithEvents lblCerrar As Label
+    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents IconPictureBox2 As FontAwesome.Sharp.IconPictureBox
 End Class

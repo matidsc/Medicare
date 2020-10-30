@@ -212,6 +212,11 @@ Vista
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Vista.My.Resources.Resources.icons8_male_user_52">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Vista.My.Resources.Resources.icons8_refresh_10px">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -333,6 +338,11 @@ Vista
 </summary>
 </member>
 <member name="P:Vista.My.Resources.Resources.medd">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Vista.My.Resources.Resources.noPic">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

@@ -18,7 +18,7 @@ Public Class frmRegistroPaciente
 
     Private Sub btnSoli_Click(sender As Object, e As EventArgs) Handles btnSoli.Click
 
-        If txtCI.Text <> "" And txtPass.Text <> "" And txtRepPass.Text <> "" And txtPNom.Text <> "" And txtPApe.Text <> "" And txtSNom.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then
+        If txtCI.Text <> "" And txtPass.Text <> "" And txtRepPass.Text <> "" And txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then
             If Principal.Singleton.VerificarCedula(check, txtCI.Text) Then
                 If Principal.Singleton.VerificarContraseña(seg, txtPass.Text, txtRepPass.Text) Then
                     pass = seg.HASH256(txtPass.Text)
@@ -30,8 +30,10 @@ Public Class frmRegistroPaciente
 
                                     If cbM.Checked Then
                                         sexo = "M"
-                                    Else
+                                    ElseIf cbF.Checked Then
                                         sexo = "F"
+                                    Else
+                                        MsgBox("Debe ingresar un sexo")
                                     End If
 
 
@@ -105,14 +107,6 @@ Public Class frmRegistroPaciente
 
     End Sub
 
-
-    'Private Sub dgvTelefonos_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    '    btnEliminar.Enabled = True
-    '    ' no permite elimianr si no hay ninguna cell seleccionada
-    'End Sub
-
-
     Private Sub btnAtras_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -139,7 +133,18 @@ Public Class frmRegistroPaciente
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        dgvTelefonos.Rows.Add()
+
+        If dgvTelefonos.Rows.Count = 0 Then
+            dgvTelefonos.Rows.Add()
+
+        ElseIf dgvTelefonos.Rows.Count > 0 Then
+
+            If dgvTelefonos.Rows(dgvTelefonos.Rows.Count - 1).Cells(0).Value <> "" Or dgvTelefonos.Rows.Count = 0 Then
+                dgvTelefonos.Rows.Add()
+            End If
+
+        End If
+
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -152,10 +157,14 @@ Public Class frmRegistroPaciente
     Private Sub dgvTelefonos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvTelefonos.RowsAdded
 
         btnEliminar.Enabled = True
+        If dgvTelefonos.Rows.Count = 10 Then
+            btnAceptar.Enabled = False
+        End If
 
     End Sub
 
     Private Sub dgvTelefonos_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles dgvTelefonos.RowsRemoved
+        btnAceptar.Enabled = True
 
         If dgvTelefonos.Rows.Count = 0 Then
             btnEliminar.Enabled = False
@@ -166,5 +175,9 @@ Public Class frmRegistroPaciente
     Private Sub btnAtras_Click_1(sender As Object, e As EventArgs) Handles btnAtras.Click
         Principal.Singleton.CambiarTamaño(frmLogin)
         Me.Dispose()
+    End Sub
+
+    Private Sub txtPApe_TextChanged(sender As Object, e As EventArgs) Handles txtPApe.TextChanged
+
     End Sub
 End Class

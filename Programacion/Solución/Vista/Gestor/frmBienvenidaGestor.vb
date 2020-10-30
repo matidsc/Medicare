@@ -91,10 +91,6 @@ Public Class frmBienvenidaGestor
         End If
     End Sub
 
-    Private Sub Label12_Click(sender As Object, e As EventArgs)
-        Me.WindowState = WindowState.Minimized
-    End Sub
-
     Private Sub btnPatologia_Click(sender As Object, e As EventArgs) Handles btnPatologia.Click
         Dim frm As New frmOpciones()
         frm.op = 0
@@ -166,8 +162,6 @@ Public Class frmBienvenidaGestor
             pnlFlow.Location = New Point(570, 0)
             lblNA.Location = New Point(573, 2)
             cargarGestores()
-
-
 
             pnlFlow.AutoScroll = False
             pnlFlow.HorizontalScroll.Enabled = False

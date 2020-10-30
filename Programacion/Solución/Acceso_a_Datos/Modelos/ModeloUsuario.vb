@@ -86,7 +86,7 @@ Public Class ModeloUsuario
     End Function
 
     Public Function listarUsuarios() As DataTable
-        Dim consulta = "SELECT nombre,pNom,sNom,pApe,sApe FROM usuario where bajaLogica=0"
+        Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,correo FROM usuario where bajaLogica=0"
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 

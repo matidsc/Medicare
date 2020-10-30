@@ -8,6 +8,8 @@ Public Class frmChat
     Public Property maxID As Int32
     Private Shared instancia As frmChat
     Public instanciaChat As ucchat = New ucchat()
+    Dim scrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+    Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
 
     ''' <summary>
     ''' Función encargada de devolver una instancia singleton de la clase.
@@ -23,8 +25,9 @@ Public Class frmChat
     End Function
 
     Private Sub frmChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
-        ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(Chat, scroll2, True)
+
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(Chat, scroll, True)
+        scrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(pnlChats, scroll2, True)
 
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
 
@@ -50,10 +53,10 @@ Public Class frmChat
             Me.ResumeLayout()
 
             btnFinalizar.Visible = False
-            btnFicha.Visible = False
+            'btnFicha.Visible = False
             btnSintomasDiag.Visible = False
 
-            FlowLayoutPanel1.Visible = False
+            pnlChats.Visible = False
             scroll.Visible = False
             ' b.Location = New Point((pnlWrapChat.Width - pnlAcciones.Width) \ 2, pnlAcciones.Location.Y)          
 
@@ -68,14 +71,19 @@ Public Class frmChat
             'Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
             'ScrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
         End If
+        ScrollHelper.UpdateScrollBar()
+        scrollHelper2.UpdateScrollBar()
 
-        Chat.AutoScroll = False
+        'Chat.AutoScroll = False
 
         Chat.HorizontalScroll.Enabled = False
 
-        FlowLayoutPanel1.HorizontalScroll.Enabled = False
+        pnlChats.HorizontalScroll.Enabled = False
+        Chat.HorizontalScroll.Visible = False
 
-        Chat.AutoScroll = True
+        pnlChats.HorizontalScroll.Visible = False
+
+        'Chat.AutoScroll = True
 
         Update()
 
@@ -88,18 +96,17 @@ Public Class frmChat
         instancia = Me
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
             Datos_Temporales.idchat = ControladorChat.Singleton.ObtenerChatPaciente
         End If
-
-
 
     End Sub
 
     Private Sub CargarPanel(Listado As DataTable)
 
-        FlowLayoutPanel1.SuspendLayout()
-        FlowLayoutPanel1.Controls.Clear()
+        pnlChats.SuspendLayout()
+        pnlChats.Controls.Clear()
 
         Dim UltimoMensaje As New DataTable
         Dim mensaje As String = ""
@@ -119,16 +126,15 @@ Public Class frmChat
             Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, fecha, panel.Item(1), panel.Item(0), panel.Item(4))
 
             form.Width = Chat.Width - 25
-            FlowLayoutPanel1.Controls.Add(form)
+            pnlChats.Controls.Add(form)
             form.Show()
             mensaje = ""
             fecha = Nothing
         Next
 
-        FlowLayoutPanel1.ResumeLayout()
+        pnlChats.ResumeLayout()
 
     End Sub
-
 
     Public Sub ReloadChat()
 
@@ -170,8 +176,6 @@ Public Class frmChat
         End If
 
     End Sub
-
-
 
     Private Function finalizar() As Boolean
 
@@ -359,26 +363,6 @@ Public Class frmChat
 
     End Sub
 
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
-        Me.Close()
-        frmLogin.Visible = True
-    End Sub
-
-    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs)
-        Me.WindowState = WindowState.Minimized
-    End Sub
-
-
-
-    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMsg.KeyPress
-
-        If Asc(e.KeyChar) = Keys.Enter Then
-
-            e.Handled = True
-
-        End If
-
-    End Sub
     Private Sub txtMensaje_KeyPress(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             enviarMensaje()
@@ -404,39 +388,10 @@ Public Class frmChat
 
 
 
-    'Private Sub btnFicha_Click(sender As Object, e As EventArgs) Handles btnFicha.Click
 
-    '    If UcFicha1.Visible = False Then
-
-    '        UcFicha1.Visible = True
-    '        Dim dt As DataTable = contPac.getDatosPaciente(Datos_Temporales.pacienteSelecionado)
-
-    '        For Each datarow As DataRow In dt.Rows
-    '            UcFicha1.lblNom.Text += " " & datarow.Item(0) & " " & datarow.Item(2) & " " & datarow.Item(3)
-    '            Dim fechaNacimiento As Date = datarow.Item(4)
-    '            Dim edad As Integer = Date.Now.Year - fechaNacimiento.Year
-    '            UcFicha1.lblEdad.Text += " " & edad.ToString
-    '            UcFicha1.lblSexo.Text += " " & datarow.Item(5)
-    '            UcFicha1.lblMail.Text += " " & datarow.Item(6)
-    '        Next
-    '        UcFicha1.dgvPatCron.DataSource = contPac.getPatologiasCronicas(Datos_Temporales.pacienteSelecionado)
-    '        UcFicha1.dgvHistorial.DataSource = contPac.getHistorialConsultas(Datos_Temporales.pacienteSelecionado)
-    '    Else
-    '        UcFicha1.Visible = False
-    '        UcFicha1.lblEdad.Text = "Edad:"
-    '        UcFicha1.lblMail.Text = "Mail:"
-    '        UcFicha1.lblSexo.Text = "Sexo:"
-    '        UcFicha1.lblNom.Text = "Nombre completo:"
-
-    '    End If
-
-
-
-
-    'End Sub
 
     'Private Shared thread As New Threading.Thread(New Threading.ThreadStart(AddressOf cargarPanel))
-    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
         'thread.Start()
     End Sub
     Private Sub btnEnd_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
@@ -495,6 +450,38 @@ Public Class frmChat
     End Sub
 
     Private Sub Chat_Paint(sender As Object, e As PaintEventArgs) Handles Chat.Paint
+
+    End Sub
+
+    Private Sub pnlUsuario_Click(sender As Object, e As EventArgs) Handles pnlUsuario.Click
+
+        If UcFicha1.Visible = False Then
+
+            UcFicha1.Visible = True
+            UcFicha1.BringToFront()
+            Dim dt As DataTable = contPac.getDatosPaciente(Datos_Temporales.pacienteSelecionado)
+
+            For Each datarow As DataRow In dt.Rows
+                UcFicha1.lblNom.Text += " " & datarow.Item(0) & " " & datarow.Item(2) & " " & datarow.Item(3)
+                Dim fechaNacimiento As Date = datarow.Item(4)
+                Dim edad As Integer = Date.Now.Year - fechaNacimiento.Year
+                UcFicha1.lblEdad.Text += " " & edad.ToString
+                UcFicha1.lblSexo.Text += " " & datarow.Item(5)
+                UcFicha1.lblMail.Text += " " & datarow.Item(6)
+            Next
+            'UcFicha1.dgvPatCron.DataSource = contPac.getPatologiasCronicas(Datos_Temporales.pacienteSelecionado)
+        Else
+            UcFicha1.Visible = False
+            UcFicha1.lblEdad.Text = "Edad:"
+            UcFicha1.lblMail.Text = "Mail:"
+            UcFicha1.lblSexo.Text = "Sexo:"
+            UcFicha1.lblNom.Text = "Nombre completo:"
+
+        End If
+
+
+
+
 
     End Sub
 End Class

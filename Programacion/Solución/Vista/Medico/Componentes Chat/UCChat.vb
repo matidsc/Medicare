@@ -27,6 +27,8 @@ Public Class ucchat
         lblidChat.Text = idChat
         If foto <> Nothing Then
             GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
+        Else
+            GunaCirclePictureBox1.Image = My.Resources.noPic
         End If
         lblCed.Text = cedula
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
@@ -91,6 +93,8 @@ Public Class ucchat
 
         If GunaCirclePictureBox1.Image IsNot Nothing Then
             instancia.pbPerfil.Image = GunaCirclePictureBox1.Image
+        Else
+            instancia.pbPerfil.Image = My.Resources.noPic
         End If
 
         If instancia.instanciaChat IsNot Nothing Then

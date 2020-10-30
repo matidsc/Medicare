@@ -1,5 +1,4 @@
 ﻿Imports Logica
-
 Public Class frmListado
 
     Public dt As New DataTable
@@ -49,6 +48,7 @@ Public Class frmListado
             Case 2
                 Dim u As New ControladorUsuario
                 dgvListado.DataSource = u.ListarUsuarios()
+                ' picImagenPerfil.Image = 
         End Select
 
     End Sub

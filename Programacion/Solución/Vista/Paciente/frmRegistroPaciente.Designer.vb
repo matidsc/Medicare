@@ -22,13 +22,14 @@ Partial Class frmRegistroPaciente
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txtFecNac = New System.Windows.Forms.MaskedTextBox()
         Me.lblFormatoFecNac = New System.Windows.Forms.Label()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.btnSoli = New Guna.UI.WinForms.GunaButton()
         Me.sepFecNac = New Guna.UI.WinForms.GunaSeparator()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -60,7 +61,6 @@ Partial Class frmRegistroPaciente
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnImg = New Guna.UI.WinForms.GunaButton()
         Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
-        Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,7 +85,7 @@ Partial Class frmRegistroPaciente
         Me.txtFecNac.Mask = "0000-00-00"
         Me.txtFecNac.Name = "txtFecNac"
         Me.txtFecNac.Size = New System.Drawing.Size(114, 24)
-        Me.txtFecNac.TabIndex = 147
+        Me.txtFecNac.TabIndex = 9
         Me.txtFecNac.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'lblFormatoFecNac
@@ -141,6 +141,26 @@ Partial Class frmRegistroPaciente
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 164
+        '
+        'btnAtras
+        '
+        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAtras.FlatAppearance.BorderSize = 0
+        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.btnAtras.IconColor = System.Drawing.Color.Silver
+        Me.btnAtras.IconSize = 20
+        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAtras.Location = New System.Drawing.Point(18, 22)
+        Me.btnAtras.Name = "btnAtras"
+        Me.btnAtras.Rotation = 0R
+        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
+        Me.btnAtras.TabIndex = 231
+        Me.btnAtras.Text = "Atrás"
+        Me.btnAtras.UseVisualStyleBackColor = True
         '
         'btnSoli
         '
@@ -211,7 +231,7 @@ Partial Class frmRegistroPaciente
         Me.cbF.Location = New System.Drawing.Point(930, 454)
         Me.cbF.Name = "cbF"
         Me.cbF.Size = New System.Drawing.Size(98, 24)
-        Me.cbF.TabIndex = 224
+        Me.cbF.TabIndex = 11
         Me.cbF.Text = "Femenino"
         '
         'cbM
@@ -225,7 +245,7 @@ Partial Class frmRegistroPaciente
         Me.cbM.Location = New System.Drawing.Point(930, 421)
         Me.cbM.Name = "cbM"
         Me.cbM.Size = New System.Drawing.Size(100, 24)
-        Me.cbM.TabIndex = 223
+        Me.cbM.TabIndex = 10
         Me.cbM.Text = "Masculino"
         '
         'scroll
@@ -303,7 +323,7 @@ Partial Class frmRegistroPaciente
         Me.lblTelefonos.AutoSize = True
         Me.lblTelefonos.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTelefonos.ForeColor = System.Drawing.Color.Silver
-        Me.lblTelefonos.Location = New System.Drawing.Point(781, 192)
+        Me.lblTelefonos.Location = New System.Drawing.Point(773, 190)
         Me.lblTelefonos.Name = "lblTelefonos"
         Me.lblTelefonos.Size = New System.Drawing.Size(73, 20)
         Me.lblTelefonos.TabIndex = 218
@@ -312,37 +332,37 @@ Partial Class frmRegistroPaciente
         'dgvTelefonos
         '
         Me.dgvTelefonos.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Silver
-        Me.dgvTelefonos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Silver
+        Me.dgvTelefonos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvTelefonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvTelefonos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvTelefonos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dgvTelefonos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTelefonos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTelefonos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTelefonos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTelefonos.ColumnHeadersVisible = False
         Me.dgvTelefonos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Telefonos})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvTelefonos.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvTelefonos.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvTelefonos.Location = New System.Drawing.Point(714, 235)
         Me.dgvTelefonos.MultiSelect = False
         Me.dgvTelefonos.Name = "dgvTelefonos"
@@ -371,7 +391,7 @@ Partial Class frmRegistroPaciente
         Me.txtMail.Name = "txtMail"
         Me.txtMail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMail.Size = New System.Drawing.Size(246, 32)
-        Me.txtMail.TabIndex = 217
+        Me.txtMail.TabIndex = 8
         '
         'lblSApe
         '
@@ -397,7 +417,7 @@ Partial Class frmRegistroPaciente
         Me.txtSApe.Name = "txtSApe"
         Me.txtSApe.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSApe.Size = New System.Drawing.Size(246, 32)
-        Me.txtSApe.TabIndex = 215
+        Me.txtSApe.TabIndex = 7
         '
         'lblPApe
         '
@@ -423,7 +443,7 @@ Partial Class frmRegistroPaciente
         Me.txtPApe.Name = "txtPApe"
         Me.txtPApe.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPApe.Size = New System.Drawing.Size(246, 32)
-        Me.txtPApe.TabIndex = 213
+        Me.txtPApe.TabIndex = 6
         '
         'lblSNom
         '
@@ -449,7 +469,7 @@ Partial Class frmRegistroPaciente
         Me.txtSNom.Name = "txtSNom"
         Me.txtSNom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSNom.Size = New System.Drawing.Size(246, 32)
-        Me.txtSNom.TabIndex = 211
+        Me.txtSNom.TabIndex = 5
         '
         'txtPNom
         '
@@ -464,7 +484,7 @@ Partial Class frmRegistroPaciente
         Me.txtPNom.Name = "txtPNom"
         Me.txtPNom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPNom.Size = New System.Drawing.Size(246, 32)
-        Me.txtPNom.TabIndex = 210
+        Me.txtPNom.TabIndex = 4
         '
         'lblPNom
         '
@@ -501,7 +521,7 @@ Partial Class frmRegistroPaciente
         Me.txtRepPass.Name = "txtRepPass"
         Me.txtRepPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtRepPass.Size = New System.Drawing.Size(246, 32)
-        Me.txtRepPass.TabIndex = 207
+        Me.txtRepPass.TabIndex = 3
         Me.txtRepPass.UseSystemPasswordChar = True
         '
         'lblCon
@@ -528,7 +548,7 @@ Partial Class frmRegistroPaciente
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtPass.Size = New System.Drawing.Size(246, 32)
-        Me.txtPass.TabIndex = 205
+        Me.txtPass.TabIndex = 2
         Me.txtPass.UseSystemPasswordChar = True
         '
         'txtCI
@@ -544,7 +564,7 @@ Partial Class frmRegistroPaciente
         Me.txtCI.Name = "txtCI"
         Me.txtCI.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCI.Size = New System.Drawing.Size(246, 32)
-        Me.txtCI.TabIndex = 204
+        Me.txtCI.TabIndex = 1
         '
         'lblCI
         '
@@ -618,26 +638,6 @@ Partial Class frmRegistroPaciente
         Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.GunaPictureBox1.TabIndex = 198
         Me.GunaPictureBox1.TabStop = False
-        '
-        'btnAtras
-        '
-        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAtras.FlatAppearance.BorderSize = 0
-        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
-        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
-        Me.btnAtras.IconColor = System.Drawing.Color.Silver
-        Me.btnAtras.IconSize = 20
-        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAtras.Location = New System.Drawing.Point(18, 22)
-        Me.btnAtras.Name = "btnAtras"
-        Me.btnAtras.Rotation = 0R
-        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
-        Me.btnAtras.TabIndex = 231
-        Me.btnAtras.Text = "Atrás"
-        Me.btnAtras.UseVisualStyleBackColor = True
         '
         'frmRegistroPaciente
         '

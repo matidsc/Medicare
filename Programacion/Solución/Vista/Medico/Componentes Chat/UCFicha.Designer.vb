@@ -32,6 +32,7 @@ Partial Class UCFicha
         Me.lblNom = New System.Windows.Forms.Label()
         Me.lblFicha = New System.Windows.Forms.Label()
         Me.dgvPatCron = New System.Windows.Forms.DataGridView()
+        Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
         CType(Me.dgvPatCron, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -144,12 +145,26 @@ Partial Class UCFicha
         Me.dgvPatCron.Size = New System.Drawing.Size(195, 250)
         Me.dgvPatCron.TabIndex = 164
         '
+        'scroll2
+        '
+        Me.scroll2.LargeChange = 10
+        Me.scroll2.Location = New System.Drawing.Point(368, 92)
+        Me.scroll2.Maximum = 100
+        Me.scroll2.Name = "scroll2"
+        Me.scroll2.ScrollIdleColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.scroll2.Size = New System.Drawing.Size(10, 200)
+        Me.scroll2.TabIndex = 196
+        Me.scroll2.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.scroll2.ThumbHoverColor = System.Drawing.Color.Gray
+        Me.scroll2.ThumbPressedColor = System.Drawing.Color.DarkGray
+        '
         'UCFicha
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Controls.Add(Me.scroll2)
         Me.Controls.Add(Me.dgvPatCron)
         Me.Controls.Add(Me.lblSexo)
         Me.Controls.Add(Me.lblPatCro)
@@ -172,4 +187,5 @@ Partial Class UCFicha
     Friend WithEvents lblNom As Label
     Friend WithEvents lblFicha As Label
     Friend WithEvents dgvPatCron As DataGridView
+    Friend WithEvents scroll2 As Guna.UI.WinForms.GunaVScrollBar
 End Class

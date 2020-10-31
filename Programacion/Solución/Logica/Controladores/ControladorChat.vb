@@ -109,8 +109,8 @@ Public Class ControladorChat
         Return ModeloChat.Singleton.GetNombre(cedula)
     End Function
 
-    Public Function getCorreo(cedula As String) As String
-        Return ModeloChat.Singleton.GetCorreo(cedula)
+    Public Function getCorreo() As String
+        Return ModeloChat.Singleton.GetCorreo(Datos_Temporales.pacienteSelecionado)
     End Function
 
     Public Function setFormato() As String
@@ -121,9 +121,29 @@ Public Class ControladorChat
         Dim fecha As Date
 
         For Each datos As DataRow In tablaMensaje.Rows
+            Dim hora As String = ""
             fecha = datos.Item(2)
+
+            If fecha.Hour < 10 Then
+                hora = "0" & fecha.Hour().ToString() & ":"
+            Else
+                hora = fecha.Hour().ToString() & ":"
+            End If
+
+            If fecha.Minute < 10 Then
+                hora = hora & "0" & fecha.Minute.ToString & ":"
+            Else
+                hora = hora & fecha.Minute.ToString & ":"
+            End If
+
+            If fecha.Second < 10 Then
+                hora = hora & "0" & fecha.Second.ToString
+            Else
+                hora = hora & fecha.Second.ToString
+            End If
+
             tablaNombre = getNombreUsr(datos.Item(0))
-            mensaje = mensaje & fecha.Year.ToString & "/" & fecha.Month.ToString & "/" & fecha.Day.ToString & ", " & fecha.Hour.ToString & ":" & fecha.Minute.ToString & ":" & fecha.Second.ToString & " - " & tablaNombre.Rows.Item(0).Item(0) & " " & tablaNombre.Rows.Item(0).Item(1) & ": " & datos.Item(1) & vbCrLf
+            mensaje = mensaje & fecha.Year.ToString & "/" & fecha.Month.ToString & "/" & fecha.Day.ToString & ", " & hora & " - " & tablaNombre.Rows.Item(0).Item(0) & " " & tablaNombre.Rows.Item(0).Item(1) & ": " & datos.Item(1) & vbCrLf
         Next
 
         Return mensaje
@@ -149,11 +169,11 @@ Public Class ControladorChat
             server.Send(correo)
             Return True
 
-        Catch ex As Exception
+        Catch ex As SmtpException
+            MsgBox(ex.ToString)
             Return False
         End Try
 
-        Return False
     End Function
 
     Public Function GetMensaje(idChat As Int32) As DataTable

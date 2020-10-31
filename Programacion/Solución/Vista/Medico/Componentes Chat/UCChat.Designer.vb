@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class ucchat
+Partial Class UCChat
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -48,9 +48,9 @@ Partial Class ucchat
         Me.lblidChat.Enabled = False
         Me.lblidChat.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblidChat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.lblidChat.Location = New System.Drawing.Point(155, 18)
+        Me.lblidChat.Location = New System.Drawing.Point(9, 0)
         Me.lblidChat.Name = "lblidChat"
-        Me.lblidChat.Size = New System.Drawing.Size(89, 18)
+        Me.lblidChat.Size = New System.Drawing.Size(12, 18)
         Me.lblidChat.TabIndex = 11
         Me.lblidChat.TextAlign = System.Drawing.ContentAlignment.TopRight
         Me.lblidChat.Visible = False
@@ -81,13 +81,14 @@ Partial Class ucchat
         'lblMensaje
         '
         Me.lblMensaje.Enabled = False
-        Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.lblMensaje.Location = New System.Drawing.Point(77, 44)
         Me.lblMensaje.Name = "lblMensaje"
         Me.lblMensaje.Size = New System.Drawing.Size(172, 42)
         Me.lblMensaje.TabIndex = 7
         Me.lblMensaje.Text = "sssssssssssssssssssssssssssssssssssssssss"
+        Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GunaCirclePictureBox1
         '
@@ -107,10 +108,10 @@ Partial Class ucchat
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Controls.Add(Me.GunaCirclePictureBox1)
         Me.Controls.Add(Me.lblCed)
+        Me.Controls.Add(Me.lblMensaje)
         Me.Controls.Add(Me.lblidChat)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.lblNombre)
-        Me.Controls.Add(Me.lblMensaje)
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ucchat"
         Me.Size = New System.Drawing.Size(296, 95)

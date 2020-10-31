@@ -42,7 +42,6 @@ Public Class frmListadoChat
                 Datos_Temporales.pacienteSelecionado = cedula
                 frmChat.Update()
                 frmChat.Show()
-                frmChat.setNombreUsuario(cedula)
                 Me.Dispose()
 
             End If

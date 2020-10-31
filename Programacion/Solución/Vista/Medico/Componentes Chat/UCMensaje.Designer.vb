@@ -97,7 +97,7 @@ Partial Class UCMensaje
         Me.Controls.Add(Me.horaEnviado)
         Me.Name = "UCMensaje"
         Me.Padding = New System.Windows.Forms.Padding(20, 4, 20, 4)
-        Me.Size = New System.Drawing.Size(764, 47)
+        Me.Size = New System.Drawing.Size(764, 46)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -99,9 +99,9 @@ Public Class ControladorChat
         Return False
     End Function
 
-    Public Function listarMisChats(cedula As String, finalizado As Byte) As DataTable
+    Public Function listarMisChats(finalizado As Byte) As DataTable
 
-        Return ModeloChat.Singleton.MisChats(cedula, finalizado)
+        Return ModeloChat.Singleton.MisChats(Datos_Temporales.userLog, finalizado)
 
     End Function
 
@@ -185,7 +185,7 @@ Public Class ControladorChat
         End Try
     End Function
 
-    Public Function orden() As ArrayList
+    Public Function orden() As DataTable
         Return ModeloChat.Singleton.ordern(Datos_Temporales.userLog)
     End Function
 

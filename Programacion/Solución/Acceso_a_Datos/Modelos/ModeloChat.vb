@@ -180,14 +180,14 @@ Public Class ModeloChat
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function MisChats(cedula As String, finalizado As Byte)
 
-        Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe, CONVERT(fotoPerfil USING utf8)
+        Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe, mensaje, fechaenvio, CONVERT(fotoPerfil USING utf8)
                                    FROM usuario u, paciente p, salachat c, mensaje m right join usuario_entra_chat uc on m.idChat = uc.idChat
-                                   WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = " & finalizado & "
+                                   WHERE idMensaje = any (select max(idMensaje) from mensaje group by idChat order by max(fechaenvio))AND uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = 0
                                    AND c.idChat in 
 	                                   (
 		                                 SELECT idChat FROM usuario_entra_chat WHERE cedula = " & cedula & "
 	                                    )
-                                   GROUP BY m.idChat
+                                   GROUP BY uc.idChat
                                    ORDER BY MAX(fechaenvio) desc"
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
@@ -245,8 +245,10 @@ Public Class ModeloChat
         Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Integer)
     End Function
 
-    Public Function ordern(cedula As String) As ArrayList
-        Dim consulta As String = "select uc.idChat, mensaje from mensaje m right join usuario_entra_chat uc on uc.idChat = m.idChat where uc.idChat in (select uc.idchat from usuario_entra_chat uc, salachat c where uc.idChat = c.idChat and finalizado = 0 and cedula = " & cedula & ") group by m.idChat order by max(fechaenvio) asc"
-        Return ModeloConsultas.Singleton.ConsultaArray(consulta)
+    Public Function ordern(cedula As String) As DataTable
+        Dim consulta As String = "select uc.idChat, mensaje, fechaenvio from mensaje m right join usuario_entra_chat uc on uc.idChat = m.idChat where uc.idChat in 
+(select uc.idchat from usuario_entra_chat uc, salachat c where idMensaje = any (select max(idMensaje) from mensaje group by idChat order by max(fechaenvio)) and uc.idChat = c.idChat and finalizado = 0 and cedula = " & cedula & ") 
+group by m.idChat order by max(fechaenvio) asc"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 End Class

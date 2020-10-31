@@ -2273,7 +2273,6 @@ C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\S
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCHabilitarPaciente.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmChat.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.frmListadoChat.resources
-C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.Mensaje.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCFicha.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCSintomas.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.Historial_de_patologías.resources
@@ -2302,3 +2301,4 @@ C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\S
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.pdb
 C:\Users\Mat\Desktop\Pruebas\Programacion\Solución\Vista\obj\Debug\Vista.ucchat.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.ucchat.resources
+C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCMensaje.resources

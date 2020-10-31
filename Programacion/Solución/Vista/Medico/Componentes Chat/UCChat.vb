@@ -10,8 +10,22 @@ Public Class ucchat
         lblNombre.Text = nombre
         lblMensaje.Text = mensaje
         lblFecha.Text = fecha
+        lblidChat.Text = idChat
+
+        SetFecha(fecha)
 
 
+        If foto <> Nothing Then
+            GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
+        Else
+            GunaCirclePictureBox1.Image = My.Resources.noPic
+        End If
+        lblCed.Text = cedula
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+
+    Public Sub SetFecha(fecha As Date)
         If fecha.Hour < 10 Then
             lblFecha.Text = "0" & fecha.Hour().ToString() & ":"
         Else
@@ -23,16 +37,6 @@ Public Class ucchat
         Else
             lblFecha.Text = lblFecha.Text & fecha.Minute.ToString
         End If
-
-        lblidChat.Text = idChat
-        If foto <> Nothing Then
-            GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
-        Else
-            GunaCirclePictureBox1.Image = My.Resources.noPic
-        End If
-        lblCed.Text = cedula
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
     End Sub
     Public Sub New()
 
@@ -113,6 +117,10 @@ Public Class ucchat
     End Sub
 
     Private Sub ucchat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub lblidChat_Click(sender As Object, e As EventArgs) Handles lblidChat.Click
 
     End Sub
 End Class

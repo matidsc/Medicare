@@ -119,30 +119,44 @@ Public Class frmChat
 
     Private Sub CargarPanel(Listado As DataTable)
 
+        'pnlChats.SuspendLayout()
+        'pnlChats.Controls.Clear()
+
+        'Dim UltimoMensaje As New DataTable
+        'Dim mensaje As String = ""
+        'Dim fecha As Date
+
+
+        'For Each panel As DataRow In Listado.Rows
+
+        '    UltimoMensaje.Clear()
+        '    UltimoMensaje = contChat.GetMensaje(panel.Item(1))
+
+        '    For Each columnaMensaje As DataRow In UltimoMensaje.Rows
+        '        mensaje = columnaMensaje.Item(0)
+        '        fecha = columnaMensaje.Item(1)
+        '    Next
+
+        '    Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, fecha, panel.Item(1), panel.Item(0), panel.Item(4))
+
+        '    pnlChats.Controls.Add(form)
+        '    form.Show()
+        '    mensaje = ""
+        '    fecha = Nothing
+        '    id.Add(panel.Item(1))
+        'Next
+
+        'pnlChats.ResumeLayout()
+
         pnlChats.SuspendLayout()
         pnlChats.Controls.Clear()
 
-        Dim UltimoMensaje As New DataTable
-        Dim mensaje As String = ""
-        Dim fecha As Date
-
-
         For Each panel As DataRow In Listado.Rows
 
-            UltimoMensaje.Clear()
-            UltimoMensaje = contChat.GetMensaje(panel.Item(1))
-
-            For Each columnaMensaje As DataRow In UltimoMensaje.Rows
-                mensaje = columnaMensaje.Item(0)
-                fecha = columnaMensaje.Item(1)
-            Next
-
-            Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, fecha, panel.Item(1), panel.Item(0), panel.Item(4))
+            Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), panel.Item(4), panel.Item(5), panel.Item(1), panel.Item(0), panel.Item(6))
 
             pnlChats.Controls.Add(form)
             form.Show()
-            mensaje = ""
-            fecha = Nothing
             id.Add(panel.Item(1))
         Next
 
@@ -165,12 +179,11 @@ Public Class frmChat
                 esEmisor = True
             End If
 
-            Dim msj As New Mensaje(esEmisor, mensaje.Item(1), mensaje.Item(2), mensaje.Item(3), Nothing)
+            Dim msj As New UCMensaje(esEmisor, mensaje.Item(1), mensaje.Item(2), mensaje.Item(3), Nothing)
 
             If msj.idMsj > maxID Then
                 maxID = msj.idMsj
             End If
-            msj.TopLevel = False
             msj.Width = Chat.Width - 25
             Chat.Controls.Add(msj)
             instanciaChat.lblMensaje.Text = mensaje.Item(1)
@@ -184,15 +197,7 @@ Public Class frmChat
         'ScrollHelper.UpdateScrollBar()
         Chat.ResumeLayout()
         'scroll.Value = 3097
-        Try
-            Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum
-            scroll.Refresh()
-            scroll.Value = scroll.Value + 2749
-            'scroll.Update()
-            ScrollHelper.UpdateScrollBar()
-        Catch ex As Exception
-            MsgBox("asdas")
-        End Try
+
 
     End Sub
 
@@ -248,13 +253,13 @@ Public Class frmChat
                 esEmisor = True
             End If
 
-            Dim msj As New Mensaje(esEmisor, var.Item(1), var.Item(2), var.Item(3), Nothing)
+            Dim msj As New UCMensaje(esEmisor, var.Item(1), var.Item(2), var.Item(3), Nothing)
             maxID = msj.idMsj
-            msj.TopLevel = False
             msj.Width = Chat.Width - 25
             Chat.Controls.Add(msj)
             msj.Show()
             instanciaChat.lblMensaje.Text = var.Item(1)
+            instanciaChat.SetFecha(var.ItemArray(2))
             ActualizarPanel()
             Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
             Chat.Update()
@@ -478,14 +483,6 @@ Public Class frmChat
         enviarMensaje()
     End Sub
 
-    Private Sub pnlWrapChat_Paint(sender As Object, e As PaintEventArgs) Handles pnlWrapChat.Paint
-
-    End Sub
-
-    Private Sub Chat_Paint(sender As Object, e As PaintEventArgs) Handles Chat.Paint
-
-    End Sub
-
     Private Sub pnlUsuario_Click(sender As Object, e As EventArgs) Handles pnlUsuario.Click
 
         If UcFicha1.Visible = False Then
@@ -512,19 +509,12 @@ Public Class frmChat
 
         End If
 
-
-
-
-
-    End Sub
-
-    Private Sub pnlChats_Paint(sender As Object, e As PaintEventArgs) Handles pnlChats.Paint
-
     End Sub
 
     Private Sub scroll_Scroll(sender As Object, e As ScrollEventArgs) Handles scroll.Scroll
-        ScrollHelper.UpdateScrollBar()
-        Console.WriteLine(scroll.Value & "    " & scroll.Maximum & "  " & Chat.VerticalScroll.Maximum)
+
+        'ScrollHelper.UpdateScrollBar()
+        'Console.WriteLine(scroll.Value & "    " & scroll.Maximum & "  " & Chat.VerticalScroll.Maximum)
     End Sub
 
     Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMsg.KeyPress
@@ -537,21 +527,58 @@ Public Class frmChat
 
     End Sub
     Private Sub ActualizarPanel()
-        Dim dt As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
+        'Dim dt As DataTable = contChat.listarMisChats(0)
+        'Dim contador As Integer = 0
+
+        'If dt.Rows.Count <> pnlChats.Controls.Count Then
+        '    CargarPanel(dt)
+        '    id.Reverse()
+        'Else
+        '    Dim dt2 As ArrayList = ControladorChat.Singleton.orden
+
+        '    If dt2.Count = id.Count Then
+
+
+        '        For i As Integer = 0 To dt2.Count - 1
+
+        '            If dt2.Item(i) = id.Item(i) Then
+        '                contador += 1
+        '            Else
+        '                Exit For
+        '            End If
+
+        '        Next
+        '    End If
+
+        '    If contador <> dt2.Count Then
+        '        id.Clear()
+        '        For Each fila In dt2
+        '            For Each control As ucchat In pnlChats.Controls
+        '                If fila = control.lblidChat.Text Then
+        '                    pnlChats.Controls.SetChildIndex(control, 0)
+        '                End If
+        '            Next
+        '            id.Add(fila)
+        '        Next
+        '    End If
+
+        'End If
+
+        Dim dt As DataTable = contChat.listarMisChats(0)
         Dim contador As Integer = 0
 
         If dt.Rows.Count <> pnlChats.Controls.Count Then
             CargarPanel(dt)
             id.Reverse()
         Else
-            Dim dt2 As ArrayList = ControladorChat.Singleton.orden
+            Dim dt2 As DataTable = ControladorChat.Singleton.orden
 
-            If dt2.Count = id.Count Then
+            If dt2.Rows.Count = id.Count Then
 
 
-                For i As Integer = 0 To dt2.Count - 1
+                For i As Integer = 0 To dt2.Rows.Count - 1
 
-                    If dt2.Item(i) = id.Item(i) Then
+                    If dt2.Rows(i).Item(0) = id.Item(i) Then
                         contador += 1
                     Else
                         Exit For
@@ -560,15 +587,17 @@ Public Class frmChat
                 Next
             End If
 
-            If contador <> dt2.Count Then
+            If contador <> dt2.Rows.Count Then
                 id.Clear()
-                For Each fila In dt2
+                For Each fila As DataRow In dt2.Rows
                     For Each control As ucchat In pnlChats.Controls
-                        If fila = control.lblidChat.Text Then
+                        If fila.Item(0) = control.lblidChat.Text Then
+                            control.lblMensaje.Text = fila.Item(1)
+                            control.SetFecha(fila.Item(2))
                             pnlChats.Controls.SetChildIndex(control, 0)
                         End If
                     Next
-                    id.Add(fila)
+                    id.Add(fila.Item(0))
                 Next
             End If
 

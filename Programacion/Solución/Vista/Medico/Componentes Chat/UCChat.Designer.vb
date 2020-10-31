@@ -53,6 +53,7 @@ Partial Class ucchat
         Me.lblidChat.Size = New System.Drawing.Size(89, 18)
         Me.lblidChat.TabIndex = 11
         Me.lblidChat.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lblidChat.Visible = False
         '
         'lblFecha
         '

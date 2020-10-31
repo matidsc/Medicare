@@ -24,7 +24,6 @@ Partial Class frmChat
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Chat = New System.Windows.Forms.FlowLayoutPanel()
-        Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblUsuario = New System.Windows.Forms.Label()
@@ -40,10 +39,11 @@ Partial Class frmChat
         Me.btnSintomasDiag = New Guna.UI.WinForms.GunaButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
+        Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.UcFicha1 = New Vista.UCFicha()
+        Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.pnlWrapChat.SuspendLayout()
         Me.pnlUsuario.SuspendLayout()
         CType(Me.pbPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,19 +65,6 @@ Partial Class frmChat
         Me.Chat.Size = New System.Drawing.Size(757, 500)
         Me.Chat.TabIndex = 3
         Me.Chat.WrapContents = False
-        '
-        'scroll
-        '
-        Me.scroll.Location = New System.Drawing.Point(0, 0)
-        Me.scroll.Margin = New System.Windows.Forms.Padding(0)
-        Me.scroll.Maximum = 100
-        Me.scroll.Name = "scroll"
-        Me.scroll.ScrollIdleColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.scroll.Size = New System.Drawing.Size(10, 200)
-        Me.scroll.TabIndex = 194
-        Me.scroll.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
-        Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
         'Timer1
         '
@@ -306,18 +293,6 @@ Partial Class frmChat
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 0
         '
-        'pnlChats
-        '
-        Me.pnlChats.AutoScroll = True
-        Me.pnlChats.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.pnlChats.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.pnlChats.Location = New System.Drawing.Point(0, 73)
-        Me.pnlChats.Margin = New System.Windows.Forms.Padding(0)
-        Me.pnlChats.Name = "pnlChats"
-        Me.pnlChats.Size = New System.Drawing.Size(313, 577)
-        Me.pnlChats.TabIndex = 195
-        Me.pnlChats.WrapContents = False
-        '
         'scroll2
         '
         Me.scroll2.LargeChange = 10
@@ -331,6 +306,18 @@ Partial Class frmChat
         Me.scroll2.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.scroll2.ThumbHoverColor = System.Drawing.Color.Gray
         Me.scroll2.ThumbPressedColor = System.Drawing.Color.DarkGray
+        '
+        'pnlChats
+        '
+        Me.pnlChats.AutoScroll = True
+        Me.pnlChats.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.pnlChats.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.pnlChats.Location = New System.Drawing.Point(0, 73)
+        Me.pnlChats.Margin = New System.Windows.Forms.Padding(0)
+        Me.pnlChats.Name = "pnlChats"
+        Me.pnlChats.Size = New System.Drawing.Size(313, 577)
+        Me.pnlChats.TabIndex = 195
+        Me.pnlChats.WrapContents = False
         '
         'Timer3
         '
@@ -346,6 +333,20 @@ Partial Class frmChat
         Me.UcFicha1.Size = New System.Drawing.Size(747, 384)
         Me.UcFicha1.TabIndex = 196
         Me.UcFicha1.Visible = False
+        '
+        'scroll
+        '
+        Me.scroll.LargeChange = 10
+        Me.scroll.Location = New System.Drawing.Point(530, 225)
+        Me.scroll.Margin = New System.Windows.Forms.Padding(0)
+        Me.scroll.Maximum = 100
+        Me.scroll.Name = "scroll"
+        Me.scroll.ScrollIdleColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.scroll.Size = New System.Drawing.Size(10, 200)
+        Me.scroll.TabIndex = 197
+        Me.scroll.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
+        Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
         'frmChat
         '
@@ -381,7 +382,6 @@ Partial Class frmChat
     Friend WithEvents btnSintomasDiag As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnFinalizar As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
-    Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents txtMsg As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents pbEnviar As Guna.UI.WinForms.GunaCirclePictureBox
     Friend WithEvents pnlEnviar As Guna.UI.WinForms.GunaElipsePanel
@@ -391,4 +391,5 @@ Partial Class frmChat
     Friend WithEvents pnlChats As FlowLayoutPanel
     Friend WithEvents scroll2 As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents Timer3 As Timer
+    Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
 End Class

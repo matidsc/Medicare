@@ -240,12 +240,6 @@
     <Compile Include="Medico\Componentes Chat\frmListadoChat.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Medico\Componentes Chat\Mensaje.Designer.vb">
-      <DependentUpon>Mensaje.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Medico\Componentes Chat\Mensaje.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Medico\Componentes Chat\frmChat.Designer.vb">
       <DependentUpon>frmChat.vb</DependentUpon>
     </Compile>
@@ -262,6 +256,12 @@
       <DependentUpon>UCFicha.vb</DependentUpon>
     </Compile>
     <Compile Include="Medico\Componentes Chat\UCFicha.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Medico\Componentes Chat\UCMensaje.Designer.vb">
+      <DependentUpon>UCMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Componentes Chat\UCMensaje.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Medico\Componentes Chat\UCSintomas.Designer.vb">
@@ -418,14 +418,14 @@
     <EmbeddedResource Include="Medico\Componentes Chat\frmListadoChat.resx">
       <DependentUpon>frmListadoChat.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Medico\Componentes Chat\Mensaje.resx">
-      <DependentUpon>Mensaje.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\UCChat.resx">
       <DependentUpon>UCChat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\UCFicha.resx">
       <DependentUpon>UCFicha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Componentes Chat\UCMensaje.resx">
+      <DependentUpon>UCMensaje.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\UCSintomas.resx">
       <DependentUpon>UCSintomas.vb</DependentUpon>

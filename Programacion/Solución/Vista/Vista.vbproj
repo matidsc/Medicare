@@ -234,12 +234,6 @@
     <Compile Include="Gestor\UCHabilitarPaciente.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Medico\Componentes Chat\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Medico\Componentes Chat\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Medico\Componentes Chat\frmListadoChat.Designer.vb">
       <DependentUpon>frmListadoChat.vb</DependentUpon>
     </Compile>
@@ -417,9 +411,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\UCHabilitarPaciente.resx">
       <DependentUpon>UCHabilitarPaciente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Medico\Componentes Chat\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\frmChat.resx">
       <DependentUpon>frmChat.vb</DependentUpon>

@@ -84,12 +84,24 @@ Public Class ucchat
         Datos_Temporales.pacienteSelecionado = lblCed.Text
 
         Dim instancia As frmChat = Me.ParentForm
+
+
+        Me.BackColor = Color.FromArgb(25, 34, 41)
+        instancia.instanciaChat.BackColor = Color.FromArgb(31, 39, 49)
+        instancia.instanciaChat = Me
+
+
         instancia.ReloadChat()
         instancia.lblUsuario.Text = Me.lblNombre.Text
         instancia.lblUsuario.Visible = True
         instancia.pbPerfil.Visible = True
         instancia.btnFinalizar.Visible = True
         instancia.btnSintomasDiag.Visible = True
+        instancia.pbEnviar.Visible = True
+        instancia.txtMsg.Visible = True
+        instancia.lblEscriba.Visible = True
+        instancia.pnlEnviar.Visible = True
+        instancia.scroll.Value = instancia.scroll.Maximum - 499
 
         If GunaCirclePictureBox1.Image IsNot Nothing Then
             instancia.pbPerfil.Image = GunaCirclePictureBox1.Image
@@ -97,10 +109,10 @@ Public Class ucchat
             instancia.pbPerfil.Image = My.Resources.noPic
         End If
 
-        If instancia.instanciaChat IsNot Nothing Then
-            Me.BackColor = Color.FromArgb(25, 34, 41)
-            instancia.instanciaChat.BackColor = Color.FromArgb(31, 39, 49)
-            instancia.instanciaChat = Me
-        End If
+
+    End Sub
+
+    Private Sub ucchat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

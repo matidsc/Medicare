@@ -30,7 +30,6 @@ Partial Class frmBienvenidaGestor
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.lblNA = New System.Windows.Forms.Label()
         Me.pnlFlow = New System.Windows.Forms.FlowLayoutPanel()
-        Me.UcDatosGestor1 = New Vista.UCDatosGestor()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -66,6 +65,7 @@ Partial Class frmBienvenidaGestor
         Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.UcDatosGestor1 = New Vista.UCDatosGestor()
         Me.pnlContenedor.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -151,14 +151,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlFlow.TabIndex = 26
         Me.pnlFlow.Visible = False
         Me.pnlFlow.WrapContents = False
-        '
-        'UcDatosGestor1
-        '
-        Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
-        Me.UcDatosGestor1.Name = "UcDatosGestor1"
-        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 83)
-        Me.UcDatosGestor1.TabIndex = 27
         '
         'Label9
         '
@@ -655,6 +647,14 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
+        '
+        'UcDatosGestor1
+        '
+        Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
+        Me.UcDatosGestor1.Name = "UcDatosGestor1"
+        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 83)
+        Me.UcDatosGestor1.TabIndex = 27
         '
         'frmBienvenidaGestor
         '

@@ -197,7 +197,6 @@ C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\S
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Vista.exe
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Acceso_a_Datos.dll
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroFramework.dll
-C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\MetroSet UI.dll
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppMedico.exe
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\AppGestion.exe
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppPaciente\AppPaciente\bin\Debug\Logica.pdb

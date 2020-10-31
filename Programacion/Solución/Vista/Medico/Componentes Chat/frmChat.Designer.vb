@@ -42,6 +42,7 @@ Partial Class frmChat
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.UcFicha1 = New Vista.UCFicha()
         Me.pnlWrapChat.SuspendLayout()
         Me.pnlUsuario.SuspendLayout()
@@ -57,7 +58,6 @@ Partial Class frmChat
         Me.Chat.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chat.AutoScroll = True
-        Me.Chat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Chat.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Chat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.Chat.Location = New System.Drawing.Point(0, 73)
@@ -68,7 +68,6 @@ Partial Class frmChat
         '
         'scroll
         '
-        Me.scroll.LargeChange = 10
         Me.scroll.Location = New System.Drawing.Point(0, 0)
         Me.scroll.Margin = New System.Windows.Forms.Padding(0)
         Me.scroll.Maximum = 100
@@ -115,10 +114,12 @@ Partial Class frmChat
         Me.lblEscriba.Size = New System.Drawing.Size(143, 21)
         Me.lblEscriba.TabIndex = 16
         Me.lblEscriba.Text = "Escriba un mensaje"
+        Me.lblEscriba.Visible = False
         '
         'pnlWrapChat
         '
         Me.pnlWrapChat.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.pnlWrapChat.Controls.Add(Me.scroll)
         Me.pnlWrapChat.Controls.Add(Me.Chat)
         Me.pnlWrapChat.Controls.Add(Me.pnlUsuario)
         Me.pnlWrapChat.Controls.Add(Me.Panel1)
@@ -135,9 +136,9 @@ Partial Class frmChat
         Me.pnlUsuario.Controls.Add(Me.lblUsuario)
         Me.pnlUsuario.Controls.Add(Me.pbPerfil)
         Me.pnlUsuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlUsuario.Location = New System.Drawing.Point(0, 3)
+        Me.pnlUsuario.Location = New System.Drawing.Point(3, 3)
         Me.pnlUsuario.Name = "pnlUsuario"
-        Me.pnlUsuario.Size = New System.Drawing.Size(404, 67)
+        Me.pnlUsuario.Size = New System.Drawing.Size(401, 67)
         Me.pnlUsuario.TabIndex = 200
         '
         'pbPerfil
@@ -182,6 +183,7 @@ Partial Class frmChat
         Me.txtMsg.Size = New System.Drawing.Size(673, 52)
         Me.txtMsg.TabIndex = 196
         Me.txtMsg.TextOffsetX = 20
+        Me.txtMsg.Visible = False
         '
         'pnlEnviar
         '
@@ -195,6 +197,7 @@ Partial Class frmChat
         Me.pnlEnviar.Radius = 14
         Me.pnlEnviar.Size = New System.Drawing.Size(50, 52)
         Me.pnlEnviar.TabIndex = 198
+        Me.pnlEnviar.Visible = False
         '
         'pbEnviar
         '
@@ -209,6 +212,7 @@ Partial Class frmChat
         Me.pbEnviar.TabIndex = 197
         Me.pbEnviar.TabStop = False
         Me.pbEnviar.UseTransfarantBackground = False
+        Me.pbEnviar.Visible = False
         '
         'btnFinalizar
         '
@@ -291,9 +295,8 @@ Partial Class frmChat
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.pnlContenedor.Controls.Add(Me.pnlChats)
         Me.pnlContenedor.Controls.Add(Me.scroll2)
-        Me.pnlContenedor.Controls.Add(Me.scroll)
+        Me.pnlContenedor.Controls.Add(Me.pnlChats)
         Me.pnlContenedor.Controls.Add(Me.pnlWrapChat)
         Me.pnlContenedor.Controls.Add(Me.btnAtras)
         Me.pnlContenedor.Controls.Add(Me.UcFicha1)
@@ -306,7 +309,6 @@ Partial Class frmChat
         'pnlChats
         '
         Me.pnlChats.AutoScroll = True
-        Me.pnlChats.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.pnlChats.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.pnlChats.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.pnlChats.Location = New System.Drawing.Point(0, 73)
@@ -319,7 +321,7 @@ Partial Class frmChat
         'scroll2
         '
         Me.scroll2.LargeChange = 10
-        Me.scroll2.Location = New System.Drawing.Point(0, 0)
+        Me.scroll2.Location = New System.Drawing.Point(0, 37)
         Me.scroll2.Margin = New System.Windows.Forms.Padding(0)
         Me.scroll2.Maximum = 100
         Me.scroll2.Name = "scroll2"
@@ -329,6 +331,11 @@ Partial Class frmChat
         Me.scroll2.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.scroll2.ThumbHoverColor = System.Drawing.Color.Gray
         Me.scroll2.ThumbPressedColor = System.Drawing.Color.DarkGray
+        '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        Me.Timer3.Interval = 6000
         '
         'UcFicha1
         '
@@ -383,4 +390,5 @@ Partial Class frmChat
     Friend WithEvents UcFicha1 As UCFicha
     Friend WithEvents pnlChats As FlowLayoutPanel
     Friend WithEvents scroll2 As Guna.UI.WinForms.GunaVScrollBar
+    Friend WithEvents Timer3 As Timer
 End Class

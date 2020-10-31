@@ -285,4 +285,8 @@ Public Class frmBienvenidaGestor
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
 
     End Sub
+
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+
+    End Sub
 End Class

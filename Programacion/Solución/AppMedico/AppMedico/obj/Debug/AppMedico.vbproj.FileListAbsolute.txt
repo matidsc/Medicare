@@ -86,7 +86,6 @@ C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\S
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\bin\Debug\AppPaciente.pdb
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\bin\Debug\AppPaciente.xml
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\bin\Debug\AppPaciente.exe.config
-C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.vbprojAssemblyReference.cache
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.main.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.Resources.resources
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.vbproj.GenerateResource.cache
@@ -95,3 +94,4 @@ C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\S
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.exe
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.xml
 C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.pdb
+C:\Users\rpere\OneDrive\Escritorio\Pull de proyecto\PruebasDesign\Programacion\Solución\AppMedico\AppMedico\obj\Debug\AppMedico.vbprojAssemblyReference.cache

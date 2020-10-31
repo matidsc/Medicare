@@ -166,10 +166,11 @@ Public Class ControladorChat
     Public Function verificarEstadoChat() As Boolean
 
         Try
-            If ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog) = 1 Then
+            Dim resultado As Int16 = ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog)
+            If (resultado = 1) Or (resultado = Nothing) Then
                 Return True
             End If
-        Catch ex As Exception
+        Catch ex As Odbc.OdbcException
             Return False
         End Try
 
@@ -182,6 +183,10 @@ Public Class ControladorChat
         Catch ex As Exception
             Return Nothing
         End Try
+    End Function
+
+    Public Function orden() As ArrayList
+        Return ModeloChat.Singleton.ordern(Datos_Temporales.userLog)
     End Function
 
 End Class

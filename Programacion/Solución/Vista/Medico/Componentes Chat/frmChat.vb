@@ -6,28 +6,14 @@ Public Class frmChat
     Private firstUpdate As Boolean = False
     Private contPac As New ControladorPaciente
     Public Property maxID As Int32
-    Private Shared instancia As frmChat
     Public instanciaChat As ucchat = New ucchat()
-    Dim scrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
     Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
-
-    ''' <summary>
-    ''' Función encargada de devolver una instancia singleton de la clase.
-    ''' </summary>
-    ''' <returns>La instancia creada de la clase.</returns>
-    Public Shared Function Singleton() As frmChat
-
-        If instancia Is Nothing Then
-            instancia = New frmChat
-        End If
-
-        Return instancia
-    End Function
+    Dim scrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+    Dim id As New ArrayList
 
     Private Sub frmChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(Chat, scroll, True)
-        scrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(pnlChats, scroll2, True)
+
 
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
 
@@ -60,28 +46,31 @@ Public Class frmChat
             scroll.Visible = False
             ' b.Location = New Point((pnlWrapChat.Width - pnlAcciones.Width) \ 2, pnlAcciones.Location.Y)          
 
-
+            'pbPerfil.Visible = True
+            'btnFinalizar.Visible = True
+            'btnSintomasDiag.Visible = True
+            pbEnviar.Visible = True
+            txtMsg.Visible = True
+            lblEscriba.Visible = True
+            pnlEnviar.Visible = True
             'Me.BackColor = Color.WhiteSmoke
             'pnlWrapChat.BackColor = Color.White
             'Chat.BackColor = Color.White
         Else
             ' updateChats() dgv viejo
 
-            CargarPanel(contChat.listarMisChats(Datos_Temporales.userLog, 0))
+            ActualizarPanel()
             'Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
             'ScrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(FlowLayoutPanel1, scroll, True)
         End If
-        ScrollHelper.UpdateScrollBar()
-        scrollHelper2.UpdateScrollBar()
+
 
         'Chat.AutoScroll = False
 
         Chat.HorizontalScroll.Enabled = False
-
-        pnlChats.HorizontalScroll.Enabled = False
         Chat.HorizontalScroll.Visible = False
 
-        pnlChats.HorizontalScroll.Visible = False
+
 
         'Chat.AutoScroll = True
 
@@ -92,10 +81,35 @@ Public Class frmChat
     Public Sub New()
 
         InitializeComponent()
-        Update()
-        instancia = Me
+
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+
+
+
+
+
+
+
+
+
+        'pnlChats.AutoScroll = False
+        'pnlChats.HorizontalScroll.Enabled = False
+        'pnlChats.HorizontalScroll.Visible = False
+        'pnlChats.AutoScroll = True
+
+
+
+
+
+
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(Chat, scroll, True)
+        scrollHelper2 = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(pnlChats, scroll2, True)
+
+        'ScrollHelper.UpdateScrollBar()
+        'scrollHelper2.UpdateScrollBar()
+
+        Update()
 
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
             Datos_Temporales.idchat = ControladorChat.Singleton.ObtenerChatPaciente
@@ -125,11 +139,11 @@ Public Class frmChat
 
             Dim form As New ucchat(panel.Item(2) & " " & panel.Item(3), mensaje, fecha, panel.Item(1), panel.Item(0), panel.Item(4))
 
-            form.Width = Chat.Width - 25
             pnlChats.Controls.Add(form)
             form.Show()
             mensaje = ""
             fecha = Nothing
+            id.Add(panel.Item(1))
         Next
 
         pnlChats.ResumeLayout()
@@ -159,13 +173,27 @@ Public Class frmChat
             msj.TopLevel = False
             msj.Width = Chat.Width - 25
             Chat.Controls.Add(msj)
-
+            instanciaChat.lblMensaje.Text = mensaje.Item(1)
             msj.Show()
             msj.Visible = True
         Next
 
+
+        ' Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
+
+        'ScrollHelper.UpdateScrollBar()
         Chat.ResumeLayout()
-        Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
+        'scroll.Value = 3097
+        Try
+            Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum
+            scroll.Refresh()
+            scroll.Value = scroll.Value + 2749
+            'scroll.Update()
+            ScrollHelper.UpdateScrollBar()
+        Catch ex As Exception
+            MsgBox("asdas")
+        End Try
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -209,7 +237,9 @@ Public Class frmChat
 
     Private Sub ReloadSentMessage()
 
+        Dim SetearLista As Boolean = False
         Dim Mensajes As DataTable = contChat.RecargarChatNuevoMSJ(maxID)
+
 
         For Each var As DataRow In Mensajes.Rows
             Dim esEmisor As Boolean = False
@@ -224,21 +254,24 @@ Public Class frmChat
             msj.Width = Chat.Width - 25
             Chat.Controls.Add(msj)
             msj.Show()
+            instanciaChat.lblMensaje.Text = var.Item(1)
+            ActualizarPanel()
             Chat.VerticalScroll.Value = Chat.VerticalScroll.Maximum()
             Chat.Update()
         Next
+
+
+
     End Sub
 
     Private Sub enviarMensaje()
-
 
         If txtMsg.Text <> "" Then
             If Datos_Temporales.idchat IsNot Nothing Then
                 If contChat.enviarMensaje(Datos_Temporales.userLog, Datos_Temporales.idchat, txtMsg.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) Then
                     lblEscriba.Focus()
                     ReloadSentMessage()
-                    'Dim Listado As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
-                    'CargarPanel(Listado)
+
 
 
                     Dim nuevoMensaje As New DataTable
@@ -484,4 +517,66 @@ Public Class frmChat
 
 
     End Sub
+
+    Private Sub pnlChats_Paint(sender As Object, e As PaintEventArgs) Handles pnlChats.Paint
+
+    End Sub
+
+    Private Sub scroll_Scroll(sender As Object, e As ScrollEventArgs) Handles scroll.Scroll
+        ScrollHelper.UpdateScrollBar()
+        Console.WriteLine(scroll.Value & "    " & scroll.Maximum & "  " & Chat.VerticalScroll.Maximum)
+    End Sub
+
+    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMsg.KeyPress
+
+        If Asc(e.KeyChar) = Keys.Enter Then
+
+            e.Handled = True
+
+        End If
+
+    End Sub
+    Private Sub ActualizarPanel()
+        Dim dt As DataTable = contChat.listarMisChats(Datos_Temporales.userLog, 0)
+        Dim contador As Integer = 0
+
+        If dt.Rows.Count <> pnlChats.Controls.Count Then
+            CargarPanel(dt)
+            id.Reverse()
+        Else
+            Dim dt2 As ArrayList = ControladorChat.Singleton.orden
+
+            If dt2.Count = id.Count Then
+
+
+                For i As Integer = 0 To dt2.Count - 1
+
+                    If dt2.Item(i) = id.Item(i) Then
+                        contador += 1
+                    Else
+                        Exit For
+                    End If
+
+                Next
+            End If
+
+            If contador <> dt2.Count Then
+                id.Clear()
+                For Each fila In dt2
+                    For Each control As ucchat In pnlChats.Controls
+                        If fila = control.lblidChat.Text Then
+                            pnlChats.Controls.SetChildIndex(control, 0)
+                        End If
+                    Next
+                    id.Add(fila)
+                Next
+            End If
+
+        End If
+    End Sub
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        ActualizarPanel()
+    End Sub
+
+
 End Class

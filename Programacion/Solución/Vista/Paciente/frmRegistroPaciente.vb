@@ -28,31 +28,36 @@ Public Class frmRegistroPaciente
 
                                 If txtFecNac.MaskCompleted Then
 
-                                    If cbM.Checked Then
-                                        sexo = "M"
-                                    ElseIf cbF.Checked Then
-                                        sexo = "F"
+                                    If cbM.Checked Or cbF.Checked Then
+
+
+                                        If cbM.Checked Then
+                                            sexo = "M"
+                                        Else
+                                            sexo = "F"
+                                        End If
+
 
                                         Dim pac As New ControladorPaciente(txtCI.Text,
-                                                       pass,
-                                                       txtPNom.Text.ToUpper,
-                                                       txtSNom.Text.ToUpper,
-                                                       txtPApe.Text.ToUpper,
-                                                       txtSApe.Text.ToUpper,
-                                                       aliTel,
-                                                       txtMail.Text,
-                                                       sexo,
-                                                       txtFecNac.Text, Principal.Singleton.Base64(path)
-                                                       )
+                                                           pass,
+                                                           txtPNom.Text.ToUpper,
+                                                           txtSNom.Text.ToUpper,
+                                                           txtPApe.Text.ToUpper,
+                                                           txtSApe.Text.ToUpper,
+                                                           aliTel,
+                                                           txtMail.Text,
+                                                           sexo,
+                                                           txtFecNac.Text, Principal.Singleton.Base64(path)
+                                                           )
 
                                         If pac.VerificarBaja(txtCI.Text) Then
 
                                             If pac.registrar() Then
                                                 MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
                                                 Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                txtPApe,
-                                                        txtSApe, txtSNom,
-                                                       txtMail, dgvTelefonos, aliTel)
+                                                    txtPApe,
+                                                            txtSApe, txtSNom,
+                                                           txtMail, dgvTelefonos, aliTel)
                                                 txtFecNac.Clear()
                                                 cbM.Checked = False
                                                 cbF.Checked = False
@@ -71,9 +76,9 @@ Public Class frmRegistroPaciente
                                                 pac.ReingresarUsuario(txtCI.Text)
                                                 MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
                                                 Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                            txtPApe,
-                                                            txtSApe, txtSNom,
-                                                            txtMail, dgvTelefonos, aliTel)
+                                                                txtPApe,
+                                                                txtSApe, txtSNom,
+                                                                txtMail, dgvTelefonos, aliTel)
                                                 txtFecNac.Clear()
                                                 cbM.Checked = False
                                                 cbF.Checked = False
@@ -82,20 +87,22 @@ Public Class frmRegistroPaciente
                                             End If
 
                                         End If
+
                                     Else
                                         MsgBox("Debe ingresar un sexo")
                                     End If
-                                End If
-
                                 Else
-
                                     MsgBox("Debe ingresar su fecha de nacimiento")
                                 End If
+
                             Else
                                 MsgBox("Ha ingresado un teléfono incorrecto")
-                            End If
 
+                            End If
+                        Else
+                            MsgBox("Debe ingresar un e-mail correcto")
                         End If
+
                     End If
                 End If
             Else

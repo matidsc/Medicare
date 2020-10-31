@@ -31,7 +31,7 @@ Public Class Mensaje
                 horaEnviado.Text = horaEnviado.Text & Fecha.Second.ToString
             End If
 
-            horaEnviado.Location = New Point((lbl_Enviado.Location.X - horaEnviado.Width) - 22, ((lbl_Enviado.Height - horaEnviado.Height) / 2) + 1)
+            horaEnviado.Location = New Point((lbl_Enviado.Location.X - horaEnviado.Width) - 33, ((lbl_Enviado.Height - horaEnviado.Height) / 2) + 1)
             lbl_Enviado.Size = TextRenderer.MeasureText(lbl_Enviado.Text, lbl_Enviado.Font)
             Me.Height = lbl_Enviado.Height + 15
             'Principal.Singleton.SuperRoundedCorners(lbl_Enviado)

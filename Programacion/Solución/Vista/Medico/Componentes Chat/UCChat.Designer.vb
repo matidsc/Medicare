@@ -48,12 +48,11 @@ Partial Class ucchat
         Me.lblidChat.Enabled = False
         Me.lblidChat.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblidChat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.lblidChat.Location = New System.Drawing.Point(3, 0)
+        Me.lblidChat.Location = New System.Drawing.Point(155, 18)
         Me.lblidChat.Name = "lblidChat"
-        Me.lblidChat.Size = New System.Drawing.Size(10, 18)
+        Me.lblidChat.Size = New System.Drawing.Size(89, 18)
         Me.lblidChat.TabIndex = 11
         Me.lblidChat.TextAlign = System.Drawing.ContentAlignment.TopRight
-        Me.lblidChat.Visible = False
         '
         'lblFecha
         '
@@ -111,8 +110,9 @@ Partial Class ucchat
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblMensaje)
+        Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ucchat"
-        Me.Size = New System.Drawing.Size(300, 95)
+        Me.Size = New System.Drawing.Size(296, 95)
         CType(Me.GunaCirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

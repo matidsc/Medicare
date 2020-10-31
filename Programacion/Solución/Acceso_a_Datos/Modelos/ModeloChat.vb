@@ -181,13 +181,14 @@ Public Class ModeloChat
     Public Function MisChats(cedula As String, finalizado As Byte)
 
         Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe, CONVERT(fotoPerfil USING utf8)
-                                   FROM usuario u, paciente p, usuario_entra_chat uc, salachat c
-                                   WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = " & finalizado & " 
+                                   FROM usuario u, paciente p, salachat c, mensaje m right join usuario_entra_chat uc on m.idChat = uc.idChat
+                                   WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = " & finalizado & "
                                    AND c.idChat in 
 	                                   (
 		                                 SELECT idChat FROM usuario_entra_chat WHERE cedula = " & cedula & "
 	                                    )
-                                   ORDER BY c.idChat desc"
+                                   GROUP BY m.idChat
+                                   ORDER BY MAX(fechaenvio) desc"
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
@@ -242,5 +243,10 @@ Public Class ModeloChat
     Public Function ObtenerChatPaciente(cedula As String) As Integer
         Dim consulta As String = "SELECT MAX(c.idChat) FROM salachat c, usuario_entra_chat uc WHERE c.idChat = uc.idChat AND finalizado = 0 AND cedula = " & cedula
         Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Integer)
+    End Function
+
+    Public Function ordern(cedula As String) As ArrayList
+        Dim consulta As String = "select uc.idChat, mensaje from mensaje m right join usuario_entra_chat uc on uc.idChat = m.idChat where uc.idChat in (select uc.idchat from usuario_entra_chat uc, salachat c where uc.idChat = c.idChat and finalizado = 0 and cedula = " & cedula & ") group by m.idChat order by max(fechaenvio) asc"
+        Return ModeloConsultas.Singleton.ConsultaArray(consulta)
     End Function
 End Class

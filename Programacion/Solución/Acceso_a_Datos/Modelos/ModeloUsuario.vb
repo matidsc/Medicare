@@ -1,4 +1,5 @@
-﻿''' <summary>
+﻿Imports System.Data.Odbc
+''' <summary>
 ''' Clase encargada de realizar las consultas de los usuarios.
 ''' </summary>
 Public Class ModeloUsuario
@@ -16,6 +17,62 @@ Public Class ModeloUsuario
         End If
 
         Return instancia
+    End Function
+
+    ''' <summary>
+    ''' Función encargada de registar a los médicos en la tabla usuarios.
+    ''' </summary>
+    ''' <param name="cedula"></param>
+    ''' <param name="contraseña"></param>
+    ''' <param name="PrimerNombre"></param>
+    ''' <param name="SegundoNombre"></param>
+    ''' <param name="PrimerApellido"></param>
+    ''' <param name="SegundoApellido"></param>
+    ''' <param name="Especializacion"></param>
+    ''' <returns>True si el insert fue realizado.</returns>
+    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, correo As String, imagen As String) As Boolean
+
+        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
+        Dim parametros As New List(Of OdbcParameter)
+
+        parametros.Add(New OdbcParameter("cedula", cedula))
+        parametros.Add(New OdbcParameter("contrasena", contraseña))
+        parametros.Add(New OdbcParameter("pNom", PrimerNombre))
+        parametros.Add(New OdbcParameter("sNom", SegundoNombre))
+        parametros.Add(New OdbcParameter("pApe", PrimerApellido))
+        parametros.Add(New OdbcParameter("sApe", SegundoApellido))
+        parametros.Add(New OdbcParameter("correo", correo))
+        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
+
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
+    Public Function RegistrarTelefonos(cedula As String, Telefonos As ArrayList)
+
+        Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
+        Dim parametros As New List(Of OdbcParameter)
+        Dim contador As Int16 = 0
+
+        For i As Int16 = 0 To Telefonos.Count - 1
+            parametros.Clear()
+            parametros.Add(New OdbcParameter("cedula", cedula))
+            parametros.Add(New OdbcParameter("telefono", Telefonos.Item(i)))
+
+            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
+            contador += 1
+        Next
+
+        If contador = Telefonos.Count Then
+            Return True
+            Telefonos.Clear()
+        End If
+
+        Return False
+        Telefonos.Clear()
     End Function
 
     ''' <summary>

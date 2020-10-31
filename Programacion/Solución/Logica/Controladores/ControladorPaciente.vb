@@ -37,16 +37,17 @@ Public Class ControladorPaciente
 
     End Sub
 
-    Public Function registrar() As Boolean
+    Public Function RegistrarPaciente() As Boolean
 
         Try
-            Return ModeloPaciente.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono, _email, _sexo, _fecNac, _imagen)
-        Catch ex As Exception
+            Return ModeloPaciente.Singleton.RegistrarPaciente(_ci, _sexo, _fecNac)
+        Catch ex As Odbc.OdbcException
             Return False
         End Try
 
-        Return False
     End Function
+
+
 
     Public Function verificar(ci As String) As Boolean
 

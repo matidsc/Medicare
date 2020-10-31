@@ -57,6 +57,23 @@ Public Class ControladorUsuario
 
     'End Sub
 
+    Public Function RegistarUsuario() As Boolean
+        Try
+            Return ModeloUsuario.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _email, _imagen)
+        Catch ex As Odbc.OdbcException
+            Return False
+        End Try
+    End Function
+
+    Public Function RegistrarTelefonos() As Boolean
+
+        Try
+            Return ModeloUsuario.Singleton.RegistrarTelefonos(_ci, _telefono)
+        Catch ex As Odbc.OdbcException
+            Return False
+        End Try
+
+    End Function
     Public Function verificarUsuario(usuario As String, pass As String) As Boolean
 
         Return ModeloUsuario.Singleton.VerificarUsuario(usuario, pass)

@@ -219,32 +219,11 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloGestor.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.ArrayList,System.String,System.String)">
- <summary>
- Función encargada de registar a los administradores del sistema en la tabla usuarios.
- </summary>
- <param name="cedula"></param>
- <param name="contraseña"></param>
- <param name="PrimerNombre"></param>
- <param name="SegundoNombre"></param>
- <param name="PrimerApellido"></param>
- <param name="SegundoApellido"></param>
- <param name="Telefonos"></param>
- <returns>True si el insert fue realizado.</returns>
-</member>
 <member name="M:Acceso_a_Datos.ModeloGestor.RegistrarGestor(System.String)">
  <summary>
  Función encargada de registar a los administradores del sistema en la tabla gestor.
  </summary>
  <param name="cedula"></param>
- <returns>True si el insert fue realizado.</returns>
-</member>
-<member name="M:Acceso_a_Datos.ModeloGestor.RegistrarTelefono(System.String,System.Collections.ArrayList)">
- <summary>
- Función encargada de registar los telefonos de los administradores.
- </summary>
- <param name="cedula"></param>
- <param name="Telefonos"></param>
  <returns>True si el insert fue realizado.</returns>
 </member>
 <member name="M:Acceso_a_Datos.ModeloGestor.ListadoHabilitarPacientes">
@@ -278,19 +257,6 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloMedico.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
- <summary>
- Función encargada de registar a los médicos en la tabla usuarios.
- </summary>
- <param name="cedula"></param>
- <param name="contraseña"></param>
- <param name="PrimerNombre"></param>
- <param name="SegundoNombre"></param>
- <param name="PrimerApellido"></param>
- <param name="SegundoApellido"></param>
- <param name="Especializacion"></param>
- <returns>True si el insert fue realizado.</returns>
-</member>
 <member name="M:Acceso_a_Datos.ModeloMedico.RegistrarMedico(System.String,System.String)">
  <summary>
  Función encargada de registar a los médicos en la tabla médico.
@@ -316,22 +282,6 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <param name="cedula"></param>
  <returns>True si el paciente ya es usuario del sistema.</returns>
-</member>
-<member name="M:Acceso_a_Datos.ModeloPaciente.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.ArrayList,System.String,System.String,System.String,System.String)">
- <summary>
- Función encargada de registrar a los pacientes utilizando una conexión auxiliar.
- </summary>
- <param name="cedula"></param>
- <param name="contraseña"></param>
- <param name="PrimerNombre"></param>
- <param name="SegundoNombre"></param>
- <param name="PrimerApellido"></param>
- <param name="SegundoApellido"></param>
- <param name="Telefonos"></param>
- <param name="Mail"></param>
- <param name="sexo"></param>
- <param name="FechaNacimiento"></param>
- <returns>True si el insert fue realizado.</returns>
 </member>
 <member name="M:Acceso_a_Datos.ModeloPaciente.RegistrarPaciente(System.String,System.String,System.String)">
  <summary>
@@ -506,6 +456,19 @@ Clase encargada de generar la conexión con la base de datos.
  Función encargada de devolver una instancia singleton de la clase.
  </summary>
  <returns>La instancia creada de la clase.</returns>
+</member>
+<member name="M:Acceso_a_Datos.ModeloUsuario.Registrar(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Función encargada de registar a los médicos en la tabla usuarios.
+ </summary>
+ <param name="cedula"></param>
+ <param name="contraseña"></param>
+ <param name="PrimerNombre"></param>
+ <param name="SegundoNombre"></param>
+ <param name="PrimerApellido"></param>
+ <param name="SegundoApellido"></param>
+ <param name="Especializacion"></param>
+ <returns>True si el insert fue realizado.</returns>
 </member>
 <member name="M:Acceso_a_Datos.ModeloUsuario.VerificarUsuario(System.String,System.String)">
  <summary>

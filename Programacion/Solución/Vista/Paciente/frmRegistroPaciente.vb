@@ -52,25 +52,35 @@ Public Class frmRegistroPaciente
 
                                         If pac.VerificarBaja(txtCI.Text) Then
 
-                                            If pac.registrar() Then
-                                                MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
-                                                Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                    txtPApe,
-                                                            txtSApe, txtSNom,
-                                                           txtMail, dgvTelefonos, aliTel)
-                                                txtFecNac.Clear()
-                                                cbM.Checked = False
-                                                cbF.Checked = False
-                                                aliTel.Clear()
-                                                path = Nothing
-                                                GunaPictureBox1.Image = Nothing
+                                            If pac.RegistarUsuario Then
+                                                If pac.RegistrarPaciente() Then
+                                                    If pac.RegistrarTelefonos Then
+                                                        MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                                        Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                                        txtPApe,
+                                                                txtSApe, txtSNom,
+                                                               txtMail, dgvTelefonos, aliTel)
+                                                        txtFecNac.Clear()
+                                                        cbM.Checked = False
+                                                        cbF.Checked = False
+                                                        aliTel.Clear()
+                                                        path = Nothing
+                                                        GunaPictureBox1.Image = Nothing
+                                                    Else
+                                                        MsgBox("Error al registrar los teléfonos")
+                                                        aliTel.Clear()
+                                                    End If
+                                                Else
+                                                    MsgBox("El paciente ya fue registrado")
+                                                    aliTel.Clear()
+                                                End If
                                             Else
-                                                MsgBox("El paciente ya fue registrado")
+                                                MsgBox("El usuario ya fue ingresado")
                                                 aliTel.Clear()
                                             End If
 
                                         Else
-                                            Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
+                                                Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
 
                                             If respuesta = vbYes Then
                                                 pac.ReingresarUsuario(txtCI.Text)

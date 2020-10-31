@@ -21,58 +21,6 @@ Public Class ModeloGestor
     End Function
 
     ''' <summary>
-    ''' Función encargada de registar a los administradores del sistema en la tabla usuarios.
-    ''' </summary>
-    ''' <param name="cedula"></param>
-    ''' <param name="contraseña"></param>
-    ''' <param name="PrimerNombre"></param>
-    ''' <param name="SegundoNombre"></param>
-    ''' <param name="PrimerApellido"></param>
-    ''' <param name="SegundoApellido"></param>
-    ''' <param name="Telefonos"></param>
-    ''' <returns>True si el insert fue realizado.</returns>
-    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Telefonos As ArrayList, mail As String, imagen As String) As Boolean
-
-        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe,correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
-        Dim parametros As New List(Of OdbcParameter)
-
-        parametros.Add(New OdbcParameter("cedula", cedula))
-        parametros.Add(New OdbcParameter("contrasena", contraseña))
-        parametros.Add(New OdbcParameter("pNom", PrimerNombre))
-        parametros.Add(New OdbcParameter("sNom", SegundoNombre))
-        parametros.Add(New OdbcParameter("pApe", PrimerApellido))
-        parametros.Add(New OdbcParameter("sApe", SegundoApellido))
-        parametros.Add(New OdbcParameter("correo", mail))
-        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
-
-        If ModeloConsultas.Singleton.Transacciones(0) Then
-            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
-                If RegistrarGestor(cedula) Then
-                    If RegistrarTelefono(cedula, Telefonos) Then
-
-                        If ModeloConsultas.Singleton.Transacciones(2) Then
-
-                            Return True
-                        End If
-
-                    Else
-                        ModeloConsultas.Singleton.Transacciones(2)
-                        Return False
-                    End If
-                Else
-                    ModeloConsultas.Singleton.Transacciones(2)
-                    Return False
-                End If
-            Else
-                ModeloConsultas.Singleton.Transacciones(2)
-                Return False
-            End If
-        End If
-
-        Return False
-    End Function
-
-    ''' <summary>
     ''' Función encargada de registar a los administradores del sistema en la tabla gestor.
     ''' </summary>
     ''' <param name="cedula"></param>
@@ -89,36 +37,6 @@ Public Class ModeloGestor
         End If
 
         Return False
-    End Function
-
-    ''' <summary>
-    ''' Función encargada de registar los telefonos de los administradores.
-    ''' </summary>
-    ''' <param name="cedula"></param>
-    ''' <param name="Telefonos"></param>
-    ''' <returns>True si el insert fue realizado.</returns>
-    Public Function RegistrarTelefono(cedula As String, Telefonos As ArrayList)
-
-        Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
-        Dim parametros As New List(Of OdbcParameter)
-        Dim contador As Int16 = 0
-
-        For i As Int16 = 0 To Telefonos.Count - 1
-            parametros.Clear()
-            parametros.Add(New OdbcParameter("cedula", cedula))
-            parametros.Add(New OdbcParameter("telefono", Telefonos.Item(i)))
-
-            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
-            contador += 1
-        Next
-
-        If contador = Telefonos.Count Then
-            Return True
-            Telefonos.Clear()
-        End If
-
-        Return False
-        Telefonos.Clear()
     End Function
 
     ''' <summary>

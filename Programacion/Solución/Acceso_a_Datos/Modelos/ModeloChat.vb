@@ -180,7 +180,7 @@ Public Class ModeloChat
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function MisChats(cedula As String, finalizado As Byte)
 
-        Dim consulta As String = " SELECT p.cedula, c.idChat, u.pNom, u.pApe, mensaje, fechaenvio, CONVERT(fotoPerfil USING utf8)
+        Dim consulta As String = "SELECT p.cedula, c.idChat, u.pNom, u.pApe, mensaje, fechaenvio, CONVERT(fotoPerfil USING utf8)
                                    FROM usuario u, paciente p, salachat c, mensaje m right join usuario_entra_chat uc on m.idChat = uc.idChat
                                    WHERE idMensaje = any (select max(idMensaje) from mensaje group by idChat order by max(fechaenvio))AND uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = 0
                                    AND c.idChat in 
@@ -234,9 +234,9 @@ Public Class ModeloChat
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
-    Public Function verificarEstadoChat(cedula As String) As Int16
+    Public Function verificarEstadoChat(cedula As String) As String
         Dim consulta = "select finalizado from salachat c, usuario_entra_chat uc where uc.idchat = c.idchat and uc.cedula = " & cedula & " and c.idChat in (select max(c.idchat) from salachat c, usuario_entra_chat uc where uc.idchat = c.idchat and uc.cedula = " & cedula & ")"
-        Return ModeloConsultas.Singleton.ConsultaCampo(consulta)
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)
 
     End Function
 

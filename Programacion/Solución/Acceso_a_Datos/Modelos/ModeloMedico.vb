@@ -20,40 +20,6 @@ Public Class ModeloMedico
         Return instancia
     End Function
 
-    ''' <summary>
-    ''' Función encargada de registar a los médicos en la tabla usuarios.
-    ''' </summary>
-    ''' <param name="cedula"></param>
-    ''' <param name="contraseña"></param>
-    ''' <param name="PrimerNombre"></param>
-    ''' <param name="SegundoNombre"></param>
-    ''' <param name="PrimerApellido"></param>
-    ''' <param name="SegundoApellido"></param>
-    ''' <param name="Especializacion"></param>
-    ''' <returns>True si el insert fue realizado.</returns>
-    Public Overloads Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Especializacion As String, correo As String, imagen As String) As Boolean
-
-        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe,correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
-        Dim parametros As New List(Of OdbcParameter)
-
-        parametros.Add(New OdbcParameter("cedula", cedula))
-        parametros.Add(New OdbcParameter("contrasena", contraseña))
-        parametros.Add(New OdbcParameter("pNom", PrimerNombre))
-        parametros.Add(New OdbcParameter("sNom", SegundoNombre))
-        parametros.Add(New OdbcParameter("pApe", PrimerApellido))
-        parametros.Add(New OdbcParameter("sApe", SegundoApellido))
-        parametros.Add(New OdbcParameter("correo", correo))
-        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
-
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
-            If RegistrarMedico(cedula, Especializacion) Then
-                Return True
-            End If
-        End If
-
-        Return False
-    End Function
-
     Public Overloads Function Registrar(tabla As DataTable) As Boolean
 
         Dim consultaUsuario As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo) VALUES (?,?,?,?,?,?,?)"

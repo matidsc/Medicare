@@ -27,13 +27,13 @@ Public Class ControladorGestor
     Public Function getInformacionGestor(cedula As String) As DataTable
         Return ModeloGestor.Singleton.getInformacionGestor(cedula)
     End Function
-    Public Function registrar() As Boolean
+    Public Function RegistrarGestor() As Boolean
 
-        'Try
-        Return ModeloGestor.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _telefono, _email, _imagen)
-        'Catch ex As Exception
-        'Return False
-        'End Try
+        Try
+            Return ModeloGestor.Singleton.RegistrarGestor(_ci)
+        Catch ex As Odbc.OdbcException
+            Return False
+        End Try
 
     End Function
 

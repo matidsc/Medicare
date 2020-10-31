@@ -125,9 +125,11 @@ Public Class frmObtenerDiagnostico
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
         If ControladorChat.Singleton.verificarEstadoChat Then
+            MsgBox("true")
             Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
             Me.Dispose()
         Else
+            MsgBox("false")
             Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
             Dim frm As frmIngresarSintomas = Me.ParentForm
             frm.Dispose()

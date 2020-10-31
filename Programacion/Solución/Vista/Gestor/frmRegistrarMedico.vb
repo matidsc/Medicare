@@ -32,11 +32,15 @@ Public Class frmRegistrarMedico
 
                             If med.VerificarBaja(txtCed.Text) Then
 
-                                If med.registrar() Then
-                                    MsgBox("Médico registrado con éxito")
-                                    limpiar()
+                                If med.RegistarUsuario() Then
+                                    If med.RegistrarMedico Then
+                                        MsgBox("Médico registrado con éxito")
+                                        limpiar()
+                                    Else
+                                        MsgBox("El médico ya fue registrado")
+                                    End If
                                 Else
-                                    MsgBox("El médico ya fue registrado")
+                                    MsgBox("El usuario ya fue registrado")
                                 End If
 
                             Else

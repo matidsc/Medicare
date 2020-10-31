@@ -41,23 +41,20 @@ Public Class ControladorMedico
 
     'End Sub
 
-    Public Overloads Function registrar() As Boolean
-
+    Public Function RegistrarMedico() As Boolean
         Try
-            Return ModeloMedico.Singleton.Registrar(_ci, _contraseña, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _especializacion, _email, _imagen)
+            Return ModeloMedico.Singleton.RegistrarMedico(_ci, _especializacion)
         Catch ex As Exception
             Return False
         End Try
-
-        'Return False
     End Function
 
     Public Overloads Function registrar(tabla As DataTable) As Boolean
-        'Try
-        Return ModeloMedico.Singleton.Registrar(tabla)
-        'Catch ex As Exception
-        'Return False
-        'End Try
+        Try
+            Return ModeloMedico.Singleton.Registrar(tabla)
+        Catch ex As Odbc.OdbcException
+            Return False
+        End Try
     End Function
 
 End Class

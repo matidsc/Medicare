@@ -44,9 +44,7 @@ Public Class frmRegistroGestor
                 If Principal.Singleton.VerificarString(check, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
                     If Principal.Singleton.VerificarEmail(check, txtMail.Text) Then
                         If Principal.Singleton.VerificarTelefonos(dgvTelefonos, aliTel) Then
-                            For Each item In aliTel
-                                MsgBox(item)
-                            Next
+
                             Dim ges As New ControladorGestor(txtCI.Text,
                                                  pass,
                                                  txtPNom.Text.ToUpper,
@@ -58,12 +56,19 @@ Public Class frmRegistroGestor
 
                             If ges.VerificarBaja(txtCI.Text) Then
 
-                                If ges.registrar() Then
-                                    MsgBox("Gestor registrado con éxito")
-                                    Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
+                                If ges.RegistarUsuario Then
+                                    If ges.RegistrarGestor() Then
+                                        If ges.RegistrarTelefonos Then
+                                            MsgBox("Gestor registrado con éxito")
+                                            Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
+                                        End If
+                                    Else
+                                        MsgBox("El gestor ya fue registrado")
+                                    End If
                                 Else
-                                    MsgBox("El gestor ya fue registrado")
+                                    MsgBox("El usuario ya fue registrado")
                                 End If
+
                             Else
                                 Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
 

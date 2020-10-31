@@ -37,47 +37,6 @@ Public Class ModeloPaciente
     End Function
 
     ''' <summary>
-    ''' Función encargada de registrar a los pacientes utilizando una conexión auxiliar.
-    ''' </summary>
-    ''' <param name="cedula"></param>
-    ''' <param name="contraseña"></param>
-    ''' <param name="PrimerNombre"></param>
-    ''' <param name="SegundoNombre"></param>
-    ''' <param name="PrimerApellido"></param>
-    ''' <param name="SegundoApellido"></param>
-    ''' <param name="Telefonos"></param>
-    ''' <param name="Mail"></param>
-    ''' <param name="sexo"></param>
-    ''' <param name="FechaNacimiento"></param>
-    ''' <returns>True si el insert fue realizado.</returns>
-    Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, Telefonos As ArrayList, Mail As String, sexo As String, FechaNacimiento As String, imagen As String) As Boolean
-
-        Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
-
-        Dim consulta As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo, fotoPerfil) VALUES (?,?,?,?,?,?,?,?)"
-        Dim parametros As New List(Of OdbcParameter)
-
-        parametros.Add(New OdbcParameter("cedula", cedula))
-        parametros.Add(New OdbcParameter("contrasena", contraseña))
-        parametros.Add(New OdbcParameter("pNom", PrimerNombre))
-        parametros.Add(New OdbcParameter("sNom", SegundoNombre))
-        parametros.Add(New OdbcParameter("pApe", PrimerApellido))
-        parametros.Add(New OdbcParameter("sApe", SegundoApellido))
-        parametros.Add(New OdbcParameter("correo", Mail))
-        parametros.Add(New OdbcParameter("fotoPerfil", imagen))
-
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
-            If RegistrarPaciente(cedula, sexo, FechaNacimiento) Then
-                If RegistrarTelefono(cedula, Telefonos) Then
-                    Return True
-                End If
-            End If
-        End If
-
-        Return False
-    End Function
-
-    ''' <summary>
     ''' Función encargada de registar a los pacientes en la tabla pacientes.
     ''' </summary>
     ''' <param name="cedula"></param>

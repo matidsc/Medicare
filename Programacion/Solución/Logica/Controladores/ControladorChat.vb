@@ -186,8 +186,8 @@ Public Class ControladorChat
     Public Function verificarEstadoChat() As Boolean
 
         Try
-            Dim resultado As Int16 = ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog)
-            If (resultado = 1) Or (resultado = Nothing) Then
+            Dim resultado As String = ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog)
+            If (resultado = "1") Or (resultado = Nothing) Then
                 Return True
             End If
         Catch ex As Odbc.OdbcException

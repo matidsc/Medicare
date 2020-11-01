@@ -43,6 +43,7 @@ Partial Class frmChat
         Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
         Me.ActualizarChats = New System.Windows.Forms.Timer(Me.components)
         Me.UcFicha1 = New Vista.UCFicha()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlWrapChat.SuspendLayout()
         Me.pnlUsuario.SuspendLayout()
         CType(Me.pbPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -330,7 +331,7 @@ Partial Class frmChat
         'ActualizarChats
         '
         Me.ActualizarChats.Enabled = True
-        Me.ActualizarChats.Interval = 6000
+        Me.ActualizarChats.Interval = 3000
         '
         'UcFicha1
         '
@@ -341,6 +342,10 @@ Partial Class frmChat
         Me.UcFicha1.Size = New System.Drawing.Size(747, 384)
         Me.UcFicha1.TabIndex = 196
         Me.UcFicha1.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 2000
         '
         'frmChat
         '
@@ -385,4 +390,5 @@ Partial Class frmChat
     Friend WithEvents scroll2 As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents ActualizarChats As Timer
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
+    Friend WithEvents Timer1 As Timer
 End Class

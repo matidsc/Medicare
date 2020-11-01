@@ -50,12 +50,17 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <param name="RolBD"></param>
 </member>
-<member name="M:Acceso_a_Datos.Conexion.cerrarConexion">
+<member name="M:Acceso_a_Datos.Conexion.cerrarConexiones">
  <summary>
  Subrutina encargada de cerrar la conexión con la base de datos.
  </summary>
 </member>
 <member name="M:Acceso_a_Datos.Conexion.abrirConexion">
+ <summary>
+ Subrutina encargada de abrir la conexión con la base de datos.
+ </summary>
+</member>
+<member name="M:Acceso_a_Datos.Conexion.abrirConexionAsync">
  <summary>
  Subrutina encargada de abrir la conexión con la base de datos.
  </summary>
@@ -71,7 +76,7 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloChat.CrearChat">
+<member name="M:Acceso_a_Datos.ModeloChat.CrearChat(System.String)">
  <summary>
  Función encargada de crear un nuevo chat en la base de datos.
  </summary>
@@ -172,14 +177,14 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>La instancia creada de la clase.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloConsultas.ConsultaTabla(System.String)">
+<member name="M:Acceso_a_Datos.ModeloConsultas.ConsultaTabla(System.String,System.Data.Odbc.OdbcConnection)">
  <summary>
  Función encargada de devolver en forma de tabla los valores obtenidos a través de la consulta.
  </summary>
  <param name="Comando"></param>
  <returns>DataTable cargado con los valores obtenidos.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloConsultas.ConsultaCampo(System.String)">
+<member name="M:Acceso_a_Datos.ModeloConsultas.ConsultaCampo(System.String,System.Data.Odbc.OdbcTransaction,System.Boolean,System.Data.Odbc.OdbcConnection)">
  <summary>
  Función genérica encargada de devolver el dato solicitado por la consulta.
  </summary>
@@ -193,7 +198,7 @@ Clase encargada de generar la conexión con la base de datos.
  <param name="Comando"></param>
  <returns>ArrayList con las filas encontradas en la consulta.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloConsultas.InsertParametros(System.String,System.Collections.Generic.List{System.Data.Odbc.OdbcParameter})">
+<member name="M:Acceso_a_Datos.ModeloConsultas.InsertParametros(System.String,System.Collections.Generic.List{System.Data.Odbc.OdbcParameter},System.Data.Odbc.OdbcTransaction)">
  <summary>
  Función encargada de ejecutar un insert en la base de datos utilizando OdbcParameters.
  </summary>

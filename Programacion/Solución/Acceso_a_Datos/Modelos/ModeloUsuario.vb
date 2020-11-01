@@ -44,7 +44,8 @@ Public Class ModeloUsuario
         parametros.Add(New OdbcParameter("correo", correo))
         parametros.Add(New OdbcParameter("fotoPerfil", imagen))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+
             Return True
         End If
 
@@ -52,6 +53,7 @@ Public Class ModeloUsuario
     End Function
 
     Public Function RegistrarTelefonos(cedula As String, Telefonos As ArrayList)
+
 
         Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
         Dim parametros As New List(Of OdbcParameter)
@@ -62,17 +64,18 @@ Public Class ModeloUsuario
             parametros.Add(New OdbcParameter("cedula", cedula))
             parametros.Add(New OdbcParameter("telefono", Telefonos.Item(i)))
 
-            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
+            ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans)
             contador += 1
         Next
 
         If contador = Telefonos.Count Then
-            Return True
             Telefonos.Clear()
+            Return True
+
         End If
 
         Return False
-        Telefonos.Clear()
+
     End Function
 
     ''' <summary>
@@ -83,10 +86,12 @@ Public Class ModeloUsuario
     ''' <returns>True si coinciden las credenciales.</returns>
     Public Function VerificarUsuario(usuario As String, pass As String) As Boolean
 
-        Conexion.Singleton.cerrarConexion()
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
+        Conexion.Singleton.abrirConexion()
 
-        If ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE cedula = " & usuario & " and contrasena = '" & pass & "' AND bajalogica = 0") = 1 Then
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE cedula = " & usuario & " and contrasena = '" & pass & "' AND bajalogica = 0", ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+
+        If resultado = 1 Then
             Return True
         End If
 
@@ -100,22 +105,30 @@ Public Class ModeloUsuario
     ''' <param name="rol"></param>
     ''' <returns>True si el rol es correcto.</returns>
     Public Function verificarRol(usuario As String, rol As Int16) As Boolean
+        Conexion.Singleton.abrirConexion()
+        Dim resultado As Int16
         Select Case rol
             Case 0
-                If CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM paciente WHERE cedula = " & usuario), Int16) = 1 Then
+                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM paciente WHERE cedula = " & usuario, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+                If resultado = 1 Then
                     Return True
                 End If
 
             Case 1
-                If CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM medico WHERE cedula = " & usuario), Int16) = 1 Then
+                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM medico WHERE cedula = " & usuario, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+                If resultado = 1 Then
                     Return True
                 End If
 
             Case 2
-                If CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM gestor WHERE cedula = " & usuario), Int16) = 1 Then
+                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM gestor WHERE cedula = " & usuario, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+                If resultado = 1 Then
                     Return True
                 End If
+
+            Case Else
         End Select
+
 
         Return False
     End Function
@@ -123,8 +136,11 @@ Public Class ModeloUsuario
     Public Function VerificarBaja(cedula As String) As Boolean
 
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
+        Conexion.Singleton.abrirConexion()
 
-        If ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE bajalogica = 1 AND cedula = " & cedula) = 0 Then
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE bajalogica = 1 AND cedula = " & cedula, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+
+        If resultado = 0 Then
             Return True
         End If
 
@@ -144,7 +160,7 @@ Public Class ModeloUsuario
 
     Public Function listarUsuarios() As DataTable
         Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,correo FROM usuario where bajaLogica=0"
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>

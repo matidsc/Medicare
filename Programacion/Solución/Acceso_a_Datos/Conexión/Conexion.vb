@@ -20,6 +20,7 @@ Public Class Conexion
     ''' </summary>
     ''' <returns>La conexión de tipo OdbcConnection.</returns>
     Public Property Connection As New OdbcConnection
+    Public Property asyncConnection As New OdbcConnection
 
     ''' <summary>
     ''' Función encargada de devolver una instancia singleton de la clase.
@@ -65,12 +66,20 @@ Public Class Conexion
             ";DATABASE=" + Me.DatabaseName +
             ";SERVER=" + Me.Host
             )
+        asyncConnection = New OdbcConnection(
+            "dsn=" + Me.dsn +
+            ";UID=" + dblogin(RolBD, TipoDbLogin.user) +
+            ";PWD=" + dblogin(RolBD, TipoDbLogin.pass) +
+            ";PORT=" + Me.Port +
+            ";DATABASE=" + Me.DatabaseName +
+            ";SERVER=" + Me.Host
+            )
     End Sub
 
     ''' <summary>
     ''' Subrutina encargada de cerrar la conexión con la base de datos.
     ''' </summary>
-    Public Sub cerrarConexion()
+    Public Sub cerrarConexiones()
         Try
             If Connection.State = ConnectionState.Open Then
                 Me.Connection.Close()
@@ -87,6 +96,19 @@ Public Class Conexion
         Try
             If Connection.State = ConnectionState.Closed Then
                 Connection.Open()
+            End If
+        Catch ex As Exception
+            MsgBox("Error al conectarse a la base de datos")
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Subrutina encargada de abrir la conexión con la base de datos.
+    ''' </summary>
+    Public Async Sub abrirConexionAsync()
+        Try
+            If asyncConnection.State = ConnectionState.Closed Then
+                asyncConnection.Open()
             End If
         Catch ex As Exception
             MsgBox("Error al conectarse a la base de datos")

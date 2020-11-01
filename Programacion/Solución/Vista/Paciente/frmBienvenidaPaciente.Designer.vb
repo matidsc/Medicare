@@ -58,6 +58,7 @@ Partial Class frmBienvenidaPaciente
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContenedor.SuspendLayout()
         Me.pnlNotis.SuspendLayout()
         Me.pnlCerrar.SuspendLayout()
@@ -538,6 +539,11 @@ Partial Class frmBienvenidaPaciente
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1000
         '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        Me.Timer3.Interval = 2000
+        '
         'frmBienvenidaPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -599,4 +605,5 @@ Partial Class frmBienvenidaPaciente
     Friend WithEvents btnHistorial As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnReanudar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Timer3 As Timer
 End Class

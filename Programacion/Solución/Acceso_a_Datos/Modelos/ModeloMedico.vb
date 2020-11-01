@@ -22,6 +22,7 @@ Public Class ModeloMedico
 
     Public Overloads Function Registrar(tabla As DataTable) As Boolean
 
+        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
         Dim consultaUsuario As String = "INSERT INTO usuario (cedula, contrasena, pNom, sNom, pApe, sApe, correo) VALUES (?,?,?,?,?,?,?)"
         Dim consultaMedico As String = "INSERT INTO medico (cedula, especializacion) VALUES(?,?)"
         Dim parametros As New List(Of OdbcParameter)
@@ -41,8 +42,8 @@ Public Class ModeloMedico
             parametrosMedico.Add(New OdbcParameter("cedula", fila.Item(0)))
             parametrosMedico.Add(New OdbcParameter("especializacion", fila.Item(7).ToString.ToUpper))
 
-            If ModeloConsultas.Singleton.InsertParametros(consultaUsuario, parametros) Then
-                If ModeloConsultas.Singleton.InsertParametros(consultaMedico, parametrosMedico) Then
+            If ModeloConsultas.Singleton.InsertParametros(consultaUsuario, parametros, ModeloConsultas.Singleton.trans) Then
+                If ModeloConsultas.Singleton.InsertParametros(consultaMedico, parametrosMedico, ModeloConsultas.Singleton.trans) Then
                     contador += 1
                 End If
             End If
@@ -68,13 +69,14 @@ Public Class ModeloMedico
     ''' <returns>True si el insert fue realizado.</returns>
     Public Function RegistrarMedico(cedula As String, esp As String) As Boolean
 
+        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
         Dim parametros As New List(Of OdbcParameter)
         Dim consulta As String = "INSERT INTO medico (cedula, especializacion) VALUES (?,?)"
 
         parametros.Add(New OdbcParameter("cedula", cedula))
         parametros.Add(New OdbcParameter("especializacion", esp))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
             Return True
         End If
 

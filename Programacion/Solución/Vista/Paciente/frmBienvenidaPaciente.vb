@@ -174,4 +174,9 @@ Public Class frmBienvenidaPaciente
         Dim frm As New frmVerPerfil
         frm.Show()
     End Sub
+
+    Private Sub pnlReanudar_MouseClick(sender As Object, e As EventArgs) Handles btnReanudar.Click
+
+    End Sub
+
 End Class

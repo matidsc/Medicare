@@ -16,14 +16,17 @@ Public Class ControladorChat
 
     Public Function crearChat()
 
-        Dim id As Int16 = ModeloChat.Singleton.CrearChat
-
-        If id <> 0 Then
-
-            Datos_Temporales.idchat = id
-            Return id
-
-        End If
+        Try
+            Dim id As String = ModeloChat.Singleton.CrearChat(Datos_Temporales.userLog)
+            If id <> Nothing Then
+                Datos_Temporales.idchat = id
+                Return True
+            End If
+        Catch ex As odbc.OdbcException
+            Return False
+        Catch ex As NullReferenceException
+            Return False
+        End Try
 
         Return False
     End Function
@@ -99,10 +102,14 @@ Public Class ControladorChat
         Return False
     End Function
 
-    Public Function listarMisChats(finalizado As Byte) As DataTable
+    Public Overloads Function ListarMisChats(finalizado As Byte) As DataTable
 
         Return ModeloChat.Singleton.MisChats(Datos_Temporales.userLog, finalizado)
 
+    End Function
+
+    Public Overloads Function ListarMisChats()
+        Return ModeloChat.Singleton.MisChats(Datos_Temporales.userLog)
     End Function
 
     Public Function getNombreUsr(cedula As String) As DataTable

@@ -257,14 +257,11 @@ Public Class frmObtenerDiagnostico
         If solicitud Then
             Dim respuesta As Byte = MsgBox("¿Desea iniciar un chat?", vbYesNo)
             If respuesta = vbYes Then
-                If chat.crearChat() <> 0 Then
-                    If chat.entrarChat(Datos_Temporales.userLog, Datos_Temporales.idchat) Then
-
-                        MsgBox("Se ha enviado una solicitud de chat")
-                        solicitud = False
-                    Else
-                        MsgBox("Error al enviar solicitud de chat")
-                    End If
+                If chat.crearChat() Then
+                    MsgBox("Se ha enviado una solicitud de chat")
+                    solicitud = False
+                Else
+                    MsgBox("Error al crear la solicitud de chat")
                 End If
             End If
         Else

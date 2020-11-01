@@ -26,10 +26,11 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>True si el paciente ya es usuario del sistema.</returns>
     Public Function VerificarEstado(cedula As String) As Boolean
-
+        Conexion.Singleton.abrirConexion()
         Dim consulta As String = "SELECT verificacion FROM paciente WHERE cedula = " + cedula
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
 
-        If ModeloConsultas.Singleton.ConsultaCampo(consulta) = 1 Then
+        If resultado = 1 Then
             Return True
         End If
 
@@ -45,6 +46,7 @@ Public Class ModeloPaciente
     ''' <returns>True si el insert fue realizado.</returns>
     Public Function RegistrarPaciente(cedula As String, sexo As String, FechaNacimiento As String) As Boolean
 
+        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
         Dim parametros As New List(Of OdbcParameter)
         Dim consulta As String = "INSERT INTO paciente (cedula, verificacion, fecNac, sexo) VALUES (?,?,?,?)"
 
@@ -53,7 +55,7 @@ Public Class ModeloPaciente
         parametros.Add(New OdbcParameter("fecNac", FechaNacimiento))
         parametros.Add(New OdbcParameter("sexo", sexo))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
             Return True
         End If
 
@@ -68,6 +70,7 @@ Public Class ModeloPaciente
     ''' <returns>True si el insert fue realizado.</returns>
     Public Function RegistrarTelefono(cedula As String, Telefonos As ArrayList) As Boolean
 
+        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
         Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int16 = 0
@@ -77,7 +80,7 @@ Public Class ModeloPaciente
             parametros.Add(New OdbcParameter("cedula", cedula))
             parametros.Add(New OdbcParameter("telefono", var))
 
-            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
+            ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans)
             contador += 1
         Next
 
@@ -95,7 +98,7 @@ Public Class ModeloPaciente
     ''' </summary>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function TraerPacientes() As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT cedula FROM paciente WHERE verificacion = 1 ")
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT cedula FROM paciente WHERE verificacion = 1 ", Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>
@@ -104,7 +107,7 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function GetDatosPaciente(cedula As String) As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo, CONVERT(fotoPerfil USING utf8) from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 AND u.cedula= " & cedula)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo, CONVERT(fotoPerfil USING utf8) from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 AND u.cedula= " & cedula, Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>
@@ -113,7 +116,7 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function GetPatologiasCronicas(cedula As String) As DataTable ''cambiar segun mer
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT patologia FROM paciente_selecciona_patologia WHERE cedula = " & cedula)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT patologia FROM paciente_selecciona_patologia WHERE cedula = " & cedula, Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>
@@ -122,7 +125,7 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function GetHistorialConsultas(cedula As String) As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT p.nombre,date_format(pod.fecha," & "'%d / %m / %y')" & "FROM paciente_obtiene_diagnostico pod,patologia p WHERE pod.idPatologia=p.idPatologia AND pod.cedulaPaciente =" & cedula)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT p.nombre,date_format(pod.fecha," & "'%d / %m / %y')" & "FROM paciente_obtiene_diagnostico pod,patologia p WHERE pod.idPatologia=p.idPatologia AND pod.cedulaPaciente =" & cedula, Conexion.Singleton.Connection)
     End Function
 
 End Class

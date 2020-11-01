@@ -17,6 +17,28 @@ Public Class frmRegistroGestor
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
+
+
+        txtCI.Text = "52379287"
+        txtPNom.Text = "asdasd"
+        txtPApe.Text = "ssss"
+        txtSApe.Text = "sswsswssss"
+        txtSNom.Text = "eeeee"
+        txtCon.Text = "asd"
+        txtRepCon.Text = "asd"
+        txtMail.Text = "rasd@asd.com"
+
+
+
+
+
+
+
+
+
+
+
+
     End Sub
 
     Private Sub dgvTelefonos_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvTelefonos.CellValidating
@@ -56,15 +78,11 @@ Public Class frmRegistroGestor
 
                             If ges.VerificarBaja(txtCI.Text) Then
 
-                                If ges.RegistarUsuario Then
-                                    If ges.RegistrarGestor() Then
-                                        If ges.RegistrarTelefonos Then
-                                            MsgBox("Gestor registrado con éxito")
-                                            Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
-                                        End If
-                                    Else
-                                        MsgBox("El gestor ya fue registrado")
-                                    End If
+                                If ges.Registrar Then
+
+                                    MsgBox("Gestor registrado con éxito")
+                                    Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
+
                                 Else
                                     MsgBox("El usuario ya fue registrado")
                                 End If

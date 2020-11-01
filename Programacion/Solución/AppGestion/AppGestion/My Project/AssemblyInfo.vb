@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("AppPaciente")>
+<Assembly: AssemblyTitle("AppGestion")>
 <Assembly: AssemblyDescription("Sistema de Consulta Médica")>
 <Assembly: AssemblyCompany("ByteSoft SRL")>
 <Assembly: AssemblyProduct("MediCare")>

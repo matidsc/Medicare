@@ -38,22 +38,31 @@ Public Class UCChat
 
         Dim instancia As frmChat = Me.ParentForm
 
-        If instancia.instanciaChat IsNot Nothing Then
-            If (sender IsNot instancia.instanciaChat) Then
-                Me.BackColor = Color.FromArgb(31, 39, 49)
+        Try
+            If instancia.instanciaChat IsNot Nothing Then
+                If (sender IsNot instancia.instanciaChat) Then
+                    Me.BackColor = Color.FromArgb(31, 39, 49)
+                End If
             End If
-        End If
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     Private Sub Form1_MouseEnter(sender As Object, e As EventArgs) Handles MyBase.MouseEnter
 
         Dim instancia As frmChat = Me.ParentForm
 
-        If instancia.instanciaChat IsNot Nothing Then
-            If (sender IsNot instancia.instanciaChat) Then
-                Me.BackColor = Color.FromArgb(25, 34, 41)
+        Try
+            If instancia.instanciaChat IsNot Nothing Then
+                If (sender IsNot instancia.instanciaChat) Then
+                    Me.BackColor = Color.FromArgb(25, 34, 41)
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     Private Sub CambioChat() Handles Me.Click, Me.DoubleClick, GunaCirclePictureBox1.Click, lblMensaje.Click, lblFecha.Click, lblCed.Click, lblidChat.Click, lblNombre.Click

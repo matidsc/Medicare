@@ -24,11 +24,29 @@ Public Class ModeloChat
     ''' Función encargada de crear un nuevo chat en la base de datos.
     ''' </summary>
     ''' <returns>Identificador del chat creado</returns>
-    Public Function CrearChat()
+    Public Function CrearChat(cedula As String) As String
+
+        Conexion.Singleton.abrirConexion()
+        ModeloConsultas.Singleton.trans = Nothing
+        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
 
         Dim consulta As String = "CALL CrearChat"
+        Dim resultado = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, True, Conexion.Singleton.Connection), String)
 
-        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int32)
+        If resultado <> Nothing Then
+
+            If EntrarChat(cedula, resultado) Then
+                MsgBox("adsa")
+                ModeloConsultas.Singleton.trans.Commit()
+                Return resultado
+            Else
+                ModeloConsultas.Singleton.trans.Rollback()
+                Return Nothing
+            End If
+        Else
+            ModeloConsultas.Singleton.trans.Rollback()
+            Return Nothing
+        End If
 
     End Function
 
@@ -47,7 +65,7 @@ Public Class ModeloChat
         parametros.Add(New OdbcParameter("idChat", id))
         parametros.Add(New OdbcParameter("fechaIngreso", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
             Return True
         End If
 
@@ -65,7 +83,7 @@ Public Class ModeloChat
                                   WHERE u.cedula = up.cedulaPaciente AND p.idPatologia = up.idPatologia AND p.bajalogica = 0 AND c.idChat = u.idChat AND us.cedula = u.cedula AND finalizado = 0 AND u.idChat NOT IN
                                   (SELECT idChat FROM usuario_entra_chat where cedula = " + usuario + ")" + "ORDER BY prioridad ASC "
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>
@@ -86,7 +104,7 @@ Public Class ModeloChat
         parametros.Add(New OdbcParameter("mensaje", mensaje))
         parametros.Add(New OdbcParameter("fechaEnvio", fechaEnvio))
 
-        Return ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
+        Return ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans)
     End Function
 
     ''' <summary>
@@ -98,7 +116,7 @@ Public Class ModeloChat
 
         Dim consulta As String = "SELECT cedula, mensaje, fechaEnvio, idMensaje FROM mensaje WHERE idChat = " + idChat.ToString
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.asyncConnection)
     End Function
 
     ''' <summary>
@@ -110,7 +128,7 @@ Public Class ModeloChat
     Public Function RecargarChatNuevoMSJ(idChat As Int32, maxMsj As Int32) As DataTable
         Dim consulta As String = "SELECT cedula, mensaje, fechaEnvio, idMensaje FROM mensaje WHERE idChat = " & idChat.ToString & " AND idMensaje > " & maxMsj.ToString & ";"
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.asyncConnection)
     End Function
 
     ''' <summary>
@@ -120,27 +138,27 @@ Public Class ModeloChat
     ''' <returns>Cantidad de mensajes existentes en una sala de chat.</returns>
     Public Function ObtenerRespuesta(usuario As String) As Int16
         'Dim consulta As String = "SELECT count(*) FROM mensaje WHERE idChat =  " + idChat.ToString
+        Conexion.Singleton.abrirConexionAsync()
         Dim consulta As String = "SELECT count(*) FROM mensaje inner join salachat on salachat.idChat = mensaje.idChat where mensaje.idChat IN (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")" & " and finalizado = 0"
-
-        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.asyncConnection), Int16)
+        Return resultado
     End Function
 
     Public Function VerificarMensaje(usuario As String) As Int16
         Dim consulta As String = "select count(*) from mensaje where cedula = " & usuario & " and idChat IN (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")"
+        Conexion.Singleton.abrirConexionAsync()
 
-        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
+        Dim resultado = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.asyncConnection), Int16)
+        Return resultado
     End Function
 
     Public Function DenegarChat(usuario As String) As Boolean
 
         Dim consulta As String = "update salachat set finalizado = 1 where idchat = (SELECT MAX(idChat) FROM usuario_entra_chat WHERE cedula = " & usuario & ")"
 
-        ModeloConsultas.Singleton.InsertarSinParametros("START TRANSACTION")
         If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
-            ModeloConsultas.Singleton.InsertarSinParametros("COMMIT")
             Return True
         Else
-            ModeloConsultas.Singleton.InsertarSinParametros("ROLLBACK")
             Return False
         End If
 
@@ -166,10 +184,13 @@ Public Class ModeloChat
     ''' <returns>Cantidad de veces que el médico ingresó.</returns>
     Public Function VerificarCedula(cedula As String, idChat As String) As Int16
 
+        Conexion.Singleton.abrirConexion()
+
         Dim consulta = "SELECT count(*) FROM usuario_entra_chat pc, medico m 
                         WHERE m.cedula = pc.cedula AND pc.cedula = " + cedula + " AND idChat = " + idChat
 
-        Return ModeloConsultas.Singleton.ConsultaCampo(consulta)
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+        Return resultado
     End Function
 
     ''' <summary>
@@ -178,26 +199,39 @@ Public Class ModeloChat
     ''' <param name="cedula"></param>
     ''' <param name="finalizado"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
-    Public Function MisChats(cedula As String, finalizado As Byte)
+    Public Overloads Function MisChats(cedula As String, finalizado As Byte)
 
-        Dim consulta As String = "SELECT p.cedula, c.idChat, u.pNom, u.pApe, mensaje, fechaenvio, CONVERT(fotoPerfil USING utf8)
-                                   FROM usuario u, paciente p, salachat c, mensaje m right join usuario_entra_chat uc on m.idChat = uc.idChat
-                                   WHERE idMensaje = any (select max(idMensaje) from mensaje group by idChat order by max(fechaenvio))AND uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = 0
+        Dim consulta As String = "SELECT p.cedula, c.idChat, u.pNom, u.pApe, CONVERT(fotoPerfil USING utf8)
+                                   FROM usuario_entra_chat uc, usuario u, paciente p, salachat c
+                                   WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = " & finalizado & "
                                    AND c.idChat in 
 	                                   (
 		                                 SELECT idChat FROM usuario_entra_chat WHERE cedula = " & cedula & "
 	                                    )
-                                   GROUP BY uc.idChat
-                                   ORDER BY MAX(fechaenvio) desc"
+                                   GROUP BY uc.idChat"
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.asyncConnection)
     End Function
+
+    Public Overloads Function MisChats(cedula As String)
+        Dim consulta As String = "SELECT p.cedula, c.idChat, u.pNom, u.pApe, CONVERT(fotoPerfil USING utf8)
+                                   FROM usuario_entra_chat uc, usuario u, paciente p, salachat c
+                                   WHERE uc.cedula = p.cedula AND c.idChat = uc.idChat AND u.cedula = p.cedula AND finalizado = 0
+                                   AND c.idChat in 
+	                                   (
+		                                 SELECT idChat FROM usuario_entra_chat WHERE cedula = " & cedula & "
+	                                    )
+                                   GROUP BY uc.idChat"
+
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.asyncConnection)
+    End Function
+
 
     Public Function GetMensaje(idChat As Int32)
 
         Dim consulta As String = "SELECT mensaje, fechaEnvio, cedula, idChat FROM mensaje WHERE idChat = " & idChat & " ORDER BY idMensaje DESC limit 1"
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>
@@ -209,7 +243,7 @@ Public Class ModeloChat
 
         Dim consulta As String = "SELECT pNom, pApe FROM usuario WHERE cedula = " & cedula
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
     End Function
 
     ''' <summary>
@@ -218,10 +252,11 @@ Public Class ModeloChat
     ''' <param name="cedula"></param>
     ''' <returns>Correo electrónico del usuario.</returns>
     Public Function GetCorreo(cedula As String) As String
+        Conexion.Singleton.abrirConexion()
 
         Dim consulta As String = "SELECT correo FROM usuario WHERE cedula = " + cedula
-
-        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)
+        Dim resultado As String = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), String)
+        Return resultado
     End Function
 
     Public Function Notificacion(cedula As String) As DataTable
@@ -232,23 +267,31 @@ Public Class ModeloChat
 	                                ) 
                                   order by idMensaje desc"
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.asyncConnection)
     End Function
     Public Function verificarEstadoChat(cedula As String) As String
+
+        Conexion.Singleton.abrirConexion()
+
         Dim consulta = "select finalizado from salachat c, usuario_entra_chat uc where uc.idchat = c.idchat and uc.cedula = " & cedula & " and c.idChat in (select max(c.idchat) from salachat c, usuario_entra_chat uc where uc.idchat = c.idchat and uc.cedula = " & cedula & ")"
-        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)
+        Dim resultado As String = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), String)
+        Return resultado
 
     End Function
 
     Public Function ObtenerChatPaciente(cedula As String) As Integer
         Dim consulta As String = "SELECT MAX(c.idChat) FROM salachat c, usuario_entra_chat uc WHERE c.idChat = uc.idChat AND finalizado = 0 AND cedula = " & cedula
-        Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Integer)
+
+        Conexion.Singleton.abrirConexion()
+        Dim resultado As Integer = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Integer)
+
+        Return resultado
     End Function
 
     Public Function ordern(cedula As String) As DataTable
         Dim consulta As String = "select uc.idChat, mensaje, fechaenvio from mensaje m right join usuario_entra_chat uc on uc.idChat = m.idChat where uc.idChat in 
 (select uc.idchat from usuario_entra_chat uc, salachat c where idMensaje = any (select max(idMensaje) from mensaje group by idChat order by max(fechaenvio)) and uc.idChat = c.idChat and finalizado = 0 and cedula = " & cedula & ") 
 group by m.idChat order by max(fechaenvio) asc"
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.asyncConnection)
     End Function
 End Class

@@ -28,7 +28,7 @@ Public Class frmChat
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
 
             Dim i As Integer = 120
-
+            Timer1.Enabled = True
             Me.CenterToScreen()
             Me.SuspendLayout()
 
@@ -54,7 +54,9 @@ Public Class frmChat
             lblEscriba.Visible = True
             pnlEnviar.Visible = True
         Else
-            ActualizarPanel()
+            CargarPanel(contChat.ListarMisChats(0))
+            id.Reverse()
+            CambiarOrden()
         End If
 
         Chat.HorizontalScroll.Enabled = False
@@ -65,16 +67,21 @@ Public Class frmChat
     End Sub
     Private Sub CargarPanel(Listado As DataTable)
 
+
         pnlChats.SuspendLayout()
         pnlChats.Controls.Clear()
 
-        For Each panel As DataRow In Listado.Rows
-            Dim form As New UCChat(panel.Item(2) & " " & panel.Item(3), panel.Item(4), panel.Item(5), panel.Item(1), panel.Item(0), panel.Item(6))
+        For Each filaTodas As DataRow In Listado.Rows
+
+            Dim form As New UCChat(filaTodas.Item(2).ToString.Substring(0, 1).ToUpper + filaTodas.Item(2).ToString.Substring(1).ToLower & " " & filaTodas.Item(3).ToString.Substring(0, 1).ToUpper + filaTodas.Item(3).ToString.Substring(1).ToLower, "", Nothing, filaTodas.Item(1), filaTodas.Item(0), filaTodas.Item(4))
 
             pnlChats.Controls.Add(form)
             form.Show()
-            id.Add(panel.Item(1))
+            id.Add(filaTodas.Item(1))
+
         Next
+
+
 
         pnlChats.ResumeLayout()
 
@@ -231,6 +238,7 @@ Public Class frmChat
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
 
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
+            Timer1.Enabled = False
             Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
             Me.Dispose()
 
@@ -264,40 +272,47 @@ Public Class frmChat
             UcFicha1.lblNom.Text = "Nombre completo:"
         End If
     End Sub
+
+    Private Sub CambiarOrden()
+
+        Dim dt2 As DataTable = ControladorChat.Singleton.orden
+        Dim contador As Integer = 0
+
+        If dt2.Rows.Count = id.Count Then
+            For i As Integer = 0 To dt2.Rows.Count - 1
+                If dt2.Rows(i).Item(0) = id.Item(i) Then
+                    contador += 1
+                Else
+                    Exit For
+                End If
+            Next
+        End If
+
+        If contador <> dt2.Rows.Count Then
+            id.Clear()
+            For Each fila As DataRow In dt2.Rows
+                For Each control As UCChat In pnlChats.Controls
+                    If fila.Item(0) = control.lblidChat.Text Then
+                        control.lblMensaje.Text = fila.Item(1)
+                        control.SetDate(fila.Item(2))
+                        pnlChats.Controls.SetChildIndex(control, 0)
+                    End If
+                Next
+                id.Add(fila.Item(0))
+            Next
+        End If
+
+    End Sub
     Private Sub ActualizarPanel()
 
-        Dim dt As DataTable = contChat.listarMisChats(0)
-        Dim contador As Integer = 0
+        Dim dt As DataTable = contChat.ListarMisChats(0)
 
         If dt.Rows.Count <> pnlChats.Controls.Count Then
             CargarPanel(dt)
             id.Reverse()
+            CambiarOrden()
         Else
-            Dim dt2 As DataTable = ControladorChat.Singleton.orden
-
-            If dt2.Rows.Count = id.Count Then
-                For i As Integer = 0 To dt2.Rows.Count - 1
-                    If dt2.Rows(i).Item(0) = id.Item(i) Then
-                        contador += 1
-                    Else
-                        Exit For
-                    End If
-                Next
-            End If
-
-            If contador <> dt2.Rows.Count Then
-                id.Clear()
-                For Each fila As DataRow In dt2.Rows
-                    For Each control As UCChat In pnlChats.Controls
-                        If fila.Item(0) = control.lblidChat.Text Then
-                            control.lblMensaje.Text = fila.Item(1)
-                            control.SetDate(fila.Item(2))
-                            pnlChats.Controls.SetChildIndex(control, 0)
-                        End If
-                    Next
-                    id.Add(fila.Item(0))
-                Next
-            End If
+            CambiarOrden()
         End If
 
     End Sub
@@ -314,5 +329,17 @@ Public Class frmChat
             e.Handled = True
         End If
     End Sub
+    Dim finalizado As Boolean = True
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
+
+        If (contChat.verificarEstadoChat) Then
+            If finalizado Then
+                finalizado = False
+                MsgBox("La sesión de chat ha finalizado")
+                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+                Me.Dispose()
+            End If
+        End If
+    End Sub
 End Class

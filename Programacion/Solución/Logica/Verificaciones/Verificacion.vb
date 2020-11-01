@@ -103,7 +103,7 @@ Public Class Verificacion
 
         If texto <> "" Then
 
-            Dim bool As Boolean = Regex.IsMatch(texto, "^[a-zA-Z]+$")
+            Dim bool As Boolean = Regex.IsMatch(texto, "^[a-zA-ZñÑ]+$")
 
             If bool Then
                 If texto.Length >= 3 Then

@@ -160,10 +160,8 @@ Partial Class frmObtenerDiagnostico
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(810, 491)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(810, 514)
         Me.TableLayoutPanel1.TabIndex = 151
-        '
-
         '
         'pnlInstancia
         '

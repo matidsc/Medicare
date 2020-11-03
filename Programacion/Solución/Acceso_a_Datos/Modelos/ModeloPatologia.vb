@@ -27,7 +27,7 @@ Public Class ModeloPatologia
     Public Function traerPatologia(nombre As String) As DataTable
 
         Dim consulta As String = "SELECT nombre, descripcion,recomendacion, prioridad FROM patologia WHERE nombre = '" & nombre & "'"
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
 
     End Function
     Public Function traerSintomasPatologia(nombre As String) As ArrayList
@@ -36,8 +36,6 @@ Public Class ModeloPatologia
         Return ModeloConsultas.Singleton.ConsultaArray(consulta)
     End Function
     Public Function ModificarAsociacion(sintomas As ArrayList, nombre As String)
-
-        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
 
         Dim contador As Int32 = 0
         Dim parametros As New List(Of OdbcParameter)
@@ -55,7 +53,7 @@ Public Class ModeloPatologia
                 parametros.Add(New OdbcParameter("nombre", nombre))
 
 
-                If ModeloConsultas.Singleton.InsertParametros(consulta2, parametros, ModeloConsultas.Singleton.trans) Then
+                If ModeloConsultas.Singleton.InsertParametros(consulta2, parametros) Then
                     contador += 1
                 End If
 
@@ -95,8 +93,6 @@ Public Class ModeloPatologia
 
     Public Overloads Function Registrar(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, nomSintomas As ArrayList) As Boolean
 
-        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
-
         Dim consulta As String = "INSERT INTO patologia (nombre, descripcion, recomendacion, prioridad) VALUES (?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
 
@@ -105,7 +101,7 @@ Public Class ModeloPatologia
         parametros.Add(New OdbcParameter("recomendacion", recomendacion))
         parametros.Add(New OdbcParameter("prioridad", prioridad))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
             If RegistrarAsociacion(nombre, nomSintomas) Then
                 Return True
             End If
@@ -115,7 +111,6 @@ Public Class ModeloPatologia
     End Function
     Public Overloads Function Registrar(tablaPatologia As DataTable, tablaSintoma As DataTable)
 
-        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
         Dim consulta As String = "INSERT INTO patologia(nombre, descripcion,recomendacion,prioridad) VALUES(?,?,?,?)"
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int32 = 0
@@ -127,7 +122,7 @@ Public Class ModeloPatologia
             parametros.Add(New OdbcParameter("recomendacion", fila.Item(2).ToString.ToUpper))
             parametros.Add(New OdbcParameter("priodidad", fila.Item(3)))
 
-            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
                 contador += 1
             End If
             parametros.Clear()
@@ -146,7 +141,6 @@ Public Class ModeloPatologia
 
     Public Overloads Function RegistrarAsociacion(tabla As DataTable) As Boolean
 
-        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
         Dim contador As Int32 = 0
         Dim parametros As New List(Of OdbcParameter)
         Dim consulta As String = "INSERT INTO patologia_contiene_sintoma (idSintoma, idPatologia) 
@@ -159,7 +153,7 @@ Public Class ModeloPatologia
             parametros.Add(New OdbcParameter("nombre", row.Item(1)))
             parametros.Add(New OdbcParameter("nombre", row.Item(0)))
 
-            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
                 contador += 1
             End If
 
@@ -180,8 +174,6 @@ Public Class ModeloPatologia
     ''' <returns>True si el insert fue realizado.</returns>
     Public Overloads Function RegistrarAsociacion(nombre As String, nomSintomas As ArrayList) As Boolean
 
-        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
-
         Dim parametros As New List(Of OdbcParameter)
         Dim contador As Int16 = 0
         Dim consulta As String = "INSERT INTO patologia_contiene_sintoma (idSintoma, idPatologia) 
@@ -193,7 +185,7 @@ Public Class ModeloPatologia
             parametros.Add(New OdbcParameter("nombre", var))
             parametros.Add(New OdbcParameter("nombre", nombre))
 
-            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
                 contador += 1
             End If
 
@@ -211,7 +203,7 @@ Public Class ModeloPatologia
     ''' </summary>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function ListarPatologias() As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion, recomendacion AS Recomendacion, prioridad AS Prioridad FROM patologia WHERE bajalogica = 0", Conexion.Singleton.Connection)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion, recomendacion AS Recomendacion, prioridad AS Prioridad FROM patologia WHERE bajalogica = 0")
     End Function
 
     ''' <summary>
@@ -258,7 +250,7 @@ Public Class ModeloPatologia
         consulta = consulta & parametros.TrimEnd(",") & ")"
         consulta = consulta & " GROUP BY ps.idPatologia HAVING count(*) >= " & sintomas.Count & " ORDER BY count(*) desc"
 
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 
     ''' <summary>
@@ -271,7 +263,7 @@ Public Class ModeloPatologia
         Conexion.Singleton.abrirConexion()
 
         Dim consulta As String = "SELECT descripcion FROM patologia WHERE nombre = '" & nombre & "'"
-        Dim resultado As String = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), String)
+        Dim resultado As String = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)
 
         Return resultado
     End Function
@@ -284,13 +276,14 @@ Public Class ModeloPatologia
     ''' <returns>True si el insert fue realizado.</returns>
     Public Function GuardarDiagnostico(usuario As String, diagnosticos As DataTable) As Boolean
 
+        Dim id As Integer = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT MAX(idDiagnostico) FROM paciente_obtiene_diagnostico WHERE cedulaPaciente = " & usuario), Integer)
         Dim consulta As String
 
         Try
             For Each nom As DataRow In diagnosticos.Rows
                 consulta = "
-                    INSERT INTO paciente_obtiene_diagnostico (cedulaPaciente, idPatologia, fecha) 
-                    SELECT " & usuario & ", p.idPatologia, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "' 
+                    INSERT INTO paciente_obtiene_diagnostico (cedulaPaciente, idPatologia, fecha, idDiagnostico) 
+                    SELECT " & usuario & ", p.idPatologia, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "', " & id + 1 & "
                     FROM patologia p WHERE p.nombre = '" & nom.Item(0) & "'"
 
                 ModeloConsultas.Singleton.InsertarSinParametros(consulta)
@@ -309,7 +302,7 @@ Public Class ModeloPatologia
         Conexion.Singleton.abrirConexion()
         Dim consulta As String = "SELECT count(*) FROM patologia WHERE bajalogica = 1 AND nombre = '" & nombre & "'"
 
-        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), Int16)
 
         If resultado = 0 Then
             Return True

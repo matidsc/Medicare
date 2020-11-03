@@ -14,7 +14,7 @@ Public Class ControladorChat
     End Function
 
 
-    Public Function crearChat()
+    Public Function crearChat() As Boolean
 
         Try
             Dim id As String = ModeloChat.Singleton.CrearChat(Datos_Temporales.userLog)
@@ -22,7 +22,7 @@ Public Class ControladorChat
                 Datos_Temporales.idchat = id
                 Return True
             End If
-        Catch ex As odbc.OdbcException
+        Catch ex As Odbc.OdbcException
             Return False
         Catch ex As NullReferenceException
             Return False
@@ -41,6 +41,14 @@ Public Class ControladorChat
 
         Return ModeloChat.Singleton.ListarChat(Datos_Temporales.userLog)
 
+    End Function
+
+    Public Function ListarNotificacionChat() As String
+        Try
+            Return ModeloChat.Singleton.NotificacionChat(Datos_Temporales.userLog)
+        Catch ex As odbc.OdbcException
+            Return Nothing
+        End Try
     End Function
 
     Public Function enviarMensaje(cedula As String, idchat As Long, mensaje As String, fecha As Date) As Boolean

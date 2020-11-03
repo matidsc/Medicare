@@ -192,18 +192,6 @@
     <Compile Include="Extras\BsMsgbox.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Extras\frmEntrada.Designer.vb">
-      <DependentUpon>frmEntrada.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extras\frmEntrada.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMiPerfil.Designer.vb">
-      <DependentUpon>frmMiPerfil.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmMiPerfil.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Gestor\frmBienvenidaGestor.Designer.vb">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
     </Compile>
@@ -268,6 +256,12 @@
       <DependentUpon>UCSintomas.vb</DependentUpon>
     </Compile>
     <Compile Include="Medico\Componentes Chat\UCSintomas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Medico\UCSolicitudes.Designer.vb">
+      <DependentUpon>UCSolicitudes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\UCSolicitudes.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Paciente\frmHistorialPatologia.Designer.vb">
@@ -394,9 +388,6 @@
     <EmbeddedResource Include="Extras\BsMsgbox.resx">
       <DependentUpon>BsMsgbox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Extras\frmEntrada.resx">
-      <DependentUpon>frmEntrada.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmBienvenidaGestor.resx">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\UCSintomas.resx">
       <DependentUpon>UCSintomas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\UCSolicitudes.resx">
+      <DependentUpon>UCSolicitudes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmHistorialPatologia.resx">
       <DependentUpon>frmHistorialPatologia.vb</DependentUpon>
@@ -828,10 +822,16 @@
     <None Include="Resources\icons8-email-send-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-male-user-52 %281%29.png" />
+    <None Include="Resources\icons8-male-user-52.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-male-user-52.png" />
+    <None Include="Resources\LOGO MEDICARE SIN SUB WHITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO MEDICARE SIN SUB WHITE V2 PNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-male-user-52 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />

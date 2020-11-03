@@ -31,7 +31,7 @@ Public Class ModeloSintoma
     Public Function traerInfoSintoma(nombre As String) As String
         Conexion.Singleton.abrirConexion()
         Dim consulta As String = "SELECT descripcion FROM sintoma WHERE nombre = '" & nombre & "'"
-        Dim resultado As String = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), String)
+        Dim resultado As String = CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)
 
         Return resultado
     End Function
@@ -52,7 +52,7 @@ Public Class ModeloSintoma
             parametros.Add(New OdbcParameter("nombre", fila.Item(0).ToString.ToUpper))
             parametros.Add(New OdbcParameter("descripcion", fila.Item(1).ToString.ToUpper))
 
-            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+            If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
                 contador += 1
             End If
             parametros.Clear()
@@ -67,16 +67,13 @@ Public Class ModeloSintoma
     End Function
     Public Overloads Function Registrar(nombre As String, descripcion As String) As Boolean
 
-        ModeloConsultas.Singleton.trans = Conexion.Singleton.Connection.BeginTransaction
-
-
         Dim consulta As String = "INSERT INTO sintoma (nombre, descripcion) VALUES(?,?)"
         Dim parametros As New List(Of OdbcParameter)
 
         parametros.Add(New OdbcParameter("nombre", nombre))
         parametros.Add(New OdbcParameter("descripcion", descripcion))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
             Return True
         End If
 
@@ -95,7 +92,7 @@ Public Class ModeloSintoma
         Return ModeloConsultas.Singleton.ConsultaTabla("SELECT s.nombre, s.descripcion
                                                         FROM sintoma s, patologia p, patologia_contiene_sintoma ps
                                                         WHERE s.idSintoma=ps.idSintoma AND p.idPatologia=ps.idPatologia
-                                                        AND p.nombre= '" & nombre & "'", Conexion.Singleton.Connection)
+                                                        AND p.nombre= '" & nombre & "'")
     End Function
 
     Public Overloads Function TraerSintomas(sintomas As ArrayList) As ArrayList
@@ -124,25 +121,28 @@ Public Class ModeloSintoma
     ''' <returns>True si los síntomas fueron registrados.</returns>
     Public Function GuardarSintomas(usuario As String, nombreSintoma As ArrayList) As Boolean
 
+
+
+        Dim contador As Int16 = 0
         Dim consulta As String
 
-        Try
-            For Each nom In nombreSintoma
 
-                consulta = "
-                           INSERT INTO paciente_indica_sintoma (cedulaPaciente, idSintoma, fechaIngreso) 
-                           SELECT " & usuario & ", s.idSintoma, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "' 
-                           FROM sintoma s WHERE s.nombre = '" & nom & "'"
+        For Each nom In nombreSintoma
 
-                ModeloConsultas.Singleton.InsertarSinParametros(consulta)
-            Next
+            consulta = "
+                           INSERT INTO paciente_indica_sintoma (cedulaPaciente, idSintoma, fechaIngreso,id) 
+                           SELECT " & usuario & ", s.idSintoma, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "', (select max(id) +1 from paciente_indica_sintoma where cedulaPaciente = " & usuario & ") FROM sintoma s WHERE s.nombre = '" & nom & "'"
 
+            If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
+                contador += 1
+            End If
+        Next
+
+        If contador = nombreSintoma.Count Then
             Return True
+        End If
 
-        Catch ex As Exception
-            Return False
-        End Try
-
+        Return False
     End Function
 
     ''' <summary>
@@ -150,7 +150,7 @@ Public Class ModeloSintoma
     ''' </summary>
     ''' <returns>DataTable con los datos de los síntomas.</returns>
     Public Function ListarSintomas() As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion FROM sintoma WHERE bajalogica = 0", Conexion.Singleton.Connection)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT nombre AS Nombre, descripcion AS Descripcion FROM sintoma WHERE bajalogica = 0")
     End Function
 
     ''' <summary>

@@ -49,14 +49,39 @@ Public Class UCDiagnnostico
         uc.Left = (frmObtenerDiagnostico.Width / 2) - (uc.Width / 2)
     End Sub
 
-    Private Sub MetroToolTip1_Popup(sender As Object, e As PopupEventArgs)
-
-    End Sub
-
     Private Sub IconPictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles pbAdvertencia.MouseHover
         MetroToolTip1.Show("Advertencia: Recomendamos que solicite un chat debido a la gravedad de la enfermedad.", pbAdvertencia)
     End Sub
     Private Sub IconPictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles pbAdvertencia.MouseLeave
         MetroToolTip1.Hide(pbAdvertencia)
     End Sub
+
+    Private Sub btnMasDesc_Click(sender As Object, e As EventArgs) Handles btnMasDesc.Click
+
+        If txtDescripcion.Height < 220 Then
+            txtDescripcion.Height = 220
+            txtDescripcion.BringToFront()
+            btnMasDesc.Text = "Mostrar menos"
+        Else
+            txtDescripcion.Height = 81
+            txtDescripcion.BringToFront()
+            btnMasDesc.Text = "Mostrar más"
+        End If
+
+    End Sub
+
+    Private Sub btnMasRec_Click(sender As Object, e As EventArgs) Handles btnMasRec.Click
+
+        If txtRecomendacion.Height < 220 Then
+            txtRecomendacion.Height = 220
+            txtRecomendacion.BringToFront()
+            btnMasRec.Text = "Mostrar menos"
+        Else
+            txtRecomendacion.Height = 137
+            txtRecomendacion.BringToFront()
+            btnMasRec.Text = "Mostrar más"
+        End If
+    End Sub
+
+
 End Class

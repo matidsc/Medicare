@@ -80,6 +80,7 @@ Partial Class frmBienvenidaPaciente
         Me.notificacion.Size = New System.Drawing.Size(61, 13)
         Me.notificacion.TabIndex = 10
         Me.notificacion.Text = "notificacion"
+        Me.notificacion.Visible = False
         '
         'Timer1
         '
@@ -245,7 +246,7 @@ Partial Class frmBienvenidaPaciente
         'pnlNoti
         '
         Me.pnlNoti.BackColor = System.Drawing.Color.Transparent
-        Me.pnlNoti.BaseColor = System.Drawing.Color.MediumSlateBlue
+        Me.pnlNoti.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.pnlNoti.Location = New System.Drawing.Point(780, 29)
         Me.pnlNoti.Name = "pnlNoti"
         Me.pnlNoti.Radius = 5
@@ -255,10 +256,10 @@ Partial Class frmBienvenidaPaciente
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 3)
+        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.LOGO_MEDICARE_SIN_SUB_WHITE_V2_PNG
+        Me.PictureBox1.Location = New System.Drawing.Point(39, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(305, 74)
+        Me.PictureBox1.Size = New System.Drawing.Size(264, 56)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
@@ -335,6 +336,7 @@ Partial Class frmBienvenidaPaciente
         '
         'btnIngresar
         '
+        Me.btnIngresar.Animated = True
         Me.btnIngresar.AnimationHoverSpeed = 0.07!
         Me.btnIngresar.AnimationSpeed = 0.03!
         Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
@@ -404,6 +406,7 @@ Partial Class frmBienvenidaPaciente
         '
         'btnHistorial
         '
+        Me.btnHistorial.Animated = True
         Me.btnHistorial.AnimationHoverSpeed = 0.07!
         Me.btnHistorial.AnimationSpeed = 0.03!
         Me.btnHistorial.BackColor = System.Drawing.Color.Transparent
@@ -472,6 +475,7 @@ Partial Class frmBienvenidaPaciente
         '
         'btnReanudar
         '
+        Me.btnReanudar.Animated = True
         Me.btnReanudar.AnimationHoverSpeed = 0.07!
         Me.btnReanudar.AnimationSpeed = 0.03!
         Me.btnReanudar.BackColor = System.Drawing.Color.Transparent

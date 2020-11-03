@@ -31,6 +31,7 @@ Partial Class frmVerPerfil
         Me.picImagenPerfil = New System.Windows.Forms.PictureBox()
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
+        Me.txtPNom = New Guna.UI.WinForms.GunaLineTextBox()
         CType(Me.picImagenPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +51,7 @@ Partial Class frmVerPerfil
         '
         Me.lblMail.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMail.ForeColor = System.Drawing.Color.Silver
-        Me.lblMail.Location = New System.Drawing.Point(23, 322)
+        Me.lblMail.Location = New System.Drawing.Point(23, 317)
         Me.lblMail.Name = "lblMail"
         Me.lblMail.Size = New System.Drawing.Size(261, 34)
         Me.lblMail.TabIndex = 2
@@ -136,12 +137,28 @@ Partial Class frmVerPerfil
         Me.IconPictureBox2.TabIndex = 26
         Me.IconPictureBox2.TabStop = False
         '
+        'txtPNom
+        '
+        Me.txtPNom.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtPNom.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPNom.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPNom.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPNom.ForeColor = System.Drawing.Color.White
+        Me.txtPNom.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtPNom.LineSize = 1
+        Me.txtPNom.Location = New System.Drawing.Point(28, 260)
+        Me.txtPNom.Name = "txtPNom"
+        Me.txtPNom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPNom.Size = New System.Drawing.Size(246, 32)
+        Me.txtPNom.TabIndex = 27
+        '
         'frmVerPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(426, 623)
+        Me.Controls.Add(Me.txtPNom)
         Me.Controls.Add(Me.IconPictureBox2)
         Me.Controls.Add(Me.IconPictureBox1)
         Me.Controls.Add(Me.lblCerrar)
@@ -170,4 +187,5 @@ Partial Class frmVerPerfil
     Friend WithEvents lblCerrar As Label
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents IconPictureBox2 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents txtPNom As Guna.UI.WinForms.GunaLineTextBox
 End Class

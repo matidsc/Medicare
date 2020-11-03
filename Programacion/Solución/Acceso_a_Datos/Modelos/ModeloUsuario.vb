@@ -44,7 +44,7 @@ Public Class ModeloUsuario
         parametros.Add(New OdbcParameter("correo", correo))
         parametros.Add(New OdbcParameter("fotoPerfil", imagen))
 
-        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans) Then
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
 
             Return True
         End If
@@ -64,7 +64,7 @@ Public Class ModeloUsuario
             parametros.Add(New OdbcParameter("cedula", cedula))
             parametros.Add(New OdbcParameter("telefono", Telefonos.Item(i)))
 
-            ModeloConsultas.Singleton.InsertParametros(consulta, parametros, ModeloConsultas.Singleton.trans)
+            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
             contador += 1
         Next
 
@@ -89,7 +89,7 @@ Public Class ModeloUsuario
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
         Conexion.Singleton.abrirConexion()
 
-        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE cedula = " & usuario & " and contrasena = '" & pass & "' AND bajalogica = 0", ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE cedula = " & usuario & " and contrasena = '" & pass & "' AND bajalogica = 0"), Int16)
 
         If resultado = 1 Then
             Return True
@@ -105,23 +105,23 @@ Public Class ModeloUsuario
     ''' <param name="rol"></param>
     ''' <returns>True si el rol es correcto.</returns>
     Public Function verificarRol(usuario As String, rol As Int16) As Boolean
-        Conexion.Singleton.abrirConexion()
+
         Dim resultado As Int16
         Select Case rol
             Case 0
-                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM paciente WHERE cedula = " & usuario, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM paciente WHERE cedula = " & usuario), Int16)
                 If resultado = 1 Then
                     Return True
                 End If
 
             Case 1
-                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM medico WHERE cedula = " & usuario, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM medico WHERE cedula = " & usuario), Int16)
                 If resultado = 1 Then
                     Return True
                 End If
 
             Case 2
-                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM gestor WHERE cedula = " & usuario, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+                resultado = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM gestor WHERE cedula = " & usuario), Int16)
                 If resultado = 1 Then
                     Return True
                 End If
@@ -138,7 +138,7 @@ Public Class ModeloUsuario
         Conexion.Singleton.SetRolConexion(Conexion.EnumDbLogin.aux)
         Conexion.Singleton.abrirConexion()
 
-        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE bajalogica = 1 AND cedula = " & cedula, ModeloConsultas.Singleton.trans, False, Conexion.Singleton.Connection), Int16)
+        Dim resultado As Int16 = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT count(*) FROM usuario WHERE bajalogica = 1 AND cedula = " & cedula), Int16)
 
         If resultado = 0 Then
             Return True
@@ -160,7 +160,7 @@ Public Class ModeloUsuario
 
     Public Function listarUsuarios() As DataTable
         Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,correo FROM usuario where bajaLogica=0"
-        Return ModeloConsultas.Singleton.ConsultaTabla(consulta, Conexion.Singleton.Connection)
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
 
     ''' <summary>

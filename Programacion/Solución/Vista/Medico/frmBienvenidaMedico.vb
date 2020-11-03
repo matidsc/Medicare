@@ -1,19 +1,6 @@
 ﻿Imports Logica
 Public Class frmBienvenidaMedico
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-        Principal.Singleton.RoundedCorners(pnlChat)
-        Principal.Singleton.RoundedCorners(pnlMiHistorial)
-        Principal.Singleton.RoundedCorners(pnlAjustes)
-        Principal.Singleton.RoundedCorners(pnlMiPerfil)
-        Principal.Singleton.RoundedCorners(pnlAyuda)
-        Principal.Singleton.RoundedCorners(pnlTitulo)
-
-
-    End Sub
-
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -26,14 +13,14 @@ Public Class frmBienvenidaMedico
 
     End Sub
 
-    Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlTitulo.MouseDown
+    Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs)
         Principal.Singleton.moverVentanaDown(Me)
     End Sub
 
-    Private Sub Panel6_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTitulo.MouseMove
+    Private Sub Panel6_MouseMove(sender As Object, e As MouseEventArgs)
         Principal.Singleton.moverVentanaMove(Me)
     End Sub
-    Private Sub Panel6_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlTitulo.MouseUp
+    Private Sub Panel6_MouseUp(sender As Object, e As MouseEventArgs)
         Principal.Singleton.moverVentanaUp()
     End Sub
     'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -109,27 +96,7 @@ Public Class frmBienvenidaMedico
     '    hover(Panel5)
     'End Sub
 
-    Private Sub Panel3_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlAjustes.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Panel2_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMiHistorial.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Panel4_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMiPerfil.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Panel5_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlAyuda.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Panel12_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlPatologias.MouseClick
-        MsgBox("En construcción...")
-    End Sub
-
-    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles pnlChat.Click
+    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         Dim frm As New frmListadoChat
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -138,12 +105,120 @@ Public Class frmBienvenidaMedico
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
+        ' Me.Timer1.Enabled = False
+        '   MsgBox(Me.Timer1.Enabled)
     End Sub
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
     End Sub
 
-    Private Sub temporizador_Tick(sender As Object, e As EventArgs) Handles temporizador.Tick
+    Private Sub timerChat_Tick(sender As Object, e As EventArgs) Handles timerChat.Tick
+
+        Dim notificacion As String = ControladorChat.Singleton.ListarNotificacionChat
+
+        If notificacion IsNot Nothing Then
+            If notificacion <> 0 Then
+                If notificacion <> lblNotiChats.Text Then
+
+                    pnlNoti.Visible = True
+                    Me.lblNotiChats.Visible = True
+
+                    If notificacion > 99 Then
+                        Me.lblNotiChats.Text = "99+"
+
+                    Else
+                        Me.lblNotiChats.Text = cantNotificacion
+
+                    End If
+
+                    If notificacion < 10 Then
+                        Me.lblNotiChats.Location = New Point(2, 1)
+                    Else
+                        Me.lblNotiChats.Location = New Point(-1, 1)
+                    End If
+                End If
+            Else
+                pnlNoti.Visible = False
+                Me.lblNotiChats.Visible = False
+            End If
+
+        End If
 
     End Sub
+
+    Dim cantNotificacion = 0
+    Private Sub timerMsg_Tick(sender As Object, e As EventArgs) Handles timerMsg.Tick
+
+        For Each row As DataRow In ControladorChat.Singleton.Notificacion.Rows 'la cantidad de mensajes nuevos desde que mandaste uno
+            If row.Item(0) <> Datos_Temporales.userLog Then
+                cantNotificacion += 1
+            Else
+                Exit For
+            End If
+        Next
+
+
+        If cantNotificacion <> 0 Then
+
+            If cantNotificacion <> lblNotiMsg.Text Then
+
+                pnlNotificacion.Visible = True
+                lblNotiMsg.Visible = True
+
+                If cantNotificacion > 99 Then
+                    lblNotiMsg.Text = "99+"
+                    lblNuevosMsg.Text = "Tienes 99+ mensajes sin responder"
+                    lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
+                Else
+                    lblNotiMsg.Text = cantNotificacion
+                    lblNuevosMsg.Text = "Tienes " & cantNotificacion & " mensajes sin responder"
+                    lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
+                End If
+
+                If cantNotificacion < 10 Then
+                    lblNotiMsg.Location = New Point(2, 1)
+                Else
+                    lblNotiMsg.Location = New Point(-1, 1)
+                End If
+                lblNuevosMsg.Text = "Tienes " & cantNotificacion & " mensajes sin responder"
+                lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
+
+            End If
+        Else
+            pnlNotificacion.Visible = False
+            lblNotiMsg.Visible = False
+            lblNotiMsg.Text = "0"
+
+        End If
+
+        cantNotificacion = 0
+    End Sub
+
+    Private Sub btnNoti_Click(sender As Object, e As EventArgs) Handles btnNoti.Click
+
+        Dim dt As DataTable = ControladorChat.Singleton.listarChat
+
+        If dt.Rows.Count > 0 Then
+            lblNAChats.Visible = False
+            FlowLayoutPanel1.Controls.Clear()
+            FlowLayoutPanel1.BringToFront()
+            FlowLayoutPanel1.SuspendLayout()
+
+            For Each row In dt.Rows
+                Dim uc As New UCSolicitudes(row.item(0), row.item(1), row.item(2) & " " & row.item(3), row.item(4))
+                FlowLayoutPanel1.Controls.Add(uc)
+                uc.Show()
+            Next
+
+            FlowLayoutPanel1.ResumeLayout()
+            FlowLayoutPanel1.Visible = True
+        Else
+            FlowLayoutPanel1.Controls.Clear()
+            lblNAChats.Visible = True
+        End If
+
+
+    End Sub
+
+
 End Class

@@ -6,9 +6,6 @@
 Public Class ModeloConsultas
 
     Private Shared instancia As ModeloConsultas
-    Property command As OdbcCommand
-    Property trans As OdbcTransaction
-
 
     ''' <summary>
     ''' Función encargada de devolver una instancia singleton de la clase.
@@ -28,14 +25,16 @@ Public Class ModeloConsultas
     ''' </summary>
     ''' <param name="Comando"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
-    Public Function ConsultaTabla(Comando As String, con As OdbcConnection) As DataTable
+    Public Function ConsultaTabla(Comando As String) As DataTable
 
         Conexion.Singleton.abrirConexion()
 
         Dim table As New DataTable
-        Dim adapter As New OdbcDataAdapter(Comando, con)
+        Dim adapter As New OdbcDataAdapter(Comando, Conexion.Singleton.Connection)
 
         adapter.Fill(table)
+
+        Conexion.Singleton.cerrarConexion()
 
         Return table
     End Function
@@ -45,19 +44,17 @@ Public Class ModeloConsultas
     ''' </summary>
     ''' <param name="Comando"></param>
     ''' <returns>La primera fila afectada por la consulta.</returns>
-    Public Function ConsultaCampo(Comando As String, transaccion As OdbcTransaction, boolTransaccion As Boolean, con As OdbcConnection)
+    Public Function ConsultaCampo(Comando As String)
 
-        command = New OdbcCommand(Comando, con)
+        Conexion.Singleton.abrirConexion()
 
-        If boolTransaccion Then
-            command.Transaction = transaccion
-        End If
-
+        Dim command As New OdbcCommand(Comando, Conexion.Singleton.Connection)
         Dim result As String = command.ExecuteScalar()
+
+        Conexion.Singleton.cerrarConexion()
 
         Return result
     End Function
-
 
     ''' <summary>
     ''' Función encargada de devolver los datos solicitados de una columna en forma de ArrayList.
@@ -69,43 +66,41 @@ Public Class ModeloConsultas
         Conexion.Singleton.abrirConexion()
 
         Dim array As New ArrayList
-        Dim tablaIterar As DataTable = ConsultaTabla(Comando, Conexion.Singleton.Connection)
+        Dim tablaIterar As DataTable = ConsultaTabla(Comando)
 
         For var As Int32 = 0 To tablaIterar.Rows.Count - 1
             array.Add(tablaIterar.Rows.Item(var).Item(0))
         Next
 
+        Conexion.Singleton.cerrarConexion()
+
         Return array
     End Function
+
     ''' <summary>
     ''' Función encargada de ejecutar un insert en la base de datos utilizando OdbcParameters.
     ''' </summary>
     ''' <param name="Comando"></param>
     ''' <param name="Parametros"></param>
     ''' <returns>True si el insert fue realizado.</returns>
-    Public Function InsertParametros(Comando As String, Parametros As List(Of OdbcParameter), transaccion As OdbcTransaction) As Boolean
+    Public Function InsertParametros(Comando As String, Parametros As List(Of OdbcParameter)) As Boolean
 
-        command = New OdbcCommand(Comando, Conexion.Singleton.Connection)
-        command.Transaction = transaccion
+        Conexion.Singleton.abrirConexion()
+
+        Dim insert As New OdbcCommand(Comando, Conexion.Singleton.Connection)
 
         For Each parametro In Parametros
-            command.Parameters.Add(parametro)
+            insert.Parameters.Add(parametro)
         Next
 
-        If command.ExecuteNonQuery() >= 1 Then
+        If insert.ExecuteNonQuery() >= 1 Then
+            Conexion.Singleton.cerrarConexion()
             Return True
         End If
 
+        Conexion.Singleton.cerrarConexion()
+
         Return False
-    End Function
-
-    Public Function Transaccion() As Boolean
-
-        Dim transaccion1 As OdbcTransaction
-
-        transaccion1 = Conexion.Singleton.Connection().BeginTransaction()
-
-
     End Function
 
     ''' <summary>
@@ -120,11 +115,15 @@ Public Class ModeloConsultas
         Dim insert As New OdbcCommand(Comando, Conexion.Singleton.Connection)
 
         If insert.ExecuteNonQuery() >= 1 Then
+            Conexion.Singleton.cerrarConexion()
             Return True
         End If
 
+        Conexion.Singleton.cerrarConexion()
+
         Return False
     End Function
+
     Public Function ConsultaDelete(consulta As String) As Boolean
 
         Conexion.Singleton.abrirConexion()
@@ -132,8 +131,11 @@ Public Class ModeloConsultas
         Dim insert As New OdbcCommand(consulta, Conexion.Singleton.Connection)
 
         If insert.ExecuteNonQuery() >= 0 Then
+            Conexion.Singleton.cerrarConexion()
             Return True
         End If
+
+        Conexion.Singleton.cerrarConexion()
 
         Return False
 

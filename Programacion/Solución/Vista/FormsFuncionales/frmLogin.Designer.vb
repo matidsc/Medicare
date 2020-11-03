@@ -23,6 +23,7 @@ Partial Class frmLogin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblContraseña = New System.Windows.Forms.Label()
@@ -39,11 +40,11 @@ Partial Class frmLogin
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlInstancia.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlInstancia
@@ -55,15 +56,22 @@ Partial Class frmLogin
         Me.pnlInstancia.Size = New System.Drawing.Size(880, 500)
         Me.pnlInstancia.TabIndex = 37
         '
+        'UcAjustes1
+        '
+        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
+        Me.UcAjustes1.Name = "UcAjustes1"
+        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
+        Me.UcAjustes1.TabIndex = 52
+        Me.UcAjustes1.Visible = False
+        '
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.pnlContenedor.Controls.Add(Me.Button1)
         Me.pnlContenedor.Controls.Add(Me.lblContraseña)
         Me.pnlContenedor.Controls.Add(Me.lblUsuario)
-        Me.pnlContenedor.Controls.Add(Me.btnIngresar)
         Me.pnlContenedor.Controls.Add(Me.lblRestablecer)
-        Me.pnlContenedor.Controls.Add(Me.lblCrearCuenta)
         Me.pnlContenedor.Controls.Add(Me.btnAjustes)
         Me.pnlContenedor.Controls.Add(Me.mcbRecordarUsuario)
         Me.pnlContenedor.Controls.Add(Me.im)
@@ -89,6 +97,7 @@ Partial Class frmLogin
         Me.Button1.TabIndex = 54
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.Visible = False
         '
         'lblContraseña
         '
@@ -128,7 +137,7 @@ Partial Class frmLogin
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Image = Nothing
         Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnIngresar.Location = New System.Drawing.Point(350, 381)
+        Me.btnIngresar.Location = New System.Drawing.Point(350, 350)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
@@ -158,7 +167,7 @@ Partial Class frmLogin
         Me.lblCrearCuenta.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCrearCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuenta.Location = New System.Drawing.Point(373, 441)
+        Me.lblCrearCuenta.Location = New System.Drawing.Point(381, 433)
         Me.lblCrearCuenta.Name = "lblCrearCuenta"
         Me.lblCrearCuenta.Size = New System.Drawing.Size(134, 20)
         Me.lblCrearCuenta.TabIndex = 49
@@ -281,20 +290,13 @@ Partial Class frmLogin
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btnIngresar)
+        Me.Panel1.Controls.Add(Me.lblCrearCuenta)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(880, 500)
         Me.Panel1.TabIndex = 55
-        '
-        'UcAjustes1
-        '
-        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
-        Me.UcAjustes1.Name = "UcAjustes1"
-        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
-        Me.UcAjustes1.TabIndex = 52
-        Me.UcAjustes1.Visible = False
         '
         'frmLogin
         '
@@ -313,6 +315,8 @@ Partial Class frmLogin
         Me.pnlContenedor.PerformLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -36,6 +36,7 @@ Public Class frmLogin
 
 
     End Sub
+
     Public Sub ObtenerRuta()
         Dim array As New ArrayList
         Dim matriz() As String = Split(Application.StartupPath, "\")
@@ -270,5 +271,9 @@ Public Class frmLogin
 
     Private Sub lblContraseña_Click(sender As Object, e As EventArgs) Handles lblContraseña.Click
         txtPass.Focus()
+    End Sub
+
+    Private Sub frmLogin_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
+        lblApp.Select()
     End Sub
 End Class

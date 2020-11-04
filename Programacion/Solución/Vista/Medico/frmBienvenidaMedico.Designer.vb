@@ -125,6 +125,7 @@ Partial Class frmBienvenidaMedico
         Me.lblNAChats.Size = New System.Drawing.Size(297, 32)
         Me.lblNAChats.TabIndex = 0
         Me.lblNAChats.Text = "No hay solicitudes de chat"
+        Me.lblNAChats.Visible = False
         '
         'FlowLayoutPanel1
         '
@@ -192,10 +193,9 @@ Partial Class frmBienvenidaMedico
         Me.pnlNoti.BackColor = System.Drawing.Color.Transparent
         Me.pnlNoti.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.pnlNoti.Controls.Add(Me.lblNotiChats)
-        Me.pnlNoti.Location = New System.Drawing.Point(780, 29)
+        Me.pnlNoti.Location = New System.Drawing.Point(777, 23)
         Me.pnlNoti.Name = "pnlNoti"
-        Me.pnlNoti.Radius = 5
-        Me.pnlNoti.Size = New System.Drawing.Size(10, 10)
+        Me.pnlNoti.Size = New System.Drawing.Size(16, 16)
         Me.pnlNoti.TabIndex = 9
         Me.pnlNoti.Visible = False
         '
@@ -205,7 +205,7 @@ Partial Class frmBienvenidaMedico
         Me.lblNotiChats.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblNotiChats.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNotiChats.ForeColor = System.Drawing.Color.White
-        Me.lblNotiChats.Location = New System.Drawing.Point(-1, -1)
+        Me.lblNotiChats.Location = New System.Drawing.Point(-1, 1)
         Me.lblNotiChats.Name = "lblNotiChats"
         Me.lblNotiChats.Size = New System.Drawing.Size(13, 13)
         Me.lblNotiChats.TabIndex = 1

@@ -2,6 +2,9 @@
 Public Class frmRegistrarSintoma
     Private op As Byte
     Private sin As New ControladorSintoma
+    Private _nomActual As String
+    Private _descActual As String
+    Private cambiados As Boolean = False
     Public Sub New()
 
         InitializeComponent()
@@ -19,7 +22,7 @@ Public Class frmRegistrarSintoma
 
             Case 1
                 btnRegistrar.Text = "Modificar Síntoma"
-
+                btnRegistrar.Enabled = False
         End Select
 
     End Sub
@@ -28,9 +31,13 @@ Public Class frmRegistrarSintoma
     End Sub
     Public Sub llenarCampos(nombre As String)
 
-        txtNom.Text = nombre
-        txtDescripcion.Text = sin.traerInfoSintomas(nombre)
-        Label1.Text = nombre
+        _nomActual = nombre
+        _descActual = sin.traerInfoSintomas(nombre)
+
+        txtNom.Text = _nomActual
+        txtDescripcion.Text = _descActual
+        lblCantText.Text = txtDescripcion.Text.Length & "/300"
+        cambiados = True
     End Sub
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If op = 0 Then
@@ -102,8 +109,25 @@ Public Class frmRegistrarSintoma
 
         End If
     End Sub
+    Private Sub txtNom_TextChanged(sender As Object, e As EventArgs) Handles txtNom.TextChanged
+        lblCantNom.Text = txtDescripcion.Text.Length & "/25"
+    End Sub
+    Private Sub txtChanged(sender As Object, e As EventArgs) Handles txtNom.TextChanged, txtDescripcion.TextChanged
 
-    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
+        If cambiados Then
+            If _nomActual <> txtNom.Text Or _descActual <> txtDescripcion.Text Then
+                btnRegistrar.Enabled = True
+            Else
+                btnRegistrar.Enabled = False
+            End If
+        End If
 
+    End Sub
+
+    Private Sub txtDescripcion_GotFocus(sender As Object, e As EventArgs) Handles txtDescripcion.GotFocus
+        sepDesc.LineColor = Colores.violeta_DARK
+    End Sub
+    Private Sub txtDescripcion_LostFocus(sender As Object, e As EventArgs) Handles txtDescripcion.LostFocus
+        sepDesc.LineColor = Color.Gainsboro
     End Sub
 End Class

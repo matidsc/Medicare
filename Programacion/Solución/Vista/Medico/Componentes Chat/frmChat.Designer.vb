@@ -41,9 +41,10 @@ Partial Class frmChat
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
         Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
-        Me.ActualizarChats = New System.Windows.Forms.Timer(Me.components)
         Me.UcFicha1 = New Vista.UCFicha()
+        Me.ActualizarChats = New System.Windows.Forms.Timer(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.pnlWrapChat.SuspendLayout()
         Me.pnlUsuario.SuspendLayout()
         CType(Me.pbPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -321,17 +322,13 @@ Partial Class frmChat
         Me.pnlChats.AutoScroll = True
         Me.pnlChats.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.pnlChats.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.pnlChats.ForeColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.pnlChats.Location = New System.Drawing.Point(0, 73)
         Me.pnlChats.Margin = New System.Windows.Forms.Padding(0)
         Me.pnlChats.Name = "pnlChats"
         Me.pnlChats.Size = New System.Drawing.Size(313, 577)
         Me.pnlChats.TabIndex = 195
         Me.pnlChats.WrapContents = False
-        '
-        'ActualizarChats
-        '
-        Me.ActualizarChats.Enabled = True
-        Me.ActualizarChats.Interval = 3000
         '
         'UcFicha1
         '
@@ -343,9 +340,22 @@ Partial Class frmChat
         Me.UcFicha1.TabIndex = 196
         Me.UcFicha1.Visible = False
         '
+        'ActualizarChats
+        '
+        Me.ActualizarChats.Enabled = True
+        Me.ActualizarChats.Interval = 3000
+        '
         'Timer1
         '
         Me.Timer1.Interval = 2000
+        '
+        'pnlInstancia
+        '
+        Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
+        Me.pnlInstancia.Name = "pnlInstancia"
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
+        Me.pnlInstancia.TabIndex = 0
         '
         'frmChat
         '
@@ -354,6 +364,7 @@ Partial Class frmChat
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.pnlContenedor)
+        Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmChat"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -391,4 +402,5 @@ Partial Class frmChat
     Friend WithEvents ActualizarChats As Timer
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents pnlInstancia As Panel
 End Class

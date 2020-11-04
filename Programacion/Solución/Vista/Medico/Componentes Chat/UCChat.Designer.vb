@@ -101,7 +101,7 @@ Partial Class UCChat
         Me.GunaCirclePictureBox1.TabStop = False
         Me.GunaCirclePictureBox1.UseTransfarantBackground = False
         '
-        'ucchat
+        'UCChat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -112,8 +112,9 @@ Partial Class UCChat
         Me.Controls.Add(Me.lblidChat)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.lblNombre)
+        Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.Margin = New System.Windows.Forms.Padding(0)
-        Me.Name = "ucchat"
+        Me.Name = "UCChat"
         Me.Size = New System.Drawing.Size(296, 95)
         CType(Me.GunaCirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

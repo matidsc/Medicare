@@ -105,7 +105,7 @@ Public Class ModeloPaciente
     ''' <param name="cedula"></param>
     ''' <returns>DataTable cargado con los valores obtenidos.</returns>
     Public Function GetDatosPaciente(cedula As String) As DataTable
-        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT pNom,sNom,pApe,sApe,fecNac,sexo,correo, CONVERT(fotoPerfil USING utf8) from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 AND u.cedula= " & cedula)
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT contrasena,pNom,sNom,pApe,sApe,TIMESTAMPDIFF(YEAR, p.fecNac, CURDATE()),sexo,correo, CONVERT(fotoPerfil USING utf8) from usuario u, paciente p WHERE u.cedula=p.cedula AND u.bajalogica = 0 AND u.cedula= " & cedula)
     End Function
 
     ''' <summary>

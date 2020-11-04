@@ -36,6 +36,7 @@ Partial Class frmRegistrarSintoma
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtDescripcion = New Guna.UI.WinForms.GunaTextBox()
         Me.sepDesc = New Guna.UI.WinForms.GunaSeparator()
+        Me.lblCantNom = New System.Windows.Forms.Label()
         Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,6 +71,7 @@ Partial Class frmRegistrarSintoma
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.lblCantNom)
         Me.pnlContenedor.Controls.Add(Me.btnAtras)
         Me.pnlContenedor.Controls.Add(Me.Label1)
         Me.pnlContenedor.Controls.Add(Me.lblCantText)
@@ -173,6 +175,7 @@ Partial Class frmRegistrarSintoma
         Me.txtNom.LineColor = System.Drawing.Color.Gainsboro
         Me.txtNom.LineSize = 1
         Me.txtNom.Location = New System.Drawing.Point(308, 166)
+        Me.txtNom.MaxLength = 25
         Me.txtNom.Name = "txtNom"
         Me.txtNom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNom.Size = New System.Drawing.Size(413, 42)
@@ -216,6 +219,17 @@ Partial Class frmRegistrarSintoma
         Me.sepDesc.Size = New System.Drawing.Size(654, 10)
         Me.sepDesc.TabIndex = 189
         '
+        'lblCantNom
+        '
+        Me.lblCantNom.AutoSize = True
+        Me.lblCantNom.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantNom.ForeColor = System.Drawing.Color.Silver
+        Me.lblCantNom.Location = New System.Drawing.Point(680, 126)
+        Me.lblCantNom.Name = "lblCantNom"
+        Me.lblCantNom.Size = New System.Drawing.Size(34, 17)
+        Me.lblCantNom.TabIndex = 201
+        Me.lblCantNom.Text = "0/25"
+        '
         'frmRegistrarSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -246,4 +260,5 @@ Partial Class frmRegistrarSintoma
     Friend WithEvents lblCantText As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
+    Friend WithEvents lblCantNom As Label
 End Class

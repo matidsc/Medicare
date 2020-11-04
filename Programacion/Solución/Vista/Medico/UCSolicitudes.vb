@@ -2,6 +2,7 @@
 Public Class UCSolicitudes
     Dim idChat As Int32
     Dim cedula As String
+    Private pat As New ControladorPatologia
     Public Sub New()
 
         ' This call is required by the designer.
@@ -20,7 +21,10 @@ Public Class UCSolicitudes
         lblEdad.Text = edad.ToString & " años"
 
     End Sub
+
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarChat.Click
+
+        Dim instancia As frmChat = Me.ParentForm
         If ControladorChat.Singleton.verificarCedula(idChat) Then
 
             Dim respuesta As Integer
@@ -32,9 +36,16 @@ Public Class UCSolicitudes
                 ControladorChat.Singleton.entrarChat(Datos_Temporales.userLog, idChat)
                 Datos_Temporales.idchat = idChat
                 Datos_Temporales.pacienteSelecionado = cedula
+
+                Dim frm As New frmChat()
+                Me.SuspendLayout()
+                Principal.Singleton.CargarVentana(instancia.pnlInstancia, frm)
+                Principal.Singleton.CambiarTamaño(frmChat)
+                frm.Show()
+                instancia.pnlContenedor.Hide()
+                instancia.pnlInstancia.Show()
+                Me.ResumeLayout()
                 frmChat.Update()
-                frmChat.Show()
-                Me.Dispose()
 
             End If
 
@@ -45,5 +56,14 @@ Public Class UCSolicitudes
 
     Private Sub btnDiagnostico_Click(sender As Object, e As EventArgs) Handles btnDiagnostico.Click
 
+        Dim instancia As frmBienvenidaMedico = Me.ParentForm
+        Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Me.cedula), 0)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(instancia.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+        frm.Show()
+        instancia.pnlContenedor.Hide()
+        instancia.pnlInstancia.Show()
+        Me.ResumeLayout()
     End Sub
 End Class

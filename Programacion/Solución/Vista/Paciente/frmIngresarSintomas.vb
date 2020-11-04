@@ -134,11 +134,8 @@ Public Class frmIngresarSintomas
 
             If dt.Rows.Count > 0 Then
 
-
-
-
                 Dim frm As New frmObtenerDiagnostico(dt, misSintomas)
-                    Me.SuspendLayout()
+                Me.SuspendLayout()
                     Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
                     Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
                     frm.Show()

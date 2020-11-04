@@ -95,9 +95,14 @@ Public Class ControladorUsuario
         Return ModeloUsuario.Singleton.ReingresarUsuario(cedula)
 
     End Function
+    Public Function getTelefonosUsuario() As DataTable
+        Return ModeloUsuario.Singleton.getTelefonosPaciente(Datos_Temporales.userLog)
+    End Function
     Public Function ListarUsuarios() As DataTable
         Return ModeloUsuario.Singleton.listarUsuarios
     End Function
+    Public Function updateUsuario(cedula As String)
 
+    End Function
 End Class
 

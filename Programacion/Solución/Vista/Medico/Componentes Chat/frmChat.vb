@@ -8,6 +8,7 @@ Public Class frmChat
     Private id As New ArrayList
     Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
     Dim scrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
+    Dim pat As New ControladorPatologia
     Public Sub New()
 
         InitializeComponent()
@@ -341,5 +342,20 @@ Public Class frmChat
                 Me.Dispose()
             End If
         End If
+    End Sub
+
+    Private Sub FinalizarInstancia() Handles pnlInstancia.ControlRemoved
+        pnlContenedor.Show()
+    End Sub
+
+    Private Sub btnSintomasDiag_Click(sender As Object, e As EventArgs) Handles btnSintomasDiag.Click
+        Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Datos_Temporales.pacienteSelecionado), 1)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
     End Sub
 End Class

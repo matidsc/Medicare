@@ -23,8 +23,8 @@ Partial Class frmObtenerDiagnostico
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
-        Me.lblIngreseSIntomas = New System.Windows.Forms.Label()
+        Me.btnSoliChat = New Guna.UI.WinForms.GunaButton()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnAnt = New FontAwesome.Sharp.IconButton()
         Me.btnSig = New FontAwesome.Sharp.IconButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
@@ -36,8 +36,8 @@ Partial Class frmObtenerDiagnostico
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.pnlContenedor.Controls.Add(Me.GunaButton1)
-        Me.pnlContenedor.Controls.Add(Me.lblIngreseSIntomas)
+        Me.pnlContenedor.Controls.Add(Me.btnSoliChat)
+        Me.pnlContenedor.Controls.Add(Me.lblTitulo)
         Me.pnlContenedor.Controls.Add(Me.btnAnt)
         Me.pnlContenedor.Controls.Add(Me.btnSig)
         Me.pnlContenedor.Controls.Add(Me.btnAtras)
@@ -48,44 +48,46 @@ Partial Class frmObtenerDiagnostico
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 150
         '
-        'GunaButton1
+        'btnSoliChat
         '
-        Me.GunaButton1.AnimationHoverSpeed = 0.07!
-        Me.GunaButton1.AnimationSpeed = 0.03!
-        Me.GunaButton1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaButton1.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.GunaButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaButton1.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaButton1.ForeColor = System.Drawing.Color.White
-        Me.GunaButton1.Image = Global.Vista.My.Resources.Resources.icono_Chat
-        Me.GunaButton1.ImageSize = New System.Drawing.Size(25, 25)
-        Me.GunaButton1.Location = New System.Drawing.Point(857, 28)
-        Me.GunaButton1.Name = "GunaButton1"
-        Me.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaButton1.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaButton1.OnHoverImage = Nothing
-        Me.GunaButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaButton1.Radius = 14
-        Me.GunaButton1.Size = New System.Drawing.Size(192, 42)
-        Me.GunaButton1.TabIndex = 197
-        Me.GunaButton1.Text = "Solicitar chat"
-        Me.GunaButton1.TextOffsetX = 16
+        Me.btnSoliChat.Animated = True
+        Me.btnSoliChat.AnimationHoverSpeed = 0.07!
+        Me.btnSoliChat.AnimationSpeed = 0.03!
+        Me.btnSoliChat.BackColor = System.Drawing.Color.Transparent
+        Me.btnSoliChat.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnSoliChat.BorderColor = System.Drawing.Color.Black
+        Me.btnSoliChat.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSoliChat.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnSoliChat.FocusedColor = System.Drawing.Color.Empty
+        Me.btnSoliChat.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSoliChat.ForeColor = System.Drawing.Color.White
+        Me.btnSoliChat.Image = Global.Vista.My.Resources.Resources.icono_Chat
+        Me.btnSoliChat.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnSoliChat.Location = New System.Drawing.Point(857, 28)
+        Me.btnSoliChat.Name = "btnSoliChat"
+        Me.btnSoliChat.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnSoliChat.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnSoliChat.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnSoliChat.OnHoverImage = Nothing
+        Me.btnSoliChat.OnPressedColor = System.Drawing.Color.Black
+        Me.btnSoliChat.Radius = 14
+        Me.btnSoliChat.Size = New System.Drawing.Size(192, 42)
+        Me.btnSoliChat.TabIndex = 197
+        Me.btnSoliChat.Text = "Solicitar chat"
+        Me.btnSoliChat.TextOffsetX = 16
         '
-        'lblIngreseSIntomas
+        'lblTitulo
         '
-        Me.lblIngreseSIntomas.BackColor = System.Drawing.Color.Transparent
-        Me.lblIngreseSIntomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIngreseSIntomas.ForeColor = System.Drawing.Color.White
-        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(378, 22)
-        Me.lblIngreseSIntomas.Name = "lblIngreseSIntomas"
-        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(315, 45)
-        Me.lblIngreseSIntomas.TabIndex = 195
-        Me.lblIngreseSIntomas.Text = "Posibles Diagnósticos"
-        Me.lblIngreseSIntomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.lblTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(223, 22)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(624, 45)
+        Me.lblTitulo.TabIndex = 195
+        Me.lblTitulo.Text = "Posibles Diagnósticos"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnAnt
         '
@@ -193,7 +195,7 @@ Partial Class frmObtenerDiagnostico
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
     Friend WithEvents btnSig As FontAwesome.Sharp.IconButton
     Friend WithEvents btnAnt As FontAwesome.Sharp.IconButton
-    Friend WithEvents lblIngreseSIntomas As Label
-    Friend WithEvents GunaButton1 As Guna.UI.WinForms.GunaButton
+    Friend WithEvents lblTitulo As Label
+    Friend WithEvents btnSoliChat As Guna.UI.WinForms.GunaButton
     Friend WithEvents pnlInstancia As Panel
 End Class

@@ -13,16 +13,6 @@ Public Class frmBienvenidaMedico
 
     End Sub
 
-    Private Sub Panel6_MouseDown(sender As Object, e As MouseEventArgs)
-        Principal.Singleton.moverVentanaDown(Me)
-    End Sub
-
-    Private Sub Panel6_MouseMove(sender As Object, e As MouseEventArgs)
-        Principal.Singleton.moverVentanaMove(Me)
-    End Sub
-    Private Sub Panel6_MouseUp(sender As Object, e As MouseEventArgs)
-        Principal.Singleton.moverVentanaUp()
-    End Sub
     'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
     '    Me.BackColor = Color.FromArgb(236, 236, 236)
@@ -97,10 +87,10 @@ Public Class frmBienvenidaMedico
     'End Sub
 
     Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        Dim frm As New frmListadoChat
+        Dim frm As New frmChat
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmListadoChat)
+        Principal.Singleton.CambiarTamaño(frmChat)
         frm.Show()
         pnlContenedor.Hide()
         pnlInstancia.Show()
@@ -157,7 +147,6 @@ Public Class frmBienvenidaMedico
             End If
         Next
 
-
         If cantNotificacion <> 0 Then
 
             If cantNotificacion <> lblNotiMsg.Text Then
@@ -188,7 +177,7 @@ Public Class frmBienvenidaMedico
             pnlNotificacion.Visible = False
             lblNotiMsg.Visible = False
             lblNotiMsg.Text = "0"
-
+            lblNuevosMsg.Text = "No tienes mensajes nuevos"
         End If
 
         cantNotificacion = 0
@@ -197,28 +186,37 @@ Public Class frmBienvenidaMedico
     Private Sub btnNoti_Click(sender As Object, e As EventArgs) Handles btnNoti.Click
 
         Dim dt As DataTable = ControladorChat.Singleton.listarChat
-
-        If dt.Rows.Count > 0 Then
-            lblNAChats.Visible = False
-            FlowLayoutPanel1.Controls.Clear()
-            FlowLayoutPanel1.BringToFront()
-            FlowLayoutPanel1.SuspendLayout()
-
-            For Each row In dt.Rows
-                Dim uc As New UCSolicitudes(row.item(0), row.item(1), row.item(2) & " " & row.item(3), row.item(4))
-                FlowLayoutPanel1.Controls.Add(uc)
-                uc.Show()
-            Next
-
-            FlowLayoutPanel1.ResumeLayout()
+        If FlowLayoutPanel1.Visible = False Then
             FlowLayoutPanel1.Visible = True
-        Else
-            FlowLayoutPanel1.Controls.Clear()
-            lblNAChats.Visible = True
-        End If
+            If dt.Rows.Count > 0 Then
 
+                lblNAChats.Visible = False
+                FlowLayoutPanel1.Controls.Clear()
+                FlowLayoutPanel1.BringToFront()
+                FlowLayoutPanel1.SuspendLayout()
+
+                For Each row In dt.Rows
+                    Dim uc As New UCSolicitudes(row.item(0), row.item(1), row.item(2) & " " & row.item(3), row.item(4))
+                    FlowLayoutPanel1.Controls.Add(uc)
+                    uc.Show()
+                Next
+                FlowLayoutPanel1.ResumeLayout()
+
+            Else
+                FlowLayoutPanel1.Controls.Clear()
+                lblNAChats.Visible = True
+            End If
+        Else
+            FlowLayoutPanel1.Visible = False
+        End If
 
     End Sub
 
-
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Me.SuspendLayout()
+        Dim perfil As New UCVerPerfil
+        Me.Controls.Add(perfil)
+        perfil.BringToFront()
+        Me.ResumeLayout()
+    End Sub
 End Class

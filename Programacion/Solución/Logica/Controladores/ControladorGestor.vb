@@ -88,7 +88,6 @@ Public Class ControladorGestor
 
     End Function
 
-
     Public Function verificar(ci As String) As Boolean
 
         Return ModeloGestor.Singleton.VerificarEstado(ci)

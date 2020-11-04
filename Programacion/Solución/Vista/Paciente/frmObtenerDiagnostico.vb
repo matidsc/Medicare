@@ -6,6 +6,8 @@ Public Class frmObtenerDiagnostico
     Dim contador As Integer = 0
     Dim solicitud As Boolean = True
     Dim lista As New List(Of UCDiagnnostico)
+    Public Shared listado As Opcion
+    Private boton As Short
     Private Sub frmObtenerDiagnostico_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         ControlPaint.DrawBorder(e.Graphics, Me.ClientRectangle, Color.Black, ButtonBorderStyle.Solid)
     End Sub
@@ -16,6 +18,18 @@ Public Class frmObtenerDiagnostico
 
     End Sub
 
+    Public Sub New(patologias As DataTable, boton As Short)
+
+        InitializeComponent()
+        Datos_Temporales.horizontal = Me.Width
+        Datos_Temporales.vertical = Me.Height
+        listado = Opcion.medico
+        Me.boton = boton
+        setPatologias(patologias)
+        btnSoliChat.Visible = False
+        lblTitulo.Text = "Diagnosticos del paciente"
+        lblTitulo.Location = New Point((Me.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y)
+    End Sub
 
     Public Sub New(patologias As DataTable, sintomas As ArrayList)
 
@@ -24,57 +38,12 @@ Public Class frmObtenerDiagnostico
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
+        listado = Opcion.paciente
         If sin.guardarSintomas(Datos_Temporales.userLog, sintomas) Then
 
             If pat.guardarDiagnostico(Datos_Temporales.userLog, patologias) Then
 
-                'TableLayoutPanel1.SuspendLayout()
-
-                'TableLayoutPanel1.ColumnCount = patologias.Rows.Count
-
-                'For Each patologia In patologias.Rows
-                '    TableLayoutPanel1.ColumnCount += 1
-                '    TableLayoutPanel1.Controls.Add(New UCDiagnnostico(patologia.item(0), patologia.item(1), patologia.item(2)))
-                '    MsgBox(TableLayoutPanel1.ColumnCount)
-                'Next
-
-                '  TableLayoutPanel1.ResumeLayout()
-
-                For Each patologia In patologias.Rows
-                    lista.Add(New UCDiagnnostico(patologia.item(0), patologia.item(1), patologia.item(2), patologia.item(3)))
-
-                Next
-
-                If lista.Count > 3 Then
-                    btnSig.Visible = True
-                Else
-                    btnSig.Visible = False
-                End If
-
-
-                If lista.Count = 1 Then
-
-                    TableLayoutPanel1.Controls.Add(lista.Item(0), 1, 0)
-
-
-                ElseIf lista.Count = 2 Then
-
-                    For Each fila In lista
-                        TableLayoutPanel1.Controls.Add(fila)
-                    Next
-                Else
-
-                    For i = 0 To 2
-                        TableLayoutPanel1.Controls.Add(lista.Item(i))
-                        contador += 1
-                    Next
-
-                End If
-
-                If lista.Count < 4 Then
-                    btnSig.Visible = False
-                End If
+                setPatologias(patologias)
 
             Else
                 MsgBox("Error al registrar las patologías")
@@ -88,9 +57,47 @@ Public Class frmObtenerDiagnostico
         End If
 
 
-
     End Sub
+    Private Sub setPatologias(patologias As DataTable)
+        For Each patologia In patologias.Rows
+            lista.Add(New UCDiagnnostico(patologia.item(0), patologia.item(1), patologia.item(2), patologia.item(3)))
 
+        Next
+
+        If lista.Count > 3 Then
+            btnSig.Visible = True
+        Else
+            btnSig.Visible = False
+        End If
+
+
+        If lista.Count = 1 Then
+
+            TableLayoutPanel1.Controls.Add(lista.Item(0), 1, 0)
+
+
+        ElseIf lista.Count = 2 Then
+
+            For Each fila In lista
+                TableLayoutPanel1.Controls.Add(fila)
+            Next
+        Else
+
+            For i = 0 To 2
+                TableLayoutPanel1.Controls.Add(lista.Item(i))
+                contador += 1
+            Next
+
+        End If
+
+        If lista.Count < 4 Then
+            btnSig.Visible = False
+        End If
+    End Sub
+    Public Enum Opcion
+        paciente = 0
+        medico = 1
+    End Enum
     Private Sub dgvPosiblesDiagnosticos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
 
         'If pat.informacionPatologia(dgvPosiblesDiagnosticos.CurrentCell.Value.ToString) Is Nothing Then
@@ -103,37 +110,32 @@ Public Class frmObtenerDiagnostico
 
     End Sub
 
-
-
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
         frmLogin.Visible = True
     End Sub
 
-
-    Private Sub dgvPosiblesDiagnosticos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
-
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        If ControladorChat.Singleton.verificarEstadoChat Then
-            MsgBox("true")
-            Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
-            Me.Dispose()
+        If listado = Opcion.paciente Then
+            If ControladorChat.Singleton.verificarEstadoChat Then
+                Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+                Me.Dispose()
+            Else
+                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+                Dim frm As frmIngresarSintomas = Me.ParentForm
+                frm.Dispose()
+            End If
         Else
-            MsgBox("false")
-            Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
-            Dim frm As frmIngresarSintomas = Me.ParentForm
-            frm.Dispose()
+            If boton = 0 Then
+                Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)
+                Me.Dispose()
+            Else
+                Principal.Singleton.CambiarTamaño(frmChat)
+                Me.Dispose()
+            End If
+
         End If
+
 
     End Sub
 
@@ -250,7 +252,7 @@ Public Class frmObtenerDiagnostico
 
     End Sub
 
-    Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
+    Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles btnSoliChat.Click
 
         Dim chat As New ControladorChat
 
@@ -271,7 +273,7 @@ Public Class frmObtenerDiagnostico
 
     End Sub
 
-    Private Sub lblIngreseSIntomas_Click(sender As Object, e As EventArgs) Handles lblIngreseSIntomas.Click
+    Private Sub lblIngreseSIntomas_Click(sender As Object, e As EventArgs) Handles lblTitulo.Click
 
     End Sub
 End Class

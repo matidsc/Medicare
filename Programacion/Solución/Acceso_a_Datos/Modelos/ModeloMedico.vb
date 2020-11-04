@@ -80,7 +80,11 @@ Public Class ModeloMedico
 
         Return False
     End Function
+    Public Function getInformacionMedico(cedula As String) As DataTable
 
+        Dim consulta = "SELECT u.pNom,u.sNom,u.pApe,u.sApe,u.correo,m.especializacion,CONVERT(u.fotoPerfil USING utf8) FROM usuario u, medico m where u.cedula=" & cedula
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
 End Class
 
 

@@ -352,5 +352,10 @@ Public Class ModeloPatologia
     '    Return False
 
     'End Function
-
+    Public Function traerUltimoDiagnostico(cedula As String) As DataTable
+        Dim consulta = " SELECT p.nombre,p.descripcion,p.recomendacion,p.prioridad 
+                        FROM patologia p 
+                        WHERE idPatologia in(select idPatologia FROM paciente_obtiene_diagnostico WHERE idDiagnostico= (select max(idDiagnostico)FROM paciente_obtiene_diagnostico WHERE cedulaPaciente=  " & cedula & " ))"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
 End Class

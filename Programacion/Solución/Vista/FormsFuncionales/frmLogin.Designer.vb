@@ -22,29 +22,30 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblContraseña = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
         Me.lblRestablecer = New System.Windows.Forms.Label()
-        Me.lblCrearCuenta = New System.Windows.Forms.Label()
-        Me.btnAjustes = New FontAwesome.Sharp.IconPictureBox()
         Me.mcbRecordarUsuario = New Guna.UI.WinForms.GunaCheckBox()
-        Me.im = New FontAwesome.Sharp.IconPictureBox()
         Me.lblLogin = New System.Windows.Forms.Label()
         Me.txtUsr = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
         Me.txtPass = New Guna.UI.WinForms.GunaTextBox()
         Me.lblApp = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
+        Me.lblCrearCuenta = New System.Windows.Forms.Label()
+        Me.btnAjustes = New FontAwesome.Sharp.IconPictureBox()
+        Me.im = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlInstancia.SuspendLayout()
         Me.pnlContenedor.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlInstancia
@@ -123,33 +124,6 @@ Partial Class frmLogin
         Me.lblUsuario.TabIndex = 52
         Me.lblUsuario.Text = "Usuario"
         '
-        'btnIngresar
-        '
-        Me.btnIngresar.AnimationHoverSpeed = 0.07!
-        Me.btnIngresar.AnimationSpeed = 0.03!
-        Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnIngresar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnIngresar.BorderColor = System.Drawing.Color.Black
-        Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnIngresar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIngresar.ForeColor = System.Drawing.Color.White
-        Me.btnIngresar.Image = Nothing
-        Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnIngresar.Location = New System.Drawing.Point(350, 350)
-        Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnIngresar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnIngresar.OnHoverImage = Nothing
-        Me.btnIngresar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnIngresar.Radius = 17
-        Me.btnIngresar.Size = New System.Drawing.Size(180, 42)
-        Me.btnIngresar.TabIndex = 51
-        Me.btnIngresar.Text = "Ingresar"
-        Me.btnIngresar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'lblRestablecer
         '
         Me.lblRestablecer.AutoSize = True
@@ -160,32 +134,6 @@ Partial Class frmLogin
         Me.lblRestablecer.Size = New System.Drawing.Size(149, 17)
         Me.lblRestablecer.TabIndex = 50
         Me.lblRestablecer.Text = "Restablecer contraseña"
-        '
-        'lblCrearCuenta
-        '
-        Me.lblCrearCuenta.AutoSize = True
-        Me.lblCrearCuenta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblCrearCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
-        Me.lblCrearCuenta.Location = New System.Drawing.Point(381, 433)
-        Me.lblCrearCuenta.Name = "lblCrearCuenta"
-        Me.lblCrearCuenta.Size = New System.Drawing.Size(134, 20)
-        Me.lblCrearCuenta.TabIndex = 49
-        Me.lblCrearCuenta.Text = "Solicitar cuenta"
-        Me.lblCrearCuenta.Visible = False
-        '
-        'btnAjustes
-        '
-        Me.btnAjustes.BackColor = System.Drawing.Color.Transparent
-        Me.btnAjustes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAjustes.ForeColor = System.Drawing.Color.LightGray
-        Me.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.Cog
-        Me.btnAjustes.IconColor = System.Drawing.Color.LightGray
-        Me.btnAjustes.Location = New System.Drawing.Point(22, 448)
-        Me.btnAjustes.Name = "btnAjustes"
-        Me.btnAjustes.Size = New System.Drawing.Size(32, 32)
-        Me.btnAjustes.TabIndex = 48
-        Me.btnAjustes.TabStop = False
         '
         'mcbRecordarUsuario
         '
@@ -202,20 +150,6 @@ Partial Class frmLogin
         Me.mcbRecordarUsuario.Size = New System.Drawing.Size(155, 24)
         Me.mcbRecordarUsuario.TabIndex = 47
         Me.mcbRecordarUsuario.Text = "Recordar usuario"
-        '
-        'im
-        '
-        Me.im.BackColor = System.Drawing.Color.Transparent
-        Me.im.ForeColor = System.Drawing.Color.DarkSlateBlue
-        Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
-        Me.im.IconColor = System.Drawing.Color.DarkSlateBlue
-        Me.im.IconSize = 521
-        Me.im.Location = New System.Drawing.Point(533, -385)
-        Me.im.Name = "im"
-        Me.im.Rotation = 135.0R
-        Me.im.Size = New System.Drawing.Size(521, 707)
-        Me.im.TabIndex = 46
-        Me.im.TabStop = False
         '
         'lblLogin
         '
@@ -298,6 +232,73 @@ Partial Class frmLogin
         Me.Panel1.Size = New System.Drawing.Size(880, 500)
         Me.Panel1.TabIndex = 55
         '
+        'btnIngresar
+        '
+        Me.btnIngresar.AnimationHoverSpeed = 0.07!
+        Me.btnIngresar.AnimationSpeed = 0.03!
+        Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
+        Me.btnIngresar.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnIngresar.BorderColor = System.Drawing.Color.Black
+        Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnIngresar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.ForeColor = System.Drawing.Color.White
+        Me.btnIngresar.Image = Nothing
+        Me.btnIngresar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnIngresar.Location = New System.Drawing.Point(350, 350)
+        Me.btnIngresar.Name = "btnIngresar"
+        Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnIngresar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnIngresar.OnHoverImage = Nothing
+        Me.btnIngresar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnIngresar.Radius = 17
+        Me.btnIngresar.Size = New System.Drawing.Size(180, 42)
+        Me.btnIngresar.TabIndex = 51
+        Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblCrearCuenta
+        '
+        Me.lblCrearCuenta.AutoSize = True
+        Me.lblCrearCuenta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblCrearCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCrearCuenta.ForeColor = System.Drawing.Color.White
+        Me.lblCrearCuenta.Location = New System.Drawing.Point(381, 433)
+        Me.lblCrearCuenta.Name = "lblCrearCuenta"
+        Me.lblCrearCuenta.Size = New System.Drawing.Size(134, 20)
+        Me.lblCrearCuenta.TabIndex = 49
+        Me.lblCrearCuenta.Text = "Solicitar cuenta"
+        Me.lblCrearCuenta.Visible = False
+        '
+        'btnAjustes
+        '
+        Me.btnAjustes.BackColor = System.Drawing.Color.Transparent
+        Me.btnAjustes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAjustes.ForeColor = System.Drawing.Color.LightGray
+        Me.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.Cog
+        Me.btnAjustes.IconColor = System.Drawing.Color.LightGray
+        Me.btnAjustes.Location = New System.Drawing.Point(22, 448)
+        Me.btnAjustes.Name = "btnAjustes"
+        Me.btnAjustes.Size = New System.Drawing.Size(32, 32)
+        Me.btnAjustes.TabIndex = 48
+        Me.btnAjustes.TabStop = False
+        '
+        'im
+        '
+        Me.im.BackColor = System.Drawing.Color.Transparent
+        Me.im.ForeColor = System.Drawing.Color.DarkSlateBlue
+        Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
+        Me.im.IconColor = System.Drawing.Color.DarkSlateBlue
+        Me.im.IconSize = 521
+        Me.im.Location = New System.Drawing.Point(533, -385)
+        Me.im.Name = "im"
+        Me.im.Rotation = 135.0R
+        Me.im.Size = New System.Drawing.Size(521, 707)
+        Me.im.TabIndex = 46
+        Me.im.TabStop = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,16 +308,17 @@ Partial Class frmLogin
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.pnlInstancia)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "|"
         Me.pnlInstancia.ResumeLayout(False)
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
-        CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

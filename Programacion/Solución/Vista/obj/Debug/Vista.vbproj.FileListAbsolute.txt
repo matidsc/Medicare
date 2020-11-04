@@ -2392,7 +2392,6 @@ C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.frmBienvenidaPaciente.resources
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.Resources.resources
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.frmObtenerDiagnostico.resources
-C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.frmVerPerfil.resources
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.frmRegistroPaciente.resources
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.UCDiagnnostico.resources
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.UCPatologia.resources
@@ -2404,3 +2403,4 @@ C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.xml
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.pdb
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.UCSolicitudes.resources
+C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Vista\obj\Debug\Vista.UCVerPerfil.resources

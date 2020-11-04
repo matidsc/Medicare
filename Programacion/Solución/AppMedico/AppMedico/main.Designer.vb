@@ -22,6 +22,7 @@ Partial Class main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main))
         Me.ventana = New System.Windows.Forms.Panel()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
         Me.btnMinimizar = New FontAwesome.Sharp.IconButton()
@@ -110,9 +111,11 @@ Partial Class main
         Me.Controls.Add(Me.ventana)
         Me.Controls.Add(Me.pnlCerrar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Medicare"
         Me.pnlCerrar.ResumeLayout(False)
         Me.pnlCerrar.PerformLayout()
         Me.ResumeLayout(False)

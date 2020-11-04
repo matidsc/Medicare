@@ -13,16 +13,16 @@ Public Class frmBienvenidaGestor
     End Function
 
     Public Sub mostrar(dt As DataTable)
-        MsgBox(dt.Rows(0).Item(1))
-        UcDatosGestor1.Visible = False
-        UcDatosGestor1.BackColor = Color.Red
-        Dim row As DataRow = dt.Rows(0)
+        'MsgBox(dt.Rows(0).Item(1))
+        'UcDatosGestor1.Visible = False
+        'UcDatosGestor1.BackColor = Color.Red
+        'Dim row As DataRow = dt.Rows(0)
 
-        UcDatosGestor1.lblCed.Text = row.Item(0).ToString
-        UcDatosGestor1.lblNom.Text = row.Item(1).ToString & " " & row.Item(2).ToString & " " & row.Item(3).ToString & " " & row.Item(4).ToString
-        UcDatosGestor1.lblMail.Text = row.Item(5).ToString
+        'UcDatosGestor1.lblCed.Text = row.Item(0).ToString
+        'UcDatosGestor1.lblNom.Text = row.Item(1).ToString & " " & row.Item(2).ToString & " " & row.Item(3).ToString & " " & row.Item(4).ToString
+        'UcDatosGestor1.lblMail.Text = row.Item(5).ToString
 
-        UcDatosGestor1.BringToFront()
+        'UcDatosGestor1.BringToFront()
     End Sub
     Public Sub New()
 
@@ -283,7 +283,11 @@ Public Class frmBienvenidaGestor
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
-
+        Me.SuspendLayout()
+        Dim perfil As New UCVerPerfil
+        Me.Controls.Add(perfil)
+        perfil.BringToFront()
+        Me.ResumeLayout()
     End Sub
 
     Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint

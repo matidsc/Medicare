@@ -541,12 +541,12 @@ Partial Class frmBienvenidaPaciente
         'Timer2
         '
         Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 1000
+        Me.Timer2.Interval = 3000
         '
         'Timer3
         '
         Me.Timer3.Enabled = True
-        Me.Timer3.Interval = 2000
+        Me.Timer3.Interval = 3000
         '
         'frmBienvenidaPaciente
         '

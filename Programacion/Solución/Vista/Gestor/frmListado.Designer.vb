@@ -22,9 +22,9 @@ Partial Class frmListado
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.GunaButton4 = New Guna.UI.WinForms.GunaButton()
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
@@ -33,8 +33,8 @@ Partial Class frmListado
         Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
         Me.GunaButton2 = New Guna.UI.WinForms.GunaButton()
         Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtBuscar = New Guna.UI.WinForms.GunaTextBox()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
@@ -58,7 +58,7 @@ Partial Class frmListado
         Me.pnlContenedor.Controls.Add(Me.GunaElipsePanel1)
         Me.pnlContenedor.Controls.Add(Me.lblBuscar)
         Me.pnlContenedor.Controls.Add(Me.PictureBox1)
-        Me.pnlContenedor.Controls.Add(Me.GunaTextBox2)
+        Me.pnlContenedor.Controls.Add(Me.txtBuscar)
         Me.pnlContenedor.Controls.Add(Me.btnAtras)
         Me.pnlContenedor.Controls.Add(Me.btnRegistrar)
         Me.pnlContenedor.Controls.Add(Me.scroll)
@@ -71,7 +71,7 @@ Partial Class frmListado
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
         Me.pnlContenedor.Name = "pnlContenedor"
-        Me.pnlContenedor.Size = New System.Drawing.Size(1338, 813)
+        Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 156
         '
         'GunaButton4
@@ -88,7 +88,7 @@ Partial Class frmListado
         Me.GunaButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GunaButton4.Image = Nothing
         Me.GunaButton4.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaButton4.Location = New System.Drawing.Point(40, 91)
+        Me.GunaButton4.Location = New System.Drawing.Point(56, 80)
         Me.GunaButton4.Name = "GunaButton4"
         Me.GunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.GunaButton4.OnHoverBorderColor = System.Drawing.Color.Black
@@ -113,6 +113,7 @@ Partial Class frmListado
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
         Me.GunaElipsePanel1.Size = New System.Drawing.Size(364, 169)
         Me.GunaElipsePanel1.TabIndex = 0
+        Me.GunaElipsePanel1.Visible = False
         '
         'Label1
         '
@@ -221,26 +222,6 @@ Partial Class frmListado
         Me.lblBuscar.TabIndex = 191
         Me.lblBuscar.Text = "Buscar"
         '
-        'GunaTextBox2
-        '
-        Me.GunaTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.GunaTextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.GunaTextBox2.BorderSize = 1
-        Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaTextBox2.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.DarkSlateBlue
-        Me.GunaTextBox2.FocusedForeColor = System.Drawing.Color.White
-        Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaTextBox2.ForeColor = System.Drawing.Color.Silver
-        Me.GunaTextBox2.Location = New System.Drawing.Point(202, 21)
-        Me.GunaTextBox2.Name = "GunaTextBox2"
-        Me.GunaTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaTextBox2.Radius = 17
-        Me.GunaTextBox2.Size = New System.Drawing.Size(659, 38)
-        Me.GunaTextBox2.TabIndex = 173
-        Me.GunaTextBox2.TextOffsetX = 50
-        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
@@ -250,6 +231,26 @@ Partial Class frmListado
         Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
         Me.PictureBox1.TabIndex = 176
         Me.PictureBox1.TabStop = False
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.txtBuscar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.txtBuscar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.txtBuscar.BorderSize = 0
+        Me.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBuscar.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.txtBuscar.FocusedBorderColor = System.Drawing.Color.DarkSlateBlue
+        Me.txtBuscar.FocusedForeColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Silver
+        Me.txtBuscar.Location = New System.Drawing.Point(202, 21)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtBuscar.Radius = 12
+        Me.txtBuscar.Size = New System.Drawing.Size(659, 38)
+        Me.txtBuscar.TabIndex = 173
+        Me.txtBuscar.TextOffsetX = 50
         '
         'btnAtras
         '
@@ -285,7 +286,7 @@ Partial Class frmListado
         Me.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnRegistrar.Image = Nothing
         Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRegistrar.Location = New System.Drawing.Point(436, 666)
+        Me.btnRegistrar.Location = New System.Drawing.Point(358, 594)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
@@ -318,43 +319,42 @@ Partial Class frmListado
         Me.dgvListado.AllowUserToAddRows = False
         Me.dgvListado.AllowUserToDeleteRows = False
         Me.dgvListado.AllowUserToResizeColumns = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvListado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.ColumnHeadersVisible = False
         Me.dgvListado.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(20)
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvListado.Location = New System.Drawing.Point(137, 187)
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(20)
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListado.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvListado.Location = New System.Drawing.Point(22, 141)
         Me.dgvListado.MultiSelect = False
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.RowHeadersVisible = False
         Me.dgvListado.RowHeadersWidth = 51
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListado.Size = New System.Drawing.Size(1025, 416)
+        Me.dgvListado.Size = New System.Drawing.Size(1025, 435)
         Me.dgvListado.TabIndex = 186
         '
         'lblCantSelecc
@@ -362,12 +362,11 @@ Partial Class frmListado
         Me.lblCantSelecc.AutoSize = True
         Me.lblCantSelecc.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCantSelecc.ForeColor = System.Drawing.Color.White
-        Me.lblCantSelecc.Location = New System.Drawing.Point(957, 27)
+        Me.lblCantSelecc.Location = New System.Drawing.Point(995, 27)
         Me.lblCantSelecc.Name = "lblCantSelecc"
         Me.lblCantSelecc.Size = New System.Drawing.Size(28, 32)
         Me.lblCantSelecc.TabIndex = 184
         Me.lblCantSelecc.Text = "0"
-        Me.lblCantSelecc.Visible = False
         '
         'btnEliminarElementos
         '
@@ -379,11 +378,11 @@ Partial Class frmListado
         Me.btnEliminarElementos.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminarElementos.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnEliminarElementos.FocusedColor = System.Drawing.Color.Empty
-        Me.btnEliminarElementos.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarElementos.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminarElementos.ForeColor = System.Drawing.Color.White
         Me.btnEliminarElementos.Image = Nothing
         Me.btnEliminarElementos.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnEliminarElementos.Location = New System.Drawing.Point(751, 91)
+        Me.btnEliminarElementos.Location = New System.Drawing.Point(767, 80)
         Me.btnEliminarElementos.Name = "btnEliminarElementos"
         Me.btnEliminarElementos.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btnEliminarElementos.OnHoverBorderColor = System.Drawing.Color.Black
@@ -410,7 +409,7 @@ Partial Class frmListado
         Me.btnModificarElemento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnModificarElemento.Image = Nothing
         Me.btnModificarElemento.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnModificarElemento.Location = New System.Drawing.Point(436, 91)
+        Me.btnModificarElemento.Location = New System.Drawing.Point(452, 80)
         Me.btnModificarElemento.Name = "btnModificarElemento"
         Me.btnModificarElemento.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.btnModificarElemento.OnHoverBorderColor = System.Drawing.Color.Black
@@ -437,7 +436,7 @@ Partial Class frmListado
         Me.btnSeleccionMultiple.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnSeleccionMultiple.Image = Nothing
         Me.btnSeleccionMultiple.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSeleccionMultiple.Location = New System.Drawing.Point(160, 91)
+        Me.btnSeleccionMultiple.Location = New System.Drawing.Point(176, 80)
         Me.btnSeleccionMultiple.Name = "btnSeleccionMultiple"
         Me.btnSeleccionMultiple.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.btnSeleccionMultiple.OnHoverBorderColor = System.Drawing.Color.Black
@@ -455,7 +454,7 @@ Partial Class frmListado
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
-        Me.pnlInstancia.Size = New System.Drawing.Size(1338, 813)
+        Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 192
         '
         'UcAsociar1
@@ -472,7 +471,7 @@ Partial Class frmListado
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1338, 813)
+        Me.ClientSize = New System.Drawing.Size(1070, 650)
         Me.Controls.Add(Me.pnlContenedor)
         Me.Controls.Add(Me.UcAsociar1)
         Me.Controls.Add(Me.pnlInstancia)
@@ -491,7 +490,7 @@ Partial Class frmListado
     End Sub
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
-    Friend WithEvents GunaTextBox2 As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents txtBuscar As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblCantSelecc As Label
     Friend WithEvents GunaButton4 As Guna.UI.WinForms.GunaButton

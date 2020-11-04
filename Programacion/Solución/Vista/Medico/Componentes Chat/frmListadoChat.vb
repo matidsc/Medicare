@@ -83,30 +83,4 @@ Public Class frmListadoChat
         Me.pnlContenedor.Show()
     End Sub
 
-
-    Private Sub dgvListadoChat_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListadoChat.CellEnter
-
-        sender.backcolor = Color.Gainsboro
-    End Sub
-
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
-        Me.Close()
-        frmLogin.Visible = True
-    End Sub
-
-    Private Sub pnlTituloPatologia_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseDown
-        Principal.Singleton.moverVentanaDown(Me)
-    End Sub
-
-    Private Sub pnlTituloPatologia_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseMove
-        Principal.Singleton.moverVentanaMove(Me)
-    End Sub
-
-    Private Sub pnlTituloPatologia_MouseUp(sender As Object, e As MouseEventArgs) Handles pnlTituloPatologia.MouseUp
-        Principal.Singleton.moverVentanaUp()
-    End Sub
-
-    Private Sub dgvListadoChat_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListadoChat.CellContentClick
-
-    End Sub
 End Class

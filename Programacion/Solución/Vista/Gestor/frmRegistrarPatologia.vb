@@ -7,6 +7,8 @@ Public Class frmRegistrarPatologia
     Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Dim op As Byte
     Dim pat As New ControladorPatologia
+    Private _nomActual, _descActual, _recActual, _prioActual
+    Private cambiados As Boolean = False
     Public Sub New()
 
         ' This call is required by the designer.
@@ -50,10 +52,11 @@ Public Class frmRegistrarPatologia
     Public Sub llenarCampos(nombre As String)
 
         Dim row As DataRow = pat.TraerPatologia(nombre).Rows(0)
-        Label1.Text = row.Item(0).ToString
-        txtNomPat.Text = row.Item(0).ToString
-        txtDescPat.Text = row.Item(1).ToString
-        txtRecPat.Text = row.Item(2).ToString
+
+        _nomActual = txtNomPat.Text = row.Item(0).ToString
+        MsgBox(_nomActual)
+        _descActual = txtDescPat.Text = row.Item(1).ToString
+        _recActual = txtRecPat.Text = row.Item(2).ToString
         If row.Item(3) = 1 Then
             mrbPAlta.Checked = True
         ElseIf row.Item(3) = 2 Then
@@ -61,10 +64,13 @@ Public Class frmRegistrarPatologia
         ElseIf row.Item(3) = 3 Then
             mrbPBaja.Checked = True
         End If
+        _prioActual = row.Item(3)
+
         For Each sintoma In pat.TraerSintomasPatologia(row.Item(0))
             dgvSintomasSeleccionados.Rows.Add(sintoma)
         Next
         traerSintomas()
+        cambiados = True
     End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
 

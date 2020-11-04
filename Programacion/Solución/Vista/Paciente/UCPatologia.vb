@@ -2,6 +2,14 @@
 Public Class UCPatologia
 
     Private dtDescripcion As DataTable
+    Public Sub New(sintomas As DataTable)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Public Sub New(nombre As String, sintomas As DataTable)
 
         InitializeComponent()
@@ -34,4 +42,7 @@ Public Class UCPatologia
         setTextos(dgvSintomas.CurrentCell.Value, dgvSintomas.CurrentCell.RowIndex)
     End Sub
 
+    Private Sub UCPatologia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

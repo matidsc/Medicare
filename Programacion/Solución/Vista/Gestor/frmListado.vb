@@ -4,7 +4,7 @@ Public Class frmListado
     Public dt As New DataTable
     Dim esCSV As Boolean = False
     Dim op As Byte
-
+    Dim filtrarPor As String
     Private Shared instancia As frmListado
     Public Shared Function Singleton() As frmListado
         If instancia Is Nothing Then
@@ -42,13 +42,19 @@ Public Class frmListado
             Case 0
                 Dim p As New ControladorPatologia
                 dgvListado.DataSource = p.listarPatologias
+                Me.filtrarPor = "nombre"
             Case 1
                 Dim s As New ControladorSintoma
                 dgvListado.DataSource = s.listarSintomas
+                Me.filtrarPor = "nombre"
             Case 2
                 Dim u As New ControladorUsuario
                 dgvListado.DataSource = u.ListarUsuarios()
-                ' picImagenPerfil.Image = 
+                Me.filtrarPor = "pNom"
+                btnEliminarElementos.Visible = False
+                btnModificarElemento.Visible = False
+                btnSeleccionMultiple.Visible = False
+
         End Select
 
     End Sub
@@ -64,6 +70,7 @@ Public Class frmListado
         Me.op = op
         dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
         btnRegistrar.Visible = True
+        btnEliminarElementos.Visible = False
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         instancia = Me
@@ -234,24 +241,26 @@ Public Class frmListado
 
     'End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles GunaTextBox2.TextChanged
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        'Dim DV As New DataView(dgvListado.DataSource)
+        'DV.RowFilter = String.Format("convert(" & Me.filtrarPor & ", 'System.String') Like '%{0}%' ",
+        '                     txtBuscar.Text)
+        'dgvListado.DataSource = DV
 
-        Dim dt As New DataTable
         Dim bs As New BindingSource
-
         bs.DataSource = dgvListado.DataSource
-        ' dt.DefaultView.RowFilter = String.Format("'{0}'", txtBuscar.Text)
-        ' bs.Filter = "Nombre like '%" & txtBuscar.Text & "%'"
+        dt.DefaultView.RowFilter = String.Format(" '{0}'", txtBuscar.Text)
+        bs.Filter = Me.filtrarPor & " like '%" & txtBuscar.Text & "%'"
         dgvListado.DataSource = bs
 
     End Sub
-    Private Sub txtBuscar_GotFocus(sender As Object, e As EventArgs) Handles GunaTextBox2.GotFocus
-        If GunaTextBox2.Text = Nothing Then
+    Private Sub txtBuscar_GotFocus(sender As Object, e As EventArgs) Handles txtBuscar.GotFocus
+        If txtBuscar.Text = Nothing Then
             lblBuscar.Visible = False
         End If
     End Sub
-    Private Sub txtBuscar_LostFocus(sender As Object, e As EventArgs) Handles GunaTextBox2.LostFocus
-        If GunaTextBox2.Text = Nothing Then
+    Private Sub txtBuscar_LostFocus(sender As Object, e As EventArgs) Handles txtBuscar.LostFocus
+        If txtBuscar.Text = Nothing Then
             lblBuscar.Visible = True
         End If
     End Sub

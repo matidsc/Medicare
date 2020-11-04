@@ -192,6 +192,12 @@
     <Compile Include="Extras\BsMsgbox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Extras\UCVerPerfil.Designer.vb">
+      <DependentUpon>UCVerPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extras\UCVerPerfil.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Gestor\frmBienvenidaGestor.Designer.vb">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
     </Compile>
@@ -371,12 +377,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Extras\frmVerPerfil.Designer.vb">
-      <DependentUpon>frmVerPerfil.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extras\frmVerPerfil.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UCAjustes.Designer.vb">
       <DependentUpon>UCAjustes.vb</DependentUpon>
     </Compile>
@@ -387,6 +387,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Extras\BsMsgbox.resx">
       <DependentUpon>BsMsgbox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extras\UCVerPerfil.resx">
+      <DependentUpon>UCVerPerfil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmBienvenidaGestor.resx">
       <DependentUpon>frmBienvenidaGestor.vb</DependentUpon>
@@ -465,9 +468,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmObtenerDiagnostico.resx">
       <DependentUpon>frmObtenerDiagnostico.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extras\frmVerPerfil.resx">
-      <DependentUpon>frmVerPerfil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmRegistroPaciente.resx">
       <DependentUpon>frmRegistroPaciente.vb</DependentUpon>
@@ -832,6 +832,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-male-user-52 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />

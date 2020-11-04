@@ -77,21 +77,13 @@ Public Class frmBienvenidaPaciente
 
         If cantNotificacion > 0 Then
             notificacion.Text = cantNotificacion
-            'Acá se pone el circulito con el número
+
         Else
-            'Acá se saca el circulito
+            notificacion.Visible = False
+            pnlNoti.Visible = False
         End If
 
         cantNotificacion = 0
-
-    End Sub
-
-
-    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
-
-    End Sub
-
-    Private Sub pnlCerrar_Paint(sender As Object, e As PaintEventArgs) Handles pnlCerrar.Paint
 
     End Sub
 
@@ -143,7 +135,6 @@ Public Class frmBienvenidaPaciente
 
     Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
 
-
         If contChat.DenegarChat Then
             pnlNoti.Visible = False
             lblNA.Visible = True
@@ -171,12 +162,14 @@ Public Class frmBienvenidaPaciente
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
-        Dim frm As New frmVerPerfil
-        frm.Show()
+        Me.SuspendLayout()
+        Dim perfil As New UCVerPerfil
+        Me.Controls.Add(perfil)
+        perfil.BringToFront()
+        Me.ResumeLayout()
     End Sub
 
-    Private Sub pnlReanudar_MouseClick(sender As Object, e As EventArgs) Handles btnReanudar.Click
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
 
     End Sub
-
 End Class

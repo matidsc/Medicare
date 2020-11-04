@@ -133,5 +133,7 @@ Public Class ControladorPatologia
     'Public Function VerificarExistencia(nombre As String) As Boolean
     '    Return ModeloPatologia.Singleton.VerificarExistencia(nombre)
     'End Function
-
+    Public Function traerUltimoDiagnostico(cedula As String)
+        Return ModeloPatologia.Singleton.traerUltimoDiagnostico(cedula)
+    End Function
 End Class

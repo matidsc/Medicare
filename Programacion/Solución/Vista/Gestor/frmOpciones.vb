@@ -6,22 +6,27 @@ Public Class frmOpciones
         Select Case op
 
             Case 0
-                lblTitulo.Text = "MENU PATOLOGÍAS"
+                lblTitulo1.Text = "Registrar patología"
+                lblTitulo2.Text = "Registrar patología mediante un archivo CSV"
                 lblTitulo3.Text = "Listado de patologías"
-                lblSubtitulo1.Text = "Registre patologías manualmente o desde un archivo CSV"
-                lblSubtitulo3.Text = "Acceda a todas las patologías registradas y a opciones de eliminar y modificar"
+                lblSubtitulo1.Text = "Registre patologías manualmente"
+                lblSubtitulo2.Text = "Seleccione un archivo CSV para registrar patologías"
+                lblSubtitulo3.Text = "Acceda a todos los patologías registradas y a opciones de eliminar y modificar"
 
             Case 1
-                lblTitulo.Text = "MENU SÍNTOMAS"
+                lblTitulo1.Text = "Registrar síntoma"
+                lblTitulo2.Text = "Registrar síntoma mediante un archivo CSV"
                 lblTitulo3.Text = "Listado de síntomas"
-                lblSubtitulo1.Text = "Registre síntomas manualmente o desde un archivo CSV"
+                lblSubtitulo1.Text = "Registre síntomas manualmente"
+                lblSubtitulo2.Text = "Seleccione un archivo CSV para registrar síntomas"
                 lblSubtitulo3.Text = "Acceda a todos los síntomas registrados y a opciones de eliminar y modificar"
 
             Case 2
-                lblTitulo.Text = "MENU USUARIOS"
                 lblTitulo1.Text = "Registrar médico"
+                lblTitulo2.Text = "Registrar médico mediante un archivo CSV"
                 lblTitulo3.Text = "Registrar gestor"
                 lblSubtitulo1.Text = "Registre médicos manualmente"
+                lblSubtitulo1.Text = "Seleccione un archivo CSV para registrar médicos"
                 lblSubtitulo3.Text = "Registre gestores manualmente"
 
         End Select
@@ -97,12 +102,21 @@ Public Class frmOpciones
             Case 2
                 listaColumnas.Add("Cédula")
                 listaColumnas.Add("Contraseña")
-                listaColumnas.Add("Primer Nombre")
+                listaColumnas.Add("PNom")
                 listaColumnas.Add("Segundo Nombre")
                 listaColumnas.Add("Primer Apellido")
                 listaColumnas.Add("Segundo Apellido")
                 listaColumnas.Add("E-mail")
                 listaColumnas.Add("Especialización")
+
+                'listaColumnas.Add("Cédula")
+                'listaColumnas.Add("Contraseña")
+                'listaColumnas.Add("Primer Nombre")
+                'listaColumnas.Add("Segundo Nombre")
+                'listaColumnas.Add("Primer Apellido")
+                'listaColumnas.Add("Segundo Apellido")
+                'listaColumnas.Add("E-mail")
+                'listaColumnas.Add("Especialización")
 
         End Select
 

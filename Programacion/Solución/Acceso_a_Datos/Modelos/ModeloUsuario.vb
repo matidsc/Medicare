@@ -157,7 +157,9 @@ Public Class ModeloUsuario
 
         Return False
     End Function
-
+    Public Function getTelefonosPaciente(cedula As String) As DataTable
+        Return ModeloConsultas.Singleton.ConsultaTabla("SELECT telefono FROM usuarioTel WHERE cedula =" & cedula)
+    End Function
     Public Function listarUsuarios() As DataTable
         Dim consulta = "SELECT cedula,pNom,sNom,pApe,sApe,correo FROM usuario where bajaLogica=0"
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
@@ -182,5 +184,7 @@ Public Class ModeloUsuario
                 Conexion.Singleton.abrirConexion()
         End Select
     End Sub
+    Public Function updateUsuario(cedula As String)
 
+    End Function
 End Class

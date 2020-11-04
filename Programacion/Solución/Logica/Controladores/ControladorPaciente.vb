@@ -54,9 +54,14 @@ Public Class ControladorPaciente
         Return ModeloPaciente.Singleton.VerificarEstado(ci)
 
     End Function
-    Public Function getDatosPaciente(cedula As String) As DataTable
+    Public Function getDatosPacientePerfil(cedula As String) As DataTable
 
-        Return ModeloPaciente.Singleton.GetDatosPaciente(cedula)
+        Return ModeloPaciente.Singleton.GetDatosPacientePerfil(cedula)
+
+    End Function
+    Public Function getDatosPacienteFicha(cedula As String) As DataTable
+
+        Return ModeloPaciente.Singleton.GetDatosPacienteFicha(cedula)
 
     End Function
     Public Function getPatologiasCronicas(ci As String) As DataTable

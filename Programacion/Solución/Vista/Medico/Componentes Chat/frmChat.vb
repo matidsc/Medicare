@@ -254,7 +254,7 @@ Public Class frmChat
             UcFicha1.Visible = True
             UcFicha1.BringToFront()
 
-            Dim dt As DataTable = contPac.getDatosPaciente(Datos_Temporales.pacienteSelecionado)
+            Dim dt As DataTable = contPac.getDatosPacienteFicha(Datos_Temporales.pacienteSelecionado)
 
             For Each datarow As DataRow In dt.Rows
                 UcFicha1.lblNom.Text += " " & datarow.Item(0) & " " & datarow.Item(2) & " " & datarow.Item(3)

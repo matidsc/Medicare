@@ -23,12 +23,13 @@ Partial Class UCVerPerfil
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation2 As Guna.UI.Animation.Animation = New Guna.UI.Animation.Animation()
+        Dim Animation3 As Guna.UI.Animation.Animation = New Guna.UI.Animation.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCVerPerfil))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.lblTel = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.lblNom = New System.Windows.Forms.Label()
@@ -57,6 +58,8 @@ Partial Class UCVerPerfil
         Me.txtPass = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlYo = New System.Windows.Forms.Panel()
+        Me.lblEspec = New System.Windows.Forms.Label()
+        Me.txtEspe = New Guna.UI.WinForms.GunaLineTextBox()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.lblSApe = New System.Windows.Forms.Label()
@@ -78,9 +81,7 @@ Partial Class UCVerPerfil
         Me.dgvTelefonos = New System.Windows.Forms.DataGridView()
         Me.Telefonos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
-        Me.lblEspec = New System.Windows.Forms.Label()
-        Me.txtEspe = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.pnlMedYo = New System.Windows.Forms.Panel()
         Me.pnlMain.SuspendLayout()
         CType(Me.GunaCirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +91,7 @@ Partial Class UCVerPerfil
         Me.pnlYo.SuspendLayout()
         Me.pnlContacto.SuspendLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlMedYo.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMain
@@ -112,6 +114,35 @@ Partial Class UCVerPerfil
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(424, 648)
         Me.pnlMain.TabIndex = 36
+        '
+        'btnRegistrar
+        '
+        Me.btnRegistrar.Animated = True
+        Me.btnRegistrar.AnimationHoverSpeed = 0.07!
+        Me.btnRegistrar.AnimationSpeed = 0.03!
+        Me.btnRegistrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegistrar.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnRegistrar.BorderColor = System.Drawing.Color.Black
+        Me.transicion.SetDecoration(Me.btnRegistrar, Guna.UI.Animation.DecorationType.None)
+        Me.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRegistrar.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrar.Image = Nothing
+        Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRegistrar.Location = New System.Drawing.Point(108, 579)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRegistrar.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRegistrar.OnHoverImage = Nothing
+        Me.btnRegistrar.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRegistrar.Radius = 10
+        Me.btnRegistrar.Size = New System.Drawing.Size(199, 42)
+        Me.btnRegistrar.TabIndex = 245
+        Me.btnRegistrar.Text = "Aplicar cambios"
+        Me.btnRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnRegistrar.Visible = False
         '
         'lblTel
         '
@@ -335,22 +366,22 @@ Partial Class UCVerPerfil
         '
         Me.transicion.AnimationType = Guna.UI.Animation.AnimationType.Leaf
         Me.transicion.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 1.0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0, 0, 0, 0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 0!
-        Me.transicion.DefaultAnimation = Animation2
+        Animation3.AnimateOnlyDifferences = True
+        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
+        Animation3.LeafCoeff = 1.0!
+        Animation3.MaxTime = 1.0!
+        Animation3.MinTime = 0!
+        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
+        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
+        Animation3.MosaicSize = 0
+        Animation3.Padding = New System.Windows.Forms.Padding(0)
+        Animation3.RotateCoeff = 0!
+        Animation3.RotateLimit = 0!
+        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
+        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
+        Animation3.TimeCoeff = 0!
+        Animation3.TransparencyCoeff = 0!
+        Me.transicion.DefaultAnimation = Animation3
         Me.transicion.Interval = 7
         Me.transicion.TimeStep = 0.05!
         '
@@ -486,8 +517,7 @@ Partial Class UCVerPerfil
         'pnlYo
         '
         Me.pnlYo.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.pnlYo.Controls.Add(Me.lblEspec)
-        Me.pnlYo.Controls.Add(Me.txtEspe)
+        Me.pnlYo.Controls.Add(Me.pnlMedYo)
         Me.pnlYo.Controls.Add(Me.IconButton2)
         Me.pnlYo.Controls.Add(Me.IconButton1)
         Me.pnlYo.Controls.Add(Me.lblSApe)
@@ -505,6 +535,34 @@ Partial Class UCVerPerfil
         Me.pnlYo.Name = "pnlYo"
         Me.pnlYo.Size = New System.Drawing.Size(424, 648)
         Me.pnlYo.TabIndex = 232
+        '
+        'lblEspec
+        '
+        Me.lblEspec.AutoSize = True
+        Me.transicion.SetDecoration(Me.lblEspec, Guna.UI.Animation.DecorationType.None)
+        Me.lblEspec.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEspec.ForeColor = System.Drawing.Color.Silver
+        Me.lblEspec.Location = New System.Drawing.Point(8, 14)
+        Me.lblEspec.Name = "lblEspec"
+        Me.lblEspec.Size = New System.Drawing.Size(110, 20)
+        Me.lblEspec.TabIndex = 246
+        Me.lblEspec.Text = "Especialización"
+        '
+        'txtEspe
+        '
+        Me.txtEspe.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtEspe.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.transicion.SetDecoration(Me.txtEspe, Guna.UI.Animation.DecorationType.None)
+        Me.txtEspe.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEspe.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEspe.ForeColor = System.Drawing.Color.White
+        Me.txtEspe.LineColor = System.Drawing.Color.Gainsboro
+        Me.txtEspe.LineSize = 1
+        Me.txtEspe.Location = New System.Drawing.Point(8, 45)
+        Me.txtEspe.Name = "txtEspe"
+        Me.txtEspe.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEspe.Size = New System.Drawing.Size(246, 32)
+        Me.txtEspe.TabIndex = 245
         '
         'IconButton2
         '
@@ -812,38 +870,38 @@ Partial Class UCVerPerfil
         'dgvTelefonos
         '
         Me.dgvTelefonos.AllowUserToAddRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Silver
-        Me.dgvTelefonos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Silver
+        Me.dgvTelefonos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvTelefonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvTelefonos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvTelefonos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dgvTelefonos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTelefonos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTelefonos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTelefonos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTelefonos.ColumnHeadersVisible = False
         Me.dgvTelefonos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Telefonos})
         Me.transicion.SetDecoration(Me.dgvTelefonos, Guna.UI.Animation.DecorationType.None)
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvTelefonos.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvTelefonos.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvTelefonos.Location = New System.Drawing.Point(43, 315)
         Me.dgvTelefonos.MultiSelect = False
         Me.dgvTelefonos.Name = "dgvTelefonos"
@@ -871,70 +929,23 @@ Partial Class UCVerPerfil
         Me.Label12.TabIndex = 31
         Me.Label12.Text = "Contacto"
         '
-        'btnRegistrar
+        'pnlMedYo
         '
-        Me.btnRegistrar.Animated = True
-        Me.btnRegistrar.AnimationHoverSpeed = 0.07!
-        Me.btnRegistrar.AnimationSpeed = 0.03!
-        Me.btnRegistrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistrar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnRegistrar.BorderColor = System.Drawing.Color.Black
-        Me.transicion.SetDecoration(Me.btnRegistrar, Guna.UI.Animation.DecorationType.None)
-        Me.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnRegistrar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrar.Image = Nothing
-        Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRegistrar.Location = New System.Drawing.Point(108, 579)
-        Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnRegistrar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnRegistrar.OnHoverImage = Nothing
-        Me.btnRegistrar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRegistrar.Radius = 10
-        Me.btnRegistrar.Size = New System.Drawing.Size(199, 42)
-        Me.btnRegistrar.TabIndex = 245
-        Me.btnRegistrar.Text = "Aplicar cambios"
-        Me.btnRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.btnRegistrar.Visible = False
-        '
-        'lblEspec
-        '
-        Me.lblEspec.AutoSize = True
-        Me.transicion.SetDecoration(Me.lblEspec, Guna.UI.Animation.DecorationType.None)
-        Me.lblEspec.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEspec.ForeColor = System.Drawing.Color.Silver
-        Me.lblEspec.Location = New System.Drawing.Point(39, 553)
-        Me.lblEspec.Name = "lblEspec"
-        Me.lblEspec.Size = New System.Drawing.Size(110, 20)
-        Me.lblEspec.TabIndex = 246
-        Me.lblEspec.Text = "Especialización"
-        '
-        'txtEspe
-        '
-        Me.txtEspe.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.txtEspe.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.transicion.SetDecoration(Me.txtEspe, Guna.UI.Animation.DecorationType.None)
-        Me.txtEspe.FocusedLineColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEspe.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEspe.ForeColor = System.Drawing.Color.White
-        Me.txtEspe.LineColor = System.Drawing.Color.Gainsboro
-        Me.txtEspe.LineSize = 1
-        Me.txtEspe.Location = New System.Drawing.Point(39, 584)
-        Me.txtEspe.Name = "txtEspe"
-        Me.txtEspe.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtEspe.Size = New System.Drawing.Size(246, 32)
-        Me.txtEspe.TabIndex = 245
+        Me.pnlMedYo.Controls.Add(Me.lblEspec)
+        Me.pnlMedYo.Controls.Add(Me.txtEspe)
+        Me.transicion.SetDecoration(Me.pnlMedYo, Guna.UI.Animation.DecorationType.None)
+        Me.pnlMedYo.Location = New System.Drawing.Point(34, 541)
+        Me.pnlMedYo.Name = "pnlMedYo"
+        Me.pnlMedYo.Size = New System.Drawing.Size(260, 88)
+        Me.pnlMedYo.TabIndex = 247
         '
         'UCVerPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.pnlYo)
+        Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.pnlCredenciales)
         Me.Controls.Add(Me.pnlContacto)
         Me.transicion.SetDecoration(Me, Guna.UI.Animation.DecorationType.None)
@@ -955,6 +966,8 @@ Partial Class UCVerPerfil
         Me.pnlContacto.ResumeLayout(False)
         Me.pnlContacto.PerformLayout()
         CType(Me.dgvTelefonos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlMedYo.ResumeLayout(False)
+        Me.pnlMedYo.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1012,4 +1025,5 @@ Partial Class UCVerPerfil
     Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
     Friend WithEvents lblEspec As Label
     Friend WithEvents txtEspe As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents pnlMedYo As Panel
 End Class

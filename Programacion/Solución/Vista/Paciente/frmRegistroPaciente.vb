@@ -80,7 +80,7 @@ Public Class frmRegistroPaciente
                                             End If
 
                                         Else
-                                                Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
+                                            Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
 
                                             If respuesta = vbYes Then
                                                 pac.ReingresarUsuario(txtCI.Text)
@@ -114,6 +114,8 @@ Public Class frmRegistroPaciente
                         End If
 
                     End If
+                Else
+                    MsgBox("Las contraseñas no coinciden")
                 End If
             Else
                 MsgBox("La cédula ingresada no es correcta")

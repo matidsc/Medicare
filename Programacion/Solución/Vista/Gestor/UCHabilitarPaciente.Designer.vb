@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UCHabilitarPaciente
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,13 @@ Partial Class UCHabilitarPaciente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.btnRechazar = New Guna.UI.WinForms.GunaButton()
         Me.btnAceptar = New Guna.UI.WinForms.GunaButton()
         Me.lblCedula = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnMasInfo = New FontAwesome.Sharp.IconPictureBox()
-        CType(Me.btnMasInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblNombre
@@ -114,25 +112,11 @@ Partial Class UCHabilitarPaciente
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Label1"
         '
-        'btnMasInfo
-        '
-        Me.btnMasInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnMasInfo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMasInfo.IconChar = FontAwesome.Sharp.IconChar.CaretRight
-        Me.btnMasInfo.IconColor = System.Drawing.Color.White
-        Me.btnMasInfo.Location = New System.Drawing.Point(283, 86)
-        Me.btnMasInfo.Name = "btnMasInfo"
-        Me.btnMasInfo.Rotation = 45.0R
-        Me.btnMasInfo.Size = New System.Drawing.Size(32, 32)
-        Me.btnMasInfo.TabIndex = 14
-        Me.btnMasInfo.TabStop = False
-        '
         'UCHabilitarPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.Controls.Add(Me.btnMasInfo)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.btnRechazar)
@@ -141,7 +125,6 @@ Partial Class UCHabilitarPaciente
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "UCHabilitarPaciente"
         Me.Size = New System.Drawing.Size(315, 118)
-        CType(Me.btnMasInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -152,5 +135,4 @@ Partial Class UCHabilitarPaciente
     Friend WithEvents btnAceptar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblCedula As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnMasInfo As FontAwesome.Sharp.IconPictureBox
 End Class

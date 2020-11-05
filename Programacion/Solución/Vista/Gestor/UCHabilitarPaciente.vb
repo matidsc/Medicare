@@ -24,12 +24,12 @@ Public Class UCHabilitarPaciente
     Private Sub hover(sender As Object, e As EventArgs) Handles lblCedula.MouseEnter, lblNombre.MouseEnter, Me.MouseEnter
 
         Me.BackColor = Color.FromArgb(21, 30, 43)
-        Me.btnMasInfo.Visible = True
+
     End Sub
     Private Sub leave(sender As Object, e As EventArgs) Handles lblCedula.MouseLeave, lblNombre.MouseLeave, Me.MouseLeave
 
         Me.BackColor = Color.FromArgb(18, 25, 36)
-        Me.btnMasInfo.Visible = False
+
     End Sub
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 

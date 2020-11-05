@@ -184,7 +184,49 @@ Public Class ModeloUsuario
                 Conexion.Singleton.abrirConexion()
         End Select
     End Sub
-    Public Function updateUsuario(cedula As String)
+    Public Function getDatosUsuario(cedula As String)
+        Dim consulta = "SELECT contrasena,pNom,sNom,pApe,sApe,correo,CONVERT(fotoPerfil USING utf8) FROM usuario WHERE cedula=" & cedula
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+    Public Function updateUsuario(cedula As String, pNom As String, sNom As String, pApe As String, sApe As String, correo As String, foto As String) As Boolean
+        Dim consulta = "UPDATE usuario SET pNom = '" & pNom & "', sNom= '" & sNom & "',pApe= '" & pApe & "',sApe= '" & sApe & "',correo= '" & correo & "',fotoPerfil='" & foto & "' WHERE cedula = '" & cedula & "'"
+        Return ModeloConsultas.Singleton.ConsultaDelete(consulta)
+    End Function
+    Public Function updateTelefonos(cedula As String, alitel As ArrayList)
+
+        Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
+        Dim parametros As New List(Of OdbcParameter)
+        Dim contador As Int16 = 0
+        Dim consulta2 = "DELETE FROM usuarioTel WHERE cedula=" & cedula
+        ModeloConsultas.Singleton.InsertarSinParametros(consulta2)
+
+        For i As Int16 = 0 To alitel.Count - 1
+            parametros.Clear()
+            parametros.Add(New OdbcParameter("cedula", cedula))
+            parametros.Add(New OdbcParameter("telefono", alitel.Item(i)))
+
+            ModeloConsultas.Singleton.InsertParametros(consulta, parametros)
+            contador += 1
+        Next
+
+        If contador = alitel.Count Then
+            alitel.Clear()
+            Return True
+
+        End If
+
+        Return False
+    End Function
+
+    Public Function GetContraseña(cedula As String) As String
+        Return CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT contrasena FROM usuario WHERE cedula = " & cedula), String)
+    End Function
+
+    Public Function UpdateContraseña(cedula As String, contrasena As String)
+
+        Dim consulta As String = "UPDATE usuario SET contrasena = '" & contrasena & "' WHERE cedula = " & cedula
+
+        Return CType(ModeloConsultas.Singleton.ConsultaDelete(consulta), Boolean)
 
     End Function
 End Class

@@ -306,7 +306,7 @@ Clase encargada de generar la conexión con la base de datos.
  </summary>
  <returns>DataTable cargado con los valores obtenidos.</returns>
 </member>
-<member name="M:Acceso_a_Datos.ModeloPaciente.GetDatosPaciente(System.String)">
+<member name="M:Acceso_a_Datos.ModeloPaciente.GetDatosPacientePerfil(System.String)">
  <summary>
  Función encargada de obtener los datos del paciente.
  </summary>

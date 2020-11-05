@@ -54,7 +54,14 @@ Public Class frmListado
                 btnEliminarElementos.Visible = False
                 btnModificarElemento.Visible = False
                 btnSeleccionMultiple.Visible = False
-
+            Case 3
+                dgvListado.DataSource = ControladorPaciente.Singleton.getHistorialConsultas(Datos_Temporales.userLog)
+                dgvListado.Columns(0).Visible = False
+                btnEliminarElementos.Visible = False
+                btnModificarElemento.Visible = False
+                btnSeleccionMultiple.Visible = False
+                btnRegistrar.Visible = False
+                Me.filtrarPor = "nombre"
         End Select
 
     End Sub
@@ -395,21 +402,36 @@ Public Class frmListado
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmOpciones)
-        Me.Dispose()
+        If Datos_Temporales.enumRol.Gestor Then
+            Principal.Singleton.CambiarTamaño(frmOpciones)
+            Me.Dispose()
+        ElseIf Datos_Temporales.enumRol.Medico Then
+            Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)
+            Me.Dispose()
+        Else
+            Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+            Me.Dispose()
+        End If
+
     End Sub
 
     Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
 
     End Sub
 
-    Private Sub GunaButton4_Click(sender As Object, e As EventArgs) Handles GunaButton4.Click
-        If GunaElipsePanel1.Height > 41 Then
+    Private Sub GunaButton1_Click(sender As Object, e As EventArgs)
 
-        End If
     End Sub
 
-    Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
-
+    Private Sub dgvListado_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListado.CellMouseDoubleClick
+        MsgBox(dgvListado.CurrentRow.Cells(0).Value)
+        Dim frm As New frmObtenerDiagnostico(ControladorPatologia.Singleton.traerDiagnosticoPorId(dgvListado.CurrentRow.Cells(1).Value, Datos_Temporales.userLog))
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
     End Sub
 End Class

@@ -9,6 +9,14 @@ Public Class ControladorPaciente
     Property _sexo As String
     Property _fecNac As String
 
+    Private Shared instancia As ControladorPaciente
+
+    Public Shared Function Singleton() As ControladorPaciente
+        If instancia Is Nothing Then
+            instancia = New ControladorPaciente
+        End If
+        Return instancia
+    End Function
     Public Sub New()
 
     End Sub
@@ -71,5 +79,11 @@ Public Class ControladorPaciente
     Public Function getHistorialConsultas(ci As String) As DataTable
 
         Return ModeloPaciente.Singleton.GetHistorialConsultas(ci)
+    End Function
+    Public Function updatePaciente(cedula As String)
+        Return ModeloPaciente.Singleton.updatePaciente(_ci, _sexo, _fecNac)
+    End Function
+    Public Function updatePatologiasPaciente(cedula As String, patologias As ArrayList) As Boolean
+        Return ModeloPaciente.Singleton.updatePatologiasPaciente(cedula, patologias)
     End Function
 End Class

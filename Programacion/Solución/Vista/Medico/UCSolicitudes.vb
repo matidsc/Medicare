@@ -24,7 +24,7 @@ Public Class UCSolicitudes
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarChat.Click
 
-        Dim instancia As frmChat = Me.ParentForm
+        Dim instancia As frmBienvenidaMedico = Me.ParentForm
         If ControladorChat.Singleton.verificarCedula(idChat) Then
 
             Dim respuesta As Integer
@@ -57,7 +57,7 @@ Public Class UCSolicitudes
     Private Sub btnDiagnostico_Click(sender As Object, e As EventArgs) Handles btnDiagnostico.Click
 
         Dim instancia As frmBienvenidaMedico = Me.ParentForm
-        Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Me.cedula), 0)
+        Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Me.cedula), 0, cedula)
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(instancia.pnlInstancia, frm)
         Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)

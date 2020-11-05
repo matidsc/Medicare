@@ -222,7 +222,7 @@ Public Class Principal
         'Next
 
         For Each var As DataGridViewRow In dgv.Rows
-            If var.Cells(0).Value <> "" Then
+            If var.Cells(0).Value.ToString <> "" Then
                 If Verificacion.Singleton.Verificar_Int(var.Cells(0).Value.ToString) = True Then
                     telefonos.Add(CType(var.Cells(0).Value, Integer))
                 Else

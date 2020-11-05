@@ -133,6 +133,12 @@ Clase encargada de los datos de los síntomas.
 Clase encargada de los datos de las patologías.
 </summary>
 </member>
+<member name="M:Logica.ControladorPatologia.Singleton">
+ <summary>
+ Función encargada de devolver una instancia singleton de la clase.
+ </summary>
+ <returns>La instancia creada de la clase.</returns>
+</member>
 <member name="T:Logica.Encriptar">
  <summary>
  Clase encargada de realizar las encriptaciones.

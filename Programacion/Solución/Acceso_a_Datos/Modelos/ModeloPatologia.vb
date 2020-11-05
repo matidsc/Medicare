@@ -276,14 +276,18 @@ Public Class ModeloPatologia
     ''' <returns>True si el insert fue realizado.</returns>
     Public Function GuardarDiagnostico(usuario As String, diagnosticos As DataTable) As Boolean
 
-        Dim id As Integer = CType(ModeloConsultas.Singleton.ConsultaCampo("SELECT MAX(idDiagnostico) FROM paciente_obtiene_diagnostico WHERE cedulaPaciente = " & usuario), Integer)
+        Dim id As Object = ModeloConsultas.Singleton.ConsultaCampo("SELECT MAX(idDiagnostico) FROM paciente_obtiene_diagnostico WHERE cedulaPaciente = " & usuario)
+
+        If TypeOf id Is DBNull Then
+            id = 0
+        End If
         Dim consulta As String
 
         Try
             For Each nom As DataRow In diagnosticos.Rows
                 consulta = "
                     INSERT INTO paciente_obtiene_diagnostico (cedulaPaciente, idPatologia, fecha, idDiagnostico) 
-                    SELECT " & usuario & ", p.idPatologia, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "', " & id + 1 & "
+                    SELECT " & usuario & ", p.idPatologia, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "', " & Integer.Parse(id) + 1 & "
                     FROM patologia p WHERE p.nombre = '" & nom.Item(0) & "'"
 
                 ModeloConsultas.Singleton.InsertarSinParametros(consulta)
@@ -358,4 +362,17 @@ Public Class ModeloPatologia
                         WHERE idPatologia in(select idPatologia FROM paciente_obtiene_diagnostico WHERE idDiagnostico= (select max(idDiagnostico)FROM paciente_obtiene_diagnostico WHERE cedulaPaciente=  " & cedula & " ))"
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
+    Public Function getPatologiasPaciente(cedula As String) As DataTable
+        Dim consulta = "select p.nombre from patologia p where p.idPatologia not in 
+                        (select idPatologia from pacientePatologia where cedula = '" & cedula & "')"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+
+    Public Function traerDiagnosticoPorId(idDiagnostico As Byte, cedula As String) As DataTable
+        Dim consulta = " SELECT p.nombre,p.descripcion,p.recomendacion,p.prioridad
+                        FROM patologia p, paciente_obtiene_diagnostico pod
+                        WHERE p.idPatologia in(select pod.idPatologia FROM paciente_obtiene_diagnostico pod WHERE pod.idDiagnostico='" & idDiagnostico & "' AND pod.cedulaPaciente= '" & cedula & "')"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
+
 End Class

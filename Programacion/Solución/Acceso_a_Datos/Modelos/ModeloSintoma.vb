@@ -122,6 +122,11 @@ Public Class ModeloSintoma
     Public Function GuardarSintomas(usuario As String, nombreSintoma As ArrayList) As Boolean
 
 
+        Dim id As Object = ModeloConsultas.Singleton.ConsultaCampo("select max(id) from paciente_indica_sintoma where cedulaPaciente = " & usuario)
+
+        If TypeOf id Is DBNull Then
+            id = 0
+        End If
 
         Dim contador As Int16 = 0
         Dim consulta As String
@@ -131,7 +136,7 @@ Public Class ModeloSintoma
 
             consulta = "
                            INSERT INTO paciente_indica_sintoma (cedulaPaciente, idSintoma, fechaIngreso,id) 
-                           SELECT " & usuario & ", s.idSintoma, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "', (select max(id) +1 from paciente_indica_sintoma where cedulaPaciente = " & usuario & ") FROM sintoma s WHERE s.nombre = '" & nom & "'"
+                           SELECT " & usuario & ", s.idSintoma, '" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "', " & Integer.Parse(id) + 1 & " FROM sintoma s WHERE s.nombre = '" & nom & "'"
 
             If ModeloConsultas.Singleton.InsertarSinParametros(consulta) Then
                 contador += 1
@@ -175,5 +180,10 @@ Public Class ModeloSintoma
 
         Return False
     End Function
-
+    Public Function getSintomasIndicados(cedula As String) As DataTable
+        Dim consulta = "SELECT s.nombre, s.descripcion
+                        FROM sintoma s
+                        WHERE idSintoma IN(SELECT idSintoma FROM paciente_indica_sintoma WHERE id in (SELECT max(id) FROM paciente_indica_sintoma WHERE cedulaPaciente= " & cedula & "))"
+        Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
+    End Function
 End Class

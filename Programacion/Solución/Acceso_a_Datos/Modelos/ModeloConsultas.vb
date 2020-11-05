@@ -49,7 +49,7 @@ Public Class ModeloConsultas
         Conexion.Singleton.abrirConexion()
 
         Dim command As New OdbcCommand(Comando, Conexion.Singleton.Connection)
-        Dim result As String = command.ExecuteScalar()
+        Dim result As Object = command.ExecuteScalar()
 
         Conexion.Singleton.cerrarConexion()
 

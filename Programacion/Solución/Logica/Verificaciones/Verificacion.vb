@@ -127,7 +127,7 @@ Public Class Verificacion
     Public Function Verificar_Int(numero As String) As Boolean
 
         If numero <> "" Then
-            If IsNumeric(numero) = True Then
+            If IsNumeric(numero) Then
                 Return True
             Else
                 Return False

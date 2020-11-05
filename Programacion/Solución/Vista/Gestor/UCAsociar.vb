@@ -107,7 +107,6 @@
             MsgBox("Debe seleccionar síntomas")
         End If
 
-        DataGridView1.DataSource = frmListado.Singleton.dt
     End Sub
 
 End Class

@@ -5,6 +5,15 @@
 '''</summary>
 Public Class ControladorUsuario
 
+    Private Shared instancia As ControladorUsuario
+
+    Public Shared Function Singleton() As ControladorUsuario
+        If instancia Is Nothing Then
+            instancia = New ControladorUsuario
+        End If
+        Return instancia
+    End Function
+
     Public Sub New()
 
     End Sub
@@ -101,8 +110,40 @@ Public Class ControladorUsuario
     Public Function ListarUsuarios() As DataTable
         Return ModeloUsuario.Singleton.listarUsuarios
     End Function
-    Public Function updateUsuario(cedula As String)
+
+    Public Function getDatosUsuario(cedula As String)
+        Return ModeloUsuario.Singleton.getDatosUsuario(cedula)
+    End Function
+    Public Function updateUsuario() As Boolean
+        Try
+            Return ModeloUsuario.Singleton.updateUsuario(_ci, _primer_nombre, _segundo_nombre, _primer_apellido, _segundo_apellido, _email, _imagen)
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
 
     End Function
+    Public Function updateTelefonos(alitel As ArrayList)
+        Return ModeloUsuario.Singleton.updateTelefonos(_ci, alitel)
+    End Function
+
+    Public Function GetContraseña() As String
+
+        Try
+            Return ModeloUsuario.Singleton.GetContraseña(Datos_Temporales.userLog)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
+    End Function
+
+    Public Function UpdateContrasena(contrasena As String) As Boolean
+        Try
+            Return ModeloUsuario.Singleton.UpdateContraseña(Datos_Temporales.userLog, contrasena)
+        Catch ex As odbc.OdbcException
+            MsgBox(ex.ToString)
+            Return False
+        End Try
+    End Function
+
 End Class
 

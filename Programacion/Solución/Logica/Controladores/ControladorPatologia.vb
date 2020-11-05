@@ -14,7 +14,20 @@ Public Class ControladorPatologia
     Public Sub New()
 
     End Sub
+    Private Shared instancia As ControladorPatologia
 
+    ''' <summary>
+    ''' Función encargada de devolver una instancia singleton de la clase.
+    ''' </summary>
+    ''' <returns>La instancia creada de la clase.</returns>
+    Public Shared Function Singleton() As ControladorPatologia
+
+        If instancia Is Nothing Then
+            instancia = New ControladorPatologia
+        End If
+
+        Return instancia
+    End Function
     Public Sub New(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, sintomas As ArrayList)
 
         Me._nombre = nombre
@@ -135,5 +148,11 @@ Public Class ControladorPatologia
     'End Function
     Public Function traerUltimoDiagnostico(cedula As String)
         Return ModeloPatologia.Singleton.traerUltimoDiagnostico(cedula)
+    End Function
+    Public Function getPatologiasPaciente(cedula As String) As DataTable
+        Return ModeloPatologia.Singleton.getPatologiasPaciente(cedula)
+    End Function
+    Public Function traerDiagnosticoPorId(idDiagnostico As Byte, cedula As String) As DataTable
+        Return ModeloPatologia.Singleton.traerDiagnosticoPorId(idDiagnostico, Datos_Temporales.userLog)
     End Function
 End Class

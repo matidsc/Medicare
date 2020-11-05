@@ -27,9 +27,6 @@ Partial Class UCHabilitarGestor
         Me.btnAceptar = New Guna.UI.WinForms.GunaButton()
         Me.lblCedula = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnMasInfo = New FontAwesome.Sharp.IconPictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.btnMasInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblNombre
@@ -115,36 +112,11 @@ Partial Class UCHabilitarGestor
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Label1"
         '
-        'btnMasInfo
-        '
-        Me.btnMasInfo.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.btnMasInfo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMasInfo.IconChar = FontAwesome.Sharp.IconChar.CaretRight
-        Me.btnMasInfo.IconColor = System.Drawing.Color.White
-        Me.btnMasInfo.Location = New System.Drawing.Point(283, 86)
-        Me.btnMasInfo.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnMasInfo.Name = "btnMasInfo"
-        Me.btnMasInfo.Rotation = 45.0R
-        Me.btnMasInfo.Size = New System.Drawing.Size(32, 32)
-        Me.btnMasInfo.TabIndex = 19
-        Me.btnMasInfo.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(268, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 21
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'UCHabilitarGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnMasInfo)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.btnRechazar)
@@ -153,17 +125,13 @@ Partial Class UCHabilitarGestor
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "UCHabilitarGestor"
         Me.Size = New System.Drawing.Size(315, 118)
-        CType(Me.btnMasInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnMasInfo As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lblNombre As Label
     Friend WithEvents btnRechazar As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAceptar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblCedula As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
 End Class

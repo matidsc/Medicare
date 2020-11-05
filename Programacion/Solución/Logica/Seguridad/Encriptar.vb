@@ -32,7 +32,7 @@ Public Class Encriptar
             stringBuilder.Append(hash(i).ToString("X2"))
         Next
 
-        Return stringBuilder.ToString()
+        Return stringBuilder.ToString().ToLower
     End Function
 
 End Class

@@ -283,14 +283,46 @@ Public Class frmBienvenidaGestor
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        If pnlOps.Visible = True Then
+            pnlOps.Visible = False
+        Else
+            pnlOps.Visible = True
+        End If
+    End Sub
+
+
+    Private Sub btnVerPerfil_Click(sender As Object, e As EventArgs) Handles btnVerPerfil.Click
         Me.SuspendLayout()
-        Dim perfil As New UCVerPerfil
+        Dim perfil As New UCVerPerfil()
         Me.Controls.Add(perfil)
         perfil.BringToFront()
         Me.ResumeLayout()
     End Sub
 
-    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
-
+    Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPass.Click
+        Me.SuspendLayout()
+        Dim perfil As New UCVerPerfil()
+        perfil.pnlCredenciales.BringToFront()
+        perfil.pnlCredenciales.Visible = True
+        Me.Controls.Add(perfil)
+        perfil.BringToFront()
+        Me.ResumeLayout()
     End Sub
+
+    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
+        Principal.Singleton.CambiarTamaño(frmLogin)
+        Dim instancia As frmLogin = Me.ParentForm
+        If instancia.mcbRecordarUsuario.Checked Then
+            instancia.txtPass.Text = Nothing
+            instancia.lblContraseña.Visible = True
+            instancia.lblUsuario.Visible = False
+        Else
+            instancia.txtUsr.Text = Nothing
+            instancia.txtPass.Text = Nothing
+            instancia.lblContraseña.Visible = True
+            instancia.lblUsuario.Visible = True
+        End If
+        Me.Dispose()
+    End Sub
+
 End Class

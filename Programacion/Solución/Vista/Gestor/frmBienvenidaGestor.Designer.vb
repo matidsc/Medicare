@@ -26,6 +26,10 @@ Partial Class frmBienvenidaGestor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBienvenidaGestor))
         Me.tempListaPacientes = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.pnlOps = New System.Windows.Forms.Panel()
+        Me.GunaButton2 = New Guna.UI.WinForms.GunaButton()
+        Me.btnCambiarPass = New Guna.UI.WinForms.GunaButton()
+        Me.btnVerPerfil = New Guna.UI.WinForms.GunaButton()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.lblNA = New System.Windows.Forms.Label()
@@ -58,15 +62,12 @@ Partial Class frmBienvenidaGestor
         Me.btnGestores = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlNotificacion = New Guna.UI.WinForms.GunaElipsePanel()
         Me.lblNotificacion = New System.Windows.Forms.Label()
-        Me.btnRefrescarListadoPac = New System.Windows.Forms.Button()
-        Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.btnPacientes = New FontAwesome.Sharp.IconPictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.UcDatosGestor1 = New Vista.UCDatosGestor()
         Me.pnlContenedor.SuspendLayout()
+        Me.pnlOps.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -79,7 +80,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlNotificacion.SuspendLayout()
         CType(Me.btnPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tempListaPacientes
@@ -89,6 +89,7 @@ Partial Class frmBienvenidaGestor
         '
         'pnlContenedor
         '
+        Me.pnlContenedor.Controls.Add(Me.pnlOps)
         Me.pnlContenedor.Controls.Add(Me.Panel9)
         Me.pnlContenedor.Controls.Add(Me.pnlCerrar)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
@@ -97,13 +98,104 @@ Partial Class frmBienvenidaGestor
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 25
         '
+        'pnlOps
+        '
+        Me.pnlOps.Controls.Add(Me.GunaButton2)
+        Me.pnlOps.Controls.Add(Me.btnCambiarPass)
+        Me.pnlOps.Controls.Add(Me.btnVerPerfil)
+        Me.pnlOps.Location = New System.Drawing.Point(828, 80)
+        Me.pnlOps.Name = "pnlOps"
+        Me.pnlOps.Size = New System.Drawing.Size(179, 128)
+        Me.pnlOps.TabIndex = 30
+        Me.pnlOps.Visible = False
+        '
+        'GunaButton2
+        '
+        Me.GunaButton2.Animated = True
+        Me.GunaButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaButton2.AnimationSpeed = 0.03!
+        Me.GunaButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.GunaButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton2.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.GunaButton2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GunaButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaButton2.Image = Nothing
+        Me.GunaButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton2.Location = New System.Drawing.Point(0, 84)
+        Me.GunaButton2.Name = "GunaButton2"
+        Me.GunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.GunaButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton2.OnHoverImage = Nothing
+        Me.GunaButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton2.Size = New System.Drawing.Size(179, 42)
+        Me.GunaButton2.TabIndex = 201
+        Me.GunaButton2.Text = "Cerrar sesión"
+        Me.GunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnCambiarPass
+        '
+        Me.btnCambiarPass.Animated = True
+        Me.btnCambiarPass.AnimationHoverSpeed = 0.07!
+        Me.btnCambiarPass.AnimationSpeed = 0.03!
+        Me.btnCambiarPass.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnCambiarPass.BorderColor = System.Drawing.Color.Black
+        Me.btnCambiarPass.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCambiarPass.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnCambiarPass.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCambiarPass.FocusedColor = System.Drawing.Color.Empty
+        Me.btnCambiarPass.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCambiarPass.ForeColor = System.Drawing.Color.White
+        Me.btnCambiarPass.Image = Nothing
+        Me.btnCambiarPass.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnCambiarPass.Location = New System.Drawing.Point(0, 42)
+        Me.btnCambiarPass.Name = "btnCambiarPass"
+        Me.btnCambiarPass.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnCambiarPass.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnCambiarPass.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnCambiarPass.OnHoverImage = Nothing
+        Me.btnCambiarPass.OnPressedColor = System.Drawing.Color.Black
+        Me.btnCambiarPass.Size = New System.Drawing.Size(179, 42)
+        Me.btnCambiarPass.TabIndex = 200
+        Me.btnCambiarPass.Text = "Cambiar contraseña"
+        Me.btnCambiarPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnVerPerfil
+        '
+        Me.btnVerPerfil.Animated = True
+        Me.btnVerPerfil.AnimationHoverSpeed = 0.07!
+        Me.btnVerPerfil.AnimationSpeed = 0.03!
+        Me.btnVerPerfil.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnVerPerfil.BorderColor = System.Drawing.Color.Black
+        Me.btnVerPerfil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnVerPerfil.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnVerPerfil.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnVerPerfil.FocusedColor = System.Drawing.Color.Empty
+        Me.btnVerPerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerPerfil.ForeColor = System.Drawing.Color.White
+        Me.btnVerPerfil.Image = Nothing
+        Me.btnVerPerfil.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnVerPerfil.Location = New System.Drawing.Point(0, 0)
+        Me.btnVerPerfil.Name = "btnVerPerfil"
+        Me.btnVerPerfil.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnVerPerfil.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnVerPerfil.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnVerPerfil.OnHoverImage = Nothing
+        Me.btnVerPerfil.OnPressedColor = System.Drawing.Color.Black
+        Me.btnVerPerfil.Size = New System.Drawing.Size(179, 42)
+        Me.btnVerPerfil.TabIndex = 199
+        Me.btnVerPerfil.Text = "Ver perfil"
+        Me.btnVerPerfil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Panel9.Controls.Add(Me.scroll)
         Me.Panel9.Controls.Add(Me.lblNA)
         Me.Panel9.Controls.Add(Me.pnlFlow)
-        Me.Panel9.Controls.Add(Me.UcDatosGestor1)
         Me.Panel9.Controls.Add(Me.Label9)
         Me.Panel9.Controls.Add(Me.Panel10)
         Me.Panel9.Location = New System.Drawing.Point(0, 80)
@@ -488,11 +580,8 @@ Partial Class frmBienvenidaGestor
         Me.pnlCerrar.Controls.Add(Me.GunaElipsePanel2)
         Me.pnlCerrar.Controls.Add(Me.btnGestores)
         Me.pnlCerrar.Controls.Add(Me.pnlNotificacion)
-        Me.pnlCerrar.Controls.Add(Me.btnRefrescarListadoPac)
-        Me.pnlCerrar.Controls.Add(Me.GunaElipsePanel1)
         Me.pnlCerrar.Controls.Add(Me.btnPacientes)
         Me.pnlCerrar.Controls.Add(Me.PictureBox1)
-        Me.pnlCerrar.Controls.Add(Me.btnNoti)
         Me.pnlCerrar.Controls.Add(Me.IconButton1)
         Me.pnlCerrar.Location = New System.Drawing.Point(0, 0)
         Me.pnlCerrar.Margin = New System.Windows.Forms.Padding(0)
@@ -505,7 +594,7 @@ Partial Class frmBienvenidaGestor
         Me.GunaElipsePanel2.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel2.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.GunaElipsePanel2.Controls.Add(Me.Label11)
-        Me.GunaElipsePanel2.Location = New System.Drawing.Point(745, 27)
+        Me.GunaElipsePanel2.Location = New System.Drawing.Point(783, 27)
         Me.GunaElipsePanel2.Name = "GunaElipsePanel2"
         Me.GunaElipsePanel2.Size = New System.Drawing.Size(16, 16)
         Me.GunaElipsePanel2.TabIndex = 11
@@ -531,7 +620,7 @@ Partial Class frmBienvenidaGestor
         Me.btnGestores.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnGestores.IconChar = FontAwesome.Sharp.IconChar.UserShield
         Me.btnGestores.IconColor = System.Drawing.Color.White
-        Me.btnGestores.Location = New System.Drawing.Point(718, 27)
+        Me.btnGestores.Location = New System.Drawing.Point(756, 27)
         Me.btnGestores.Name = "btnGestores"
         Me.btnGestores.Size = New System.Drawing.Size(37, 32)
         Me.btnGestores.TabIndex = 26
@@ -542,7 +631,7 @@ Partial Class frmBienvenidaGestor
         Me.pnlNotificacion.BackColor = System.Drawing.Color.Transparent
         Me.pnlNotificacion.BaseColor = System.Drawing.Color.DarkSlateBlue
         Me.pnlNotificacion.Controls.Add(Me.lblNotificacion)
-        Me.pnlNotificacion.Location = New System.Drawing.Point(797, 27)
+        Me.pnlNotificacion.Location = New System.Drawing.Point(835, 27)
         Me.pnlNotificacion.Name = "pnlNotificacion"
         Me.pnlNotificacion.Size = New System.Drawing.Size(16, 16)
         Me.pnlNotificacion.TabIndex = 10
@@ -562,35 +651,13 @@ Partial Class frmBienvenidaGestor
         Me.lblNotificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblNotificacion.Visible = False
         '
-        'btnRefrescarListadoPac
-        '
-        Me.btnRefrescarListadoPac.FlatAppearance.BorderSize = 0
-        Me.btnRefrescarListadoPac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefrescarListadoPac.Image = Global.Vista.My.Resources.Resources.icons8_refresh_20px
-        Me.btnRefrescarListadoPac.Location = New System.Drawing.Point(973, 29)
-        Me.btnRefrescarListadoPac.Name = "btnRefrescarListadoPac"
-        Me.btnRefrescarListadoPac.Size = New System.Drawing.Size(28, 30)
-        Me.btnRefrescarListadoPac.TabIndex = 25
-        Me.btnRefrescarListadoPac.UseVisualStyleBackColor = True
-        '
-        'GunaElipsePanel1
-        '
-        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.GunaElipsePanel1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.GunaElipsePanel1.Location = New System.Drawing.Point(839, 27)
-        Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Radius = 5
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(15, 15)
-        Me.GunaElipsePanel1.TabIndex = 9
-        '
         'btnPacientes
         '
         Me.btnPacientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.btnPacientes.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPacientes.IconChar = FontAwesome.Sharp.IconChar.Users
         Me.btnPacientes.IconColor = System.Drawing.Color.White
-        Me.btnPacientes.Location = New System.Drawing.Point(770, 27)
+        Me.btnPacientes.Location = New System.Drawing.Point(808, 27)
         Me.btnPacientes.Name = "btnPacientes"
         Me.btnPacientes.Size = New System.Drawing.Size(37, 32)
         Me.btnPacientes.TabIndex = 11
@@ -605,19 +672,6 @@ Partial Class frmBienvenidaGestor
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
-        '
-        'btnNoti
-        '
-        Me.btnNoti.BackColor = System.Drawing.Color.Transparent
-        Me.btnNoti.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNoti.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNoti.IconChar = FontAwesome.Sharp.IconChar.Bell
-        Me.btnNoti.IconColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNoti.Location = New System.Drawing.Point(819, 27)
-        Me.btnNoti.Name = "btnNoti"
-        Me.btnNoti.Size = New System.Drawing.Size(32, 32)
-        Me.btnNoti.TabIndex = 4
-        Me.btnNoti.TabStop = False
         '
         'IconButton1
         '
@@ -648,14 +702,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 6
         '
-        'UcDatosGestor1
-        '
-        Me.UcDatosGestor1.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.UcDatosGestor1.Location = New System.Drawing.Point(12, 42)
-        Me.UcDatosGestor1.Name = "UcDatosGestor1"
-        Me.UcDatosGestor1.Size = New System.Drawing.Size(335, 83)
-        Me.UcDatosGestor1.TabIndex = 27
-        '
         'frmBienvenidaGestor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -669,6 +715,7 @@ Partial Class frmBienvenidaGestor
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
         Me.pnlContenedor.ResumeLayout(False)
+        Me.pnlOps.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.Panel10.ResumeLayout(False)
@@ -684,7 +731,6 @@ Partial Class frmBienvenidaGestor
         Me.pnlNotificacion.PerformLayout()
         CType(Me.btnPacientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -715,13 +761,10 @@ Partial Class frmBienvenidaGestor
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label5 As Label
-    Friend WithEvents GunaElipsePanel1 As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents btnPacientes As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btnNoti As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents pnlFlow As FlowLayoutPanel
-    Friend WithEvents btnRefrescarListadoPac As Button
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
     Friend WithEvents pnlNotificacion As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents lblNotificacion As Label
@@ -729,6 +772,9 @@ Partial Class frmBienvenidaGestor
     Friend WithEvents btnGestores As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents GunaElipsePanel2 As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents Label11 As Label
-    Public WithEvents UcDatosGestor1 As UCDatosGestor
+    Friend WithEvents pnlOps As Panel
+    Friend WithEvents GunaButton2 As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnCambiarPass As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnVerPerfil As Guna.UI.WinForms.GunaButton
 End Class
 

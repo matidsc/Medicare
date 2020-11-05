@@ -93,7 +93,6 @@ Public Class frmLogin
 
         Dim seg As New Encriptar
         Dim log As New ControladorUsuario
-        Dim msgbox1 As New BsMsgbox
 
         If txtUsr.Text <> "" And txtPass.Text <> "" Then
             If IsNumeric(txtUsr.Text) Then
@@ -275,5 +274,13 @@ Public Class frmLogin
 
     Private Sub frmLogin_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         lblApp.Select()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

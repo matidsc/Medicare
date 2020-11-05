@@ -56,7 +56,15 @@ Public Class ControladorMedico
             Return False
         End Try
     End Function
-    Public Function getInformacionMedico(cedula As String) As DataTable
+    Public Function getInformacionMedico(cedula As String) As String
         Return ModeloMedico.Singleton.getInformacionMedico(cedula)
+    End Function
+    Public Function updateMedico(cedula As String) As Boolean
+        Try
+            Return ModeloMedico.Singleton.updateMedico(cedula, _especializacion)
+        Catch ex As Exception
+
+        End Try
+
     End Function
 End Class

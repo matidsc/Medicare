@@ -81,5 +81,8 @@ Public Class ControladorSintoma
 
         Return False
     End Function
-
+    Public Function getSintomasIndicados(cedula As String)
+        MsgBox(ModeloSintoma.Singleton.getSintomasIndicados(cedula).Rows.Count)
+        Return ModeloSintoma.Singleton.getSintomasIndicados(cedula)
+    End Function
 End Class

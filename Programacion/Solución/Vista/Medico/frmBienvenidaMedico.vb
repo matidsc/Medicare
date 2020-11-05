@@ -178,6 +178,7 @@ Public Class frmBienvenidaMedico
             lblNotiMsg.Visible = False
             lblNotiMsg.Text = "0"
             lblNuevosMsg.Text = "No tienes mensajes nuevos"
+            lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
         End If
 
         cantNotificacion = 0
@@ -213,10 +214,62 @@ Public Class frmBienvenidaMedico
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        If pnlOps.Visible = True Then
+            pnlOps.Visible = False
+        Else
+            pnlOps.Visible = True
+        End If
+    End Sub
+
+    Private Sub btnVerPerfil_Click(sender As Object, e As EventArgs) Handles btnVerPerfil.Click
         Me.SuspendLayout()
-        Dim perfil As New UCVerPerfil
+        Dim perfil As New UCVerPerfil()
         Me.Controls.Add(perfil)
         perfil.BringToFront()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPass.Click
+        Me.SuspendLayout()
+        Dim perfil As New UCVerPerfil()
+        perfil.pnlCredenciales.BringToFront()
+        perfil.pnlCredenciales.Visible = True
+        Me.Controls.Add(perfil)
+        perfil.BringToFront()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
+        Principal.Singleton.CambiarTamaño(frmLogin)
+        Dim instancia As frmLogin = Me.ParentForm
+
+        If instancia.mcbRecordarUsuario.Checked Then
+            instancia.txtPass.Text = Nothing
+            instancia.lblContraseña.Visible = True
+            instancia.lblUsuario.Visible = False
+        Else
+            instancia.txtUsr.Text = Nothing
+            instancia.txtPass.Text = Nothing
+            instancia.lblContraseña.Visible = True
+            instancia.lblUsuario.Visible = True
+        End If
+
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnReanudar_Click(sender As Object, e As EventArgs) Handles btnReanudar.Click
+        Dim frm As New frmListado(0)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmListado)
+        frm.btnEliminarElementos.Visible = False
+        frm.btnModificarElemento.Visible = False
+        frm.btnRegistrar.Visible = False
+        frm.btnSeleccionMultiple.Visible = False
+        frm.Show()
+
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
         Me.ResumeLayout()
     End Sub
 End Class

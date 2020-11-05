@@ -22,7 +22,6 @@ Public Class ModeloGestor
 
     Public Function Registrar(cedula As String, contraseña As String, PrimerNombre As String, SegundoNombre As String, PrimerApellido As String, SegundoApellido As String, correo As String, imagen As String, telefonos As ArrayList) As Boolean
 
-
         If ModeloUsuario.Singleton.Registrar(cedula, contraseña, PrimerApellido, SegundoNombre, PrimerApellido, SegundoApellido, correo, imagen) Then
             If RegistrarGestor(cedula) Then
                 If ModeloUsuario.Singleton.RegistrarTelefonos(cedula, telefonos) Then
@@ -53,6 +52,9 @@ Public Class ModeloGestor
         End If
 
         Return False
+    End Function
+    Public Function ModificarGestor(cedula As String) As Boolean
+
     End Function
 
     ''' <summary>

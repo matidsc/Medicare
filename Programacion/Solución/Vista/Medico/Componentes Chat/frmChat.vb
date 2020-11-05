@@ -245,7 +245,7 @@ Public Class frmChat
 
         Else
             Datos_Temporales.idchat = Nothing
-            Principal.Singleton.CambiarTamaño(frmListadoChat)
+            Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)
             Me.Dispose()
         End If
     End Sub
@@ -349,7 +349,7 @@ Public Class frmChat
     End Sub
 
     Private Sub btnSintomasDiag_Click(sender As Object, e As EventArgs) Handles btnSintomasDiag.Click
-        Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Datos_Temporales.pacienteSelecionado), 1)
+        Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Datos_Temporales.pacienteSelecionado), 1, Datos_Temporales.pacienteSelecionado)
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
         Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)

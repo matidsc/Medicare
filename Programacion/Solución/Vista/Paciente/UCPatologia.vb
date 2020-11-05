@@ -4,10 +4,27 @@ Public Class UCPatologia
     Private dtDescripcion As DataTable
     Public Sub New(sintomas As DataTable)
 
-        ' This call is required by the designer.
         InitializeComponent()
+        Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
+        ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomas, scroll, True)
 
-        ' Add any initialization after the InitializeComponent() call.
+        lblTitulo.Visible = False
+
+        If sintomas.Rows.Count > 0 Then
+            For Each sintoma As DataRow In sintomas.Rows
+                MsgBox(sintoma.Item(0))
+            Next
+            dtDescripcion = sintomas
+            'MsgBox(sintomas.Rows(0).Item(0).ToString)
+            For Each sintoma As DataRow In sintomas.Rows
+                dgvSintomas.Rows.Add(sintoma.Item(0))
+            Next
+
+            dgvSintomas.Rows(0).Selected = True
+            setTextos(dgvSintomas.Rows(0).Cells(0).Value, 0)
+        End If
+        'MsgBox(sintomas.Rows.Count)
+
 
     End Sub
     Public Sub New(nombre As String, sintomas As DataTable)
@@ -42,7 +59,4 @@ Public Class UCPatologia
         setTextos(dgvSintomas.CurrentCell.Value, dgvSintomas.CurrentCell.RowIndex)
     End Sub
 
-    Private Sub UCPatologia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

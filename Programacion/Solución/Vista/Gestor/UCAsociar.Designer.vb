@@ -39,10 +39,8 @@ Partial Class UCAsociar
         Me.lblSintomasSeleccionados = New System.Windows.Forms.Label()
         Me.btnGuardar = New Guna.UI.WinForms.GunaButton()
         Me.lblPatologia = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.dgvTodosLosSintomas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -255,21 +253,11 @@ Partial Class UCAsociar
         Me.lblPatologia.TabIndex = 192
         Me.lblPatologia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(519, 54)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(240, 138)
-        Me.DataGridView1.TabIndex = 193
-        '
         'UCAsociar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblPatologia)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnVolver)
@@ -283,7 +271,6 @@ Partial Class UCAsociar
         Me.Size = New System.Drawing.Size(1070, 650)
         CType(Me.dgvTodosLosSintomas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvSintomasSeleccionados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -298,5 +285,4 @@ Partial Class UCAsociar
     Friend WithEvents lblPatologia As Label
     Friend WithEvents sintoma As DataGridViewTextBoxColumn
     Friend WithEvents sintomaSelec As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridView1 As DataGridView
 End Class

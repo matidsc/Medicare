@@ -11,7 +11,6 @@ Public Class UCHabilitarGestor
 
         lblNombre.Location = New Point((Me.Width - lblNombre.Width) \ 2, lblNombre.Location.Y)
         lblCedula.Location = New Point((Me.Width - lblCedula.Width) \ 2, lblCedula.Location.Y)
-        btnMasInfo.BringToFront()
 
     End Sub
     'Private Sub hover(sender As Object, e As EventArgs) Handles lblCedula.MouseEnter, lblNombre.MouseEnter, Me.MouseEnter, btnMasInfo.MouseEnter
@@ -58,7 +57,7 @@ Public Class UCHabilitarGestor
 
     End Sub
 
-    Private Sub btnMasInfo_Click(sender As Object, e As EventArgs) Handles btnMasInfo.Click, Button1.Click
+    Private Sub btnMasInfo_Click(sender As Object, e As EventArgs)
 
         frmBienvenidaGestor.mostrar(gestor.getInformacionGestor(Label1.Text))
 

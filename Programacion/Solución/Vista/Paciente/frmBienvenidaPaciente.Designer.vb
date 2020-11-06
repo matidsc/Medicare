@@ -33,16 +33,11 @@ Partial Class frmBienvenidaPaciente
         Me.btnVerPerfil = New Guna.UI.WinForms.GunaButton()
         Me.pnlNotis = New System.Windows.Forms.Panel()
         Me.lblNA = New System.Windows.Forms.Label()
-        Me.btnNo = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.btnSi = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
         Me.pnlNoti = New Guna.UI.WinForms.GunaElipsePanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.pnlListado = New System.Windows.Forms.Panel()
         Me.btnListado = New Guna.UI.WinForms.GunaButton()
@@ -73,18 +68,23 @@ Partial Class frmBienvenidaPaciente
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.timVerificarSiSolicitud = New System.Windows.Forms.Timer(Me.components)
+        Me.btnNo = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.btnSi = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnNoti = New FontAwesome.Sharp.IconPictureBox()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.pnlContenedor.SuspendLayout()
         Me.pnlOps.SuspendLayout()
         Me.pnlNotis.SuspendLayout()
         Me.pnlCerrar.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         Me.pnlListado.SuspendLayout()
         Me.pnlConsultaActual.SuspendLayout()
         Me.pnlIngresar.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.pnlReanudar.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'notificacion
@@ -235,76 +235,6 @@ Partial Class frmBienvenidaPaciente
         Me.lblNA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblNA.Visible = False
         '
-        'btnNo
-        '
-        Me.btnNo.Animated = True
-        Me.btnNo.AnimationHoverSpeed = 0.07!
-        Me.btnNo.AnimationSpeed = 0.03!
-        Me.btnNo.BackColor = System.Drawing.Color.Transparent
-        Me.btnNo.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnNo.BorderColor = System.Drawing.Color.Black
-        Me.btnNo.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btnNo.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btnNo.CheckedForeColor = System.Drawing.Color.White
-        Me.btnNo.CheckedImage = CType(resources.GetObject("btnNo.CheckedImage"), System.Drawing.Image)
-        Me.btnNo.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btnNo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNo.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnNo.FocusedColor = System.Drawing.Color.Empty
-        Me.btnNo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNo.ForeColor = System.Drawing.Color.White
-        Me.btnNo.Image = Nothing
-        Me.btnNo.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnNo.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnNo.Location = New System.Drawing.Point(184, 166)
-        Me.btnNo.Name = "btnNo"
-        Me.btnNo.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnNo.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnNo.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnNo.OnHoverImage = Nothing
-        Me.btnNo.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnNo.OnPressedColor = System.Drawing.Color.Black
-        Me.btnNo.Radius = 15
-        Me.btnNo.Size = New System.Drawing.Size(125, 32)
-        Me.btnNo.TabIndex = 11
-        Me.btnNo.Text = "No"
-        Me.btnNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnSi
-        '
-        Me.btnSi.Animated = True
-        Me.btnSi.AnimationHoverSpeed = 0.07!
-        Me.btnSi.AnimationSpeed = 0.03!
-        Me.btnSi.BackColor = System.Drawing.Color.Transparent
-        Me.btnSi.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnSi.BorderColor = System.Drawing.Color.Black
-        Me.btnSi.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btnSi.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btnSi.CheckedForeColor = System.Drawing.Color.White
-        Me.btnSi.CheckedImage = CType(resources.GetObject("btnSi.CheckedImage"), System.Drawing.Image)
-        Me.btnSi.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btnSi.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSi.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnSi.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSi.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSi.ForeColor = System.Drawing.Color.White
-        Me.btnSi.Image = Nothing
-        Me.btnSi.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSi.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnSi.Location = New System.Drawing.Point(39, 165)
-        Me.btnSi.Name = "btnSi"
-        Me.btnSi.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnSi.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnSi.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnSi.OnHoverImage = Nothing
-        Me.btnSi.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.btnSi.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSi.Radius = 15
-        Me.btnSi.Size = New System.Drawing.Size(125, 32)
-        Me.btnSi.TabIndex = 10
-        Me.btnSi.Text = "Sí"
-        Me.btnSi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -361,50 +291,6 @@ Partial Class frmBienvenidaPaciente
         Me.pnlNoti.Size = New System.Drawing.Size(10, 10)
         Me.pnlNoti.TabIndex = 9
         Me.pnlNoti.Visible = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.LOGO_MEDICARE_SIN_SUB_WHITE_V2_PNG
-        Me.PictureBox1.Location = New System.Drawing.Point(39, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(264, 56)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
-        '
-        'btnNoti
-        '
-        Me.btnNoti.BackColor = System.Drawing.Color.Transparent
-        Me.btnNoti.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNoti.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNoti.IconChar = FontAwesome.Sharp.IconChar.Bell
-        Me.btnNoti.IconColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNoti.Location = New System.Drawing.Point(828, 27)
-        Me.btnNoti.Name = "btnNoti"
-        Me.btnNoti.Size = New System.Drawing.Size(32, 32)
-        Me.btnNoti.TabIndex = 4
-        Me.btnNoti.TabStop = False
-        '
-        'IconButton1
-        '
-        Me.IconButton1.BackgroundImage = CType(resources.GetObject("IconButton1.BackgroundImage"), System.Drawing.Image)
-        Me.IconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.IconButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.IconButton1.FlatAppearance.BorderSize = 0
-        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.CaretDown
-        Me.IconButton1.IconColor = System.Drawing.Color.WhiteSmoke
-        Me.IconButton1.IconSize = 16
-        Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton1.Location = New System.Drawing.Point(874, 29)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Padding = New System.Windows.Forms.Padding(0, 10, 0, 10)
-        Me.IconButton1.Rotation = 0R
-        Me.IconButton1.Size = New System.Drawing.Size(86, 32)
-        Me.IconButton1.TabIndex = 3
-        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.IconButton1.UseVisualStyleBackColor = True
         '
         'Panel10
         '
@@ -790,6 +676,120 @@ Partial Class frmBienvenidaPaciente
         Me.timVerificarSiSolicitud.Enabled = True
         Me.timVerificarSiSolicitud.Interval = 3000
         '
+        'btnNo
+        '
+        Me.btnNo.Animated = True
+        Me.btnNo.AnimationHoverSpeed = 0.07!
+        Me.btnNo.AnimationSpeed = 0.03!
+        Me.btnNo.BackColor = System.Drawing.Color.Transparent
+        Me.btnNo.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnNo.BorderColor = System.Drawing.Color.Black
+        Me.btnNo.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnNo.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnNo.CheckedForeColor = System.Drawing.Color.White
+        Me.btnNo.CheckedImage = CType(resources.GetObject("btnNo.CheckedImage"), System.Drawing.Image)
+        Me.btnNo.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnNo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNo.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnNo.FocusedColor = System.Drawing.Color.Empty
+        Me.btnNo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNo.ForeColor = System.Drawing.Color.White
+        Me.btnNo.Image = Nothing
+        Me.btnNo.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnNo.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnNo.Location = New System.Drawing.Point(184, 166)
+        Me.btnNo.Name = "btnNo"
+        Me.btnNo.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnNo.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnNo.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnNo.OnHoverImage = Nothing
+        Me.btnNo.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnNo.OnPressedColor = System.Drawing.Color.Black
+        Me.btnNo.Radius = 15
+        Me.btnNo.Size = New System.Drawing.Size(125, 32)
+        Me.btnNo.TabIndex = 11
+        Me.btnNo.Text = "No"
+        Me.btnNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnSi
+        '
+        Me.btnSi.Animated = True
+        Me.btnSi.AnimationHoverSpeed = 0.07!
+        Me.btnSi.AnimationSpeed = 0.03!
+        Me.btnSi.BackColor = System.Drawing.Color.Transparent
+        Me.btnSi.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnSi.BorderColor = System.Drawing.Color.Black
+        Me.btnSi.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnSi.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btnSi.CheckedForeColor = System.Drawing.Color.White
+        Me.btnSi.CheckedImage = CType(resources.GetObject("btnSi.CheckedImage"), System.Drawing.Image)
+        Me.btnSi.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btnSi.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSi.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnSi.FocusedColor = System.Drawing.Color.Empty
+        Me.btnSi.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSi.ForeColor = System.Drawing.Color.White
+        Me.btnSi.Image = Nothing
+        Me.btnSi.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnSi.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnSi.Location = New System.Drawing.Point(39, 165)
+        Me.btnSi.Name = "btnSi"
+        Me.btnSi.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnSi.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnSi.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnSi.OnHoverImage = Nothing
+        Me.btnSi.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.btnSi.OnPressedColor = System.Drawing.Color.Black
+        Me.btnSi.Radius = 15
+        Me.btnSi.Size = New System.Drawing.Size(125, 32)
+        Me.btnSi.TabIndex = 10
+        Me.btnSi.Text = "Sí"
+        Me.btnSi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Vista.My.Resources.Resources.LOGO_MEDICARE_SIN_SUB_WHITE_V2_PNG
+        Me.PictureBox1.Location = New System.Drawing.Point(39, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(264, 56)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
+        '
+        'btnNoti
+        '
+        Me.btnNoti.BackColor = System.Drawing.Color.Transparent
+        Me.btnNoti.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNoti.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNoti.IconChar = FontAwesome.Sharp.IconChar.Bell
+        Me.btnNoti.IconColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNoti.Location = New System.Drawing.Point(828, 27)
+        Me.btnNoti.Name = "btnNoti"
+        Me.btnNoti.Size = New System.Drawing.Size(32, 32)
+        Me.btnNoti.TabIndex = 4
+        Me.btnNoti.TabStop = False
+        '
+        'IconButton1
+        '
+        Me.IconButton1.BackgroundImage = CType(resources.GetObject("IconButton1.BackgroundImage"), System.Drawing.Image)
+        Me.IconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.IconButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.IconButton1.FlatAppearance.BorderSize = 0
+        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.CaretDown
+        Me.IconButton1.IconColor = System.Drawing.Color.WhiteSmoke
+        Me.IconButton1.IconSize = 16
+        Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.IconButton1.Location = New System.Drawing.Point(874, 29)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Padding = New System.Windows.Forms.Padding(0, 10, 0, 10)
+        Me.IconButton1.Rotation = 0R
+        Me.IconButton1.Size = New System.Drawing.Size(86, 32)
+        Me.IconButton1.TabIndex = 3
+        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.IconButton1.UseVisualStyleBackColor = True
+        '
         'frmBienvenidaPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -808,14 +808,14 @@ Partial Class frmBienvenidaPaciente
         Me.pnlOps.ResumeLayout(False)
         Me.pnlNotis.ResumeLayout(False)
         Me.pnlCerrar.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.pnlListado.ResumeLayout(False)
         Me.pnlConsultaActual.ResumeLayout(False)
         Me.pnlIngresar.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.pnlReanudar.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

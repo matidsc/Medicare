@@ -155,4 +155,7 @@ Public Class ControladorPatologia
     Public Function traerDiagnosticoPorId(idDiagnostico As Byte, cedula As String) As DataTable
         Return ModeloPatologia.Singleton.traerDiagnosticoPorId(idDiagnostico, Datos_Temporales.userLog)
     End Function
+    Public Function getTodasPatologias() As ArrayList
+        Return ModeloPatologia.Singleton.getTodasPatologias()
+    End Function
 End Class

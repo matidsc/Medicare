@@ -24,6 +24,18 @@ Public Class ControladorGestor
         Me._imagen = imagen
 
     End Sub
+    Public Sub New(ci As String, pNom As String, Snom As String, PApe As String, SApe As String, telefono As ArrayList, email As String, imagen As String)
+        MyBase.New(ci, pNom, Snom, PApe, SApe, telefono, email, imagen)
+        Me._ci = ci
+        Me._primer_nombre = pNom
+        Me._segundo_nombre = Snom
+        Me._primer_apellido = PApe
+        Me._segundo_apellido = SApe
+        Me._telefono = telefono
+        Me._email = email
+        Me._imagen = imagen
+
+    End Sub
     Public Function getInformacionGestor(cedula As String) As DataTable
         Return ModeloGestor.Singleton.getInformacionGestor(cedula)
     End Function

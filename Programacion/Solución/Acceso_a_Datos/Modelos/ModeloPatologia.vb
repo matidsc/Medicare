@@ -369,10 +369,13 @@ Public Class ModeloPatologia
     End Function
 
     Public Function traerDiagnosticoPorId(idDiagnostico As Byte, cedula As String) As DataTable
-        Dim consulta = " SELECT p.nombre,p.descripcion,p.recomendacion,p.prioridad
-                        FROM patologia p, paciente_obtiene_diagnostico pod
-                        WHERE p.idPatologia in(select pod.idPatologia FROM paciente_obtiene_diagnostico pod WHERE pod.idDiagnostico='" & idDiagnostico & "' AND pod.cedulaPaciente= '" & cedula & "')"
+        Dim consulta = " SELECT distinct p.nombre,p.descripcion,p.recomendacion,p.prioridad
+                         FROM patologia p, paciente_obtiene_diagnostico pod
+                        WHERE p.idPatologia in(select pod.idPatologia FROM paciente_obtiene_diagnostico pod, patologia p WHERE pod.idDiagnostico= " & idDiagnostico & " AND pod.cedulaPaciente= " & cedula & ")"
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
-
+    Public Function getTodasPatologias() As ArrayList
+        Dim consulta = "select nombre from patologia where bajaLogica = 0"
+        Return ModeloConsultas.Singleton.ConsultaArray(consulta)
+    End Function
 End Class

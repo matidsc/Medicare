@@ -89,6 +89,11 @@ Public Class ModeloMedico
         Dim consulta = "UPDATE medico SET especializacion= '" & especializacion & "' WHERE cedula=" & cedula
         Return ModeloConsultas.Singleton.ConsultaDelete(consulta)
     End Function
+    Public Function verificarPassMedico(cedula As String) As String
+
+        Dim consulta = "SELECT contrasena from usuario where cedula=" & cedula
+        Return ModeloConsultas.Singleton.ConsultaCampo(consulta)
+    End Function
 End Class
 
 

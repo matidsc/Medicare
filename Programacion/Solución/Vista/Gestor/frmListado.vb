@@ -54,6 +54,7 @@ Public Class frmListado
                 btnEliminarElementos.Visible = False
                 btnModificarElemento.Visible = False
                 btnSeleccionMultiple.Visible = False
+                btnRegistrar.Visible = False
             Case 3
                 dgvListado.DataSource = ControladorPaciente.Singleton.getHistorialConsultas(Datos_Temporales.userLog)
                 dgvListado.Columns(0).Visible = False
@@ -62,6 +63,8 @@ Public Class frmListado
                 btnSeleccionMultiple.Visible = False
                 btnRegistrar.Visible = False
                 Me.filtrarPor = "nombre"
+                txtBuscar.Visible = False
+                PictureBox1.Visible = False
         End Select
 
     End Sub
@@ -415,23 +418,19 @@ Public Class frmListado
 
     End Sub
 
-    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
-
-    End Sub
-
-    Private Sub GunaButton1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub dgvListado_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListado.CellMouseDoubleClick
-        MsgBox(dgvListado.CurrentRow.Cells(0).Value)
-        Dim frm As New frmObtenerDiagnostico(ControladorPatologia.Singleton.traerDiagnosticoPorId(dgvListado.CurrentRow.Cells(1).Value, Datos_Temporales.userLog))
-        Me.SuspendLayout()
-        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-        Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
-        frm.Show()
-        pnlContenedor.Hide()
-        pnlInstancia.Show()
-        Me.ResumeLayout()
+
+        If op = 3 Then
+            MsgBox(dgvListado.CurrentRow.Cells(0).Value)
+            Dim frm As New frmObtenerDiagnostico(ControladorPatologia.Singleton.traerDiagnosticoPorId(dgvListado.CurrentRow.Cells(0).Value, Datos_Temporales.userLog))
+            Me.SuspendLayout()
+            Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+            Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+            frm.Show()
+            pnlContenedor.Hide()
+            pnlInstancia.Show()
+            Me.ResumeLayout()
+        End If
+
     End Sub
 End Class

@@ -2502,3 +2502,5 @@ C:\Users\rpere\OneDrive\Escritorio\Programacion clean\PruebasDesign\Programacion
 C:\Users\rpere\OneDrive\Escritorio\Programacion clean\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.exe
 C:\Users\rpere\OneDrive\Escritorio\Programacion clean\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.xml
 C:\Users\rpere\OneDrive\Escritorio\Programacion clean\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.pdb
+C:\Users\rpere\OneDrive\Escritorio\Programacion clean\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCObservacion.resources
+C:\Users\rpere\OneDrive\Escritorio\Programacion clean\PruebasDesign\Programacion\Solución\Vista\obj\Debug\Vista.UCAdvertencia.resources

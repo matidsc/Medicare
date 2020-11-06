@@ -369,4 +369,15 @@ Public Class frmBienvenidaPaciente
         pnlInstancia.Show()
         Me.ResumeLayout()
     End Sub
+
+    Private Sub btnConsultaActual_Click(sender As Object, e As EventArgs) Handles btnConsultaActual.Click
+        Dim frm As New frmObtenerDiagnostico(ControladorPatologia.Singleton.traerUltimoDiagnostico(Datos_Temporales.userLog), 1, Datos_Temporales.userLog)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
 End Class

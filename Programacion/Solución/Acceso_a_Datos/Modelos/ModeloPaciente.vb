@@ -179,4 +179,21 @@ Public Class ModeloPaciente
         Return False
 
     End Function
+
+    Public Function RegistrarPatologias(usuario As String, patologias As ArrayList) As Boolean
+
+        Try
+            For Each patologia In patologias
+                Dim consulta As String = "
+                                INSERT INTO pacientePatologia (cedula, idPatologia) 
+                    SELECT " & usuario & ", p.idPatologia FROM patologia p WHERE p.nombre = '" & patologia & "'"
+
+                ModeloConsultas.Singleton.InsertarSinParametros(consulta)
+            Next
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
 End Class

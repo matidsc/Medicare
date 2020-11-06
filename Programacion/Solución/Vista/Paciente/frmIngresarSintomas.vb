@@ -49,6 +49,15 @@ Public Class frmIngresarSintomas
                 dgvTodos.Sort(dgvTodos.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
             Case op.regsitrarPatologia
+                lblMisSintomas.Text = "Mis patologías crónicas"
+                lblIngreseSIntomas.Text = "Registrar patologías crónicas"
+                lblArrastreSintomas.Text = "Arrastre patologías hacia la derecha"
+                btnObtenerDiag.Enabled = True
+                btnObtenerDiag.Text = "Guardar Patologías"
+                For Each patologia In aliPatologias
+                    dgvTodos.Rows.Add(patologia)
+                Next
+                dgvTodos.Sort(dgvTodos.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
         End Select
     End Sub
@@ -267,6 +276,22 @@ Public Class frmIngresarSintomas
                 Else
                     MsgBox("No seleccionó ningún síntoma")
                 End If
+            Case op.regsitrarPatologia
+                If dgvSintomasSeleccionados.Rows.Count > 0 Then
+
+                    Dim instancia As frmRegistroPaciente = Me.ParentForm
+                    instancia.aliPatologias.Clear()
+
+                    For Each patologia As DataGridViewRow In dgvSintomasSeleccionados.Rows
+
+                        instancia.aliPatologias.Add(patologia.Cells(0).Value)
+
+                    Next
+
+                    MsgBox("Patologías guardadas")
+                Else
+                    MsgBox("Debe ingresar patologías")
+                End If
         End Select
 
     End Sub
@@ -277,8 +302,19 @@ Public Class frmIngresarSintomas
     End Sub
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
-        Me.Dispose()
+
+        Select Case opcion
+            Case op.modificarPaciente
+                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+                Me.Dispose()
+            Case op.regsitrarPatologia
+                Principal.Singleton.CambiarTamaño(frmRegistroPaciente)
+                Me.Dispose()
+            Case op.sintomas
+                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+                Me.Dispose()
+        End Select
+
     End Sub
 
     Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint

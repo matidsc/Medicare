@@ -6,6 +6,14 @@
 Public Class ControladorMedico
     Inherits ControladorUsuario
 
+    Private Shared instancia As ControladorMedico
+
+    Public Shared Function Singleton() As ControladorMedico
+        If instancia Is Nothing Then
+            instancia = New ControladorMedico
+        End If
+        Return instancia
+    End Function
     Property _especializacion As String
 
     Public Sub New()
@@ -26,6 +34,17 @@ Public Class ControladorMedico
         Me._especializacion = especializacion
         Me._email = email
         Me._imagen = imagen
+    End Sub
+    Public Sub New(ci As String, pNom As String, Snom As String, PApe As String, SApe As String, especializacion As String, email As String, imagen As String)
+        MyBase.New(ci, pNom, Snom, PApe, SApe, email, imagen)
+        Me._ci = ci
+        Me._primer_nombre = pNom
+        Me._segundo_nombre = Snom
+        Me._primer_apellido = PApe
+        Me._segundo_apellido = SApe
+        Me._email = email
+        Me._imagen = imagen
+        Me._especializacion = especializacion
     End Sub
     'Public Sub New(ci As String, contraseña As String, pNom As String, Snom As String, PApe As String, SApe As String)
 
@@ -66,5 +85,9 @@ Public Class ControladorMedico
 
         End Try
 
+    End Function
+    Public Function verificarPassMedico() As String
+
+        Return ModeloMedico.Singleton.verificarPassMedico(Datos_Temporales.userLog)
     End Function
 End Class

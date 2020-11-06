@@ -2,6 +2,7 @@
 Public Class frmRegistroPaciente
 
     Dim aliTel As New ArrayList
+    Public aliPatologias As New ArrayList
     Dim check As New Verificacion
     Dim seg As New Encriptar
     Dim pass As String
@@ -10,6 +11,7 @@ Public Class frmRegistroPaciente
 
     Public Sub New()
         InitializeComponent()
+        Configuracion.Singleton.SetConnection()
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
@@ -55,17 +57,25 @@ Public Class frmRegistroPaciente
                                             If pac.RegistarUsuario Then
                                                 If pac.RegistrarPaciente() Then
                                                     If pac.RegistrarTelefonos Then
-                                                        MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
-                                                        Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
-                                                        txtPApe,
-                                                                txtSApe, txtSNom,
-                                                               txtMail, dgvTelefonos, aliTel)
-                                                        txtFecNac.Clear()
-                                                        cbM.Checked = False
-                                                        cbF.Checked = False
-                                                        aliTel.Clear()
-                                                        path = Nothing
-                                                        GunaPictureBox1.Image = Nothing
+                                                        If pac.IngresarPatologias(aliPatologias) Then
+                                                            MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                                            Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
+                                                            txtPApe,
+                                                                    txtSApe, txtSNom,
+                                                                   txtMail, dgvTelefonos, aliTel)
+                                                            txtFecNac.Clear()
+                                                            cbM.Checked = False
+                                                            cbF.Checked = False
+                                                            aliTel.Clear()
+                                                            path = Nothing
+                                                            GunaPictureBox1.Image = Nothing
+                                                            aliPatologias.Clear()
+                                                        Else
+                                                            MsgBox("Error al registrar las patologías")
+                                                            aliPatologias.Clear()
+                                                            aliTel.Clear()
+                                                        End If
+
                                                     Else
                                                         MsgBox("Error al registrar los teléfonos")
                                                         aliTel.Clear()
@@ -197,6 +207,23 @@ Public Class frmRegistroPaciente
     End Sub
 
     Private Sub txtPApe_TextChanged(sender As Object, e As EventArgs) Handles txtPApe.TextChanged
+
+    End Sub
+
+    Private Sub btnPatCron_Click(sender As Object, e As EventArgs) Handles btnPatCron.Click
+        Dim frm As New frmIngresarSintomas(ControladorPatologia.Singleton.getTodasPatologias, 2)
+        Me.SuspendLayout()
+        Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
+        Principal.Singleton.CambiarTamaño(frmIngresarSintomas)
+        frm.Show()
+        pnlContenedor.Hide()
+        pnlInstancia.Show()
+        Me.ResumeLayout()
+    End Sub
+    Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+        Me.pnlContenedor.Show()
+    End Sub
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

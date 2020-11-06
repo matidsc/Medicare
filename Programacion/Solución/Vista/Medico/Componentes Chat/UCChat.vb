@@ -13,7 +13,7 @@ Public Class UCChat
         lblCed.Text = cedula
         SetDate(fecha)
 
-        If foto <> Nothing Then
+        If foto <> "" Then
             GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
         Else
             GunaCirclePictureBox1.Image = My.Resources.noPic
@@ -98,4 +98,7 @@ Public Class UCChat
 
     End Sub
 
+    Private Sub UCChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -325,4 +325,7 @@ Public Class frmBienvenidaGestor
         Me.Dispose()
     End Sub
 
+    Private Sub frmBienvenidaGestor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

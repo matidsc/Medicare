@@ -291,4 +291,21 @@ finalizado = 0 AND u.idChat NOT IN
 group by m.idChat order by max(fechaenvio) asc"
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
+    Public Function enviarObservacion(cedulapaciente As String, cedulaMedico As String, recomendacion As String, derivacion As String) As Boolean
+
+        Dim consulta As String = "INSERT INTO observacion (fecha, cedulaMedico, cedulaPaciente,recomendacion, derivacion) VALUES (?,?,?,?,?)"
+        Dim parametros As New List(Of OdbcParameter)
+
+        parametros.Add(New OdbcParameter("fecha", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")))
+        parametros.Add(New OdbcParameter("cedulaMedico", cedulaMedico))
+        parametros.Add(New OdbcParameter("cedulaPaciente", cedulapaciente))
+        parametros.Add(New OdbcParameter("recomendacion", recomendacion))
+        parametros.Add(New OdbcParameter("derivacion", derivacion))
+
+        If ModeloConsultas.Singleton.InsertParametros(consulta, parametros) Then
+            Return True
+        End If
+
+        Return False
+    End Function
 End Class

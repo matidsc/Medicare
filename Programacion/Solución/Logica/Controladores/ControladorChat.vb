@@ -223,5 +223,10 @@ Public Class ControladorChat
     Public Function orden() As DataTable
         Return ModeloChat.Singleton.ordern(Datos_Temporales.userLog)
     End Function
+    Public Function enviarObservacion(observacion As String, derivacion As String) As Boolean
+        Return ModeloChat.Singleton.enviarObservacion(Datos_Temporales.pacienteSelecionado, Datos_Temporales.userLog, observacion, derivacion)
+    End Function
+    'Public Function getFotoMedico(cedula As String) As 
 
+    'End Function
 End Class

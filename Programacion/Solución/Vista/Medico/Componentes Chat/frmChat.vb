@@ -42,8 +42,15 @@ Public Class frmChat
 
             Chat.Location = New Point(Chat.Location.X - i, Chat.Location.Y)
             Chat.Width += i
-            Chat.Height += 50
-            Chat.Location = New Point(Chat.Location.X, Chat.Location.Y - 50)
+            pnlUsuario.BringToFront()
+
+            'If foto <> "" Then
+            '    GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
+            'Else
+            '    GunaCirclePictureBox1.Image = My.Resources.nopic
+            'End If
+            ' pbPerfil.Image =
+            'Chat.Location = New Point(Chat.Location.X, Chat.Location.Y - 50)
 
             Me.ResumeLayout()
             btnFinalizar.Visible = False
@@ -210,6 +217,7 @@ Public Class frmChat
         txtMsg.Focus()
     End Sub
     Private Sub btnEnd_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
+
         If Finalizar() Then
 
             Dim correoPaciente = contChat.getCorreo()
@@ -218,6 +226,8 @@ Public Class frmChat
             If correoPaciente <> Nothing And mensajeEnviar <> Nothing Then
                 If contChat.enviarCorreo(correoPaciente, mensajeEnviar) Then
                     MsgBox("Se ha enviado el historial al paciente")
+
+                    enviarObservacion()
                     Datos_Temporales.idchat = Nothing
                     Chat.Controls.Clear()
                 Else
@@ -227,7 +237,16 @@ Public Class frmChat
                 MsgBox("Error al generar el mensaje")
             End If
 
+
         End If
+    End Sub
+    Public Sub enviarObservacion()
+
+        Dim ucObs As New UCObservacion(lblUsuario.Text)
+        Me.Controls.Add(ucObs)
+        ucObs.Location = New Point((Me.Width - ucObs.Width) \ 2, (Me.Height - ucObs.Height) \ 2)
+        ucObs.Show()
+        ucObs.BringToFront()
     End Sub
     Private Sub txtMsg_TextChanged(sender As Object, e As EventArgs) Handles txtMsg.TextChanged
         If Not (txtMsg.Text = Nothing) Then

@@ -252,6 +252,12 @@
     <Compile Include="Medico\Componentes Chat\UCSintomas.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Medico\UCAdvertencia.Designer.vb">
+      <DependentUpon>UCAdvertencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\UCAdvertencia.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Medico\UCSolicitudes.Designer.vb">
       <DependentUpon>UCSolicitudes.vb</DependentUpon>
     </Compile>
@@ -405,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\Componentes Chat\UCSintomas.resx">
       <DependentUpon>UCSintomas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\UCAdvertencia.resx">
+      <DependentUpon>UCAdvertencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\UCSolicitudes.resx">
       <DependentUpon>UCSolicitudes.vb</DependentUpon>

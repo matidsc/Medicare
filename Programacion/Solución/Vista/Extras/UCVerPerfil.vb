@@ -19,14 +19,11 @@ Public Class UCVerPerfil
                 Dim alitel As New ArrayList
                 If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then 'txtPass.Text <> "" And txtRepPass.Text <> "" And
 
-                    If Principal.Singleton.VerificarContraseña(Encriptar.Singleton, txtPass.Text, txtRepPass.Text) Then
-                        Dim pass = Encriptar.Singleton.HASH256(txtPass.Text)
-                        If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
+                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
                             If Principal.Singleton.VerificarEmail(Verificacion.Singleton, txtMail.Text) Then
 
                                 If Principal.Singleton.VerificarTelefonos(dgvTelefonos, alitel) Then
-                                    Dim pac As New ControladorPaciente(Datos_Temporales.userLog,
-                                                           pass,
+                                Dim pac As New ControladorPaciente(Datos_Temporales.userLog,
                                                            txtPNom.Text.ToUpper,
                                                            txtSNom.Text.ToUpper,
                                                            txtPApe.Text.ToUpper,
@@ -38,7 +35,7 @@ Public Class UCVerPerfil
                                                            Principal.Singleton.Base64(path)
                                                            )
 
-                                    If pac.updateUsuario() Then
+                                If pac.updateUsuario() Then
                                         If pac.updatePaciente(Datos_Temporales.userLog) Then
 
 
@@ -69,9 +66,6 @@ Public Class UCVerPerfil
                             End If
                         End If
 
-                    Else
-                        MsgBox("Las contraseñas no coinciden")
-                    End If
                 Else
                     MsgBox("Debe rellenar los campos")
                 End If
@@ -82,13 +76,10 @@ Public Class UCVerPerfil
                 Dim alitel As New ArrayList
                 If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then 'txtPass.Text <> "" And txtRepPass.Text <> "" And
 
-                    If Principal.Singleton.VerificarContraseña(Encriptar.Singleton, txtPass.Text, txtRepPass.Text) Then
-                        Dim pass = Encriptar.Singleton.HASH256(txtPass.Text)
-                        If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
+                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
                             If Principal.Singleton.VerificarEmail(Verificacion.Singleton, txtMail.Text) Then
                                 If Principal.Singleton.VerificarTelefonos(dgvTelefonos, alitel) Then
-                                    Dim ges As New ControladorGestor(Datos_Temporales.userLog,
-                                                           pass,
+                                Dim ges As New ControladorGestor(Datos_Temporales.userLog,
                                                            txtPNom.Text.ToUpper,
                                                            txtSNom.Text.ToUpper,
                                                            txtPApe.Text.ToUpper,
@@ -98,7 +89,7 @@ Public Class UCVerPerfil
                                                            Principal.Singleton.Base64(path)
                                                            )
 
-                                    If ges.updateUsuario() Then
+                                If ges.updateUsuario() Then
 
                                         If ges.updateTelefonos(alitel) Then
 
@@ -123,9 +114,6 @@ Public Class UCVerPerfil
                             End If
                         End If
 
-                    Else
-                        MsgBox("Las contraseñas no coinciden")
-                    End If
                 Else
                     MsgBox("Debe rellenar los campos")
                 End If
@@ -303,7 +291,7 @@ Public Class UCVerPerfil
         cambiados = True
     End Sub
 
-    Private Sub txtPNom_TextChanged(sender As Object, e As EventArgs) Handles txtSNom.TextChanged, txtSApe.TextChanged, txtPNom.TextChanged, txtPApe.TextChanged, txtEspe.TextChanged, txtRepPass.TextChanged, txtPass.TextChanged, txtMail.TextChanged, txtEspe.TextChanged
+    Private Sub txtPNom_TextChanged(sender As Object, e As EventArgs) Handles txtSNom.TextChanged, txtSApe.TextChanged, txtPNom.TextChanged, txtPApe.TextChanged, txtEspe.TextChanged, txtMail.TextChanged, txtEspe.TextChanged
 
         If cambiados Then
             If _pNom <> txtPNom.Text Or _sNom <> txtSNom.Text Or _pApe <> txtPApe.Text Or _sApe <> txtSApe.Text Or _email <> txtMail.Text Or _especializacion <> txtEspe.Text Then

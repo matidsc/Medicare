@@ -36,7 +36,7 @@ Public Class UCSolicitudes
                 ControladorChat.Singleton.entrarChat(Datos_Temporales.userLog, idChat)
                 Datos_Temporales.idchat = idChat
                 Datos_Temporales.pacienteSelecionado = cedula
-
+                Me.Dispose()
                 Dim frm As New frmChat()
                 Me.SuspendLayout()
                 Principal.Singleton.CargarVentana(instancia.pnlInstancia, frm)

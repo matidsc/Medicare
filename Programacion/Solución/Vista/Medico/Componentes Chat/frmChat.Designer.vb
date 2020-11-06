@@ -41,10 +41,10 @@ Partial Class frmChat
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
         Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
-        Me.UcFicha1 = New Vista.UCFicha()
         Me.ActualizarChats = New System.Windows.Forms.Timer(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlInstancia = New System.Windows.Forms.Panel()
+        Me.UcFicha1 = New Vista.UCFicha()
         Me.pnlWrapChat.SuspendLayout()
         Me.pnlUsuario.SuspendLayout()
         CType(Me.pbPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -330,16 +330,6 @@ Partial Class frmChat
         Me.pnlChats.TabIndex = 195
         Me.pnlChats.WrapContents = False
         '
-        'UcFicha1
-        '
-        Me.UcFicha1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.UcFicha1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.UcFicha1.Location = New System.Drawing.Point(158, 74)
-        Me.UcFicha1.Name = "UcFicha1"
-        Me.UcFicha1.Size = New System.Drawing.Size(747, 384)
-        Me.UcFicha1.TabIndex = 196
-        Me.UcFicha1.Visible = False
-        '
         'ActualizarChats
         '
         Me.ActualizarChats.Enabled = True
@@ -356,6 +346,16 @@ Partial Class frmChat
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 0
+        '
+        'UcFicha1
+        '
+        Me.UcFicha1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.UcFicha1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.UcFicha1.Location = New System.Drawing.Point(158, 74)
+        Me.UcFicha1.Name = "UcFicha1"
+        Me.UcFicha1.Size = New System.Drawing.Size(747, 384)
+        Me.UcFicha1.TabIndex = 196
+        Me.UcFicha1.Visible = False
         '
         'frmChat
         '

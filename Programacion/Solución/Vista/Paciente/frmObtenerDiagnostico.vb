@@ -18,10 +18,11 @@ Public Class frmObtenerDiagnostico
         InitializeComponent()
 
     End Sub
-    Public Sub New(patologias As DataTable)
+    Public Sub New(patologias As DataTable, boton As Short)
 
 
         InitializeComponent()
+        Me.boton = boton
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
@@ -31,10 +32,11 @@ Public Class frmObtenerDiagnostico
         btnSoliChat.Width += 40
         btnSoliChat.Location = New Point(btnSoliChat.Location.X - 40, btnSoliChat.Location.Y)
         btnSoliChat.Image = Nothing
+        btnSoliChat.TextAlign = HorizontalAlignment.Center
         lblTitulo.Text = "Mis diagnósticos de la fecha "
         lblTitulo.Location = New Point((Me.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y)
         setPatologias(patologias)
-
+        btnSoliChat.Visible = False
     End Sub
 
     Public Sub New(patologias As DataTable, boton As Short, cedula As String)
@@ -43,23 +45,19 @@ Public Class frmObtenerDiagnostico
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
-        If boton <> 1 Or boton <> 0 Then
+        listado = Opcion.medico
+        Me.cedPaciente = cedula
 
-        Else
-            listado = Opcion.medico
-            Me.cedPaciente = cedula
+        Me.boton = boton
+        setPatologias(patologias)
+        btnSoliChat.Text = "Ver síntomas "
+        btnSoliChat.Width += 40
+        btnSoliChat.Location = New Point(btnSoliChat.Location.X - 40, btnSoliChat.Location.Y)
+        btnSoliChat.Image = Nothing
+        btnSoliChat.TextAlign = HorizontalAlignment.Center
+        lblTitulo.Text = "Diagnosticos generados"
+        lblTitulo.Location = New Point((Me.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y)
 
-
-            Me.boton = boton
-            setPatologias(patologias)
-            btnSoliChat.Text = "Ver síntomas del paciente"
-            btnSoliChat.Width += 40
-            btnSoliChat.Location = New Point(btnSoliChat.Location.X - 40, btnSoliChat.Location.Y)
-            btnSoliChat.Image = Nothing
-            lblTitulo.Text = "Diagnosticos del paciente"
-            lblTitulo.Location = New Point((Me.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y)
-            listado = Opcion.medico
-        End If
     End Sub
 
     Public Sub New(patologias As DataTable, sintomas As ArrayList)
@@ -154,6 +152,7 @@ Public Class frmObtenerDiagnostico
                 Dim frm As frmIngresarSintomas = Me.ParentForm
                 frm.Dispose()
             End If
+            If
         Else
             If boton = 0 Then
                 Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)

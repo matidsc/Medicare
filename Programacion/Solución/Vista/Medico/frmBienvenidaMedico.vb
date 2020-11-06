@@ -9,6 +9,16 @@ Public Class frmBienvenidaMedico
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
+        MsgBox(ControladorMedico.Singleton.verificarPassMedico().ToLower)
+        MsgBox(Encriptar.Singleton.HASH256(Datos_Temporales.userLog))
+
+        If Encriptar.Singleton.HASH256(Datos_Temporales.userLog) = ControladorMedico.Singleton.verificarPassMedico().ToLower Then
+            Dim advertencia As New UCAdvertencia
+            Me.Controls.Add(advertencia)
+            advertencia.Location = New Point((Me.Width - advertencia.Width) \ 2, (Me.Height - advertencia.Height) \ 2)
+            advertencia.Show()
+            advertencia.BringToFront()
+        End If
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub

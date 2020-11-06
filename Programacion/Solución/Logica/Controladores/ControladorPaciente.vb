@@ -44,6 +44,28 @@ Public Class ControladorPaciente
         End If
 
     End Sub
+    Public Sub New(ci As String, pNom As String, Snom As String, PApe As String, SApe As String, telefono As ArrayList,
+                   email As String, sexo As String, fecNac As String, imagen As String)
+
+        MyBase.New(ci, pNom, Snom, PApe, SApe, telefono, email, imagen)
+
+        Me._ci = ci
+        Me._primer_nombre = pNom
+        Me._segundo_nombre = Snom
+        Me._primer_apellido = PApe
+        Me._segundo_apellido = SApe
+        Me._telefono = telefono
+        Me._email = email
+        Me._fecNac = fecNac
+        Me._sexo = sexo
+
+        If imagen <> Nothing Then
+            Me._imagen = imagen
+        Else
+            Me._imagen = ""
+        End If
+
+    End Sub
 
     Public Function RegistrarPaciente() As Boolean
 
@@ -85,5 +107,13 @@ Public Class ControladorPaciente
     End Function
     Public Function updatePatologiasPaciente(cedula As String, patologias As ArrayList) As Boolean
         Return ModeloPaciente.Singleton.updatePatologiasPaciente(cedula, patologias)
+    End Function
+
+    Public Function IngresarPatologias(patologias As ArrayList) As Boolean
+        Try
+            Return ModeloPaciente.Singleton.RegistrarPatologias(_ci, patologias)
+        Catch ex As Odbc.OdbcException
+            Return False
+        End Try
     End Function
 End Class

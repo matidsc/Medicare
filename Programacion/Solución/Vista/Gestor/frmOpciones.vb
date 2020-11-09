@@ -6,28 +6,28 @@ Public Class frmOpciones
         Select Case op
 
             Case 0
-                lblTitulo1.Text = "Registrar patología"
-                lblTitulo2.Text = "Registrar patología mediante un archivo CSV"
-                lblTitulo3.Text = "Listado de patologías"
-                lblSubtitulo1.Text = "Registre patologías manualmente"
-                lblSubtitulo2.Text = "Seleccione un archivo CSV para registrar patologías"
-                lblSubtitulo3.Text = "Acceda a todos los patologías registradas y a opciones de eliminar y modificar"
+                lblTitulo1.Text = Principal.Singleton.Idioma("lblTitulo1Pat", "Registrar patología")
+                lblTitulo2.Text = Principal.Singleton.Idioma("lblTitulo2Pat", "Registrar patología mediante un archivo CSV")
+                lblTitulo3.Text = Principal.Singleton.Idioma("lblTitulo3Pat", "Listado de patologías")
+                lblSubtitulo1.Text = Principal.Singleton.Idioma("lblSubtitulo1Pat", "Registre patologías manualmente")
+                lblSubtitulo2.Text = Principal.Singleton.Idioma("lblSubtitulo2Pat", "Seleccione un archivo CSV para registrar patologías")
+                lblSubtitulo3.Text = Principal.Singleton.Idioma("lblSubtitulo3Pat", "Acceda a todos los patologías registradas y a opciones de eliminar y modificar")
 
             Case 1
-                lblTitulo1.Text = "Registrar síntoma"
-                lblTitulo2.Text = "Registrar síntoma mediante un archivo CSV"
-                lblTitulo3.Text = "Listado de síntomas"
-                lblSubtitulo1.Text = "Registre síntomas manualmente"
-                lblSubtitulo2.Text = "Seleccione un archivo CSV para registrar síntomas"
-                lblSubtitulo3.Text = "Acceda a todos los síntomas registrados y a opciones de eliminar y modificar"
+                lblTitulo1.Text = Principal.Singleton.Idioma("lblTitulo1Sin", "Registrar síntoma")
+                lblTitulo2.Text = Principal.Singleton.Idioma("lblTitulo2Sin", "Registrar síntoma mediante un archivo CSV")
+                lblTitulo3.Text = Principal.Singleton.Idioma("lblTitulo3Sin", "Listado de síntomas")
+                lblSubtitulo1.Text = Principal.Singleton.Idioma("lblSubtitulo1Sin", "Registre síntomas manualmente")
+                lblSubtitulo2.Text = Principal.Singleton.Idioma("lblSubtitulo2Sin", "Seleccione un archivo CSV para registrar síntomas")
+                lblSubtitulo3.Text = Principal.Singleton.Idioma("lblSubtitulo3Sin", "Acceda a todos los síntomas registrados y a opciones de eliminar y modificar")
 
             Case 2
-                lblTitulo1.Text = "Registrar médico"
-                lblTitulo2.Text = "Registrar médico mediante un archivo CSV"
-                lblTitulo3.Text = "Registrar gestor"
-                lblSubtitulo1.Text = "Registre médicos manualmente"
-                lblSubtitulo1.Text = "Seleccione un archivo CSV para registrar médicos"
-                lblSubtitulo3.Text = "Registre gestores manualmente"
+                lblTitulo1.Text = Principal.Singleton.Idioma("lblTitulo1Med", "Registrar médico")
+                lblTitulo2.Text = Principal.Singleton.Idioma("lblTitulo2Med", "Registrar médico mediante un archivo CSV")
+                lblTitulo3.Text = Principal.Singleton.Idioma("lblTitulo3Med", "Registrar gestor")
+                lblSubtitulo1.Text = Principal.Singleton.Idioma("lblSubtitulo1Med", "Registre médicos manualmente")
+                lblSubtitulo2.Text = Principal.Singleton.Idioma("lblSubtitulo2Med", "Seleccione un archivo CSV para registrar médicos")
+                lblSubtitulo3.Text = Principal.Singleton.Idioma("lblSubtitulo3Med", "Registre gestores manualmente")
 
         End Select
 
@@ -40,6 +40,48 @@ Public Class frmOpciones
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
     End Sub
 
     Private Sub Opcion1(sender As Object, e As MouseEventArgs) Handles pnlOpcion1.MouseDown, lblTitulo1.MouseDown, lblSubtitulo1.MouseDown
@@ -109,15 +151,6 @@ Public Class frmOpciones
                 listaColumnas.Add("E-mail")
                 listaColumnas.Add("Especialización")
 
-                'listaColumnas.Add("Cédula")
-                'listaColumnas.Add("Contraseña")
-                'listaColumnas.Add("Primer Nombre")
-                'listaColumnas.Add("Segundo Nombre")
-                'listaColumnas.Add("Primer Apellido")
-                'listaColumnas.Add("Segundo Apellido")
-                'listaColumnas.Add("E-mail")
-                'listaColumnas.Add("Especialización")
-
         End Select
 
         If opf.ShowDialog = DialogResult.OK Then
@@ -174,14 +207,14 @@ Public Class frmOpciones
                         pnlInstancia.Show()
                         Me.ResumeLayout()
                     Else
-                        MsgBox("El archivo seleccionado no posee el formato correcto")
+                        MsgBox(Principal.Singleton.Idioma("msgArchivoSinFormato", "El archivo seleccionado no posee el formato correcto"))
                     End If
 
                 Else
-                    MsgBox("El arhivo seleccionado no es correcto")
+                    MsgBox(Principal.Singleton.Idioma("msgArchivoNoCorrecto", "El arhivo seleccionado no es correcto"))
                 End If
             Else
-                MsgBox("El archivo se encuentra en uso por otro proceso")
+                MsgBox(Principal.Singleton.Idioma("msgArchivoEnUso", "El archivo se encuentra en uso por otro proceso"))
             End If
         End If
     End Sub
@@ -248,24 +281,16 @@ Public Class frmOpciones
         End If
 
     End Sub
-
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
         Me.Dispose()
     End Sub
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+        Principal.Singleton.CambiarTamaño(Me)
         Me.pnlContenedor.Show()
     End Sub
 
-    Private Sub lblTitulo2_Click(sender As Object, e As EventArgs) Handles lblTitulo2.Click
-
-    End Sub
-
-    Private Sub lblSubtitulo2_Click(sender As Object, e As EventArgs) Handles lblSubtitulo2.Click
-
-    End Sub
-
-    Private Sub lblTitulo3_Click(sender As Object, e As EventArgs) Handles lblTitulo3.Click
+    Private Sub lblSubtitulo3_Click(sender As Object, e As EventArgs) Handles lblSubtitulo3.Click
 
     End Sub
 End Class

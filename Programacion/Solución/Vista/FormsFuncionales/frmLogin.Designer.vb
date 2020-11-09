@@ -24,14 +24,12 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.UcAjustes1 = New Vista.UCAjustes()
         Me.lblContraseña = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.lblRestablecer = New System.Windows.Forms.Label()
         Me.btnAjustes = New FontAwesome.Sharp.IconPictureBox()
         Me.mcbRecordarUsuario = New Guna.UI.WinForms.GunaCheckBox()
-        Me.im = New FontAwesome.Sharp.IconPictureBox()
         Me.lblLogin = New System.Windows.Forms.Label()
         Me.txtUsr = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaSeparator1 = New Guna.UI.WinForms.GunaSeparator()
@@ -40,40 +38,29 @@ Partial Class frmLogin
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
         Me.lblCrearCuenta = New System.Windows.Forms.Label()
-        Me.pnlInstancia.SuspendLayout()
+        Me.im = New FontAwesome.Sharp.IconPictureBox()
         Me.pnlContenedor.SuspendLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.im, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlInstancia
         '
-        Me.pnlInstancia.Controls.Add(Me.UcAjustes1)
         Me.pnlInstancia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInstancia.Location = New System.Drawing.Point(0, 0)
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(880, 500)
         Me.pnlInstancia.TabIndex = 37
         '
-        'UcAjustes1
-        '
-        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.UcAjustes1.Location = New System.Drawing.Point(195, 78)
-        Me.UcAjustes1.Name = "UcAjustes1"
-        Me.UcAjustes1.Size = New System.Drawing.Size(490, 410)
-        Me.UcAjustes1.TabIndex = 52
-        Me.UcAjustes1.Visible = False
-        '
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.pnlContenedor.Controls.Add(Me.UcAjustes1)
         Me.pnlContenedor.Controls.Add(Me.lblContraseña)
         Me.pnlContenedor.Controls.Add(Me.lblUsuario)
-        Me.pnlContenedor.Controls.Add(Me.lblRestablecer)
         Me.pnlContenedor.Controls.Add(Me.btnAjustes)
         Me.pnlContenedor.Controls.Add(Me.mcbRecordarUsuario)
-        Me.pnlContenedor.Controls.Add(Me.im)
         Me.pnlContenedor.Controls.Add(Me.lblLogin)
         Me.pnlContenedor.Controls.Add(Me.txtUsr)
         Me.pnlContenedor.Controls.Add(Me.GunaSeparator1)
@@ -85,6 +72,15 @@ Partial Class frmLogin
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(880, 500)
         Me.pnlContenedor.TabIndex = 0
+        '
+        'UcAjustes1
+        '
+        Me.UcAjustes1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.UcAjustes1.Location = New System.Drawing.Point(195, 59)
+        Me.UcAjustes1.Name = "UcAjustes1"
+        Me.UcAjustes1.Size = New System.Drawing.Size(505, 438)
+        Me.UcAjustes1.TabIndex = 52
+        Me.UcAjustes1.Visible = False
         '
         'lblContraseña
         '
@@ -101,7 +97,7 @@ Partial Class frmLogin
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.lblUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsuario.ForeColor = System.Drawing.Color.LightGray
         Me.lblUsuario.Location = New System.Drawing.Point(359, 154)
@@ -109,17 +105,6 @@ Partial Class frmLogin
         Me.lblUsuario.Size = New System.Drawing.Size(64, 21)
         Me.lblUsuario.TabIndex = 52
         Me.lblUsuario.Text = "Usuario"
-        '
-        'lblRestablecer
-        '
-        Me.lblRestablecer.AutoSize = True
-        Me.lblRestablecer.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRestablecer.ForeColor = System.Drawing.Color.White
-        Me.lblRestablecer.Location = New System.Drawing.Point(366, 278)
-        Me.lblRestablecer.Name = "lblRestablecer"
-        Me.lblRestablecer.Size = New System.Drawing.Size(149, 17)
-        Me.lblRestablecer.TabIndex = 50
-        Me.lblRestablecer.Text = "Restablecer contraseña"
         '
         'btnAjustes
         '
@@ -150,30 +135,16 @@ Partial Class frmLogin
         Me.mcbRecordarUsuario.TabIndex = 47
         Me.mcbRecordarUsuario.Text = "Recordar usuario"
         '
-        'im
-        '
-        Me.im.BackColor = System.Drawing.Color.Transparent
-        Me.im.ForeColor = System.Drawing.Color.DarkSlateBlue
-        Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
-        Me.im.IconColor = System.Drawing.Color.DarkSlateBlue
-        Me.im.IconSize = 521
-        Me.im.Location = New System.Drawing.Point(533, -385)
-        Me.im.Name = "im"
-        Me.im.Rotation = 135.0R
-        Me.im.Size = New System.Drawing.Size(521, 707)
-        Me.im.TabIndex = 46
-        Me.im.TabStop = False
-        '
         'lblLogin
         '
-        Me.lblLogin.AutoSize = True
         Me.lblLogin.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogin.ForeColor = System.Drawing.Color.White
-        Me.lblLogin.Location = New System.Drawing.Point(388, 59)
+        Me.lblLogin.Location = New System.Drawing.Point(327, 59)
         Me.lblLogin.Name = "lblLogin"
-        Me.lblLogin.Size = New System.Drawing.Size(104, 45)
+        Me.lblLogin.Size = New System.Drawing.Size(230, 45)
         Me.lblLogin.TabIndex = 41
         Me.lblLogin.Text = "Login"
+        Me.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtUsr
         '
@@ -239,6 +210,7 @@ Partial Class frmLogin
         '
         Me.Panel1.Controls.Add(Me.btnIngresar)
         Me.Panel1.Controls.Add(Me.lblCrearCuenta)
+        Me.Panel1.Controls.Add(Me.im)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -285,6 +257,20 @@ Partial Class frmLogin
         Me.lblCrearCuenta.Text = "Solicitar cuenta"
         Me.lblCrearCuenta.Visible = False
         '
+        'im
+        '
+        Me.im.BackColor = System.Drawing.Color.Transparent
+        Me.im.ForeColor = System.Drawing.Color.DarkSlateBlue
+        Me.im.IconChar = FontAwesome.Sharp.IconChar.GripLinesVertical
+        Me.im.IconColor = System.Drawing.Color.DarkSlateBlue
+        Me.im.IconSize = 521
+        Me.im.Location = New System.Drawing.Point(555, -387)
+        Me.im.Name = "im"
+        Me.im.Rotation = 135.0R
+        Me.im.Size = New System.Drawing.Size(521, 707)
+        Me.im.TabIndex = 46
+        Me.im.TabStop = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -298,20 +284,18 @@ Partial Class frmLogin
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "|"
-        Me.pnlInstancia.ResumeLayout(False)
         Me.pnlContenedor.ResumeLayout(False)
         Me.pnlContenedor.PerformLayout()
         CType(Me.btnAjustes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.im, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents pnlInstancia As Panel
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
-    Friend WithEvents lblRestablecer As Label
     Friend WithEvents btnAjustes As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents im As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents lblLogin As Label

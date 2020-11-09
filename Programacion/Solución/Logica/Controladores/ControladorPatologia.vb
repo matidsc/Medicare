@@ -48,10 +48,20 @@ Public Class ControladorPatologia
     End Function
 
     Public Function TraerSintomasPatologia(nombre As String) As ArrayList
-        Return ModeloPatologia.Singleton.traerSintomasPatologia(nombre)
+        Try
+            Return ModeloPatologia.Singleton.traerSintomasPatologia(nombre)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function TraerPatologia(nombre As String) As DataTable
-        Return ModeloPatologia.Singleton.traerPatologia(nombre)
+        Try
+            Return ModeloPatologia.Singleton.traerPatologia(nombre)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
 
     Public Function Modificar(nombreViejo As String) As Boolean
@@ -70,6 +80,7 @@ Public Class ControladorPatologia
         End Try
     End Function
     Public Function listarPatologias() As DataTable
+
         Dim dt As DataTable = ModeloPatologia.Singleton.ListarPatologias
 
         dt.Columns.Add("Prioridad2", GetType(String))
@@ -108,14 +119,21 @@ Public Class ControladorPatologia
     End Function
 
     Public Function informacionPatologia(nombre As String) As String
+        Try
+            Return ModeloPatologia.Singleton.DescripcionPatologia(nombre)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
-        Return ModeloPatologia.Singleton.DescripcionPatologia(nombre)
 
     End Function
 
     Public Function obtenerPatologia(sintomas As ArrayList) As DataTable
-
-        Return ModeloPatologia.Singleton.ObtenerDiagnostico(sintomas)
+        Try
+            Return ModeloPatologia.Singleton.ObtenerDiagnostico(sintomas)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
 
@@ -131,31 +149,65 @@ Public Class ControladorPatologia
     End Function
 
     Public Function VerificarBaja(nombre As String) As Boolean
-        Return ModeloPatologia.Singleton.VerificarBaja(nombre)
+        Try
+            Return ModeloPatologia.Singleton.VerificarBaja(nombre)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
 
     Public Function ReingresarPatologia(nombre As String) As Boolean
-        Return ModeloPatologia.Singleton.ReingresarPatologia(nombre)
+        Try
+            Return ModeloPatologia.Singleton.ReingresarPatologia(nombre)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
 
     Public Function ReingresarConDatos(nombre As String, descripcion As String, recomendacion As String, prioridad As Byte, sintomas As ArrayList) As Boolean
+        Try
+            Return ModeloPatologia.Singleton.UpdateBajaLogica(nombre, descripcion, recomendacion, prioridad, sintomas)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloPatologia.Singleton.UpdateBajaLogica(nombre, descripcion, recomendacion, prioridad, sintomas)
     End Function
 
     'Public Function VerificarExistencia(nombre As String) As Boolean
     '    Return ModeloPatologia.Singleton.VerificarExistencia(nombre)
     'End Function
-    Public Function traerUltimoDiagnostico(cedula As String)
-        Return ModeloPatologia.Singleton.traerUltimoDiagnostico(cedula)
+    Public Function traerUltimoDiagnostico(cedula As String) As DataTable
+        Try
+            Return ModeloPatologia.Singleton.traerUltimoDiagnostico(cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function getPatologiasPaciente(cedula As String) As DataTable
+        Try
+
+        Catch ex As Exception
+
+        End Try
         Return ModeloPatologia.Singleton.getPatologiasPaciente(cedula)
     End Function
     Public Function traerDiagnosticoPorId(idDiagnostico As Byte, cedula As String) As DataTable
-        Return ModeloPatologia.Singleton.traerDiagnosticoPorId(idDiagnostico, Datos_Temporales.userLog)
+        Try
+            Return ModeloPatologia.Singleton.traerDiagnosticoPorId(idDiagnostico, cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function getTodasPatologias() As ArrayList
-        Return ModeloPatologia.Singleton.getTodasPatologias()
+        Try
+            Return ModeloPatologia.Singleton.getTodasPatologias()
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
 End Class

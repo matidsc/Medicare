@@ -9,10 +9,10 @@ Public Class Conexion
     Private dblogin(,) As String = New String(4, 2) {}
 
 #Region "String de Conexión"
-    Private Const dsn As String = "driverODBC"
+    Private Const dsn As String = "driver"
     Private Const Port As String = "3306"
-    Private Const DatabaseName As String = "bytesoft_bdd2"
-    Private Host As String = "bytesoft.duckdns.org"
+    Private Const DatabaseName As String = "bytesoft_bdd"
+    Private Host As String = "localhost"
 #End Region
 
     ''' <summary>
@@ -39,17 +39,17 @@ Public Class Conexion
     ''' </summary>
     Public Sub New()
         ''Auxiliar
-        dblogin(EnumDbLogin.aux, TipoDbLogin.user) = "sysAux"
-        dblogin(EnumDbLogin.aux, TipoDbLogin.pass) = "sysAuxPass2"
+        dblogin(EnumDbLogin.aux, TipoDbLogin.user) = "root"
+        dblogin(EnumDbLogin.aux, TipoDbLogin.pass) = ""
         ''Paciente
-        dblogin(EnumDbLogin.paciente, TipoDbLogin.user) = "sysPac"
-        dblogin(EnumDbLogin.paciente, TipoDbLogin.pass) = "sysPacPass2"
+        dblogin(EnumDbLogin.paciente, TipoDbLogin.user) = "root"
+        dblogin(EnumDbLogin.paciente, TipoDbLogin.pass) = ""
         ''Médico
-        dblogin(EnumDbLogin.medico, TipoDbLogin.user) = "sysMed"
-        dblogin(EnumDbLogin.medico, TipoDbLogin.pass) = "sysMedPass2"
+        dblogin(EnumDbLogin.medico, TipoDbLogin.user) = "root"
+        dblogin(EnumDbLogin.medico, TipoDbLogin.pass) = ""
         ''Gestor
-        dblogin(EnumDbLogin.admin, TipoDbLogin.user) = "sysGest"
-        dblogin(EnumDbLogin.admin, TipoDbLogin.pass) = "sysGestPass2"
+        dblogin(EnumDbLogin.admin, TipoDbLogin.user) = "root"
+        dblogin(EnumDbLogin.admin, TipoDbLogin.pass) = ""
     End Sub
 
     ''' <summary>

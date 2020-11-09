@@ -17,17 +17,17 @@ Public Class UCVerPerfil
             Case Datos_Temporales.enumRol.Paciente
                 Dim aliPatologias As New ArrayList
                 Dim alitel As New ArrayList
-                If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then 'txtPass.Text <> "" And txtRepPass.Text <> "" And
+                If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApePerfil.Text <> "" And txtMail.Text <> "" Then 'txtPass.Text <> "" And txtRepPass.Text <> "" And
 
-                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
-                            If Principal.Singleton.VerificarEmail(Verificacion.Singleton, txtMail.Text) Then
+                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApePerfil.Text) Then
+                        If Principal.Singleton.VerificarEmail(Verificacion.Singleton, txtMail.Text) Then
 
-                                If Principal.Singleton.VerificarTelefonos(dgvTelefonos, alitel) Then
+                            If Principal.Singleton.VerificarTelefonos(dgvTelefonos, alitel) Then
                                 Dim pac As New ControladorPaciente(Datos_Temporales.userLog,
                                                            txtPNom.Text.ToUpper,
                                                            txtSNom.Text.ToUpper,
                                                            txtPApe.Text.ToUpper,
-                                                           txtSApe.Text.ToUpper,
+                                                           txtSApePerfil.Text.ToUpper,
                                                            alitel,
                                                            txtMail.Text,
                                                            _sexo,
@@ -36,54 +36,53 @@ Public Class UCVerPerfil
                                                            )
 
                                 If pac.updateUsuario() Then
-                                        If pac.updatePaciente(Datos_Temporales.userLog) Then
+                                    If pac.updatePaciente(Datos_Temporales.userLog) Then
 
+                                        If pac.updateTelefonos(alitel) Then
 
-
-                                            If pac.updateTelefonos(alitel) Then
-
-                                                MsgBox("Su perfil ha sido modificado con exito")
-                                                setVariablesUsuario()
-                                                setTelefonosUsuario()
-                                                setVariablesPaciente()
-                                            Else
-                                                MsgBox("Error al modificar los teléfonos")
-                                                alitel.Clear()
-                                            End If
-
+                                            MsgBox(Principal.Singleton.Idioma("msgboxUpdate", "Su perfil ha sido modificado con exito"))
+                                            setVariablesUsuario()
+                                            setTelefonosUsuario()
+                                            setVariablesPaciente()
+                                            alitel.Clear()
+                                        Else
+                                            MsgBox(Principal.Singleton.Idioma("msgErrorUpdateTel", "Error al modificar los teléfonos"))
+                                            alitel.Clear()
                                         End If
-                                    Else
-                                        MsgBox("Error al modificar el perfil")
-                                        alitel.Clear()
+
                                     End If
-
                                 Else
-                                    MsgBox("Ha ingresado un teléfono incorrecto")
-
+                                    MsgBox(Principal.Singleton.Idioma("msgboxErrorUpdatePac", "Error al modificar el perfil"))
+                                    alitel.Clear()
                                 End If
+
                             Else
-                                MsgBox("Debe ingresar un e-mail correcto")
+                                MsgBox(Principal.Singleton.Idioma("msgboxErrorTel", "Ha ingresado un teléfono incorrecto"))
+
                             End If
+                        Else
+                            MsgBox(Principal.Singleton.Idioma("msgboxErrorMail", "Debe ingresar un e-mail correcto"))
                         End If
+                    End If
 
                 Else
-                    MsgBox("Debe rellenar los campos")
+                    MsgBox(Principal.Singleton.Idioma("msgboxErrorCamposPerfil", "Debe rellenar los campos"))
                 End If
 
 
             Case Datos_Temporales.enumRol.Gestor
 
                 Dim alitel As New ArrayList
-                If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then 'txtPass.Text <> "" And txtRepPass.Text <> "" And
+                If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApePerfil.Text <> "" And txtMail.Text <> "" Then 'txtPass.Text <> "" And txtRepPass.Text <> "" And
 
-                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
-                            If Principal.Singleton.VerificarEmail(Verificacion.Singleton, txtMail.Text) Then
-                                If Principal.Singleton.VerificarTelefonos(dgvTelefonos, alitel) Then
+                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApePerfil.Text) Then
+                        If Principal.Singleton.VerificarEmail(Verificacion.Singleton, txtMail.Text) Then
+                            If Principal.Singleton.VerificarTelefonos(dgvTelefonos, alitel) Then
                                 Dim ges As New ControladorGestor(Datos_Temporales.userLog,
                                                            txtPNom.Text.ToUpper,
                                                            txtSNom.Text.ToUpper,
                                                            txtPApe.Text.ToUpper,
-                                                           txtSApe.Text.ToUpper,
+                                                           txtSApePerfil.Text.ToUpper,
                                                            alitel,
                                                            txtMail.Text,
                                                            Principal.Singleton.Base64(path)
@@ -91,39 +90,39 @@ Public Class UCVerPerfil
 
                                 If ges.updateUsuario() Then
 
-                                        If ges.updateTelefonos(alitel) Then
+                                    If ges.updateTelefonos(alitel) Then
 
-                                            MsgBox("Su perfil ha sido modificado con exito")
-                                            setVariablesUsuario()
-                                            setTelefonosUsuario()
-                                        Else
-                                            MsgBox("Error al modificar los teléfonos")
-                                            alitel.Clear()
-                                        End If
+                                        MsgBox(Principal.Singleton.Idioma("msgboxUpdate", "Su perfil ha sido modificado con exito"))
+                                        setVariablesUsuario()
+                                        setTelefonosUsuario()
                                     Else
-                                        MsgBox("Error al modificar el perfil")
+                                        MsgBox(Principal.Singleton.Idioma("msgErrorUpdateTel", "Error al modificar los teléfonos"))
                                         alitel.Clear()
                                     End If
-
                                 Else
-                                    MsgBox("Ha ingresado un teléfono incorrecto")
-
+                                    MsgBox(Principal.Singleton.Idioma("msgboxErrorUpdatePac", "Error al modificar el perfil"))
+                                    alitel.Clear()
                                 End If
+
                             Else
-                                MsgBox("Debe ingresar un e-mail correcto")
+                                MsgBox(Principal.Singleton.Idioma("msgboxErrorTel", "Ha ingresado un teléfono incorrecto"))
+
                             End If
+                        Else
+                            MsgBox(Principal.Singleton.Idioma("msgboxErrorMail", "Debe ingresar un e-mail correcto"))
                         End If
+                    End If
 
                 Else
-                    MsgBox("Debe rellenar los campos")
+                    MsgBox(Principal.Singleton.Idioma("msgboxErrorCamposPerfil", "Debe rellenar los campos"))
                 End If
 
             Case Datos_Temporales.enumRol.Medico
 
-                If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then
+                If txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApePerfil.Text <> "" And txtMail.Text <> "" Then
 
 
-                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApe.Text) Then
+                    If Principal.Singleton.VerificarString(Verificacion.Singleton, txtPNom.Text, txtPApe.Text, txtSNom.Text, txtSApePerfil.Text) Then
 
                         If Verificacion.Singleton.VerificarEmail(txtMail.Text) Then
 
@@ -132,7 +131,7 @@ Public Class UCVerPerfil
                                     "", txtPNom.Text.ToUpper(),
                                     txtSNom.Text.ToUpper,
                                     txtPApe.Text.ToUpper,
-                                    txtSApe.Text.ToUpper,
+                                    txtSApePerfil.Text.ToUpper,
                                     txtEspe.Text.ToUpper,
                                     txtMail.Text,
                                     Principal.Singleton.Base64(path))
@@ -140,11 +139,11 @@ Public Class UCVerPerfil
                             If med.updateUsuario() Then
 
                                 If med.updateMedico(Datos_Temporales.userLog) Then
-                                    MsgBox("Su perfil ha sido modificado con exito")
+                                    MsgBox(Principal.Singleton.Idioma("msgboxUpdate", "Su perfil ha sido modificado con exito"))
                                     setVariablesUsuario()
                                     setVariableMedico()
                                 Else
-                                    MsgBox("Error al modificar su perfil")
+                                    MsgBox(Principal.Singleton.Idioma("msgboxErrorUpdatePac", "Error al modificar el perfil"))
                                 End If
 
 
@@ -158,9 +157,51 @@ Public Class UCVerPerfil
     Public Sub New()
 
         InitializeComponent()
-        ' Me.Location = New Point((Me.ParentForm.Width / 2) - (Me.Width / 2), Me.Location.Y)
 
-        'Me.Location = New Point((Me.Width - frmBienvenidaPaciente.Width) \ 2, (Me.Height - frmBienvenidaPaciente.Height) \ 2)
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+
+        Next
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
 
@@ -171,7 +212,7 @@ Public Class UCVerPerfil
                 'btnRegistrar.BringToFront()
                 Me.Location = New Point((frmBienvenidaPaciente.Width - Me.Width) \ 2, Me.Location.Y)
                 pnlCredenciales.Visible = False
-                lblEspec.Visible = False
+                lblEspecPerfil.Visible = False
                 pnlMedico.Visible = False
                 pnlMedYo.Visible = False
                 btnModPatologias.Visible = True
@@ -185,7 +226,7 @@ Public Class UCVerPerfil
                 'btnRegistrar.BringToFront()
                 Me.Location = New Point((frmBienvenidaGestor.Width - Me.Width) \ 2, Me.Location.Y)
                 pnlCredenciales.Visible = False
-                lblEspec.Visible = False
+                lblEspecPerfil.Visible = False
                 pnlMedico.Visible = False
                 pnlPaciente.Visible = False
                 pnlMedYo.Visible = False
@@ -197,16 +238,16 @@ Public Class UCVerPerfil
                 pnlCredenciales.Visible = False
                 Me.Location = New Point((frmBienvenidaMedico.Width - Me.Width) \ 2, Me.Location.Y)
                 ' pnlMedYo.Location = pnlPaciente.Location
-                lblEspec.Visible = True
+                lblEspecPerfil.Visible = True
                 txtEspe.Visible = True
                 pnlMedico.Visible = True
-                btnAceptar.Visible = False
-                btnEliminar.Visible = False
+                btnAceptarPerfil.Visible = False
+                btnEliminarPerfil.Visible = False
                 pnlPaciente.Visible = False
                 dgvTelefonos.Visible = False
                 lblTel.Visible = False
-                lblTelefonos.Visible = False
-                lblTeles.Visible = False
+                lblTelefonosPerfil.Visible = False
+                lblTelesPerfil.Visible = False
 
                 setVariablesUsuario()
                 setVariableMedico()
@@ -229,9 +270,9 @@ Public Class UCVerPerfil
         lblSex.Text = _sexo
 
         If _sexo = "M" Then
-            lblSex.Text = "Masculino"
+            lblSex.Text = Principal.Singleton.Idioma("lblSex1", "Masculino")
         Else
-            lblSex.Text = "Femenino"
+            lblSex.Text = Principal.Singleton.Idioma("lblSex2", "Femenino")
         End If
 
         _fecNac = datos.Item(2)
@@ -244,9 +285,10 @@ Public Class UCVerPerfil
                 aliPatologias.Add(patologia.Item(0))
             Next
         Else
-            lblPatCron.Text = "Usted no tiene patologías crónicas registradas"
+            lblPatCron.Text = Principal.Singleton.Idioma(lblPatCron.Name, "Usted no tiene patologías crónicas")
+            lblPatCron.Text.TrimEnd(", ")
         End If
-        lblPatCron.Text.TrimEnd(", ")
+
     End Sub
     Private Sub setVariablesUsuario()
 
@@ -258,12 +300,12 @@ Public Class UCVerPerfil
             _sNom = datos.Item(2).ToString.Substring(0, 1).ToUpper + datos.Item(2).ToString.Substring(1).ToLower
         Else
             _sNom = ""
-            lblSNom.Visible = False
+            lblSNomPerfil.Visible = False
             txtSNom.Visible = False
-            lblPApe.Location = New Point(40, 262)
+            lblPApePerfil.Location = New Point(40, 262)
             txtPApe.Location = New Point(40, 289)
-            lblSApe.Location = New Point(40, 374)
-            txtSApe.Location = New Point(40, 406)
+            lblSApePerfil.Location = New Point(40, 374)
+            txtSApePerfil.Location = New Point(40, 406)
             'pnlMedYo.Location = New Point(40, 503)
             pnlMedYo.Location = New Point(34, 454)
         End If
@@ -279,22 +321,22 @@ Public Class UCVerPerfil
         End If
 
         'SET TEXTOS
-        lblEmail.Text = _email
+        lblEmailPerfil.Text = _email
         txtMail.Text = _email
 
-        lblNom.Text = _pNom & " " & _sNom & " " & _pApe & " " & _sApe
+        lblNomPerfil.Text = _pNom & " " & _sNom & " " & _pApe & " " & _sApe
 
         txtPNom.Text = _pNom
         txtSNom.Text = _sNom
         txtPApe.Text = _pApe
-        txtSApe.Text = _sApe
+        txtSApePerfil.Text = _sApe
         cambiados = True
     End Sub
 
-    Private Sub txtPNom_TextChanged(sender As Object, e As EventArgs) Handles txtSNom.TextChanged, txtSApe.TextChanged, txtPNom.TextChanged, txtPApe.TextChanged, txtEspe.TextChanged, txtMail.TextChanged, txtEspe.TextChanged
+    Private Sub txtPNom_TextChanged(sender As Object, e As EventArgs) Handles txtSNom.TextChanged, txtSApePerfil.TextChanged, txtPNom.TextChanged, txtPApe.TextChanged, txtEspe.TextChanged, txtMail.TextChanged, txtEspe.TextChanged
 
         If cambiados Then
-            If _pNom <> txtPNom.Text Or _sNom <> txtSNom.Text Or _pApe <> txtPApe.Text Or _sApe <> txtSApe.Text Or _email <> txtMail.Text Or _especializacion <> txtEspe.Text Then
+            If _pNom <> txtPNom.Text Or _sNom <> txtSNom.Text Or _pApe <> txtPApe.Text Or _sApe <> txtSApePerfil.Text Or _email <> txtMail.Text Or _especializacion <> txtEspe.Text Then
                 btnRegistrar.Enabled = True
             Else
                 btnRegistrar.Enabled = False
@@ -323,15 +365,15 @@ Public Class UCVerPerfil
     End Sub
     Dim alitel As New ArrayList
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarPerfil.Click
         dgvTelefonos.Rows.Add()
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminarPerfil.Click
         If dgvTelefonos.Rows.Count > 0 Then
             dgvTelefonos.Rows.RemoveAt(dgvTelefonos.CurrentRow.Index)
         ElseIf dgvTelefonos.Rows.Count < 0 Then
-            btnEliminar.Enabled = False
+            btnEliminarPerfil.Enabled = False
         End If
     End Sub
 
@@ -345,7 +387,7 @@ Public Class UCVerPerfil
                 alitel.Add(telefono.Item(0))
             Next
         Else
-            lblTel.Text = "No hay teléfonos registrados"
+            lblTel.Text = Principal.Singleton.Idioma(lblTel.Name, "No hay teléfonos registrados")
         End If
         lblTel.Text.TrimEnd(", ")
 
@@ -386,14 +428,14 @@ Public Class UCVerPerfil
 
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificarPerfil.Click
         pnlMain.BringToFront()
         transicion.Hide(pnlMain)
         transicion.Show(pnlYo)
         btnRegistrar.Visible = True
         btnRegistrar.BringToFront()
     End Sub
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles botonatras.Click
         pnlYo.BringToFront()
         transicion.Hide(pnlYo)
         transicion.Show(pnlMain)
@@ -406,7 +448,7 @@ Public Class UCVerPerfil
         btnRegistrar.BringToFront()
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles botonatras2.Click
         pnlContacto.BringToFront()
         transicion.Hide(pnlContacto)
         transicion.Show(pnlYo)

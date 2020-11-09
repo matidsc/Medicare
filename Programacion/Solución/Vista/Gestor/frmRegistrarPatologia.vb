@@ -7,12 +7,57 @@ Public Class frmRegistrarPatologia
     Dim ScrollHelper2 As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Dim op As Byte
     Dim pat As New ControladorPatologia
-    Private _nomActual, _descActual, _recActual, _prioActual
+    Private _nomActual, _descActual, _recActual As String
+    Private _prioActual As Byte
     Private cambiados As Boolean = False
+    Dim aliSintomas As ArrayList
     Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
 
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scroll, True)
 
@@ -24,13 +69,54 @@ Public Class frmRegistrarPatologia
     End Sub
     Public Sub New(op As Byte) '0 es default
         Me.op = op
-        ' Esta llamada es exigida por el diseñador.
+
         InitializeComponent()
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
 
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvSintomasSeleccionados, scroll, True)
 
@@ -41,10 +127,10 @@ Public Class frmRegistrarPatologia
 
         Select Case op
             Case 0
-
+                btnRegPatologia.Text = Principal.Singleton.Idioma("btnRegPat", "Registrar patologia")
             Case 1
-                btnReg.Text = "Modificar patologia"
-
+                btnRegPatologia.Text = Principal.Singleton.Idioma("btnModPat", "Modificar patologia")
+                btnRegPatologia.Enabled = False
         End Select
 
     End Sub
@@ -53,24 +139,36 @@ Public Class frmRegistrarPatologia
 
         Dim row As DataRow = pat.TraerPatologia(nombre).Rows(0)
 
-        _nomActual = txtNomPat.Text = row.Item(0).ToString
-        MsgBox(_nomActual)
-        _descActual = txtDescPat.Text = row.Item(1).ToString
-        _recActual = txtRecPat.Text = row.Item(2).ToString
-        If row.Item(3) = 1 Then
-            mrbPAlta.Checked = True
-        ElseIf row.Item(3) = 2 Then
-            mrbPMedia.Checked = True
-        ElseIf row.Item(3) = 3 Then
-            mrbPBaja.Checked = True
-        End If
+        Label1.Text = _nomActual
+        _nomActual = row.Item(0).ToString
+        txtNomPat.Text = _nomActual
+
+        _descActual = row.Item(1).ToString
+        txtDescPat.Text = _descActual
+
+
+        _recActual = row.Item(2).ToString
+        txtRecPat.Text = _recActual
+
         _prioActual = row.Item(3)
 
-        For Each sintoma In pat.TraerSintomasPatologia(row.Item(0))
+        If _prioActual = 1 Then
+            mrbPAlta.Checked = True
+        ElseIf _prioActual = 2 Then
+            mrbPMedia.Checked = True
+        ElseIf _prioActual = 3 Then
+            mrbPBaja.Checked = True
+        End If
+        aliSintomas = ControladorPatologia.Singleton.TraerSintomasPatologia(row.Item(0))
+
+        For Each sintoma In aliSintomas
             dgvSintomasSeleccionados.Rows.Add(sintoma)
         Next
+        lblCantRec.Text = _recActual.Length & "/300"
+        lblCantDesc.Text = _descActual.Length & "/300"
         traerSintomas()
         cambiados = True
+        MsgBox(_nomActual)
     End Sub
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
 
@@ -98,7 +196,30 @@ Public Class frmRegistrarPatologia
 
             Dim rowDestino = destino.Rows.Count - 1
 
-            destino.Rows(rowDestino).Cells(0).Value = origen.Rows(SourceRow).Cells(0).Value
+
+
+
+            If op = 1 Then
+                Dim i = 0
+                Dim contadorDiferentes = 0
+
+                destino.Rows(rowDestino).Cells(0).Value = origen.Rows(SourceRow).Cells(0).Value
+                For Each sintoma In aliSintomas
+                    If sintoma = destino.Rows(i).Cells(0).Value Then
+                        contadorDiferentes += 1
+                        Console.WriteLine(contadorDiferentes)
+
+                    End If
+                    i += 1
+                Next
+                If contadorDiferentes <> aliSintomas.Count Then
+                    btnRegPatologia.Enabled = True
+                Else
+                    btnRegPatologia.Enabled = False
+                End If
+            Else
+                destino.Rows(rowDestino).Cells(0).Value = origen.Rows(SourceRow).Cells(0).Value
+            End If
             destino.Sort(destino.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
             origen.Rows.RemoveAt(SourceRow)
 
@@ -159,7 +280,7 @@ Public Class frmRegistrarPatologia
 
     End Sub
 
-    Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
+    Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnRegPatologia.Click
 
         Select Case op
             Case 0
@@ -190,7 +311,7 @@ Public Class frmRegistrarPatologia
                                     If p.VerificarBaja(txtNomPat.Text.ToUpper) Then
 
                                         If p.registrar() Then
-                                            MsgBox("Patología registrada con éxito")
+                                            MsgBox(Principal.Singleton.Idioma("msgSuccessRegPat", "Patología registrada con éxito"))
                                             txtNomPat.Text = Nothing
                                             txtDescPat.Text = Nothing
                                             txtRecPat.Text = Nothing
@@ -202,20 +323,20 @@ Public Class frmRegistrarPatologia
                                             traerSintomas()
                                             ali.Clear()
                                         Else
-                                            MsgBox("La patología ya fue ingresada")
+                                            MsgBox(Principal.Singleton.Idioma("msgYaRegPat", "La patología ya fue ingresada"))
                                         End If
 
                                     Else
-                                        Dim respuesta As Integer = MsgBox("La patología se encuentra dada de baja. ¿Desea reingresarla al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+                                        Dim respuesta As Integer = MsgBox(Principal.Singleton.Idioma("msgReingPatYaReg", "La patología se encuentra dada de baja. ¿Desea reingresarla al sistema?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
                                         If respuesta = vbYes Then
 
-                                            Dim respuesta2 As Integer = MsgBox("¿Desea actualizar la patología con los datos ingresados?", vbQuestion + vbYesNo + vbDefaultButton2)
+                                            Dim respuesta2 As Integer = MsgBox(Principal.Singleton.Idioma("msgActualizarPatDatos", "¿Desea actualizar la patología con los datos ingresados?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
                                             If respuesta2 = vbYes Then
                                                 If p.ReingresarConDatos(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali) Then
 
-                                                    MsgBox("Patología reingresada con éxito")
+                                                    MsgBox(Principal.Singleton.Idioma("msgActualizarPatDatosSuccess", "Patología reingresada con éxito"))
                                                     txtNomPat.Text = Nothing
                                                     txtDescPat.Text = Nothing
                                                     txtRecPat.Text = Nothing
@@ -227,14 +348,14 @@ Public Class frmRegistrarPatologia
                                                     traerSintomas()
                                                     ali.Clear()
                                                 Else
-                                                    MsgBox("Error al reingresar la patología")
+                                                    MsgBox(Principal.Singleton.Idioma("msgActualizarPatDatosError", "Error al reingresar la patología"))
                                                     ali.Clear()
                                                 End If
 
                                             Else
 
                                                 If p.ReingresarPatologia(txtNomPat.Text.ToUpper) Then
-                                                    MsgBox("Patología reingresada con éxito")
+                                                    MsgBox(Principal.Singleton.Idioma("msgActualizarPatDatosSuccess", "Patología reingresada con éxito"))
                                                     txtNomPat.Text = Nothing
                                                     txtDescPat.Text = Nothing
                                                     txtRecPat.Text = Nothing
@@ -246,7 +367,7 @@ Public Class frmRegistrarPatologia
                                                     traerSintomas()
                                                     ali.Clear()
                                                 Else
-                                                    MsgBox("Error al reingresar la patología")
+                                                    MsgBox(Principal.Singleton.Idioma("msgActualizarPatDatosError", "Error al reingresar la patología"))
                                                     ali.Clear()
                                                 End If
 
@@ -257,19 +378,19 @@ Public Class frmRegistrarPatologia
                                     End If
 
                                 Else
-                                    MsgBox("Debe ingresar una prioridad")
+                                    MsgBox(Principal.Singleton.Idioma("msgPrioridadPat", "Debe ingresar una prioridad"))
                                 End If
                             Else
-                                MsgBox("Debe ingresar una recomendación completa")
+                                MsgBox(Principal.Singleton.Idioma("msgRecomendacionPat", "Debe ingresar una recomendación completa"))
                             End If
                         Else
-                            MsgBox("Debe ingresar una descripción completa")
+                            MsgBox(Principal.Singleton.Idioma("msgDescripcionCompletaPat", "Debe ingresar una descripción completa"))
                         End If
                     Else
-                        MsgBox("Debe ingresar un nombre")
+                        MsgBox(Principal.Singleton.Idioma("msgNombrePat", "Debe ingresar un nombre"))
                     End If
                 Else
-                    MsgBox("Debe seleccionar síntomas para la patología")
+                    MsgBox(Principal.Singleton.Idioma("msgSintomasSeleccPat", "Debe seleccionar síntomas para la patología"))
                 End If
 
 
@@ -300,26 +421,26 @@ Public Class frmRegistrarPatologia
                                     Dim p As New ControladorPatologia(txtNomPat.Text.ToUpper, txtDescPat.Text.ToUpper, txtRecPat.Text.ToUpper, prioridad, ali)
 
                                     If p.Modificar(Label1.Text) Then
-                                        MsgBox("Patología modificada con éxito")
+                                        MsgBox(Principal.Singleton.Idioma("msgPatModificadaSuccess", "Patología modificada con éxito"))
                                         Label1.Text = txtNomPat.Text
                                         ali.Clear()
                                     Else
-                                        MsgBox("Error al modificar la patología")
+                                        MsgBox(Principal.Singleton.Idioma("msgModificarPatErr", "Error al modificar la patología"))
                                     End If
                                 Else
-                                    MsgBox("Debe ingresar una prioridad")
+                                    MsgBox(Principal.Singleton.Idioma("msgPrioridadIngresarPat", "Debe ingresar una prioridad"))
                                 End If
                             Else
-                                MsgBox("Debe ingresar una recomendación completa")
+                                MsgBox(Principal.Singleton.Idioma("msgRecomendacionPat", "Debe ingresar una recomendación completa"))
                             End If
                         Else
-                            MsgBox("Debe ingresar una descripción completa")
+                            MsgBox(Principal.Singleton.Idioma("msgDescripcionPat", "Debe ingresar una descripción completa"))
                         End If
                     Else
-                        MsgBox("Debe ingresar un nombre")
+                        MsgBox(Principal.Singleton.Idioma("msgIngresarNombreErr", "Debe ingresar un nombre"))
                     End If
                 Else
-                    MsgBox("Debe seleccionar síntomas para la patología")
+                    MsgBox(Principal.Singleton.Idioma("msgSeleccSintomasPat", "Debe seleccionar síntomas para la patología"))
                 End If
 
 
@@ -347,7 +468,7 @@ Public Class frmRegistrarPatologia
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs)
         If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
-            Dim res = MsgBox("Hay información sin guardar, ¿seguro desea salir?", vbYesNo)
+            Dim res = MsgBox(Principal.Singleton.Idioma("msgInfoSinGuardarPat", "Hay información sin guardar, ¿seguro desea salir?"), vbYesNo)
             If res = vbYes Then
                 Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()
@@ -363,18 +484,18 @@ Public Class frmRegistrarPatologia
 
     End Sub
 
-    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
+    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomasPatologia.Click
 
         pnlPatologia.BringToFront()
         transicion.Hide(pnlPatologia)
         transicion.Show(pnlSintomas)
     End Sub
 
-    Private Sub txtDescPat_TextChanged(sender As Object, e As EventArgs) Handles txtDescPat.TextChanged
+    Private Sub txtDescPat_TextChanged(sender As Object, e As EventArgs)
         lblCantDesc.Text = txtDescPat.Text.Length & "/300"
     End Sub
 
-    Private Sub txtRecPat_TextChanged(sender As Object, e As EventArgs) Handles txtRecPat.TextChanged
+    Private Sub txtRecPat_TextChanged(sender As Object, e As EventArgs)
         lblCantRec.Text = txtRecPat.Text.Length & "/300"
     End Sub
 
@@ -395,11 +516,35 @@ Public Class frmRegistrarPatologia
         transicion.Hide(pnlSintomas)
         transicion.Show(pnlPatologia)
     End Sub
+    'Private Sub verificarCambiosdgv()
+
+    '    If dgvSintomasSeleccionados.Rows.Count <> 0 Then
+    '        Dim i = 0
+    '        Dim contador As Short = 0
+
+    '        For Each sintoma In aliSintomas
+
+    '            If sintoma = dgvSintomasSeleccionados.Rows(i).Cells(0).Value Then
+    '                contador += 1
+    '            End If
+    '            i += 1
+    '        Next
+
+    '        If contador <> aliSintomas.Count Then
+    '            btnRegPatologia.Enabled = True
+    '        Else
+    '            btnRegPatologia.Enabled = False
+    '        End If
+    '    End If
+
+    'End Sub
+
+
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         If op = 0 Then
             If Not (txtDescPat.Text = Nothing And txtNomPat.Text = Nothing And txtRecPat.Text = Nothing And dgvSintomasSeleccionados.Rows.Count = 0) Then
-                Dim res = MsgBox("Hay información sin guardar, ¿Seguro desea salir?", vbYesNo)
+                Dim res = MsgBox(Principal.Singleton.Idioma("msgInfoSinGuardarPat", "Hay información sin guardar, ¿Seguro desea salir?"), vbYesNo)
                 If res = vbYes Then
                     Principal.Singleton.CambiarTamaño(frmOpciones)
                     Me.Dispose()
@@ -416,6 +561,16 @@ Public Class frmRegistrarPatologia
 
         End If
 
+    End Sub
+
+    Private Sub txtDescPat_TextChanged2(sender As Object, e As EventArgs) Handles txtRecPat.TextChanged, txtNomPat.TextChanged, txtDescPat.TextChanged
+        If cambiados Then
+            If _nomActual <> txtNomPat.Text Or _descActual <> txtDescPat.Text Or _recActual <> txtRecPat.Text Then
+                btnRegPatologia.Enabled = True
+            Else
+                btnRegPatologia.Enabled = False
+            End If
+        End If
     End Sub
 
     Private Sub txtDescPat_GotFocus(sender As Object, e As EventArgs) Handles txtDescPat.GotFocus

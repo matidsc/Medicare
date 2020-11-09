@@ -12,6 +12,48 @@ Public Class UCHabilitarPaciente
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
+For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
         lblCedula.Text = cedula
         lblNombre.Text = nombre
         Label1.Text = cedula
@@ -31,9 +73,9 @@ Public Class UCHabilitarPaciente
         Me.BackColor = Color.FromArgb(18, 25, 36)
 
     End Sub
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarPaciente.Click
 
-        Dim respuesta As Integer = MsgBox("¿Desea habilitar a este paciente?", vbQuestion + vbYesNo + vbDefaultButton2)
+        Dim respuesta As Integer = MsgBox(Principal.Singleton.Idioma("msgHabilitarPacienteUC","¿Desea habilitar a este paciente?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
         If respuesta = vbYes Then
 
@@ -48,9 +90,9 @@ Public Class UCHabilitarPaciente
 
     End Sub
 
-    Private Sub btnRechazar_Click(sender As Object, e As EventArgs) Handles btnRechazar.Click
+    Private Sub btnRechazar_Click(sender As Object, e As EventArgs) Handles btnRechazarPaciente.Click
 
-        Dim respuesta As Integer = MsgBox("¿Desea dar de baja a este paciente?", vbQuestion + vbYesNo + vbDefaultButton2)
+        Dim respuesta As Integer = MsgBox(Principal.Singleton.Idioma("xdxdlol","¿Desea dar de baja a este paciente?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
         If respuesta = vbYes Then
 

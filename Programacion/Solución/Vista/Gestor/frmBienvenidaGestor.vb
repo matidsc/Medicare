@@ -12,35 +12,68 @@ Public Class frmBienvenidaGestor
         Return instancia
     End Function
 
-    Public Sub mostrar(dt As DataTable)
-        'MsgBox(dt.Rows(0).Item(1))
-        'UcDatosGestor1.Visible = False
-        'UcDatosGestor1.BackColor = Color.Red
-        'Dim row As DataRow = dt.Rows(0)
-
-        'UcDatosGestor1.lblCed.Text = row.Item(0).ToString
-        'UcDatosGestor1.lblNom.Text = row.Item(1).ToString & " " & row.Item(2).ToString & " " & row.Item(3).ToString & " " & row.Item(4).ToString
-        'UcDatosGestor1.lblMail.Text = row.Item(5).ToString
-
-        'UcDatosGestor1.BringToFront()
-    End Sub
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
+        Principal.Singleton.CambiarTamaño(Me)
+        For Each var As Control In Me.Controls
 
-        '   Dim t As TranslationClient = TranslationClient.Create
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+
+                                                    If TypeOf ctrl5 Is Panel Then
+                                                        For Each ctrl6 As Control In ctrl5.Controls
+                                                            ctrl6.Text = Principal.Singleton.Idioma(ctrl6.Name, ctrl6.Text)
+                                                        Next
+                                                    End If
+
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
 
 
-        '  Dim result As TranslationResult = t.TranslateText(Label10.Text, LanguageCodes.English, LanguageCodes.Spanish)
-        '  Label10.Text = result.TranslatedText
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
         Notificacion(gestor.NotificacionListadoPaciente, lblNotificacion, pnlNotificacion)
         Notificacion(gestor.NotificacionListadoGestor, Label11, GunaElipsePanel2)
-        'Notificacion()
+
         instancia = Me
         pnlFlow.AutoScroll = False
         pnlFlow.HorizontalScroll.Enabled = False
@@ -48,10 +81,6 @@ Public Class frmBienvenidaGestor
         pnlFlow.AutoScroll = True
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.PanelScrollHelper(pnlFlow, scroll, True)
-        ' pnlFlow.HorizontalScroll.Enabled = False
-
-        ' pnlFlow.Width += scroll.Width
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
 
@@ -91,7 +120,7 @@ Public Class frmBienvenidaGestor
         End If
     End Sub
 
-    Private Sub btnPatologia_Click(sender As Object, e As EventArgs) Handles btnPatologia.Click
+    Private Sub btnPatologia_Click(sender As Object, e As EventArgs) Handles btnPatologiaGestion.Click
         Dim frm As New frmOpciones()
         frm.op = 0
         Me.SuspendLayout()
@@ -103,7 +132,7 @@ Public Class frmBienvenidaGestor
         Me.ResumeLayout()
     End Sub
 
-    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomas.Click
+    Private Sub btnSintomas_Click(sender As Object, e As EventArgs) Handles btnSintomasGestion.Click
         Dim frm As New frmOpciones()
         frm.op = 1
         Me.SuspendLayout()
@@ -115,7 +144,7 @@ Public Class frmBienvenidaGestor
         Me.ResumeLayout()
     End Sub
 
-    Private Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
+    Private Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistroGestor.Click
         Dim frm As New frmOpciones()
         frm.op = 2
         Me.SuspendLayout()
@@ -209,7 +238,7 @@ Public Class frmBienvenidaGestor
 
         If notificacion <> 0 Then
 
-            If notificacion <> lblNotificacion.Text Then
+            If notificacion.ToString <> lblNotificacion.Text Then
 
                 pnlNotificacion.Visible = True
                 lblNotificacion.Visible = True
@@ -252,7 +281,7 @@ Public Class frmBienvenidaGestor
         lblNA.Visible = False
     End Sub
 
-    Private Sub Enter(sender As Object, e As EventArgs) Handles Panel7.MouseEnter, Panel5.MouseEnter, Panel3.MouseEnter, Panel1.MouseEnter, Label8.MouseEnter, Label7.MouseEnter, Label6.MouseEnter, Label5.MouseEnter, Label4.MouseEnter, Label3.MouseEnter, Label2.MouseEnter, Label1.MouseEnter, btnUsuarios.MouseEnter, btnSintomas.MouseEnter, btnRegistro.MouseEnter, btnPatologia.MouseEnter, IconButton1.MouseEnter
+    Private Sub Enter(sender As Object, e As EventArgs) Handles Panel7.MouseEnter, Panel5.MouseEnter, Panel3.MouseEnter, Panel1.MouseEnter, lblSubUsu.MouseEnter, lblUsuarioMain.MouseEnter, lblRegistroMain.MouseEnter, lblSubRegis.MouseEnter, lblSintomaMain.MouseEnter, lblSubSin.MouseEnter, lblSubPat.MouseEnter, lblPatologiaMain.MouseEnter, btnUsuariosGestion.MouseEnter, btnSintomasGestion.MouseEnter, btnRegistroGestor.MouseEnter, btnPatologiaGestion.MouseEnter, IconButton1.MouseEnter
 
         If TypeOf sender IsNot Panel Then
             sender.parent.backcolor = Color.FromArgb(25, 32, 37)
@@ -262,7 +291,7 @@ Public Class frmBienvenidaGestor
 
     End Sub
 
-    Private Sub Leave(sender As Object, e As EventArgs) Handles Panel7.MouseLeave, Panel5.MouseLeave, Panel3.MouseLeave, Panel1.MouseLeave, Label8.MouseLeave, Label7.MouseLeave, Label6.MouseLeave, Label5.MouseLeave, Label4.MouseLeave, Label3.MouseLeave, Label2.MouseLeave, Label1.MouseLeave, btnUsuarios.MouseLeave, btnSintomas.MouseLeave, btnRegistro.MouseLeave, btnPatologia.MouseLeave, IconButton1.MouseLeave
+    Private Sub Leave(sender As Object, e As EventArgs) Handles Panel7.MouseLeave, Panel5.MouseLeave, Panel3.MouseLeave, Panel1.MouseLeave, lblSubUsu.MouseLeave, lblUsuarioMain.MouseLeave, lblRegistroMain.MouseLeave, lblSubRegis.MouseLeave, lblSintomaMain.MouseLeave, lblSubSin.MouseLeave, lblSubPat.MouseLeave, lblPatologiaMain.MouseLeave, btnUsuariosGestion.MouseLeave, btnSintomasGestion.MouseLeave, btnRegistroGestor.MouseLeave, btnPatologiaGestion.MouseLeave, IconButton1.MouseLeave
 
         If TypeOf sender IsNot Panel Then
             sender.parent.backcolor = Colores.primario_DARK
@@ -271,7 +300,7 @@ Public Class frmBienvenidaGestor
         End If
     End Sub
 
-    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuariosGestion.Click
         Dim frm As New frmListado(2)
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -299,7 +328,7 @@ Public Class frmBienvenidaGestor
         Me.ResumeLayout()
     End Sub
 
-    Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPass.Click
+    Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPassGestor.Click
         Me.SuspendLayout()
         Dim perfil As New UCVerPerfil()
         perfil.pnlCredenciales.BringToFront()
@@ -309,7 +338,7 @@ Public Class frmBienvenidaGestor
         Me.ResumeLayout()
     End Sub
 
-    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
+    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles btnCerrarSesionGestor.Click
         Principal.Singleton.CambiarTamaño(frmLogin)
         Dim instancia As frmLogin = Me.ParentForm
         If instancia.mcbRecordarUsuario.Checked Then
@@ -326,6 +355,10 @@ Public Class frmBienvenidaGestor
     End Sub
 
     Private Sub frmBienvenidaGestor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
 
     End Sub
 End Class

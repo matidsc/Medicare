@@ -22,38 +22,38 @@ Partial Class frmRegistrarMedico
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lblNomPat = New System.Windows.Forms.Label()
+        Me.lblNomPatMed = New System.Windows.Forms.Label()
         Me.txtCed = New Guna.UI.WinForms.GunaLineTextBox()
         Me.txtEspec = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.lblEspec = New System.Windows.Forms.Label()
+        Me.lblEspecMed = New System.Windows.Forms.Label()
         Me.txtPrimerNombre = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.lblPNom = New System.Windows.Forms.Label()
+        Me.lblPNomMed = New System.Windows.Forms.Label()
         Me.txtSegundoNombre = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.lblSNom = New System.Windows.Forms.Label()
+        Me.lblSNomMed = New System.Windows.Forms.Label()
         Me.txtPrimerApellido = New Guna.UI.WinForms.GunaLineTextBox()
         Me.txtSegundoApellido = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.lblPApe = New System.Windows.Forms.Label()
-        Me.lblSApe = New System.Windows.Forms.Label()
+        Me.lblPApeMed = New System.Windows.Forms.Label()
+        Me.lblSApeMed = New System.Windows.Forms.Label()
         Me.btnRegistrarMedico = New Guna.UI.WinForms.GunaButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblCorreoMed = New System.Windows.Forms.Label()
         Me.txtMail = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblMiFoto = New System.Windows.Forms.Label()
         Me.btnImg = New Guna.UI.WinForms.GunaButton()
         Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         CType(Me.GunaPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'lblNomPat
+        'lblNomPatMed
         '
-        Me.lblNomPat.AutoSize = True
-        Me.lblNomPat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNomPat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblNomPat.Location = New System.Drawing.Point(35, 123)
-        Me.lblNomPat.Name = "lblNomPat"
-        Me.lblNomPat.Size = New System.Drawing.Size(182, 25)
-        Me.lblNomPat.TabIndex = 183
-        Me.lblNomPat.Text = "Cédula de identidad"
+        Me.lblNomPatMed.AutoSize = True
+        Me.lblNomPatMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNomPatMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblNomPatMed.Location = New System.Drawing.Point(35, 123)
+        Me.lblNomPatMed.Name = "lblNomPatMed"
+        Me.lblNomPatMed.Size = New System.Drawing.Size(182, 25)
+        Me.lblNomPatMed.TabIndex = 183
+        Me.lblNomPatMed.Text = "Cédula de identidad"
         '
         'txtCed
         '
@@ -85,16 +85,16 @@ Partial Class frmRegistrarMedico
         Me.txtEspec.Size = New System.Drawing.Size(262, 36)
         Me.txtEspec.TabIndex = 2
         '
-        'lblEspec
+        'lblEspecMed
         '
-        Me.lblEspec.AutoSize = True
-        Me.lblEspec.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEspec.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblEspec.Location = New System.Drawing.Point(35, 238)
-        Me.lblEspec.Name = "lblEspec"
-        Me.lblEspec.Size = New System.Drawing.Size(140, 25)
-        Me.lblEspec.TabIndex = 185
-        Me.lblEspec.Text = "Especialización"
+        Me.lblEspecMed.AutoSize = True
+        Me.lblEspecMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEspecMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblEspecMed.Location = New System.Drawing.Point(35, 238)
+        Me.lblEspecMed.Name = "lblEspecMed"
+        Me.lblEspecMed.Size = New System.Drawing.Size(140, 25)
+        Me.lblEspecMed.TabIndex = 185
+        Me.lblEspecMed.Text = "Especialización"
         '
         'txtPrimerNombre
         '
@@ -111,16 +111,16 @@ Partial Class frmRegistrarMedico
         Me.txtPrimerNombre.Size = New System.Drawing.Size(262, 36)
         Me.txtPrimerNombre.TabIndex = 3
         '
-        'lblPNom
+        'lblPNomMed
         '
-        Me.lblPNom.AutoSize = True
-        Me.lblPNom.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblPNom.Location = New System.Drawing.Point(399, 123)
-        Me.lblPNom.Name = "lblPNom"
-        Me.lblPNom.Size = New System.Drawing.Size(139, 25)
-        Me.lblPNom.TabIndex = 187
-        Me.lblPNom.Text = "Primer nombre"
+        Me.lblPNomMed.AutoSize = True
+        Me.lblPNomMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPNomMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblPNomMed.Location = New System.Drawing.Point(399, 123)
+        Me.lblPNomMed.Name = "lblPNomMed"
+        Me.lblPNomMed.Size = New System.Drawing.Size(139, 25)
+        Me.lblPNomMed.TabIndex = 187
+        Me.lblPNomMed.Text = "Primer nombre"
         '
         'txtSegundoNombre
         '
@@ -137,16 +137,16 @@ Partial Class frmRegistrarMedico
         Me.txtSegundoNombre.Size = New System.Drawing.Size(262, 36)
         Me.txtSegundoNombre.TabIndex = 4
         '
-        'lblSNom
+        'lblSNomMed
         '
-        Me.lblSNom.AutoSize = True
-        Me.lblSNom.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblSNom.Location = New System.Drawing.Point(399, 351)
-        Me.lblSNom.Name = "lblSNom"
-        Me.lblSNom.Size = New System.Drawing.Size(158, 25)
-        Me.lblSNom.TabIndex = 189
-        Me.lblSNom.Text = "Segundo nombre"
+        Me.lblSNomMed.AutoSize = True
+        Me.lblSNomMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSNomMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblSNomMed.Location = New System.Drawing.Point(399, 351)
+        Me.lblSNomMed.Name = "lblSNomMed"
+        Me.lblSNomMed.Size = New System.Drawing.Size(158, 25)
+        Me.lblSNomMed.TabIndex = 189
+        Me.lblSNomMed.Text = "Segundo nombre"
         '
         'txtPrimerApellido
         '
@@ -178,27 +178,27 @@ Partial Class frmRegistrarMedico
         Me.txtSegundoApellido.Size = New System.Drawing.Size(262, 36)
         Me.txtSegundoApellido.TabIndex = 6
         '
-        'lblPApe
+        'lblPApeMed
         '
-        Me.lblPApe.AutoSize = True
-        Me.lblPApe.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPApe.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblPApe.Location = New System.Drawing.Point(741, 123)
-        Me.lblPApe.Name = "lblPApe"
-        Me.lblPApe.Size = New System.Drawing.Size(141, 25)
-        Me.lblPApe.TabIndex = 192
-        Me.lblPApe.Text = "Primer apellido"
+        Me.lblPApeMed.AutoSize = True
+        Me.lblPApeMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPApeMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblPApeMed.Location = New System.Drawing.Point(741, 123)
+        Me.lblPApeMed.Name = "lblPApeMed"
+        Me.lblPApeMed.Size = New System.Drawing.Size(141, 25)
+        Me.lblPApeMed.TabIndex = 192
+        Me.lblPApeMed.Text = "Primer apellido"
         '
-        'lblSApe
+        'lblSApeMed
         '
-        Me.lblSApe.AutoSize = True
-        Me.lblSApe.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSApe.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblSApe.Location = New System.Drawing.Point(760, 336)
-        Me.lblSApe.Name = "lblSApe"
-        Me.lblSApe.Size = New System.Drawing.Size(160, 25)
-        Me.lblSApe.TabIndex = 193
-        Me.lblSApe.Text = "Segundo apellido"
+        Me.lblSApeMed.AutoSize = True
+        Me.lblSApeMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSApeMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblSApeMed.Location = New System.Drawing.Point(760, 336)
+        Me.lblSApeMed.Name = "lblSApeMed"
+        Me.lblSApeMed.Size = New System.Drawing.Size(160, 25)
+        Me.lblSApeMed.TabIndex = 193
+        Me.lblSApeMed.Text = "Segundo apellido"
         '
         'btnRegistrarMedico
         '
@@ -247,16 +247,16 @@ Partial Class frmRegistrarMedico
         Me.btnAtras.Text = "Atrás"
         Me.btnAtras.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblCorreoMed
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(35, 351)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(169, 25)
-        Me.Label1.TabIndex = 197
-        Me.Label1.Text = "Correo electrónico"
+        Me.lblCorreoMed.AutoSize = True
+        Me.lblCorreoMed.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCorreoMed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblCorreoMed.Location = New System.Drawing.Point(35, 351)
+        Me.lblCorreoMed.Name = "lblCorreoMed"
+        Me.lblCorreoMed.Size = New System.Drawing.Size(169, 25)
+        Me.lblCorreoMed.TabIndex = 197
+        Me.lblCorreoMed.Text = "Correo electrónico"
         '
         'txtMail
         '
@@ -273,16 +273,16 @@ Partial Class frmRegistrarMedico
         Me.txtMail.Size = New System.Drawing.Size(262, 36)
         Me.txtMail.TabIndex = 7
         '
-        'Label2
+        'lblMiFoto
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(742, 450)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 20)
-        Me.Label2.TabIndex = 203
-        Me.Label2.Text = "Mi foto"
+        Me.lblMiFoto.AutoSize = True
+        Me.lblMiFoto.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMiFoto.ForeColor = System.Drawing.Color.Silver
+        Me.lblMiFoto.Location = New System.Drawing.Point(742, 450)
+        Me.lblMiFoto.Name = "lblMiFoto"
+        Me.lblMiFoto.Size = New System.Drawing.Size(58, 20)
+        Me.lblMiFoto.TabIndex = 203
+        Me.lblMiFoto.Text = "Mi foto"
         '
         'btnImg
         '
@@ -330,24 +330,24 @@ Partial Class frmRegistrarMedico
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1070, 650)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblMiFoto)
         Me.Controls.Add(Me.btnImg)
         Me.Controls.Add(Me.GunaPictureBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblCorreoMed)
         Me.Controls.Add(Me.txtMail)
         Me.Controls.Add(Me.btnAtras)
         Me.Controls.Add(Me.btnRegistrarMedico)
-        Me.Controls.Add(Me.lblSApe)
-        Me.Controls.Add(Me.lblPApe)
+        Me.Controls.Add(Me.lblSApeMed)
+        Me.Controls.Add(Me.lblPApeMed)
         Me.Controls.Add(Me.txtSegundoApellido)
         Me.Controls.Add(Me.txtPrimerApellido)
-        Me.Controls.Add(Me.lblSNom)
+        Me.Controls.Add(Me.lblSNomMed)
         Me.Controls.Add(Me.txtSegundoNombre)
-        Me.Controls.Add(Me.lblPNom)
+        Me.Controls.Add(Me.lblPNomMed)
         Me.Controls.Add(Me.txtPrimerNombre)
-        Me.Controls.Add(Me.lblEspec)
+        Me.Controls.Add(Me.lblEspecMed)
         Me.Controls.Add(Me.txtEspec)
-        Me.Controls.Add(Me.lblNomPat)
+        Me.Controls.Add(Me.lblNomPatMed)
         Me.Controls.Add(Me.txtCed)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmRegistrarMedico"
@@ -358,23 +358,23 @@ Partial Class frmRegistrarMedico
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblNomPat As Label
+    Friend WithEvents lblNomPatMed As Label
     Friend WithEvents txtCed As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents txtEspec As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents lblEspec As Label
+    Friend WithEvents lblEspecMed As Label
     Friend WithEvents txtPrimerNombre As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents lblPNom As Label
+    Friend WithEvents lblPNomMed As Label
     Friend WithEvents txtSegundoNombre As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents lblSNom As Label
+    Friend WithEvents lblSNomMed As Label
     Friend WithEvents txtPrimerApellido As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents txtSegundoApellido As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents lblPApe As Label
-    Friend WithEvents lblSApe As Label
+    Friend WithEvents lblPApeMed As Label
+    Friend WithEvents lblSApeMed As Label
     Friend WithEvents btnRegistrarMedico As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblCorreoMed As Label
     Friend WithEvents txtMail As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblMiFoto As Label
     Friend WithEvents btnImg As Guna.UI.WinForms.GunaButton
     Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
 End Class

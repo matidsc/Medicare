@@ -9,56 +9,59 @@ Public Class frmRegistroGestor
 
     Public Sub New()
 
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
 
 
-        txtCI.Text = "52379287"
-        txtPNom.Text = "asdasd"
-        txtPApe.Text = "ssss"
-        txtSApe.Text = "sswsswssss"
-        txtSNom.Text = "eeeee"
-        txtCon.Text = "asd"
-        txtRepCon.Text = "asd"
-        txtMail.Text = "rasd@asd.com"
-
-
-
-
-
-
-
-
-
-
-
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
 
     End Sub
 
-    Private Sub dgvTelefonos_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvTelefonos.CellValidating
-
-        'If dgvTelefonos.Rows(e.RowIndex).IsNewRow Then
-        '    If e.ColumnIndex = 0 Then
-        '        If ver.verificar_int(e.FormattedValue.ToString) Then
-        '        Else
-        '            dgvTelefonos.Rows.RemoveAt(dgvTelefonos.SelectedRows(0).Index)
-        '        End If
-        '    End If
-        'End If
-
-    End Sub
-
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrarGestor.Click
 
         If Principal.Singleton.VerificarCedula(check, txtCI.Text) Then
             If Principal.Singleton.VerificarContraseña(seg, txtCon.Text, txtRepCon.Text) Then
@@ -79,26 +82,26 @@ Public Class frmRegistroGestor
                             If ges.VerificarBaja(txtCI.Text) Then
 
                                 If ges.Registrar Then
+                                    MsgBox(Principal.Singleton.Idioma("msgboRegistrarGestor", "Gestor registrado con éxito"))
 
-                                    MsgBox("Gestor registrado con éxito")
                                     Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
 
                                 Else
-                                    MsgBox("El usuario ya fue registrado")
+                                    MsgBox(Principal.Singleton.Idioma("msgboxErrorGestor", "El usuario ya fue registrado"))
                                 End If
 
                             Else
-                                Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+                                Dim respuesta As Integer = MsgBox(Principal.Singleton.Idioma("msgboxEstaDadoDeBaja", "Usted se encuentra dado de baja. ¿Desea reingresar al sistema?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
                                 If respuesta = vbYes Then
                                     ges.ReingresarUsuario(txtCI.Text)
-                                    MsgBox("Ha sido reingresado")
+                                    MsgBox(Principal.Singleton.Idioma("msgboRegistrarGestor", "Gestor registrado con éxito"))
                                     Principal.Singleton.limpiar(txtCI, txtCon, txtRepCon, txtPApe, txtPNom, txtSApe, txtSNom, txtMail, dgvTelefonos, aliTel)
                                 End If
                             End If
                         Else
 
-                            MsgBox("Ha ingresado un teléfono incorrecto")
+                            MsgBox(Principal.Singleton.Idioma("msgboxTelefonoError", "Ha ingresado un teléfono incorrecto"))
 
                         End If
                     End If
@@ -106,41 +109,15 @@ Public Class frmRegistroGestor
             End If
 
         Else
-            MsgBox("La cédula ingresada no es correcta")
+            MsgBox(Principal.Singleton.Idioma("msgboxCedulaError", "La cédula ingresada no es correcta"))
 
         End If
 
     End Sub
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarGestor.Click
 
         dgvTelefonos.Rows.Add()
-        'MsgBox(dgvTelefonos.Rows.Count)
-
-        'For Each row As DataGridViewRow In dgvTelefonos.Rows
-
-        '    If row.Cells(0).Value <> Nothing Then
-        '        If check.Verificar_Int(row.Cells(0).Value.ToString) = False Then
-        '            MsgBox("Ingreso un telefono incorrecto")
-        '            dgvTelefonos.Rows.RemoveAt(row.Index)
-        '        End If
-
-        '    End If
-
-        'Next
-
-        'If dgvTelefonos.Rows.Count > 1 Then
-        '    If dgvTelefonos.Rows(dgvTelefonos.Rows.Count - 2).Cells(0).Value.ToString <> "" Then
-        '        If check.Verificar_Int(dgvTelefonos.Rows(dgvTelefonos.Rows.Count - 2).Cells(0).Value.ToString) = False Then
-        '            MsgBox("Ingresó un teléfono incorrecto")
-        '            dgvTelefonos.Rows.RemoveAt(dgvTelefonos.Rows.Count - 2)
-        '        Else
-
-        '        End If
-        '    End If
-
-        'End If
-
 
     End Sub
 
@@ -160,14 +137,14 @@ Public Class frmRegistroGestor
     End Sub
 
     Private Sub btnAtras_Click_1(sender As Object, e As EventArgs) Handles btnAtras.Click
-        Principal.Singleton.CambiarTamaño(frmLogin)
+        Principal.Singleton.CambiarTamaño(frmOpciones)
         Me.Dispose()
     End Sub
 
     Private Sub btnImg_Click(sender As Object, e As EventArgs) Handles btnImg.Click
         Dim dial As New OpenFileDialog
 
-        dial.Title = "Seleccione una fotografía"
+        dial.Title = Principal.Singleton.Idioma("txtTitleRegGestor", "Seleccione una fotografía")
         dial.Filter = "Image Files (*.jpg;*.jpeg;*bmp;*.png;)|*.jpg;*.jpeg;*bmp;*.png;"
 
 

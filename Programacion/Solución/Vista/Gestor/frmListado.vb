@@ -21,6 +21,50 @@ Public Class frmListado
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
     End Sub
     Public Sub New(op As Byte)
 
@@ -33,6 +77,48 @@ Public Class frmListado
         ' Next
 
         InitializeComponent()
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+        Next
+
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
@@ -54,14 +140,15 @@ Public Class frmListado
                 btnEliminarElementos.Visible = False
                 btnModificarElemento.Visible = False
                 btnSeleccionMultiple.Visible = False
-                btnRegistrar.Visible = False
+                btnRegistrarListado.Visible = False
             Case 3
                 dgvListado.DataSource = ControladorPaciente.Singleton.getHistorialConsultas(Datos_Temporales.userLog)
                 dgvListado.Columns(0).Visible = False
                 btnEliminarElementos.Visible = False
                 btnModificarElemento.Visible = False
                 btnSeleccionMultiple.Visible = False
-                btnRegistrar.Visible = False
+                btnRegistrarListado.Visible = False
+                lblBuscarListado.Visible = False
                 Me.filtrarPor = "nombre"
                 txtBuscar.Visible = False
                 PictureBox1.Visible = False
@@ -79,28 +166,70 @@ Public Class frmListado
         Me.esCSV = True
         Me.op = op
         dgvListado.DataSource = Configuracion.Singleton.LeerCSV(path, lista)
-        btnRegistrar.Visible = True
+        btnRegistrarListado.Visible = True
         btnEliminarElementos.Visible = False
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         instancia = Me
-    End Sub
 
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+
+        Next
+    End Sub
     Private Sub btnSeleccionMultiple_Click(sender As Object, e As EventArgs) Handles btnSeleccionMultiple.Click
 
         If dgvListado.MultiSelect = True Then
 
             dgvListado.MultiSelect = False
-            btnSeleccionMultiple.Text = "ACTIVAR DESACTIVAR SELECCIÓN MÚLTIPLE"
+            btnSeleccionMultiple.Text = Principal.Singleton.Idioma("btnSeleccionMultiple1", "ACTIVAR DESACTIVAR SELECCIÓN MÚLTIPLE")
 
         Else
             dgvListado.MultiSelect = True
-            btnSeleccionMultiple.Text = "DESACTIVAR SELECCIÓN MÚLTIPLE"
+            btnSeleccionMultiple.Text = Principal.Singleton.Idioma("btnSeleccionMultiple2", "DESACTIVAR SELECCIÓN MÚLTIPLE")
 
         End If
 
     End Sub
-
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
 
@@ -113,11 +242,6 @@ Public Class frmListado
                 dgvListado.DataSource = s.listarSintomas
 
         End Select
-    End Sub
-
-    Private Sub dgvListadoPatologias_MouseClick(sender As Object, e As MouseEventArgs)
-        'btnEliminarElementos.Visible = True
-        'btnModificarElemento.Visible = True
     End Sub
     Private Sub modificarCSV(nombre As String)
 
@@ -161,14 +285,10 @@ Public Class frmListado
                 UcAsociar1.dgvSintomasSeleccionados.Sort(UcAsociar1.dgvSintomasSeleccionados.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
                 UcAsociar1.dgvTodosLosSintomas.Sort(UcAsociar1.dgvTodosLosSintomas.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
-                'MsgBox(UcAsociar1.dgvSintomasSeleccionados.Rows.Count)
-
             End If
 
         End If
     End Sub
-
-
     Private Sub dgvListadoPatologias_SelectionChanged(sender As Object, e As EventArgs) Handles dgvListado.SelectionChanged
 
         If dgvListado.MultiSelect = True And dgvListado.SelectedRows.Count > 1 Then
@@ -176,14 +296,14 @@ Public Class frmListado
             lblCantSelecc.Visible = True
             btnEliminarElementos.Enabled = True
             lblCantSelecc.Text = dgvListado.SelectedRows.Count.ToString
-            btnEliminarElementos.Text = "ELIMINAR " & dgvListado.SelectedRows.Count.ToString & "ELEMENTOS" '& op & ""
+            btnEliminarElementos.Text = Principal.Singleton.Idioma("btnEliminarElementos1 ", "ELIMINAR ") & dgvListado.SelectedRows.Count.ToString & Principal.Singleton.Idioma("txtElementos", "ELEMENTOS")
             btnModificarElemento.Enabled = False
 
         ElseIf dgvListado.SelectedRows.Count = 1 Then
 
             btnEliminarElementos.Enabled = True
             btnModificarElemento.Enabled = True
-            btnEliminarElementos.Text = "ELIMINAR ELEMENTO SELECCIONADO"
+            btnEliminarElementos.Text = Principal.Singleton.Idioma("btnEliminarElementos3", "ELIMINAR ELEMENTO SELECCIONADO")
 
             If dgvListado.MultiSelect = True Then
 
@@ -201,61 +321,7 @@ Public Class frmListado
 
     End Sub
 
-    'Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    '    If btnPrio.Visible = False Then
-    '        btnDesc.Visible = True
-    '        btnNom.Visible = True
-    '        btnPrio.Visible = True
-
-    '    Else
-    '        btnDesc.Visible = False
-    '        btnNom.Visible = False
-    '        btnPrio.Visible = False
-
-    '    End If
-
-    'End Sub
-
-    'Private Sub btnBuscarPor_Click(sender As Object, e As EventArgs)
-
-    '    If btnPrio.Visible = False Then
-
-    '        Panel1.Height = 191
-    '        btnPrio.Visible = True
-    '        btnRec.Visible = True
-    '        btnNom.Visible = True
-    '        btnDesc.Visible = True
-
-    '    Else
-    '        Panel1.Height = btnBuscarPor.Height
-    '        btnPrio.Visible = False
-    '        btnRec.Visible = False
-    '        btnNom.Visible = False
-    '        btnDesc.Visible = False
-
-    '    End If
-
-    'End Sub
-
-
-    'Private Sub btnPrio_Click(sender As Object, e As EventArgs)
-
-    '    btnBuscarPor.Text = "buscar por " & sender.text
-    '    Me.criterio = sender.text
-    '    Panel1.Height = btnBuscarPor.Height
-    '    btnPrio.Visible = False
-    '    btnRec.Visible = False
-    '    btnNom.Visible = False
-    '    btnDesc.Visible = False
-
-    'End Sub
-
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        'Dim DV As New DataView(dgvListado.DataSource)
-        'DV.RowFilter = String.Format("convert(" & Me.filtrarPor & ", 'System.String') Like '%{0}%' ",
-        '                     txtBuscar.Text)
-        'dgvListado.DataSource = DV
 
         Dim bs As New BindingSource
         bs.DataSource = dgvListado.DataSource
@@ -266,12 +332,12 @@ Public Class frmListado
     End Sub
     Private Sub txtBuscar_GotFocus(sender As Object, e As EventArgs) Handles txtBuscar.GotFocus
         If txtBuscar.Text = Nothing Then
-            lblBuscar.Visible = False
+            lblBuscarListado.Visible = False
         End If
     End Sub
     Private Sub txtBuscar_LostFocus(sender As Object, e As EventArgs) Handles txtBuscar.LostFocus
         If txtBuscar.Text = Nothing Then
-            lblBuscar.Visible = True
+            lblBuscarListado.Visible = True
         End If
     End Sub
 
@@ -281,10 +347,10 @@ Public Class frmListado
 
         If dgvListado.SelectedRows.Count = 1 Then
 
-            YN = MsgBox("¿Seguro desea eliminar 1 ", vbQuestion + vbYesNo + vbDefaultButton2, "")
+            YN = MsgBox(Principal.Singleton.Idioma("msgEliminarELementos", "¿Seguro desea eliminar 1 "), vbQuestion + vbYesNo + vbDefaultButton2, "")
 
         Else
-            YN = MsgBox("¿Seguro desea eliminar " & dgvListado.SelectedRows.Count & " ", vbQuestion + vbYesNo + vbDefaultButton2, "Eliminar patologías")
+            YN = MsgBox(Principal.Singleton.Idioma("EliminarELementos2", "¿Seguro desea eliminar ") & dgvListado.SelectedRows.Count & " ", vbQuestion + vbYesNo + vbDefaultButton2, Principal.Singleton.Idioma("txtEliminarPat", "Eliminar patologías"))
 
         End If
 
@@ -362,7 +428,7 @@ Public Class frmListado
 
     End Sub
 
-    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrarListado.Click
 
         Dim tabla As DataTable = dgvListado.DataSource
 
@@ -373,31 +439,31 @@ Public Class frmListado
                 Dim pat As New ControladorPatologia
 
                 If pat.Registrar(tabla, dt) Then
-                    MsgBox("Se registraron las patologías exitosamente")
+                    MsgBox(Principal.Singleton.Idioma("msgRegistroPatologiaCSV", "Se registraron las patologías exitosamente"))
                     Principal.Singleton.CambiarTamaño(frmOpciones)
                     Me.Dispose()
                 Else
-                    MsgBox("Error al registrar las patologías")
+                    MsgBox(Principal.Singleton.Idioma("msboxErrorPatologiaCSV", "Error al registrar las patologías"))
                 End If
 
             Case 1
                 Dim sin As New ControladorSintoma
                 If sin.Registrar(tabla) Then
-                    MsgBox("Se registraron los síntomas exitosamente")
+                    MsgBox(Principal.Singleton.Idioma("msgRegistroSintomaCSV", "Se registraron los síntomas exitosamente"))
                     Principal.Singleton.CambiarTamaño(frmOpciones)
                     Me.Dispose()
                 Else
-                    MsgBox("Error al registrar los síntomas")
+                    MsgBox(Principal.Singleton.Idioma("msgErrorSintomaCSV", "Error al registrar los síntomas"))
                 End If
 
             Case 2
                 Dim med As New ControladorMedico
                 If med.registrar(tabla) Then
-                    MsgBox("Se registraron los médicos exitosamente")
+                    MsgBox(Principal.Singleton.Idioma("msgRegistroMedicoCSV", "Se registraron los médicos exitosamente"))
                     Principal.Singleton.CambiarTamaño(frmOpciones)
                     Me.Dispose()
                 Else
-                    MsgBox("Error al registrar a los médicos")
+                    MsgBox(Principal.Singleton.Idioma("msgErrorMedicoCSV", "Error al registrar a los médicos"))
                 End If
 
         End Select
@@ -421,8 +487,7 @@ Public Class frmListado
     Private Sub dgvListado_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListado.CellMouseDoubleClick
 
         If op = 3 Then
-            MsgBox(dgvListado.CurrentRow.Cells(0).Value)
-            Dim frm As New frmObtenerDiagnostico(ControladorPatologia.Singleton.traerDiagnosticoPorId(dgvListado.CurrentRow.Cells(0).Value, Datos_Temporales.userLog))
+            Dim frm As New frmObtenerDiagnostico(ControladorPatologia.Singleton.traerDiagnosticoPorId(dgvListado.CurrentRow.Cells(0).Value, Datos_Temporales.userLog), 3)
             Me.SuspendLayout()
             Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
             Principal.Singleton.CambiarTamaño(frmObtenerDiagnostico)

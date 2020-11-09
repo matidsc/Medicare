@@ -30,36 +30,36 @@ Partial Class frmRegistroPaciente
         Me.btnPatCron = New Guna.UI.WinForms.GunaButton()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.sepFecNac = New Guna.UI.WinForms.GunaSeparator()
-        Me.btnSoli = New Guna.UI.WinForms.GunaButton()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnSoliCuentaPac = New Guna.UI.WinForms.GunaButton()
+        Me.lblFecNacPac = New System.Windows.Forms.Label()
         Me.cbF = New Guna.UI.WinForms.GunaRadioButton()
-        Me.lblSexo = New System.Windows.Forms.Label()
+        Me.lblSexoRegPac = New System.Windows.Forms.Label()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
-        Me.btnAceptar = New Guna.UI.WinForms.GunaButton()
+        Me.btnAceptarRegPac = New Guna.UI.WinForms.GunaButton()
         Me.cbM = New Guna.UI.WinForms.GunaRadioButton()
-        Me.lblTelefonos = New System.Windows.Forms.Label()
+        Me.lblTelefonosRegPac = New System.Windows.Forms.Label()
         Me.txtRepPass = New Guna.UI.WinForms.GunaLineTextBox()
         Me.txtSApe = New Guna.UI.WinForms.GunaLineTextBox()
         Me.txtCI = New Guna.UI.WinForms.GunaLineTextBox()
         Me.txtPApe = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.lblCon = New System.Windows.Forms.Label()
-        Me.lblSNom = New System.Windows.Forms.Label()
-        Me.lblCI = New System.Windows.Forms.Label()
-        Me.lblMail = New System.Windows.Forms.Label()
-        Me.lblPNom = New System.Windows.Forms.Label()
-        Me.lblPApe = New System.Windows.Forms.Label()
-        Me.lblSApe = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblPassPac = New System.Windows.Forms.Label()
+        Me.lblSNomRegPac = New System.Windows.Forms.Label()
+        Me.lblCIRegPac = New System.Windows.Forms.Label()
+        Me.lblMailRegistroPaciente = New System.Windows.Forms.Label()
+        Me.lblPNomRegisPaciente = New System.Windows.Forms.Label()
+        Me.lblPApeRegPaciente = New System.Windows.Forms.Label()
+        Me.lblSApeRegPaciente = New System.Windows.Forms.Label()
+        Me.lblMiFotoPac = New System.Windows.Forms.Label()
         Me.txtPass = New Guna.UI.WinForms.GunaLineTextBox()
         Me.lblFormatoFecNac = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblRepPassPac = New System.Windows.Forms.Label()
         Me.btnImg = New Guna.UI.WinForms.GunaButton()
         Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.txtFecNac = New System.Windows.Forms.MaskedTextBox()
         Me.txtSNom = New Guna.UI.WinForms.GunaLineTextBox()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txtPNom = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.btnEliminar = New Guna.UI.WinForms.GunaButton()
+        Me.btnEliminarRegPac = New Guna.UI.WinForms.GunaButton()
         Me.txtMail = New Guna.UI.WinForms.GunaLineTextBox()
         Me.dgvTelefonos = New System.Windows.Forms.DataGridView()
         Me.Telefonos = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,36 +85,36 @@ Partial Class frmRegistroPaciente
         Me.Panel1.Controls.Add(Me.btnPatCron)
         Me.Panel1.Controls.Add(Me.btnAtras)
         Me.Panel1.Controls.Add(Me.sepFecNac)
-        Me.Panel1.Controls.Add(Me.btnSoli)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.btnSoliCuentaPac)
+        Me.Panel1.Controls.Add(Me.lblFecNacPac)
         Me.Panel1.Controls.Add(Me.cbF)
-        Me.Panel1.Controls.Add(Me.lblSexo)
+        Me.Panel1.Controls.Add(Me.lblSexoRegPac)
         Me.Panel1.Controls.Add(Me.scroll)
-        Me.Panel1.Controls.Add(Me.btnAceptar)
+        Me.Panel1.Controls.Add(Me.btnAceptarRegPac)
         Me.Panel1.Controls.Add(Me.cbM)
-        Me.Panel1.Controls.Add(Me.lblTelefonos)
+        Me.Panel1.Controls.Add(Me.lblTelefonosRegPac)
         Me.Panel1.Controls.Add(Me.txtRepPass)
         Me.Panel1.Controls.Add(Me.txtSApe)
         Me.Panel1.Controls.Add(Me.txtCI)
         Me.Panel1.Controls.Add(Me.txtPApe)
-        Me.Panel1.Controls.Add(Me.lblCon)
-        Me.Panel1.Controls.Add(Me.lblSNom)
-        Me.Panel1.Controls.Add(Me.lblCI)
-        Me.Panel1.Controls.Add(Me.lblMail)
-        Me.Panel1.Controls.Add(Me.lblPNom)
-        Me.Panel1.Controls.Add(Me.lblPApe)
-        Me.Panel1.Controls.Add(Me.lblSApe)
-        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lblPassPac)
+        Me.Panel1.Controls.Add(Me.lblSNomRegPac)
+        Me.Panel1.Controls.Add(Me.lblCIRegPac)
+        Me.Panel1.Controls.Add(Me.lblMailRegistroPaciente)
+        Me.Panel1.Controls.Add(Me.lblPNomRegisPaciente)
+        Me.Panel1.Controls.Add(Me.lblPApeRegPaciente)
+        Me.Panel1.Controls.Add(Me.lblSApeRegPaciente)
+        Me.Panel1.Controls.Add(Me.lblMiFotoPac)
         Me.Panel1.Controls.Add(Me.txtPass)
         Me.Panel1.Controls.Add(Me.lblFormatoFecNac)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.lblRepPassPac)
         Me.Panel1.Controls.Add(Me.btnImg)
         Me.Panel1.Controls.Add(Me.GunaPictureBox1)
         Me.Panel1.Controls.Add(Me.txtFecNac)
         Me.Panel1.Controls.Add(Me.txtSNom)
         Me.Panel1.Controls.Add(Me.lbl1)
         Me.Panel1.Controls.Add(Me.txtPNom)
-        Me.Panel1.Controls.Add(Me.btnEliminar)
+        Me.Panel1.Controls.Add(Me.btnEliminarRegPac)
         Me.Panel1.Controls.Add(Me.txtMail)
         Me.Panel1.Controls.Add(Me.dgvTelefonos)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -179,44 +179,44 @@ Partial Class frmRegistroPaciente
         Me.sepFecNac.Size = New System.Drawing.Size(146, 10)
         Me.sepFecNac.TabIndex = 227
         '
-        'btnSoli
+        'btnSoliCuentaPac
         '
-        Me.btnSoli.Animated = True
-        Me.btnSoli.AnimationHoverSpeed = 0.07!
-        Me.btnSoli.AnimationSpeed = 0.03!
-        Me.btnSoli.BackColor = System.Drawing.Color.Transparent
-        Me.btnSoli.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnSoli.BorderColor = System.Drawing.Color.Black
-        Me.btnSoli.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSoli.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnSoli.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSoli.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSoli.ForeColor = System.Drawing.Color.White
-        Me.btnSoli.Image = Nothing
-        Me.btnSoli.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSoli.Location = New System.Drawing.Point(429, 577)
-        Me.btnSoli.Name = "btnSoli"
-        Me.btnSoli.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnSoli.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnSoli.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnSoli.OnHoverImage = Nothing
-        Me.btnSoli.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSoli.Radius = 14
-        Me.btnSoli.Size = New System.Drawing.Size(199, 42)
-        Me.btnSoli.TabIndex = 230
-        Me.btnSoli.Text = "Solicitar cuenta"
-        Me.btnSoli.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnSoliCuentaPac.Animated = True
+        Me.btnSoliCuentaPac.AnimationHoverSpeed = 0.07!
+        Me.btnSoliCuentaPac.AnimationSpeed = 0.03!
+        Me.btnSoliCuentaPac.BackColor = System.Drawing.Color.Transparent
+        Me.btnSoliCuentaPac.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnSoliCuentaPac.BorderColor = System.Drawing.Color.Black
+        Me.btnSoliCuentaPac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSoliCuentaPac.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnSoliCuentaPac.FocusedColor = System.Drawing.Color.Empty
+        Me.btnSoliCuentaPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSoliCuentaPac.ForeColor = System.Drawing.Color.White
+        Me.btnSoliCuentaPac.Image = Nothing
+        Me.btnSoliCuentaPac.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnSoliCuentaPac.Location = New System.Drawing.Point(429, 577)
+        Me.btnSoliCuentaPac.Name = "btnSoliCuentaPac"
+        Me.btnSoliCuentaPac.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnSoliCuentaPac.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnSoliCuentaPac.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnSoliCuentaPac.OnHoverImage = Nothing
+        Me.btnSoliCuentaPac.OnPressedColor = System.Drawing.Color.Black
+        Me.btnSoliCuentaPac.Radius = 14
+        Me.btnSoliCuentaPac.Size = New System.Drawing.Size(199, 42)
+        Me.btnSoliCuentaPac.TabIndex = 230
+        Me.btnSoliCuentaPac.Text = "Solicitar cuenta"
+        Me.btnSoliCuentaPac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label3
+        'lblFecNacPac
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Silver
-        Me.Label3.Location = New System.Drawing.Point(705, 393)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(149, 20)
-        Me.Label3.TabIndex = 226
-        Me.Label3.Text = "Fecha de Nacimiento"
+        Me.lblFecNacPac.AutoSize = True
+        Me.lblFecNacPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecNacPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblFecNacPac.Location = New System.Drawing.Point(705, 393)
+        Me.lblFecNacPac.Name = "lblFecNacPac"
+        Me.lblFecNacPac.Size = New System.Drawing.Size(149, 20)
+        Me.lblFecNacPac.TabIndex = 226
+        Me.lblFecNacPac.Text = "Fecha de Nacimiento"
         '
         'cbF
         '
@@ -232,16 +232,16 @@ Partial Class frmRegistroPaciente
         Me.cbF.TabIndex = 11
         Me.cbF.Text = "Femenino"
         '
-        'lblSexo
+        'lblSexoRegPac
         '
-        Me.lblSexo.AutoSize = True
-        Me.lblSexo.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSexo.ForeColor = System.Drawing.Color.Silver
-        Me.lblSexo.Location = New System.Drawing.Point(922, 393)
-        Me.lblSexo.Name = "lblSexo"
-        Me.lblSexo.Size = New System.Drawing.Size(41, 20)
-        Me.lblSexo.TabIndex = 225
-        Me.lblSexo.Text = "Sexo"
+        Me.lblSexoRegPac.AutoSize = True
+        Me.lblSexoRegPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSexoRegPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblSexoRegPac.Location = New System.Drawing.Point(922, 393)
+        Me.lblSexoRegPac.Name = "lblSexoRegPac"
+        Me.lblSexoRegPac.Size = New System.Drawing.Size(41, 20)
+        Me.lblSexoRegPac.TabIndex = 225
+        Me.lblSexoRegPac.Text = "Sexo"
         '
         'scroll
         '
@@ -256,33 +256,33 @@ Partial Class frmRegistroPaciente
         Me.scroll.ThumbHoverColor = System.Drawing.Color.Gray
         Me.scroll.ThumbPressedColor = System.Drawing.Color.DarkGray
         '
-        'btnAceptar
+        'btnAceptarRegPac
         '
-        Me.btnAceptar.Animated = True
-        Me.btnAceptar.AnimationHoverSpeed = 0.07!
-        Me.btnAceptar.AnimationSpeed = 0.03!
-        Me.btnAceptar.BackColor = System.Drawing.Color.Transparent
-        Me.btnAceptar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnAceptar.BorderColor = System.Drawing.Color.Black
-        Me.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnAceptar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.ForeColor = System.Drawing.Color.White
-        Me.btnAceptar.Image = Nothing
-        Me.btnAceptar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnAceptar.Location = New System.Drawing.Point(926, 304)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnAceptar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnAceptar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnAceptar.OnHoverImage = Nothing
-        Me.btnAceptar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnAceptar.Radius = 14
-        Me.btnAceptar.Size = New System.Drawing.Size(96, 42)
-        Me.btnAceptar.TabIndex = 219
-        Me.btnAceptar.Text = "Añadir"
-        Me.btnAceptar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnAceptarRegPac.Animated = True
+        Me.btnAceptarRegPac.AnimationHoverSpeed = 0.07!
+        Me.btnAceptarRegPac.AnimationSpeed = 0.03!
+        Me.btnAceptarRegPac.BackColor = System.Drawing.Color.Transparent
+        Me.btnAceptarRegPac.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnAceptarRegPac.BorderColor = System.Drawing.Color.Black
+        Me.btnAceptarRegPac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAceptarRegPac.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnAceptarRegPac.FocusedColor = System.Drawing.Color.Empty
+        Me.btnAceptarRegPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptarRegPac.ForeColor = System.Drawing.Color.White
+        Me.btnAceptarRegPac.Image = Nothing
+        Me.btnAceptarRegPac.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnAceptarRegPac.Location = New System.Drawing.Point(926, 304)
+        Me.btnAceptarRegPac.Name = "btnAceptarRegPac"
+        Me.btnAceptarRegPac.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnAceptarRegPac.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnAceptarRegPac.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnAceptarRegPac.OnHoverImage = Nothing
+        Me.btnAceptarRegPac.OnPressedColor = System.Drawing.Color.Black
+        Me.btnAceptarRegPac.Radius = 14
+        Me.btnAceptarRegPac.Size = New System.Drawing.Size(96, 42)
+        Me.btnAceptarRegPac.TabIndex = 219
+        Me.btnAceptarRegPac.Text = "Añadir"
+        Me.btnAceptarRegPac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbM
         '
@@ -298,16 +298,16 @@ Partial Class frmRegistroPaciente
         Me.cbM.TabIndex = 10
         Me.cbM.Text = "Masculino"
         '
-        'lblTelefonos
+        'lblTelefonosRegPac
         '
-        Me.lblTelefonos.AutoSize = True
-        Me.lblTelefonos.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelefonos.ForeColor = System.Drawing.Color.Silver
-        Me.lblTelefonos.Location = New System.Drawing.Point(773, 190)
-        Me.lblTelefonos.Name = "lblTelefonos"
-        Me.lblTelefonos.Size = New System.Drawing.Size(73, 20)
-        Me.lblTelefonos.TabIndex = 218
-        Me.lblTelefonos.Text = "Teléfonos"
+        Me.lblTelefonosRegPac.AutoSize = True
+        Me.lblTelefonosRegPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefonosRegPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblTelefonosRegPac.Location = New System.Drawing.Point(773, 190)
+        Me.lblTelefonosRegPac.Name = "lblTelefonosRegPac"
+        Me.lblTelefonosRegPac.Size = New System.Drawing.Size(73, 20)
+        Me.lblTelefonosRegPac.TabIndex = 218
+        Me.lblTelefonosRegPac.Text = "Teléfonos"
         '
         'txtRepPass
         '
@@ -370,93 +370,93 @@ Partial Class frmRegistroPaciente
         Me.txtPApe.Size = New System.Drawing.Size(246, 32)
         Me.txtPApe.TabIndex = 6
         '
-        'lblCon
+        'lblPassPac
         '
-        Me.lblCon.AutoSize = True
-        Me.lblCon.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCon.ForeColor = System.Drawing.Color.Silver
-        Me.lblCon.Location = New System.Drawing.Point(49, 190)
-        Me.lblCon.Name = "lblCon"
-        Me.lblCon.Size = New System.Drawing.Size(83, 20)
-        Me.lblCon.TabIndex = 206
-        Me.lblCon.Text = "Contraseña"
+        Me.lblPassPac.AutoSize = True
+        Me.lblPassPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblPassPac.Location = New System.Drawing.Point(49, 190)
+        Me.lblPassPac.Name = "lblPassPac"
+        Me.lblPassPac.Size = New System.Drawing.Size(83, 20)
+        Me.lblPassPac.TabIndex = 206
+        Me.lblPassPac.Text = "Contraseña"
         '
-        'lblSNom
+        'lblSNomRegPac
         '
-        Me.lblSNom.AutoSize = True
-        Me.lblSNom.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSNom.ForeColor = System.Drawing.Color.Silver
-        Me.lblSNom.Location = New System.Drawing.Point(378, 174)
-        Me.lblSNom.Name = "lblSNom"
-        Me.lblSNom.Size = New System.Drawing.Size(124, 20)
-        Me.lblSNom.TabIndex = 212
-        Me.lblSNom.Text = "Segundo nombre"
+        Me.lblSNomRegPac.AutoSize = True
+        Me.lblSNomRegPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSNomRegPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblSNomRegPac.Location = New System.Drawing.Point(378, 174)
+        Me.lblSNomRegPac.Name = "lblSNomRegPac"
+        Me.lblSNomRegPac.Size = New System.Drawing.Size(124, 20)
+        Me.lblSNomRegPac.TabIndex = 212
+        Me.lblSNomRegPac.Text = "Segundo nombre"
         '
-        'lblCI
+        'lblCIRegPac
         '
-        Me.lblCI.AutoSize = True
-        Me.lblCI.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCI.ForeColor = System.Drawing.Color.Silver
-        Me.lblCI.Location = New System.Drawing.Point(49, 80)
-        Me.lblCI.Name = "lblCI"
-        Me.lblCI.Size = New System.Drawing.Size(144, 20)
-        Me.lblCI.TabIndex = 201
-        Me.lblCI.Text = "Cédula de Identidad"
+        Me.lblCIRegPac.AutoSize = True
+        Me.lblCIRegPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCIRegPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblCIRegPac.Location = New System.Drawing.Point(49, 80)
+        Me.lblCIRegPac.Name = "lblCIRegPac"
+        Me.lblCIRegPac.Size = New System.Drawing.Size(144, 20)
+        Me.lblCIRegPac.TabIndex = 201
+        Me.lblCIRegPac.Text = "Cédula de Identidad"
         '
-        'lblMail
+        'lblMailRegistroPaciente
         '
-        Me.lblMail.AutoSize = True
-        Me.lblMail.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMail.ForeColor = System.Drawing.Color.Silver
-        Me.lblMail.Location = New System.Drawing.Point(722, 80)
-        Me.lblMail.Name = "lblMail"
-        Me.lblMail.Size = New System.Drawing.Size(132, 20)
-        Me.lblMail.TabIndex = 202
-        Me.lblMail.Text = "Correo electrónico"
+        Me.lblMailRegistroPaciente.AutoSize = True
+        Me.lblMailRegistroPaciente.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMailRegistroPaciente.ForeColor = System.Drawing.Color.Silver
+        Me.lblMailRegistroPaciente.Location = New System.Drawing.Point(722, 80)
+        Me.lblMailRegistroPaciente.Name = "lblMailRegistroPaciente"
+        Me.lblMailRegistroPaciente.Size = New System.Drawing.Size(132, 20)
+        Me.lblMailRegistroPaciente.TabIndex = 202
+        Me.lblMailRegistroPaciente.Text = "Correo electrónico"
         '
-        'lblPNom
+        'lblPNomRegisPaciente
         '
-        Me.lblPNom.AutoSize = True
-        Me.lblPNom.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPNom.ForeColor = System.Drawing.Color.Silver
-        Me.lblPNom.Location = New System.Drawing.Point(378, 80)
-        Me.lblPNom.Name = "lblPNom"
-        Me.lblPNom.Size = New System.Drawing.Size(108, 20)
-        Me.lblPNom.TabIndex = 209
-        Me.lblPNom.Text = "Primer nombre"
+        Me.lblPNomRegisPaciente.AutoSize = True
+        Me.lblPNomRegisPaciente.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPNomRegisPaciente.ForeColor = System.Drawing.Color.Silver
+        Me.lblPNomRegisPaciente.Location = New System.Drawing.Point(378, 80)
+        Me.lblPNomRegisPaciente.Name = "lblPNomRegisPaciente"
+        Me.lblPNomRegisPaciente.Size = New System.Drawing.Size(108, 20)
+        Me.lblPNomRegisPaciente.TabIndex = 209
+        Me.lblPNomRegisPaciente.Text = "Primer nombre"
         '
-        'lblPApe
+        'lblPApeRegPaciente
         '
-        Me.lblPApe.AutoSize = True
-        Me.lblPApe.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPApe.ForeColor = System.Drawing.Color.Silver
-        Me.lblPApe.Location = New System.Drawing.Point(378, 294)
-        Me.lblPApe.Name = "lblPApe"
-        Me.lblPApe.Size = New System.Drawing.Size(111, 20)
-        Me.lblPApe.TabIndex = 214
-        Me.lblPApe.Text = "Primer apellido"
+        Me.lblPApeRegPaciente.AutoSize = True
+        Me.lblPApeRegPaciente.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPApeRegPaciente.ForeColor = System.Drawing.Color.Silver
+        Me.lblPApeRegPaciente.Location = New System.Drawing.Point(378, 294)
+        Me.lblPApeRegPaciente.Name = "lblPApeRegPaciente"
+        Me.lblPApeRegPaciente.Size = New System.Drawing.Size(111, 20)
+        Me.lblPApeRegPaciente.TabIndex = 214
+        Me.lblPApeRegPaciente.Text = "Primer apellido"
         '
-        'lblSApe
+        'lblSApeRegPaciente
         '
-        Me.lblSApe.AutoSize = True
-        Me.lblSApe.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSApe.ForeColor = System.Drawing.Color.Silver
-        Me.lblSApe.Location = New System.Drawing.Point(378, 393)
-        Me.lblSApe.Name = "lblSApe"
-        Me.lblSApe.Size = New System.Drawing.Size(127, 20)
-        Me.lblSApe.TabIndex = 216
-        Me.lblSApe.Text = "Segundo apellido"
+        Me.lblSApeRegPaciente.AutoSize = True
+        Me.lblSApeRegPaciente.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSApeRegPaciente.ForeColor = System.Drawing.Color.Silver
+        Me.lblSApeRegPaciente.Location = New System.Drawing.Point(378, 393)
+        Me.lblSApeRegPaciente.Name = "lblSApeRegPaciente"
+        Me.lblSApeRegPaciente.Size = New System.Drawing.Size(127, 20)
+        Me.lblSApeRegPaciente.TabIndex = 216
+        Me.lblSApeRegPaciente.Text = "Segundo apellido"
         '
-        'Label2
+        'lblMiFotoPac
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(124, 432)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 20)
-        Me.Label2.TabIndex = 200
-        Me.Label2.Text = "Mi foto"
+        Me.lblMiFotoPac.AutoSize = True
+        Me.lblMiFotoPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMiFotoPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblMiFotoPac.Location = New System.Drawing.Point(124, 432)
+        Me.lblMiFotoPac.Name = "lblMiFotoPac"
+        Me.lblMiFotoPac.Size = New System.Drawing.Size(58, 20)
+        Me.lblMiFotoPac.TabIndex = 200
+        Me.lblMiFotoPac.Text = "Mi foto"
         '
         'txtPass
         '
@@ -485,16 +485,16 @@ Partial Class frmRegistroPaciente
         Me.lblFormatoFecNac.TabIndex = 163
         Me.lblFormatoFecNac.Text = "yyyy-mm-dd"
         '
-        'Label1
+        'lblRepPassPac
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(49, 324)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 20)
-        Me.Label1.TabIndex = 208
-        Me.Label1.Text = "Repetir contraseña"
+        Me.lblRepPassPac.AutoSize = True
+        Me.lblRepPassPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRepPassPac.ForeColor = System.Drawing.Color.Silver
+        Me.lblRepPassPac.Location = New System.Drawing.Point(49, 324)
+        Me.lblRepPassPac.Name = "lblRepPassPac"
+        Me.lblRepPassPac.Size = New System.Drawing.Size(133, 20)
+        Me.lblRepPassPac.TabIndex = 208
+        Me.lblRepPassPac.Text = "Repetir contraseña"
         '
         'btnImg
         '
@@ -588,34 +588,34 @@ Partial Class frmRegistroPaciente
         Me.txtPNom.Size = New System.Drawing.Size(246, 32)
         Me.txtPNom.TabIndex = 4
         '
-        'btnEliminar
+        'btnEliminarRegPac
         '
-        Me.btnEliminar.Animated = True
-        Me.btnEliminar.AnimationHoverSpeed = 0.07!
-        Me.btnEliminar.AnimationSpeed = 0.03!
-        Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEliminar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnEliminar.BorderColor = System.Drawing.Color.Black
-        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnEliminar.Enabled = False
-        Me.btnEliminar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Image = Nothing
-        Me.btnEliminar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnEliminar.Location = New System.Drawing.Point(926, 235)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnEliminar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnEliminar.OnHoverImage = Nothing
-        Me.btnEliminar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnEliminar.Radius = 14
-        Me.btnEliminar.Size = New System.Drawing.Size(96, 42)
-        Me.btnEliminar.TabIndex = 220
-        Me.btnEliminar.Text = "Borrar"
-        Me.btnEliminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnEliminarRegPac.Animated = True
+        Me.btnEliminarRegPac.AnimationHoverSpeed = 0.07!
+        Me.btnEliminarRegPac.AnimationSpeed = 0.03!
+        Me.btnEliminarRegPac.BackColor = System.Drawing.Color.Transparent
+        Me.btnEliminarRegPac.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnEliminarRegPac.BorderColor = System.Drawing.Color.Black
+        Me.btnEliminarRegPac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminarRegPac.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnEliminarRegPac.Enabled = False
+        Me.btnEliminarRegPac.FocusedColor = System.Drawing.Color.Empty
+        Me.btnEliminarRegPac.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarRegPac.ForeColor = System.Drawing.Color.White
+        Me.btnEliminarRegPac.Image = Nothing
+        Me.btnEliminarRegPac.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnEliminarRegPac.Location = New System.Drawing.Point(926, 235)
+        Me.btnEliminarRegPac.Name = "btnEliminarRegPac"
+        Me.btnEliminarRegPac.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnEliminarRegPac.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnEliminarRegPac.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnEliminarRegPac.OnHoverImage = Nothing
+        Me.btnEliminarRegPac.OnPressedColor = System.Drawing.Color.Black
+        Me.btnEliminarRegPac.Radius = 14
+        Me.btnEliminarRegPac.Size = New System.Drawing.Size(96, 42)
+        Me.btnEliminarRegPac.TabIndex = 220
+        Me.btnEliminarRegPac.Text = "Borrar"
+        Me.btnEliminarRegPac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtMail
         '
@@ -714,36 +714,36 @@ Partial Class frmRegistroPaciente
     Friend WithEvents btnPatCron As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
     Friend WithEvents sepFecNac As Guna.UI.WinForms.GunaSeparator
-    Friend WithEvents btnSoli As Guna.UI.WinForms.GunaButton
-    Friend WithEvents Label3 As Label
+    Friend WithEvents btnSoliCuentaPac As Guna.UI.WinForms.GunaButton
+    Friend WithEvents lblFecNacPac As Label
     Friend WithEvents cbF As Guna.UI.WinForms.GunaRadioButton
-    Friend WithEvents lblSexo As Label
+    Friend WithEvents lblSexoRegPac As Label
     Friend WithEvents scroll As Guna.UI.WinForms.GunaVScrollBar
-    Friend WithEvents btnAceptar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnAceptarRegPac As Guna.UI.WinForms.GunaButton
     Friend WithEvents cbM As Guna.UI.WinForms.GunaRadioButton
-    Friend WithEvents lblTelefonos As Label
+    Friend WithEvents lblTelefonosRegPac As Label
     Friend WithEvents txtRepPass As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents txtSApe As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents txtCI As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents txtPApe As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents lblCon As Label
-    Friend WithEvents lblSNom As Label
-    Friend WithEvents lblCI As Label
-    Friend WithEvents lblMail As Label
-    Friend WithEvents lblPNom As Label
-    Friend WithEvents lblPApe As Label
-    Friend WithEvents lblSApe As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblPassPac As Label
+    Friend WithEvents lblSNomRegPac As Label
+    Friend WithEvents lblCIRegPac As Label
+    Friend WithEvents lblMailRegistroPaciente As Label
+    Friend WithEvents lblPNomRegisPaciente As Label
+    Friend WithEvents lblPApeRegPaciente As Label
+    Friend WithEvents lblSApeRegPaciente As Label
+    Friend WithEvents lblMiFotoPac As Label
     Friend WithEvents txtPass As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents lblFormatoFecNac As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblRepPassPac As Label
     Friend WithEvents btnImg As Guna.UI.WinForms.GunaButton
     Friend WithEvents GunaPictureBox1 As Guna.UI.WinForms.GunaPictureBox
     Friend WithEvents txtFecNac As MaskedTextBox
     Friend WithEvents txtSNom As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents lbl1 As Label
     Friend WithEvents txtPNom As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents btnEliminar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnEliminarRegPac As Guna.UI.WinForms.GunaButton
     Friend WithEvents txtMail As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents dgvTelefonos As DataGridView
     Friend WithEvents Telefonos As DataGridViewTextBoxColumn

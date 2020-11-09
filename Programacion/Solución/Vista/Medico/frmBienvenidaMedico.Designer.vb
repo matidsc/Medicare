@@ -27,11 +27,10 @@ Partial Class frmBienvenidaMedico
         Me.timerChat = New System.Windows.Forms.Timer(Me.components)
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.pnlOps = New System.Windows.Forms.Panel()
-        Me.GunaButton2 = New Guna.UI.WinForms.GunaButton()
-        Me.btnCambiarPass = New Guna.UI.WinForms.GunaButton()
-        Me.btnVerPerfil = New Guna.UI.WinForms.GunaButton()
+        Me.btnCerrarSesionMedico = New Guna.UI.WinForms.GunaButton()
+        Me.btnCambiarPassMedico = New Guna.UI.WinForms.GunaButton()
+        Me.btnVerPerfilMedico = New Guna.UI.WinForms.GunaButton()
         Me.lblNuevosMsg = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.lblNAChats = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.pnlCerrar = New System.Windows.Forms.Panel()
@@ -45,20 +44,20 @@ Partial Class frmBienvenidaMedico
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnIngresar = New Guna.UI.WinForms.GunaButton()
+        Me.btnIngresarChatsPaciente = New Guna.UI.WinForms.GunaButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblSubChats = New System.Windows.Forms.Label()
+        Me.lblTituloChats = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnHistorial = New Guna.UI.WinForms.GunaButton()
+        Me.btnHistorialMedico = New Guna.UI.WinForms.GunaButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblSubHistorial = New System.Windows.Forms.Label()
+        Me.lblTituloHistorial = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnReanudar = New Guna.UI.WinForms.GunaButton()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnListadoPatMedico = New Guna.UI.WinForms.GunaButton()
+        Me.lblTituloListadoPatMedico = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblListadoPatMedico = New System.Windows.Forms.Label()
         Me.pnlInstancia = New System.Windows.Forms.Panel()
         Me.timerMsg = New System.Windows.Forms.Timer(Me.components)
         Me.Redondear = New Guna.UI.WinForms.GunaElipse(Me.components)
@@ -86,7 +85,6 @@ Partial Class frmBienvenidaMedico
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.pnlContenedor.Controls.Add(Me.pnlOps)
         Me.pnlContenedor.Controls.Add(Me.lblNuevosMsg)
-        Me.pnlContenedor.Controls.Add(Me.Label9)
         Me.pnlContenedor.Controls.Add(Me.lblNAChats)
         Me.pnlContenedor.Controls.Add(Me.FlowLayoutPanel1)
         Me.pnlContenedor.Controls.Add(Me.pnlCerrar)
@@ -99,95 +97,95 @@ Partial Class frmBienvenidaMedico
         '
         'pnlOps
         '
-        Me.pnlOps.Controls.Add(Me.GunaButton2)
-        Me.pnlOps.Controls.Add(Me.btnCambiarPass)
-        Me.pnlOps.Controls.Add(Me.btnVerPerfil)
+        Me.pnlOps.Controls.Add(Me.btnCerrarSesionMedico)
+        Me.pnlOps.Controls.Add(Me.btnCambiarPassMedico)
+        Me.pnlOps.Controls.Add(Me.btnVerPerfilMedico)
         Me.pnlOps.Location = New System.Drawing.Point(828, 80)
         Me.pnlOps.Name = "pnlOps"
         Me.pnlOps.Size = New System.Drawing.Size(179, 128)
         Me.pnlOps.TabIndex = 32
         Me.pnlOps.Visible = False
         '
-        'GunaButton2
+        'btnCerrarSesionMedico
         '
-        Me.GunaButton2.Animated = True
-        Me.GunaButton2.AnimationHoverSpeed = 0.07!
-        Me.GunaButton2.AnimationSpeed = 0.03!
-        Me.GunaButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.GunaButton2.BorderColor = System.Drawing.Color.Black
-        Me.GunaButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.GunaButton2.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GunaButton2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GunaButton2.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaButton2.ForeColor = System.Drawing.Color.White
-        Me.GunaButton2.Image = Nothing
-        Me.GunaButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaButton2.Location = New System.Drawing.Point(0, 84)
-        Me.GunaButton2.Name = "GunaButton2"
-        Me.GunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.GunaButton2.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaButton2.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaButton2.OnHoverImage = Nothing
-        Me.GunaButton2.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaButton2.Size = New System.Drawing.Size(179, 42)
-        Me.GunaButton2.TabIndex = 201
-        Me.GunaButton2.Text = "Cerrar sesión"
-        Me.GunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnCerrarSesionMedico.Animated = True
+        Me.btnCerrarSesionMedico.AnimationHoverSpeed = 0.07!
+        Me.btnCerrarSesionMedico.AnimationSpeed = 0.03!
+        Me.btnCerrarSesionMedico.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnCerrarSesionMedico.BorderColor = System.Drawing.Color.Black
+        Me.btnCerrarSesionMedico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCerrarSesionMedico.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnCerrarSesionMedico.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCerrarSesionMedico.FocusedColor = System.Drawing.Color.Empty
+        Me.btnCerrarSesionMedico.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrarSesionMedico.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarSesionMedico.Image = Nothing
+        Me.btnCerrarSesionMedico.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnCerrarSesionMedico.Location = New System.Drawing.Point(0, 84)
+        Me.btnCerrarSesionMedico.Name = "btnCerrarSesionMedico"
+        Me.btnCerrarSesionMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnCerrarSesionMedico.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnCerrarSesionMedico.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnCerrarSesionMedico.OnHoverImage = Nothing
+        Me.btnCerrarSesionMedico.OnPressedColor = System.Drawing.Color.Black
+        Me.btnCerrarSesionMedico.Size = New System.Drawing.Size(179, 42)
+        Me.btnCerrarSesionMedico.TabIndex = 201
+        Me.btnCerrarSesionMedico.Text = "Cerrar sesión"
+        Me.btnCerrarSesionMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'btnCambiarPass
+        'btnCambiarPassMedico
         '
-        Me.btnCambiarPass.Animated = True
-        Me.btnCambiarPass.AnimationHoverSpeed = 0.07!
-        Me.btnCambiarPass.AnimationSpeed = 0.03!
-        Me.btnCambiarPass.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.btnCambiarPass.BorderColor = System.Drawing.Color.Black
-        Me.btnCambiarPass.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCambiarPass.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnCambiarPass.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCambiarPass.FocusedColor = System.Drawing.Color.Empty
-        Me.btnCambiarPass.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCambiarPass.ForeColor = System.Drawing.Color.White
-        Me.btnCambiarPass.Image = Nothing
-        Me.btnCambiarPass.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnCambiarPass.Location = New System.Drawing.Point(0, 42)
-        Me.btnCambiarPass.Name = "btnCambiarPass"
-        Me.btnCambiarPass.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.btnCambiarPass.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnCambiarPass.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnCambiarPass.OnHoverImage = Nothing
-        Me.btnCambiarPass.OnPressedColor = System.Drawing.Color.Black
-        Me.btnCambiarPass.Size = New System.Drawing.Size(179, 42)
-        Me.btnCambiarPass.TabIndex = 200
-        Me.btnCambiarPass.Text = "Cambiar contraseña"
-        Me.btnCambiarPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnCambiarPassMedico.Animated = True
+        Me.btnCambiarPassMedico.AnimationHoverSpeed = 0.07!
+        Me.btnCambiarPassMedico.AnimationSpeed = 0.03!
+        Me.btnCambiarPassMedico.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnCambiarPassMedico.BorderColor = System.Drawing.Color.Black
+        Me.btnCambiarPassMedico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCambiarPassMedico.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnCambiarPassMedico.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCambiarPassMedico.FocusedColor = System.Drawing.Color.Empty
+        Me.btnCambiarPassMedico.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCambiarPassMedico.ForeColor = System.Drawing.Color.White
+        Me.btnCambiarPassMedico.Image = Nothing
+        Me.btnCambiarPassMedico.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnCambiarPassMedico.Location = New System.Drawing.Point(0, 42)
+        Me.btnCambiarPassMedico.Name = "btnCambiarPassMedico"
+        Me.btnCambiarPassMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnCambiarPassMedico.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnCambiarPassMedico.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnCambiarPassMedico.OnHoverImage = Nothing
+        Me.btnCambiarPassMedico.OnPressedColor = System.Drawing.Color.Black
+        Me.btnCambiarPassMedico.Size = New System.Drawing.Size(179, 42)
+        Me.btnCambiarPassMedico.TabIndex = 200
+        Me.btnCambiarPassMedico.Text = "Cambiar contraseña"
+        Me.btnCambiarPassMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'btnVerPerfil
+        'btnVerPerfilMedico
         '
-        Me.btnVerPerfil.Animated = True
-        Me.btnVerPerfil.AnimationHoverSpeed = 0.07!
-        Me.btnVerPerfil.AnimationSpeed = 0.03!
-        Me.btnVerPerfil.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.btnVerPerfil.BorderColor = System.Drawing.Color.Black
-        Me.btnVerPerfil.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnVerPerfil.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnVerPerfil.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnVerPerfil.FocusedColor = System.Drawing.Color.Empty
-        Me.btnVerPerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVerPerfil.ForeColor = System.Drawing.Color.White
-        Me.btnVerPerfil.Image = Nothing
-        Me.btnVerPerfil.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnVerPerfil.Location = New System.Drawing.Point(0, 0)
-        Me.btnVerPerfil.Name = "btnVerPerfil"
-        Me.btnVerPerfil.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.btnVerPerfil.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnVerPerfil.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnVerPerfil.OnHoverImage = Nothing
-        Me.btnVerPerfil.OnPressedColor = System.Drawing.Color.Black
-        Me.btnVerPerfil.Size = New System.Drawing.Size(179, 42)
-        Me.btnVerPerfil.TabIndex = 199
-        Me.btnVerPerfil.Text = "Ver perfil"
-        Me.btnVerPerfil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnVerPerfilMedico.Animated = True
+        Me.btnVerPerfilMedico.AnimationHoverSpeed = 0.07!
+        Me.btnVerPerfilMedico.AnimationSpeed = 0.03!
+        Me.btnVerPerfilMedico.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnVerPerfilMedico.BorderColor = System.Drawing.Color.Black
+        Me.btnVerPerfilMedico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnVerPerfilMedico.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnVerPerfilMedico.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnVerPerfilMedico.FocusedColor = System.Drawing.Color.Empty
+        Me.btnVerPerfilMedico.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerPerfilMedico.ForeColor = System.Drawing.Color.White
+        Me.btnVerPerfilMedico.Image = Nothing
+        Me.btnVerPerfilMedico.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnVerPerfilMedico.Location = New System.Drawing.Point(0, 0)
+        Me.btnVerPerfilMedico.Name = "btnVerPerfilMedico"
+        Me.btnVerPerfilMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnVerPerfilMedico.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnVerPerfilMedico.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnVerPerfilMedico.OnHoverImage = Nothing
+        Me.btnVerPerfilMedico.OnPressedColor = System.Drawing.Color.Black
+        Me.btnVerPerfilMedico.Size = New System.Drawing.Size(179, 42)
+        Me.btnVerPerfilMedico.TabIndex = 199
+        Me.btnVerPerfilMedico.Text = "Ver perfil"
+        Me.btnVerPerfilMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblNuevosMsg
         '
@@ -198,17 +196,6 @@ Partial Class frmBienvenidaMedico
         Me.lblNuevosMsg.Name = "lblNuevosMsg"
         Me.lblNuevosMsg.Size = New System.Drawing.Size(0, 32)
         Me.lblNuevosMsg.TabIndex = 29
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(421, 118)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(259, 32)
-        Me.Label9.TabIndex = 28
-        Me.Label9.Text = "Buenas tardes, Rodrigo"
         '
         'lblNAChats
         '
@@ -358,7 +345,7 @@ Partial Class frmBienvenidaMedico
         Me.Panel10.Controls.Add(Me.Panel1)
         Me.Panel10.Controls.Add(Me.Panel3)
         Me.Panel10.Controls.Add(Me.Panel5)
-        Me.Panel10.Location = New System.Drawing.Point(55, 247)
+        Me.Panel10.Location = New System.Drawing.Point(61, 212)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(965, 336)
         Me.Panel10.TabIndex = 10
@@ -366,42 +353,42 @@ Partial Class frmBienvenidaMedico
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnIngresar)
+        Me.Panel1.Controls.Add(Me.btnIngresarChatsPaciente)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.lblSubChats)
+        Me.Panel1.Controls.Add(Me.lblTituloChats)
         Me.Panel1.Location = New System.Drawing.Point(287, 30)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(393, 276)
         Me.Panel1.TabIndex = 0
         '
-        'btnIngresar
+        'btnIngresarChatsPaciente
         '
-        Me.btnIngresar.Animated = True
-        Me.btnIngresar.AnimationHoverSpeed = 0.07!
-        Me.btnIngresar.AnimationSpeed = 0.03!
-        Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnIngresar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnIngresar.BorderColor = System.Drawing.Color.Black
-        Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnIngresar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIngresar.ForeColor = System.Drawing.Color.White
-        Me.btnIngresar.Image = Nothing
-        Me.btnIngresar.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnIngresar.Location = New System.Drawing.Point(85, 208)
-        Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnIngresar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnIngresar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnIngresar.OnHoverImage = Nothing
-        Me.btnIngresar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnIngresar.Radius = 12
-        Me.btnIngresar.Size = New System.Drawing.Size(213, 32)
-        Me.btnIngresar.TabIndex = 199
-        Me.btnIngresar.Text = "Ingresar"
-        Me.btnIngresar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnIngresarChatsPaciente.Animated = True
+        Me.btnIngresarChatsPaciente.AnimationHoverSpeed = 0.07!
+        Me.btnIngresarChatsPaciente.AnimationSpeed = 0.03!
+        Me.btnIngresarChatsPaciente.BackColor = System.Drawing.Color.Transparent
+        Me.btnIngresarChatsPaciente.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnIngresarChatsPaciente.BorderColor = System.Drawing.Color.Black
+        Me.btnIngresarChatsPaciente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnIngresarChatsPaciente.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnIngresarChatsPaciente.FocusedColor = System.Drawing.Color.Empty
+        Me.btnIngresarChatsPaciente.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresarChatsPaciente.ForeColor = System.Drawing.Color.White
+        Me.btnIngresarChatsPaciente.Image = Nothing
+        Me.btnIngresarChatsPaciente.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnIngresarChatsPaciente.Location = New System.Drawing.Point(85, 208)
+        Me.btnIngresarChatsPaciente.Name = "btnIngresarChatsPaciente"
+        Me.btnIngresarChatsPaciente.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnIngresarChatsPaciente.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnIngresarChatsPaciente.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnIngresarChatsPaciente.OnHoverImage = Nothing
+        Me.btnIngresarChatsPaciente.OnPressedColor = System.Drawing.Color.Black
+        Me.btnIngresarChatsPaciente.Radius = 12
+        Me.btnIngresarChatsPaciente.Size = New System.Drawing.Size(213, 32)
+        Me.btnIngresarChatsPaciente.TabIndex = 199
+        Me.btnIngresarChatsPaciente.Text = "Ingresar"
+        Me.btnIngresarChatsPaciente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel2
         '
@@ -412,67 +399,67 @@ Partial Class frmBienvenidaMedico
         Me.Panel2.Size = New System.Drawing.Size(393, 10)
         Me.Panel2.TabIndex = 3
         '
-        'Label2
+        'lblSubChats
         '
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(70, 101)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(252, 73)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Ver lista de chats que tiene con su pacientes"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSubChats.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubChats.ForeColor = System.Drawing.Color.White
+        Me.lblSubChats.Location = New System.Drawing.Point(70, 101)
+        Me.lblSubChats.Name = "lblSubChats"
+        Me.lblSubChats.Size = New System.Drawing.Size(252, 73)
+        Me.lblSubChats.TabIndex = 2
+        Me.lblSubChats.Text = "Ver lista de chats que tiene con su pacientes"
+        Me.lblSubChats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'lblTituloChats
         '
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(387, 37)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Chat"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTituloChats.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloChats.ForeColor = System.Drawing.Color.White
+        Me.lblTituloChats.Location = New System.Drawing.Point(3, 29)
+        Me.lblTituloChats.Name = "lblTituloChats"
+        Me.lblTituloChats.Size = New System.Drawing.Size(387, 37)
+        Me.lblTituloChats.TabIndex = 1
+        Me.lblTituloChats.Text = "Chat"
+        Me.lblTituloChats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.btnHistorial)
+        Me.Panel3.Controls.Add(Me.btnHistorialMedico)
         Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Location = New System.Drawing.Point(52, 30)
+        Me.Panel3.Controls.Add(Me.lblSubHistorial)
+        Me.Panel3.Controls.Add(Me.lblTituloHistorial)
+        Me.Panel3.Location = New System.Drawing.Point(52, 41)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(183, 248)
         Me.Panel3.TabIndex = 5
         '
-        'btnHistorial
+        'btnHistorialMedico
         '
-        Me.btnHistorial.Animated = True
-        Me.btnHistorial.AnimationHoverSpeed = 0.07!
-        Me.btnHistorial.AnimationSpeed = 0.03!
-        Me.btnHistorial.BackColor = System.Drawing.Color.Transparent
-        Me.btnHistorial.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnHistorial.BorderColor = System.Drawing.Color.Black
-        Me.btnHistorial.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnHistorial.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnHistorial.FocusedColor = System.Drawing.Color.Empty
-        Me.btnHistorial.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHistorial.ForeColor = System.Drawing.Color.White
-        Me.btnHistorial.Image = Nothing
-        Me.btnHistorial.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnHistorial.Location = New System.Drawing.Point(31, 181)
-        Me.btnHistorial.Name = "btnHistorial"
-        Me.btnHistorial.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnHistorial.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnHistorial.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnHistorial.OnHoverImage = Nothing
-        Me.btnHistorial.OnPressedColor = System.Drawing.Color.Black
-        Me.btnHistorial.Radius = 12
-        Me.btnHistorial.Size = New System.Drawing.Size(128, 32)
-        Me.btnHistorial.TabIndex = 198
-        Me.btnHistorial.Text = "Ingresar"
-        Me.btnHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnHistorialMedico.Animated = True
+        Me.btnHistorialMedico.AnimationHoverSpeed = 0.07!
+        Me.btnHistorialMedico.AnimationSpeed = 0.03!
+        Me.btnHistorialMedico.BackColor = System.Drawing.Color.Transparent
+        Me.btnHistorialMedico.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnHistorialMedico.BorderColor = System.Drawing.Color.Black
+        Me.btnHistorialMedico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHistorialMedico.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnHistorialMedico.FocusedColor = System.Drawing.Color.Empty
+        Me.btnHistorialMedico.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorialMedico.ForeColor = System.Drawing.Color.White
+        Me.btnHistorialMedico.Image = Nothing
+        Me.btnHistorialMedico.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnHistorialMedico.Location = New System.Drawing.Point(31, 181)
+        Me.btnHistorialMedico.Name = "btnHistorialMedico"
+        Me.btnHistorialMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnHistorialMedico.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnHistorialMedico.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnHistorialMedico.OnHoverImage = Nothing
+        Me.btnHistorialMedico.OnPressedColor = System.Drawing.Color.Black
+        Me.btnHistorialMedico.Radius = 12
+        Me.btnHistorialMedico.Size = New System.Drawing.Size(128, 32)
+        Me.btnHistorialMedico.TabIndex = 198
+        Me.btnHistorialMedico.Text = "Ingresar"
+        Me.btnHistorialMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel4
         '
@@ -482,78 +469,78 @@ Partial Class frmBienvenidaMedico
         Me.Panel4.Size = New System.Drawing.Size(183, 7)
         Me.Panel4.TabIndex = 3
         '
-        'Label3
+        'lblSubHistorial
         '
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(20, 78)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(143, 59)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Vea su historial completo dentro de la aplicación"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSubHistorial.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubHistorial.ForeColor = System.Drawing.Color.White
+        Me.lblSubHistorial.Location = New System.Drawing.Point(20, 78)
+        Me.lblSubHistorial.Name = "lblSubHistorial"
+        Me.lblSubHistorial.Size = New System.Drawing.Size(143, 59)
+        Me.lblSubHistorial.TabIndex = 2
+        Me.lblSubHistorial.Text = "Vea su historial completo dentro de la aplicación"
+        Me.lblSubHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label4
+        'lblTituloHistorial
         '
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(3, 29)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(177, 25)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Mi historial"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTituloHistorial.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloHistorial.ForeColor = System.Drawing.Color.White
+        Me.lblTituloHistorial.Location = New System.Drawing.Point(3, 29)
+        Me.lblTituloHistorial.Name = "lblTituloHistorial"
+        Me.lblTituloHistorial.Size = New System.Drawing.Size(177, 25)
+        Me.lblTituloHistorial.TabIndex = 1
+        Me.lblTituloHistorial.Text = "Mi historial"
+        Me.lblTituloHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.btnReanudar)
-        Me.Panel5.Controls.Add(Me.Label6)
+        Me.Panel5.Controls.Add(Me.btnListadoPatMedico)
+        Me.Panel5.Controls.Add(Me.lblTituloListadoPatMedico)
         Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Controls.Add(Me.lblListadoPatMedico)
         Me.Panel5.Location = New System.Drawing.Point(740, 41)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(183, 248)
         Me.Panel5.TabIndex = 6
         '
-        'btnReanudar
+        'btnListadoPatMedico
         '
-        Me.btnReanudar.Animated = True
-        Me.btnReanudar.AnimationHoverSpeed = 0.07!
-        Me.btnReanudar.AnimationSpeed = 0.03!
-        Me.btnReanudar.BackColor = System.Drawing.Color.Transparent
-        Me.btnReanudar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnReanudar.BorderColor = System.Drawing.Color.Black
-        Me.btnReanudar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReanudar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnReanudar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnReanudar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReanudar.ForeColor = System.Drawing.Color.White
-        Me.btnReanudar.Image = Nothing
-        Me.btnReanudar.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnReanudar.Location = New System.Drawing.Point(33, 181)
-        Me.btnReanudar.Name = "btnReanudar"
-        Me.btnReanudar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnReanudar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnReanudar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnReanudar.OnHoverImage = Nothing
-        Me.btnReanudar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnReanudar.Radius = 12
-        Me.btnReanudar.Size = New System.Drawing.Size(117, 32)
-        Me.btnReanudar.TabIndex = 200
-        Me.btnReanudar.Text = "Ingresar"
-        Me.btnReanudar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnListadoPatMedico.Animated = True
+        Me.btnListadoPatMedico.AnimationHoverSpeed = 0.07!
+        Me.btnListadoPatMedico.AnimationSpeed = 0.03!
+        Me.btnListadoPatMedico.BackColor = System.Drawing.Color.Transparent
+        Me.btnListadoPatMedico.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnListadoPatMedico.BorderColor = System.Drawing.Color.Black
+        Me.btnListadoPatMedico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnListadoPatMedico.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnListadoPatMedico.FocusedColor = System.Drawing.Color.Empty
+        Me.btnListadoPatMedico.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnListadoPatMedico.ForeColor = System.Drawing.Color.White
+        Me.btnListadoPatMedico.Image = Nothing
+        Me.btnListadoPatMedico.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnListadoPatMedico.Location = New System.Drawing.Point(33, 181)
+        Me.btnListadoPatMedico.Name = "btnListadoPatMedico"
+        Me.btnListadoPatMedico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnListadoPatMedico.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnListadoPatMedico.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnListadoPatMedico.OnHoverImage = Nothing
+        Me.btnListadoPatMedico.OnPressedColor = System.Drawing.Color.Black
+        Me.btnListadoPatMedico.Radius = 12
+        Me.btnListadoPatMedico.Size = New System.Drawing.Size(117, 32)
+        Me.btnListadoPatMedico.TabIndex = 200
+        Me.btnListadoPatMedico.Text = "Ingresar"
+        Me.btnListadoPatMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label6
+        'lblTituloListadoPatMedico
         '
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(3, 28)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(180, 53)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Listado de patologías"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTituloListadoPatMedico.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloListadoPatMedico.ForeColor = System.Drawing.Color.White
+        Me.lblTituloListadoPatMedico.Location = New System.Drawing.Point(3, 28)
+        Me.lblTituloListadoPatMedico.Name = "lblTituloListadoPatMedico"
+        Me.lblTituloListadoPatMedico.Size = New System.Drawing.Size(180, 53)
+        Me.lblTituloListadoPatMedico.TabIndex = 5
+        Me.lblTituloListadoPatMedico.Text = "Listado de patologías"
+        Me.lblTituloListadoPatMedico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel6
         '
@@ -563,16 +550,16 @@ Partial Class frmBienvenidaMedico
         Me.Panel6.Size = New System.Drawing.Size(183, 7)
         Me.Panel6.TabIndex = 3
         '
-        'Label5
+        'lblListadoPatMedico
         '
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(21, 90)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(143, 59)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Vea todas las patologías registradas en la aplicación"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblListadoPatMedico.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblListadoPatMedico.ForeColor = System.Drawing.Color.White
+        Me.lblListadoPatMedico.Location = New System.Drawing.Point(21, 90)
+        Me.lblListadoPatMedico.Name = "lblListadoPatMedico"
+        Me.lblListadoPatMedico.Size = New System.Drawing.Size(143, 59)
+        Me.lblListadoPatMedico.TabIndex = 2
+        Me.lblListadoPatMedico.Text = "Vea todas las patologías registradas en la aplicación"
+        Me.lblListadoPatMedico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlInstancia
         '
@@ -627,26 +614,25 @@ Partial Class frmBienvenidaMedico
     Friend WithEvents pnlInstancia As Panel
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnIngresar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnIngresarChatsPaciente As Guna.UI.WinForms.GunaButton
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblSubChats As Label
+    Friend WithEvents lblTituloChats As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents btnHistorial As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnHistorialMedico As Guna.UI.WinForms.GunaButton
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblSubHistorial As Label
+    Friend WithEvents lblTituloHistorial As Label
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents btnReanudar As Guna.UI.WinForms.GunaButton
-    Friend WithEvents Label6 As Label
+    Friend WithEvents btnListadoPatMedico As Guna.UI.WinForms.GunaButton
+    Friend WithEvents lblTituloListadoPatMedico As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblListadoPatMedico As Label
     Friend WithEvents pnlCerrar As Panel
     Friend WithEvents pnlNoti As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnNoti As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
-    Friend WithEvents Label9 As Label
     Friend WithEvents timerMsg As Timer
     Friend WithEvents IconPictureBox2 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents pnlNotificacion As Guna.UI.WinForms.GunaElipsePanel
@@ -657,8 +643,8 @@ Partial Class frmBienvenidaMedico
     Friend WithEvents lblNotiChats As Label
     Friend WithEvents lblNAChats As Label
     Friend WithEvents pnlOps As Panel
-    Friend WithEvents GunaButton2 As Guna.UI.WinForms.GunaButton
-    Friend WithEvents btnCambiarPass As Guna.UI.WinForms.GunaButton
-    Friend WithEvents btnVerPerfil As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnCerrarSesionMedico As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnCambiarPassMedico As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnVerPerfilMedico As Guna.UI.WinForms.GunaButton
 End Class
 

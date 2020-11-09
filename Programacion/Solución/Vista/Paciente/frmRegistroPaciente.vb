@@ -1,4 +1,5 @@
 ﻿Imports Logica
+
 Public Class frmRegistroPaciente
 
     Dim aliTel As New ArrayList
@@ -10,15 +11,60 @@ Public Class frmRegistroPaciente
     Dim path As String
 
     Public Sub New()
+
         InitializeComponent()
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
         Configuracion.Singleton.SetConnection()
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
         Dim ScrollHelper As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
         ScrollHelper = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTelefonos, scroll, True)
+
     End Sub
 
-    Private Sub btnSoli_Click(sender As Object, e As EventArgs) Handles btnSoli.Click
+    Private Sub btnSoli_Click(sender As Object, e As EventArgs) Handles btnSoliCuentaPac.Click
 
         If txtCI.Text <> "" And txtPass.Text <> "" And txtRepPass.Text <> "" And txtPNom.Text <> "" And txtPApe.Text <> "" And txtSApe.Text <> "" And txtMail.Text <> "" Then
             If Principal.Singleton.VerificarCedula(check, txtCI.Text) Then
@@ -39,7 +85,6 @@ Public Class frmRegistroPaciente
                                             sexo = "F"
                                         End If
 
-
                                         Dim pac As New ControladorPaciente(txtCI.Text,
                                                            pass,
                                                            txtPNom.Text.ToUpper,
@@ -58,7 +103,7 @@ Public Class frmRegistroPaciente
                                                 If pac.RegistrarPaciente() Then
                                                     If pac.RegistrarTelefonos Then
                                                         If pac.IngresarPatologias(aliPatologias) Then
-                                                            MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                                            MsgBox(principal.singleton.idioma("msgRegistroHechoEsperarHabilitacion","Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado"))
                                                             Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
                                                             txtPApe,
                                                                     txtSApe, txtSNom,
@@ -71,30 +116,30 @@ Public Class frmRegistroPaciente
                                                             GunaPictureBox1.Image = Nothing
                                                             aliPatologias.Clear()
                                                         Else
-                                                            MsgBox("Error al registrar las patologías")
+                                                            MsgBox(principal.singleton.idioma("msgErrorRegistroPatologiaPaciente","Error al registrar las patologías"))
                                                             aliPatologias.Clear()
                                                             aliTel.Clear()
                                                         End If
 
                                                     Else
-                                                        MsgBox("Error al registrar los teléfonos")
+                                                        MsgBox(principal.singleton.idioma("msgErrorRegistroTelPaciente","Error al registrar los teléfonos"))
                                                         aliTel.Clear()
                                                     End If
                                                 Else
-                                                    MsgBox("El paciente ya fue registrado")
+                                                    MsgBox(principal.singleton.idioma("msgPacienteYaRegistrado"," "))
                                                     aliTel.Clear()
                                                 End If
                                             Else
-                                                MsgBox("El usuario ya fue ingresado")
+                                                MsgBox(principal.singleton.idioma("msgUsuarioYaingresadopaciente","El usuario ya fue ingresado"))
                                                 aliTel.Clear()
                                             End If
 
                                         Else
-                                            Dim respuesta As Integer = MsgBox("Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)", vbQuestion + vbYesNo + vbDefaultButton2)
+                                            Dim respuesta As Integer = MsgBox(Principal.Singleton.Idioma("msgPacienteDadoDeBaja", "Usted se encuentra dado de baja. ¿Desea solicitar reingresar al sistema? (Se mantendrá su información anterior)"), vbQuestion + vbYesNo + vbDefaultButton2)
 
                                             If respuesta = vbYes Then
                                                 pac.ReingresarUsuario(txtCI.Text)
-                                                MsgBox("Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado")
+                                                MsgBox(Principal.Singleton.Idioma("msgRegistroSOlicitadoESPERAR", "Su registro ha sido solicitado con éxito, debe esperar a ser habilitiado"))
                                                 Principal.Singleton.limpiar(txtCI, txtPass, txtRepPass, txtPNom,
                                                                 txtPApe,
                                                                 txtSApe, txtSNom,
@@ -109,40 +154,38 @@ Public Class frmRegistroPaciente
                                         End If
 
                                     Else
-                                        MsgBox("Debe ingresar un sexo")
+                                        MsgBox(Principal.Singleton.Idioma("msgIngresarSexoPaciente", "Debe ingresar un sexo"))
                                     End If
                                 Else
-                                    MsgBox("Debe ingresar su fecha de nacimiento")
+                                    MsgBox(Principal.Singleton.Idioma("msgIngresarFechaNacimiento", "Debe ingresar su fecha de nacimiento"))
                                 End If
 
                             Else
-                                MsgBox("Ha ingresado un teléfono incorrecto")
+                                MsgBox(Principal.Singleton.Idioma("msgTelefonoIncorrectoPaciente", "Ha ingresado un teléfono incorrecto"))
 
                             End If
                         Else
-                            MsgBox("Debe ingresar un e-mail correcto")
+                            MsgBox(Principal.Singleton.Idioma("msgIngresoEmailIncorrectoPaciente", "Debe ingresar un e-mail correcto"))
                         End If
 
                     End If
                 Else
-                    MsgBox("Las contraseñas no coinciden")
+                    MsgBox(Principal.Singleton.Idioma("msgContrasenanocoincidepaciente", "Las contraseñas no coinciden"))
                 End If
             Else
-                MsgBox("La cédula ingresada no es correcta")
+                MsgBox(Principal.Singleton.Idioma("msgCedulaIncorrectapacc", "La cédula ingresada no es correcta"))
             End If
         Else
-            MsgBox("Debe rellenar los campos")
+            MsgBox(Principal.Singleton.Idioma("msgRellenarCamposPacc", "Debe rellenar los campos"))
         End If
 
     End Sub
 
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs)
-
-    End Sub
     Private Sub txtFecNac_GotFocus(sender As Object, e As EventArgs) Handles txtFecNac.GotFocus
         sepFecNac.LineColor = Color.FromArgb(100, 88, 255)
         txtFecNac.Select(0, 0)
     End Sub
+
     Private Sub txtFecNac_Lost(sender As Object, e As EventArgs) Handles txtFecNac.LostFocus
         sepFecNac.LineColor = Color.Silver
     End Sub
@@ -159,9 +202,10 @@ Public Class frmRegistroPaciente
             path = dial.FileName
             GunaPictureBox1.Image = Image.FromFile(path)
         End If
+
     End Sub
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarRegPac.Click
 
         If dgvTelefonos.Rows.Count = 0 Then
             dgvTelefonos.Rows.Add()
@@ -176,27 +220,29 @@ Public Class frmRegistroPaciente
 
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminarRegPac.Click
 
         If dgvTelefonos.Rows.Count > 0 Then
             dgvTelefonos.Rows.RemoveAt(dgvTelefonos.CurrentRow.Index)
         End If
 
     End Sub
+
     Private Sub dgvTelefonos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvTelefonos.RowsAdded
 
-        btnEliminar.Enabled = True
+        btnEliminarRegPac.Enabled = True
         If dgvTelefonos.Rows.Count = 10 Then
-            btnAceptar.Enabled = False
+            btnAceptarRegPac.Enabled = False
         End If
 
     End Sub
 
     Private Sub dgvTelefonos_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles dgvTelefonos.RowsRemoved
-        btnAceptar.Enabled = True
+
+        btnAceptarRegPac.Enabled = True
 
         If dgvTelefonos.Rows.Count = 0 Then
-            btnEliminar.Enabled = False
+            btnEliminarRegPac.Enabled = False
         End If
 
     End Sub
@@ -206,11 +252,8 @@ Public Class frmRegistroPaciente
         Me.Dispose()
     End Sub
 
-    Private Sub txtPApe_TextChanged(sender As Object, e As EventArgs) Handles txtPApe.TextChanged
-
-    End Sub
-
     Private Sub btnPatCron_Click(sender As Object, e As EventArgs) Handles btnPatCron.Click
+
         Dim frm As New frmIngresarSintomas(ControladorPatologia.Singleton.getTodasPatologias, 2)
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -219,11 +262,11 @@ Public Class frmRegistroPaciente
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
+
     End Sub
+
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
     End Sub
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
 End Class

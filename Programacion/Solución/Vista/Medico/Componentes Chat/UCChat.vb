@@ -1,24 +1,122 @@
 ﻿Imports Logica
 Public Class UCChat
+
     Public Sub New()
         InitializeComponent()
+ For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
     End Sub
-    Public Sub New(nombre As String, mensaje As String, fecha As Date, idChat As Int32, cedula As String, foto As String)
+
+    Public Sub New(nombre As String, mensaje As String, fecha As Date, idChat As Int32, cedula As String, foto As Object)
 
         InitializeComponent()
-        lblNombre.Text = nombre
-        lblMensaje.Text = mensaje
-        lblFecha.Text = fecha
-        lblidChat.Text = idChat
-        lblCed.Text = cedula
-        SetDate(fecha)
-
-        If foto <> "" Then
-            GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto)
-        Else
-            GunaCirclePictureBox1.Image = My.Resources.noPic
+        If nombre <> "" Then
+            lblNombre.Text = nombre
         End If
 
+        If mensaje <> "" Then
+            lblMensaje.Text = mensaje
+        End If
+
+        lblFecha.Text = fecha
+
+        If idChat <> Nothing Then
+            lblidChat.Text = idChat
+        End If
+
+        If cedula <> "" Then
+            lblCed.Text = cedula
+        End If
+
+        SetDate(fecha)
+
+        If TypeOf foto IsNot DBNull Then
+            GunaCirclePictureBox1.Image = Principal.Singleton.Base64ToImage(foto.ToString)
+        Else
+            GunaCirclePictureBox1.Image = My.Resources.nopic
+        End If
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+        Next
     End Sub
     Public Sub SetDate(fecha As Date)
 
@@ -67,38 +165,31 @@ Public Class UCChat
     End Sub
     Private Sub CambioChat() Handles Me.Click, Me.DoubleClick, GunaCirclePictureBox1.Click, lblMensaje.Click, lblFecha.Click, lblCed.Click, lblidChat.Click, lblNombre.Click
 
-        If Datos_Temporales.idchat <> lblidChat.Text Then
+        Datos_Temporales.idchat = lblidChat.Text
+        Datos_Temporales.pacienteSelecionado = lblCed.Text
 
-            Datos_Temporales.idchat = lblidChat.Text
-            Datos_Temporales.pacienteSelecionado = lblCed.Text
+        Dim instancia As frmChat = Me.ParentForm
 
-            Dim instancia As frmChat = Me.ParentForm
+        Me.BackColor = Color.FromArgb(25, 34, 41)
+        instancia.instanciaChat.BackColor = Color.FromArgb(31, 39, 49)
+        instancia.instanciaChat = Me
+        instancia.ReloadChat()
+        instancia.lblUsuario.Text = Me.lblNombre.Text
+        instancia.lblUsuario.Visible = True
+        instancia.pbPerfil.Visible = True
+        instancia.btnFinalizar.Visible = True
+        instancia.btnVerSintomasDiagPac.Visible = True
+        instancia.pbEnviar.Visible = True
+        instancia.txtMsg.Visible = True
+        instancia.lblEscriba.Visible = True
+        instancia.pnlEnviar.Visible = True
 
-            Me.BackColor = Color.FromArgb(25, 34, 41)
-            instancia.instanciaChat.BackColor = Color.FromArgb(31, 39, 49)
-            instancia.instanciaChat = Me
-            instancia.ReloadChat()
-            instancia.lblUsuario.Text = Me.lblNombre.Text
-            instancia.lblUsuario.Visible = True
-            instancia.pbPerfil.Visible = True
-            instancia.btnFinalizar.Visible = True
-            instancia.btnSintomasDiag.Visible = True
-            instancia.pbEnviar.Visible = True
-            instancia.txtMsg.Visible = True
-            instancia.lblEscriba.Visible = True
-            instancia.pnlEnviar.Visible = True
-
-            If GunaCirclePictureBox1.Image IsNot Nothing Then
-                instancia.pbPerfil.Image = GunaCirclePictureBox1.Image
-            Else
-                instancia.pbPerfil.Image = My.Resources.noPic
-            End If
-
+        If GunaCirclePictureBox1.Image IsNot Nothing Then
+            instancia.pbPerfil.Image = GunaCirclePictureBox1.Image
+        Else
+            instancia.pbPerfil.Image = My.Resources.nopic
         End If
 
     End Sub
 
-    Private Sub UCChat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

@@ -22,9 +22,9 @@ Partial Class UCObservacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnEnviar = New Guna.UI.WinForms.GunaButton()
+        Me.btnEnviarObservacion = New Guna.UI.WinForms.GunaButton()
         Me.GunaTextBox1 = New Guna.UI.WinForms.GunaTextBox()
-        Me.lblDescPat = New System.Windows.Forms.Label()
+        Me.lblDescPatObs = New System.Windows.Forms.Label()
         Me.lblObservacion = New System.Windows.Forms.Label()
         Me.txtObservacion = New Guna.UI.WinForms.GunaTextBox()
         Me.lblFecha = New System.Windows.Forms.Label()
@@ -32,43 +32,43 @@ Partial Class UCObservacion
         Me.lblCantDesc = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'btnEnviar
+        'btnEnviarObservacion
         '
-        Me.btnEnviar.Animated = True
-        Me.btnEnviar.AnimationHoverSpeed = 0.07!
-        Me.btnEnviar.AnimationSpeed = 0.03!
-        Me.btnEnviar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEnviar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnEnviar.BorderColor = System.Drawing.Color.Black
-        Me.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnviar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnEnviar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnEnviar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnEnviar.Image = Nothing
-        Me.btnEnviar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnEnviar.Location = New System.Drawing.Point(333, 361)
-        Me.btnEnviar.Name = "btnEnviar"
-        Me.btnEnviar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.btnEnviar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnEnviar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnEnviar.OnHoverImage = Nothing
-        Me.btnEnviar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnEnviar.Radius = 10
-        Me.btnEnviar.Size = New System.Drawing.Size(199, 42)
-        Me.btnEnviar.TabIndex = 182
-        Me.btnEnviar.Text = "Enviar observación"
-        Me.btnEnviar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnEnviarObservacion.Animated = True
+        Me.btnEnviarObservacion.AnimationHoverSpeed = 0.07!
+        Me.btnEnviarObservacion.AnimationSpeed = 0.03!
+        Me.btnEnviarObservacion.BackColor = System.Drawing.Color.Transparent
+        Me.btnEnviarObservacion.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnEnviarObservacion.BorderColor = System.Drawing.Color.Black
+        Me.btnEnviarObservacion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEnviarObservacion.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnEnviarObservacion.FocusedColor = System.Drawing.Color.Empty
+        Me.btnEnviarObservacion.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnviarObservacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnEnviarObservacion.Image = Nothing
+        Me.btnEnviarObservacion.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnEnviarObservacion.Location = New System.Drawing.Point(333, 361)
+        Me.btnEnviarObservacion.Name = "btnEnviarObservacion"
+        Me.btnEnviarObservacion.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnEnviarObservacion.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnEnviarObservacion.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnEnviarObservacion.OnHoverImage = Nothing
+        Me.btnEnviarObservacion.OnPressedColor = System.Drawing.Color.Black
+        Me.btnEnviarObservacion.Radius = 10
+        Me.btnEnviarObservacion.Size = New System.Drawing.Size(199, 42)
+        Me.btnEnviarObservacion.TabIndex = 182
+        Me.btnEnviarObservacion.Text = "Enviar observación"
+        Me.btnEnviarObservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaTextBox1
         '
         Me.GunaTextBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.GunaTextBox1.BorderColor = System.Drawing.Color.Silver
+        Me.GunaTextBox1.BorderColor = System.Drawing.Color.Snow
         Me.GunaTextBox1.BorderSize = 0
         Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
+        Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.GunaTextBox1.FocusedForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaTextBox1.ForeColor = System.Drawing.Color.Silver
         Me.GunaTextBox1.Location = New System.Drawing.Point(146, 294)
@@ -78,16 +78,16 @@ Partial Class UCObservacion
         Me.GunaTextBox1.Size = New System.Drawing.Size(572, 43)
         Me.GunaTextBox1.TabIndex = 183
         '
-        'lblDescPat
+        'lblDescPatObs
         '
-        Me.lblDescPat.AutoSize = True
-        Me.lblDescPat.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescPat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblDescPat.Location = New System.Drawing.Point(143, 255)
-        Me.lblDescPat.Name = "lblDescPat"
-        Me.lblDescPat.Size = New System.Drawing.Size(84, 21)
-        Me.lblDescPat.TabIndex = 184
-        Me.lblDescPat.Text = "Derivación"
+        Me.lblDescPatObs.AutoSize = True
+        Me.lblDescPatObs.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescPatObs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblDescPatObs.Location = New System.Drawing.Point(143, 255)
+        Me.lblDescPatObs.Name = "lblDescPatObs"
+        Me.lblDescPatObs.Size = New System.Drawing.Size(84, 21)
+        Me.lblDescPatObs.TabIndex = 184
+        Me.lblDescPatObs.Text = "Derivación"
         '
         'lblObservacion
         '
@@ -103,12 +103,12 @@ Partial Class UCObservacion
         'txtObservacion
         '
         Me.txtObservacion.BaseColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.txtObservacion.BorderColor = System.Drawing.Color.Silver
+        Me.txtObservacion.BorderColor = System.Drawing.Color.Snow
         Me.txtObservacion.BorderSize = 0
         Me.txtObservacion.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtObservacion.FocusedBaseColor = System.Drawing.Color.White
+        Me.txtObservacion.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtObservacion.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtObservacion.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtObservacion.FocusedForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.txtObservacion.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtObservacion.ForeColor = System.Drawing.Color.Silver
         Me.txtObservacion.Location = New System.Drawing.Point(147, 80)
@@ -162,18 +162,18 @@ Partial Class UCObservacion
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.txtObservacion)
         Me.Controls.Add(Me.lblObservacion)
-        Me.Controls.Add(Me.lblDescPat)
+        Me.Controls.Add(Me.lblDescPatObs)
         Me.Controls.Add(Me.GunaTextBox1)
-        Me.Controls.Add(Me.btnEnviar)
+        Me.Controls.Add(Me.btnEnviarObservacion)
         Me.Name = "UCObservacion"
         Me.Size = New System.Drawing.Size(864, 435)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnEnviar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnEnviarObservacion As Guna.UI.WinForms.GunaButton
     Friend WithEvents GunaTextBox1 As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents lblDescPat As Label
+    Friend WithEvents lblDescPatObs As Label
     Friend WithEvents lblObservacion As Label
     Friend WithEvents txtObservacion As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents lblFecha As Label

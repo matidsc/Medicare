@@ -27,16 +27,16 @@ Partial Class frmRegistrarSintoma
         Me.Panel9__ = New System.Windows.Forms.Panel()
         Me.TextBox1__ = New System.Windows.Forms.TextBox()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
+        Me.lblCantNom = New System.Windows.Forms.Label()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblCantText = New System.Windows.Forms.Label()
         Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
         Me.lblNomPat = New System.Windows.Forms.Label()
         Me.txtNom = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.lblDescripcion = New System.Windows.Forms.Label()
+        Me.lblDescripcionSintoma = New System.Windows.Forms.Label()
         Me.txtDescripcion = New Guna.UI.WinForms.GunaTextBox()
         Me.sepDesc = New Guna.UI.WinForms.GunaSeparator()
-        Me.lblCantNom = New System.Windows.Forms.Label()
         Me.pnlContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,7 +78,7 @@ Partial Class frmRegistrarSintoma
         Me.pnlContenedor.Controls.Add(Me.btnRegistrar)
         Me.pnlContenedor.Controls.Add(Me.lblNomPat)
         Me.pnlContenedor.Controls.Add(Me.txtNom)
-        Me.pnlContenedor.Controls.Add(Me.lblDescripcion)
+        Me.pnlContenedor.Controls.Add(Me.lblDescripcionSintoma)
         Me.pnlContenedor.Controls.Add(Me.txtDescripcion)
         Me.pnlContenedor.Controls.Add(Me.sepDesc)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
@@ -86,6 +86,17 @@ Partial Class frmRegistrarSintoma
         Me.pnlContenedor.Name = "pnlContenedor"
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 128
+        '
+        'lblCantNom
+        '
+        Me.lblCantNom.AutoSize = True
+        Me.lblCantNom.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantNom.ForeColor = System.Drawing.Color.Silver
+        Me.lblCantNom.Location = New System.Drawing.Point(680, 126)
+        Me.lblCantNom.Name = "lblCantNom"
+        Me.lblCantNom.Size = New System.Drawing.Size(34, 17)
+        Me.lblCantNom.TabIndex = 201
+        Me.lblCantNom.Text = "0/25"
         '
         'btnAtras
         '
@@ -181,16 +192,16 @@ Partial Class frmRegistrarSintoma
         Me.txtNom.Size = New System.Drawing.Size(413, 42)
         Me.txtNom.TabIndex = 185
         '
-        'lblDescripcion
+        'lblDescripcionSintoma
         '
-        Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblDescripcion.Location = New System.Drawing.Point(227, 271)
-        Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(111, 25)
-        Me.lblDescripcion.TabIndex = 188
-        Me.lblDescripcion.Text = "Descripción"
+        Me.lblDescripcionSintoma.AutoSize = True
+        Me.lblDescripcionSintoma.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescripcionSintoma.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblDescripcionSintoma.Location = New System.Drawing.Point(227, 271)
+        Me.lblDescripcionSintoma.Name = "lblDescripcionSintoma"
+        Me.lblDescripcionSintoma.Size = New System.Drawing.Size(111, 25)
+        Me.lblDescripcionSintoma.TabIndex = 188
+        Me.lblDescripcionSintoma.Text = "Descripción"
         '
         'txtDescripcion
         '
@@ -219,17 +230,6 @@ Partial Class frmRegistrarSintoma
         Me.sepDesc.Size = New System.Drawing.Size(654, 10)
         Me.sepDesc.TabIndex = 189
         '
-        'lblCantNom
-        '
-        Me.lblCantNom.AutoSize = True
-        Me.lblCantNom.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantNom.ForeColor = System.Drawing.Color.Silver
-        Me.lblCantNom.Location = New System.Drawing.Point(680, 126)
-        Me.lblCantNom.Name = "lblCantNom"
-        Me.lblCantNom.Size = New System.Drawing.Size(34, 17)
-        Me.lblCantNom.TabIndex = 201
-        Me.lblCantNom.Text = "0/25"
-        '
         'frmRegistrarSintoma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -255,7 +255,7 @@ Partial Class frmRegistrarSintoma
     Friend WithEvents txtNom As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents txtDescripcion As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents sepDesc As Guna.UI.WinForms.GunaSeparator
-    Friend WithEvents lblDescripcion As Label
+    Friend WithEvents lblDescripcionSintoma As Label
     Friend WithEvents btnRegistrar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblCantText As Label
     Friend WithEvents Label1 As Label

@@ -396,7 +396,7 @@ Vista
  </summary>
  <param name="form"></param>
 </member>
-<member name="M:Vista.Principal.Idioma(System.String)">
+<member name="M:Vista.Principal.Idioma(System.String,System.String)">
  <summary>
  Función encargada de asignarle un texto a los componentes gráficos en función del idioma seleccionado.
  </summary>

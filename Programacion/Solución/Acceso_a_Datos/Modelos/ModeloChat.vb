@@ -80,12 +80,12 @@ Public Class ModeloChat
 
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
-    Public Function NotificacionChat(usuario As String) As String
+    Public Function NotificacionChat(usuario As String) As Object
         Dim consulta As String = "SELECT count(*) 
-FROM salachat c, usuario_entra_chat u     
-WHERE 
-c.idChat = u.idChat AND 
-finalizado = 0 AND u.idChat NOT IN
+                                  FROM salachat c, usuario_entra_chat u     
+                                  WHERE 
+                                  c.idChat = u.idChat AND 
+f                                 inalizado = 0 AND u.idChat NOT IN
                                   (SELECT idChat FROM usuario_entra_chat where cedula = " & usuario & ")"
 
         Return CType(ModeloConsultas.Singleton.ConsultaCampo(consulta), String)

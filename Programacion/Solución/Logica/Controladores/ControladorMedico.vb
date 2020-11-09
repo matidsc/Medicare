@@ -76,18 +76,27 @@ Public Class ControladorMedico
         End Try
     End Function
     Public Function getInformacionMedico(cedula As String) As String
-        Return ModeloMedico.Singleton.getInformacionMedico(cedula)
+        Try
+            Return ModeloMedico.Singleton.getInformacionMedico(cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function updateMedico(cedula As String) As Boolean
         Try
             Return ModeloMedico.Singleton.updateMedico(cedula, _especializacion)
         Catch ex As Exception
-
+            Return False
         End Try
 
     End Function
     Public Function verificarPassMedico() As String
+        Try
+            Return ModeloMedico.Singleton.verificarPassMedico(Datos_Temporales.userLog)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
-        Return ModeloMedico.Singleton.verificarPassMedico(Datos_Temporales.userLog)
     End Function
 End Class

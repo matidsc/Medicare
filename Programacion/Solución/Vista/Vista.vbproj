@@ -64,7 +64,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Programacion\Solución\AppGestion\AppGestion\bin\Debug\AppGestion.exe</HintPath>
     </Reference>
-    <Reference Include="AppMedico, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AppMedico, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AppMedico\AppMedico\bin\Debug\AppMedico.exe</HintPath>
     </Reference>
@@ -185,7 +185,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Colores.vb" />
     <Compile Include="Extras\UCVerPerfil.Designer.vb">
       <DependentUpon>UCVerPerfil.vb</DependentUpon>
     </Compile>
@@ -246,12 +245,6 @@
     <Compile Include="Medico\Componentes Chat\UCObservacion.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Medico\Componentes Chat\UCSintomas.Designer.vb">
-      <DependentUpon>UCSintomas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Medico\Componentes Chat\UCSintomas.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Medico\UCAdvertencia.Designer.vb">
       <DependentUpon>UCAdvertencia.vb</DependentUpon>
     </Compile>
@@ -263,12 +256,6 @@
     </Compile>
     <Compile Include="Medico\UCSolicitudes.vb">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Paciente\frmHistorialPatologia.Designer.vb">
-      <DependentUpon>frmHistorialPatologia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Paciente\frmHistorialPatologia.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gestor\frmListado.Designer.vb">
       <DependentUpon>frmListado.vb</DependentUpon>
@@ -306,6 +293,7 @@
     <Compile Include="Medico\frmBienvenidaMedico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Colores.vb" />
     <Compile Include="Paciente\frmIngresarSintomas.Designer.vb">
       <DependentUpon>frmIngresarSintomas.vb</DependentUpon>
     </Compile>
@@ -397,9 +385,7 @@
     <EmbeddedResource Include="Medico\Componentes Chat\frmChat.resx">
       <DependentUpon>frmChat.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Medico\Componentes Chat\UCChat.resx">
-      <DependentUpon>UCChat.vb</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Componentes Chat\UCChat1.resx" />
     <EmbeddedResource Include="Medico\Componentes Chat\UCFicha.resx">
       <DependentUpon>UCFicha.vb</DependentUpon>
     </EmbeddedResource>
@@ -409,17 +395,11 @@
     <EmbeddedResource Include="Medico\Componentes Chat\UCObservacion.resx">
       <DependentUpon>UCObservacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Medico\Componentes Chat\UCSintomas.resx">
-      <DependentUpon>UCSintomas.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Medico\UCAdvertencia.resx">
       <DependentUpon>UCAdvertencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medico\UCSolicitudes.resx">
       <DependentUpon>UCSolicitudes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Paciente\frmHistorialPatologia.resx">
-      <DependentUpon>frmHistorialPatologia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor\frmListado.resx">
       <DependentUpon>frmListado.vb</DependentUpon>

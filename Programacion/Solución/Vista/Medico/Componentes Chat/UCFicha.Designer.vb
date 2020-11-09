@@ -25,70 +25,70 @@ Partial Class UCFicha
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.lblSexo = New System.Windows.Forms.Label()
-        Me.lblPatCro = New System.Windows.Forms.Label()
-        Me.lblMail = New System.Windows.Forms.Label()
-        Me.lblEdad = New System.Windows.Forms.Label()
-        Me.lblNom = New System.Windows.Forms.Label()
+        Me.lblSexoFicha = New System.Windows.Forms.Label()
+        Me.lblPatCroFicha = New System.Windows.Forms.Label()
+        Me.lblMailFicha = New System.Windows.Forms.Label()
+        Me.lblEdadFicha = New System.Windows.Forms.Label()
+        Me.lblNomFicha = New System.Windows.Forms.Label()
         Me.lblFicha = New System.Windows.Forms.Label()
         Me.dgvPatCron = New System.Windows.Forms.DataGridView()
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
         CType(Me.dgvPatCron, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'lblSexo
+        'lblSexoFicha
         '
-        Me.lblSexo.AutoSize = True
-        Me.lblSexo.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSexo.ForeColor = System.Drawing.Color.Silver
-        Me.lblSexo.Location = New System.Drawing.Point(54, 244)
-        Me.lblSexo.Name = "lblSexo"
-        Me.lblSexo.Size = New System.Drawing.Size(44, 20)
-        Me.lblSexo.TabIndex = 163
-        Me.lblSexo.Text = "Sexo:"
+        Me.lblSexoFicha.AutoSize = True
+        Me.lblSexoFicha.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSexoFicha.ForeColor = System.Drawing.Color.Silver
+        Me.lblSexoFicha.Location = New System.Drawing.Point(54, 244)
+        Me.lblSexoFicha.Name = "lblSexoFicha"
+        Me.lblSexoFicha.Size = New System.Drawing.Size(44, 20)
+        Me.lblSexoFicha.TabIndex = 163
+        Me.lblSexoFicha.Text = "Sexo:"
         '
-        'lblPatCro
+        'lblPatCroFicha
         '
-        Me.lblPatCro.AutoSize = True
-        Me.lblPatCro.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPatCro.ForeColor = System.Drawing.Color.Silver
-        Me.lblPatCro.Location = New System.Drawing.Point(514, 62)
-        Me.lblPatCro.Name = "lblPatCro"
-        Me.lblPatCro.Size = New System.Drawing.Size(142, 21)
-        Me.lblPatCro.TabIndex = 159
-        Me.lblPatCro.Text = "Patologías crónicas"
+        Me.lblPatCroFicha.AutoSize = True
+        Me.lblPatCroFicha.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPatCroFicha.ForeColor = System.Drawing.Color.Silver
+        Me.lblPatCroFicha.Location = New System.Drawing.Point(514, 62)
+        Me.lblPatCroFicha.Name = "lblPatCroFicha"
+        Me.lblPatCroFicha.Size = New System.Drawing.Size(142, 21)
+        Me.lblPatCroFicha.TabIndex = 159
+        Me.lblPatCroFicha.Text = "Patologías crónicas"
         '
-        'lblMail
+        'lblMailFicha
         '
-        Me.lblMail.AutoSize = True
-        Me.lblMail.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMail.ForeColor = System.Drawing.Color.Silver
-        Me.lblMail.Location = New System.Drawing.Point(54, 298)
-        Me.lblMail.Name = "lblMail"
-        Me.lblMail.Size = New System.Drawing.Size(49, 20)
-        Me.lblMail.TabIndex = 158
-        Me.lblMail.Text = "Email:"
+        Me.lblMailFicha.AutoSize = True
+        Me.lblMailFicha.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMailFicha.ForeColor = System.Drawing.Color.Silver
+        Me.lblMailFicha.Location = New System.Drawing.Point(54, 298)
+        Me.lblMailFicha.Name = "lblMailFicha"
+        Me.lblMailFicha.Size = New System.Drawing.Size(49, 20)
+        Me.lblMailFicha.TabIndex = 158
+        Me.lblMailFicha.Text = "Email:"
         '
-        'lblEdad
+        'lblEdadFicha
         '
-        Me.lblEdad.AutoSize = True
-        Me.lblEdad.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEdad.ForeColor = System.Drawing.Color.Silver
-        Me.lblEdad.Location = New System.Drawing.Point(54, 187)
-        Me.lblEdad.Name = "lblEdad"
-        Me.lblEdad.Size = New System.Drawing.Size(46, 20)
-        Me.lblEdad.TabIndex = 157
-        Me.lblEdad.Text = "Edad:"
+        Me.lblEdadFicha.AutoSize = True
+        Me.lblEdadFicha.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEdadFicha.ForeColor = System.Drawing.Color.Silver
+        Me.lblEdadFicha.Location = New System.Drawing.Point(54, 187)
+        Me.lblEdadFicha.Name = "lblEdadFicha"
+        Me.lblEdadFicha.Size = New System.Drawing.Size(46, 20)
+        Me.lblEdadFicha.TabIndex = 157
+        Me.lblEdadFicha.Text = "Edad:"
         '
-        'lblNom
+        'lblNomFicha
         '
-        Me.lblNom.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNom.ForeColor = System.Drawing.Color.Silver
-        Me.lblNom.Location = New System.Drawing.Point(54, 126)
-        Me.lblNom.Name = "lblNom"
-        Me.lblNom.Size = New System.Drawing.Size(338, 43)
-        Me.lblNom.TabIndex = 156
-        Me.lblNom.Text = "Nombre completo:"
+        Me.lblNomFicha.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNomFicha.ForeColor = System.Drawing.Color.Silver
+        Me.lblNomFicha.Location = New System.Drawing.Point(54, 126)
+        Me.lblNomFicha.Name = "lblNomFicha"
+        Me.lblNomFicha.Size = New System.Drawing.Size(338, 43)
+        Me.lblNomFicha.TabIndex = 156
+        Me.lblNomFicha.Text = "Nombre completo:"
         '
         'lblFicha
         '
@@ -166,11 +166,11 @@ Partial Class UCFicha
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Controls.Add(Me.scroll2)
         Me.Controls.Add(Me.dgvPatCron)
-        Me.Controls.Add(Me.lblSexo)
-        Me.Controls.Add(Me.lblPatCro)
-        Me.Controls.Add(Me.lblMail)
-        Me.Controls.Add(Me.lblEdad)
-        Me.Controls.Add(Me.lblNom)
+        Me.Controls.Add(Me.lblSexoFicha)
+        Me.Controls.Add(Me.lblPatCroFicha)
+        Me.Controls.Add(Me.lblMailFicha)
+        Me.Controls.Add(Me.lblEdadFicha)
+        Me.Controls.Add(Me.lblNomFicha)
         Me.Controls.Add(Me.lblFicha)
         Me.Name = "UCFicha"
         Me.Size = New System.Drawing.Size(747, 384)
@@ -180,11 +180,11 @@ Partial Class UCFicha
 
     End Sub
 
-    Friend WithEvents lblSexo As Label
-    Friend WithEvents lblPatCro As Label
-    Friend WithEvents lblMail As Label
-    Friend WithEvents lblEdad As Label
-    Friend WithEvents lblNom As Label
+    Friend WithEvents lblSexoFicha As Label
+    Friend WithEvents lblPatCroFicha As Label
+    Friend WithEvents lblMailFicha As Label
+    Friend WithEvents lblEdadFicha As Label
+    Friend WithEvents lblNomFicha As Label
     Friend WithEvents lblFicha As Label
     Friend WithEvents dgvPatCron As DataGridView
     Friend WithEvents scroll2 As Guna.UI.WinForms.GunaVScrollBar

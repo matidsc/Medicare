@@ -184,7 +184,7 @@ Public Class ModeloUsuario
                 Conexion.Singleton.abrirConexion()
         End Select
     End Sub
-    Public Function getDatosUsuario(cedula As String)
+    Public Function getDatosUsuario(cedula As String) As DataTable
         Dim consulta = "SELECT contrasena,pNom,sNom,pApe,sApe,correo,CONVERT(fotoPerfil USING utf8) FROM usuario WHERE cedula=" & cedula
         Return ModeloConsultas.Singleton.ConsultaTabla(consulta)
     End Function
@@ -192,7 +192,7 @@ Public Class ModeloUsuario
         Dim consulta = "UPDATE usuario SET pNom = '" & pNom & "', sNom= '" & sNom & "',pApe= '" & pApe & "',sApe= '" & sApe & "',correo= '" & correo & "',fotoPerfil='" & foto & "' WHERE cedula = '" & cedula & "'"
         Return ModeloConsultas.Singleton.ConsultaDelete(consulta)
     End Function
-    Public Function updateTelefonos(cedula As String, alitel As ArrayList)
+    Public Function updateTelefonos(cedula As String, alitel As ArrayList) As Boolean
 
         Dim consulta = "INSERT INTO usuarioTel (cedula, telefono) VALUES (?,?)"
         Dim parametros As New List(Of OdbcParameter)

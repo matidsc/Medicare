@@ -24,14 +24,14 @@ Partial Class frmRegistrarPatologia
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation2 As Guna.UI.Animation.Animation = New Guna.UI.Animation.Animation()
+        Dim Animation1 As Guna.UI.Animation.Animation = New Guna.UI.Animation.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistrarPatologia))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.transicion = New Guna.UI.WinForms.GunaTransition(Me.components)
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.pnlPatologia = New System.Windows.Forms.Panel()
@@ -39,18 +39,18 @@ Partial Class frmRegistrarPatologia
         Me.Label1 = New System.Windows.Forms.Label()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.lblNomPat = New System.Windows.Forms.Label()
-        Me.btnReg = New Guna.UI.WinForms.GunaButton()
+        Me.btnRegPatologia = New Guna.UI.WinForms.GunaButton()
         Me.txtNomPat = New Guna.UI.WinForms.GunaLineTextBox()
         Me.lblCantRec = New System.Windows.Forms.Label()
-        Me.lblDescPat = New System.Windows.Forms.Label()
-        Me.btnSintomas = New Guna.UI.WinForms.GunaButton()
+        Me.lblDescPatologia = New System.Windows.Forms.Label()
+        Me.btnSintomasPatologia = New Guna.UI.WinForms.GunaButton()
         Me.txtDescPat = New Guna.UI.WinForms.GunaTextBox()
-        Me.lblPrioPat = New System.Windows.Forms.Label()
+        Me.lblPrioPatologia = New System.Windows.Forms.Label()
         Me.sepDesc = New Guna.UI.WinForms.GunaSeparator()
         Me.mrbPMedia = New Guna.UI.WinForms.GunaRadioButton()
         Me.lblCantDesc = New System.Windows.Forms.Label()
         Me.mrbPBaja = New Guna.UI.WinForms.GunaRadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblRecomendacionesPatologia = New System.Windows.Forms.Label()
         Me.mrbPAlta = New Guna.UI.WinForms.GunaRadioButton()
         Me.txtRecPat = New Guna.UI.WinForms.GunaTextBox()
         Me.sepRec = New Guna.UI.WinForms.GunaSeparator()
@@ -76,22 +76,22 @@ Partial Class frmRegistrarPatologia
         '
         Me.transicion.AnimationType = Guna.UI.Animation.AnimationType.Transparent
         Me.transicion.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 1.0!
-        Me.transicion.DefaultAnimation = Animation2
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0)
+        Animation1.RotateCoeff = 0!
+        Animation1.RotateLimit = 0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0!
+        Animation1.TransparencyCoeff = 1.0!
+        Me.transicion.DefaultAnimation = Animation1
         Me.transicion.Interval = 7
         '
         'pnlContenedor
@@ -121,18 +121,18 @@ Partial Class frmRegistrarPatologia
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.IconButton1)
         Me.Panel1.Controls.Add(Me.lblNomPat)
-        Me.Panel1.Controls.Add(Me.btnReg)
+        Me.Panel1.Controls.Add(Me.btnRegPatologia)
         Me.Panel1.Controls.Add(Me.txtNomPat)
         Me.Panel1.Controls.Add(Me.lblCantRec)
-        Me.Panel1.Controls.Add(Me.lblDescPat)
-        Me.Panel1.Controls.Add(Me.btnSintomas)
+        Me.Panel1.Controls.Add(Me.lblDescPatologia)
+        Me.Panel1.Controls.Add(Me.btnSintomasPatologia)
         Me.Panel1.Controls.Add(Me.txtDescPat)
-        Me.Panel1.Controls.Add(Me.lblPrioPat)
+        Me.Panel1.Controls.Add(Me.lblPrioPatologia)
         Me.Panel1.Controls.Add(Me.sepDesc)
         Me.Panel1.Controls.Add(Me.mrbPMedia)
         Me.Panel1.Controls.Add(Me.lblCantDesc)
         Me.Panel1.Controls.Add(Me.mrbPBaja)
-        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lblRecomendacionesPatologia)
         Me.Panel1.Controls.Add(Me.mrbPAlta)
         Me.Panel1.Controls.Add(Me.txtRecPat)
         Me.Panel1.Controls.Add(Me.sepRec)
@@ -188,34 +188,34 @@ Partial Class frmRegistrarPatologia
         Me.lblNomPat.TabIndex = 181
         Me.lblNomPat.Text = "Nombre de la patología"
         '
-        'btnReg
+        'btnRegPatologia
         '
-        Me.btnReg.Animated = True
-        Me.btnReg.AnimationHoverSpeed = 0.07!
-        Me.btnReg.AnimationSpeed = 0.03!
-        Me.btnReg.BackColor = System.Drawing.Color.Transparent
-        Me.btnReg.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnReg.BorderColor = System.Drawing.Color.Black
-        Me.transicion.SetDecoration(Me.btnReg, Guna.UI.Animation.DecorationType.None)
-        Me.btnReg.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnReg.FocusedColor = System.Drawing.Color.Empty
-        Me.btnReg.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReg.ForeColor = System.Drawing.Color.White
-        Me.btnReg.Image = Nothing
-        Me.btnReg.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.btnReg.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnReg.Location = New System.Drawing.Point(253, 586)
-        Me.btnReg.Name = "btnReg"
-        Me.btnReg.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnReg.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnReg.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnReg.OnHoverImage = Nothing
-        Me.btnReg.OnPressedColor = System.Drawing.Color.Black
-        Me.btnReg.Radius = 10
-        Me.btnReg.Size = New System.Drawing.Size(243, 42)
-        Me.btnReg.TabIndex = 8
-        Me.btnReg.Text = "Registrar"
-        Me.btnReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnRegPatologia.Animated = True
+        Me.btnRegPatologia.AnimationHoverSpeed = 0.07!
+        Me.btnRegPatologia.AnimationSpeed = 0.03!
+        Me.btnRegPatologia.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegPatologia.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnRegPatologia.BorderColor = System.Drawing.Color.Black
+        Me.transicion.SetDecoration(Me.btnRegPatologia, Guna.UI.Animation.DecorationType.None)
+        Me.btnRegPatologia.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRegPatologia.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRegPatologia.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegPatologia.ForeColor = System.Drawing.Color.White
+        Me.btnRegPatologia.Image = Nothing
+        Me.btnRegPatologia.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.btnRegPatologia.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRegPatologia.Location = New System.Drawing.Point(253, 586)
+        Me.btnRegPatologia.Name = "btnRegPatologia"
+        Me.btnRegPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnRegPatologia.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRegPatologia.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRegPatologia.OnHoverImage = Nothing
+        Me.btnRegPatologia.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRegPatologia.Radius = 10
+        Me.btnRegPatologia.Size = New System.Drawing.Size(243, 42)
+        Me.btnRegPatologia.TabIndex = 8
+        Me.btnRegPatologia.Text = "Registrar"
+        Me.btnRegPatologia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtNomPat
         '
@@ -246,46 +246,46 @@ Partial Class frmRegistrarPatologia
         Me.lblCantRec.TabIndex = 196
         Me.lblCantRec.Text = "0/300"
         '
-        'lblDescPat
+        'lblDescPatologia
         '
-        Me.lblDescPat.AutoSize = True
-        Me.transicion.SetDecoration(Me.lblDescPat, Guna.UI.Animation.DecorationType.None)
-        Me.lblDescPat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescPat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblDescPat.Location = New System.Drawing.Point(199, 165)
-        Me.lblDescPat.Name = "lblDescPat"
-        Me.lblDescPat.Size = New System.Drawing.Size(111, 25)
-        Me.lblDescPat.TabIndex = 182
-        Me.lblDescPat.Text = "Descripción"
+        Me.lblDescPatologia.AutoSize = True
+        Me.transicion.SetDecoration(Me.lblDescPatologia, Guna.UI.Animation.DecorationType.None)
+        Me.lblDescPatologia.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescPatologia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblDescPatologia.Location = New System.Drawing.Point(199, 165)
+        Me.lblDescPatologia.Name = "lblDescPatologia"
+        Me.lblDescPatologia.Size = New System.Drawing.Size(111, 25)
+        Me.lblDescPatologia.TabIndex = 182
+        Me.lblDescPatologia.Text = "Descripción"
         '
-        'btnSintomas
+        'btnSintomasPatologia
         '
-        Me.btnSintomas.Animated = True
-        Me.btnSintomas.AnimationHoverSpeed = 0.07!
-        Me.btnSintomas.AnimationSpeed = 0.03!
-        Me.btnSintomas.BackColor = System.Drawing.Color.Transparent
-        Me.btnSintomas.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnSintomas.BorderColor = System.Drawing.Color.Black
-        Me.transicion.SetDecoration(Me.btnSintomas, Guna.UI.Animation.DecorationType.None)
-        Me.btnSintomas.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnSintomas.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSintomas.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSintomas.ForeColor = System.Drawing.Color.White
-        Me.btnSintomas.Image = Nothing
-        Me.btnSintomas.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.btnSintomas.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSintomas.Location = New System.Drawing.Point(550, 586)
-        Me.btnSintomas.Name = "btnSintomas"
-        Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.btnSintomas.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnSintomas.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnSintomas.OnHoverImage = Nothing
-        Me.btnSintomas.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSintomas.Radius = 10
-        Me.btnSintomas.Size = New System.Drawing.Size(243, 42)
-        Me.btnSintomas.TabIndex = 7
-        Me.btnSintomas.Text = "Añadir síntomas"
-        Me.btnSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnSintomasPatologia.Animated = True
+        Me.btnSintomasPatologia.AnimationHoverSpeed = 0.07!
+        Me.btnSintomasPatologia.AnimationSpeed = 0.03!
+        Me.btnSintomasPatologia.BackColor = System.Drawing.Color.Transparent
+        Me.btnSintomasPatologia.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnSintomasPatologia.BorderColor = System.Drawing.Color.Black
+        Me.transicion.SetDecoration(Me.btnSintomasPatologia, Guna.UI.Animation.DecorationType.None)
+        Me.btnSintomasPatologia.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnSintomasPatologia.FocusedColor = System.Drawing.Color.Empty
+        Me.btnSintomasPatologia.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSintomasPatologia.ForeColor = System.Drawing.Color.White
+        Me.btnSintomasPatologia.Image = Nothing
+        Me.btnSintomasPatologia.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.btnSintomasPatologia.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnSintomasPatologia.Location = New System.Drawing.Point(550, 586)
+        Me.btnSintomasPatologia.Name = "btnSintomasPatologia"
+        Me.btnSintomasPatologia.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnSintomasPatologia.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnSintomasPatologia.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnSintomasPatologia.OnHoverImage = Nothing
+        Me.btnSintomasPatologia.OnPressedColor = System.Drawing.Color.Black
+        Me.btnSintomasPatologia.Radius = 10
+        Me.btnSintomasPatologia.Size = New System.Drawing.Size(243, 42)
+        Me.btnSintomasPatologia.TabIndex = 7
+        Me.btnSintomasPatologia.Text = "Añadir síntomas"
+        Me.btnSintomasPatologia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDescPat
         '
@@ -307,17 +307,17 @@ Partial Class frmRegistrarPatologia
         Me.txtDescPat.Size = New System.Drawing.Size(654, 122)
         Me.txtDescPat.TabIndex = 5
         '
-        'lblPrioPat
+        'lblPrioPatologia
         '
-        Me.lblPrioPat.AutoSize = True
-        Me.transicion.SetDecoration(Me.lblPrioPat, Guna.UI.Animation.DecorationType.None)
-        Me.lblPrioPat.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrioPat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.lblPrioPat.Location = New System.Drawing.Point(670, 37)
-        Me.lblPrioPat.Name = "lblPrioPat"
-        Me.lblPrioPat.Size = New System.Drawing.Size(90, 25)
-        Me.lblPrioPat.TabIndex = 192
-        Me.lblPrioPat.Text = "Prioridad"
+        Me.lblPrioPatologia.AutoSize = True
+        Me.transicion.SetDecoration(Me.lblPrioPatologia, Guna.UI.Animation.DecorationType.None)
+        Me.lblPrioPatologia.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrioPatologia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblPrioPatologia.Location = New System.Drawing.Point(670, 37)
+        Me.lblPrioPatologia.Name = "lblPrioPatologia"
+        Me.lblPrioPatologia.Size = New System.Drawing.Size(90, 25)
+        Me.lblPrioPatologia.TabIndex = 192
+        Me.lblPrioPatologia.Text = "Prioridad"
         '
         'sepDesc
         '
@@ -370,17 +370,17 @@ Partial Class frmRegistrarPatologia
         Me.mrbPBaja.TabIndex = 2
         Me.mrbPBaja.Text = "Baja"
         '
-        'Label2
+        'lblRecomendacionesPatologia
         '
-        Me.Label2.AutoSize = True
-        Me.transicion.SetDecoration(Me.Label2, Guna.UI.Animation.DecorationType.None)
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(204, 388)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 25)
-        Me.Label2.TabIndex = 186
-        Me.Label2.Text = "Recomendaciones"
+        Me.lblRecomendacionesPatologia.AutoSize = True
+        Me.transicion.SetDecoration(Me.lblRecomendacionesPatologia, Guna.UI.Animation.DecorationType.None)
+        Me.lblRecomendacionesPatologia.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecomendacionesPatologia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.lblRecomendacionesPatologia.Location = New System.Drawing.Point(204, 388)
+        Me.lblRecomendacionesPatologia.Name = "lblRecomendacionesPatologia"
+        Me.lblRecomendacionesPatologia.Size = New System.Drawing.Size(164, 25)
+        Me.lblRecomendacionesPatologia.TabIndex = 186
+        Me.lblRecomendacionesPatologia.Text = "Recomendaciones"
         '
         'mrbPAlta
         '
@@ -495,36 +495,36 @@ Partial Class frmRegistrarPatologia
         Me.dgvTodosLosSintomas.AllowDrop = True
         Me.dgvTodosLosSintomas.AllowUserToAddRows = False
         Me.dgvTodosLosSintomas.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.dgvTodosLosSintomas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.dgvTodosLosSintomas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTodosLosSintomas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvTodosLosSintomas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvTodosLosSintomas.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.dgvTodosLosSintomas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTodosLosSintomas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTodosLosSintomas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTodosLosSintomas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvTodosLosSintomas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTodosLosSintomas.ColumnHeadersVisible = False
         Me.dgvTodosLosSintomas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvColSintomas})
         Me.transicion.SetDecoration(Me.dgvTodosLosSintomas, Guna.UI.Animation.DecorationType.None)
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(20)
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvTodosLosSintomas.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(20)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvTodosLosSintomas.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvTodosLosSintomas.Location = New System.Drawing.Point(164, 150)
         Me.dgvTodosLosSintomas.MultiSelect = False
         Me.dgvTodosLosSintomas.Name = "dgvTodosLosSintomas"
@@ -548,36 +548,36 @@ Partial Class frmRegistrarPatologia
         Me.dgvSintomasSeleccionados.AllowDrop = True
         Me.dgvSintomasSeleccionados.AllowUserToAddRows = False
         Me.dgvSintomasSeleccionados.AllowUserToDeleteRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.dgvSintomasSeleccionados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.dgvSintomasSeleccionados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvSintomasSeleccionados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSintomasSeleccionados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvSintomasSeleccionados.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.dgvSintomasSeleccionados.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvSintomasSeleccionados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSintomasSeleccionados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(84, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSintomasSeleccionados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSintomasSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSintomasSeleccionados.ColumnHeadersVisible = False
         Me.dgvSintomasSeleccionados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvColSintomasSel})
         Me.transicion.SetDecoration(Me.dgvSintomasSeleccionados, Guna.UI.Animation.DecorationType.None)
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(20)
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSintomasSeleccionados.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(20)
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSintomasSeleccionados.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSintomasSeleccionados.Location = New System.Drawing.Point(679, 150)
         Me.dgvSintomasSeleccionados.MultiSelect = False
         Me.dgvSintomasSeleccionados.Name = "dgvSintomasSeleccionados"
@@ -651,18 +651,18 @@ Partial Class frmRegistrarPatologia
     Friend WithEvents Panel1 As Panel
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents lblNomPat As Label
-    Friend WithEvents btnReg As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnRegPatologia As Guna.UI.WinForms.GunaButton
     Friend WithEvents txtNomPat As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents lblCantRec As Label
-    Friend WithEvents lblDescPat As Label
-    Friend WithEvents btnSintomas As Guna.UI.WinForms.GunaButton
+    Friend WithEvents lblDescPatologia As Label
+    Friend WithEvents btnSintomasPatologia As Guna.UI.WinForms.GunaButton
     Friend WithEvents txtDescPat As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents lblPrioPat As Label
+    Friend WithEvents lblPrioPatologia As Label
     Friend WithEvents sepDesc As Guna.UI.WinForms.GunaSeparator
     Friend WithEvents mrbPMedia As Guna.UI.WinForms.GunaRadioButton
     Friend WithEvents lblCantDesc As Label
     Friend WithEvents mrbPBaja As Guna.UI.WinForms.GunaRadioButton
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblRecomendacionesPatologia As Label
     Friend WithEvents mrbPAlta As Guna.UI.WinForms.GunaRadioButton
     Friend WithEvents txtRecPat As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents sepRec As Guna.UI.WinForms.GunaSeparator

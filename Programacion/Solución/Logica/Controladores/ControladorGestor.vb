@@ -37,7 +37,12 @@ Public Class ControladorGestor
 
     End Sub
     Public Function getInformacionGestor(cedula As String) As DataTable
-        Return ModeloGestor.Singleton.getInformacionGestor(cedula)
+        Try
+            Return ModeloGestor.Singleton.getInformacionGestor(cedula)
+        Catch ex As Exception
+
+        End Try
+
     End Function
 
     Public Function Registrar() As Boolean
@@ -60,49 +65,79 @@ Public Class ControladorGestor
     End Function
 
     Public Function ListadoHabilitarPac() As DataTable
-
-        Return ModeloGestor.Singleton.ListadoHabilitarPacientes
+        Try
+            Return ModeloGestor.Singleton.ListadoHabilitarPacientes
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
     Public Function ListadoHabilitarGest() As DataTable
-
-        Return ModeloGestor.Singleton.ListadoHabilitarGestores
+        Try
+            Return ModeloGestor.Singleton.ListadoHabilitarGestores
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
 
     Public Function NotificacionListadoPaciente() As Int16
 
-        Return ModeloGestor.Singleton.NotificacionListadoPaciente
+        Try
+            Return ModeloGestor.Singleton.NotificacionListadoPaciente
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
 
     Public Function NotificacionListadoGestor() As Int16
+        Try
+            Return ModeloGestor.Singleton.NotificacionListadoGestor
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
-        Return ModeloGestor.Singleton.NotificacionListadoGestor
 
     End Function
 
     Public Function eliminar(cedula As String) As Boolean
+        Try
+            Return ModeloGestor.Singleton.Eliminar(cedula)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloGestor.Singleton.Eliminar(cedula)
 
     End Function
 
     Public Function HabilitarPacientes(cedula As String) As Boolean
+        Try
+            Return ModeloGestor.Singleton.HabilitarPaciente(cedula)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloGestor.Singleton.HabilitarPaciente(cedula)
 
     End Function
 
     Public Function HabilitarGestores(cedula As String) As Boolean
+        Try
+            Return ModeloGestor.Singleton.HabilitarGestor(cedula)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloGestor.Singleton.HabilitarGestor(cedula)
 
     End Function
 
     Public Function verificar(ci As String) As Boolean
+        Try
+            Return ModeloGestor.Singleton.VerificarEstado(ci)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloGestor.Singleton.VerificarEstado(ci)
 
     End Function
 

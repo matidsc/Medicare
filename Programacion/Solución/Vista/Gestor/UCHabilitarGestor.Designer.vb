@@ -23,8 +23,8 @@ Partial Class UCHabilitarGestor
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.btnRechazar = New Guna.UI.WinForms.GunaButton()
-        Me.btnAceptar = New Guna.UI.WinForms.GunaButton()
+        Me.btnRechazarGestor = New Guna.UI.WinForms.GunaButton()
+        Me.btnAceptarGestor = New Guna.UI.WinForms.GunaButton()
         Me.lblCedula = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -40,57 +40,57 @@ Partial Class UCHabilitarGestor
         Me.lblNombre.TabIndex = 18
         Me.lblNombre.Text = "Juan Perez Rodriguez"
         '
-        'btnRechazar
+        'btnRechazarGestor
         '
-        Me.btnRechazar.AnimationHoverSpeed = 0.07!
-        Me.btnRechazar.AnimationSpeed = 0.03!
-        Me.btnRechazar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRechazar.BaseColor = System.Drawing.Color.Brown
-        Me.btnRechazar.BorderColor = System.Drawing.Color.Black
-        Me.btnRechazar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRechazar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnRechazar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRechazar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRechazar.ForeColor = System.Drawing.Color.White
-        Me.btnRechazar.Image = Nothing
-        Me.btnRechazar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRechazar.Location = New System.Drawing.Point(170, 76)
-        Me.btnRechazar.Name = "btnRechazar"
-        Me.btnRechazar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.btnRechazar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnRechazar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnRechazar.OnHoverImage = Nothing
-        Me.btnRechazar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRechazar.Size = New System.Drawing.Size(88, 22)
-        Me.btnRechazar.TabIndex = 17
-        Me.btnRechazar.Text = "Rechazar"
-        Me.btnRechazar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnRechazarGestor.AnimationHoverSpeed = 0.07!
+        Me.btnRechazarGestor.AnimationSpeed = 0.03!
+        Me.btnRechazarGestor.BackColor = System.Drawing.Color.Transparent
+        Me.btnRechazarGestor.BaseColor = System.Drawing.Color.Brown
+        Me.btnRechazarGestor.BorderColor = System.Drawing.Color.Black
+        Me.btnRechazarGestor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRechazarGestor.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRechazarGestor.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRechazarGestor.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnRechazarGestor.ForeColor = System.Drawing.Color.White
+        Me.btnRechazarGestor.Image = Nothing
+        Me.btnRechazarGestor.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRechazarGestor.Location = New System.Drawing.Point(170, 76)
+        Me.btnRechazarGestor.Name = "btnRechazarGestor"
+        Me.btnRechazarGestor.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnRechazarGestor.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRechazarGestor.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRechazarGestor.OnHoverImage = Nothing
+        Me.btnRechazarGestor.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRechazarGestor.Size = New System.Drawing.Size(88, 22)
+        Me.btnRechazarGestor.TabIndex = 17
+        Me.btnRechazarGestor.Text = "Rechazar"
+        Me.btnRechazarGestor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'btnAceptar
+        'btnAceptarGestor
         '
-        Me.btnAceptar.AnimationHoverSpeed = 0.07!
-        Me.btnAceptar.AnimationSpeed = 0.03!
-        Me.btnAceptar.BackColor = System.Drawing.Color.Transparent
-        Me.btnAceptar.BaseColor = System.Drawing.Color.ForestGreen
-        Me.btnAceptar.BorderColor = System.Drawing.Color.Black
-        Me.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnAceptar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnAceptar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnAceptar.ForeColor = System.Drawing.Color.White
-        Me.btnAceptar.Image = Nothing
-        Me.btnAceptar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnAceptar.Location = New System.Drawing.Point(75, 76)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.btnAceptar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnAceptar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnAceptar.OnHoverImage = Nothing
-        Me.btnAceptar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnAceptar.Size = New System.Drawing.Size(88, 22)
-        Me.btnAceptar.TabIndex = 16
-        Me.btnAceptar.Text = "Aceptar"
-        Me.btnAceptar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnAceptarGestor.AnimationHoverSpeed = 0.07!
+        Me.btnAceptarGestor.AnimationSpeed = 0.03!
+        Me.btnAceptarGestor.BackColor = System.Drawing.Color.Transparent
+        Me.btnAceptarGestor.BaseColor = System.Drawing.Color.ForestGreen
+        Me.btnAceptarGestor.BorderColor = System.Drawing.Color.Black
+        Me.btnAceptarGestor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAceptarGestor.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnAceptarGestor.FocusedColor = System.Drawing.Color.Empty
+        Me.btnAceptarGestor.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAceptarGestor.ForeColor = System.Drawing.Color.White
+        Me.btnAceptarGestor.Image = Nothing
+        Me.btnAceptarGestor.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnAceptarGestor.Location = New System.Drawing.Point(75, 76)
+        Me.btnAceptarGestor.Name = "btnAceptarGestor"
+        Me.btnAceptarGestor.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.btnAceptarGestor.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnAceptarGestor.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnAceptarGestor.OnHoverImage = Nothing
+        Me.btnAceptarGestor.OnPressedColor = System.Drawing.Color.Black
+        Me.btnAceptarGestor.Size = New System.Drawing.Size(88, 22)
+        Me.btnAceptarGestor.TabIndex = 16
+        Me.btnAceptarGestor.Text = "Aceptar"
+        Me.btnAceptarGestor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCedula
         '
@@ -119,8 +119,8 @@ Partial Class UCHabilitarGestor
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblNombre)
-        Me.Controls.Add(Me.btnRechazar)
-        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.btnRechazarGestor)
+        Me.Controls.Add(Me.btnAceptarGestor)
         Me.Controls.Add(Me.lblCedula)
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "UCHabilitarGestor"
@@ -130,8 +130,8 @@ Partial Class UCHabilitarGestor
 
     End Sub
     Friend WithEvents lblNombre As Label
-    Friend WithEvents btnRechazar As Guna.UI.WinForms.GunaButton
-    Friend WithEvents btnAceptar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnRechazarGestor As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnAceptarGestor As Guna.UI.WinForms.GunaButton
     Friend WithEvents lblCedula As Label
     Friend WithEvents Label1 As Label
 End Class

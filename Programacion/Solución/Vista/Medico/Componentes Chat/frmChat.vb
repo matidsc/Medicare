@@ -1,5 +1,6 @@
 ﻿Imports Logica
 Public Class frmChat
+
     Public Property maxID As Int32
     Public instanciaChat As UCChat = New UCChat()
     Private contChat As New ControladorChat
@@ -9,9 +10,53 @@ Public Class frmChat
     Dim ScrollHelper As Guna.UI.Lib.ScrollBar.PanelScrollHelper
     Dim scrollHelper2 As Guna.UI.Lib.ScrollBar.PanelScrollHelper
     Dim pat As New ControladorPatologia
+
     Public Sub New()
 
         InitializeComponent()
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
 
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
@@ -54,13 +99,15 @@ Public Class frmChat
 
             Me.ResumeLayout()
             btnFinalizar.Visible = False
-            btnSintomasDiag.Visible = False
+            btnVerSintomasDiagPac.Visible = False
             pnlChats.Visible = False
             scroll.Visible = False
             pbEnviar.Visible = True
             txtMsg.Visible = True
             lblEscriba.Visible = True
             pnlEnviar.Visible = True
+            pnlUsuario.Visible = False
+            pnlUsuario.Enabled = False
         Else
             CargarPanel(contChat.ListarMisChats(0))
             id.Reverse()
@@ -167,15 +214,15 @@ Public Class frmChat
     Private Function Finalizar() As Boolean
         If Chat.Controls.Count > 0 And Datos_Temporales.idchat <> "" Then
 
-            Dim respuesta = MsgBox("¿Desea finalizar la sesión de chat?", vbQuestion + vbYesNo + vbDefaultButton2)
+            Dim respuesta = MsgBox(principal.singleton.idioma("msgFinalizarChat", "¿Desea finalizar la sesión de chat?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
             If respuesta = vbYes Then
                 If contChat.finalizarChat() Then
-                    MsgBox("Sesión finalizada")
+                    MsgBox(principal.singleton.idioma("msgSesionFinalizada", "Sesión finalizada"))
                     ''cambiar acá las cosas que van a pasar al finalizar el chat
                     Return True
                 Else
-                    MsgBox("Error al finalizar el chat")
+                    MsgBox(principal.singleton.idioma("msgErrorFinalizarChat", "Error al finalizar el chat"))
                     Return False
                 End If
             Else
@@ -193,7 +240,7 @@ Public Class frmChat
                     ReloadSentMessage()
                     txtMsg.Text = Nothing
                 Else
-                    MsgBox("Error al enviar el mensaje")
+                    MsgBox(principal.singleton.idioma("msgErrorEnviarMensaje", "Error al enviar el mensaje"))
                 End If
             End If
         End If
@@ -225,16 +272,16 @@ Public Class frmChat
 
             If correoPaciente <> Nothing And mensajeEnviar <> Nothing Then
                 If contChat.enviarCorreo(correoPaciente, mensajeEnviar) Then
-                    MsgBox("Se ha enviado el historial al paciente")
+                    MsgBox(principal.singleton.idioma("msgHistorialChatEnviado", "Se ha enviado el historial al paciente"))
 
                     enviarObservacion()
                     Datos_Temporales.idchat = Nothing
                     Chat.Controls.Clear()
                 Else
-                    MsgBox("Error al enviar el correo")
+                    MsgBox(principal.singleton.idioma("msgErrorEnviarCorreo", "Error al enviar el correo"))
                 End If
             Else
-                MsgBox("Error al generar el mensaje")
+                MsgBox(principal.singleton.idioma("msgErrorGenerarMensaje", "Error al generar el mensaje"))
             End If
 
 
@@ -255,7 +302,7 @@ Public Class frmChat
             lblEscriba.Visible = True
         End If
     End Sub
-    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
+    Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtrasChat.Click
 
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
             Timer1.Enabled = False
@@ -276,20 +323,20 @@ Public Class frmChat
             Dim dt As DataTable = contPac.getDatosPacienteFicha(Datos_Temporales.pacienteSelecionado)
 
             For Each datarow As DataRow In dt.Rows
-                UcFicha1.lblNom.Text += " " & datarow.Item(0) & " " & datarow.Item(2) & " " & datarow.Item(3)
+                UcFicha1.lblNomFicha.Text += " " & datarow.Item(0) & " " & datarow.Item(2) & " " & datarow.Item(3)
                 Dim fechaNacimiento As Date = datarow.Item(4)
                 Dim edad As Integer = Date.Now.Year - fechaNacimiento.Year
-                UcFicha1.lblEdad.Text += " " & edad.ToString
-                UcFicha1.lblSexo.Text += " " & datarow.Item(5)
-                UcFicha1.lblMail.Text += " " & datarow.Item(6)
+                UcFicha1.lblEdadFicha.Text += " " & edad.ToString
+                UcFicha1.lblSexoFicha.Text += " " & datarow.Item(5)
+                UcFicha1.lblMailFicha.Text += " " & datarow.Item(6)
             Next
             'UcFicha1.dgvPatCron.DataSource = contPac.getPatologiasCronicas(Datos_Temporales.pacienteSelecionado)
         Else
             UcFicha1.Visible = False
-            UcFicha1.lblEdad.Text = "Edad:"
-            UcFicha1.lblMail.Text = "Mail:"
-            UcFicha1.lblSexo.Text = "Sexo:"
-            UcFicha1.lblNom.Text = "Nombre completo:"
+            UcFicha1.lblEdadFicha.Text = principal.singleton.idioma("msgEdadFicha", "Edad:")
+            UcFicha1.lblMailFicha.Text = principal.singleton.idioma("msgMailFicha", "Mail:")
+            UcFicha1.lblSexoFicha.Text = principal.singleton.idioma("msgSexoFicha", "Sexo:")
+            UcFicha1.lblNomFicha.Text = principal.singleton.idioma("msgNombreFicha", "Nombre completo:")
         End If
     End Sub
 
@@ -356,7 +403,7 @@ Public Class frmChat
         If (contChat.verificarEstadoChat) Then
             If finalizado Then
                 finalizado = False
-                MsgBox("La sesión de chat ha finalizado")
+                MsgBox(principal.singleton.idioma("msgLaSesionFinalizo", "La sesión de chat ha finalizado"))
                 Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
                 Me.Dispose()
             End If
@@ -367,7 +414,7 @@ Public Class frmChat
         pnlContenedor.Show()
     End Sub
 
-    Private Sub btnSintomasDiag_Click(sender As Object, e As EventArgs) Handles btnSintomasDiag.Click
+    Private Sub btnSintomasDiag_Click(sender As Object, e As EventArgs) Handles btnVerSintomasDiagPac.Click
         Dim frm As New frmObtenerDiagnostico(pat.traerUltimoDiagnostico(Datos_Temporales.pacienteSelecionado), 1, Datos_Temporales.pacienteSelecionado)
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -377,4 +424,5 @@ Public Class frmChat
         pnlInstancia.Show()
         Me.ResumeLayout()
     End Sub
+
 End Class

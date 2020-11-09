@@ -56,7 +56,7 @@ Partial Class UCSolicitudes
         Me.btnAceptarChat.ForeColor = System.Drawing.Color.White
         Me.btnAceptarChat.Image = Nothing
         Me.btnAceptarChat.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnAceptarChat.Location = New System.Drawing.Point(276, 11)
+        Me.btnAceptarChat.Location = New System.Drawing.Point(249, 11)
         Me.btnAceptarChat.Name = "btnAceptarChat"
         Me.btnAceptarChat.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.btnAceptarChat.OnHoverBorderColor = System.Drawing.Color.Black
@@ -64,7 +64,7 @@ Partial Class UCSolicitudes
         Me.btnAceptarChat.OnHoverImage = Nothing
         Me.btnAceptarChat.OnPressedColor = System.Drawing.Color.Black
         Me.btnAceptarChat.Radius = 10
-        Me.btnAceptarChat.Size = New System.Drawing.Size(123, 39)
+        Me.btnAceptarChat.Size = New System.Drawing.Size(150, 39)
         Me.btnAceptarChat.TabIndex = 13
         Me.btnAceptarChat.Text = "Comenzar chat"
         Me.btnAceptarChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -100,7 +100,7 @@ Partial Class UCSolicitudes
         Me.btnDiagnostico.ForeColor = System.Drawing.Color.White
         Me.btnDiagnostico.Image = Nothing
         Me.btnDiagnostico.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnDiagnostico.Location = New System.Drawing.Point(276, 59)
+        Me.btnDiagnostico.Location = New System.Drawing.Point(249, 59)
         Me.btnDiagnostico.Name = "btnDiagnostico"
         Me.btnDiagnostico.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.btnDiagnostico.OnHoverBorderColor = System.Drawing.Color.Black
@@ -108,7 +108,7 @@ Partial Class UCSolicitudes
         Me.btnDiagnostico.OnHoverImage = Nothing
         Me.btnDiagnostico.OnPressedColor = System.Drawing.Color.Black
         Me.btnDiagnostico.Radius = 10
-        Me.btnDiagnostico.Size = New System.Drawing.Size(123, 39)
+        Me.btnDiagnostico.Size = New System.Drawing.Size(150, 39)
         Me.btnDiagnostico.TabIndex = 17
         Me.btnDiagnostico.Text = "Ver Diagnóstico"
         Me.btnDiagnostico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

@@ -36,15 +36,15 @@ Partial Class frmChat
         Me.pnlEnviar = New Guna.UI.WinForms.GunaElipsePanel()
         Me.pbEnviar = New Guna.UI.WinForms.GunaCirclePictureBox()
         Me.btnFinalizar = New Guna.UI.WinForms.GunaButton()
-        Me.btnSintomasDiag = New Guna.UI.WinForms.GunaButton()
-        Me.btnAtras = New FontAwesome.Sharp.IconButton()
+        Me.btnVerSintomasDiagPac = New Guna.UI.WinForms.GunaButton()
+        Me.btnAtrasChat = New FontAwesome.Sharp.IconButton()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
         Me.scroll2 = New Guna.UI.WinForms.GunaVScrollBar()
         Me.pnlChats = New System.Windows.Forms.FlowLayoutPanel()
+        Me.UcFicha1 = New Vista.UCFicha()
         Me.ActualizarChats = New System.Windows.Forms.Timer(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlInstancia = New System.Windows.Forms.Panel()
-        Me.UcFicha1 = New Vista.UCFicha()
         Me.pnlWrapChat.SuspendLayout()
         Me.pnlUsuario.SuspendLayout()
         CType(Me.pbPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,7 +107,7 @@ Partial Class frmChat
         Me.pnlWrapChat.Controls.Add(Me.pnlUsuario)
         Me.pnlWrapChat.Controls.Add(Me.Panel1)
         Me.pnlWrapChat.Controls.Add(Me.btnFinalizar)
-        Me.pnlWrapChat.Controls.Add(Me.btnSintomasDiag)
+        Me.pnlWrapChat.Controls.Add(Me.btnVerSintomasDiagPac)
         Me.pnlWrapChat.Location = New System.Drawing.Point(313, 0)
         Me.pnlWrapChat.Margin = New System.Windows.Forms.Padding(0)
         Me.pnlWrapChat.Name = "pnlWrapChat"
@@ -240,54 +240,54 @@ Partial Class frmChat
         Me.btnFinalizar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.btnFinalizar.Visible = False
         '
-        'btnSintomasDiag
+        'btnVerSintomasDiagPac
         '
-        Me.btnSintomasDiag.Animated = True
-        Me.btnSintomasDiag.AnimationHoverSpeed = 0.07!
-        Me.btnSintomasDiag.AnimationSpeed = 0.03!
-        Me.btnSintomasDiag.BackColor = System.Drawing.Color.Transparent
-        Me.btnSintomasDiag.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.btnSintomasDiag.BorderColor = System.Drawing.Color.Black
-        Me.btnSintomasDiag.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSintomasDiag.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnSintomasDiag.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSintomasDiag.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSintomasDiag.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnSintomasDiag.Image = Nothing
-        Me.btnSintomasDiag.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSintomasDiag.Location = New System.Drawing.Point(419, 17)
-        Me.btnSintomasDiag.Name = "btnSintomasDiag"
-        Me.btnSintomasDiag.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.btnSintomasDiag.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnSintomasDiag.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnSintomasDiag.OnHoverImage = Nothing
-        Me.btnSintomasDiag.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSintomasDiag.Radius = 10
-        Me.btnSintomasDiag.Size = New System.Drawing.Size(199, 42)
-        Me.btnSintomasDiag.TabIndex = 181
-        Me.btnSintomasDiag.Text = "Ver síntomas y diagnóstico"
-        Me.btnSintomasDiag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.btnSintomasDiag.Visible = False
+        Me.btnVerSintomasDiagPac.Animated = True
+        Me.btnVerSintomasDiagPac.AnimationHoverSpeed = 0.07!
+        Me.btnVerSintomasDiagPac.AnimationSpeed = 0.03!
+        Me.btnVerSintomasDiagPac.BackColor = System.Drawing.Color.Transparent
+        Me.btnVerSintomasDiagPac.BaseColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.btnVerSintomasDiagPac.BorderColor = System.Drawing.Color.Black
+        Me.btnVerSintomasDiagPac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnVerSintomasDiagPac.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnVerSintomasDiagPac.FocusedColor = System.Drawing.Color.Empty
+        Me.btnVerSintomasDiagPac.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerSintomasDiagPac.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnVerSintomasDiagPac.Image = Nothing
+        Me.btnVerSintomasDiagPac.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnVerSintomasDiagPac.Location = New System.Drawing.Point(419, 17)
+        Me.btnVerSintomasDiagPac.Name = "btnVerSintomasDiagPac"
+        Me.btnVerSintomasDiagPac.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnVerSintomasDiagPac.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnVerSintomasDiagPac.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnVerSintomasDiagPac.OnHoverImage = Nothing
+        Me.btnVerSintomasDiagPac.OnPressedColor = System.Drawing.Color.Black
+        Me.btnVerSintomasDiagPac.Radius = 10
+        Me.btnVerSintomasDiagPac.Size = New System.Drawing.Size(199, 42)
+        Me.btnVerSintomasDiagPac.TabIndex = 181
+        Me.btnVerSintomasDiagPac.Text = "Ver síntomas y diagnóstico"
+        Me.btnVerSintomasDiagPac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnVerSintomasDiagPac.Visible = False
         '
-        'btnAtras
+        'btnAtrasChat
         '
-        Me.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAtras.FlatAppearance.BorderSize = 0
-        Me.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAtras.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.btnAtras.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAtras.ForeColor = System.Drawing.Color.Silver
-        Me.btnAtras.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
-        Me.btnAtras.IconColor = System.Drawing.Color.Silver
-        Me.btnAtras.IconSize = 20
-        Me.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAtras.Location = New System.Drawing.Point(22, 22)
-        Me.btnAtras.Name = "btnAtras"
-        Me.btnAtras.Rotation = 0R
-        Me.btnAtras.Size = New System.Drawing.Size(117, 37)
-        Me.btnAtras.TabIndex = 191
-        Me.btnAtras.Text = "Atrás"
-        Me.btnAtras.UseVisualStyleBackColor = True
+        Me.btnAtrasChat.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAtrasChat.FlatAppearance.BorderSize = 0
+        Me.btnAtrasChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtrasChat.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.btnAtrasChat.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAtrasChat.ForeColor = System.Drawing.Color.Silver
+        Me.btnAtrasChat.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.btnAtrasChat.IconColor = System.Drawing.Color.Silver
+        Me.btnAtrasChat.IconSize = 20
+        Me.btnAtrasChat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAtrasChat.Location = New System.Drawing.Point(22, 22)
+        Me.btnAtrasChat.Name = "btnAtrasChat"
+        Me.btnAtrasChat.Rotation = 0R
+        Me.btnAtrasChat.Size = New System.Drawing.Size(117, 37)
+        Me.btnAtrasChat.TabIndex = 191
+        Me.btnAtrasChat.Text = "Atrás"
+        Me.btnAtrasChat.UseVisualStyleBackColor = True
         '
         'pnlContenedor
         '
@@ -295,7 +295,7 @@ Partial Class frmChat
         Me.pnlContenedor.Controls.Add(Me.scroll2)
         Me.pnlContenedor.Controls.Add(Me.pnlChats)
         Me.pnlContenedor.Controls.Add(Me.pnlWrapChat)
-        Me.pnlContenedor.Controls.Add(Me.btnAtras)
+        Me.pnlContenedor.Controls.Add(Me.btnAtrasChat)
         Me.pnlContenedor.Controls.Add(Me.UcFicha1)
         Me.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenedor.Location = New System.Drawing.Point(0, 0)
@@ -330,6 +330,16 @@ Partial Class frmChat
         Me.pnlChats.TabIndex = 195
         Me.pnlChats.WrapContents = False
         '
+        'UcFicha1
+        '
+        Me.UcFicha1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.UcFicha1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.UcFicha1.Location = New System.Drawing.Point(158, 74)
+        Me.UcFicha1.Name = "UcFicha1"
+        Me.UcFicha1.Size = New System.Drawing.Size(747, 384)
+        Me.UcFicha1.TabIndex = 196
+        Me.UcFicha1.Visible = False
+        '
         'ActualizarChats
         '
         Me.ActualizarChats.Enabled = True
@@ -346,16 +356,6 @@ Partial Class frmChat
         Me.pnlInstancia.Name = "pnlInstancia"
         Me.pnlInstancia.Size = New System.Drawing.Size(1070, 650)
         Me.pnlInstancia.TabIndex = 0
-        '
-        'UcFicha1
-        '
-        Me.UcFicha1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.UcFicha1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.UcFicha1.Location = New System.Drawing.Point(158, 74)
-        Me.UcFicha1.Name = "UcFicha1"
-        Me.UcFicha1.Size = New System.Drawing.Size(747, 384)
-        Me.UcFicha1.TabIndex = 196
-        Me.UcFicha1.Visible = False
         '
         'frmChat
         '
@@ -388,9 +388,9 @@ Partial Class frmChat
     Friend WithEvents pnlContenedor As Panel
     Public WithEvents Chat As FlowLayoutPanel
     Friend WithEvents pbPerfil As Guna.UI.WinForms.GunaCirclePictureBox
-    Friend WithEvents btnSintomasDiag As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnVerSintomasDiagPac As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnFinalizar As Guna.UI.WinForms.GunaButton
-    Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnAtrasChat As FontAwesome.Sharp.IconButton
     Friend WithEvents txtMsg As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents pbEnviar As Guna.UI.WinForms.GunaCirclePictureBox
     Friend WithEvents pnlEnviar As Guna.UI.WinForms.GunaElipsePanel

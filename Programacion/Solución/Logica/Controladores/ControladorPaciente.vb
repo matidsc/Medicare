@@ -80,33 +80,62 @@ Public Class ControladorPaciente
 
 
     Public Function verificar(ci As String) As Boolean
+        Try
+            Return ModeloPaciente.Singleton.VerificarEstado(ci)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloPaciente.Singleton.VerificarEstado(ci)
 
     End Function
     Public Function getDatosPacientePerfil(cedula As String) As DataTable
 
-        Return ModeloPaciente.Singleton.GetDatosPacientePerfil(cedula)
+        Try
+            Return ModeloPaciente.Singleton.GetDatosPacientePerfil(cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
     Public Function getDatosPacienteFicha(cedula As String) As DataTable
-
-        Return ModeloPaciente.Singleton.GetDatosPacienteFicha(cedula)
+        Try
+            Return ModeloPaciente.Singleton.GetDatosPacienteFicha(cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
     Public Function getPatologiasCronicas(ci As String) As DataTable
+        Try
+            Return ModeloPaciente.Singleton.GetPatologiasCronicas(ci)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
-        Return ModeloPaciente.Singleton.GetPatologiasCronicas(ci)
     End Function
     Public Function getHistorialConsultas(ci As String) As DataTable
+        Try
+            Return ModeloPaciente.Singleton.GetHistorialConsultas(ci)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
-        Return ModeloPaciente.Singleton.GetHistorialConsultas(ci)
     End Function
-    Public Function updatePaciente(cedula As String)
-        Return ModeloPaciente.Singleton.updatePaciente(_ci, _sexo, _fecNac)
+    Public Function updatePaciente(cedula As String) As Boolean
+        Try
+            Return ModeloPaciente.Singleton.updatePaciente(_ci, _sexo, _fecNac)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
     Public Function updatePatologiasPaciente(cedula As String, patologias As ArrayList) As Boolean
-        Return ModeloPaciente.Singleton.updatePatologiasPaciente(cedula, patologias)
+        Try
+            Return ModeloPaciente.Singleton.updatePatologiasPaciente(cedula, patologias)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
 
     Public Function IngresarPatologias(patologias As ArrayList) As Boolean

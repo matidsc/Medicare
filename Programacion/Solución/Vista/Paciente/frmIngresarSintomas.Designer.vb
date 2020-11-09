@@ -52,9 +52,9 @@ Partial Class frmIngresarSintomas
         Me.lblIngreseSIntomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblIngreseSIntomas.Font = New System.Drawing.Font("Segoe UI Semilight", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIngreseSIntomas.ForeColor = System.Drawing.Color.White
-        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(345, 45)
+        Me.lblIngreseSIntomas.Location = New System.Drawing.Point(253, 22)
         Me.lblIngreseSIntomas.Name = "lblIngreseSIntomas"
-        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(381, 45)
+        Me.lblIngreseSIntomas.Size = New System.Drawing.Size(603, 45)
         Me.lblIngreseSIntomas.TabIndex = 25
         Me.lblIngreseSIntomas.Text = "¿Cuáles son tus síntomas?"
         Me.lblIngreseSIntomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -64,9 +64,9 @@ Partial Class frmIngresarSintomas
         Me.lblArrastreSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblArrastreSintomas.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArrastreSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblArrastreSintomas.Location = New System.Drawing.Point(459, 238)
+        Me.lblArrastreSintomas.Location = New System.Drawing.Point(449, 238)
         Me.lblArrastreSintomas.Name = "lblArrastreSintomas"
-        Me.lblArrastreSintomas.Size = New System.Drawing.Size(152, 185)
+        Me.lblArrastreSintomas.Size = New System.Drawing.Size(201, 185)
         Me.lblArrastreSintomas.TabIndex = 82
         Me.lblArrastreSintomas.Text = "Arrastre síntomas hacia la derecha "
         Me.lblArrastreSintomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -76,9 +76,9 @@ Partial Class frmIngresarSintomas
         Me.lblMisSintomas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblMisSintomas.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMisSintomas.ForeColor = System.Drawing.Color.White
-        Me.lblMisSintomas.Location = New System.Drawing.Point(804, 92)
+        Me.lblMisSintomas.Location = New System.Drawing.Point(718, 90)
         Me.lblMisSintomas.Name = "lblMisSintomas"
-        Me.lblMisSintomas.Size = New System.Drawing.Size(177, 37)
+        Me.lblMisSintomas.Size = New System.Drawing.Size(340, 37)
         Me.lblMisSintomas.TabIndex = 85
         Me.lblMisSintomas.Text = "Mis síntomas"
         Me.lblMisSintomas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -264,7 +264,7 @@ Partial Class frmIngresarSintomas
         Me.btnObtenerDiag.ForeColor = System.Drawing.Color.White
         Me.btnObtenerDiag.Image = Nothing
         Me.btnObtenerDiag.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnObtenerDiag.Location = New System.Drawing.Point(420, 523)
+        Me.btnObtenerDiag.Location = New System.Drawing.Point(415, 523)
         Me.btnObtenerDiag.Name = "btnObtenerDiag"
         Me.btnObtenerDiag.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnObtenerDiag.OnHoverBorderColor = System.Drawing.Color.Black

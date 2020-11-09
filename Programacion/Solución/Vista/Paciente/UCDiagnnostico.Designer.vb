@@ -23,8 +23,8 @@ Partial Class UCDiagnnostico
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lblNom = New System.Windows.Forms.Label()
-        Me.lblPNom = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblDescropcionPat = New System.Windows.Forms.Label()
+        Me.btnRecomendacionPattt = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtRecomendacion = New System.Windows.Forms.TextBox()
         Me.pnlPatologia = New Guna.UI.WinForms.GunaElipsePanel()
@@ -32,7 +32,7 @@ Partial Class UCDiagnnostico
         Me.btnMasRec = New FontAwesome.Sharp.IconButton()
         Me.btnMasDesc = New FontAwesome.Sharp.IconButton()
         Me.pbAdvertencia = New FontAwesome.Sharp.IconPictureBox()
-        Me.btnSintomas = New Guna.UI.WinForms.GunaButton()
+        Me.btnVerSintomasDiag = New Guna.UI.WinForms.GunaButton()
         Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.pnlWrap.SuspendLayout()
         CType(Me.pbAdvertencia, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,27 +49,27 @@ Partial Class UCDiagnnostico
         Me.lblNom.Text = "nom"
         Me.lblNom.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'lblPNom
+        'lblDescropcionPat
         '
-        Me.lblPNom.AutoSize = True
-        Me.lblPNom.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPNom.ForeColor = System.Drawing.Color.White
-        Me.lblPNom.Location = New System.Drawing.Point(21, 108)
-        Me.lblPNom.Name = "lblPNom"
-        Me.lblPNom.Size = New System.Drawing.Size(89, 20)
-        Me.lblPNom.TabIndex = 194
-        Me.lblPNom.Text = "Descripción"
+        Me.lblDescropcionPat.AutoSize = True
+        Me.lblDescropcionPat.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescropcionPat.ForeColor = System.Drawing.Color.White
+        Me.lblDescropcionPat.Location = New System.Drawing.Point(21, 108)
+        Me.lblDescropcionPat.Name = "lblDescropcionPat"
+        Me.lblDescropcionPat.Size = New System.Drawing.Size(89, 20)
+        Me.lblDescropcionPat.TabIndex = 194
+        Me.lblDescropcionPat.Text = "Descripción"
         '
-        'Label1
+        'btnRecomendacionPattt
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(21, 251)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 20)
-        Me.Label1.TabIndex = 195
-        Me.Label1.Text = "Recomendación"
+        Me.btnRecomendacionPattt.AutoSize = True
+        Me.btnRecomendacionPattt.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecomendacionPattt.ForeColor = System.Drawing.Color.White
+        Me.btnRecomendacionPattt.Location = New System.Drawing.Point(21, 251)
+        Me.btnRecomendacionPattt.Name = "btnRecomendacionPattt"
+        Me.btnRecomendacionPattt.Size = New System.Drawing.Size(118, 20)
+        Me.btnRecomendacionPattt.TabIndex = 195
+        Me.btnRecomendacionPattt.Text = "Recomendación"
         '
         'txtDescripcion
         '
@@ -115,11 +115,11 @@ Partial Class UCDiagnnostico
         Me.pnlWrap.Controls.Add(Me.btnMasRec)
         Me.pnlWrap.Controls.Add(Me.btnMasDesc)
         Me.pnlWrap.Controls.Add(Me.pbAdvertencia)
-        Me.pnlWrap.Controls.Add(Me.btnSintomas)
+        Me.pnlWrap.Controls.Add(Me.btnVerSintomasDiag)
         Me.pnlWrap.Controls.Add(Me.txtRecomendacion)
         Me.pnlWrap.Controls.Add(Me.txtDescripcion)
-        Me.pnlWrap.Controls.Add(Me.Label1)
-        Me.pnlWrap.Controls.Add(Me.lblPNom)
+        Me.pnlWrap.Controls.Add(Me.btnRecomendacionPattt)
+        Me.pnlWrap.Controls.Add(Me.lblDescropcionPat)
         Me.pnlWrap.Controls.Add(Me.lblNom)
         Me.pnlWrap.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlWrap.Location = New System.Drawing.Point(0, 0)
@@ -186,31 +186,31 @@ Partial Class UCDiagnnostico
         Me.pbAdvertencia.TabIndex = 199
         Me.pbAdvertencia.TabStop = False
         '
-        'btnSintomas
+        'btnVerSintomasDiag
         '
-        Me.btnSintomas.Animated = True
-        Me.btnSintomas.AnimationHoverSpeed = 0.07!
-        Me.btnSintomas.AnimationSpeed = 0.03!
-        Me.btnSintomas.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.btnSintomas.BorderColor = System.Drawing.Color.Black
-        Me.btnSintomas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSintomas.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnSintomas.FocusedColor = System.Drawing.Color.Empty
-        Me.btnSintomas.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSintomas.ForeColor = System.Drawing.Color.White
-        Me.btnSintomas.Image = Nothing
-        Me.btnSintomas.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnSintomas.Location = New System.Drawing.Point(51, 454)
-        Me.btnSintomas.Name = "btnSintomas"
-        Me.btnSintomas.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.btnSintomas.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnSintomas.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnSintomas.OnHoverImage = Nothing
-        Me.btnSintomas.OnPressedColor = System.Drawing.Color.Black
-        Me.btnSintomas.Size = New System.Drawing.Size(160, 42)
-        Me.btnSintomas.TabIndex = 198
-        Me.btnSintomas.Text = "VER SÍNTOMAS"
-        Me.btnSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnVerSintomasDiag.Animated = True
+        Me.btnVerSintomasDiag.AnimationHoverSpeed = 0.07!
+        Me.btnVerSintomasDiag.AnimationSpeed = 0.03!
+        Me.btnVerSintomasDiag.BaseColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.btnVerSintomasDiag.BorderColor = System.Drawing.Color.Black
+        Me.btnVerSintomasDiag.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnVerSintomasDiag.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnVerSintomasDiag.FocusedColor = System.Drawing.Color.Empty
+        Me.btnVerSintomasDiag.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerSintomasDiag.ForeColor = System.Drawing.Color.White
+        Me.btnVerSintomasDiag.Image = Nothing
+        Me.btnVerSintomasDiag.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnVerSintomasDiag.Location = New System.Drawing.Point(51, 454)
+        Me.btnVerSintomasDiag.Name = "btnVerSintomasDiag"
+        Me.btnVerSintomasDiag.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.btnVerSintomasDiag.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnVerSintomasDiag.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnVerSintomasDiag.OnHoverImage = Nothing
+        Me.btnVerSintomasDiag.OnPressedColor = System.Drawing.Color.Black
+        Me.btnVerSintomasDiag.Size = New System.Drawing.Size(160, 42)
+        Me.btnVerSintomasDiag.TabIndex = 198
+        Me.btnVerSintomasDiag.Text = "VER SÍNTOMAS"
+        Me.btnVerSintomasDiag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'MetroToolTip1
         '
@@ -236,13 +236,13 @@ Partial Class UCDiagnnostico
 
     End Sub
     Friend WithEvents lblNom As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents lblPNom As Label
+    Friend WithEvents btnRecomendacionPattt As Label
+    Friend WithEvents lblDescropcionPat As Label
     Friend WithEvents txtRecomendacion As TextBox
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents pnlPatologia As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents pnlWrap As Guna.UI.WinForms.GunaElipsePanel
-    Friend WithEvents btnSintomas As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnVerSintomasDiag As Guna.UI.WinForms.GunaButton
     Friend WithEvents pbAdvertencia As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents MetroToolTip1 As MetroFramework.Components.MetroToolTip
     Friend WithEvents btnMasDesc As FontAwesome.Sharp.IconButton

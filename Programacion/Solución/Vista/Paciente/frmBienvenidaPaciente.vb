@@ -5,26 +5,71 @@ Public Class frmBienvenidaPaciente
     Dim contChat As New ControladorChat
     Private Shared instancia As New frmBienvenidaPaciente
     Private chatComenzo As Boolean = False
+    Dim solicitudChat As Boolean = True
 
     Public Shared Function ObtenerInstancia() As frmBienvenidaPaciente
         Return instancia
     End Function
-    Dim solicitudChat As Boolean = True
+
     Public Sub New()
         InitializeComponent()
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
         instancia = Me
         lblNA.Visible = True
 
         If Not contChat.verificarEstadoChat() Then ' si ya empezo un chat
             pnlReanudar.Location = New Point(287, 30)
             pnlReanudar.Size = New Size(393, 276)
-            btnReanudar.Size = btnIngresar.Size
-            Label6.Size = lblIngSin.Size
-            Label6.Font = lblIngSin.Font
-            Label5.Size = lblSubIngSin.Size
-            Label5.Font = lblSubIngSin.Font
+            btnReanudar.Size = btnIngresarSinPac.Size
+            lblReanudarChatt.Size = lblIngSinPac.Size
+            lblReanudarChatt.Font = lblIngSinPac.Font
+            lblContinuarChat.Size = lblSubIngSin.Size
+            lblContinuarChat.Font = lblSubIngSin.Font
 
             For Each ctrl As Control In pnlReanudar.Controls
                 ctrl.Location = New Point((pnlReanudar.Width - ctrl.Width) \ 2, ctrl.Location.Y)
@@ -63,17 +108,19 @@ Public Class frmBienvenidaPaciente
     End Sub
 
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
+
         Me.pnlContenedor.Show()
+
         Datos_Temporales.instancia = instancia
 
         If Not contChat.verificarEstadoChat() Then ' si ya empezo un chat
             pnlReanudar.Location = New Point(287, 30)
             pnlReanudar.Size = New Size(393, 276)
-            btnReanudar.Size = btnIngresar.Size
-            Label6.Size = lblIngSin.Size
-            Label6.Font = lblIngSin.Font
-            Label5.Size = lblSubIngSin.Size
-            Label5.Font = lblSubIngSin.Font
+            btnReanudar.Size = btnIngresarSinPac.Size
+            lblReanudarChatt.Size = lblIngSinPac.Size
+            lblReanudarChatt.Font = lblIngSinPac.Font
+            lblContinuarChat.Size = lblSubIngSin.Size
+            lblContinuarChat.Font = lblSubIngSin.Font
 
             For Each ctrl As Control In pnlReanudar.Controls
                 ctrl.Location = New Point((pnlReanudar.Width - ctrl.Width) \ 2, ctrl.Location.Y)
@@ -110,8 +157,8 @@ Public Class frmBienvenidaPaciente
         End If
     End Sub
 
-
     Dim bool As Boolean = False
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
         If obtenerRespuesta() Then
@@ -150,6 +197,7 @@ Public Class frmBienvenidaPaciente
     End Function
 
     Dim cantNotificacion As Integer = 0
+
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
 
         Dim tabla As DataTable = contChat.Notificacion
@@ -188,7 +236,8 @@ Public Class frmBienvenidaPaciente
             Me.ResumeLayout()
 
         Else
-            MsgBox("Usted aún no ha iniciado ningún chat")
+            MsgBox(Principal.Singleton.Idioma("msgBoxNoInicioChat", "Usted aún no ha iniciado ningún chat"))
+
         End If
 
     End Sub
@@ -225,12 +274,12 @@ Public Class frmBienvenidaPaciente
             pnlNoti.Visible = False
             lblNA.Visible = True
         Else
-            MsgBox("Error al cerrar el chat")
+            MsgBox(Principal.Singleton.Idioma("msgboxErrorEntrarChat", "Error al cerrar el chat"))
         End If
 
     End Sub
 
-    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresarSinPac.Click
 
         If contChat.verificarEstadoChat() Then
             Dim frm As New frmIngresarSintomas(0)
@@ -242,20 +291,23 @@ Public Class frmBienvenidaPaciente
             pnlInstancia.Show()
             Me.ResumeLayout()
         Else
-            MsgBox("Usted ya ha realizado una consulta")
+            MsgBox(Principal.Singleton.Idioma("msgboxYaHizoConsulta", "Usted ya ha realizado una consulta"))
         End If
 
     End Sub
 
     Private Sub btnVerPerfil_Click(sender As Object, e As EventArgs) Handles btnVerPerfil.Click
+
         Me.SuspendLayout()
         Dim perfil As New UCVerPerfil()
         Me.Controls.Add(perfil)
         perfil.BringToFront()
         Me.ResumeLayout()
+
     End Sub
 
     Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPass.Click
+
         Me.SuspendLayout()
         Dim perfil As New UCVerPerfil()
         perfil.pnlCredenciales.BringToFront()
@@ -263,9 +315,10 @@ Public Class frmBienvenidaPaciente
         Me.Controls.Add(perfil)
         perfil.BringToFront()
         Me.ResumeLayout()
+
     End Sub
 
-    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
+    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
 
         Dim frm As frmLogin = Me.ParentForm
         frm.txtUsr.Text = Nothing
@@ -278,6 +331,7 @@ Public Class frmBienvenidaPaciente
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+
         If pnlOps.Visible = True Then
             pnlOps.Visible = False
         Else
@@ -286,21 +340,18 @@ Public Class frmBienvenidaPaciente
 
     End Sub
 
-    Private Sub pnlReanudar_MouseClick(sender As Object, e As EventArgs) Handles btnReanudar.Click
-
-    End Sub
     Dim chatEmpezo As Boolean
-    Private Sub timVerificarSiSolicitud_Tick(sender As Object, e As EventArgs) Handles timVerificarSiSolicitud.Tick
 
+    Private Sub timVerificarSiSolicitud_Tick(sender As Object, e As EventArgs) Handles timVerificarSiSolicitud.Tick
 
         If Not contChat.verificarEstadoChat() Then ' si ya empezo un chat
             pnlReanudar.Location = New Point(287, 30)
             pnlReanudar.Size = New Size(393, 276)
-            btnReanudar.Size = btnIngresar.Size
-            Label6.Size = lblIngSin.Size
-            Label6.Font = lblIngSin.Font
-            Label5.Size = lblSubIngSin.Size
-            Label5.Font = lblSubIngSin.Font
+            btnReanudar.Size = btnIngresarSinPac.Size
+            lblReanudarChatt.Size = lblIngSinPac.Size
+            lblReanudarChatt.Font = lblIngSinPac.Font
+            lblContinuarChat.Size = lblSubIngSin.Size
+            lblContinuarChat.Font = lblSubIngSin.Font
 
             For Each ctrl As Control In pnlReanudar.Controls
                 ctrl.Location = New Point((pnlReanudar.Width - ctrl.Width) \ 2, ctrl.Location.Y)
@@ -338,7 +389,7 @@ Public Class frmBienvenidaPaciente
 
     End Sub
 
-    Private Sub btnListado_Click(sender As Object, e As EventArgs) Handles btnListado.Click
+    Private Sub btnListado_Click(sender As Object, e As EventArgs) Handles btnListadoPac.Click
 
         Dim frm As New frmListado(0)
         Me.SuspendLayout()
@@ -347,14 +398,15 @@ Public Class frmBienvenidaPaciente
         frm.Show()
         frm.btnEliminarElementos.Visible = False
         frm.btnModificarElemento.Visible = False
-        frm.btnRegistrar.Visible = False
+        frm.btnRegistrarListado.Visible = False
         frm.btnSeleccionMultiple.Visible = False
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
+
     End Sub
 
-    Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
+    Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorialPac.Click
 
         Dim frm As New frmListado(3)
         Me.SuspendLayout()
@@ -363,11 +415,12 @@ Public Class frmBienvenidaPaciente
         frm.Show()
         frm.btnEliminarElementos.Visible = False
         frm.btnModificarElemento.Visible = False
-        frm.btnRegistrar.Visible = False
+        frm.btnRegistrarListado.Visible = False
         frm.btnSeleccionMultiple.Visible = False
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
+
     End Sub
 
     Private Sub btnConsultaActual_Click(sender As Object, e As EventArgs) Handles btnConsultaActual.Click
@@ -379,5 +432,9 @@ Public Class frmBienvenidaPaciente
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
+    End Sub
+
+    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
+
     End Sub
 End Class

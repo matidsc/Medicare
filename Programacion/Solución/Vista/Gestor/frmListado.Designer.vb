@@ -26,11 +26,11 @@ Partial Class frmListado
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlContenedor = New System.Windows.Forms.Panel()
-        Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.lblBuscarListado = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtBuscar = New Guna.UI.WinForms.GunaTextBox()
         Me.btnAtras = New FontAwesome.Sharp.IconButton()
-        Me.btnRegistrar = New Guna.UI.WinForms.GunaButton()
+        Me.btnRegistrarListado = New Guna.UI.WinForms.GunaButton()
         Me.scroll = New Guna.UI.WinForms.GunaVScrollBar()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.lblCantSelecc = New System.Windows.Forms.Label()
@@ -47,11 +47,11 @@ Partial Class frmListado
         'pnlContenedor
         '
         Me.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.pnlContenedor.Controls.Add(Me.lblBuscar)
+        Me.pnlContenedor.Controls.Add(Me.lblBuscarListado)
         Me.pnlContenedor.Controls.Add(Me.PictureBox1)
         Me.pnlContenedor.Controls.Add(Me.txtBuscar)
         Me.pnlContenedor.Controls.Add(Me.btnAtras)
-        Me.pnlContenedor.Controls.Add(Me.btnRegistrar)
+        Me.pnlContenedor.Controls.Add(Me.btnRegistrarListado)
         Me.pnlContenedor.Controls.Add(Me.scroll)
         Me.pnlContenedor.Controls.Add(Me.dgvListado)
         Me.pnlContenedor.Controls.Add(Me.lblCantSelecc)
@@ -65,18 +65,18 @@ Partial Class frmListado
         Me.pnlContenedor.Size = New System.Drawing.Size(1070, 650)
         Me.pnlContenedor.TabIndex = 156
         '
-        'lblBuscar
+        'lblBuscarListado
         '
-        Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.lblBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lblBuscar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBuscar.ForeColor = System.Drawing.Color.Silver
-        Me.lblBuscar.Location = New System.Drawing.Point(259, 31)
-        Me.lblBuscar.Name = "lblBuscar"
-        Me.lblBuscar.Size = New System.Drawing.Size(46, 17)
-        Me.lblBuscar.TabIndex = 191
-        Me.lblBuscar.Text = "Buscar"
+        Me.lblBuscarListado.AutoSize = True
+        Me.lblBuscarListado.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.lblBuscarListado.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.lblBuscarListado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBuscarListado.ForeColor = System.Drawing.Color.Silver
+        Me.lblBuscarListado.Location = New System.Drawing.Point(259, 31)
+        Me.lblBuscarListado.Name = "lblBuscarListado"
+        Me.lblBuscarListado.Size = New System.Drawing.Size(46, 17)
+        Me.lblBuscarListado.TabIndex = 191
+        Me.lblBuscarListado.Text = "Buscar"
         '
         'PictureBox1
         '
@@ -128,33 +128,33 @@ Partial Class frmListado
         Me.btnAtras.Text = "Atrás"
         Me.btnAtras.UseVisualStyleBackColor = True
         '
-        'btnRegistrar
+        'btnRegistrarListado
         '
-        Me.btnRegistrar.AnimationHoverSpeed = 0.07!
-        Me.btnRegistrar.AnimationSpeed = 0.03!
-        Me.btnRegistrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistrar.BaseColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnRegistrar.BorderColor = System.Drawing.Color.Black
-        Me.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnRegistrar.FocusedColor = System.Drawing.Color.Empty
-        Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnRegistrar.Image = Nothing
-        Me.btnRegistrar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnRegistrar.Location = New System.Drawing.Point(358, 594)
-        Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btnRegistrar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnRegistrar.OnHoverImage = Nothing
-        Me.btnRegistrar.OnPressedColor = System.Drawing.Color.Black
-        Me.btnRegistrar.Radius = 8
-        Me.btnRegistrar.Size = New System.Drawing.Size(311, 44)
-        Me.btnRegistrar.TabIndex = 189
-        Me.btnRegistrar.Text = "REGISTRAR"
-        Me.btnRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.btnRegistrar.Visible = False
+        Me.btnRegistrarListado.AnimationHoverSpeed = 0.07!
+        Me.btnRegistrarListado.AnimationSpeed = 0.03!
+        Me.btnRegistrarListado.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegistrarListado.BaseColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnRegistrarListado.BorderColor = System.Drawing.Color.Black
+        Me.btnRegistrarListado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistrarListado.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.btnRegistrarListado.FocusedColor = System.Drawing.Color.Empty
+        Me.btnRegistrarListado.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarListado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnRegistrarListado.Image = Nothing
+        Me.btnRegistrarListado.ImageSize = New System.Drawing.Size(20, 20)
+        Me.btnRegistrarListado.Location = New System.Drawing.Point(358, 594)
+        Me.btnRegistrarListado.Name = "btnRegistrarListado"
+        Me.btnRegistrarListado.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnRegistrarListado.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btnRegistrarListado.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnRegistrarListado.OnHoverImage = Nothing
+        Me.btnRegistrarListado.OnPressedColor = System.Drawing.Color.Black
+        Me.btnRegistrarListado.Radius = 8
+        Me.btnRegistrarListado.Size = New System.Drawing.Size(311, 44)
+        Me.btnRegistrarListado.TabIndex = 189
+        Me.btnRegistrarListado.Text = "REGISTRAR"
+        Me.btnRegistrarListado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnRegistrarListado.Visible = False
         '
         'scroll
         '
@@ -249,7 +249,7 @@ Partial Class frmListado
         Me.btnEliminarElementos.Radius = 10
         Me.btnEliminarElementos.Size = New System.Drawing.Size(256, 41)
         Me.btnEliminarElementos.TabIndex = 182
-        Me.btnEliminarElementos.Text = "ELIMINAR ELEMENTO SELECCIONADO"
+        Me.btnEliminarElementos.Text = "ELIMINAR ELEMENTO"
         Me.btnEliminarElementos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnModificarElemento
@@ -351,9 +351,9 @@ Partial Class frmListado
     Friend WithEvents btnEliminarElementos As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnSeleccionMultiple As Guna.UI.WinForms.GunaButton
     Friend WithEvents dgvListado As DataGridView
-    Friend WithEvents btnRegistrar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents btnRegistrarListado As Guna.UI.WinForms.GunaButton
     Friend WithEvents btnAtras As FontAwesome.Sharp.IconButton
-    Friend WithEvents lblBuscar As Label
+    Friend WithEvents lblBuscarListado As Label
     Friend WithEvents UcAsociar1 As UCAsociar
     Friend WithEvents pnlInstancia As Panel
     Friend WithEvents btnModificarElemento As Guna.UI.WinForms.GunaButton

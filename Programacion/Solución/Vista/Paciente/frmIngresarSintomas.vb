@@ -1,4 +1,5 @@
 ﻿Imports Logica
+
 Public Class frmIngresarSintomas
 
     Dim sourcedgv As String
@@ -8,11 +9,13 @@ Public Class frmIngresarSintomas
     Dim ScrollHelperTodos As Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper
     Private Shared instancia As frmIngresarSintomas
     Dim aliPatologias As ArrayList
+
     Public Enum op
         sintomas = 0
         modificarPaciente = 1
         regsitrarPatologia = 2
     End Enum
+
     Public Shared Function ObtenerInstancia() As frmIngresarSintomas
         Return instancia
     End Function
@@ -23,46 +26,191 @@ Public Class frmIngresarSintomas
         ScrollHelperTodos = New Guna.UI.Lib.ScrollBar.DataGridViewScrollHelper(dgvTodos, scrollTodos, True)
 
     End Sub
+
     Public Sub New()
         InitializeComponent()
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
     End Sub
+
     Public Sub New(aliPatologias As ArrayList, op As op)
 
         InitializeComponent()
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
         Me.opcion = op
         Me.aliPatologias = aliPatologias
+
         Select Case op
             Case op.modificarPaciente
-                lblMisSintomas.Text = "Mis patologías"
-                lblIngreseSIntomas.Text = "Modificar patologías crónicas"
-                lblArrastreSintomas.Text = "Arrastre patologías hacia la derecha o izquierda"
+
+                lblMisSintomas.Text = Principal.Singleton.Idioma("lblMisPatologiasIngresar", "Mis patologías")
+                lblIngreseSIntomas.Text = Principal.Singleton.Idioma("lblModificarCronicas", "Modificar patologías crónicas")
+                lblArrastreSintomas.Text = Principal.Singleton.Idioma("lblArrastrarDerIzq", "Arrastre patologías hacia la derecha o izquierda")
                 btnObtenerDiag.Enabled = False
-                btnObtenerDiag.Text = "Modificar patologías crónicas"
+                btnObtenerDiag.Text = Principal.Singleton.Idioma("btnModPatCronicas", "Modificar patologías crónicas")
                 Dim pat As New ControladorPatologia
                 Dim pac As New ControladorPaciente
+
                 For Each patologia As DataRow In pat.getPatologiasPaciente(Datos_Temporales.userLog).Rows
                     dgvTodos.Rows.Add(patologia.Item(0))
                 Next
+
                 For Each patologia As DataRow In pac.getPatologiasCronicas(Datos_Temporales.userLog).Rows
                     dgvSintomasSeleccionados.Rows.Add(patologia.Item(0))
                 Next
+
                 dgvTodos.Sort(dgvTodos.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
             Case op.regsitrarPatologia
-                lblMisSintomas.Text = "Mis patologías crónicas"
-                lblIngreseSIntomas.Text = "Registrar patologías crónicas"
-                lblArrastreSintomas.Text = "Arrastre patologías hacia la derecha"
+
+                lblMisSintomas.Text = Principal.Singleton.Idioma("lblMispatReg", "Mis patologías crónicas")
+                lblIngreseSIntomas.Text = Principal.Singleton.Idioma("lblRegistrarCronicass", "Registrar patologías crónicas")
+                lblArrastreSintomas.Text = Principal.Singleton.Idioma("lblArrastrarRegCrinicas", "Arrastre patologías hacia la derecha")
                 btnObtenerDiag.Enabled = True
-                btnObtenerDiag.Text = "Guardar Patologías"
+                btnObtenerDiag.Text = Principal.Singleton.Idioma("btnGuardarPatologiasCronicas", "Guardar Patologías")
+
                 For Each patologia In aliPatologias
                     dgvTodos.Rows.Add(patologia)
                 Next
+
                 dgvTodos.Sort(dgvTodos.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
         End Select
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
     End Sub
 
     Private Sub dgvSintomasSeleccionados_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvSintomasSeleccionados.RowsAdded
+
         If Me.opcion = op.modificarPaciente Then
             Dim i = 0
             Dim contador As Short = 0
@@ -116,9 +264,62 @@ Public Class frmIngresarSintomas
         End If
 
     End Sub
+
     Public Sub New(op As op)
 
         InitializeComponent()
+
+        Dim lista As New List(Of Panel)
+
+        For Each var As Control In Me.Controls
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
+
+
+
+
+
+
+
         Me.opcion = op
         instancia = Me
         Datos_Temporales.horizontal = Me.Width
@@ -135,6 +336,7 @@ Public Class frmIngresarSintomas
         dgvTodos.Sort(dgvTodos.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
     End Sub
+
     Private Sub selectItem(origen As DataGridView, destino As DataGridView, e As MouseEventArgs)
 
         sourcedgv = origen.Name
@@ -167,9 +369,7 @@ Public Class frmIngresarSintomas
 
 
         Else
-            Exit Sub 'OPCIONAL COLOCAR 
-
-
+            Exit Sub
         End If
 
     End Sub
@@ -202,15 +402,6 @@ Public Class frmIngresarSintomas
         Me.pnlContenedor.Show()
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs)
-        'dv.RowFilter = String.Format("Name Like '%{0}%'", txtBuscar.Text)
-        'bs.DataSource = dgvTodos.DataSource
-        'dt.DefaultView.RowFilter = String.Format(" '{0}'", txtBuscar.Text)
-        'bs.Filter = "cedula like '%" & txtBuscar.Text & "%'"
-
-        'dgvTodos.DataSource = bs
-    End Sub
-
     Private Sub btnObtenerDiag_Click(sender As Object, e As EventArgs) Handles btnObtenerDiag.Click
 
         Select Case Me.opcion
@@ -231,9 +422,10 @@ Public Class frmIngresarSintomas
                 Next
 
                 If pac.updatePatologiasPaciente(Datos_Temporales.userLog, aliPatologiasNuevas) Then
-                    MsgBox("Patologias crónicas modificadas con éxito")
+                    MsgBox(Principal.Singleton.Idioma("msgBoxPatCronicaModificada", "Patologias crónicas modificadas con éxito"))
+
                 Else
-                    MsgBox("Error al modificar las patologías crónicas")
+                    MsgBox(Principal.Singleton.Idioma("msgBoxErrorPatCronica", "Error al modificar las patologías crónicas"))
                 End If
 
             Case op.sintomas
@@ -269,12 +461,13 @@ Public Class frmIngresarSintomas
                         dt.Clear()
                         misSintomas.Clear()
                     Else
-                        MsgBox("No se encontraron patologías que contenga los síntomas seleccionados")
+
+                        MsgBox(Principal.Singleton.Idioma("msgBoxErrorEncontrarPatologias", "No se encontraron patologías que contenga los síntomas seleccionados"))
 
                     End If
 
                 Else
-                    MsgBox("No seleccionó ningún síntoma")
+                    MsgBox(Principal.Singleton.Idioma("msgBoxErrorSeleccionarSintoma", "No seleccionó ningún síntoma"))
                 End If
             Case op.regsitrarPatologia
                 If dgvSintomasSeleccionados.Rows.Count > 0 Then
@@ -287,10 +480,11 @@ Public Class frmIngresarSintomas
                         instancia.aliPatologias.Add(patologia.Cells(0).Value)
 
                     Next
-
-                    MsgBox("Patologías guardadas")
+                    MsgBox(Principal.Singleton.Idioma("msgBoxPatologiasGuardadas", "Patologías guardadas"))
                 Else
-                    MsgBox("Debe ingresar patologías")
+                    MsgBox(Principal.Singleton.Idioma("msgBoxDebeIngresarpatologia", "Debe ingresar patologías"))
+
+
                 End If
         End Select
 
@@ -316,10 +510,5 @@ Public Class frmIngresarSintomas
         End Select
 
     End Sub
-
-    Private Sub pnlContenedor_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenedor.Paint
-
-    End Sub
-
 
 End Class

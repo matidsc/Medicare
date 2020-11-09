@@ -4,7 +4,7 @@ Imports System.IO
 Public Class frmLogin
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Configuracion.Singleton.CargarConfiguracion()
+
         lblLogin.Select()
         CargarUsuario()
         If txtUsr.Text <> "" Then
@@ -13,7 +13,16 @@ Public Class frmLogin
     End Sub
     Sub New()
         ObtenerRuta()
-        Configuracion.Singleton.CargarConfiguracion()
+
+        Try
+            If Datos_Temporales.pathConf IsNot Nothing Then
+                Configuracion.Singleton.CargarConfiguracion()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Error al cargar la configuración del sistema")
+        End Try
+
         UCAjustes.Singleton.VerificarArchivo()
         InitializeComponent()
         Datos_Temporales.horizontal = Me.Width
@@ -23,55 +32,85 @@ Public Class frmLogin
 
         For Each var As Control In pnlContenedor.Controls
 
-            If Principal.Singleton.Idioma(var.Name) <> "" Then
-                var.Text = Principal.Singleton.Idioma(var.Name)
+
+
+        Next
+
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+
+            If Principal.Singleton.Idioma(var.Name, var.Text) <> "" Then
+                var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
 
                 If var.Name <> "lblContraseña" And var.Name <> "lblUsuario" Then
                     var.Left = (Me.ClientSize.Width - var.Width) / 2
                 End If
 
             End If
-
         Next
 
 
     End Sub
 
     Public Sub ObtenerRuta()
+
         Dim array As New ArrayList
         Dim matriz() As String = Split(Application.StartupPath, "\")
         Dim sec As String
 
-        For i As Int16 = 0 To matriz.Length - 1
-            array.Add(matriz.GetValue(i))
-        Next
+        Try
+            If Directory.Exists(Path.Combine(Application.StartupPath, "conf\")) Then
+                Datos_Temporales.pathConf = Path.Combine(Application.StartupPath, "conf\")
+            End If
 
-        For i As Int16 = 0 To array.Count - 4
-            sec = sec + array.Item(i) + "\"
-        Next
+        Catch ex As Exception
+            MsgBox("Error al cargar el idioma")
+        End Try
 
-        If Directory.Exists(Path.Combine(sec, "Vista\bin\Debug\")) Then
-            Datos_Temporales.pathConf = Path.Combine(sec, "Vista\bin\Debug\")
-        Else
-            sec = Nothing
-            For i As Int16 = 0 To array.Count - 5
-                sec = sec + array.Item(i) + "\"
-            Next
-        End If
 
-        If Directory.Exists(Path.Combine(sec, "Vista\bin\Debug\")) Then
-            Datos_Temporales.pathConf = Path.Combine(sec, "Vista\bin\Debug\")
-        Else
-            sec = Nothing
-            For i As Int16 = 0 To array.Count - 6
-                sec = sec + array.Item(i) + "\"
-            Next
-            Datos_Temporales.pathConf = Path.Combine(sec, "Vista\bin\Debug\")
-        End If
+
     End Sub
 
-
     Private Sub CargarUsuario()
+
         If Configuracion.Singleton.usuario <> Nothing Then
             If Datos_Temporales.rol <> Datos_Temporales.enumRol.Paciente Then
                 txtUsr.Text = Configuracion.Singleton.usuario
@@ -98,12 +137,14 @@ Public Class frmLogin
             If IsNumeric(txtUsr.Text) Then
                 If log.verificarUsuario(txtUsr.Text, seg.HASH256(txtPass.Text)) And log.verificarRol(txtUsr.Text) Then
 
-                    If mcbRecordarUsuario.Checked Then
-                        Configuracion.Singleton.usuario = txtUsr.Text
-                        Configuracion.Singleton.GuardarConfiguracion()
-                    Else
-                        Configuracion.Singleton.usuario = Nothing
-                        Configuracion.Singleton.GuardarConfiguracion()
+                    If Datos_Temporales.pathConf IsNot Nothing Then
+                        If mcbRecordarUsuario.Checked Then
+                            Configuracion.Singleton.usuario = txtUsr.Text
+                            Configuracion.Singleton.GuardarConfiguracion()
+                        Else
+                            Configuracion.Singleton.usuario = Nothing
+                            Configuracion.Singleton.GuardarConfiguracion()
+                        End If
                     End If
 
                     Datos_Temporales.userLog = txtUsr.Text
@@ -118,14 +159,15 @@ Public Class frmLogin
                                 Dim frm As New frmBienvenidaPaciente 'frmBienvenidaPaciente
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
+                                Principal.Singleton.CambiarTamaño(frm.Width, frm.Height)
                                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                                Principal.Singleton.CambiarTamaño(frmBienvenidaPaciente)
+
                                 frm.Show()
                                 pnlContenedor.Hide()
                                 pnlInstancia.Show()
                                 Me.ResumeLayout()
                             Else
-                                MsgBox(Principal.Singleton.Idioma("msgPacienteHabilitado"))
+                                MsgBox(Principal.Singleton.Idioma("msgPacienteHabilitado", "asdasd"))
                             End If
 
                         Case Datos_Temporales.enumRol.Gestor
@@ -138,13 +180,13 @@ Public Class frmLogin
                                 Configuracion.Singleton.SetConnection()
                                 Me.SuspendLayout()
                                 Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                                Principal.Singleton.CambiarTamaño(frmBienvenidaGestor)
+                                Principal.Singleton.CambiarTamaño(frm)
                                 frm.Show()
                                 pnlContenedor.Hide()
                                 pnlInstancia.Show()
                                 Me.ResumeLayout()
                             Else
-                                MsgBox("Usted no se encuentra habilitado para ingresar al sistema")
+                                MsgBox(Principal.Singleton.Idioma("msgNoEstasHabilitado", "Usted no se encuentra habilitado para ingresar al sistema"))
                             End If
 
                         Case Datos_Temporales.enumRol.Medico
@@ -152,7 +194,7 @@ Public Class frmLogin
                             Configuracion.Singleton.SetConnection()
                             Me.SuspendLayout()
                             Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-                            Principal.Singleton.CambiarTamaño(frmBienvenidaMedico)
+                            Principal.Singleton.CambiarTamaño(frm)
                             frm.Show()
                             pnlContenedor.Hide()
                             pnlInstancia.Show()
@@ -162,16 +204,16 @@ Public Class frmLogin
 
                 Else
 
-                    MsgBox(Principal.Singleton.Idioma("msgLoginIncorrecto"))
+                    MsgBox(Principal.Singleton.Idioma("msgLoginIncorrecto", "Los datos de inicio son incorrectos"))
 
                 End If
 
             Else
-                MsgBox(Principal.Singleton.Idioma("msgCedulaInvalida"))
+                MsgBox(Principal.Singleton.Idioma("msgCedulaInvalida", "La cédula ingresada es invalida"))
             End If
 
         Else
-            MsgBox(Principal.Singleton.Idioma("msgCamposIncompletos"))
+            MsgBox(Principal.Singleton.Idioma("msgCamposIncompletos", "asdas"))
 
         End If
 
@@ -192,8 +234,9 @@ Public Class frmLogin
         If Datos_Temporales.rol = Datos_Temporales.enumRol.Paciente Then
             Dim frm As New frmRegistroPaciente
             Me.SuspendLayout()
+            Principal.Singleton.CambiarTamaño(frm.Width, frm.Height)
             Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-            Principal.Singleton.CambiarTamaño(frmRegistroPaciente)
+
             frm.Show()
             pnlContenedor.Hide()
             pnlInstancia.Show()
@@ -202,7 +245,7 @@ Public Class frmLogin
             Dim frm As New frmRegistroGestor
             Me.SuspendLayout()
             Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
-            Principal.Singleton.CambiarTamaño(frmRegistroGestor)
+            Principal.Singleton.CambiarTamaño(frm)
             frm.Show()
             pnlContenedor.Hide()
             pnlInstancia.Show()
@@ -276,11 +319,7 @@ Public Class frmLogin
         lblApp.Select()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub UcAjustes1_Load(sender As Object, e As EventArgs) Handles UcAjustes1.Load
 
     End Sub
 End Class

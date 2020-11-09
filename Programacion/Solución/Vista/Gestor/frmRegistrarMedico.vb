@@ -10,6 +10,50 @@ Public Class frmRegistrarMedico
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
 
+        For Each var As Control In Me.Controls
+
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+
+            End If
+
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
     End Sub
 
     Private Sub btnRegistrarMedico_Click(sender As Object, e As EventArgs) Handles btnRegistrarMedico.Click
@@ -34,17 +78,17 @@ Public Class frmRegistrarMedico
 
                                 If med.RegistarUsuario() Then
                                     If med.RegistrarMedico Then
-                                        MsgBox("Médico registrado con éxito")
+                                        MsgBox(Principal.Singleton.Idioma("msgRegistroMedicoExistoso", "Médico registrado con éxito"))
                                         limpiar()
                                     Else
-                                        MsgBox("El médico ya fue registrado")
+                                        MsgBox(Principal.Singleton.Idioma("msgMedicoRegistrado", "El médico ya fue registrado"))
                                     End If
                                 Else
-                                    MsgBox("El usuario ya fue registrado")
+                                    MsgBox(Principal.Singleton.Idioma("msgUsuarioRegistradoMed", "El usuario ya fue registrado"))
                                 End If
 
                             Else
-                                Dim respuesta As Integer = MsgBox("El médico se ecuentra dado de baja. ¿Desea reingresar al sistema?", vbQuestion + vbYesNo + vbDefaultButton2)
+                                Dim respuesta As Integer = MsgBox(Principal.Singleton.Idioma("msgMedicoDadodeBaja", "El médico se ecuentra dado de baja. ¿Desea reingresar al sistema?"), vbQuestion + vbYesNo + vbDefaultButton2)
 
                                 If respuesta = vbYes Then
                                     med.ReingresarUsuario(txtCed.Text)
@@ -54,16 +98,16 @@ Public Class frmRegistrarMedico
                             End If
 
                         Else
-                            MsgBox("El correo ingresado no es correcto")
+                            MsgBox(Principal.Singleton.Idioma("msgCorreoIncorrectoMed", "El correo ingresado no es correcto"))
                         End If
 
                     End If
                 End If
             Else
-                MsgBox("La cédula ingresada no es correcta")
+                MsgBox(Principal.Singleton.Idioma("msgCedulaIncorrectaMed", "La cédula ingresada no es correcta"))
             End If
         Else
-            MsgBox("Debe rellenar los campos")
+            MsgBox(Principal.Singleton.Idioma("msgRellenarCamposMed", "Debe rellenar los campos"))
         End If
     End Sub
     Private Sub limpiar()
@@ -79,7 +123,7 @@ Public Class frmRegistrarMedico
 
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
         If Not (txtCed.Text = Nothing And txtEspec.Text = Nothing And txtPrimerApellido.Text = Nothing And txtPrimerNombre.Text = Nothing And txtSegundoApellido.Text = Nothing And txtSegundoNombre.Text = Nothing) Then
-            Dim res = MsgBox("Hay información sin guardar, ¿Seguro desea salir?", vbYesNo)
+            Dim res = MsgBox(Principal.Singleton.Idioma("msgInformacionSinGuardar", "Hay información sin guardar, ¿Seguro desea salir?"), vbYesNo)
             If res = vbYes Then
                 Principal.Singleton.CambiarTamaño(frmOpciones)
                 Me.Dispose()

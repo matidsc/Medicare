@@ -45,31 +45,62 @@ Public Class ControladorSintoma
 
     End Function
     Public Function traerInfoSintomas(nombre As String) As String
-        Return ModeloSintoma.Singleton.traerInfoSintoma(nombre)
+        Try
+            Return ModeloSintoma.Singleton.traerInfoSintoma(nombre)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Overloads Function Registrar() As Boolean
-        Return ModeloSintoma.Singleton.Registrar(_nombre, _descripcion)
+        Try
+            Return ModeloSintoma.Singleton.Registrar(_nombre, _descripcion)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
     Public Overloads Function traerSintomas(sintomas As ArrayList) As ArrayList
-        Return ModeloSintoma.Singleton.TraerSintomas(sintomas)
+        Try
+            Return ModeloSintoma.Singleton.TraerSintomas(sintomas)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function TraerSintomasDePatologia(nombre As String) As DataTable
-        Return ModeloSintoma.Singleton.TraerSintomasDePatologia(nombre)
+        Try
+            Return ModeloSintoma.Singleton.TraerSintomasDePatologia(nombre)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Overloads Function traerSintomas() As ArrayList
+        Try
+            Return ModeloSintoma.Singleton.TraerSintomas
 
-        Return ModeloSintoma.Singleton.TraerSintomas
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
     Public Function guardarSintomas(usuario As String, nombreSintoma As ArrayList) As Boolean
-
-        Return ModeloSintoma.Singleton.GuardarSintomas(usuario, nombreSintoma)
+        Try
+            Return ModeloSintoma.Singleton.GuardarSintomas(usuario, nombreSintoma)
+        Catch ex As Exception
+            Return False
+        End Try
 
     End Function
 
     Public Function listarSintomas() As DataTable
 
-        Return ModeloSintoma.Singleton.ListarSintomas
+        Try
+            Return ModeloSintoma.Singleton.ListarSintomas
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
     End Function
 
@@ -81,8 +112,12 @@ Public Class ControladorSintoma
 
         Return False
     End Function
-    Public Function getSintomasIndicados(cedula As String)
-        MsgBox(ModeloSintoma.Singleton.getSintomasIndicados(cedula).Rows.Count)
-        Return ModeloSintoma.Singleton.getSintomasIndicados(cedula)
+    Public Function getSintomasIndicados(cedula As String) As DataTable
+        Try
+            Return ModeloSintoma.Singleton.getSintomasIndicados(cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
 End Class

@@ -3,14 +3,54 @@ Public Class frmBienvenidaMedico
 
     Public Sub New()
 
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
+        Principal.Singleton.CambiarTamaño(Me)
         Datos_Temporales.horizontal = Me.Width
         Datos_Temporales.vertical = Me.Height
+        For Each var As Control In Me.Controls
 
-        MsgBox(ControladorMedico.Singleton.verificarPassMedico().ToLower)
-        MsgBox(Encriptar.Singleton.HASH256(Datos_Temporales.userLog))
+            If TypeOf var Is Panel Then
+
+                For Each ctrl As Control In var.Controls
+
+                    ctrl.Text = Principal.Singleton.Idioma(ctrl.Name, ctrl.Text)
+
+                    If TypeOf ctrl Is Panel Then
+
+                        For Each ctrl2 As Control In ctrl.Controls
+                            ctrl2.Text = Principal.Singleton.Idioma(ctrl2.Name, ctrl2.Text)
+
+                            If TypeOf ctrl2 Is Panel Then
+
+                                For Each ctrl3 As Control In ctrl2.Controls
+                                    ctrl3.Text = Principal.Singleton.Idioma(ctrl3.Name, ctrl3.Text)
+                                    If TypeOf ctrl3 Is Panel Then
+                                        For Each ctrl4 As Control In ctrl3.Controls
+                                            ctrl4.Text = Principal.Singleton.Idioma(ctrl4.Name, ctrl4.Text)
+
+                                            If TypeOf ctrl4 Is Panel Then
+                                                For Each ctrl5 As Control In ctrl4.Controls
+                                                    ctrl5.Text = Principal.Singleton.Idioma(ctrl5.Name, ctrl5.Text)
+
+                                                Next
+
+                                            End If
+                                        Next
+
+                                    End If
+                                Next
+                            End If
+                        Next
+
+                    End If
+                Next
+
+            End If
+            var.Text = Principal.Singleton.Idioma(var.Name, var.Text)
+        Next
+
+
 
         If Encriptar.Singleton.HASH256(Datos_Temporales.userLog) = ControladorMedico.Singleton.verificarPassMedico().ToLower Then
             Dim advertencia As New UCAdvertencia
@@ -19,84 +59,11 @@ Public Class frmBienvenidaMedico
             advertencia.Show()
             advertencia.BringToFront()
         End If
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+      
 
     End Sub
 
-    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-    '    Me.BackColor = Color.FromArgb(236, 236, 236)
-    '    Dim col As Color = Color.FromArgb(52, 73, 94)
-
-    '    Panel1.BackColor = Color.WhiteSmoke
-    '    Panel2.BackColor = Color.WhiteSmoke
-    '    Panel3.BackColor = Color.WhiteSmoke
-    '    Panel4.BackColor = Color.WhiteSmoke
-    '    Panel5.BackColor = Color.WhiteSmoke
-    '    Label1.ForeColor = col
-    '    Label2.ForeColor = col
-    '    Label3.ForeColor = col
-    '    Label4.ForeColor = col
-    '    Label5.ForeColor = col
-    '    Label6.ForeColor = col
-    '    Label7.ForeColor = col
-    '    Label8.ForeColor = col
-    '    Label9.ForeColor = col
-    '    Label10.ForeColor = col
-    '    Label11.ForeColor = col
-    '    Label12.ForeColor = col
-    '    Label13.ForeColor = col
-
-    'End Sub
-
-    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-    '    Me.BackColor = Color.FromArgb(19, 19, 19)
-    '    Panel1.BackColor = Color.FromArgb(64, 64, 64)
-    '    Panel2.BackColor = Color.FromArgb(64, 64, 64)
-    '    Panel3.BackColor = Color.FromArgb(64, 64, 64)
-    '    Panel4.BackColor = Color.FromArgb(64, 64, 64)
-    '    Panel5.BackColor = Color.FromArgb(64, 64, 64)
-    '    Label1.ForeColor = Color.White
-    '    Label2.ForeColor = Color.White
-    '    Label3.ForeColor = Color.White
-    '    Label4.ForeColor = Color.White
-    '    Label5.ForeColor = Color.White
-    '    Label6.ForeColor = Color.White
-    '    Label7.ForeColor = Color.White
-    '    Label8.ForeColor = Color.White
-    '    Label9.ForeColor = Color.White
-    '    Label10.ForeColor = Color.White
-    '    Label11.ForeColor = Color.White
-    '    Label12.ForeColor = Color.White
-    '    Label13.ForeColor = Color.White
-
-    'End Sub
-
-    'Private Sub hover(sender As Object)
-    '    sender.backcolor = Color.FromArgb(56, 62, 80)
-    'End Sub
-
-    'Private Sub Panel1_MouseHover_1(sender As Object, e As EventArgs) Handles Panel1.MouseHover
-    '    'hover(Panel1)
-    'End Sub
-    'Private Sub Panel2_MouseHover(sender As Object, e As EventArgs) Handles Panel2.MouseHover
-    '    hover(Panel2)
-    'End Sub
-
-    'Private Sub Panel3_MouseHover(sender As Object, e As EventArgs) Handles Panel3.MouseHover
-    '    hover(Panel3)
-    'End Sub
-
-    'Private Sub Panel4_MouseHover(sender As Object, e As EventArgs) Handles Panel4.MouseHover
-    '    hover(Panel4)
-    'End Sub
-
-    'Private Sub Panel5_MouseHover(sender As Object, e As EventArgs) Handles Panel5.MouseHover
-    '    hover(Panel5)
-    'End Sub
-
-    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles btnIngresarChatsPaciente.Click
         Dim frm As New frmChat
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
@@ -105,20 +72,20 @@ Public Class frmBienvenidaMedico
         pnlContenedor.Hide()
         pnlInstancia.Show()
         Me.ResumeLayout()
-        ' Me.Timer1.Enabled = False
-        '   MsgBox(Me.Timer1.Enabled)
+ 
     End Sub
+
     Private Sub Finalizar() Handles pnlInstancia.ControlRemoved
         Me.pnlContenedor.Show()
     End Sub
 
     Private Sub timerChat_Tick(sender As Object, e As EventArgs) Handles timerChat.Tick
 
-        Dim notificacion As String = ControladorChat.Singleton.ListarNotificacionChat
+        Dim notificacion As Object = ControladorChat.Singleton.ListarNotificacionChat
 
         If notificacion IsNot Nothing Then
             If notificacion <> 0 Then
-                If notificacion <> lblNotiChats.Text Then
+                If notificacion.ToString <> lblNotiChats.Text Then
 
                     pnlNoti.Visible = True
                     Me.lblNotiChats.Visible = True
@@ -159,18 +126,18 @@ Public Class frmBienvenidaMedico
 
         If cantNotificacion <> 0 Then
 
-            If cantNotificacion <> lblNotiMsg.Text Then
+            If cantNotificacion.ToString <> lblNotiMsg.Text Then
 
                 pnlNotificacion.Visible = True
                 lblNotiMsg.Visible = True
 
                 If cantNotificacion > 99 Then
                     lblNotiMsg.Text = "99+"
-                    lblNuevosMsg.Text = "Tienes 99+ mensajes sin responder"
+                    lblNuevosMsg.Text = Principal.Singleton.Idioma("msgTienesTantosMensajes", "Tienes 99+ mensajes sin responder")
                     lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
                 Else
                     lblNotiMsg.Text = cantNotificacion
-                    lblNuevosMsg.Text = "Tienes " & cantNotificacion & " mensajes sin responder"
+                    lblNuevosMsg.Text = Principal.Singleton.Idioma("msgTienesMsg", "Tienes ") & cantNotificacion & Principal.Singleton.Idioma("msgSinResponder", " mensajes sin responder")
                     lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
                 End If
 
@@ -179,7 +146,7 @@ Public Class frmBienvenidaMedico
                 Else
                     lblNotiMsg.Location = New Point(-1, 1)
                 End If
-                lblNuevosMsg.Text = "Tienes " & cantNotificacion & " mensajes sin responder"
+                lblNuevosMsg.Text = Principal.Singleton.Idioma("msgTienesMsg", "Tienes ") & cantNotificacion & Principal.Singleton.Idioma("msgSinResponder", " mensajes sin responder")
                 lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
 
             End If
@@ -187,7 +154,7 @@ Public Class frmBienvenidaMedico
             pnlNotificacion.Visible = False
             lblNotiMsg.Visible = False
             lblNotiMsg.Text = "0"
-            lblNuevosMsg.Text = "No tienes mensajes nuevos"
+            lblNuevosMsg.Text = principal.singleton.idioma("msgSinMensajes","No tienes mensajes nuevos")
             lblNuevosMsg.Location = New Point((Me.Width / 2) - (lblNuevosMsg.Width / 2), lblNuevosMsg.Location.Y)
         End If
 
@@ -215,7 +182,7 @@ Public Class frmBienvenidaMedico
 
             Else
                 FlowLayoutPanel1.Controls.Clear()
-                lblNAChats.Visible = True
+                lblNAChats.Visible = False
             End If
         Else
             FlowLayoutPanel1.Visible = False
@@ -231,7 +198,7 @@ Public Class frmBienvenidaMedico
         End If
     End Sub
 
-    Private Sub btnVerPerfil_Click(sender As Object, e As EventArgs) Handles btnVerPerfil.Click
+    Private Sub btnVerPerfil_Click(sender As Object, e As EventArgs) Handles btnVerPerfilMedico.Click
         Me.SuspendLayout()
         Dim perfil As New UCVerPerfil()
         Me.Controls.Add(perfil)
@@ -239,7 +206,7 @@ Public Class frmBienvenidaMedico
         Me.ResumeLayout()
     End Sub
 
-    Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPass.Click
+    Private Sub btnCambiarPass_Click(sender As Object, e As EventArgs) Handles btnCambiarPassMedico.Click
         Me.SuspendLayout()
         Dim perfil As New UCVerPerfil()
         perfil.pnlCredenciales.BringToFront()
@@ -249,7 +216,7 @@ Public Class frmBienvenidaMedico
         Me.ResumeLayout()
     End Sub
 
-    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
+    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles btnCerrarSesionMedico.Click
         Principal.Singleton.CambiarTamaño(frmLogin)
         Dim instancia As frmLogin = Me.ParentForm
 
@@ -267,14 +234,14 @@ Public Class frmBienvenidaMedico
         Me.Dispose()
     End Sub
 
-    Private Sub btnReanudar_Click(sender As Object, e As EventArgs) Handles btnReanudar.Click
+    Private Sub btnReanudar_Click(sender As Object, e As EventArgs) Handles btnListadoPatMedico.Click
         Dim frm As New frmListado(0)
         Me.SuspendLayout()
         Principal.Singleton.CargarVentana(Me.pnlInstancia, frm)
         Principal.Singleton.CambiarTamaño(frmListado)
         frm.btnEliminarElementos.Visible = False
         frm.btnModificarElemento.Visible = False
-        frm.btnRegistrar.Visible = False
+        frm.btnRegistrarListado.Visible = False
         frm.btnSeleccionMultiple.Visible = False
         frm.Show()
 
@@ -282,4 +249,6 @@ Public Class frmBienvenidaMedico
         pnlInstancia.Show()
         Me.ResumeLayout()
     End Sub
+
+
 End Class

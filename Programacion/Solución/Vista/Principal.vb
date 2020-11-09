@@ -31,7 +31,7 @@ Public Class Principal
     ''' </summary>
     ''' <param name="ventana"></param>
     ''' <param name="formInterno"></param>
-    Public Sub CargarVentana(ventana As Panel, formInterno As form)
+    Public Sub CargarVentana(ventana As Panel, formInterno As Form)
         ventana.Controls.Clear()
         formInterno.TopLevel = False
         formInterno.Dock = DockStyle.Fill
@@ -44,10 +44,25 @@ Public Class Principal
     ''' Subrutina encargada de adaptar el tamaño de la aplicación en función del formulario instanciado.
     ''' </summary>
     ''' <param name="form"></param>
-    Public Sub CambiarTamaño(form As Form)
+    Public Overloads Sub CambiarTamaño(form As Form)
 
         Datos_Temporales.vertical = form.Height
         Datos_Temporales.horizontal = form.Width
+
+        If AppPaciente.main.instancia IsNot Nothing Then
+            AppPaciente.main.Singleton.cambiarTamaño()
+        ElseIf AppMedico.main.instancia IsNot Nothing Then
+            AppMedico.main.Singleton.cambiarTamaño()
+        ElseIf AppGestion.main.instancia IsNot Nothing Then
+            AppGestion.main.Singleton.cambiarTamaño()
+        End If
+
+    End Sub
+
+    Public Overloads Sub CambiarTamaño(ancho As Integer, largo As Integer) ''' esto cambia
+
+        Datos_Temporales.vertical = largo
+        Datos_Temporales.horizontal = ancho
 
         If AppPaciente.main.instancia IsNot Nothing Then
             AppPaciente.main.Singleton.cambiarTamaño()
@@ -64,18 +79,19 @@ Public Class Principal
     ''' </summary>
     ''' <param name="name"></param>
     ''' <returns>Texto traducido al idioma seleccionado.</returns>
-    Public Function Idioma(name As String) As String
+    Public Function Idioma(name As String, labeltext As String) As String
 
-        Dim valor As String = ""
+        If Datos_Temporales.pathConf IsNot Nothing Then
+            If File.Exists(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) Then
+                Dim archivo As New Resources.ResXResourceSet(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) ' cambiar ruta
 
-        If File.Exists(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) Then
-            Dim archivo As New Resources.ResXResourceSet(Path.Combine(Datos_Temporales.pathConf, "Idioma.resx")) ' cambiar ruta
-
-            valor = archivo.GetString(name)
-            archivo.Close()
+                labeltext = archivo.GetString(name)
+                archivo.Close()
+            End If
         End If
 
-        Return valor
+
+        Return labeltext
     End Function
 
     ''' <summary>
@@ -143,19 +159,19 @@ Public Class Principal
                     If check.Verificar_String(sApe) Then
                         Return True
                     Else
-                        MsgBox("Segundo apellido incorrecto")
+                        MsgBox(Idioma("msgSApeXD","Segundo apellido incorrecto"))
                         Return False
                     End If
                 Else
-                    MsgBox("Segundo nombre incorrecto")
+                    MsgBox(Idioma("msgSNomXD","Segundo nombre incorrecto"))
                     Return False
                 End If
             Else
-                MsgBox("Primer apellido incorrecto")
+                MsgBox(Idioma("msgPaPEXD","Primer apellido incorrecto"))
                 Return False
             End If
         Else
-            MsgBox("Primer nombre incorrecto")
+            MsgBox(Idioma("msgPNomXD","Primer nombre incorrecto"))
             Return False
         End If
 
@@ -171,7 +187,7 @@ Public Class Principal
     Public Function VerificarEmail(check As Verificacion, mail As String) As Boolean
 
         If check.VerificarEmail(mail) = False Then
-            MsgBox("E-mail incorrecto")
+            MsgBox(Idioma("msgMailIncorrectounu","E-mail incorrecto"))
             Return False
         End If
 
@@ -190,7 +206,7 @@ Public Class Principal
         If seg.HASH256(pass1) = seg.HASH256(pass2) Then
             Return True
         Else
-            MsgBox("Las contraseñas no coinciden")
+            MsgBox(Idioma("msgPassesDontMatch","Las contraseñas no coinciden"))
             Return False
         End If
 
@@ -215,14 +231,9 @@ Public Class Principal
     ''' <returns>True si los teléfonos son correctos.</returns>
     Public Function VerificarTelefonos(dgv As DataGridView, telefonos As ArrayList)
 
-        'For i = 0 To dgv.Rows.Count - 2
-        ' If dgv.Rows(i).Cells(0).Value <> "" Then
-        '        telefonos.Add(CType(dgv.Rows(i).Cells(0).Value, Integer))
-        '    End If
-        'Next
 
         For Each var As DataGridViewRow In dgv.Rows
-            If var.Cells(0).Value.ToString <> "" Then
+            If var.Cells(0).Value <> "" Then
                 If Verificacion.Singleton.Verificar_Int(var.Cells(0).Value.ToString) = True Then
                     telefonos.Add(CType(var.Cells(0).Value, Integer))
                 Else
@@ -235,7 +246,7 @@ Public Class Principal
         Return True
     End Function
 
-public Function Base64(path As String)
+    Public Function Base64(path As String)
 
         Dim convert64 As String = ""
 
@@ -294,19 +305,6 @@ public Function Base64(path As String)
         j.Rows.Clear()
         k.Clear()
     End Sub
-    'Public Overloads Sub limpiar(a As GunaLineTextBox, b As GunaLineTextBox, c As GunaLineTextBox, d As GunaLineTextBox, e As GunaLineTextBox, f As GunaLineTextBox, g As GunaLineTextBox, h As GunaLineTextBox, j As DataGridView, k As ArrayList)
-    '    a.Clear()
-    '    b.Clear()
-    '    c.Clear()
-    '    d.Clear()
-    '    e.Clear()
-    '    f.Clear()
-    '    g.Clear()
-    '    h.Clear()
-    '    j.Rows.Clear()
-    '    k.Clear()
-    'End Sub
-
 
 #Region "Funciones y subrutinas"
 

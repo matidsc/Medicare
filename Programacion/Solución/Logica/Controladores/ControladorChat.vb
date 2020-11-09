@@ -43,10 +43,10 @@ Public Class ControladorChat
 
     End Function
 
-    Public Function ListarNotificacionChat() As String
+    Public Function ListarNotificacionChat() As Object
         Try
             Return ModeloChat.Singleton.NotificacionChat(Datos_Temporales.userLog)
-        Catch ex As odbc.OdbcException
+        Catch ex As Odbc.OdbcException
             Return Nothing
         End Try
     End Function
@@ -184,8 +184,7 @@ Public Class ControladorChat
             server.Send(correo)
             Return True
 
-        Catch ex As SmtpException
-            MsgBox(ex.ToString)
+        Catch ex As Exception
             Return False
         End Try
 
@@ -201,7 +200,7 @@ Public Class ControladorChat
     Public Function verificarEstadoChat() As Boolean
 
         Try
-            Dim resultado As String = ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog)
+            Dim resultado As Object = ModeloChat.Singleton.verificarEstadoChat(Datos_Temporales.userLog)
             If (resultado = "1") Or (resultado = Nothing) Then
                 Return True
             End If

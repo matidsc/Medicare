@@ -106,35 +106,67 @@ Public Class ControladorUsuario
 
     End Function
     Public Function verificarUsuario(usuario As String, pass As String) As Boolean
+        Try
+            Return ModeloUsuario.Singleton.VerificarUsuario(usuario, pass)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloUsuario.Singleton.VerificarUsuario(usuario, pass)
 
     End Function
 
     Public Function verificarRol(usuario As String) As Boolean
+        Try
+            Return ModeloUsuario.Singleton.verificarRol(usuario, Datos_Temporales.rol)
 
-        Return ModeloUsuario.Singleton.verificarRol(usuario, Datos_Temporales.rol)
+        Catch ex As Exception
+            Return False
+        End Try
 
     End Function
 
-    Public Function VerificarBaja(cedula As String)
-        Return ModeloUsuario.Singleton.VerificarBaja(cedula)
+    Public Function VerificarBaja(cedula As String) As Boolean
+        Try
+            Return ModeloUsuario.Singleton.VerificarBaja(cedula)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
 
     Public Function ReingresarUsuario(cedula As String) As Boolean
+        Try
+            Return ModeloUsuario.Singleton.ReingresarUsuario(cedula)
+        Catch ex As Exception
+            Return False
+        End Try
 
-        Return ModeloUsuario.Singleton.ReingresarUsuario(cedula)
 
     End Function
     Public Function getTelefonosUsuario() As DataTable
-        Return ModeloUsuario.Singleton.getTelefonosPaciente(Datos_Temporales.userLog)
+        Try
+            Return ModeloUsuario.Singleton.getTelefonosPaciente(Datos_Temporales.userLog)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function ListarUsuarios() As DataTable
-        Return ModeloUsuario.Singleton.listarUsuarios
+        Try
+            Return ModeloUsuario.Singleton.listarUsuarios
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
 
-    Public Function getDatosUsuario(cedula As String)
-        Return ModeloUsuario.Singleton.getDatosUsuario(cedula)
+    Public Function getDatosUsuario(cedula As String) As DataTable
+        Try
+            Return ModeloUsuario.Singleton.getDatosUsuario(cedula)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
     Public Function updateUsuario() As Boolean
         Try
@@ -144,8 +176,13 @@ Public Class ControladorUsuario
         End Try
 
     End Function
-    Public Function updateTelefonos(alitel As ArrayList)
-        Return ModeloUsuario.Singleton.updateTelefonos(_ci, alitel)
+    Public Function updateTelefonos(alitel As ArrayList) As Boolean
+        Try
+            Return ModeloUsuario.Singleton.updateTelefonos(_ci, alitel)
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
 
     Public Function GetContraseña() As String

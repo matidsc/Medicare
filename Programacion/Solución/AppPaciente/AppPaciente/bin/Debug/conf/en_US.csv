@@ -407,6 +407,10 @@ lblTituloListadoPatMedico;List of pathologies
 lblListadoPatMedico;List all registered pathologies
 btnHistorialMedico;Enter
 IconButton1;Back
+lblPassPac;Password
 btnAceptarChat;Start chat
 btnDiagnostico;Patient's diagnosis
 txtnomsimpxd;What is 
+lblPNomRegisPaciente;First name
+lblSNomRegPac;Second surname
+msgHabilitarPacienteUC;Do you want to enable this patient?

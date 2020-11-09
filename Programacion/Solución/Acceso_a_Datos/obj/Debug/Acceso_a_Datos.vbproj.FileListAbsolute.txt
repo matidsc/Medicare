@@ -239,3 +239,23 @@ C:\Users\Mat\Desktop\ByteSoft-master\Programacion\Solución\Acceso_a_Datos\obj\D
 C:\Users\Mat\Desktop\ByteSoft-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
 C:\Users\Mat\Desktop\ByteSoft-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb
 C:\Users\Mat\Desktop\MASTER LIMPIO\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.dll
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.xml
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.Resources.resources
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.GenerateResource.cache
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.CoreCompileInputs.cache
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.dll
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
+C:\Users\rpere\Downloads\Nueva carpeta\PruebasDesign-master\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.dll
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.pdb
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\bin\Debug\Acceso_a_Datos.xml
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbprojAssemblyReference.cache
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.Resources.resources
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.GenerateResource.cache
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.vbproj.CoreCompileInputs.cache
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.dll
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.xml
+C:\Users\rpere\OneDrive\Escritorio\Instalador Proyecto\PruebasDesign\Programacion\Solución\Acceso_a_Datos\obj\Debug\Acceso_a_Datos.pdb

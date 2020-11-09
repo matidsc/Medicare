@@ -10,6 +10,9 @@ lblCredenciales;Credenciales
 btnRegistrar;Aplicar cambios
 lblEmailPerfil;Nombre
 lblNomPerfil;Nombre
+lblPNomRegisPaciente;Primer nombre
+lblPassPac;Contraseña
+lblSNomRegPac;Segundo apellido
 lblMailPerfil;Correo electrónico
 lblNombrePerfil;Nombre
 lblTelefonosPerfil;Teléfonos
@@ -395,3 +398,4 @@ btnMasDesc;Mostrar más
 btnMasRec;Mostrar más
 btnAceptarChat;Comenzar Chat
 btnDiagnostico;Ver Diagnóstico
+msgHabilitarPacienteUC;¿Desea habilitar a este paciente?

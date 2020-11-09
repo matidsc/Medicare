@@ -62,15 +62,15 @@
     </Reference>
     <Reference Include="AppGestion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Programacion\Solución\AppGestion\AppGestion\bin\Debug\AppGestion.exe</HintPath>
+      <HintPath>..\AppGestion\AppGestion\bin\Release\AppGestion.exe</HintPath>
     </Reference>
     <Reference Include="AppMedico, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AppMedico\AppMedico\bin\Debug\AppMedico.exe</HintPath>
+      <HintPath>..\AppMedico\AppMedico\bin\Release\AppMedico.exe</HintPath>
     </Reference>
-    <Reference Include="AppPaciente, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AppPaciente, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AppPaciente\AppPaciente\bin\Debug\AppPaciente.exe</HintPath>
+      <HintPath>..\AppPaciente\AppPaciente\bin\Release\AppPaciente.exe</HintPath>
     </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>

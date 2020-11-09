@@ -1335,6 +1335,9 @@
   <data name="IconButton1" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="lblPassPac" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="btnAceptarChat" xml:space="preserve">
     <value>Start chat</value>
   </data>
@@ -1343,5 +1346,11 @@
   </data>
   <data name="txtnomsimpxd" xml:space="preserve">
     <value>What is </value>
+  </data>
+  <data name="lblPNomRegisPaciente" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="lblSNomRegPac" xml:space="preserve">
+    <value>Second surname</value>
   </data>
 </root>
